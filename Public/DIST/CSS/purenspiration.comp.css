@@ -37235,7 +37235,7 @@ html {
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   padding: 1rem;
 }
-.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder {
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus::placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus::placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus::placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus::placeholder {
   opacity: 1;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus + label {
@@ -37275,7 +37275,7 @@ html {
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   padding: 1rem;
 }
-.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus::-webkit-input-placeholder {
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus::placeholder {
   opacity: 1;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus + label {
@@ -37316,7 +37316,7 @@ html {
   padding: 1rem;
   resize: none;
 }
-.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus::-webkit-input-placeholder {
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus::placeholder {
   opacity: 1;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus + label {
@@ -37374,7 +37374,7 @@ html {
 .vertical-flex-container .flex-section .grid-container .contact-form .input-warning {
   border: 0.3rem groove #FFD700;
 }
-.vertical-flex-container .flex-section .grid-container .contact-form ::-webkit-input-placeholder {
+.vertical-flex-container .flex-section .grid-container .contact-form ::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form ::-moz-placeholder {
   opacity: 0;
   transition: all 0.75s;
 }
@@ -37399,7 +37399,8 @@ I was thinking of iterating through the objects that were created.
     //////////////////////////////////
     /// Glitches To Fix
 
-    GLITCH : 
+    GLITCH : Form Placeholder Does Not Show In FireFox.
+    GLITCH : My Custom Font Purely Me Does Not Get Used In My Site Outside Of Dissenter & My Computer.
 
 
     //////////////////////////////////

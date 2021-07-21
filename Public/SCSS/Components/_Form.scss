@@ -34,7 +34,7 @@
               background-color: transparent;
               border: .3rem groove rgba($secondaryColor, .75);
               padding: 1rem;
-              &:focus::-webkit-input-placeholder {
+              &:focus::-webkit-input-placeholder, &:focus::placeholder {
                 opacity: 1;
               }
               &:not(:placeholder-shown) + label, &:focus + label {
@@ -58,7 +58,7 @@
             background-color: transparent;
             border: .3rem groove rgba($secondaryColor, .75);
             padding: 1rem;
-            &:focus::-webkit-input-placeholder {
+            &:focus::-webkit-input-placeholder, &:focus::placeholder {
               opacity: 1;
             }
             &:not(:placeholder-shown) + label, &:focus + label {
@@ -80,7 +80,7 @@
             background-color: transparent;
             border: .3rem groove rgba($secondaryColor, .75);
             padding: 1rem;
-            &:focus::-webkit-input-placeholder {
+            &:focus::-webkit-input-placeholder, &:focus::placeholder {
               opacity: 1;
             }
             &:not(:placeholder-shown) + label, &:focus + label {
@@ -125,7 +125,7 @@
           border: .3rem groove $primaryColor;
         }
 
-        ::-webkit-input-placeholder {
+        ::-webkit-input-placeholder, ::-moz-placeholder {
           opacity: 0;
           transition: all .75s;
         }
