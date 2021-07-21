@@ -1,9 +1,9 @@
-
-$fa-font-path: "../../../webfonts";
+@use "../Vendors/scss/variables";
+$fa-font-path: "../../webfonts/" !default;
 
 /////////////////////////////
 //         COLORS
-/home/ncluff003/Desktop/PureNSpiration/PureNSpiration/Public/webfonts
+
 /////////////////////////////
 //      Primary Color
 $primaryColor: #FFD700;
