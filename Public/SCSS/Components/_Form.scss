@@ -125,7 +125,7 @@
           border: .3rem groove $primaryColor;
         }
 
-        ::-webkit-input-placeholder, ::-moz-placeholder {
+        ::-webkit-input-placeholder, ::placeholder {
           opacity: 0;
           transition: all .75s;
         }

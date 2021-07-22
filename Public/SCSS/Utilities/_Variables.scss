@@ -104,6 +104,8 @@ $ClippedAbout_Right: 0 100%, .1% 99%, .2% 98.1%, .4% 97.2%, .6% 96.3%, .8% 95.4%
 
 @font-face {
   font-family: Purely Me;
-  src: url('../SCSS/Vendors/PurelyMe/Purely_Me_Regular.eot'),
-  url('/SCSS/Vendors/PurelyMe/Purely_Me_Regular.ttf');
+  src: url('./purely_me_regular-webfont.woff2') format('woff2'),
+  url('./purely_me_regular-webfont.woff') format('woff'),
+  url('./Purely_Me_Regular.eot'),
+  url('./Purely_Me_Regular.ttf');
 }

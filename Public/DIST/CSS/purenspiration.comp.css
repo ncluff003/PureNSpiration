@@ -1,8 +1,7 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700,800&display=swap");
 @font-face {
   font-family: Purely Me;
-  src: url("../SCSS/Vendors/PurelyMe/Purely_Me_Regular.eot"), url("/SCSS/Vendors/PurelyMe/Purely_Me_Regular.ttf");
+  src: url("./purely_me_regular-webfont.woff2") format("woff2"), url("./purely_me_regular-webfont.woff") format("woff"), url("./Purely_Me_Regular.eot"), url("./Purely_Me_Regular.ttf");
 }
 html {
   font-family: Purely Me, Century Gothic, Verdana, Sans-Serif;
@@ -37374,7 +37373,7 @@ html {
 .vertical-flex-container .flex-section .grid-container .contact-form .input-warning {
   border: 0.3rem groove #FFD700;
 }
-.vertical-flex-container .flex-section .grid-container .contact-form ::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form ::-moz-placeholder {
+.vertical-flex-container .flex-section .grid-container .contact-form ::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form ::placeholder {
   opacity: 0;
   transition: all 0.75s;
 }
@@ -46617,7 +46616,7 @@ readers do not read off random characters that represent icons */
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 html {
-  font-family: sans-serif;
+  font-family: Purely Me, Century Gothic, Verdana, sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
