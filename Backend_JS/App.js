@@ -22,7 +22,7 @@ App.use(express.static(path.join(__dirname, '../Public')));
 
 // Eventually, I will make this so that if the query string is both the root '/', or a hash symol after a forward slash '/#', the index.html page will be returned.
 App.get('/', (request, response) => {
-    return response.sendFile(`${__dirname}/../Public/DIST/index.html`);
+  return response.sendFile(`${__dirname}/../Public/DIST/index.html`);
 });
 
 module.exports = App;

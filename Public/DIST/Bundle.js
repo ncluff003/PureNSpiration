@@ -482,7 +482,16 @@ var purenspiration = new Project({
   link: "#",
   repository: "https://github.com/ncluff003/PureNSpiration"
 });
-var projects = [purenspiration];
+var kingrichard = new Project({
+  title: "King Richard",
+  image: "<img src=\"/CSS/Images/KingRichard-Logo--COVER.svg\">",
+  backgroundColor: "#822aba",
+  textColor: "#FEFEFE",
+  description: "This is my project",
+  link: "../../../KingRichard-Budget/Public/DIST/index.html",
+  repository: "https://github.com/ncluff003/KingRichard-Budget"
+});
+var projects = [purenspiration, kingrichard];
 projects.forEach(function (p, i) {
   p._produceProjectCard("".concat(p.image), "".concat(p.title), "".concat(p.backgroundColor), "".concat(p.textColor), "".concat(p.description), "".concat(p.link), "".concat(p.repository));
 }); ///////////////////////////////////////////////

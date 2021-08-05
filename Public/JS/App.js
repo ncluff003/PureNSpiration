@@ -213,7 +213,17 @@ const purenspiration = new Project({
   repository: `https://github.com/ncluff003/PureNSpiration`,
 });
 
-const projects = [purenspiration];
+const kingrichard = new Project({
+  title: `King Richard`,
+  image: `<img src="/CSS/Images/KingRichard-Logo--COVER.svg">`,
+  backgroundColor: `#822aba`,
+  textColor: `#FEFEFE`,
+  description: `This is my project`,
+  link: `../../../KingRichard-Budget/Public/DIST/index.html`,
+  repository: `https://github.com/ncluff003/KingRichard-Budget`,
+});
+
+const projects = [purenspiration, kingrichard];
 projects.forEach((p, i) => {
   p._produceProjectCard(
     `${p.image}`,

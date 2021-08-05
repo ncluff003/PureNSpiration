@@ -25,7 +25,7 @@ const PORT = 3333;
 ////////////////////////////////////////////
 //  Start Server
 App.listen(PORT, () => {
-    console.log(`App listening at port ${PORT}`);
+  console.log(`App listening at port ${PORT}`);
 });
 
 reload(App);

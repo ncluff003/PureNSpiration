@@ -37393,6 +37393,9 @@ I was thinking of iterating through the objects that were created.
     MUSTDO : Link my project card link to my personal site. ( # for now, but later on it will be purenspiration.com )
     MUSTDO : Configure Webpack to compile my JavaScript so I can use it in my Production branch of my project.
     MUSTDO : Eventually, add html-webpack-plugin using npm install, and put it as a dev dependency.  Then put 'plugins: [ new HtmlWebpackPlugin() ] in webpack config file under module.exports
+    MUSTDO : FIgure out how my mixin works for creating CSS Grids, so I can speak on that.
+    MUSTDO : Review Promises, Async / Await, & Early Node.JS lessons to be sure I have got it.
+    MUSTDO : Get my contact form to send an email with the message in the body, & the sender's information in the email.
 
 
     //////////////////////////////////
