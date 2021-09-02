@@ -1,0 +1,114 @@
+doctype html
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+
+html.no-js
+  <!--<![endif]-->
+
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    title= title
+    meta(name="description" content="" )
+    meta(name="viewport" content="width=device-width, initial-scale=1" )
+    link(rel="shortcut icon" href="favicon.ico" type="image/x-icon" )
+    
+    link(rel="stylesheet" href="/DIST/CSS/purenspiration.css" )
+
+    script(defer src="/DIST/Bundle.js?5da18932f3c722f0e631")
+    script(src="/reload.js")
+
+  body.disable-scrollbars
+    <!--[if lt IE 7]>
+      p.browsehappy You are using an 
+        strong outdated 
+        | browser. Please upgrade your browser to improve your experience.
+    <![endif]-->
+    // VERTICAL
+    div.vertical-flex-container
+      nav.navigation
+        div.navigation__logo
+          div.navigation__logo__logoImg
+            img(src="/CSS/Images/PureNOvationLogo_Serif_DarkGrey_GoldArrow.svg" alt="PureNSpiration Logo")
+          p.navigation__logo__logoText Pure `N` Spiration
+        ul.navigation__links
+          li.navigation__links--linkItem
+            a.navigation__links--linkItem__link(href="#introduction") Introduction
+          li.navigation__links--linkItem
+            a.navigation__links--linkItem__link(href="#about-me") About
+          li.navigation__links--linkItem
+            a.navigation__links--linkItem__link(href="#skills") Skills
+          li.navigation__links--linkItem
+            a.navigation__links--linkItem__link(href="#portfolio") Portfolio
+          li.navigation__links--linkItem
+            a.navigation__links--linkItem__link(href="#contact") Contact
+
+      section.flex-section#introduction
+        section.grid-container
+          div.typing-text-container.column_2-22.row_7-4
+            p.typing-text--introduction
+            div.typing-text--cursor
+          div.introduction-button-container.column_8-10.row_11-2
+            a.introduction-button(href='#about-me') Learn More About Me
+            a.introduction-button(href='#portfolio') See My Work
+            a.introduction-button(href='#contact') Get In Touch
+      section.flex-section#about-me
+        section.grid-container
+          header.section-header.column_4-18.row_3-3 More About Me
+          section.about-me-container.column_2-22.row_6-12
+            section.about-me-container__option-slider
+              section.about-me-container__option-slider--option.about-me-container__option-slider--option--1
+                div.about-typing-text-container
+                  p.about-typing-text Scroll with the mouse, keyboard, & finger.
+                  div.about-typing-text--cursor
+              section.about-me-container__option-slider--option.about-me-container__option-slider--option--2
+                video.about-me-video(src="" controls)
+            div.about-me-container__option-navigation
+      section.flex-section#skills
+        section.grid-container
+          header.section-header.column_4-18.row_3-3 Skills I Possess
+          section.showcase-grid.column_4-18.row_7-10
+      section.flex-section#portfolio
+        section.grid-container
+          header.section-header.column_4-18.row_3-3 What I have Worked On
+          section.showcase-grid.column_4-18.row_7-10
+          div.project-count.column_12-2.row_16-1
+      section.flex-section#contact
+        section.grid-container
+          header.section-header.column_4-18.row_3-3 Please Get In Touch
+          //- form.contact-form.column_7-12.row_6-12(action="/v1/message/email" method="POST")
+          form.contact-form.column_7-12.row_6-12
+            block emailErrorContent
+            div.contact-form-message-container
+              p.contact-form-message-container--error= errorMessage
+            div.contact-form-name-container
+              div.contact-form-name-container--first-name
+                input.first-name#first-name(type="text", name="firstName", placeholder="What's your first name?", required)
+                label.first-name-label#firstNameLabel(for="firstName") First Name
+              div.contact-form-name-container--last-name
+                input.last-name#lastName(type="text", name="lastName", placeholder="What's your last name?", required)
+                label.last-name-label#lastNameLabel(for="lastName") Last Name
+            div.contact-form-organization-container
+              div.contact-form-organization-container--organization
+                input.organization-name#organization-name(type="text", name="organization", placeholder="Please identify your organization.", required)
+                label.organization-name-label#organizationNameLabel(for="organization") Organization
+              div.contact-form-organization-container--position
+                input.position-name#positionName(type="text", name="position", placeholder="What's your last name?", required)
+                label.position-name-label#positionNameLabel(for="position") Position
+            div.contact-form-email-container
+              input.email#email(type="email", name="email", placeholder="What's your email address?", required)
+              label.email-label#emailLabel(for="email") Email Address
+            div.contact-form-subject-container
+              input.subject#subject(type="text", name="subject", placeholder="What's the subject of your message?", required)
+              label.subject-label#subjectLabel(for="subject") Subject
+            div.contact-form-text-message-container
+              textarea.message#message(name="message", cols="30", rows="10", placeholder="Please enter your message here! 😃", required)
+              label.message-label#messageLabel(for="message") Message
+            div.contact-form-submit-container
+              button.submit-message-button#submitMessageButton Submit Message
+            block emailSuccessContent
+            div.contact-form-message-container
+              p.contact-form-message-container--success= successMessage

@@ -12,6 +12,12 @@ const dotenv = require('dotenv');
 const reload = require('reload');
 
 ////////////////////////////////////////////
+//  Third Party Config Files
+dotenv.config({
+  path: `./config.env`,
+});
+
+////////////////////////////////////////////
 //  Middleware
 
 ////////////////////////////////////////////
@@ -20,7 +26,7 @@ const App = require('./App');
 
 ////////////////////////////////////////////
 //  Initialize Port Number
-const PORT = 3333;
+const PORT = process.env.PORT || 3333;
 
 ////////////////////////////////////////////
 //  Start Server
@@ -28,4 +34,6 @@ App.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
 });
 
+////////////////////////////////////////////
+//  Reload App
 reload(App);

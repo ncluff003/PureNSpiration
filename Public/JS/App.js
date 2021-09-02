@@ -2,6 +2,7 @@
 // IMPORTED VALUES
 import { Story } from './Story.js';
 import { Card, cardShell, childElement } from './Card.js';
+import { emailMe } from './Email';
 ///////////////////////////////////////////////
 // PARAGRAPH CLASS -- STORY CHILD
 class Paragraph extends Story {
@@ -483,6 +484,22 @@ class App {
     if (entry.target === allGrids[1]) {
       paragraph2._startTyping();
     }
+    if (entry.target === allGrids[4]) {
+      if (contactForm) {
+        contactForm.addEventListener(`submit`, (e) => {
+          e.preventDefault();
+          const firstName = document.querySelector(`.first-name`).value;
+          const lastName = document.querySelector(`.last-name`).value;
+          const organization = document.querySelector(`.organization-name`).value;
+          const position = document.querySelector(`.position-name`).value;
+          const email = document.querySelector(`.email`).value;
+          const subject = document.querySelector(`.subject`).value;
+          const message = document.querySelector(`.message`).value;
+          console.log(firstName, lastName, organization, position, email, subject, message);
+          emailMe(firstName, lastName, organization, position, email, subject, message);
+        });
+      }
+    }
     observer.unobserve(entry.target);
   }
   _hideGrids(grids) {
@@ -508,6 +525,8 @@ const slideOptions = document.querySelectorAll(`.about-me-container__option-slid
 const optionNavContainer = document.querySelector(`.about-me-container__option-navigation`);
 const skillCards = [...document.querySelectorAll(`.skill-card`)];
 const projectCards = [...document.querySelectorAll(`.project-card`)];
+const submitMessageButton = document.querySelector(`.submit-message-button`);
+const contactForm = document.querySelector(`.contact-form`);
 const revealSectionOptions = {
   root: null,
   threshold: 0.35,

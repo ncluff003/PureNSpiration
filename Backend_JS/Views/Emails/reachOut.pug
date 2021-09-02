@@ -1,0 +1,17 @@
+extends baseEmail
+
+block emailContent 
+  div.email-header
+    p.name Nathan,
+    div.timeAndDate
+      p.date-stamp #{weekday}, #{day} #{month} #{year}
+      p.time-stamp #{hour}:#{minutes} #{timeOfDay}
+  blockquote.message-body
+    - const messages = message.split(/\r?\n/);
+    each message in messages
+      p.paragraph #{message}
+    p.salutations Sincerely,
+    div.from-container
+      p.from #{from.split(' -- ')[0]}
+      p.from-position #{position}
+      p.from-organization #{organization}

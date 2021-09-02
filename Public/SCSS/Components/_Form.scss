@@ -5,135 +5,215 @@
 //  Vertical Flex Container
 
 .vertical-flex-container {
-
   ////////////////////////////////////////////////
   //  Navigation
- 
+
   ////////////////////////////////////////////////
   //  Flex Section
   .flex-section {
-
     .grid-container {
-
       .contact-form {
-        @include SizeAndPositioning (relative, 100%, 100%, flex, space-evenly, center, 0, 0, 0);
+        @include SizeAndPositioning(relative, 100%, 100%, flex, space-evenly, center, 0, 0, 0);
         flex-direction: column;
 
         &-message-container {
-          @include SizeAndPositioning (relative, 10%, 100%, flex, space-evenly, center, 0, 0, 0);
+          @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
         }
 
         &-name-container {
-          @include SizeAndPositioning (relative, 10%, 100%, flex, space-evenly, center, 0, 0, 0);
-          margin: 4rem 0 2rem;
-          &--first-name, &--last-name{
-            @include SizeAndPositioning (relative, 100%, 40%, flex, center, center, 0, 0, 0);
+          @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+          margin: 1.25rem 0 1.25rem;
+          &--first-name,
+          &--last-name {
+            @include SizeAndPositioning(relative, 100%, 40%, flex, center, center, 0, 0, 0);
             flex-direction: column-reverse;
-            .first-name, .last-name {
-              @include SizeAndPositioning (relative, 100%, 100%, flex, center, center, 0, 0, 0);
+            .first-name,
+            .last-name {
+              @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
               background-color: transparent;
-              border: .3rem groove rgba($secondaryColor, .75);
+              border: 0.3rem groove rgba($secondaryColor, 0.75);
               padding: 1rem;
-              &:focus::-webkit-input-placeholder, &:focus::placeholder {
+              &:focus {
+                outline: none;
+              }
+              &:focus::-webkit-input-placeholder,
+              &:focus::placeholder {
                 opacity: 1;
               }
-              &:not(:placeholder-shown) + label, &:focus + label {
-                transform: translate(-13.5rem, -3.75rem) scale(.85);
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-13.5rem, -3.25rem) scale(0.85);
               }
               &-label {
-                @include SizeAndPositioning (absolute, 40%, 30%, flex, center, center, 0, 0, 0);
-                transition: transform .75s;
+                @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+                transition: transform 0.75s;
                 transform: translate(-12.5rem, 0);
               }
             }
           }
         }
-        
+
+        &-organization-container {
+          @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+          margin: 1.25rem 0 1.25rem;
+          &--organization,
+          &--position {
+            @include SizeAndPositioning(relative, 100%, 40%, flex, center, center, 0, 0, 0);
+            flex-direction: column-reverse;
+            .organization-name,
+            .position-name {
+              @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+              background-color: transparent;
+              border: 0.3rem groove rgba($secondaryColor, 0.75);
+              padding: 1rem;
+              &:focus {
+                outline: none;
+              }
+              &:focus::-webkit-input-placeholder,
+              &:focus::placeholder {
+                opacity: 1;
+              }
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-13rem, -3.25rem) scale(0.85);
+              }
+              &-label {
+                @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+                transition: transform 0.75s;
+                transform: translate(-12rem, 0);
+              }
+            }
+            .position-name {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-15rem, -3.25rem) scale(0.85);
+              }
+              &-label {
+                transform: translate(-14rem);
+              }
+            }
+          }
+        }
+
         &-email-container {
-          @include SizeAndPositioning (relative, 10%, 86.75%, flex, center, center, 0, 0, 0);
+          @include SizeAndPositioning(relative, 7.5%, 86.75%, flex, center, center, 0, 0, 0);
           flex-direction: column-reverse;
-          margin: 2rem 0 2rem;
+          margin: 1.25rem 0 1.25rem;
           .email {
-            @include SizeAndPositioning (relative, 100%, 100%, flex, center, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
             background-color: transparent;
-            border: .3rem groove rgba($secondaryColor, .75);
+            border: 0.3rem groove rgba($secondaryColor, 0.75);
             padding: 1rem;
-            &:focus::-webkit-input-placeholder, &:focus::placeholder {
+            &:focus {
+              outline: none;
+            }
+            &:focus::-webkit-input-placeholder,
+            &:focus::placeholder {
               opacity: 1;
             }
-            &:not(:placeholder-shown) + label, &:focus + label {
-              transform: translate(-34.75rem, -3.75rem) scale(.85);
+            &:not(:placeholder-shown) + label,
+            &:focus + label {
+              transform: translate(-34.75rem, -3.25rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning (absolute, 40%, 30%, flex, center, center, 0, 0, 0);
-              transition: transform .75s;
+              @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+              transition: transform 0.75s;
               transform: translate(-33.5rem, 0);
             }
           }
         }
+        &-subject-container {
+          @include SizeAndPositioning(relative, 7.5%, 86.75%, flex, center, center, 0, 0, 0);
+          flex-direction: column-reverse;
+          margin: 1.25rem 0 1.25rem;
+          .subject {
+            @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+            background-color: transparent;
+            border: 0.3rem groove rgba($secondaryColor, 0.75);
+            padding: 1rem;
+            &:focus {
+              outline: none;
+            }
+            &:focus::-webkit-input-placeholder,
+            &:focus::placeholder {
+              opacity: 1;
+            }
+            &:not(:placeholder-shown) + label,
+            &:focus + label {
+              transform: translate(-37.25rem, -3.25rem) scale(0.85);
+            }
+            &-label {
+              @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+              transition: transform 0.75s;
+              transform: translate(-36.25rem, 0);
+            }
+          }
+        }
         &-text-message-container {
-          @include SizeAndPositioning (relative, 35%, 86.75%, flex, center, center, 0, 0, 0);
+          @include SizeAndPositioning(relative, 30%, 86.75%, flex, center, center, 0, 0, 0);
           flex-direction: column-reverse;
           margin: 2rem 0 2rem;
           .message {
-            @include SizeAndPositioning (relative, 100%, 100%, flex, center, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
             background-color: transparent;
-            border: .3rem groove rgba($secondaryColor, .75);
+            border: 0.3rem groove rgba($secondaryColor, 0.75);
             padding: 1rem;
-            &:focus::-webkit-input-placeholder, &:focus::placeholder {
+            &:focus {
+              outline: none;
+            }
+            &:focus::-webkit-input-placeholder,
+            &:focus::placeholder {
               opacity: 1;
             }
-            &:not(:placeholder-shown) + label, &:focus + label {
-              transform: translate(-37.5rem, -12.35rem) scale(.85);
+            &:not(:placeholder-shown) + label,
+            &:focus + label {
+              transform: translate(-37.5rem, -10.65rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning (absolute, 20%, 15%, flex, center, center, 0, 0, 0);
-              transition: transform .75s;
-              transform: translate(-36.5rem, -8.6rem);
+              @include SizeAndPositioning(absolute, 20%, 15%, flex, center, center, 0, 0, 0);
+              transition: transform 0.75s;
+              transform: translate(-36.5rem, -7rem);
             }
             resize: none;
           }
         }
         &-submit-container {
-          @include SizeAndPositioning (relative, 15%, 100%, flex, center, center, 0, 0, 0);
-          margin: 2rem 0 4rem;
+          @include SizeAndPositioning(relative, 5rem, 100%, flex, center, center, 0, 0, 0);
+          margin: 2rem 0 2rem;
           .submit-message-button {
-            @include SizeAndPositioning (relative, 100%, 30%, flex, center, center, 0, 0, 0);
-            background-color: rgba($secondaryColor, .8);
-            border: .3rem groove rgba($secondaryColor, .75);
-            transition: background-color .5s, border .5s, color .5s;
+            @include SizeAndPositioning(relative, 100%, 30%, flex, center, center, 0, 0, 0);
+            background-color: rgba($secondaryColor, 0.8);
+            border: 0.3rem groove rgba($secondaryColor, 0.75);
+            transition: background-color 0.5s, border 0.5s, color 0.5s;
             &:hover {
               cursor: pointer;
               background-color: $secondaryColor;
-              border: .3rem groove $secondaryColor;
+              border: 0.3rem groove $secondaryColor;
             }
             &:active {
               background-color: $primaryColor;
-              border: .3rem groove $primaryColor;
+              border: 0.3rem groove $primaryColor;
               outline: none;
             }
           }
         }
 
         .input-good {
-          border: .3rem groove #008013;
+          border: 0.3rem groove #008013;
         }
         .input-bad {
-          border: .3rem groove #CF352E;
+          border: 0.3rem groove #cf352e;
         }
         .input-warning {
-          border: .3rem groove $primaryColor;
+          border: 0.3rem groove $primaryColor;
         }
 
-        ::-webkit-input-placeholder, ::placeholder {
+        ::-webkit-input-placeholder,
+        ::placeholder {
           opacity: 0;
-          transition: all .75s;
+          transition: all 0.75s;
         }
-
       }
-
     }
-
- }
- 
+  }
 }
