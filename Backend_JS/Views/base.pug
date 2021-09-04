@@ -80,35 +80,5 @@ html.no-js
         section.grid-container
           header.section-header.column_4-18.row_3-3 Please Get In Touch
           //- form.contact-form.column_7-12.row_6-12(action="/v1/message/email" method="POST")
-          form.contact-form.column_7-12.row_6-12
-            block emailErrorContent
-            div.contact-form-message-container
-              p.contact-form-message-container--error= errorMessage
-            div.contact-form-name-container
-              div.contact-form-name-container--first-name
-                input.first-name#first-name(type="text", name="firstName", placeholder="What's your first name?", required)
-                label.first-name-label#firstNameLabel(for="firstName") First Name
-              div.contact-form-name-container--last-name
-                input.last-name#lastName(type="text", name="lastName", placeholder="What's your last name?", required)
-                label.last-name-label#lastNameLabel(for="lastName") Last Name
-            div.contact-form-organization-container
-              div.contact-form-organization-container--organization
-                input.organization-name#organization-name(type="text", name="organization", placeholder="Please identify your organization.", required)
-                label.organization-name-label#organizationNameLabel(for="organization") Organization
-              div.contact-form-organization-container--position
-                input.position-name#positionName(type="text", name="position", placeholder="What's your last name?", required)
-                label.position-name-label#positionNameLabel(for="position") Position
-            div.contact-form-email-container
-              input.email#email(type="email", name="email", placeholder="What's your email address?", required)
-              label.email-label#emailLabel(for="email") Email Address
-            div.contact-form-subject-container
-              input.subject#subject(type="text", name="subject", placeholder="What's the subject of your message?", required)
-              label.subject-label#subjectLabel(for="subject") Subject
-            div.contact-form-text-message-container
-              textarea.message#message(name="message", cols="30", rows="10", placeholder="Please enter your message here! 😃", required)
-              label.message-label#messageLabel(for="message") Message
-            div.contact-form-submit-container
-              button.submit-message-button#submitMessageButton Submit Message
-            block emailSuccessContent
-            div.contact-form-message-container
-              p.contact-form-message-container--success= successMessage
+          block formContent
+            include _landing

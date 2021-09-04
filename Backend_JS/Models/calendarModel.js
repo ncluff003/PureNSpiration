@@ -1,21 +1,10 @@
+/////////////////////////////////////////
+//  Calendar Class
 class Calendar {
   constructor() {
     this.date = new Date();
     this.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    this.months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
+    this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     this.monthIndex = this.date.getMonth();
     this.hour;
     this.hours = this.date.getHours();
@@ -45,7 +34,7 @@ class Calendar {
     return this.date.getDate();
   }
 
-  getGreeting(hours) {
+  getGreeting() {
     if (this.hours < 12) {
       return (this.greeting = `Good morning`);
     }

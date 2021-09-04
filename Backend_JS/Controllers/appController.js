@@ -3,27 +3,30 @@
 
 ////////////////////////////////////////////
 //  Third Party Modules
-const express = require('express');
 
 ////////////////////////////////////////////
 //  Third Party Config Files
 
 ////////////////////////////////////////////
 //  Third Party Middleware
-const router = express.Router();
 
 ////////////////////////////////////////////
 //  My Middleware
-const appController = require(`./../Controllers/appController`);
-const messageController = require(`./../Controllers/messageController`);
+const catchAsync = require(`./../Utilities/catchAsync`);
+const AppError = require(`./../Utilities/appError`);
 
 ////////////////////////////////////////////
 //  Routing Middleward
-router.route(`/`).get(appController.renderApp).post(messageController.validateEmail, messageController.emailMe);
 
 ////////////////////////////////////////////
 //  My Modules
 
 ////////////////////////////////////////////
-//  Exported Router
-module.exports = router;
+//  Exported Controllers
+exports.renderApp = catchAsync(async (request, response) => {
+  response.status(200).render(`base`, {
+    title: `Pure 'N' Spiration`,
+    errorMessage: '',
+    successMessage: '',
+  });
+});

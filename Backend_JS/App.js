@@ -7,33 +7,38 @@ const url = require('url');
 ////////////////////////////////////////////
 //  Third Party Modules
 const express = require('express');
-const path = require(`path`);
+const path = require('path');
 const dotenv = require('dotenv');
 const bodyParser = require(`body-parser`);
 const pug = require('pug');
+const reload = require('reload');
+const sanitizer = require(`express-autosanitizer`);
 
 ////////////////////////////////////////////
-//  Middleware
+//  Third Party Config Files
+
+////////////////////////////////////////////
+//  Third Party Middleware
+
+////////////////////////////////////////////
+//  My Middleware
+const appRouter = require(`./Routes/appRoutes`);
 
 ////////////////////////////////////////////
 //  My Modules
-const appRouter = require(`./Routes/appRoutes`);
 const App = express();
 
+////////////////////////////////////////////
+//  App Middleware
 App.set(`view engine`, `pug`);
 App.set(`views`, path.join(__dirname, `Views`));
-// The only reason this works is because of express.static rather than giving the route handler an actual route to handle for the root.
-// App.use(express.static(`${__dirname}../Public`));
-
-// App.use(bodyParser.urlencoded({ extended: true }));
 App.use(express.urlencoded({ extended: true, limit: '10kb' }));
-// App.use(express.static(path.join(__dirname, `../Public`)));
-
+App.use(sanitizer.allUnsafe);
 App.use(express.static(path.resolve(`${__dirname}/../`, `Public/`)));
-// Eventually, I will make this so that if the query string is both the root '/', or a hash symol after a forward slash '/#', the index.html page will be returned.
-
-// App.use(`/v1/message`, messageRouter);
 App.use(`/`, appRouter);
+
+////////////////////////////////////////////
+//  App Global Error Handling Middleware
 
 App.all(`*`, (request, response, next) => {
   response.status(404).json({
@@ -43,4 +48,6 @@ App.all(`*`, (request, response, next) => {
   next();
 });
 
+////////////////////////////////////////////
+//  Exporting App
 module.exports = App;

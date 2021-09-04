@@ -1,123 +1,20 @@
 ////////////////////////////////////////////////
 // IMPORTED VALUES
-import { Story } from './Story.js';
-import { Card, cardShell, childElement } from './Card.js';
+import { Paragraph } from './Paragraph.js';
+import { Skill } from './skillCard.js';
+import { Project } from './projectCard.js';
 import { emailMe } from './Email';
-///////////////////////////////////////////////
-// PARAGRAPH CLASS -- STORY CHILD
-class Paragraph extends Story {
-  constructor(options) {
-    const superOpts = { ...options };
-    super(superOpts);
-  }
-  _startErasing() {
-    this.interval = setInterval(() => {
-      this._erase(this.container, this.story, this.cursor);
-    }, 50);
-  }
-  _startTyping() {
-    this.interval = setInterval(() => {
-      this._type(this.container, this.story, this.cursor);
-    }, 100);
-  }
-}
-///////////////////////////////////////////////
-// SKILL CLASS -- CARD CHILD
-class Skill extends Card {
-  constructor(options) {
-    const superOpts = { ...options };
-    super(superOpts);
-  }
-  _produceSkillCard(skillImage, skillTitle) {
-    this._createCardOuterShell('div', 'skill-card'); // Create The Card.
-    cardShell.classList.add(`column_1-1`, `row_1-1`);
-    this._createCardElement('div', 'skill-image-container') // Create Create The Image Container
-      ._insertHTML(childElement, 'beforeend', skillImage) // Insert Image Into Image Container.
-      ._attachElement(cardShell, childElement, 'beforeend') // Attach Image Container To The Card.
-      ._createCardElement('div', 'skill-title-container') // Create The Title Container
-      ._insertHTML(childElement, 'beforeend', skillTitle) // Insert The Title Into Its Container
-      ._attachElement(cardShell, childElement, 'beforeend') // Attach Title Container To The Card
-      ._attachElement(showcase[0], cardShell, 'beforeend'); // Attach The Card To The DOM Element.
-  }
-}
-///////////////////////////////////////////////
-// PROJECT CLASS -- CARD CHILD
-class Project extends Card {
-  constructor(options) {
-    const superOpts = { ...options };
-    super(superOpts);
-    this.backgroundColor = options.backgroundColor;
-    this.textColor = options.textColor;
-    this.description = options.description;
-    this.link = options.link;
-    this.repository = options.repository;
-  }
-  _selectProjectColors(element, projectBGColor, projectTextColor) {
-    element.style.backgroundColor = projectBGColor;
-    element.style.color = projectTextColor;
-    return element, this;
-  }
-  _createProjectLinkContainer(parentingElement, projectLink1, projectLink2) {
-    this._createCardElement('div', 'project-card-content-link-container')._attachElement(
-      parentingElement,
-      childElement,
-      'beforeend',
-    );
-    let childEl = childElement;
-    this._createCardElement('a', 'project-card-content-link-container--link')
-      ._insertHTML(childElement, 'beforeend', 'View Code', projectLink2)
-      ._attachElement(childEl, childElement, 'beforeend')
-      ._createCardElement('a', 'project-card-content-link-container--link')
-      ._insertHTML(childElement, 'beforeend', `Go To Site`, projectLink1)
-      ._attachElement(childEl, childElement, 'beforeend');
-    return this;
-  }
-  _createProjectContent(parentElement, projectDescription, projectLink1, projectLink2) {
-    this._createCardElement('div', 'project-card-content');
-    let childEl = childElement;
-    this._attachElement(parentElement, childEl, 'beforeend')
-      ._createCardElement('div', 'project-card-content-description-container')
-      ._attachElement(childEl, childElement, 'beforeend')
-      ._insertHTML(childElement, 'beforeend', projectDescription)
-      ._createProjectLinkContainer(childEl, projectLink1, projectLink2);
-    return this;
-  }
-  _createProjectCover(parentElement, projectImage, projectTitle, projectBGColor, projectTextColor) {
-    cardShell.classList.add(`column_1-1`, `row_1-1`);
-    this._createCardElement('div', 'project-card-cover')._attachElement(parentElement, childElement, `beforeend`);
-    let childEl = childElement;
-    this._createCardElement('div', 'project-card-cover-image-container')
-      ._attachElement(childEl, childElement, 'beforeend')
-      ._insertHTML(childElement, 'beforeend', projectImage)
-      ._createCardElement('div', 'project-card-cover-title-container')
-      ._insertHTML(childElement, 'beforeend', projectTitle)
-      ._selectProjectColors(childElement, projectBGColor, projectTextColor)
-      ._attachElement(childEl, childElement, 'beforeend')
-      ._attachElement(showcase[1], parentElement, 'beforeend');
-    return parentElement, childElement, this;
-  }
-  _getProjectCount(index) {
-    let projectCount = document.getElementsByClassName('project-count')[0];
-    projectCount.textContent = `${index + 1} / ${projectCards.length}`;
-  }
-  _produceProjectCard(
-    projectImage,
-    projectTitle,
-    projectBGColor,
-    projectTextColor,
-    projectDescription,
-    projectLink1,
-    projectLink2,
-  ) {
-    this._createCardOuterShell('div', 'project-card')
-      ._createProjectCover(cardShell, projectImage, projectTitle, projectBGColor, projectTextColor)
-      ._createProjectContent(cardShell, projectDescription, projectLink1, projectLink2);
-  }
-}
+
 ///////////////////////////////////////////////
 // PARAGRAPH VARIABLES
+let intervalName, intervalName2;
 
+//////////////////////////////////////////
 // -- INTRODUCTION PARAGRAPH VARIABLES -- //
+const introCursor = document.querySelector(`.typing-text--cursor`);
+const typingTextContent = document.getElementsByClassName(`typing-text--introduction`)[0];
+const introButtons = [...document.querySelectorAll(`.introduction-button`)];
+const introClasses = [`introduction-button--hiddenLeft`, `introduction-button--hiddenDown`, `introduction-button--hiddenRight`];
 const statements = [
   `Hello! Let me introduce myself.`,
   `My name is Nathan Cluff.`,
@@ -128,25 +25,18 @@ const statements = [
   `Scroll with the mouse, keyboard, & finger.`,
   `Thank you for visiting my site.`,
 ];
-const introCursor = document.querySelector(`.typing-text--cursor`);
-const typingTextContent = document.getElementsByClassName(`typing-text--introduction`)[0];
-const introButtons = [...document.querySelectorAll(`.introduction-button`)];
-const introClasses = [
-  `introduction-button--hiddenLeft`,
-  `introduction-button--hiddenDown`,
-  `introduction-button--hiddenRight`,
-];
+
+////////////////////////////////////
 // -- ABOUT PARAGRAPH VARIABLES -- //
+const aboutCursor = document.querySelector(`.about-typing-text--cursor`);
+const aboutTypingTextContent = document.getElementsByClassName(`about-typing-text`)[0];
+
 const missionStatement = [
   `This is my Mission Statement.`,
   `To improve the growth and`,
   `profitability of your organization`,
   `simultaneously with my skillset.`,
 ];
-const aboutCursor = document.querySelector(`.about-typing-text--cursor`);
-const aboutTypingTextContent = document.getElementsByClassName(`about-typing-text`)[0];
-// -- DUAL PARAGRAPH VARIABLES -- //
-let intervalName, intervalName2;
 ///////////////////////////////////////////////
 // PARAGRAPH OBJECTS
 const paragraph1 = new Paragraph({
@@ -165,45 +55,32 @@ const paragraph2 = new Paragraph({
   cursor: aboutCursor,
   interval: intervalName2,
 });
+
+///////////////////////////////////////////////
+// SKILL VARIABLES
 const showcase = document.querySelectorAll(`.showcase-grid`);
+
 //////////////////
 //  -- SKILLS --  //
-const html5 = new Skill({
-  title: `HTML5`,
-  image: `<i class='fab fa-html5'></i>`,
-});
-const css3 = new Skill({
-  title: `CSS3`,
-  image: `<i class='fab fa-css3-alt'></i>`,
-});
-const javascript = new Skill({
-  title: `JavaScript`,
-  image: `<i class='fab fa-js-square'></i>`,
-});
-const nodeJS = new Skill({
-  title: `Node.js`,
-  image: `<i class='fab fa-node-js'></i>`,
-});
-const scss = new Skill({ title: `SCSS`, image: `<i class='fab fa-sass'></i>` });
-const less = new Skill({ title: `Less`, image: `<i class='fab fa-less'></i>` });
-const vue = new Skill({
-  title: `Vue.js`,
-  image: `<i class='fab fa-vuejs'></i>`,
-});
-const git = new Skill({
-  title: `Git`,
-  image: `<i class='fab fa-git-square'></i>`,
-});
-const github = new Skill({
-  title: `Github`,
-  image: `<i class='fab fa-github-square'></i>`,
-});
+const html5 = new Skill({ title: `HTML5`, image: `<i class='fab fa-html5'></i>`, domElement: showcase[0] });
+const css3 = new Skill({ title: `CSS3`, image: `<i class='fab fa-css3-alt'></i>`, domElement: showcase[0] });
+const javascript = new Skill({ title: `JavaScript`, image: `<i class='fab fa-js-square'></i>`, domElement: showcase[0] });
+const nodeJS = new Skill({ title: `Node.js`, image: `<i class='fab fa-node-js'></i>`, domElement: showcase[0] });
+const scss = new Skill({ title: `SCSS`, image: `<i class='fab fa-sass'></i>`, domElement: showcase[0] });
+const less = new Skill({ title: `Less`, image: `<i class='fab fa-less'></i>`, domElement: showcase[0] });
+const vue = new Skill({ title: `Vue.js`, image: `<i class='fab fa-vuejs'></i>`, domElement: showcase[0] });
+const git = new Skill({ title: `Git`, image: `<i class='fab fa-git-square'></i>`, domElement: showcase[0] });
+const github = new Skill({ title: `Github`, image: `<i class='fab fa-github-square'></i>`, domElement: showcase[0] });
+
+///////////////////////////////////////
+//  -- SKILL ARRAY & CARD CREATION --  //
 const skills = [html5, css3, javascript, nodeJS, scss, less, vue, git, github];
 skills.forEach((s, i) => {
-  s._produceSkillCard(`${s.image}`, `${s.title}`);
+  s._produceSkillCard(`${s.image}`, `${s.title}`, s.domElement);
 });
-//////////////////
-// PROJECTS
+
+/////////////////////
+//  -- PROJECTS --  //
 const purenspiration = new Project({
   title: `Pure N Spiration`,
   image: `<img src="/CSS/Images/Computer_Desktop_Image.svg">`,
@@ -212,6 +89,7 @@ const purenspiration = new Project({
   description: `This is my project`,
   link: `#`,
   repository: `https://github.com/ncluff003/PureNSpiration`,
+  domElement: showcase[1],
 });
 
 const kingrichard = new Project({
@@ -222,20 +100,16 @@ const kingrichard = new Project({
   description: `This is my project`,
   link: `../../../KingRichard-Budget/Public/DIST/index.html`,
   repository: `https://github.com/ncluff003/KingRichard-Budget`,
+  domElement: showcase[1],
 });
 
+//////////////////////////////////////////
+//  -- PROJECT ARRAY & CARD CREATION --  //
 const projects = [purenspiration, kingrichard];
 projects.forEach((p, i) => {
-  p._produceProjectCard(
-    `${p.image}`,
-    `${p.title}`,
-    `${p.backgroundColor}`,
-    `${p.textColor}`,
-    `${p.description}`,
-    `${p.link}`,
-    `${p.repository}`,
-  );
+  p._produceProjectCard(`${p.image}`, `${p.title}`, `${p.backgroundColor}`, `${p.textColor}`, `${p.description}`, `${p.link}`, `${p.repository}`, p.domElement);
 });
+
 ///////////////////////////////////////////////
 // APP CLASS
 class App {
@@ -262,6 +136,7 @@ class App {
     this._createCardButtonNavigation(showcase[1]);
     this._watchCardButtons(projectCards, showcase[1]);
   }
+
   _goToCard(cardType, index, prevCards, nextCards) {
     let prevCardsReverse = prevCards.reverse();
 
@@ -277,9 +152,7 @@ class App {
       i - index === 0
         ? (card.style.transform = `translate(${0}% , ${-8}%)`)
         : i - index === 1 || i - index > 1
-        ? (card.style.transform = `translate(${
-            100 * (i - index) + 200 + (nextCards.indexOf(card) + 1) * 15
-          }% , ${-8}%)`)
+        ? (card.style.transform = `translate(${100 * (i - index) + 200 + (nextCards.indexOf(card) + 1) * 15}% , ${-8}%)`)
         : '';
     });
   }
@@ -301,12 +174,8 @@ class App {
         if (cardContainer.getBoundingClientRect().top <= 523 && cardContainer.getBoundingClientRect().bottom >= 686) {
           index <= 0 && cardContainer === showcase[0] ? (index = cardType.length - 1) : index--;
           index <= -1 ? (index = cardType.length - 1) : index >= cardType.length ? (index = 0) : index;
-          cardType === skillCards
-            ? this._prevCard(cardType, index)
-            : cardType === projectCards
-            ? this._prevCard(cardType, index)
-            : '';
-          cardType === projectCards ? projects[projects.length - 1]._getProjectCount(index) : e.key;
+          cardType === skillCards ? this._prevCard(cardType, index) : cardType === projectCards ? this._prevCard(cardType, index) : '';
+          cardType === projectCards ? projects[projects.length - 1]._getProjectCount(index, projectCards) : e.key;
           console.log(index);
         }
       }
@@ -314,12 +183,8 @@ class App {
         if (cardContainer.getBoundingClientRect().top <= 523 && cardContainer.getBoundingClientRect().bottom >= 686) {
           index >= cardType.length - 1 ? (index = 0) : index++;
           index <= -1 ? (index = cardType.length - 1) : index >= cardType.length ? (index = 0) : index;
-          cardType === skillCards
-            ? this._nextCard(cardType, index)
-            : cardType === projectCards
-            ? this._nextCard(cardType, index)
-            : '';
-          cardType === projectCards ? projects[projects.length - 1]._getProjectCount(index) : e.key;
+          cardType === skillCards ? this._nextCard(cardType, index) : cardType === projectCards ? this._nextCard(cardType, index) : '';
+          cardType === projectCards ? projects[projects.length - 1]._getProjectCount(index, projectCards) : e.key;
           console.log(index);
         }
       }
@@ -328,7 +193,7 @@ class App {
   }
   _setUpCards(cardType, index) {
     if (cardType === projectCards) {
-      projects[projects.length - 1]._getProjectCount(index);
+      projects[projects.length - 1]._getProjectCount(index, projectCards);
     }
     cardType.forEach((card, i) => {
       i - index === 0
@@ -368,11 +233,11 @@ class App {
 
       if (cardType === projectCards && clickedButton.classList.contains(`card-button-left`)) {
         this._prevCard(cardType, index2);
-        purenspiration._getProjectCount(index2);
+        purenspiration._getProjectCount(index2, projectCards);
       }
       if (cardType === projectCards && clickedButton.classList.contains(`card-button-right`)) {
         this._nextCard(cardType, index2);
-        purenspiration._getProjectCount(index2);
+        purenspiration._getProjectCount(index2, projectCards);
       }
     });
   }
@@ -388,10 +253,7 @@ class App {
   }
   _createDots() {
     slideOptions.forEach((_, i) => {
-      optionNavContainer.insertAdjacentHTML(
-        `beforeend`,
-        `<button class="about-me-container__option-navigation__dot" data-sliderOption="${i}"></button>`,
-      );
+      optionNavContainer.insertAdjacentHTML(`beforeend`, `<button class="about-me-container__option-navigation__dot" data-sliderOption="${i}"></button>`);
     });
   }
   _activateDot(slide) {
@@ -454,19 +316,15 @@ class App {
   _revealButton() {
     const revealButtonInterval = setInterval(() => {
       if (paragraph1.story === statements && paragraph1.currentStatement === 1) {
-        console.log(paragraph1.currentStatement);
         introButtons[paragraph1.currentStatement - 1].classList.remove(introClasses[paragraph1.currentStatement - 1]);
       }
       if (paragraph1.story === statements && paragraph1.currentStatement === 4) {
-        console.log(paragraph1.currentStatement);
         introButtons[paragraph1.currentStatement - 3].classList.remove(introClasses[paragraph1.currentStatement - 3]);
       }
       if (paragraph1.story === statements && paragraph1.currentStatement === 7) {
-        console.log(paragraph1.currentStatement);
         introButtons[paragraph1.currentStatement - 5].classList.remove(introClasses[paragraph1.currentStatement - 5]);
         setTimeout(() => {
           clearInterval(revealButtonInterval);
-          console.log(`Interval Cleared!`);
         }, 1000);
       }
     }, 2900);
@@ -495,7 +353,6 @@ class App {
           const email = document.querySelector(`.email`).value;
           const subject = document.querySelector(`.subject`).value;
           const message = document.querySelector(`.message`).value;
-          console.log(firstName, lastName, organization, position, email, subject, message);
           emailMe(firstName, lastName, organization, position, email, subject, message);
         });
       }
@@ -525,7 +382,6 @@ const slideOptions = document.querySelectorAll(`.about-me-container__option-slid
 const optionNavContainer = document.querySelector(`.about-me-container__option-navigation`);
 const skillCards = [...document.querySelectorAll(`.skill-card`)];
 const projectCards = [...document.querySelectorAll(`.project-card`)];
-const submitMessageButton = document.querySelector(`.submit-message-button`);
 const contactForm = document.querySelector(`.contact-form`);
 const revealSectionOptions = {
   root: null,

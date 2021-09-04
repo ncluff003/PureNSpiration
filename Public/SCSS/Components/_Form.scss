@@ -18,6 +18,9 @@
 
         &-message-container {
           @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+          &--error {
+            margin-bottom: 2.75rem;
+          }
         }
 
         &-name-container {
@@ -42,12 +45,12 @@
               }
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-13.5rem, -3.25rem) scale(0.85);
+                transform: translate(-8.5rem, -3.35rem) scale(0.85);
               }
               &-label {
-                @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+                @include SizeAndPositioning(absolute, 40%, 60%, flex, center, center, 0, 0, 0);
                 transition: transform 0.75s;
-                transform: translate(-12.5rem, 0);
+                transform: translate(-6.5rem, 0);
               }
             }
           }
@@ -75,21 +78,21 @@
               }
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-13rem, -3.25rem) scale(0.85);
+                transform: translate(-8.25rem, -3.35rem) scale(0.85);
               }
               &-label {
-                @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+                @include SizeAndPositioning(absolute, 40%, 80%, flex, center, center, 0, 0, 0);
                 transition: transform 0.75s;
-                transform: translate(-12rem, 0);
+                transform: translate(-6rem, 0);
               }
             }
             .position-name {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-15rem, -3.25rem) scale(0.85);
+                transform: translate(-10.25rem, -3.35rem) scale(0.85);
               }
               &-label {
-                transform: translate(-14rem);
+                transform: translate(-8.25rem);
               }
             }
           }
@@ -113,12 +116,12 @@
             }
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-34.75rem, -3.25rem) scale(0.85);
+              transform: translate(-30rem, -3.35rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(absolute, 40%, 40%, flex, center, center, 0, 0, 0);
               transition: transform 0.75s;
-              transform: translate(-33.5rem, 0);
+              transform: translate(-28rem, 0);
             }
           }
         }
@@ -140,12 +143,12 @@
             }
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-37.25rem, -3.25rem) scale(0.85);
+              transform: translate(-32.5rem, -3.35rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning(absolute, 40%, 30%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(absolute, 40%, 40%, flex, center, center, 0, 0, 0);
               transition: transform 0.75s;
-              transform: translate(-36.25rem, 0);
+              transform: translate(-31rem, 0);
             }
           }
         }
@@ -167,12 +170,12 @@
             }
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-37.5rem, -10.65rem) scale(0.85);
+              transform: translate(-32.75rem, -10.65rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning(absolute, 20%, 15%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(absolute, 20%, 25%, flex, center, center, 0, 0, 0);
               transition: transform 0.75s;
-              transform: translate(-36.5rem, -7rem);
+              transform: translate(-31.25rem, -7rem);
             }
             resize: none;
           }

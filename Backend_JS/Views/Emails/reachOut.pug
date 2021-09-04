@@ -2,7 +2,7 @@ extends baseEmail
 
 block emailContent 
   div.email-header
-    p.name Nathan,
+    p.name #{greeting} Nathan,
     div.timeAndDate
       p.date-stamp #{weekday}, #{day} #{month} #{year}
       p.time-stamp #{hour}:#{minutes} #{timeOfDay}

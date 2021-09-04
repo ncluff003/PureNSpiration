@@ -1,10 +1,23 @@
+////////////////////////////////////////////
+//  Core Modules
+
+////////////////////////////////////////////
+//  Third Party Modules;
 const nodemailer = require(`nodemailer`);
 const pug = require(`pug`);
 const htmlToText = require(`html-to-text`);
-const Calendar = require(`./calendarModel`);
 
-// Sample Greeting `Good morning Nathan.  You have a message from {first name here}.  It is about {email subject here}.
-// I might add more things to this email at a later date, but for now, I can personally respond to whatever might be sent.
+////////////////////////////////////////////
+//  Third Party Config Files
+
+////////////////////////////////////////////
+//  Middleware
+
+////////////////////////////////////////////
+//  My Modules
+const Calendar = require(`./calendarModel`);
+////////////////////////////////////////////
+//  Email Class
 module.exports = class Email {
   constructor(firstName, lastName, organization, position, emailAddress, emailSubject, message) {
     this.to = process.env.MY_EMAIL;
@@ -14,12 +27,12 @@ module.exports = class Email {
     this.organization = organization;
     this.position = position;
     this.subject = emailSubject;
-    this.greeting = Calendar.getGreeting(Calendar.getHour()); // This will be programattically made from our end.
+    this.greeting = Calendar.getGreeting();
     this.message = message;
   }
 
   makeTransport() {
-    if (process.env.ENVIRONMENT === `PRODUCTION`) {
+    if (process.env.NODE_ENV === `production`) {
       return nodemailer.createTransport({
         // host: `mail.privateemail.com`, // This is a 2 Month Trial At The Moment With Namecheap.  Likely to be cancelled that is for sure.
         // secure: true,
@@ -49,9 +62,7 @@ module.exports = class Email {
     });
   }
 
-  // Sample Greeting `Good morning Nathan.  You have a message from {first name here}.  It is about {email subject here}.
   async _send(template) {
-    // Sends the actual email.  This is a more broad function that each more specific method will call with very specific arguments.
     const html = pug.renderFile(`${__dirname}/../Views/Emails/${template}.pug`, {
       from: this.from,
       to: this.to,
@@ -61,9 +72,8 @@ module.exports = class Email {
       position: this.position,
       subject: this.subject,
       message: this.message,
-      // p #{greeting} #{firstName} #{lastName}, you have received this email at #{hour}:#{minutes} #{timeOfDay} on #{day}/#{month}/#{year}.
-      // Everything Below Will Be Programattically Done.  It Is Vital To The Email Template I Plan On Creating.
-      // Hour : Minutes : Timeofday | Day / Month / Year
+
+      // Prgrammatically Done Values
       greeting: this.greeting,
       hour: Calendar.getHour(),
       minutes: Calendar.getMinutes(),
