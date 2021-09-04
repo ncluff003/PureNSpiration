@@ -3,19 +3,25 @@
 
 ////////////////////////////////////////////
 //  Third Party Modules
-const express = require(`express`);
-const pug = require(`pug`);
+
+////////////////////////////////////////////
+//  Third Party Module Instances
 
 ////////////////////////////////////////////
 //  Third Party Config Files
 
 ////////////////////////////////////////////
-//  Middleware
+//  Third Party Middleware
+
+////////////////////////////////////////////
+//  My Middleware
+
+////////////////////////////////////////////
+//  Routing Middleware
 
 ////////////////////////////////////////////
 //  My Modules
 const catchAsync = require(`./../Utilities/catchAsync`);
-const AppError = require(`./../Utilities/appError`);
 const Validate = require(`./../Models/validationModel`);
 const Email = require(`./../Models/emailModel`);
 
@@ -26,9 +32,6 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
     const postBody = request.body;
     console.log(postBody);
     console.log(`Validating Email. 🤞`);
-    // if (!Validate.isName(postBody.firstName)) {
-    //   return next(new AppError(`Your first name is not valid`), 400);
-    // }
     if (!Validate.isName(postBody.firstName)) throw new Error(`Please give your first name with letters only.`);
     if (!Validate.isName(postBody.lastName)) throw new Error(`Please give your last name with letters only.`);
     if (!Validate.isCompany(postBody.organization)) throw new Error(`Please provide your company's name without the following characters: #, %, *, =, +`);
@@ -40,7 +43,6 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
         `Please tell me the subject of this message using letters, numbers, & the following symbols: ~, !, $, %, #, *, (, ), -, |, ?, ., :, ', ", `,
       );
     if (postBody.message === '') throw new Error(`Please do not leave message box empty.`);
-    console.log(Validate.isEmail(postBody.email));
     console.log(`Email Passed Validation! 😄`);
   } catch (error) {
     return response.status(400).json({
@@ -53,7 +55,6 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
 
 exports.emailMe = catchAsync(async (request, response, next) => {
   const postBody = request.body;
-  console.log(postBody);
   await new Email(
     postBody.firstName,
     postBody.lastName,

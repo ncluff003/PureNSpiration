@@ -5,18 +5,20 @@
 //  Third Party Modules
 
 ////////////////////////////////////////////
-//  Third Party Config Files
+//  Third Party Module Instances
 
 ////////////////////////////////////////////
 //  Third Party Middleware
 
 ////////////////////////////////////////////
-//  My Middleware
-const catchAsync = require(`./../Utilities/catchAsync`);
-const AppError = require(`./../Utilities/appError`);
+//  Third Party Config Files
 
 ////////////////////////////////////////////
-//  Routing Middleward
+//  My Middleware
+const catchAsync = require(`./../Utilities/catchAsync`);
+
+////////////////////////////////////////////
+//  Routing Middleware
 
 ////////////////////////////////////////////
 //  My Modules

@@ -170,9 +170,11 @@ html {
         &-message-container {
           &--error {
             color: #cf352e;
+            font-size: 1.4rem;
           }
           &--success {
             color: #008013;
+            font-size: 1.4rem;
           }
         }
 
@@ -186,6 +188,18 @@ html {
               background-color: transparent;
               border: 0.3rem groove rgba($secondaryColor, 0.75);
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+                & + label {
+                  color: #cf352e;
+                }
+              }
+              &:valid {
+                color: #008013;
+                & + label {
+                  color: #008013;
+                }
+              }
             }
           }
         }
@@ -200,6 +214,18 @@ html {
               background-color: transparent;
               border: 0.3rem groove rgba($secondaryColor, 0.75);
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+                & + label {
+                  color: #cf352e;
+                }
+              }
+              &:valid {
+                color: #008013;
+                & + label {
+                  color: #008013;
+                }
+              }
             }
           }
         }
@@ -211,7 +237,17 @@ html {
             background-color: transparent;
             border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: $secondaryColor;
-            &-label {
+            &:invalid {
+              color: #cf352e;
+              & + label {
+                color: #cf352e;
+              }
+            }
+            &:valid {
+              color: #008013;
+              & + label {
+                color: #008013;
+              }
             }
           }
         }
@@ -223,7 +259,17 @@ html {
             background-color: transparent;
             border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: $secondaryColor;
-            &-label {
+            &:invalid {
+              color: #cf352e;
+              & + label {
+                color: #cf352e;
+              }
+            }
+            &:valid {
+              color: #008013;
+              & + label {
+                color: #008013;
+              }
             }
           }
         }
@@ -234,7 +280,17 @@ html {
             background-color: transparent;
             border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: $secondaryColor;
-            &-label {
+            &:invalid {
+              color: #cf352e;
+              & + label {
+                color: #cf352e;
+              }
+            }
+            &:valid {
+              color: #008013;
+              & + label {
+                color: #008013;
+              }
             }
           }
         }

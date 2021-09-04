@@ -6,11 +6,14 @@
 const express = require('express');
 
 ////////////////////////////////////////////
-//  Third Party Config Files
+//  Third Party Module Instances
 
 ////////////////////////////////////////////
 //  Third Party Middleware
 const router = express.Router();
+
+////////////////////////////////////////////
+//  Third Party Config Files
 
 ////////////////////////////////////////////
 //  My Middleware
@@ -18,7 +21,7 @@ const appController = require(`./../Controllers/appController`);
 const messageController = require(`./../Controllers/messageController`);
 
 ////////////////////////////////////////////
-//  Routing Middleward
+//  Routing Middleware
 router.route(`/`).get(appController.renderApp).post(messageController.validateEmail, messageController.emailMe);
 
 ////////////////////////////////////////////

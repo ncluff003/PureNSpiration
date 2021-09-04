@@ -1,17 +1,37 @@
+////////////////////////////////////////////
+//  Core Modules
+
+////////////////////////////////////////////
+//  Third Party Modules
+
+////////////////////////////////////////////
+//  Third Party Module Instances
+
+////////////////////////////////////////////
+//  Third Party Config Files
+
+////////////////////////////////////////////
+//  Third Party Middleware
+
+////////////////////////////////////////////
+//  My Middleware
+
+////////////////////////////////////////////
+//  Routing Middleward
+
+////////////////////////////////////////////
+//  My Modules
+
 /////////////////////////////////////////
-//  Calendar Class
+//  Calendar Model
 class Calendar {
   constructor() {
     this.date = new Date();
     this.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     this.monthIndex = this.date.getMonth();
-    this.hour;
     this.hours = this.date.getHours();
     this.day = this.date.getDay();
-    this.greeting;
-    this.weekday;
-    this.timeOfDay;
   }
 
   getMinutes() {
@@ -46,7 +66,7 @@ class Calendar {
     }
   }
 
-  getWeekday(daysArray, weekday) {
+  getWeekday() {
     return this.days[this.day];
   }
 

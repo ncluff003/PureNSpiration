@@ -1,41 +1,43 @@
 ////////////////////////////////////////////
 //  Core Modules
-const fs = require('fs');
-const http = require('http');
-const url = require('url');
 
 ////////////////////////////////////////////
 //  Third Party Modules
 const express = require('express');
 const path = require('path');
-const dotenv = require('dotenv');
-const bodyParser = require(`body-parser`);
-const pug = require('pug');
-const reload = require('reload');
+
+////////////////////////////////////////////
+//  Third Party Module Instances
+const App = express();
+
+////////////////////////////////////////////
+//  Third Party Middleware
 const sanitizer = require(`express-autosanitizer`);
 
 ////////////////////////////////////////////
 //  Third Party Config Files
+App.set(`view engine`, `pug`);
+App.set(`views`, path.join(__dirname, `Views`));
+App.use(express.static(path.resolve(`${__dirname}/../`, `Public/`)));
+App.use(express.urlencoded({ extended: true, limit: '10kb' }));
+App.use(sanitizer.allUnsafe);
 
 ////////////////////////////////////////////
-//  Third Party Middleware
-
-////////////////////////////////////////////
-//  My Middleware
+//  Routing Middleware
 const appRouter = require(`./Routes/appRoutes`);
 
 ////////////////////////////////////////////
-//  My Modules
-const App = express();
+//  My Middleware
+App.use(`/`, appRouter);
 
 ////////////////////////////////////////////
-//  App Middleware
-App.set(`view engine`, `pug`);
-App.set(`views`, path.join(__dirname, `Views`));
-App.use(express.urlencoded({ extended: true, limit: '10kb' }));
-App.use(sanitizer.allUnsafe);
-App.use(express.static(path.resolve(`${__dirname}/../`, `Public/`)));
-App.use(`/`, appRouter);
+//  My Modules
+
+////////////////////////////////////////////
+//  Exported Controllers
+
+////////////////////////////////////////////
+//  My Middleware
 
 ////////////////////////////////////////////
 //  App Global Error Handling Middleware

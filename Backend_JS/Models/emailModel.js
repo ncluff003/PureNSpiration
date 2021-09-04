@@ -8,16 +8,25 @@ const pug = require(`pug`);
 const htmlToText = require(`html-to-text`);
 
 ////////////////////////////////////////////
+//  Third Party Module Instances
+
+////////////////////////////////////////////
 //  Third Party Config Files
 
 ////////////////////////////////////////////
-//  Middleware
+//  Third Party Middleware
+
+////////////////////////////////////////////
+//  My Middleware
+
+////////////////////////////////////////////
+//  Routing Middleward
 
 ////////////////////////////////////////////
 //  My Modules
 const Calendar = require(`./calendarModel`);
 ////////////////////////////////////////////
-//  Email Class
+//  Email Model
 module.exports = class Email {
   constructor(firstName, lastName, organization, position, emailAddress, emailSubject, message) {
     this.to = process.env.MY_EMAIL;
@@ -34,15 +43,6 @@ module.exports = class Email {
   makeTransport() {
     if (process.env.NODE_ENV === `production`) {
       return nodemailer.createTransport({
-        // host: `mail.privateemail.com`, // This is a 2 Month Trial At The Moment With Namecheap.  Likely to be cancelled that is for sure.
-        // secure: true,
-        // port: process.env.SECURE_PORT,
-        // auth: {
-        //   user: process.env.NAMECHEAP_EMAIL,
-        //   pass: process.env.NAMECHEAP_PASSWORD,
-        // },
-        // debug: true,
-        // logger: true,
         host: `smtp.zoho.com`,
         secure: true,
         port: process.env.SECURE_PORT,
@@ -91,7 +91,6 @@ module.exports = class Email {
       html: html,
       text: htmlToText.fromString(html),
     };
-
     await this.makeTransport().sendMail(mailOptions);
   }
 

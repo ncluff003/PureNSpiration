@@ -114,9 +114,11 @@ html {
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-message-container--error {
   color: #cf352e;
+  font-size: 1.4rem;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-message-container--success {
   color: #008013;
+  font-size: 1.4rem;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container {
   margin: 3rem 0 1.5rem;
@@ -131,6 +133,26 @@ html {
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   color: #0047AB;
 }
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:invalid, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:invalid {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:invalid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:invalid + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:invalid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:invalid + label {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:valid, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:valid {
+  color: #008013;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:valid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:valid + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:valid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:valid + label {
+  color: #008013;
+}
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container {
   margin: 3rem 0 1.5rem;
 }
@@ -144,6 +166,26 @@ html {
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   color: #0047AB;
 }
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:invalid, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:invalid {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:invalid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:invalid + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:invalid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:invalid + label {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:valid, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:valid {
+  color: #008013;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:valid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:valid + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:valid + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:valid + label {
+  color: #008013;
+}
 .vertical-flex-container .flex-section .grid-container .contact-form-email-container {
   flex-direction: column-reverse;
   margin: 1.5rem 0 1.5rem;
@@ -152,6 +194,18 @@ html {
   background-color: transparent;
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   color: #0047AB;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:invalid {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:invalid + label {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:valid {
+  color: #008013;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:valid + label {
+  color: #008013;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-subject-container {
   flex-direction: column-reverse;
@@ -162,6 +216,18 @@ html {
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   color: #0047AB;
 }
+.vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:invalid {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:invalid + label {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:valid {
+  color: #008013;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:valid + label {
+  color: #008013;
+}
 .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container {
   flex-direction: column-reverse;
   margin: 1.5rem 0 1.5rem;
@@ -170,6 +236,18 @@ html {
   background-color: transparent;
   border: 0.3rem groove rgba(0, 71, 171, 0.75);
   color: #0047AB;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:invalid {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:invalid + label {
+  color: #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:valid {
+  color: #008013;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:valid + label {
+  color: #008013;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-submit-container {
   margin: 1.5rem 0 3rem;
@@ -37296,6 +37374,16 @@ html {
   transition: transform 0.75s;
   transform: translate(-6.5rem, 0);
 }
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:invalid, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:invalid {
+  border: 0.3rem groove #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:valid, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:valid {
+  border: 0.3rem groove #008013;
+}
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container {
   position: relative;
   height: 7.5%;
@@ -37362,6 +37450,16 @@ html {
   transition: transform 0.75s;
   transform: translate(-6rem, 0);
 }
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:invalid, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:invalid {
+  border: 0.3rem groove #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:valid, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:valid {
+  border: 0.3rem groove #008013;
+}
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus + label {
   transform: translate(-10.25rem, -3.35rem) scale(0.85);
 }
@@ -37411,6 +37509,12 @@ html {
   transition: transform 0.75s;
   transform: translate(-28rem, 0);
 }
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:invalid {
+  border: 0.3rem groove #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:valid {
+  border: 0.3rem groove #008013;
+}
 .vertical-flex-container .flex-section .grid-container .contact-form-subject-container {
   position: relative;
   height: 7.5%;
@@ -37453,6 +37557,12 @@ html {
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
   transform: translate(-31rem, 0);
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:invalid {
+  border: 0.3rem groove #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:valid {
+  border: 0.3rem groove #008013;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container {
   position: relative;
@@ -37497,6 +37607,12 @@ html {
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
   transform: translate(-31.25rem, -7rem);
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:invalid {
+  border: 0.3rem groove #cf352e;
+}
+.vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:valid {
+  border: 0.3rem groove #008013;
 }
 .vertical-flex-container .flex-section .grid-container .contact-form-submit-container {
   position: relative;
