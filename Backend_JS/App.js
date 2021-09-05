@@ -12,7 +12,6 @@ const App = express();
 
 ////////////////////////////////////////////
 //  Third Party Middleware
-const sanitizer = require(`express-autosanitizer`);
 
 ////////////////////////////////////////////
 //  Third Party Config Files
@@ -20,7 +19,6 @@ App.set(`view engine`, `pug`);
 App.set(`views`, path.join(__dirname, `Views`));
 App.use(express.static(path.resolve(`${__dirname}/../`, `Public/`)));
 App.use(express.urlencoded({ extended: true, limit: '10kb' }));
-App.use(sanitizer.allUnsafe);
 
 ////////////////////////////////////////////
 //  Routing Middleware

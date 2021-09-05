@@ -29,8 +29,9 @@ const Calendar = require(`./calendarModel`);
 //  Email Model
 module.exports = class Email {
   constructor(firstName, lastName, organization, position, emailAddress, emailSubject, message) {
-    this.to = process.env.MY_EMAIL;
-    this.from = `${firstName} ${lastName} -- <${emailAddress}>`;
+    this.to = process.env.NAMECHEAP_EMAIL;
+    this.from = `${firstName} ${lastName} -- ${emailAddress}`;
+    this.hostEmail = process.env.NAMECHEAP_EMAIL;
     this.firstName = firstName;
     this.lastName = lastName;
     this.organization = organization;
@@ -43,12 +44,12 @@ module.exports = class Email {
   makeTransport() {
     if (process.env.NODE_ENV === `production`) {
       return nodemailer.createTransport({
-        host: `smtp.zoho.com`,
-        secure: true,
+        host: 'mail.privateemail.com',
         port: process.env.SECURE_PORT,
+        secureConnection: true,
         auth: {
-          user: process.env.MY_EMAIL,
-          pass: process.env.EMAIL_PASSWORD,
+          user: process.env.NAMECHEAP_EMAIL,
+          pass: process.env.NAMECHEAP_PASSWORD,
         },
       });
     }
@@ -90,6 +91,10 @@ module.exports = class Email {
       subject: this.subject,
       html: html,
       text: htmlToText.fromString(html),
+      envelope: {
+        from: this.hostEmail,
+        to: this.to,
+      },
     };
     await this.makeTransport().sendMail(mailOptions);
   }

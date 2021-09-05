@@ -12,6 +12,7 @@
 
 ////////////////////////////////////////////
 //  Third Party Middleware
+const validator = require(`express-validator`);
 
 ////////////////////////////////////////////
 //  My Middleware
@@ -29,9 +30,19 @@ const Email = require(`./../Models/emailModel`);
 //  Exported Controllers
 exports.validateEmail = catchAsync(async (request, response, next) => {
   try {
+    // Make Easier Use Of Request Body
     const postBody = request.body;
-    console.log(postBody);
+    // Validate & More Importantly Sanitize With Express Validator
     console.log(`Validating Email. 🤞`);
+    await validator.check('firstName').isEmpty().trim().escape().run(request);
+    await validator.check('lastName').isEmpty().trim().escape().run(request);
+    await validator.check('organization').isEmpty().trim().escape().run(request);
+    await validator.check('position').isEmpty().trim().escape().run(request);
+    await validator.check('email').isEmpty().trim().escape().run(request);
+    await validator.check('subject').isEmpty().trim().escape().run(request);
+    await validator.check('message').isEmpty().trim().escape().run(request);
+
+    // Start Validating Using My Own Validators Of What I Expect.
     if (!Validate.isName(postBody.firstName)) throw new Error(`Please give your first name with letters only.`);
     if (!Validate.isName(postBody.lastName)) throw new Error(`Please give your last name with letters only.`);
     if (!Validate.isCompany(postBody.organization)) throw new Error(`Please provide your company's name without the following characters: #, %, *, =, +`);
