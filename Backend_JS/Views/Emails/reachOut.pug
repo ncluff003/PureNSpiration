@@ -6,13 +6,13 @@ block emailContent
     div.timeAndDate
       p.date-stamp #{weekday}, #{day} #{month} #{year}
       p.time-stamp #{hour}:#{minutes} #{timeOfDay}
-  blockquote.message-body
+  div.message-body
     - const messages = message.split(/\r?\n/);
     each message in messages
       p.paragraph #{message}
-    p.salutations Sincerely,
-    div.from-container
-      p.from #{from.split(' -- ')[0]}
-      p.from-position #{position}
-      p.from-organization #{organization}
-      p.from-email #{from.split(' -- ')[1]}
+  p.salutations Sincerely,
+  div.from-container
+    p.from #{from.split(' -- ')[0]}
+    p.from-position #{position}
+    p.from-organization #{organization}
+    p.from-email #{from.split(' -- ')[1]}

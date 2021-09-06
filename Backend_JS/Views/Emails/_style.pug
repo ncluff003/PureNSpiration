@@ -114,11 +114,13 @@ style.
 
   .message-body {
     padding: 2rem 4rem 1rem;
+    padding: 1rem;
     color: #FAFAFAAA;
+    border: none;
   }
 
   .message-body .paragraph {
-    text-indent: 5rem;
+    text-indent: 2.5rem;
   }
 
   .salutations {
@@ -126,7 +128,9 @@ style.
     grid-row: 1 / span 1;
     justify-self: flex-end;
     font-size: 20px;
-    transform: translate(28.5rem, .5rem);
+    display: flex;
+    justify-content: center;
+    
     color: #FFD700;
   }
 
@@ -140,28 +144,64 @@ style.
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    transform: translate(3rem, 0);
+    transform: translate(-13rem, -.5rem);
+    color: #FFD700;
+  }
+
+  .mail-detail-content .from-container {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    justify-self: flex-end;
+    margin-right: 3rem;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    transform: translate(-7rem, -1rem);
     color: #FFD700;
   }
 
   .from-container .from {
     font-size: 18px;
-    transform: translate(-8rem, 0);
   }
 
   .from-container .from-position {
     font-size: 12px;
-    transform: translate(-8rem, -1.2rem);
+    transform: translateY(-1.2rem);
   }
 
   .from-container .from-organization {
     font-size: 12px;
-    transform: translate(-8rem, -2.4rem);
+    transform: translateY(-2.4rem);
   }
 
   .from-container .from-email {
     font-size: 12px;
-    transform: translate(-8rem, -3.6rem);
+    transform: translateY(-3.6rem);
+  }
+
+  .mail-detail-content .from-container .from {
+    margin: .6rem 0;
+  }
+
+  .mail-detail-content .from-container .from-position {
+    transform: translateY(-1.2rem);
+    margin: .6rem 0;
+  }
+
+  .mail-detail-content .from-container .from-organization {
+    transform: translateY(-2.4rem);
+    margin: .6rem 0;
+  }
+
+  .mail-detail-content .from-container .from-email {
+    transform: translateY(-3.6rem);
+    margin: .6rem 0;
+    a[href] {
+      text-decoration: none;
+      color: #FFD700;
+    }
   }
 
   .horizontal-line {

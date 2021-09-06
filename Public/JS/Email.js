@@ -1,7 +1,5 @@
 import axios from 'axios';
 import qs from 'qs';
-import { Validate } from './Validate';
-import { showMessage } from './Message';
 
 export const emailMe = async (firstName, lastName, organization, position, email, subject, message) => {
   document.querySelector(`.contact-form-message-container--error`).textContent = '';

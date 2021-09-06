@@ -2,9 +2,9 @@
 // IMPORTED VALUES
 import { Card, cardShell, childElement } from './Card.js';
 
-export ///////////////////////////////////////////////
+///////////////////////////////////////////////
 // PROJECT CLASS -- CARD CHILD
-class Project extends Card {
+export class Project extends Card {
   constructor(options) {
     const superOpts = { ...options };
     super(superOpts);

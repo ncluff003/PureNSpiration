@@ -31,7 +31,6 @@ module.exports = class Email {
   constructor(firstName, lastName, organization, position, emailAddress, emailSubject, message) {
     this.to = process.env.NAMECHEAP_EMAIL;
     this.from = `${firstName} ${lastName} -- ${emailAddress}`;
-    this.hostEmail = process.env.NAMECHEAP_EMAIL;
     this.firstName = firstName;
     this.lastName = lastName;
     this.organization = organization;
@@ -46,10 +45,10 @@ module.exports = class Email {
       return nodemailer.createTransport({
         host: 'mail.privateemail.com',
         port: process.env.SECURE_PORT,
-        secureConnection: true,
+        secure: true,
         auth: {
           user: process.env.NAMECHEAP_EMAIL,
-          pass: process.env.NAMECHEAP_PASSWORD,
+          pass: process.env.EMAIL_PASSWORD,
         },
       });
     }
@@ -92,7 +91,7 @@ module.exports = class Email {
       html: html,
       text: htmlToText.fromString(html),
       envelope: {
-        from: this.hostEmail,
+        from: this.to,
         to: this.to,
       },
     };

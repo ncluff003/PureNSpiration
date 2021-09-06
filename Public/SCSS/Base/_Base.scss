@@ -2,47 +2,32 @@
 @use "../../../Public/SCSS/Utilities/Variables" as *;
 
 /*
-I was thinking of iterating through the objects that were created.
     //////////////////////////////////
     /// To Do List:
 
-    MUSTDO : Finish JavaScript lessons & ALL projects inside the course.  ** TOP PRIORITY **
-    MUSTDO : Finish Node.js lessons & ALL projects inside the course.  ** TOP PRIORITY **
-    MUSTDO : Review statements for clarity of what I want to say.
-    MUSTDO : Review mission statement for the employers / clients.
-    MUSTDO : Record video for employers / clients.
-    MUSTDO : Build more cards with my other skills, including ones like Inkscape.
-    MUSTDO : Ponder about and make the content for my personal site's project card.
-    MUSTDO : Link my project card link to my personal site. ( # for now, but later on it will be purenspiration.com )
-    MUSTDO : Configure Webpack to compile my JavaScript so I can use it in my Production branch of my project.
-    MUSTDO : Eventually, add html-webpack-plugin using npm install, and put it as a dev dependency.  Then put 'plugins: [ new HtmlWebpackPlugin() ] in webpack config file under module.exports
-    MUSTDO : FIgure out how my mixin works for creating CSS Grids, so I can speak on that.
-    MUSTDO : Review Promises, Async / Await, & Early Node.JS lessons to be sure I have got it.
-    MUSTDO : Get my contact form to send an email with the message in the body, & the sender's information in the email.
+    MUSTDO : Record A Short Video finishing my introduction on the About Section.
+    MUSTDO : Push what I have to Namecheap.com on my domain listed as Purenspiration.com
+    MUSTDO : Finish by doing a final review, add, commit, & push to my local repo to be sure of what is needed there.
+    MUSTDO : Update my links on the project cards & re-push to Namecheap.com for my site.
+    MUSTDO : Clean up code on my site to make it both readable & still efficient WHILE applying for jobs.
+    MUSTDO : Again, while applying for jobs, I will be needing to make my ste much more mobile friendly.  This will be done by refreshing my mind on what CSS I need to be doing in order for that to be achieved.
+    MUSTDO : While applying for jobs, keep working on the budget site & reset these goals on the base scss file for that budget.
     
     
     //////////////////////////////////
     /// Glitches To Fix
-
-    GLITCH : Form Placeholder Does Not Show In FireFox.
-    GLITCH : My Custom Font Purely Me Does Not Get Used In My Site Outside Of Dissenter & My Computer.
-
 
     //////////////////////////////////
     /// Adjustments To Make
 
     ADJUST : Remove Arrow Functions from Methods.
     ADJUST : Refactor Code to make it so functions / methods only use up to 5 parameters max.
-    ADJUST : Do not worry about the length of the code if you are chaining methods or something very similar.
 
 
     //////////////////////////////////
     /// Features To Implement
 
-    FEATURE : Get form to be fully functional and send an email containing the message to my personal email.  Do so without doing something insecure.
-    FEATURE : Allow keyboard arrows to control the 'More About Me' section.
-    FEATURE : Allow for the user to go to the end or the beginning after getting to the end of the items. ( All that is left is the 'More About Me' section.
-
+    FEATURE : Responsive Design according to the screen that is used by the client.
 */
 
 //////////////////////////////////
@@ -198,6 +183,11 @@ body {
             @include SizeAndPositioning(relative, 75%, 100%, flex, center, center, 0, 0, 0);
             margin-bottom: 2rem;
             background-color: $secondaryColor;
+            img,
+            p {
+              @include SizingItem(relative, 80%, 80%);
+              filter: brightness(0) invert(1);
+            }
           }
 
           .skill-title-container {
@@ -216,13 +206,10 @@ body {
           @include SizeAndPositioning(relative, 80%, 60%, flex, center, center, 0, 0, 0);
           background-color: rgba($colorDarkGrey, 0.25);
           padding: 4rem;
-
           transition: opacity 1s, transform 1s;
-
           &-cover {
             @include SizeAndPositioning(relative, 100%, 45%, flex, space-evenly, center, 0, 0, 0);
             flex-direction: column;
-
             &-image-container {
               @include SizeAndPositioning(relative, 75%, 100%, flex, center, center, 0, 0, 0);
               background-color: rgba($colorOffWhite, 0.25);
@@ -231,7 +218,6 @@ body {
                 object-fit: cover;
               }
             }
-
             &-title-container {
               @include SizeAndPositioning(relative, 25%, 100%, flex, center, center, 0, 0, 0);
             }
@@ -241,8 +227,13 @@ body {
             flex-direction: column;
             padding-left: 4rem;
             &-description-container {
-              @include SizeAndPositioning(relative, 75%, 100%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 75%, 100%, flex, flex-start, center, 0, 0, 0);
               background-color: rgba($colorOffWhite, 0.5);
+              flex-direction: column;
+              padding: 2rem;
+              text-indent: 2rem;
+              overflow-y: auto;
+              word-wrap: break-word;
             }
             &-link-container {
               @include SizeAndPositioning(relative, 25%, 100%, flex, space-evenly, center, 0, 0, 0);
@@ -252,12 +243,23 @@ body {
                 border-radius: 5rem;
                 transform: translateY(1rem);
                 background-color: transparent;
+                z-index: 3;
                 &:hover {
                   cursor: pointer;
                   background-color: $secondaryColor;
                   transition: background-color 0.5s, color 0.5s;
                 }
               }
+            }
+          }
+          &-work-in-progress {
+            &::after {
+              @include SizingItem(absolute, 25%, 100%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              content: 'NOTICE: Work In Progress';
+              background-color: rgba($colorDarkestGrey, 0.55);
             }
           }
         }
@@ -271,13 +273,11 @@ body {
           border: none;
           border-radius: 50%;
           margin: 0 2rem;
-
           &--active {
             background-color: $colorDarkerGrey;
           }
         }
       }
-
       .project-count {
         @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
       }

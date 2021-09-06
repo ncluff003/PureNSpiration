@@ -110,6 +110,12 @@ html {
           .skill-image-container {
             font-size: 15rem;
             color: $colorOffWhite;
+            p {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 3rem;
+            }
           }
 
           .skill-title-container {
@@ -153,6 +159,27 @@ html {
                   color: $colorOffWhite;
                 }
               }
+            }
+          }
+          &-work-in-progress {
+            &::after {
+              font-size: 6rem;
+              color: $primaryColor;
+            }
+          }
+        }
+      }
+
+      .about-me-container {
+        &__option-slider {
+          button {
+            font-size: 3rem;
+            color: rgba($colorDarkerGrey, 0.8);
+          }
+          .card-button-left,
+          .card-button-right {
+            &:hover {
+              color: $colorLightestGrey;
             }
           }
         }

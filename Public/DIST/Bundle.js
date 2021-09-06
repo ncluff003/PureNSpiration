@@ -2437,10 +2437,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Validate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Validate */ "./Public/JS/Validate.js");
-/* harmony import */ var _Message__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Message */ "./Public/JS/Message.js");
-
-
 
 
 
@@ -2501,26 +2497,6 @@ var emailMe = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
-
-/***/ }),
-
-/***/ "./Public/JS/Message.js":
-/*!******************************!*\
-  !*** ./Public/JS/Message.js ***!
-  \******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "showMessage": function() { return /* binding */ showMessage; }
-/* harmony export */ });
-var showMessage = function showMessage(type, message, statusCode) {
-  var errorContainer = document.querySelector(".contact-form-message-container--".concat(type));
-  errorContainer.textContent = "".concat(statusCode, " -- ").concat(message);
-}; // The Two Containers For Messages
-// contact-form-message-container--success
-// contact-form-message-container--error
 
 /***/ }),
 
@@ -2615,7 +2591,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 
 
-
 ///////////////////////////////////////////////
 // STORY CLASS
 var Story = /*#__PURE__*/function () {
@@ -2692,79 +2667,7 @@ var Story = /*#__PURE__*/function () {
   }]);
 
   return Story;
-}(); ///////////////////////////////////////////////
-// EXPORTED VALUES
-
-
-
-
-/***/ }),
-
-/***/ "./Public/JS/Validate.js":
-/*!*******************************!*\
-  !*** ./Public/JS/Validate.js ***!
-  \*******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Validate": function() { return /* binding */ Validate; }
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-
-
-
-var Validator = /*#__PURE__*/function () {
-  function Validator() {
-    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__.default)(this, Validator);
-  }
-
-  (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__.default)(Validator, [{
-    key: "isName",
-    value: function isName(name) {
-      /*
-        Tests so names ONLY have letters.
-      */
-      return /^[A-Za-z]+$/.test(name);
-    }
-  }, {
-    key: "isEmail",
-    value: function isEmail(email) {
-      /*
-        Tests for emails with the following extensions:
-        -- .com, .net, .org, .io, .edu, .co.uk, .me, .tech, & .money
-      */
-      return /[^@]+@[^@]+[\.]+(com|net|org|io|edu|(co.uk)|me|tech|money)+$/.test(email);
-    }
-  }, {
-    key: "isCompany",
-    value: function isCompany(companyName) {
-      /*
-        Puts the company name through a test to see if it can pass.  This one will be updated regularly upon client resonses to their particular company.  Hopefully, it will stand to the test it needs to.
-      */
-      return /^[^?!*,#,%,*,+,=]*^[^?!*,#,%,*,+,=]*$/.test(companyName);
-    }
-  }, {
-    key: "isCompanyPosition",
-    value: function isCompanyPosition(position) {
-      /*
-        Puts the employee's position name through a test to see if it can pass.  This one will be updated regularly upon client resonses to their particular company.  Hopefully, it will stand to the test it needs to.
-      */
-      return /^[A-Za-z\ \\\/\-\_\d]*^[^?!*,#,%,*,+,=]*$/.test(position);
-    }
-  }]);
-
-  return Validator;
 }();
-
-var Validate = new Validator(); // firstName: /^[A-Za-z]+$/,
-// lastName: /^[A-Za-z]+$/,
-// username: /(?=[\w]*[A-Z])(?=[\w]*[\w])(?=[\w]*[\d])/,
-// password: /(?=[\w]*[A-Z])(?=[\w]*[\w])(?=[\w]*[\d])/,
-// repeatPassword: /(?=[\w]*[A-Z])(?=[\w]*[\w])(?=[\w]*[\d])/,
-// email: /[^@]+@[^@]/
 
 /***/ }),
 
@@ -2803,6 +2706,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 ////////////////////////////////////////////////
 // IMPORTED VALUES
+ ///////////////////////////////////////////////
+// PROJECT CLASS -- CARD CHILD
 
 var Project = /*#__PURE__*/function (_Card) {
   (0,_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__.default)(Project, _Card);
@@ -4655,12 +4560,12 @@ var typingTextContent = document.getElementsByClassName("typing-text--introducti
 var introButtons = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__.default)(document.querySelectorAll(".introduction-button"));
 
 var introClasses = ["introduction-button--hiddenLeft", "introduction-button--hiddenDown", "introduction-button--hiddenRight"];
-var statements = ["Hello! Let me introduce myself.", "My name is Nathan Cluff.", "I am a Front-End Developer,", "who is aspiring to become proficient", "in both Front & Back-End Development.", "To navigate this page, you can", "Scroll with the mouse, keyboard, & finger.", "Thank you for visiting my site."]; ////////////////////////////////////
+var statements = ["Hello, my name is Nathan Cluff.", "I am a web developer who loves", "bringing good design and challenging", "projects to life through clean,", "simple, cutting edge technology."]; ////////////////////////////////////
 // -- ABOUT PARAGRAPH VARIABLES -- //
 
 var aboutCursor = document.querySelector(".about-typing-text--cursor");
 var aboutTypingTextContent = document.getElementsByClassName("about-typing-text")[0];
-var missionStatement = ["This is my Mission Statement.", "To improve the growth and", "profitability of your organization", "simultaneously with my skillset."]; ///////////////////////////////////////////////
+var missionStatement = ["My objective is clear.", "I look forward to leaving", "everyone, including you, in", "much better, cleaner, more", "efficient and profitable shape", "than I had found you.", "Thank you for taking the time", "to visit my site and consider", "me for your position."]; ///////////////////////////////////////////////
 // PARAGRAPH OBJECTS
 
 var paragraph1 = new _Paragraph_js__WEBPACK_IMPORTED_MODULE_4__.Paragraph({
@@ -4728,13 +4633,47 @@ var github = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
   title: "Github",
   image: "<i class='fab fa-github-square'></i>",
   domElement: showcase[0]
+});
+var express = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
+  title: "Express",
+  image: "<img src=\"./../DIST/CSS/Images/expressjs-logo.svg\">",
+  domElement: showcase[0]
+});
+var axios = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
+  title: "Axios",
+  image: "<img src=\"./../DIST/CSS/Images/axios-logo.svg\">",
+  domElement: showcase[0]
+});
+var mongodb = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
+  title: "MongoDB",
+  image: "<img src=\"./../DIST/CSS/Images/MongoDB_Logo_White_RGB.svg\">",
+  domElement: showcase[0]
+});
+var mongoose = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
+  title: "Mongoose",
+  image: "<p>Mongoose</p>",
+  domElement: showcase[0]
+});
+var jwt = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
+  title: "JWT",
+  image: "<img src=\"./../DIST/CSS/Images/JWT.png\">",
+  domElement: showcase[0]
+});
+var pug = new _skillCard_js__WEBPACK_IMPORTED_MODULE_5__.Skill({
+  title: "Pug",
+  image: "<img src=\"./../DIST/CSS/Images/pug-logo-remade.svg\">",
+  domElement: showcase[0]
 }); ///////////////////////////////////////
 //  -- SKILL ARRAY & CARD CREATION --  //
 
-var skills = [html5, css3, javascript, nodeJS, scss, less, vue, git, github];
+var skills = [html5, css3, scss, less, javascript, vue, pug, nodeJS, express, axios, mongodb, mongoose, jwt, git, github];
 skills.forEach(function (s, i) {
   s._produceSkillCard("".concat(s.image), "".concat(s.title), s.domElement);
-}); /////////////////////
+}); //////////////////////////////////
+//  -- PROJECTS INTRODUCTIONS --  //
+
+var purenspirationDescription = "<p>This is my personal creative playground.  As of right now, it has the foundational technologies of HTML5, CSS3, & JavaScript setting a strong foundation for its function & design.</p>\n<br>\n<p>The aim for the design was to be easier to use, while also easy on the eyes.  The most advanced features use technologies such as, SCSS, PugJS, JavaScript, & ExpressJS amongst others.</p>";
+var kingRichardDescription = "The goal is for this to be a budget built to be flexible for any kind of person.  From the simplest of budgets, to the most detail-intensive and powerful.  All so the users can get the most value out of their money, and be able to reach their financial dreams."; /////////////////////
 //  -- PROJECTS --  //
 
 var purenspiration = new _projectCard_js__WEBPACK_IMPORTED_MODULE_6__.Project({
@@ -4742,7 +4681,7 @@ var purenspiration = new _projectCard_js__WEBPACK_IMPORTED_MODULE_6__.Project({
   image: "<img src=\"/CSS/Images/Computer_Desktop_Image.svg\">",
   backgroundColor: "#FFD700",
   textColor: "#333333",
-  description: "This is my project",
+  description: purenspirationDescription,
   link: "#",
   repository: "https://github.com/ncluff003/PureNSpiration",
   domElement: showcase[1]
@@ -4752,7 +4691,7 @@ var kingrichard = new _projectCard_js__WEBPACK_IMPORTED_MODULE_6__.Project({
   image: "<img src=\"/CSS/Images/KingRichard-Logo--COVER.svg\">",
   backgroundColor: "#822aba",
   textColor: "#FEFEFE",
-  description: "This is my project",
+  description: kingRichardDescription,
   link: "../../../KingRichard-Budget/Public/DIST/index.html",
   repository: "https://github.com/ncluff003/KingRichard-Budget",
   domElement: showcase[1]
@@ -4771,6 +4710,10 @@ var App = /*#__PURE__*/function () {
 
     /////////////////////////////////////////
     //  Site Setup
+    projectCards.forEach(function (p) {
+      if (p.innerText.startsWith('King Richard')) p.classList.add("project-card-work-in-progress");
+    });
+
     this._hideGrids(allGrids);
 
     this._observeNav();
@@ -4781,16 +4724,17 @@ var App = /*#__PURE__*/function () {
 
     paragraph1._startTyping();
 
-    this._revealButton(0);
+    this._revealButton();
 
     this._createDots();
 
-    this._watchDots();
+    this._watchDots(0);
 
     this._activateDot(0);
 
     index = 0;
     index2 = 0;
+    index3 = 0;
 
     this._watchCards(showcase[0], skillCards, index);
 
@@ -4807,22 +4751,42 @@ var App = /*#__PURE__*/function () {
     this._createCardButtonNavigation(showcase[1]);
 
     this._watchCardButtons(projectCards, showcase[1]);
+
+    this._watchCards(aboutMeContainer, slideOptions, index3);
+
+    this._setUpCards(slideOptions, index3);
+
+    this._createCardButtonNavigation(aboutMeContainer);
+
+    this._watchCardButtons(slideOptions, aboutMeContainer);
   }
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__.default)(App, [{
     key: "_goToCard",
     value: function _goToCard(cardType, index, prevCards, nextCards) {
-      var prevCardsReverse = prevCards.reverse();
-      prevCardsReverse.forEach(function (card, i) {
-        i === 0 ? card.style.transform = "translate(".concat((300 + (i + 1) * 15) * -1, "% , ").concat(-8, "%)") : i > 0 ? card.style.transform = "translate(".concat((200 + (i + 1) * 115) * -1, "% , ").concat(-8, "%)") : '';
-      });
-      cardType.forEach(function (card, i) {
-        i - index === 0 ? card.style.transform = "translate(".concat(0, "% , ", -8, "%)") : i - index === 1 || i - index > 1 ? card.style.transform = "translate(".concat(100 * (i - index) + 200 + (nextCards.indexOf(card) + 1) * 15, "% , ").concat(-8, "%)") : '';
-      });
+      if (cardType === skillCards || cardType === projectCards) {
+        var prevCardsReverse = prevCards.reverse();
+        prevCardsReverse.forEach(function (card, i) {
+          i === 0 ? card.style.transform = "translate(".concat((300 + (i + 1) * 15) * -1, "% , ").concat(-8, "%)") : i > 0 ? card.style.transform = "translate(".concat((200 + (i + 1) * 115) * -1, "% , ").concat(-8, "%)") : '';
+        });
+        cardType.forEach(function (card, i) {
+          i - index === 0 ? card.style.transform = "translate(".concat(0, "% , ", -8, "%)") : i - index === 1 || i - index > 1 ? card.style.transform = "translate(".concat(100 * (i - index) + 200 + (nextCards.indexOf(card) + 1) * 15, "% , ").concat(-8, "%)") : '';
+        });
+      }
+
+      if (cardType === slideOptions) {
+        this._goToSlide(index);
+
+        this._activateDot(index);
+      }
     }
   }, {
     key: "_prevCard",
     value: function _prevCard(cardType, index) {
+      if (cardType === slideOptions) {
+        return this._goToCard(cardType, index), index;
+      }
+
       var frontDoorCards = cardType.slice(index + 1, cardType.length);
       var backDoorCards = cardType.slice(0, index);
 
@@ -4833,6 +4797,10 @@ var App = /*#__PURE__*/function () {
   }, {
     key: "_nextCard",
     value: function _nextCard(cardType, index) {
+      if (cardType === slideOptions) {
+        return this._goToCard(cardType, index), index;
+      }
+
       var frontDoorCards = cardType.slice(index + 1, cardType.length);
       var backDoorCards = cardType.slice(0, index);
 
@@ -4852,7 +4820,6 @@ var App = /*#__PURE__*/function () {
             index <= -1 ? index = cardType.length - 1 : index >= cardType.length ? index = 0 : index;
             cardType === skillCards ? _this._prevCard(cardType, index) : cardType === projectCards ? _this._prevCard(cardType, index) : '';
             cardType === projectCards ? projects[projects.length - 1]._getProjectCount(index, projectCards) : e.key;
-            console.log(index);
           }
         }
 
@@ -4862,7 +4829,6 @@ var App = /*#__PURE__*/function () {
             index <= -1 ? index = cardType.length - 1 : index >= cardType.length ? index = 0 : index;
             cardType === skillCards ? _this._nextCard(cardType, index) : cardType === projectCards ? _this._nextCard(cardType, index) : '';
             cardType === projectCards ? projects[projects.length - 1]._getProjectCount(index, projectCards) : e.key;
-            console.log(index);
           }
         }
       });
@@ -4890,8 +4856,10 @@ var App = /*#__PURE__*/function () {
         if (!clickedButton) return;
         cardType === skillCards && clickedButton.classList.contains("card-button-left") ? index-- : cardType === skillCards && clickedButton.classList.contains("card-button-right") ? index++ : index = index;
         cardType === projectCards && clickedButton.classList.contains("card-button-left") ? index2-- : cardType === projectCards && clickedButton.classList.contains("card-button-right") ? index2++ : index2;
+        cardType === slideOptions && clickedButton.classList.contains("card-button-left") ? index3-- : cardType === slideOptions && clickedButton.classList.contains("card-button-right") ? index3++ : index3;
         index <= -1 ? index = cardType.length - 1 : index >= cardType.length ? index = 0 : index;
         index2 <= -1 ? index2 = cardType.length - 1 : index2 >= cardType.length ? index2 = 0 : index2;
+        index3 <= -1 ? index3 = cardType.length - 1 : index3 >= cardType.length ? index3 = 0 : index3;
         cardType === skillCards && clickedButton.classList.contains("card-button-left") ? _this2._prevCard(cardType, index) : cardType === skillCards && clickedButton.classList.contains("card-button-right") ? _this2._nextCard(cardType, index) : index;
 
         if (cardType === projectCards && clickedButton.classList.contains("card-button-left")) {
@@ -4905,6 +4873,8 @@ var App = /*#__PURE__*/function () {
 
           purenspiration._getProjectCount(index2, projectCards);
         }
+
+        cardType === slideOptions && clickedButton.classList.contains("card-button-left") ? _this2._prevCard(cardType, index3) : cardType === slideOptions && clickedButton.classList.contains("card-button-right") ? _this2._nextCard(cardType, index3) : index3;
       });
     }
   }, {
@@ -4923,6 +4893,7 @@ var App = /*#__PURE__*/function () {
     key: "_createDots",
     value: function _createDots() {
       slideOptions.forEach(function (_, i) {
+        console.log(slideOptions);
         optionNavContainer.insertAdjacentHTML("beforeend", "<button class=\"about-me-container__option-navigation__dot\" data-sliderOption=\"".concat(i, "\"></button>"));
       });
     }
@@ -4937,13 +4908,14 @@ var App = /*#__PURE__*/function () {
   }, {
     key: "_goToSlide",
     value: function _goToSlide(slide) {
+      console.log(slide);
       slideOptions.forEach(function (s, i) {
         s.style.transform = "translateX(".concat(100 * (i - slide), "%)");
       });
     }
   }, {
     key: "_watchDots",
-    value: function _watchDots() {
+    value: function _watchDots(optionIndex) {
       var _this3 = this;
 
       optionNavContainer.addEventListener("click", function (e) {
@@ -4953,6 +4925,32 @@ var App = /*#__PURE__*/function () {
           _this3._goToSlide(slide);
 
           _this3._activateDot(slide);
+        }
+      });
+      var index = optionIndex;
+      document.addEventListener('keyup', function (e) {
+        if (e.key === 'ArrowLeft') {
+          if (aboutMeContainer.getBoundingClientRect().top <= 523 && aboutMeContainer.getBoundingClientRect().bottom >= 686) index--;
+          console.log(index);
+          if (index < 0) index = slideOptions.length - 1;
+          console.log("You want to go left on my about section.");
+          var slide = index;
+
+          _this3._goToSlide(slide);
+
+          _this3._activateDot(slide);
+        }
+
+        if (e.key === 'ArrowRight') {
+          if (aboutMeContainer.getBoundingClientRect().top <= 523 && aboutMeContainer.getBoundingClientRect().bottom >= 686) index++;
+          if (index === slideOptions.length) index = 0;
+          console.log(index);
+          console.log("You want to go right on my about section.");
+          var _slide = index;
+
+          _this3._goToSlide(_slide);
+
+          _this3._activateDot(_slide);
         }
       });
     }
@@ -5029,21 +5027,21 @@ var App = /*#__PURE__*/function () {
     key: "_revealButton",
     value: function _revealButton() {
       var revealButtonInterval = setInterval(function () {
-        if (paragraph1.story === statements && paragraph1.currentStatement === 1) {
+        if (paragraph1.story === statements && paragraph1.currentStatement === 0) {
+          introButtons[paragraph1.currentStatement - 0].classList.remove(introClasses[paragraph1.currentStatement - 0]);
+        }
+
+        if (paragraph1.story === statements && paragraph1.currentStatement === 2) {
           introButtons[paragraph1.currentStatement - 1].classList.remove(introClasses[paragraph1.currentStatement - 1]);
         }
 
         if (paragraph1.story === statements && paragraph1.currentStatement === 4) {
-          introButtons[paragraph1.currentStatement - 3].classList.remove(introClasses[paragraph1.currentStatement - 3]);
-        }
-
-        if (paragraph1.story === statements && paragraph1.currentStatement === 7) {
-          introButtons[paragraph1.currentStatement - 5].classList.remove(introClasses[paragraph1.currentStatement - 5]);
+          introButtons[paragraph1.currentStatement - 2].classList.remove(introClasses[paragraph1.currentStatement - 2]);
           setTimeout(function () {
             clearInterval(revealButtonInterval);
           }, 1000);
         }
-      }, 2900);
+      }, 2000);
     }
   }, {
     key: "_hideButtons",
@@ -5128,7 +5126,7 @@ var App = /*#__PURE__*/function () {
 // APP VARIABLES
 
 
-var index, index2;
+var index, index2, index3;
 
 var allGrids = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__.default)(document.querySelectorAll(".grid-container"));
 
@@ -5138,6 +5136,7 @@ var links = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE
 
 var navHeight = nav.getBoundingClientRect().height;
 var introduction = document.getElementsByClassName("grid-container")[0];
+var aboutMeContainer = document.querySelector(".about-me-container__option-slider");
 var slideOptions = document.querySelectorAll(".about-me-container__option-slider--option");
 var optionNavContainer = document.querySelector(".about-me-container__option-navigation");
 
