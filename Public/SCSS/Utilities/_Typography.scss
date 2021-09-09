@@ -441,13 +441,27 @@ html {
         }
       }
 
+      @include max-responsive(920px) {
+        .section-header {
+          font-size: 6.5rem;
+        }
+      }
+
       @include max-responsive(900px) {
         .typing-text-container {
           font-size: 3rem;
         }
+        .about-me-container {
+          .about-typing-text-container {
+            font-size: 3rem;
+          }
+        }
       }
 
       @include max-responsive(799px) {
+        .section-header {
+          font-size: 4.5rem;
+        }
         .introduction-button-container {
           .introduction-button {
             font-size: 1.2rem;
@@ -459,6 +473,15 @@ html {
         .typing-text-container {
           font-size: 2.4rem;
         }
+        .about-me-container {
+          &__option-slider {
+            &--option {
+              .about-typing-text-container {
+                font-size: 2.4rem;
+              }
+            }
+          }
+        }
       }
 
       @include max-responsive(550px) {
@@ -468,6 +491,31 @@ html {
         .introduction-button-container {
           .introduction-button {
             font-size: 1.6rem;
+          }
+        }
+        .about-me-container {
+          &__option-slider {
+            &--option {
+              .about-typing-text-container {
+                font-size: 2rem;
+              }
+            }
+          }
+        }
+      }
+
+      @include max-responsive(475px) {
+        .about-me-container {
+          &__option-slider {
+            &--option {
+              .about-typing-text-container {
+                font-size: 1.6rem;
+              }
+            }
+          }
+          .card-button-left,
+          .card-button-right {
+            font-size: 2rem;
           }
         }
       }
