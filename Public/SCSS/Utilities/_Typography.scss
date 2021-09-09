@@ -1,4 +1,5 @@
 @use "../../../Public/SCSS/Utilities/Variables" as *;
+@use "../../../Public/SCSS/Utilities/Mixins" as *;
 
 /////////////////////////////////
 // Base
@@ -21,6 +22,34 @@ html {
       &__logoText {
         font-size: 2.4rem;
       }
+      @include max-responsive(1200px) {
+        &__logoText {
+          font-size: 2.2rem;
+        }
+      }
+      @include max-responsive(900px) {
+        &__logoText {
+          font-size: 1.8rem;
+        }
+      }
+
+      @include max-responsive(750px) {
+        &__logoText {
+          font-size: 2.6rem;
+        }
+      }
+
+      @include max-responsive(525px) {
+        &__logoText {
+          font-size: 2.2rem;
+        }
+      }
+
+      @include max-responsive(400px) {
+        &__logoText {
+          font-size: 1.6rem;
+        }
+      }
     }
 
     ////////////////////////////////////////////////
@@ -30,18 +59,49 @@ html {
       font-size: 2rem;
       &--linkItem {
         &__link {
-          text-decoration: none;
-          color: rgba($secondaryColor, 0.75);
+          &:link {
+            text-decoration: none;
+            color: rgba($secondaryColor, 0.75);
+          }
+
           &:visited {
             color: rgba($secondaryColor, 0.75);
           }
           &--sticky {
-            color: rgba($colorOffWhite, 0.75);
+            &:link {
+              color: rgba($colorOffWhite, 0.75);
+            }
             &:visited {
               color: rgba($colorOffWhite, 0.75);
             }
           }
         }
+      }
+
+      @include max-responsive(1200px) {
+        font-size: 1.8rem;
+      }
+
+      @include max-responsive(900px) {
+        font-size: 1.4rem;
+      }
+    }
+
+    @include max-responsive(750px) {
+      .hamburger-menu {
+        font-size: 3.2rem;
+      }
+    }
+
+    @include max-responsive(525px) {
+      .hamburger-menu {
+        font-size: 2.6rem;
+      }
+    }
+
+    @include max-responsive(370px) {
+      .hamburger-menu {
+        font-size: 2rem;
       }
     }
 
@@ -70,7 +130,6 @@ html {
           }
 
           &:hover {
-            cursor: pointer;
             color: $colorOffWhite;
           }
 
@@ -94,9 +153,6 @@ html {
         &__option-navigation {
           font-size: 2.4rem;
           color: rgba($colorDarkestGrey, 0.5);
-          i {
-            margin: 0 1rem;
-          }
         }
       }
 
@@ -111,9 +167,6 @@ html {
             font-size: 15rem;
             color: $colorOffWhite;
             p {
-              display: flex;
-              justify-content: center;
-              align-items: center;
               font-size: 3rem;
             }
           }
@@ -206,14 +259,10 @@ html {
         }
 
         &-name-container {
-          margin: 3rem 0 1.5rem;
           &--first-name,
           &--last-name {
-            flex-direction: column-reverse;
             .first-name,
             .last-name {
-              background-color: transparent;
-              border: 0.3rem groove rgba($secondaryColor, 0.75);
               color: $secondaryColor;
               &:invalid {
                 color: #cf352e;
@@ -232,14 +281,10 @@ html {
         }
 
         &-organization-container {
-          margin: 3rem 0 1.5rem;
           &--organization,
           &--position {
-            flex-direction: column-reverse;
             .organization-name,
             .position-name {
-              background-color: transparent;
-              border: 0.3rem groove rgba($secondaryColor, 0.75);
               color: $secondaryColor;
               &:invalid {
                 color: #cf352e;
@@ -258,11 +303,7 @@ html {
         }
 
         &-email-container {
-          flex-direction: column-reverse;
-          margin: 1.5rem 0 1.5rem;
           .email {
-            background-color: transparent;
-            border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: $secondaryColor;
             &:invalid {
               color: #cf352e;
@@ -280,11 +321,7 @@ html {
         }
 
         &-subject-container {
-          flex-direction: column-reverse;
-          margin: 1.5rem 0 1.5rem;
           .subject {
-            background-color: transparent;
-            border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: $secondaryColor;
             &:invalid {
               color: #cf352e;
@@ -301,11 +338,7 @@ html {
           }
         }
         &-text-message-container {
-          flex-direction: column-reverse;
-          margin: 1.5rem 0 1.5rem;
           .message {
-            background-color: transparent;
-            border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: $secondaryColor;
             &:invalid {
               color: #cf352e;
@@ -322,10 +355,7 @@ html {
           }
         }
         &-submit-container {
-          margin: 1.5rem 0 3rem;
           .submit-message-button {
-            background-color: rgba($secondaryColor, 0.8);
-            border: 0.3rem groove rgba($secondaryColor, 0.75);
             color: rgba($colorOffWhite, 0.75);
             &:hover {
               color: $colorOffWhite;
@@ -353,6 +383,104 @@ html {
           & + label {
             color: $primaryColor;
           }
+        }
+      }
+
+      // .introduction-button-container - Goes right besides the typing text container.
+
+      // GRID CONTAINER RESPONSIVE BREAKPOINT LAYOUTS
+      // 1921px+ = TV|  48 x 24
+      // 1281px - 1800px = Desktop  24 x 18
+      // 1025px - 1280px = Tablet Landscape  18 x 12
+      // 800px - 1024px = Tab Portrait  12 x 18
+      // 600px - 799px = Mobile Landscape  12 x 10
+      // 599px- = Mobile Portrait  10 x 12
+
+      @include min-responsive(1801px) {
+        .typing-text-container {
+          font-size: 8rem;
+        }
+        .section-header {
+          font-size: 9.5rem;
+        }
+      }
+
+      @include max-responsive(1600px) {
+        .typing-text-container {
+          font-size: 6.5rem;
+        }
+        .about-me-container {
+          .about-typing-text-container {
+            font-size: 6.5rem;
+          }
+        }
+      }
+
+      @include max-responsive(1500px) {
+        .typing-text-container {
+          font-size: 5.5rem;
+        }
+      }
+
+      @include max-responsive(1350px) {
+        .about-me-container {
+          .about-typing-text-container {
+            font-size: 5.5rem;
+          }
+        }
+      }
+
+      @include max-responsive(1280px) {
+        .typing-text-container {
+          font-size: 4rem;
+        }
+        .about-me-container {
+          .about-typing-text-container {
+            font-size: 4rem;
+          }
+        }
+      }
+
+      @include max-responsive(900px) {
+        .typing-text-container {
+          font-size: 3rem;
+        }
+      }
+
+      @include max-responsive(799px) {
+        .introduction-button-container {
+          .introduction-button {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      @include max-responsive(675px) {
+        .typing-text-container {
+          font-size: 2.4rem;
+        }
+      }
+
+      @include max-responsive(550px) {
+        .typing-text-container {
+          font-size: 1.8rem;
+        }
+        .introduction-button-container {
+          .introduction-button {
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      @include max-responsive(425px) {
+        .typing-text-container {
+          font-size: 1.4rem;
+        }
+      }
+
+      @include max-responsive(350px) {
+        .typing-text-container {
+          font-size: 1.3rem;
         }
       }
     }

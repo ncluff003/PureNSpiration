@@ -30,7 +30,7 @@ const Calendar = require(`./calendarModel`);
 module.exports = class Email {
   constructor(firstName, lastName, organization, position, emailAddress, emailSubject, message) {
     this.to = process.env.NAMECHEAP_EMAIL;
-    this.from = `${firstName} ${lastName} -- ${emailAddress}`;
+    this.from = `${firstName} ${lastName} ${emailAddress}`;
     this.firstName = firstName;
     this.lastName = lastName;
     this.organization = organization;

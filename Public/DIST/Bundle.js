@@ -4565,7 +4565,7 @@ var statements = ["Hello, my name is Nathan Cluff.", "I am a web developer who l
 
 var aboutCursor = document.querySelector(".about-typing-text--cursor");
 var aboutTypingTextContent = document.getElementsByClassName("about-typing-text")[0];
-var missionStatement = ["My objective is clear.", "I look forward to leaving", "everyone, including you, in", "much better, cleaner, more", "efficient and profitable shape", "than I had found you.", "Thank you for taking the time", "to visit my site and consider", "me for your position."]; ///////////////////////////////////////////////
+var missionStatement = ["My objective is crystal clear.", "I look forward to helping", "everyone, including yourself,", "to be in much better, cleaner,", "more efficient & profitable", "shape than I had found you.", "Thank you for taking the time", "to visit my site and consider", "me for your position."]; ///////////////////////////////////////////////
 // PARAGRAPH OBJECTS
 
 var paragraph1 = new _Paragraph_js__WEBPACK_IMPORTED_MODULE_4__.Paragraph({

@@ -29,12 +29,12 @@ const aboutCursor = document.querySelector(`.about-typing-text--cursor`);
 const aboutTypingTextContent = document.getElementsByClassName(`about-typing-text`)[0];
 
 const missionStatement = [
-  `My objective is clear.`,
-  `I look forward to leaving`,
-  `everyone, including you, in`,
-  `much better, cleaner, more`,
-  `efficient and profitable shape`,
-  `than I had found you.`,
+  `My objective is crystal clear.`,
+  `I look forward to helping`,
+  `everyone, including yourself,`,
+  `to be in much better, cleaner,`,
+  `more efficient & profitable`,
+  `shape than I had found you.`,
   `Thank you for taking the time`,
   `to visit my site and consider`,
   `me for your position.`,

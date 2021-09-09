@@ -10,24 +10,28 @@
     MUSTDO : Finish by doing a final review, add, commit, & push to my local repo to be sure of what is needed there.
     MUSTDO : Update my links on the project cards & re-push to Namecheap.com for my site.
     MUSTDO : Clean up code on my site to make it both readable & still efficient WHILE applying for jobs.
-    MUSTDO : Again, while applying for jobs, I will be needing to make my ste much more mobile friendly.  This will be done by refreshing my mind on what CSS I need to be doing in order for that to be achieved.
+    MUSTDO : Again, while applying for jobs, I will be needing to make my site much more mobile friendly.  This will be done by refreshing my mind on what CSS I need to be doing in order for that to be achieved.  While doing this one with media queries, I can also clean up my SCSS.
     MUSTDO : While applying for jobs, keep working on the budget site & reset these goals on the base scss file for that budget.
     
     
     //////////////////////////////////
     /// Glitches To Fix
 
+    GLITCH : Some of the About Container bottom is cut out before the keyboard arrows work, unlike the Skills & Portfolio Sections.
+
     //////////////////////////////////
     /// Adjustments To Make
 
     ADJUST : Remove Arrow Functions from Methods.
     ADJUST : Refactor Code to make it so functions / methods only use up to 5 parameters max.
+    ADJUST : Remove unecessary style rules in my email stylesheet.
 
 
     //////////////////////////////////
     /// Features To Implement
 
     FEATURE : Responsive Design according to the screen that is used by the client.
+    FEATURE : Mobile navigation with the hamburger menu.
 */
 
 //////////////////////////////////
@@ -74,7 +78,6 @@ body {
       .typing-text-container {
         @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
         padding: 0 5rem;
-        // background-color: rgba($colorSilver, .25); // I intend on removing this background color for consumers.  I need to know where the limits are.
 
         .typing-text--cursor {
           @include SizingItem(relative, 50%, 0.8rem);
@@ -280,6 +283,194 @@ body {
       }
       .project-count {
         @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+      }
+
+      // .introduction-button-container {
+      //   @include SizeAndPositioning(relative, 100%, 100%, flex, space-evenly, center, 0, 0, 0);
+      // Grid placement column 8 span 10 row 11 span 2
+      // }
+
+      // GRID CONTAINER RESPONSIVE BREAKPOINT LAYOUTS (WIDTH x HEIGHT)
+      // 1921px+ = TV | 48 x 24 | 1921px or more
+      // 1281px - 1800px = Desktop | 24 x 18 | 1920px x 1025px
+      // 1025px - 1280px = Tablet Landscape | 18 x 12 | 1280px x 800px
+      // 800px - 1024px = Tab Portrait | 12 x 18 | 800px x 1280px
+      // 600px - 799px = Mobile Landscape | 12 x 10 | 799px x 599px
+      // 599px- = Mobile Portrait | 10 x 12 | 599px x 799px
+
+      ///////////////////////
+      // RESPONSIVE GRIDS
+
+      @include min-responsive(1801px) {
+        @include gridLayout(100vh, 100vw, repeat(48, 1fr), repeat(24, 1fr), 0, 0);
+        @include gridPlacement(48, 48, 24, 24);
+      }
+
+      @include max-responsive(1800px) {
+        @include gridLayout(100vh, 100vw, repeat(24, 1fr), repeat(18, 1fr), 0, 0);
+        @include gridPlacement(24, 24, 18, 18);
+      }
+
+      @include max-responsive(1280px) {
+        @include gridLayout(100vh, 100vw, repeat(18, 1fr), repeat(12, 1fr), 0, 0);
+        @include gridPlacement(18, 18, 12, 12);
+      }
+
+      @include max-responsive(1024px) {
+        @include gridLayout(100vh, 100vw, repeat(12, 1fr), repeat(18, 1fr), 0, 0);
+        @include gridPlacement(12, 12, 18, 18);
+      }
+
+      @include max-responsive(799px) {
+        @include gridLayout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
+        @include gridPlacement(12, 12, 10, 10);
+      }
+
+      @include max-responsive(599px) {
+        @include gridLayout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
+        @include gridPlacement(10, 10, 12, 12);
+      }
+
+      @include max-responsive(1600px) {
+        .introduction-button-container {
+          grid-column: 6 / span 14;
+        }
+      }
+
+      @include min-responsive(1801px) {
+        .section-header {
+          grid-column: 10 / span 30;
+          grid-row: 4 / span 4;
+        }
+        .typing-text-container {
+          grid-column: 3 / span 44;
+          grid-row: 10 / span 5;
+        }
+        .introduction-button-container {
+          grid-column: 5 / span 40;
+          grid-row: 15 / span 4;
+        }
+        .about-me-container {
+          grid-column: 5 / span 38;
+          grid-row: 8 / span 17;
+        }
+      }
+
+      @include max-responsive(1500px) {
+        .typing-text-container {
+          padding: 0 2rem;
+        }
+        .about-me-container {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @include max-responsive(1280px) {
+        .section-header {
+          grid-column: 4 / span 12;
+          grid-row: 3 / span 2;
+        }
+        .typing-text-container {
+          grid-column: 2 / span 16;
+          grid-row: 5 / span 3;
+        }
+        .introduction-button-container {
+          grid-column: 3 / span 14;
+          grid-row: 7 / span 2;
+        }
+        .about-me-container {
+          grid-row: 6 / span 7;
+        }
+      }
+
+      @include max-responsive(1200px) {
+        .typing-text-container {
+          .typing-text--cursor {
+            height: 45%;
+            width: 0.6rem;
+          }
+        }
+      }
+
+      @include max-responsive(1024px) {
+        .typing-text-container {
+          grid-column: 2 / span 10;
+          grid-row: 8 / span 3;
+        }
+        .introduction-button-container {
+          grid-column: 1 / -1;
+          grid-row: 11 / span 2;
+        }
+      }
+
+      @include max-responsive(900px) {
+        .typing-text-container {
+          .typing-text--cursor {
+            height: 40%;
+            width: 0.5rem;
+          }
+        }
+      }
+
+      @include max-responsive(799px) {
+        .typing-text-container {
+          grid-column: 2 / span 10;
+          grid-row: 4 / span 2;
+          .typing-text--cursor {
+            height: 40%;
+            width: 0.5rem;
+          }
+        }
+        .introduction-button-container {
+          grid-column: 2 / span 10;
+          grid-row: 6 / span 3;
+        }
+      }
+
+      @include max-responsive(599px) {
+        .typing-text-container {
+          grid-column: 2 / span 8;
+          grid-row: 4 / span 2;
+          padding: 0;
+          .typing-text--cursor {
+            height: 30%;
+            width: 0.4rem;
+          }
+        }
+        .introduction-button-container {
+          flex-direction: column;
+          grid-column: 2 / span 8;
+          grid-row: 6 / span 5;
+        }
+      }
+
+      // @include max-responsive(500px) {
+      //   .introduction-button-container {
+      //     grid-column: 6 / span 14;
+      //     .introduction-button {
+      //       height: 22.5%;
+      //     }
+      //   }
+      // }
+
+      @include max-responsive(425px) {
+        .typing-text-container {
+          .typing-text--cursor {
+            height: 20%;
+            width: 0.3rem;
+          }
+        }
+      }
+
+      @include max-responsive(350px) {
+        .typing-text-container {
+          .typing-text--cursor {
+            height: 15%;
+          }
+        }
+        .introduction-button-container {
+          grid-column: 1 / -1;
+        }
       }
     }
   }

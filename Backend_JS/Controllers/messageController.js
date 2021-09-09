@@ -65,19 +65,26 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
 });
 
 exports.emailMe = catchAsync(async (request, response, next) => {
-  const postBody = request.body;
-  await new Email(
-    postBody.firstName,
-    postBody.lastName,
-    postBody.organization,
-    postBody.position,
-    postBody.email,
-    postBody.subject,
-    postBody.message,
-  ).contactMe();
+  try {
+    const postBody = request.body;
+    await new Email(
+      postBody.firstName,
+      postBody.lastName,
+      postBody.organization,
+      postBody.position,
+      postBody.email,
+      postBody.subject,
+      postBody.message,
+    ).contactMe();
 
-  response.status(200).json({
-    status: `Success`,
-    message: `Your email has been sent. Thank you ${request.body.firstName} for reaching out! 😄`,
-  });
+    response.status(200).json({
+      status: `Success`,
+      message: `Your email has been sent. Thank you ${request.body.firstName} for reaching out! 😄`,
+    });
+  } catch (error) {
+    response.status(500).json({
+      status: `Internal Error`,
+      message: `Your email could not be sent.  Pleas try again later.`,
+    });
+  }
 });
