@@ -400,6 +400,11 @@ html {
         .typing-text-container {
           font-size: 8rem;
         }
+        .introduction-button-container {
+          .introduction-button {
+            font-size: 2.4rem;
+          }
+        }
         .section-header {
           font-size: 9.5rem;
         }
@@ -524,11 +529,35 @@ html {
         .typing-text-container {
           font-size: 1.4rem;
         }
+        .about-me-container {
+          .card-button-left,
+          .card-button-right {
+            font-size: 1.6rem;
+          }
+        }
+        .showcase-grid {
+          .card-button-left,
+          .card-button-right {
+            font-size: 1.8rem;
+          }
+        }
       }
 
       @include max-responsive(350px) {
+        .section-header {
+          font-size: 3.5rem;
+        }
         .typing-text-container {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
+        }
+      }
+      @include combo-maxMin-responsive(800px, 500px) {
+        .showcase-grid {
+          .skill-card {
+            .skill-image-container {
+              font-size: 8rem;
+            }
+          }
         }
       }
     }

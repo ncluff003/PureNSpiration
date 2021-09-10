@@ -92,25 +92,25 @@
 }
 
 @mixin combo-max-responsive($max-width, $max-height) {
-  @media (max-width: $max-width), (max-height: $max-height) {
+  @media (max-width: $max-width) and (max-height: $max-height) {
     @content;
   }
 }
 
 @mixin combo-min-responsive($min-width, $min-height) {
-  @media (min-width: $min-width), (min-height: $min-height) {
+  @media (min-width: $min-width) and (min-height: $min-height) {
     @content;
   }
 }
 
 @mixin combo-maxMin-responsive($max-width, $min-height) {
-  @media (max-width: $max-width), (max-height: $min-height) {
+  @media (max-width: $max-width) and (max-height: $min-height) {
     @content;
   }
 }
 
 @mixin combo-minMax-responsive($min-width, $max-height) {
-  @media (min-width: $min-width), (min-height: $max-height) {
+  @media (min-width: $min-width) and (min-height: $max-height) {
     @content;
   }
 }

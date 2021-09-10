@@ -29,15 +29,17 @@ const aboutCursor = document.querySelector(`.about-typing-text--cursor`);
 const aboutTypingTextContent = document.getElementsByClassName(`about-typing-text`)[0];
 
 const missionStatement = [
-  `My objective is crystal clear.`,
-  `I look forward to helping`,
-  `everyone, including yourself,`,
-  `to be in much better, cleaner,`,
-  `more efficient & profitable`,
-  `shape than I had found you.`,
-  `Thank you for taking the time`,
-  `to visit my site and consider`,
-  `me for your position.`,
+  `As a passionate and`,
+  `self-taught developer,`,
+  `my mission is simple.`,
+  `To improve the growth`,
+  `and profitability of`,
+  `your organization while`,
+  `simultaneously expanding`,
+  `my growing skillset.`,
+  `Thank you so much`,
+  `for your time and`,
+  `consideration. 🙂`,
 ];
 ///////////////////////////////////////////////
 // PARAGRAPH OBJECTS

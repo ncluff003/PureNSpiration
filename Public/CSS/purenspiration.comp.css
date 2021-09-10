@@ -307,6 +307,9 @@ html {
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
     font-size: 8rem;
   }
+  .vertical-flex-container .flex-section .grid-container .introduction-button-container .introduction-button {
+    font-size: 2.4rem;
+  }
   .vertical-flex-container .flex-section .grid-container .section-header {
     font-size: 9.5rem;
   }
@@ -390,10 +393,26 @@ html {
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
     font-size: 1.4rem;
   }
+  .vertical-flex-container .flex-section .grid-container .about-me-container .card-button-left,
+.vertical-flex-container .flex-section .grid-container .about-me-container .card-button-right {
+    font-size: 1.6rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-left,
+.vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-right {
+    font-size: 1.8rem;
+  }
 }
 @media (max-width: 350px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    font-size: 3.5rem;
+  }
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 800px) and (max-height: 500px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card .skill-image-container {
+    font-size: 8rem;
   }
 }
 
@@ -38179,6 +38198,10 @@ body {
   position: relative;
   height: 80%;
   width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
   filter: brightness(0) invert(1);
 }
 .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card .skill-title-container {
@@ -69692,11 +69715,6 @@ body {
     grid-row: 12/span 1;
   }
 }
-@media (max-width: 1600px) {
-  .vertical-flex-container .flex-section .grid-container .introduction-button-container {
-    grid-column: 6/span 14;
-  }
-}
 @media (min-width: 1801px) {
   .vertical-flex-container .flex-section .grid-container .section-header {
     grid-column: 10/span 30;
@@ -69710,9 +69728,15 @@ body {
     grid-column: 5/span 40;
     grid-row: 15/span 4;
   }
-  .vertical-flex-container .flex-section .grid-container .about-me-container {
-    grid-column: 5/span 38;
+  .vertical-flex-container .flex-section .grid-container .about-me-container,
+.vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 5/span 40;
     grid-row: 8/span 17;
+  }
+}
+@media (max-width: 1600px) {
+  .vertical-flex-container .flex-section .grid-container .introduction-button-container {
+    grid-column: 6/span 14;
   }
 }
 @media (max-width: 1500px) {
@@ -69721,6 +69745,11 @@ body {
   }
   .vertical-flex-container .flex-section .grid-container .about-me-container {
     grid-column: 1/-1;
+  }
+}
+@media (max-width: 1440px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 3/span 20;
   }
 }
 @media (max-width: 1280px) {
@@ -69738,6 +69767,10 @@ body {
   }
   .vertical-flex-container .flex-section .grid-container .about-me-container {
     grid-row: 5/span 8;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 3/span 14;
+    grid-row: 5/span 7;
   }
 }
 @media (max-width: 1200px) {
@@ -69765,6 +69798,10 @@ body {
   .vertical-flex-container .flex-section .grid-container .about-me-container {
     grid-row: 7/span 12;
   }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 1/-1;
+    grid-row: 7/span 11;
+  }
 }
 @media (max-width: 900px) {
   .vertical-flex-container .flex-section .grid-container .typing-text-container .typing-text--cursor {
@@ -69776,7 +69813,6 @@ body {
   .vertical-flex-container .flex-section .grid-container .section-header {
     grid-column: 2/span 10;
     grid-row: 2/span 2;
-    align-items: flex-end;
   }
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
     grid-column: 2/span 10;
@@ -69806,6 +69842,9 @@ body {
     height: 2.5rem;
     width: 2.5rem;
   }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-row: 4/span 7;
+  }
 }
 @media (max-width: 599px) {
   .vertical-flex-container .flex-section .grid-container .section-header {
@@ -69829,6 +69868,9 @@ body {
   .vertical-flex-container .flex-section .grid-container .about-me-container {
     grid-row: 4/span 8;
   }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-row: 5/span 7;
+  }
 }
 @media (max-width: 475px) {
   .vertical-flex-container .flex-section .grid-container .about-me-container {
@@ -69838,6 +69880,13 @@ body {
 .vertical-flex-container .flex-section .grid-container .about-me-container .card-button-right {
     height: 4rem;
     width: 4rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card {
+    width: 22rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card .skill-image-container {
+    font-size: 12rem;
+    padding: 1rem;
   }
 }
 @media (max-width: 425px) {
@@ -69851,6 +69900,20 @@ body {
   }
   .vertical-flex-container .flex-section .grid-container .about-me-container__option-slider--option .about-me-video {
     height: 65%;
+    width: 70%;
+  }
+  .vertical-flex-container .flex-section .grid-container .about-me-container .card-button-left,
+.vertical-flex-container .flex-section .grid-container .about-me-container .card-button-right {
+    height: 3rem;
+    width: 3rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-row: 5/span 7;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-left,
+.vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-right {
+    height: 4rem;
+    width: 4rem;
   }
 }
 @media (max-width: 350px) {
@@ -69859,6 +69922,19 @@ body {
   }
   .vertical-flex-container .flex-section .grid-container .introduction-button-container {
     grid-column: 1/-1;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card {
+    width: 20rem;
+  }
+}
+@media (max-width: 800px) and (max-height: 500px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 2/span 10;
+    grid-row: 7/span 11;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card {
+    height: 90%;
+    width: 16rem;
   }
 }
 

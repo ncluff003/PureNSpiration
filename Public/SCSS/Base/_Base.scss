@@ -188,7 +188,7 @@ body {
             background-color: $secondaryColor;
             img,
             p {
-              @include SizingItem(relative, 80%, 80%);
+              @include SizeAndPositioning(relative, 80%, 80%, flex, center, center, 0, 0, 0);
               filter: brightness(0) invert(1);
             }
           }
@@ -331,12 +331,6 @@ body {
         @include gridPlacement(10, 10, 12, 12);
       }
 
-      @include max-responsive(1600px) {
-        .introduction-button-container {
-          grid-column: 6 / span 14;
-        }
-      }
-
       @include min-responsive(1801px) {
         .section-header {
           grid-column: 10 / span 30;
@@ -350,9 +344,19 @@ body {
           grid-column: 5 / span 40;
           grid-row: 15 / span 4;
         }
-        .about-me-container {
-          grid-column: 5 / span 38;
+        .about-me-container,
+        .showcase-grid {
+          grid-column: 5 / span 40;
           grid-row: 8 / span 17;
+        }
+        // .showcase-grid {
+        //   grid-column: 5 / span 40;
+        // }
+      }
+
+      @include max-responsive(1600px) {
+        .introduction-button-container {
+          grid-column: 6 / span 14;
         }
       }
 
@@ -362,6 +366,12 @@ body {
         }
         .about-me-container {
           grid-column: 1 / -1;
+        }
+      }
+
+      @include max-responsive(1440px) {
+        .showcase-grid {
+          grid-column: 3 / span 20;
         }
       }
 
@@ -380,6 +390,10 @@ body {
         }
         .about-me-container {
           grid-row: 5 / span 8;
+        }
+        .showcase-grid {
+          grid-column: 3 / span 14;
+          grid-row: 5 / span 7;
         }
       }
 
@@ -419,6 +433,10 @@ body {
         .about-me-container {
           grid-row: 7 / span 12;
         }
+        .showcase-grid {
+          grid-column: 1 / -1;
+          grid-row: 7 / span 11;
+        }
       }
 
       @include max-responsive(900px) {
@@ -430,11 +448,14 @@ body {
         }
       }
 
+      // Under 775px it is time to try resizing the window for mobile landscape.  Moving height to 400px.
+      // Under 600px and over 400px, I will do the same thing as just above, except also test it at 800px in height & make the compromize.
+      // Under 400px, I will resize the window for the final time to 400px width & 800px height to test.
+
       @include max-responsive(799px) {
         .section-header {
           grid-column: 2 / span 10;
           grid-row: 2 / span 2;
-          align-items: flex-end;
         }
         .typing-text-container {
           grid-column: 2 / span 10;
@@ -472,6 +493,9 @@ body {
             }
           }
         }
+        .showcase-grid {
+          grid-row: 4 / span 7;
+        }
       }
 
       @include max-responsive(599px) {
@@ -496,16 +520,10 @@ body {
         .about-me-container {
           grid-row: 4 / span 8;
         }
+        .showcase-grid {
+          grid-row: 5 / span 7;
+        }
       }
-
-      // @include max-responsive(500px) {
-      //   .introduction-button-container {
-      //     grid-column: 6 / span 14;
-      //     .introduction-button {
-      //       height: 22.5%;
-      //     }
-      //   }
-      // }
 
       @include max-responsive(475px) {
         .about-me-container {
@@ -514,6 +532,15 @@ body {
           .card-button-right {
             height: 4rem;
             width: 4rem;
+          }
+        }
+        .showcase-grid {
+          .skill-card {
+            width: 22rem;
+            .skill-image-container {
+              font-size: 12rem;
+              padding: 1rem;
+            }
           }
         }
       }
@@ -534,8 +561,22 @@ body {
             &--option {
               .about-me-video {
                 height: 65%;
+                width: 70%;
               }
             }
+          }
+          .card-button-left,
+          .card-button-right {
+            height: 3rem;
+            width: 3rem;
+          }
+        }
+        .showcase-grid {
+          grid-row: 5 / span 7;
+          .card-button-left,
+          .card-button-right {
+            height: 4rem;
+            width: 4rem;
           }
         }
       }
@@ -548,6 +589,22 @@ body {
         }
         .introduction-button-container {
           grid-column: 1 / -1;
+        }
+        .showcase-grid {
+          .skill-card {
+            width: 20rem;
+          }
+        }
+      }
+
+      @include combo-maxMin-responsive(800px, 500px) {
+        .showcase-grid {
+          grid-column: 2 / span 10;
+          grid-row: 7 / span 11;
+          .skill-card {
+            height: 90%;
+            width: 16rem;
+          }
         }
       }
     }
