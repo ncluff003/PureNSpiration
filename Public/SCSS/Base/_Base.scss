@@ -334,7 +334,7 @@ body {
       @include min-responsive(1801px) {
         .section-header {
           grid-column: 10 / span 30;
-          grid-row: 4 / span 4;
+          grid-row: 3 / span 4;
         }
         .typing-text-container {
           grid-column: 3 / span 44;
@@ -347,11 +347,12 @@ body {
         .about-me-container,
         .showcase-grid {
           grid-column: 5 / span 40;
-          grid-row: 8 / span 17;
+          grid-row: 7 / span 17;
         }
-        // .showcase-grid {
-        //   grid-column: 5 / span 40;
-        // }
+        .project-count {
+          grid-column: 23 / span 3;
+          grid-row: 22 / span 1;
+        }
       }
 
       @include max-responsive(1600px) {
@@ -538,7 +539,6 @@ body {
           .skill-card {
             width: 22rem;
             .skill-image-container {
-              font-size: 12rem;
               padding: 1rem;
             }
           }
@@ -597,14 +597,47 @@ body {
         }
       }
 
+      @include combo-maxMin-responsive(1300px, 850px) {
+        .showcase-grid {
+          grid-row: 6 / span 11;
+        }
+      }
+
+      @include combo-maxMin-responsive(1280px, 800px) {
+        .showcase-grid {
+          grid-row: 5 / span 7;
+        }
+        .project-count {
+          grid-column: 12 / span 2;
+          grid-row: 13 / span 1;
+        }
+      }
+
+      @include combo-maxMin-responsive(1024px, 800px) {
+        .showcase-grid {
+          grid-row: 7 / span 10;
+        }
+        .project-count {
+          grid-column: 6 / span 2;
+          grid-row: 16 / span 1;
+        }
+      }
+
       @include combo-maxMin-responsive(800px, 500px) {
         .showcase-grid {
           grid-column: 2 / span 10;
-          grid-row: 7 / span 11;
+          grid-row: 4 / span 4;
           .skill-card {
-            height: 90%;
+            height: 80%;
             width: 16rem;
           }
+        }
+      }
+
+      @include combo-maxMin-responsive(600px, 500px) {
+        .showcase-grid {
+          grid-column: 1 / -1;
+          grid-row: 5 / span 4;
         }
       }
     }

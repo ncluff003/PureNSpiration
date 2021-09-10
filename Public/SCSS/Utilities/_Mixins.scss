@@ -104,7 +104,7 @@
 }
 
 @mixin combo-maxMin-responsive($max-width, $min-height) {
-  @media (max-width: $max-width) and (max-height: $min-height) {
+  @media (max-width: $max-width) and (min-height: $min-height) {
     @content;
   }
 }

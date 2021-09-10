@@ -313,6 +313,9 @@ html {
   .vertical-flex-container .flex-section .grid-container .section-header {
     font-size: 9.5rem;
   }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-content-description-container {
+    font-size: 2.8rem;
+  }
 }
 @media (max-width: 1600px) {
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
@@ -331,6 +334,9 @@ html {
   .vertical-flex-container .flex-section .grid-container .about-me-container .about-typing-text-container {
     font-size: 5.5rem;
   }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-cover-title-container {
+    font-size: 2.4rem;
+  }
 }
 @media (max-width: 1280px) {
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
@@ -338,6 +344,12 @@ html {
   }
   .vertical-flex-container .flex-section .grid-container .about-me-container .about-typing-text-container {
     font-size: 4rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-cover-title-container {
+    font-size: 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-content-description-container {
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 920px) {
@@ -410,7 +422,22 @@ html {
     font-size: 1.2rem;
   }
 }
-@media (max-width: 800px) and (max-height: 500px) {
+@media (max-width: 1300px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    font-size: 5.5rem;
+  }
+}
+@media (max-width: 1280px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-content-link-container--link {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1024px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 800px) and (min-height: 500px) {
   .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card .skill-image-container {
     font-size: 8rem;
   }
@@ -69718,7 +69745,7 @@ body {
 @media (min-width: 1801px) {
   .vertical-flex-container .flex-section .grid-container .section-header {
     grid-column: 10/span 30;
-    grid-row: 4/span 4;
+    grid-row: 3/span 4;
   }
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
     grid-column: 3/span 44;
@@ -69731,7 +69758,11 @@ body {
   .vertical-flex-container .flex-section .grid-container .about-me-container,
 .vertical-flex-container .flex-section .grid-container .showcase-grid {
     grid-column: 5/span 40;
-    grid-row: 8/span 17;
+    grid-row: 7/span 17;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-column: 23/span 3;
+    grid-row: 22/span 1;
   }
 }
 @media (max-width: 1600px) {
@@ -69885,7 +69916,6 @@ body {
     width: 22rem;
   }
   .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card .skill-image-container {
-    font-size: 12rem;
     padding: 1rem;
   }
 }
@@ -69927,14 +69957,43 @@ body {
     width: 20rem;
   }
 }
-@media (max-width: 800px) and (max-height: 500px) {
+@media (max-width: 1300px) and (min-height: 850px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-row: 6/span 11;
+  }
+}
+@media (max-width: 1280px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-row: 5/span 7;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-column: 12/span 2;
+    grid-row: 13/span 1;
+  }
+}
+@media (max-width: 1024px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-row: 7/span 10;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-column: 6/span 2;
+    grid-row: 16/span 1;
+  }
+}
+@media (max-width: 800px) and (min-height: 500px) {
   .vertical-flex-container .flex-section .grid-container .showcase-grid {
     grid-column: 2/span 10;
-    grid-row: 7/span 11;
+    grid-row: 4/span 4;
   }
   .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card {
-    height: 90%;
+    height: 80%;
     width: 16rem;
+  }
+}
+@media (max-width: 600px) and (min-height: 500px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 1/-1;
+    grid-row: 5/span 4;
   }
 }
 

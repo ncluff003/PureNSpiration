@@ -4672,7 +4672,7 @@ skills.forEach(function (s, i) {
 }); //////////////////////////////////
 //  -- PROJECTS INTRODUCTIONS --  //
 
-var purenspirationDescription = "<p>This is my personal creative playground.  As of right now, it has the foundational technologies of HTML5, CSS3, & JavaScript setting a strong foundation for its function & design.</p>\n<br>\n<p>The aim for the design was to be easier to use, while also easy on the eyes.  The most advanced features use technologies such as, SCSS, PugJS, JavaScript, & ExpressJS amongst others.</p>";
+var purenspirationDescription = "<p>This is my personal classroom and creative playground.  As of right now, it has the foundational technologies of HTML5, CSS3, & JavaScript setting a strong foundation for its function & design.</p>\n<br>\n<p>The aim for the design was to be easier to use, while also easy on the eyes.  The most advanced features use technologies such as, SCSS, PugJS, JavaScript, & ExpressJS amongst others.</p>";
 var kingRichardDescription = "The goal is for this to be a budget built to be flexible for any kind of person.  From the simplest of budgets, to the most detail-intensive and powerful.  All so the users can get the most value out of their money, and be able to reach their financial dreams."; /////////////////////
 //  -- PROJECTS --  //
 

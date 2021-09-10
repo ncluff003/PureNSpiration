@@ -408,6 +408,15 @@ html {
         .section-header {
           font-size: 9.5rem;
         }
+        .showcase-grid {
+          .project-card {
+            &-content {
+              &-description-container {
+                font-size: 2.8rem;
+              }
+            }
+          }
+        }
       }
 
       @include max-responsive(1600px) {
@@ -433,6 +442,15 @@ html {
             font-size: 5.5rem;
           }
         }
+        .showcase-grid {
+          .project-card {
+            &-cover {
+              &-title-container {
+                font-size: 2.4rem;
+              }
+            }
+          }
+        }
       }
 
       @include max-responsive(1280px) {
@@ -442,6 +460,20 @@ html {
         .about-me-container {
           .about-typing-text-container {
             font-size: 4rem;
+          }
+        }
+        .showcase-grid {
+          .project-card {
+            &-cover {
+              &-title-container {
+                font-size: 2rem;
+              }
+            }
+            &-content {
+              &-description-container {
+                font-size: 1.6rem;
+              }
+            }
           }
         }
       }
@@ -551,6 +583,33 @@ html {
           font-size: 1.2rem;
         }
       }
+
+      @include combo-maxMin-responsive(1300px, 800px) {
+        .section-header {
+          font-size: 5.5rem;
+        }
+      }
+
+      @include combo-maxMin-responsive(1280px, 800px) {
+        .showcase-grid {
+          .project-card {
+            &-content {
+              &-link-container {
+                &--link {
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @include combo-maxMin-responsive(1024px, 800px) {
+        .section-header {
+          font-size: 4rem;
+        }
+      }
+
       @include combo-maxMin-responsive(800px, 500px) {
         .showcase-grid {
           .skill-card {
