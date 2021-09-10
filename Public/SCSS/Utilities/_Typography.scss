@@ -406,7 +406,7 @@ html {
           }
         }
         .section-header {
-          font-size: 9.5rem;
+          font-size: 9rem;
         }
         .showcase-grid {
           .project-card {
@@ -584,6 +584,46 @@ html {
         }
       }
 
+      @include combo-maxMin-responsive(800px, 400px) {
+        #project {
+          .project-card {
+            &-content {
+              &-description-container {
+                font-size: 1.2rem;
+              }
+              &-link-container {
+                &--link {
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+
+        .card-button-left,
+        .card-button-right {
+          font-size: 1.6rem;
+        }
+      }
+
+      @include combo-maxMin-responsive(650px, 800px) {
+        #project {
+          .project-card {
+            &-cover {
+              &-title-container {
+                font-size: 2.4rem;
+              }
+            }
+
+            &-content {
+              &-description-container {
+                font-size: 2rem;
+              }
+            }
+          }
+        }
+      }
+
       @include combo-maxMin-responsive(1300px, 800px) {
         .section-header {
           font-size: 5.5rem;
@@ -604,9 +644,62 @@ html {
         }
       }
 
+      // I need to get the font size of the project description right either here, or the breakpoint just a bit earlier.
       @include combo-maxMin-responsive(1024px, 800px) {
         .section-header {
           font-size: 4rem;
+        }
+      }
+
+      @include combo-maxMin-responsive(525px, 800px) {
+        .section-header {
+          font-size: 3rem;
+        }
+        #project {
+          .card-button-left,
+          .card-button-right {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      @include combo-maxMin-responsive(375px, 800px) {
+        .section-header {
+          font-size: 2.6rem;
+        }
+        #project {
+          .project-card {
+            &-content {
+              &-link-container {
+                align-items: flex-start;
+              }
+            }
+          }
+          .card-button-left,
+          .card-button-right {
+            color: rgba($colorOffWhite, 0.75);
+          }
+        }
+        .project-count {
+          font-size: 2rem;
+        }
+      }
+
+      @include combo-maxMin-responsive(330px, 800px) {
+        .section-header {
+          font-size: 2.2rem;
+        }
+      }
+
+      @include combo-maxMin-responsive(925px, 500px) {
+        .showcase-grid {
+          .project-card {
+            width: 75%;
+          }
+          .card-button-left,
+          .card-button-right {
+            font-size: 2.2rem;
+          }
         }
       }
 

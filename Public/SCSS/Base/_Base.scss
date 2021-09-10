@@ -351,7 +351,7 @@ body {
         }
         .project-count {
           grid-column: 23 / span 3;
-          grid-row: 22 / span 1;
+          grid-row: 23 / span 1;
         }
       }
 
@@ -608,8 +608,19 @@ body {
           grid-row: 5 / span 7;
         }
         .project-count {
-          grid-column: 12 / span 2;
-          grid-row: 13 / span 1;
+          grid-column: 9 / span 2;
+          grid-row: 11 / span 1;
+        }
+      }
+
+      @include combo-maxMin-responsive(1125px, 800px) {
+        .showcase-grid {
+          grid-column: 1 / -1;
+          grid-row: 5 / span 8;
+        }
+        .project-count {
+          grid-column: 9 / span 2;
+          grid-row: 12 / span 1;
         }
       }
 
@@ -623,13 +634,177 @@ body {
         }
       }
 
+      @include combo-maxMin-responsive(925px, 500px) {
+        .showcase-grid {
+          .project-card {
+            width: 75%;
+          }
+          .card-button-left,
+          .card-button-right {
+            height: 4rem;
+            width: 4rem;
+          }
+        }
+      }
+
+      // As a reminder, I am on the skill & project cards, particularly the project ones about getting them sized for the 800px width & 400px height.  If I cannot get it well enough, then I will skip it after tomorrow.  Mainly to allow that ONE 'flaw' to be present if necessary for now.
+
+      @include combo-maxMin-responsive(800px, 400px) {
+        .showcase-grid {
+          grid-column: 2 / span 10;
+          grid-row: 4 / span 7;
+          .skill-card {
+            height: 95%;
+          }
+          .project-card {
+            height: 80%;
+            width: 75%;
+          }
+          .card-button-left,
+          .card-button-right {
+            height: 4rem;
+            width: 4rem;
+          }
+        }
+        #project {
+          align-items: flex-start;
+          .project-card {
+            &-content {
+              &-description-container {
+                padding: 0.5rem;
+              }
+            }
+          }
+        }
+        .project-count {
+          grid-column: 6 / span 2;
+          grid-row: 10 / span 1;
+        }
+      }
+
       @include combo-maxMin-responsive(800px, 500px) {
         .showcase-grid {
           grid-column: 2 / span 10;
-          grid-row: 4 / span 4;
+          grid-row: 4 / span 6;
           .skill-card {
             height: 80%;
             width: 16rem;
+          }
+        }
+      }
+
+      @include combo-maxMin-responsive(800px, 800px) {
+        .showcase-grid {
+          grid-column: 1 / -1;
+          grid-row: 4 / span 5;
+        }
+        .project-count {
+          grid-row: 8 / span 1;
+        }
+      }
+
+      @include combo-maxMin-responsive(650px, 800px) {
+        .section-header {
+          grid-row: 2 / span 1;
+        }
+        #project {
+          align-items: center;
+          grid-row: 3 / span 7;
+          .project-card {
+            flex-direction: column;
+            height: 100%;
+            padding: 7rem 2rem 2rem;
+            &-cover,
+            &-content {
+              height: 50%;
+              width: 100%;
+            }
+
+            &-cover {
+              &-title-container {
+                margin-bottom: 2rem;
+              }
+            }
+
+            &-content {
+              padding-left: 0;
+              &-description-container {
+                height: 75%;
+                width: 100%;
+                padding: 1.2rem;
+              }
+              &-link-container {
+                align-items: flex-start;
+                padding-top: 0.5rem;
+              }
+            }
+          }
+        }
+        .project-count {
+          grid-row: 10 / span 1;
+        }
+      }
+
+      @include combo-maxMin-responsive(600px, 800px) {
+        #project {
+          grid-row: 3 / span 9;
+        }
+        .project-count {
+          grid-column: 5 / span 2;
+          grid-row: 12 / span 1;
+        }
+      }
+
+      @include combo-maxMin-responsive(525px, 800px) {
+        #project {
+          .card-button-left,
+          .card-button-right {
+            height: 2.5rem;
+            width: 2.5rem;
+          }
+        }
+      }
+
+      @include combo-maxMin-responsive(415px, 800px) {
+        #project {
+          .project-card {
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+            &-cover {
+              height: 45%;
+            }
+            &-content {
+              justify-content: space-between;
+              height: 45%;
+              &-description-container {
+                height: 80%;
+              }
+              &-link-container {
+                align-items: center;
+              }
+            }
+          }
+          .card-button-left,
+          .card-button-right {
+            height: 2.5rem;
+            width: 2.5rem;
+          }
+        }
+      }
+
+      @include combo-maxMin-responsive(375px, 800px) {
+        #project {
+          .project-card {
+            width: 90%;
+            &-content {
+              &-link-container {
+                align-items: flex-start;
+              }
+            }
+          }
+          .card-button-left,
+          .card-button-right {
+            border: 0.2rem groove rgba($colorOffWhite, 0.75);
           }
         }
       }

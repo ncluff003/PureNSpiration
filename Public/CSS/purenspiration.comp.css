@@ -311,7 +311,7 @@ html {
     font-size: 2.4rem;
   }
   .vertical-flex-container .flex-section .grid-container .section-header {
-    font-size: 9.5rem;
+    font-size: 9rem;
   }
   .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-content-description-container {
     font-size: 2.8rem;
@@ -422,6 +422,26 @@ html {
     font-size: 1.2rem;
   }
 }
+@media (max-width: 800px) and (min-height: 400px) {
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-description-container {
+    font-size: 1.2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-link-container--link {
+    font-size: 1rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .card-button-left,
+.vertical-flex-container .flex-section .grid-container .card-button-right {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 650px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container #project .project-card-cover-title-container {
+    font-size: 2.4rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-description-container {
+    font-size: 2rem;
+  }
+}
 @media (max-width: 1300px) and (min-height: 800px) {
   .vertical-flex-container .flex-section .grid-container .section-header {
     font-size: 5.5rem;
@@ -435,6 +455,44 @@ html {
 @media (max-width: 1024px) and (min-height: 800px) {
   .vertical-flex-container .flex-section .grid-container .section-header {
     font-size: 4rem;
+  }
+}
+@media (max-width: 525px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    font-size: 3rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .card-button-left,
+.vertical-flex-container .flex-section .grid-container #project .card-button-right {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 375px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    font-size: 2.6rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-link-container {
+    align-items: flex-start;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .card-button-left,
+.vertical-flex-container .flex-section .grid-container #project .card-button-right {
+    color: rgba(250, 250, 250, 0.75);
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 330px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 925px) and (min-height: 500px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card {
+    width: 75%;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-left,
+.vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-right {
+    font-size: 2.2rem;
   }
 }
 @media (max-width: 800px) and (min-height: 500px) {
@@ -69762,7 +69820,7 @@ body {
   }
   .vertical-flex-container .flex-section .grid-container .project-count {
     grid-column: 23/span 3;
-    grid-row: 22/span 1;
+    grid-row: 23/span 1;
   }
 }
 @media (max-width: 1600px) {
@@ -69967,8 +70025,18 @@ body {
     grid-row: 5/span 7;
   }
   .vertical-flex-container .flex-section .grid-container .project-count {
-    grid-column: 12/span 2;
-    grid-row: 13/span 1;
+    grid-column: 9/span 2;
+    grid-row: 11/span 1;
+  }
+}
+@media (max-width: 1125px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 1/-1;
+    grid-row: 5/span 8;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-column: 9/span 2;
+    grid-row: 12/span 1;
   }
 }
 @media (max-width: 1024px) and (min-height: 800px) {
@@ -69980,14 +70048,149 @@ body {
     grid-row: 16/span 1;
   }
 }
+@media (max-width: 925px) and (min-height: 500px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card {
+    width: 75%;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-left,
+.vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-right {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+@media (max-width: 800px) and (min-height: 400px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 2/span 10;
+    grid-row: 4/span 7;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card {
+    height: 95%;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card {
+    height: 80%;
+    width: 75%;
+  }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-left,
+.vertical-flex-container .flex-section .grid-container .showcase-grid .card-button-right {
+    height: 4rem;
+    width: 4rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project {
+    align-items: flex-start;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-description-container {
+    padding: 0.5rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-column: 6/span 2;
+    grid-row: 10/span 1;
+  }
+}
 @media (max-width: 800px) and (min-height: 500px) {
   .vertical-flex-container .flex-section .grid-container .showcase-grid {
     grid-column: 2/span 10;
-    grid-row: 4/span 4;
+    grid-row: 4/span 6;
   }
   .vertical-flex-container .flex-section .grid-container .showcase-grid .skill-card {
     height: 80%;
     width: 16rem;
+  }
+}
+@media (max-width: 800px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .showcase-grid {
+    grid-column: 1/-1;
+    grid-row: 4/span 5;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-row: 8/span 1;
+  }
+}
+@media (max-width: 650px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container .section-header {
+    grid-row: 2/span 1;
+  }
+  .vertical-flex-container .flex-section .grid-container #project {
+    align-items: center;
+    grid-row: 3/span 7;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card {
+    flex-direction: column;
+    height: 100%;
+    padding: 7rem 2rem 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-cover, .vertical-flex-container .flex-section .grid-container #project .project-card-content {
+    height: 50%;
+    width: 100%;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-cover-title-container {
+    margin-bottom: 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content {
+    padding-left: 0;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-description-container {
+    height: 75%;
+    width: 100%;
+    padding: 1.2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-link-container {
+    align-items: flex-start;
+    padding-top: 0.5rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-row: 10/span 1;
+  }
+}
+@media (max-width: 600px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container #project {
+    grid-row: 3/span 9;
+  }
+  .vertical-flex-container .flex-section .grid-container .project-count {
+    grid-column: 5/span 2;
+    grid-row: 12/span 1;
+  }
+}
+@media (max-width: 525px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container #project .card-button-left,
+.vertical-flex-container .flex-section .grid-container #project .card-button-right {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+@media (max-width: 415px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container #project .project-card {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-cover {
+    height: 45%;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content {
+    justify-content: space-between;
+    height: 45%;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-description-container {
+    height: 80%;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-link-container {
+    align-items: center;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .card-button-left,
+.vertical-flex-container .flex-section .grid-container #project .card-button-right {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+@media (max-width: 375px) and (min-height: 800px) {
+  .vertical-flex-container .flex-section .grid-container #project .project-card {
+    width: 90%;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .project-card-content-link-container {
+    align-items: flex-start;
+  }
+  .vertical-flex-container .flex-section .grid-container #project .card-button-left,
+.vertical-flex-container .flex-section .grid-container #project .card-button-right {
+    border: 0.2rem groove rgba(250, 250, 250, 0.75);
   }
 }
 @media (max-width: 600px) and (min-height: 500px) {
