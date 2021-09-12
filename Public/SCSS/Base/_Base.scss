@@ -359,6 +359,12 @@ body {
         }
       }
 
+      @include max-responsive(1800px) {
+        .contact-form {
+          grid-row: 5 / span 13;
+        }
+      }
+
       @include max-responsive(1600px) {
         .introduction-button-container {
           grid-column: 6 / span 14;
@@ -380,10 +386,16 @@ body {
         }
       }
 
+      @include max-responsive(1300px) {
+        .contact-form {
+          grid-column: 5 / span 16;
+        }
+      }
+
       @include max-responsive(1280px) {
         .section-header {
           grid-column: 4 / span 12;
-          grid-row: 3 / span 2;
+          grid-row: 2 / span 2;
         }
         .typing-text-container {
           grid-column: 2 / span 16;
@@ -399,6 +411,10 @@ body {
         .showcase-grid {
           grid-column: 3 / span 14;
           grid-row: 5 / span 7;
+        }
+        .contact-form {
+          grid-column: 4 / span 12;
+          grid-row: 4 / span 10;
         }
       }
 
@@ -425,7 +441,7 @@ body {
       @include max-responsive(1024px) {
         .section-header {
           grid-column: 3 / span 8;
-          grid-row: 4 / span 3;
+          grid-row: 3 / span 2;
         }
         .typing-text-container {
           grid-column: 2 / span 10;
@@ -441,6 +457,10 @@ body {
         .showcase-grid {
           grid-column: 1 / -1;
           grid-row: 7 / span 11;
+        }
+        .contact-form {
+          grid-column: 2 / span 10;
+          grid-row: 5 / span 13;
         }
       }
 
@@ -500,6 +520,30 @@ body {
         }
         .showcase-grid {
           grid-row: 4 / span 7;
+        }
+        .contact-form {
+          grid-column: 1 / -1;
+          grid-row: 3 / span 8;
+        }
+      }
+
+      @include max-responsive(700px) {
+        .section-header {
+          grid-row: 1 / span 2;
+        }
+        #contact {
+          align-items: flex-start;
+          padding-top: 6rem;
+        }
+        .contact-form {
+          grid-column: 1 / -1;
+          grid-row: 2 / span 9;
+        }
+      }
+
+      @include max-responsive(700px) {
+        #contact {
+          grid-row: 1 / span 1;
         }
       }
 
