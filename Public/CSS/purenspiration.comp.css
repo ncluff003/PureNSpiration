@@ -316,6 +316,14 @@ html {
   .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-content-description-container {
     font-size: 2.8rem;
   }
+  .vertical-flex-container .flex-section .grid-container .showcase-grid .project-card-content-link-container--link {
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 1801px) and (min-width: 1801px) {
+  .vertical-flex-container .flex-section .grid-container .contact-form-message-container--error, .vertical-flex-container .flex-section .grid-container .contact-form-message-container--success {
+    font-size: 1.8rem;
+  }
 }
 @media (max-width: 1600px) {
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
@@ -37645,28 +37653,6 @@ html {
   }
 }
 
-.vertical-flex-container .flex-section .grid-container .contact-form {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  transform: rotate(0) translate(0, 0);
-  flex-direction: column;
-}
-.vertical-flex-container .flex-section .grid-container .contact-form-message-container {
-  position: relative;
-  height: 7.5%;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  transform: rotate(0) translate(0, 0);
-}
-.vertical-flex-container .flex-section .grid-container .contact-form-message-container--error {
-  margin-bottom: 2.75rem;
-}
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container {
   position: relative;
   height: 7.5%;
@@ -37727,7 +37713,7 @@ html {
   height: 40%;
   width: 60%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
@@ -37803,7 +37789,7 @@ html {
   height: 40%;
   width: 80%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
@@ -37862,7 +37848,7 @@ html {
   height: 40%;
   width: 40%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
@@ -37911,7 +37897,7 @@ html {
   height: 40%;
   width: 40%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
@@ -37961,7 +37947,7 @@ html {
   height: 20%;
   width: 25%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
   transition: transform 0.75s;
@@ -38018,6 +38004,382 @@ html {
 .vertical-flex-container .flex-section .grid-container .contact-form ::placeholder {
   opacity: 0;
   transition: all 0.75s;
+}
+@media (min-width: 1801px) {
+  .vertical-flex-container .flex-section .grid-container .contact-form {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    flex-direction: column;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-message-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-message-container--error {
+    margin-bottom: 2.75rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    flex-direction: column-reverse;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus {
+    outline: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus::placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus::placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus::placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus::placeholder {
+    opacity: 1;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:focus + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:not(:placeholder-shown) + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus + label {
+    transform: translate(-2rem, -5rem) scale(0.85);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name-label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name-label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name-label,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    transition: transform 0.75s;
+    transform: translate(2rem, 0);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:invalid, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:valid, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    flex-direction: column-reverse;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:focus,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:focus,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus {
+    outline: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:focus::placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus::placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:focus::placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus::placeholder {
+    opacity: 1;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:focus + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:focus + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:not(:placeholder-shown) + label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus + label {
+    transform: translate(-2rem, -4.5rem) scale(0.85);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name-label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name-label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name-label,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    transition: transform 0.75s;
+    transform: translate(2rem, 0);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:invalid, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:invalid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:valid, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:valid,
+.vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus + label {
+    transform: translate(-2rem, -4.5rem) scale(0.85);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name-label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name-label {
+    transform: translate(2rem);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus {
+    outline: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus::placeholder {
+    opacity: 1;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus + label {
+    transform: translate(-6rem, -4.5rem) scale(0.85);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    transition: transform 0.75s;
+    transform: translate(2rem, 0);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:valid {
+    border: 0.3rem groove #008013;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:focus {
+    outline: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:focus::placeholder {
+    opacity: 1;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:focus + label {
+    transform: translate(-6rem, -4.5rem) scale(0.85);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    transition: transform 0.75s;
+    transform: translate(2rem, 0);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:valid {
+    border: 0.3rem groove #008013;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container {
+    position: relative;
+    height: 30%;
+    width: 86.75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    flex-direction: column-reverse;
+    margin: 2rem 0 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+    resize: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus {
+    outline: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus::-webkit-input-placeholder, .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus::placeholder {
+    opacity: 1;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus + label {
+    transform: translate(-6rem, -15.5rem) scale(0.85);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message-label {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    transition: transform 0.75s;
+    transform: translate(2rem, -11rem);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:valid {
+    border: 0.3rem groove #008013;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-submit-container {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    margin: 2rem 0 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-submit-container .submit-message-button {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0) translate(0, 0);
+    background-color: rgba(0, 71, 171, 0.8);
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-submit-container .submit-message-button:hover {
+    cursor: pointer;
+    background-color: #0047AB;
+    border: 0.3rem groove #0047AB;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-submit-container .submit-message-button:active {
+    background-color: #FFD700;
+    border: 0.3rem groove #FFD700;
+    outline: none;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form .input-good {
+    border: 0.3rem groove #008013;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form .input-bad {
+    border: 0.3rem groove #cf352e;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form .input-warning {
+    border: 0.3rem groove #FFD700;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form ::-webkit-input-placeholder,
+.vertical-flex-container .flex-section .grid-container .contact-form ::placeholder {
+    opacity: 0;
+    transition: all 0.75s;
+  }
 }
 
 /*
@@ -69821,6 +70183,10 @@ body {
   .vertical-flex-container .flex-section .grid-container .project-count {
     grid-column: 23/span 3;
     grid-row: 23/span 1;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form {
+    grid-column: 14/span 22;
+    grid-row: 6/span 19;
   }
 }
 @media (max-width: 1600px) {

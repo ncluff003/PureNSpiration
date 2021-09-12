@@ -353,6 +353,10 @@ body {
           grid-column: 23 / span 3;
           grid-row: 23 / span 1;
         }
+        .contact-form {
+          grid-column: 14 / span 22;
+          grid-row: 6 / span 19;
+        }
       }
 
       @include max-responsive(1600px) {
