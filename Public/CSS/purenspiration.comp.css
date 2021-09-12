@@ -389,6 +389,14 @@ html {
     font-size: 2.4rem;
   }
 }
+@media (max-width: 600px) {
+  .vertical-flex-container .flex-section .grid-container .contact-form {
+    font-size: 1.4rem;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-message-container--error, .vertical-flex-container .flex-section .grid-container .contact-form-message-container--success {
+    font-size: 1.4rem;
+  }
+}
 @media (max-width: 550px) {
   .vertical-flex-container .flex-section .grid-container .typing-text-container {
     font-size: 1.8rem;
@@ -407,6 +415,9 @@ html {
   .vertical-flex-container .flex-section .grid-container .about-me-container .card-button-left,
 .vertical-flex-container .flex-section .grid-container .about-me-container .card-button-right {
     font-size: 2rem;
+  }
+  .vertical-flex-container .flex-section .grid-container #contact {
+    font-size: 3rem;
   }
 }
 @media (max-width: 425px) {
@@ -38381,7 +38392,7 @@ html {
     height: 5%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus + label {
-    transform: translate(-5rem, -4.5rem) scale(0.85);
+    transform: translate(-3rem, -4.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email-label {
     position: absolute;
@@ -38398,7 +38409,7 @@ html {
     height: 5%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:focus + label {
-    transform: translate(-5rem, -4.5rem) scale(0.85);
+    transform: translate(-3rem, -4.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject-label {
     position: absolute;
@@ -38415,7 +38426,7 @@ html {
     height: 25%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus + label {
-    transform: translate(-4.5rem, -14rem) scale(0.85);
+    transform: translate(-3.5rem, -15rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message-label {
     position: absolute;
@@ -38437,7 +38448,7 @@ html {
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-name-container {
     flex-direction: column;
-    margin: 1.25rem 0 0;
+    margin: 0 0 1.25rem;
     height: 12.5%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name {
@@ -38449,7 +38460,7 @@ html {
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name:focus + label,
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label,
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .last-name:focus + label {
-    transform: translate(-2rem, -4.5rem) scale(0.85);
+    transform: translate(-2rem, -2.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .first-name-label,
 .vertical-flex-container .flex-section .grid-container .contact-form-name-container--first-name .last-name-label, .vertical-flex-container .flex-section .grid-container .contact-form-name-container--last-name .first-name-label,
@@ -38485,7 +38496,7 @@ html {
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name:focus + label,
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:not(:placeholder-shown) + label,
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus + label {
-    transform: translate(-2rem, -4.5rem) scale(0.85);
+    transform: translate(-2rem, -2.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .organization-name-label,
 .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name-label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .organization-name-label,
@@ -38501,7 +38512,7 @@ html {
     transform: translate(2rem, 0);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name:focus + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name:focus + label {
-    transform: translate(-2rem, -4.5rem) scale(0.85);
+    transform: translate(-2rem, -2.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--organization .position-name-label, .vertical-flex-container .flex-section .grid-container .contact-form-organization-container--position .position-name-label {
     transform: translate(2rem);
@@ -38513,7 +38524,7 @@ html {
     height: 5%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email:focus + label {
-    transform: translate(-7rem, -4.5rem) scale(0.85);
+    transform: translate(-2.5rem, -2.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-email-container .email-label {
     position: absolute;
@@ -38530,7 +38541,7 @@ html {
     height: 5%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject:focus + label {
-    transform: translate(-7rem, -4.5rem) scale(0.85);
+    transform: translate(-2.5rem, -2.5rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-subject-container .subject-label {
     position: absolute;
@@ -38547,7 +38558,7 @@ html {
     height: 25%;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:not(:placeholder-shown) + label, .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message:focus + label {
-    transform: translate(-4.5rem, -14rem) scale(0.85);
+    transform: translate(-1.75rem, -8rem) scale(0.85);
   }
   .vertical-flex-container .flex-section .grid-container .contact-form-text-message-container .message-label {
     position: absolute;
@@ -38558,7 +38569,10 @@ html {
     align-items: center;
     transform: rotate(0) translate(0, 0);
     transition: transform 0.75s;
-    transform: translate(2rem, -9rem);
+    transform: translate(2rem, -4.5rem);
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form-submit-container .submit-message-button {
+    width: 60%;
   }
 }
 
@@ -70510,15 +70524,11 @@ body {
   .vertical-flex-container .flex-section .grid-container #contact {
     align-items: flex-start;
     padding-top: 6rem;
+    grid-row: 1/span 1;
   }
   .vertical-flex-container .flex-section .grid-container .contact-form {
     grid-column: 1/-1;
     grid-row: 2/span 9;
-  }
-}
-@media (max-width: 700px) {
-  .vertical-flex-container .flex-section .grid-container #contact {
-    grid-row: 1/span 1;
   }
 }
 @media (max-width: 599px) {
@@ -70545,6 +70555,13 @@ body {
   }
   .vertical-flex-container .flex-section .grid-container .showcase-grid {
     grid-row: 5/span 7;
+  }
+  .vertical-flex-container .flex-section .grid-container .contact-form {
+    grid-row: 4/span 9;
+  }
+  .vertical-flex-container .flex-section .grid-container #contact {
+    grid-row: 1/span 2;
+    align-items: flex-end;
   }
 }
 @media (max-width: 475px) {

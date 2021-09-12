@@ -579,9 +579,6 @@
             &--organization {
               transform: translate(0, -2.25rem);
             }
-            // &--position {
-            //   transform: translate(0, -2rem);
-            // }
           }
 
           &-email-container {
@@ -589,7 +586,7 @@
             .email {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-5rem, -4.5rem) scale(0.85);
+                transform: translate(-3rem, -4.5rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -603,7 +600,7 @@
             .subject {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-5rem, -4.5rem) scale(0.85);
+                transform: translate(-3rem, -4.5rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -617,7 +614,7 @@
             .message {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-4.5rem, -14rem) scale(0.85);
+                transform: translate(-3.5rem, -15rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -636,7 +633,7 @@
           }
           &-name-container {
             flex-direction: column;
-            margin: 1.25rem 0 0;
+            margin: 0 0 1.25rem;
             height: 12.5%;
             &--first-name,
             &--last-name {
@@ -646,7 +643,7 @@
               .last-name {
                 &:not(:placeholder-shown) + label,
                 &:focus + label {
-                  transform: translate(-2rem, -4.5rem) scale(0.85);
+                  transform: translate(-2rem, -2.5rem) scale(0.85);
                 }
                 &-label {
                   @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -676,7 +673,7 @@
               .position-name {
                 &:not(:placeholder-shown) + label,
                 &:focus + label {
-                  transform: translate(-2rem, -4.5rem) scale(0.85);
+                  transform: translate(-2rem, -2.5rem) scale(0.85);
                 }
                 &-label {
                   @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -687,7 +684,7 @@
               .position-name {
                 &:not(:placeholder-shown) + label,
                 &:focus + label {
-                  transform: translate(-2rem, -4.5rem) scale(0.85);
+                  transform: translate(-2rem, -2.5rem) scale(0.85);
                 }
                 &-label {
                   transform: translate(2rem);
@@ -704,7 +701,7 @@
             .email {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-7rem, -4.5rem) scale(0.85);
+                transform: translate(-2.5rem, -2.5rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -718,7 +715,7 @@
             .subject {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-7rem, -4.5rem) scale(0.85);
+                transform: translate(-2.5rem, -2.5rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -732,13 +729,18 @@
             .message {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-4.5rem, -14rem) scale(0.85);
+                transform: translate(-1.75rem, -8rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
                 transition: transform 0.75s;
-                transform: translate(2rem, -9rem);
+                transform: translate(2rem, -4.5rem);
               }
+            }
+          }
+          &-submit-container {
+            .submit-message-button {
+              width: 60%;
             }
           }
         }

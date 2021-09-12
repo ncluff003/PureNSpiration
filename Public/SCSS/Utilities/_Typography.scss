@@ -538,6 +538,20 @@ html {
         }
       }
 
+      @include max-responsive(600px) {
+        .contact-form {
+          font-size: 1.4rem;
+          ////////////////////
+          // Responsive Form //
+          &-message-container {
+            &--error,
+            &--success {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+
       @include max-responsive(550px) {
         .typing-text-container {
           font-size: 1.8rem;
@@ -571,6 +585,9 @@ html {
           .card-button-right {
             font-size: 2rem;
           }
+        }
+        #contact {
+          font-size: 3rem;
         }
       }
 
