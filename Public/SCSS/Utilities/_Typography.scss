@@ -538,6 +538,22 @@ html {
         }
       }
 
+      @include max-responsive(700px) {
+        .contact-form {
+          font-size: 1.4rem;
+          ////////////////////
+          // Responsive Form //
+          &-message-container {
+            &--error,
+            &--success {
+              font-size: 1.4rem;
+              text-align: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+
       @include max-responsive(600px) {
         .contact-form {
           font-size: 1.4rem;

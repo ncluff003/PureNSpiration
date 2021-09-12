@@ -576,6 +576,41 @@ body {
         }
       }
 
+      @include combo-min-responsive(700px, 750px) {
+        #contact {
+          grid-row: 1 / span 2;
+          align-items: center;
+        }
+      }
+
+      @include min-responsive(1801px) {
+        .section-header {
+          grid-column: 10 / span 30;
+          grid-row: 3 / span 4;
+        }
+        .typing-text-container {
+          grid-column: 3 / span 44;
+          grid-row: 10 / span 5;
+        }
+        .introduction-button-container {
+          grid-column: 5 / span 40;
+          grid-row: 15 / span 4;
+        }
+        .about-me-container,
+        .showcase-grid {
+          grid-column: 5 / span 40;
+          grid-row: 7 / span 17;
+        }
+        .project-count {
+          grid-column: 23 / span 3;
+          grid-row: 23 / span 1;
+        }
+        .contact-form {
+          grid-column: 14 / span 22;
+          grid-row: 6 / span 19;
+        }
+      }
+
       @include max-responsive(475px) {
         .about-me-container {
           grid-row: 5 / span 7;

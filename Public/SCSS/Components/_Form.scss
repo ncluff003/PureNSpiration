@@ -249,93 +249,6 @@
         ////////////////////
         // Responsive Form //
 
-        @include min-responsive(1801px) {
-          &-name-container {
-            &--first-name,
-            &--last-name {
-              .first-name,
-              .last-name {
-                &:not(:placeholder-shown) + label,
-                &:focus + label {
-                  transform: translate(-2rem, -5rem) scale(0.85);
-                }
-                &-label {
-                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
-                  transition: transform 0.75s;
-                  transform: translate(2rem, 0);
-                }
-              }
-            }
-          }
-
-          &-organization-container {
-            &--organization,
-            &--position {
-              .organization-name,
-              .position-name {
-                &:not(:placeholder-shown) + label,
-                &:focus + label {
-                  transform: translate(-2rem, -4.5rem) scale(0.85);
-                }
-                &-label {
-                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
-                  transition: transform 0.75s;
-                  transform: translate(2rem, 0);
-                }
-              }
-              .position-name {
-                &:not(:placeholder-shown) + label,
-                &:focus + label {
-                  transform: translate(-2rem, -4.5rem) scale(0.85);
-                }
-                &-label {
-                  transform: translate(2rem);
-                }
-              }
-            }
-          }
-
-          &-email-container {
-            .email {
-              &:not(:placeholder-shown) + label,
-              &:focus + label {
-                transform: translate(-6rem, -4.5rem) scale(0.85);
-              }
-              &-label {
-                @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
-                transition: transform 0.75s;
-                transform: translate(2rem, 0);
-              }
-            }
-          }
-          &-subject-container {
-            .subject {
-              &:not(:placeholder-shown) + label,
-              &:focus + label {
-                transform: translate(-6rem, -4.5rem) scale(0.85);
-              }
-              &-label {
-                @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
-                transition: transform 0.75s;
-                transform: translate(2rem, 0);
-              }
-            }
-          }
-          &-text-message-container {
-            .message {
-              &:not(:placeholder-shown) + label,
-              &:focus + label {
-                transform: translate(-6rem, -15.5rem) scale(0.85);
-              }
-              &-label {
-                @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
-                transition: transform 0.75s;
-                transform: translate(2rem, -11rem);
-              }
-            }
-          }
-        }
-
         @include max-responsive(1800px) {
           &-name-container {
             &--first-name,
@@ -515,10 +428,13 @@
             height: 5%;
             transform: translate(0, -4rem);
             margin-bottom: 0;
+            &--success {
+              transform: translateY(3rem);
+            }
           }
           &-name-container {
             flex-direction: column;
-            margin: 1.25rem 0 0;
+            margin: 0;
             height: 12.5%;
             &--first-name,
             &--last-name {
@@ -548,7 +464,7 @@
 
           &-organization-container {
             flex-direction: column;
-            margin: 1.25rem 0 1.25rem;
+            margin: 0;
             height: 12.5%;
             &--organization,
             &--position {
@@ -583,6 +499,7 @@
 
           &-email-container {
             height: 5%;
+            margin: 0;
             .email {
               &:not(:placeholder-shown) + label,
               &:focus + label {
@@ -597,6 +514,7 @@
           }
           &-subject-container {
             height: 5%;
+            margin: 0;
             .subject {
               &:not(:placeholder-shown) + label,
               &:focus + label {
@@ -611,10 +529,11 @@
           }
           &-text-message-container {
             height: 25%;
+            margin: 0;
             .message {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-3.5rem, -15rem) scale(0.85);
+                transform: translate(-3.5rem, -14rem) scale(0.85);
               }
               &-label {
                 @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
@@ -622,6 +541,9 @@
                 transform: translate(2rem, -9rem);
               }
             }
+          }
+          &-submit-container {
+            margin: 0;
           }
         }
 
@@ -741,6 +663,124 @@
           &-submit-container {
             .submit-message-button {
               width: 60%;
+            }
+          }
+        }
+
+        @include combo-maxMin-responsive(600px, 750px) {
+          &-text-message-container {
+            .message {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-1.75rem, -9.5rem) scale(0.85);
+              }
+            }
+          }
+        }
+
+        @include combo-min-responsive(600px, 750px) {
+          &-subject-container {
+            .subject {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-2.5rem, -3rem) scale(0.85);
+              }
+            }
+          }
+
+          &-text-message-container {
+            .message {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-1.75rem, -12rem) scale(0.85);
+              }
+            }
+          }
+        }
+
+        @include min-responsive(1801px) {
+          &-name-container {
+            &--first-name,
+            &--last-name {
+              .first-name,
+              .last-name {
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-2rem, -5rem) scale(0.85);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(2rem, 0);
+                }
+              }
+            }
+          }
+
+          &-organization-container {
+            &--organization,
+            &--position {
+              .organization-name,
+              .position-name {
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-2rem, -4.5rem) scale(0.85);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(2rem, 0);
+                }
+              }
+              .position-name {
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-2rem, -4.5rem) scale(0.85);
+                }
+                &-label {
+                  transform: translate(2rem);
+                }
+              }
+            }
+          }
+
+          &-email-container {
+            .email {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-6rem, -4.5rem) scale(0.85);
+              }
+              &-label {
+                @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                transition: transform 0.75s;
+                transform: translate(2rem, 0);
+              }
+            }
+          }
+          &-subject-container {
+            .subject {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-6rem, -4.5rem) scale(0.85);
+              }
+              &-label {
+                @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                transition: transform 0.75s;
+                transform: translate(2rem, 0);
+              }
+            }
+          }
+          &-text-message-container {
+            .message {
+              &:not(:placeholder-shown) + label,
+              &:focus + label {
+                transform: translate(-6rem, -15.5rem) scale(0.85);
+              }
+              &-label {
+                @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
+                transition: transform 0.75s;
+                transform: translate(2rem, -11rem);
+              }
             }
           }
         }
