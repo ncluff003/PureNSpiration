@@ -396,7 +396,7 @@ html {
       // 600px - 799px = Mobile Landscape  12 x 10
       // 599px- = Mobile Portrait  10 x 12
 
-      @include min-responsive(1801px) {
+      @include min-responsive(2560px) {
         .typing-text-container {
           font-size: 8rem;
         }
@@ -425,7 +425,7 @@ html {
         .contact-form {
           ////////////////////
           // Responsive Form //
-          @include min-responsive(1801px) {
+          @include min-responsive(2560px) {
             &-message-container {
               &--error,
               &--success {

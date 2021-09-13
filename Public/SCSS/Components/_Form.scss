@@ -44,12 +44,12 @@
               }
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-8.5rem, -3.35rem) scale(0.85);
+                transform: translate(-2rem, -3.35rem) scale(0.85);
               }
               &-label {
-                @include SizeAndPositioning(absolute, 40%, 60%, flex, flex-start, center, 0, 0, 0);
+                @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
                 transition: transform 0.75s;
-                transform: translate(-6.5rem, 0);
+                transform: translate(2rem, 0);
               }
               &:invalid {
                 border: 0.3rem groove #cf352e;
@@ -83,12 +83,12 @@
               }
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-8.25rem, -3.35rem) scale(0.85);
+                transform: translate(-2rem, -3.35rem) scale(0.85);
               }
               &-label {
-                @include SizeAndPositioning(absolute, 40%, 80%, flex, flex-start, center, 0, 0, 0);
+                @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
                 transition: transform 0.75s;
-                transform: translate(-6rem, 0);
+                transform: translate(2rem, 0);
               }
               &:invalid {
                 border: 0.3rem groove #cf352e;
@@ -100,10 +100,10 @@
             .position-name {
               &:not(:placeholder-shown) + label,
               &:focus + label {
-                transform: translate(-10.25rem, -3.35rem) scale(0.85);
+                transform: translate(-2rem, -3.35rem) scale(0.85);
               }
               &-label {
-                transform: translate(-8.25rem);
+                transform: translate(2rem);
               }
             }
           }
@@ -127,12 +127,12 @@
             }
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-30rem, -3.35rem) scale(0.85);
+              transform: translate(-5.5rem, -3.35rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning(absolute, 40%, 40%, flex, flex-start, center, 0, 0, 0);
+              @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
               transition: transform 0.75s;
-              transform: translate(-28rem, 0);
+              transform: translate(2rem, 0);
             }
             &:invalid {
               border: 0.3rem groove #cf352e;
@@ -160,12 +160,12 @@
             }
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-32.5rem, -3.35rem) scale(0.85);
+              transform: translate(-5.5rem, -3.35rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning(absolute, 40%, 40%, flex, flex-start, center, 0, 0, 0);
+              @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
               transition: transform 0.75s;
-              transform: translate(-31rem, 0);
+              transform: translate(2rem, 0);
             }
             &:invalid {
               border: 0.3rem groove #cf352e;
@@ -193,12 +193,12 @@
             }
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-32.75rem, -10.65rem) scale(0.85);
+              transform: translate(-5.5rem, -10.65rem) scale(0.85);
             }
             &-label {
-              @include SizeAndPositioning(absolute, 20%, 25%, flex, flex-start, center, 0, 0, 0);
+              @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
               transition: transform 0.75s;
-              transform: translate(-31.25rem, -7rem);
+              transform: translate(2rem, -7rem);
             }
             resize: none;
             &:invalid {
@@ -678,27 +678,7 @@
           }
         }
 
-        @include combo-min-responsive(600px, 750px) {
-          &-subject-container {
-            .subject {
-              &:not(:placeholder-shown) + label,
-              &:focus + label {
-                transform: translate(-2.5rem, -3rem) scale(0.85);
-              }
-            }
-          }
-
-          &-text-message-container {
-            .message {
-              &:not(:placeholder-shown) + label,
-              &:focus + label {
-                transform: translate(-1.75rem, -12rem) scale(0.85);
-              }
-            }
-          }
-        }
-
-        @include min-responsive(1801px) {
+        @include min-responsive(2560px) {
           &-name-container {
             &--first-name,
             &--last-name {

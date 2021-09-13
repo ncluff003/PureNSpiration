@@ -301,7 +301,7 @@ body {
       ///////////////////////
       // RESPONSIVE GRIDS
 
-      @include min-responsive(1801px) {
+      @include min-responsive(2560px) {
         @include gridLayout(100vh, 100vw, repeat(48, 1fr), repeat(24, 1fr), 0, 0);
         @include gridPlacement(48, 48, 24, 24);
       }
@@ -331,7 +331,7 @@ body {
         @include gridPlacement(10, 10, 12, 12);
       }
 
-      @include min-responsive(1801px) {
+      @include min-responsive(2560px) {
         .section-header {
           grid-column: 10 / span 30;
           grid-row: 3 / span 4;
@@ -576,14 +576,7 @@ body {
         }
       }
 
-      @include combo-min-responsive(700px, 750px) {
-        #contact {
-          grid-row: 1 / span 2;
-          align-items: center;
-        }
-      }
-
-      @include min-responsive(1801px) {
+      @include min-responsive(2560px) {
         .section-header {
           grid-column: 10 / span 30;
           grid-row: 3 / span 4;
