@@ -116,6 +116,9 @@ body {
             }
             .about-me-video {
               @include SizingItem(relative, 100%, 60%);
+              .video-source {
+                @include SizingItem(relative, 100%, 100%);
+              }
             }
 
             &--2 {

@@ -4,12 +4,22 @@
 .r__ {
   &vertical-flex-container {
     .r__navigation {
-      @include min-responsive(2500px) {
-        &__logo__logoText {
-          font-size: 2.8rem;
+      // Tablet Landscape - Navigation
+      @include combo-max-responsive(1400px, 1050px) {
+        &__logo {
+          width: 25%;
+          &__logoImg {
+            margin-right: 1rem;
+          }
         }
-        &__links {
-          font-size: 2.4rem;
+      }
+
+      @include combo-max-responsive(1050px, 1400px) {
+        &__logo {
+          width: 30%;
+          &__logoImg {
+            margin-right: 1rem;
+          }
         }
       }
     }

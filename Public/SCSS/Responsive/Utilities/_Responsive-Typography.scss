@@ -1,15 +1,29 @@
 @use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Mixins" as *;
 @use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Variables" as *;
 
-.r__ {
-  &vertical-flex-container {
-    .r__flex-section {
-      .r__grid-container {
-        @include min-responsive(2500px) {
-          @include grid-layout(100vh, 100vw, repeat(48, 1fr), repeat(24, 1fr), 0, 0);
+@include min-responsive(2500px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        // TV Navigation
+        &__logo {
+          &__logoText {
+            font-size: 2.8rem;
+          }
+        }
+
+        &__links {
+          font-size: 2.4rem;
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          // Section Headers
           .r__section-header {
             font-size: 9rem;
           }
+
+          // Introduction Section
           .r__typing-text-container {
             font-size: 8rem;
           }
@@ -18,47 +32,185 @@
               font-size: 2.8rem;
             }
           }
-          .r__about-me-container {
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 4.8rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 2.2rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 2.4rem;
+                  }
+                }
+              }
+            }
           }
-          .r__contact-form {
+          .r__project-count {
+            font-size: 4.8rem;
           }
-        }
-        // Tablet Large Landscape
-        @include combo-max-responsive(1400px, 1050px) {
-          @include grid-layout(100vh, 100vw, repeat(18, 1fr), repeat(12, 1fr), 0, 0);
-        }
-        // Tablet Small Landscape
-        @include combo-max-responsive(1000px, 625px) {
-          @include grid-layout(100vh, 100vw, repeat(18, 1fr), repeat(12, 1fr), 0, 0);
-        }
-
-        // Tablet Large Portrait
-        @include combo-max-responsive(1050px, 1400px) {
-          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(18, 1fr), 0, 0);
-        }
-        // Tablet Small Portrait
-        @include combo-max-responsive(800px, 1050px) {
-          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(18, 1fr), 0, 0);
-        }
-
-        // Mobile Large Landscape
-        @include combo-max-responsive(930px, 425px) {
-          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
-        }
-        // Mobile Small Landscape
-        @include combo-max-responsive(800px, 400px) {
-          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
-        }
-
-        // Mobile Large Portrait
-        @include combo-max-responsive(425px, 930px) {
-          @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
-        }
-        // Mobile Small Portrait
-        @include combo-max-responsive(375px, 860px) {
-          @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
         }
       }
     }
   }
+}
+
+// Tablet Large Landscape
+@include combo-max-responsive(1400px, 1050px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 5.5rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 5.5rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 2rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 5.5rem;
+                }
+              }
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 3.6rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 2rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+          .r__project-count {
+            font-size: 3.6rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet Large Portrait
+@include combo-max-responsive(1050px, 1400px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        // Tablet Large Portrait Navigation
+
+        &__links {
+          font-size: 1.8rem;
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 5.5rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 4.5rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 2rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 5.5rem;
+                }
+              }
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 3.6rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 2rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+          .r__project-count {
+            font-size: 3.6rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet Small Landscape
+@include combo-max-responsive(1000px, 625px) {
+}
+
+// Tablet Small Portrait
+@include combo-max-responsive(800px, 1050px) {
+}
+
+// Mobile Large Landscape
+@include combo-max-responsive(930px, 425px) {
+}
+// Mobile Small Landscape
+@include combo-max-responsive(800px, 400px) {
+}
+
+// Mobile Large Portrait
+@include combo-max-responsive(425px, 930px) {
+}
+// Mobile Small Portrait
+@include combo-max-responsive(375px, 860px) {
 }
