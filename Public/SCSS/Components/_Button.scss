@@ -67,13 +67,11 @@
           transition: border 0.5s, color 0.5s, background-color 0.5s;
         }
         .card-button-left {
-          // @extend .showcase-grid, :button;
           left: 5%;
           top: 50%;
           transform: translateY(-50%);
         }
         .card-button-right {
-          // @extend .showcase-grid, :button;
           right: 5%;
           top: 50%;
           transform: translateY(-50%);
@@ -96,51 +94,14 @@
             transition: border 0.5s, color 0.5s, background-color 0.5s;
           }
           .card-button-left {
-            // @extend .showcase-grid, :button;
             left: 5%;
             top: 50%;
             transform: translateY(-50%);
           }
           .card-button-right {
-            // @extend .showcase-grid, :button;
             right: 5%;
             top: 50%;
             transform: translateY(-50%);
-          }
-        }
-      }
-
-      // GRID CONTAINER RESPONSIVE BREAKPOINT LAYOUTS
-      // 1921px+ = TV|  48 x 24
-      // 1281px - 1800px = Desktop  24 x 18
-      // 1025px - 1280px = Tablet Landscape  18 x 12
-      // 800px - 1024px = Tab Portrait  12 x 18
-      // 600px - 799px = Mobile Landscape  12 x 10
-      // 599px- = Mobile Portrait  10 x 12
-
-      @include max-responsive(799px) {
-        .introduction-button-container {
-          .introduction-button {
-            height: 50%;
-            width: 27.5%;
-          }
-        }
-      }
-
-      @include max-responsive(599px) {
-        .introduction-button-container {
-          .introduction-button {
-            height: 22.5%;
-            width: 80%;
-          }
-        }
-      }
-
-      @include max-responsive(350px) {
-        .introduction-button-container {
-          .introduction-button {
-            height: 20%;
-            width: 90%;
           }
         }
       }

@@ -1,0 +1,64 @@
+@use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Mixins" as *;
+@use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Variables" as *;
+
+.r__ {
+  &vertical-flex-container {
+    .r__flex-section {
+      .r__grid-container {
+        @include min-responsive(2500px) {
+          @include grid-layout(100vh, 100vw, repeat(48, 1fr), repeat(24, 1fr), 0, 0);
+          .r__section-header {
+            font-size: 9rem;
+          }
+          .r__typing-text-container {
+            font-size: 8rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 2.8rem;
+            }
+          }
+          .r__about-me-container {
+          }
+          .r__contact-form {
+          }
+        }
+        // Tablet Large Landscape
+        @include combo-max-responsive(1400px, 1050px) {
+          @include grid-layout(100vh, 100vw, repeat(18, 1fr), repeat(12, 1fr), 0, 0);
+        }
+        // Tablet Small Landscape
+        @include combo-max-responsive(1000px, 625px) {
+          @include grid-layout(100vh, 100vw, repeat(18, 1fr), repeat(12, 1fr), 0, 0);
+        }
+
+        // Tablet Large Portrait
+        @include combo-max-responsive(1050px, 1400px) {
+          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(18, 1fr), 0, 0);
+        }
+        // Tablet Small Portrait
+        @include combo-max-responsive(800px, 1050px) {
+          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(18, 1fr), 0, 0);
+        }
+
+        // Mobile Large Landscape
+        @include combo-max-responsive(930px, 425px) {
+          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
+        }
+        // Mobile Small Landscape
+        @include combo-max-responsive(800px, 400px) {
+          @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
+        }
+
+        // Mobile Large Portrait
+        @include combo-max-responsive(425px, 930px) {
+          @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
+        }
+        // Mobile Small Portrait
+        @include combo-max-responsive(375px, 860px) {
+          @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
+        }
+      }
+    }
+  }
+}

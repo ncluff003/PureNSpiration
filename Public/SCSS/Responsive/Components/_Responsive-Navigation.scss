@@ -1,0 +1,17 @@
+@use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Mixins" as *;
+@use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Variables" as *;
+
+.r__ {
+  &vertical-flex-container {
+    .r__navigation {
+      @include min-responsive(2500px) {
+        &__logo__logoText {
+          font-size: 2.8rem;
+        }
+        &__links {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}

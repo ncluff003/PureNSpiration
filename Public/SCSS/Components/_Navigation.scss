@@ -41,13 +41,6 @@
         list-style: none;
         &:not(:last-of-type) {
           margin-right: 1.5rem;
-          @include max-responsive(1000px) {
-            margin-right: 1rem;
-          }
-
-          @include max-responsive(900px) {
-            margin-right: 0;
-          }
         }
         &__link {
           &:hover {
@@ -60,102 +53,6 @@
 
     .hamburger-menu {
       display: none;
-    }
-
-    // GRID CONTAINER RESPONSIVE BREAKPOINT LAYOUTS
-    // 1921px+ = TV|  48 x 24
-    // 1281px - 1800px = Desktop  24 x 18
-    // 1025px - 1280px = Tablet Landscape  18 x 12
-    // 800px - 1024px = Tab Portrait  12 x 18
-    // 600px - 799px = Mobile Landscape  12 x 10
-    // 599px- = Mobile Portrait  10 x 12
-
-    @include max-responsive(1600px) {
-      &__logo {
-        &__logoImg {
-          margin-right: 0;
-        }
-      }
-    }
-
-    @include max-responsive(1380px) {
-      &__logo {
-        &__logoImg {
-          margin-right: 0;
-        }
-        width: 25%;
-      }
-    }
-
-    @include max-responsive(1200px) {
-      &__logo {
-        width: 30%;
-      }
-    }
-
-    @include max-responsive(1024px) {
-      &__logo {
-        margin-left: 2rem;
-      }
-    }
-
-    @include max-responsive(900px) {
-      height: 6rem;
-      &__logo {
-        &__logoImg {
-          margin-right: -2rem;
-        }
-        width: 40%;
-      }
-      &__links {
-        margin-right: 12rem;
-      }
-    }
-
-    @include max-responsive(750px) {
-      &__logo {
-        margin-left: 1rem;
-        width: 50%;
-        &__logoImg {
-          margin-right: 0;
-        }
-      }
-      &__links {
-        display: none;
-      }
-      .hamburger-menu {
-        display: inline-block;
-        margin-right: 7.5rem;
-      }
-    }
-
-    @include max-responsive(650px) {
-      &__logo {
-        justify-content: flex-start;
-        width: 60%;
-        &__logoImg {
-          margin-right: 1rem;
-        }
-      }
-      .hamburger-menu {
-        margin-right: 4rem;
-      }
-    }
-
-    @include max-responsive(450px) {
-      &__logo {
-        width: 80%;
-        &__logoImg {
-          margin-right: 1.5rem;
-        }
-      }
-      .hamburger-menu {
-        margin-right: 2.5rem;
-      }
-    }
-
-    @include max-responsive(400px) {
-      height: 4rem;
     }
   }
 
