@@ -469,6 +469,237 @@
               transition: all 0.75s;
             }
           }
+          @include combo-max-responsive(1400px, 900px) {
+            &-message-container {
+              @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+              &--error {
+                margin-bottom: 2.75rem;
+              }
+            }
+            &-name-container {
+              @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+              margin: 1.25rem 0 1.25rem;
+              &--first-name,
+              &--last-name {
+                @include SizeAndPositioning(relative, 100%, 40%, flex, center, center, 0, 0, 0);
+                flex-direction: column-reverse;
+                .first-name,
+                .last-name {
+                  @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                  background-color: transparent;
+                  border: 0.3rem groove rgba($secondaryColor, 0.75);
+                  padding: 1rem;
+                  &:focus {
+                    outline: none;
+                  }
+                  &:focus::-webkit-input-placeholder,
+                  &:focus::placeholder {
+                    opacity: 1;
+                  }
+                  &:not(:placeholder-shown) + label,
+                  &:focus + label {
+                    transform: translate(-2rem, -3.35rem) scale(0.85);
+                  }
+                  &-label {
+                    @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                    transition: transform 0.75s;
+                    transform: translate(2rem, 0);
+                  }
+                  &:invalid {
+                    border: 0.3rem groove #cf352e;
+                  }
+                  &:valid {
+                    border: 0.3rem groove #008013;
+                  }
+                }
+              }
+            }
+
+            &-organization-container {
+              @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+              margin: 1.25rem 0 1.25rem;
+              &--organization,
+              &--position {
+                @include SizeAndPositioning(relative, 100%, 40%, flex, center, center, 0, 0, 0);
+                flex-direction: column-reverse;
+                .organization-name,
+                .position-name {
+                  @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                  background-color: transparent;
+                  border: 0.3rem groove rgba($secondaryColor, 0.75);
+                  padding: 1rem;
+                  &:focus {
+                    outline: none;
+                  }
+                  &:focus::-webkit-input-placeholder,
+                  &:focus::placeholder {
+                    opacity: 1;
+                  }
+                  &:not(:placeholder-shown) + label,
+                  &:focus + label {
+                    transform: translate(-2rem, -3.35rem) scale(0.85);
+                  }
+                  &-label {
+                    @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                    transition: transform 0.75s;
+                    transform: translate(2rem, 0);
+                  }
+                  &:invalid {
+                    border: 0.3rem groove #cf352e;
+                  }
+                  &:valid {
+                    border: 0.3rem groove #008013;
+                  }
+                }
+                .position-name {
+                  &:not(:placeholder-shown) + label,
+                  &:focus + label {
+                    transform: translate(-2rem, -3.35rem) scale(0.85);
+                  }
+                  &-label {
+                    transform: translate(2rem);
+                  }
+                }
+              }
+            }
+
+            &-email-container {
+              @include SizeAndPositioning(relative, 7.5%, 86.75%, flex, center, center, 0, 0, 0);
+              flex-direction: column-reverse;
+              margin: 1.25rem 0 1.25rem;
+              .email {
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                background-color: transparent;
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                padding: 1rem;
+                &:focus {
+                  outline: none;
+                }
+                &:focus::-webkit-input-placeholder,
+                &:focus::placeholder {
+                  opacity: 1;
+                }
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-5.5rem, -3.35rem) scale(0.85);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(2rem, 0);
+                }
+                &:invalid {
+                  border: 0.3rem groove #cf352e;
+                }
+                &:valid {
+                  border: 0.3rem groove #008013;
+                }
+              }
+            }
+            &-subject-container {
+              @include SizeAndPositioning(relative, 7.5%, 86.75%, flex, center, center, 0, 0, 0);
+              flex-direction: column-reverse;
+              margin: 1.25rem 0 1.25rem;
+              .subject {
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                background-color: transparent;
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                padding: 1rem;
+                &:focus {
+                  outline: none;
+                }
+                &:focus::-webkit-input-placeholder,
+                &:focus::placeholder {
+                  opacity: 1;
+                }
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-5.5rem, -3.35rem) scale(0.85);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(2rem, 0);
+                }
+                &:invalid {
+                  border: 0.3rem groove #cf352e;
+                }
+                &:valid {
+                  border: 0.3rem groove #008013;
+                }
+              }
+            }
+            &-text-message-container {
+              @include SizeAndPositioning(relative, 30%, 86.75%, flex, center, center, 0, 0, 0);
+              flex-direction: column-reverse;
+              margin: 2rem 0 2rem;
+              .message {
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                background-color: transparent;
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                padding: 1rem;
+                &:focus {
+                  outline: none;
+                }
+                &:focus::-webkit-input-placeholder,
+                &:focus::placeholder {
+                  opacity: 1;
+                }
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-5.5rem, -9.65rem) scale(0.85);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(2rem, -6rem);
+                }
+                resize: none;
+                &:invalid {
+                  border: 0.3rem groove #cf352e;
+                }
+                &:valid {
+                  border: 0.3rem groove #008013;
+                }
+              }
+            }
+            &-submit-container {
+              @include SizeAndPositioning(relative, 5rem, 100%, flex, center, center, 0, 0, 0);
+              margin: 2rem 0 2rem;
+              .submit-message-button {
+                @include SizeAndPositioning(relative, 100%, 30%, flex, center, center, 0, 0, 0);
+                background-color: rgba($secondaryColor, 0.8);
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                transition: background-color 0.5s, border 0.5s, color 0.5s;
+                &:hover {
+                  cursor: pointer;
+                  background-color: $secondaryColor;
+                  border: 0.3rem groove $secondaryColor;
+                }
+                &:active {
+                  background-color: $primaryColor;
+                  border: 0.3rem groove $primaryColor;
+                  outline: none;
+                }
+              }
+            }
+
+            .input-good {
+              border: 0.3rem groove #008013;
+            }
+            .input-bad {
+              border: 0.3rem groove #cf352e;
+            }
+            .input-warning {
+              border: 0.3rem groove $primaryColor;
+            }
+
+            ::-webkit-input-placeholder,
+            ::placeholder {
+              opacity: 0;
+              transition: all 0.75s;
+            }
+          }
 
           @include combo-max-responsive(1050px, 1400px) {
             &-message-container {
@@ -648,12 +879,12 @@
                 }
                 &:not(:placeholder-shown) + label,
                 &:focus + label {
-                  transform: translate(-5.5rem, -12.65rem) scale(0.85);
+                  transform: translate(-5.5rem, -14.65rem) scale(0.85);
                 }
                 &-label {
                   @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
                   transition: transform 0.75s;
-                  transform: translate(2rem, -8rem);
+                  transform: translate(2rem, -9rem);
                 }
                 resize: none;
                 &:invalid {
@@ -1596,6 +1827,245 @@
             &-submit-container {
               @include SizeAndPositioning(relative, 5rem, 100%, flex, center, center, 0, 0, 0);
               margin: 0;
+              margin-bottom: 2rem;
+
+              .submit-message-button {
+                @include SizeAndPositioning(relative, 100%, 30%, flex, center, center, 0, 0, 0);
+                background-color: rgba($secondaryColor, 0.8);
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                transition: background-color 0.5s, border 0.5s, color 0.5s;
+                &:hover {
+                  cursor: pointer;
+                  background-color: $secondaryColor;
+                  border: 0.3rem groove $secondaryColor;
+                }
+                &:active {
+                  background-color: $primaryColor;
+                  border: 0.3rem groove $primaryColor;
+                  outline: none;
+                }
+              }
+            }
+
+            .input-good {
+              border: 0.3rem groove #008013;
+            }
+            .input-bad {
+              border: 0.3rem groove #cf352e;
+            }
+            .input-warning {
+              border: 0.3rem groove $primaryColor;
+            }
+
+            ::-webkit-input-placeholder,
+            ::placeholder {
+              opacity: 0;
+              transition: all 0.75s;
+            }
+          }
+
+          @include combo-max-responsive(375px, 860px) {
+            &-message-container {
+              @include SizeAndPositioning(relative, 7.5%, 100%, flex, space-evenly, center, 0, 0, 0);
+              &--error {
+                margin-bottom: 2.75rem;
+              }
+            }
+            &-name-container {
+              @include SizeAndPositioning(relative, 20%, 100%, flex, space-evenly, center, 0, 0, 0);
+              margin: 1.25rem 0 1.25rem;
+              flex-direction: column;
+              &--first-name,
+              &--last-name {
+                @include SizeAndPositioning(relative, 100%, 86.5%, flex, center, center, 0, 0, 0);
+                flex-direction: column-reverse;
+                .first-name,
+                .last-name {
+                  @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                  background-color: transparent;
+                  border: 0.3rem groove rgba($secondaryColor, 0.75);
+                  padding: 1rem;
+                  margin: 1.25rem 0 1.25rem;
+                  &:focus {
+                    outline: none;
+                  }
+                  &:focus::-webkit-input-placeholder,
+                  &:focus::placeholder {
+                    opacity: 1;
+                  }
+                  &:not(:placeholder-shown) + label,
+                  &:focus + label {
+                    transform: translate(-4rem, -2.85rem) scale(0.7);
+                  }
+                  &-label {
+                    @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                    transition: transform 0.75s;
+                    transform: translate(1rem, 0);
+                  }
+                  &:invalid {
+                    border: 0.3rem groove #cf352e;
+                  }
+                  &:valid {
+                    border: 0.3rem groove #008013;
+                  }
+                }
+              }
+            }
+
+            &-organization-container {
+              @include SizeAndPositioning(relative, 20%, 100%, flex, space-evenly, center, 0, 0, 0);
+              margin: 1.25rem 0 1.25rem;
+              flex-direction: column;
+              &--organization,
+              &--position {
+                @include SizeAndPositioning(relative, 100%, 86.5%, flex, center, center, 0, 0, 0);
+                flex-direction: column-reverse;
+                .organization-name,
+                .position-name {
+                  @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                  background-color: transparent;
+                  border: 0.3rem groove rgba($secondaryColor, 0.75);
+                  padding: 1rem;
+                  margin: 1.25rem 0 1.25rem;
+                  &:focus {
+                    outline: none;
+                  }
+                  &:focus::-webkit-input-placeholder,
+                  &:focus::placeholder {
+                    opacity: 1;
+                  }
+                  &:not(:placeholder-shown) + label,
+                  &:focus + label {
+                    transform: translate(-4rem, -2.85rem) scale(0.7);
+                  }
+                  &-label {
+                    @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                    transition: transform 0.75s;
+                    transform: translate(1rem, 0);
+                  }
+                  &:invalid {
+                    border: 0.3rem groove #cf352e;
+                  }
+                  &:valid {
+                    border: 0.3rem groove #008013;
+                  }
+                }
+                .position-name {
+                  &:not(:placeholder-shown) + label,
+                  &:focus + label {
+                    transform: translate(-4rem, -2.85rem) scale(0.7);
+                  }
+                  &-label {
+                    transform: translate(1rem);
+                  }
+                }
+              }
+            }
+
+            &-email-container {
+              @include SizeAndPositioning(relative, 7.5%, 86.75%, flex, center, center, 0, 0, 0);
+              flex-direction: column-reverse;
+              margin: 1.25rem 0 1.25rem;
+              .email {
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                background-color: transparent;
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                padding: 1rem;
+                &:focus {
+                  outline: none;
+                }
+                &:focus::-webkit-input-placeholder,
+                &:focus::placeholder {
+                  opacity: 1;
+                }
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-4.5rem, -2.85rem) scale(0.7);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(1rem, 0);
+                }
+                &:invalid {
+                  border: 0.3rem groove #cf352e;
+                }
+                &:valid {
+                  border: 0.3rem groove #008013;
+                }
+              }
+            }
+            &-subject-container {
+              @include SizeAndPositioning(relative, 7.5%, 86.75%, flex, center, center, 0, 0, 0);
+              flex-direction: column-reverse;
+              margin: 1.25rem 0 1.25rem;
+              .subject {
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                background-color: transparent;
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                padding: 1rem;
+                &:focus {
+                  outline: none;
+                }
+                &:focus::-webkit-input-placeholder,
+                &:focus::placeholder {
+                  opacity: 1;
+                }
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-4.5rem, -2.85rem) scale(0.7);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 40%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(1rem, 0);
+                }
+                &:invalid {
+                  border: 0.3rem groove #cf352e;
+                }
+                &:valid {
+                  border: 0.3rem groove #008013;
+                }
+              }
+            }
+            &-text-message-container {
+              @include SizeAndPositioning(relative, 10rem, 86.75%, flex, center, center, 0, 0, 0);
+              flex-direction: column-reverse;
+              margin: 1rem 0 2rem;
+              .message {
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+                background-color: transparent;
+                border: 0.3rem groove rgba($secondaryColor, 0.75);
+                padding: 1rem;
+                &:focus {
+                  outline: none;
+                }
+                &:focus::-webkit-input-placeholder,
+                &:focus::placeholder {
+                  opacity: 1;
+                }
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                  transform: translate(-2rem, -6.35rem) scale(0.85);
+                }
+                &-label {
+                  @include SizeAndPositioning(absolute, 20%, 100%, flex, flex-start, center, 0, 0, 0);
+                  transition: transform 0.75s;
+                  transform: translate(1rem, -3rem);
+                }
+                resize: none;
+                &:invalid {
+                  border: 0.3rem groove #cf352e;
+                }
+                &:valid {
+                  border: 0.3rem groove #008013;
+                }
+              }
+            }
+            &-submit-container {
+              @include SizeAndPositioning(relative, 5rem, 100%, flex, center, center, 0, 0, 0);
+              margin: 0;
+              margin-bottom: 2rem;
 
               .submit-message-button {
                 @include SizeAndPositioning(relative, 100%, 30%, flex, center, center, 0, 0, 0);

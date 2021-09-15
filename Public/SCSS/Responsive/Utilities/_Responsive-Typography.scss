@@ -527,6 +527,7 @@
               &--error,
               &--success {
                 font-size: 1.2rem;
+                text-align: center;
               }
             }
           }
@@ -633,4 +634,116 @@
 
 // Mobile Small Portrait
 @include combo-max-responsive(375px, 860px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        #r__navigation__logo {
+          .r__navigation__logo__logoText {
+            font-size: 1.8rem;
+          }
+        }
+        .r__hamburger-menu {
+          font-size: 3rem;
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 2.8rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 1.6rem;
+            line-height: 1.25;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 1.8rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 1.6rem;
+                  line-height: 1.25;
+                }
+              }
+              .card-button-left,
+              .card-button-right {
+                font-size: 2rem;
+                color: rgba($colorDarkGrey, 0.6);
+              }
+            }
+          }
+
+          // Skills Section
+          #skills {
+            .skill-card {
+              .skill-image-container {
+                font-size: 12rem;
+                p {
+                  font-size: 2.8rem;
+                }
+              }
+              .skill-title-container {
+                font-size: 2rem;
+              }
+            }
+            .card-button-left,
+            .card-button-right {
+              font-size: 2rem;
+              color: rgba($colorDarkGrey, 0.6);
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 1.6rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 1.6rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 1.2rem;
+                  }
+                }
+              }
+              &-work-in-progress {
+                &:after {
+                  font-size: 4rem;
+                }
+              }
+            }
+            .card-button-left,
+            .card-button-right {
+              font-size: 2rem;
+              color: rgba($colorDarkGrey, 0.6);
+            }
+          }
+          .r__project-count {
+            font-size: 2.4rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+            font-size: 1.2rem;
+            &-message-container {
+              &--error,
+              &--success {
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
