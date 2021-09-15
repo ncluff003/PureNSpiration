@@ -194,23 +194,333 @@
 }
 
 // Tablet Small Landscape
-@include combo-max-responsive(1000px, 625px) {
+@include combo-max-responsive(1050px, 800px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 5.5rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 4rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 2rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 4rem;
+                }
+              }
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 3.6rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 2rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+          .r__project-count {
+            font-size: 3.6rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+          }
+        }
+      }
+    }
+  }
 }
 
 // Tablet Small Portrait
 @include combo-max-responsive(800px, 1050px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        .r__hamburger-menu {
+          font-size: 3rem;
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 5.5rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 3rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 1.8rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 3rem;
+                }
+              }
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 2.4rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 2rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 1.6rem;
+                  }
+                }
+              }
+              &-work-in-progress {
+                &:after {
+                  font-size: 4rem;
+                }
+              }
+            }
+          }
+          .r__project-count {
+            font-size: 2.4rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+          }
+        }
+      }
+    }
+  }
 }
 
 // Mobile Large Landscape
 @include combo-max-responsive(930px, 425px) {
-}
-// Mobile Small Landscape
-@include combo-max-responsive(800px, 400px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        #r__navigation__logo {
+          .r__navigation__logo__logoText {
+            font-size: 2rem;
+          }
+        }
+        .r__hamburger-menu {
+          font-size: 3rem;
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 3.5rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 2.8rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 1.8rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 3rem;
+                }
+              }
+            }
+          }
+
+          // Skills Section
+          #skills {
+            .skill-card {
+              height: 80%;
+              width: 18rem;
+              .skill-image-container {
+                font-size: 7rem;
+                p {
+                  font-size: 1.6rem;
+                }
+              }
+              .skill-title-container {
+                font-size: 2rem;
+              }
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 2.4rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 2rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 1.6rem;
+                  }
+                }
+              }
+              &-work-in-progress {
+                &:after {
+                  font-size: 4rem;
+                }
+              }
+            }
+          }
+          .r__project-count {
+            font-size: 2.4rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Mobile Large Portrait
 @include combo-max-responsive(425px, 930px) {
 }
+
+// Mobile Small Landscape
+@include combo-max-responsive(800px, 400px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        #r__navigation__logo {
+          .r__navigation__logo__logoText {
+            font-size: 2rem;
+          }
+        }
+        .r__hamburger-menu {
+          font-size: 3rem;
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          .r__section-header {
+            font-size: 3.5rem;
+          }
+          // Introduction Section
+          .r__typing-text-container {
+            font-size: 2.8rem;
+          }
+          .r__introduction-button-container {
+            .r__introduction-button {
+              font-size: 1.8rem;
+            }
+          }
+
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  font-size: 3rem;
+                }
+              }
+            }
+          }
+
+          // Skills Section
+          #skills {
+            .skill-card {
+              height: 80%;
+              width: 18rem;
+              .skill-image-container {
+                font-size: 7rem;
+                p {
+                  font-size: 1.6rem;
+                }
+              }
+              .skill-title-container {
+                font-size: 2rem;
+              }
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            .project-card {
+              &-cover {
+                &-title-container {
+                  font-size: 1.6rem;
+                }
+              }
+              &-content {
+                &-description-container {
+                  font-size: 1.6rem;
+                }
+                &-link-container {
+                  &--link {
+                    font-size: 1.2rem;
+                  }
+                }
+              }
+              &-work-in-progress {
+                &:after {
+                  font-size: 4rem;
+                }
+              }
+            }
+          }
+          .r__project-count {
+            font-size: 2.4rem;
+          }
+
+          // Contact Section
+          .r__contact-form {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Mobile Small Portrait
 @include combo-max-responsive(375px, 860px) {
 }

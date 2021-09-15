@@ -22,6 +22,39 @@
           }
         }
       }
+
+      @include combo-max-responsive(800px, 1050px) {
+        &__logo {
+          margin-left: 2rem;
+          width: 40%;
+          &__logoImg {
+            margin-right: 1rem;
+          }
+        }
+        &__links {
+          &--linkItem {
+            display: none;
+          }
+        }
+        .r__hamburger-menu {
+          display: flex;
+          margin-right: 3rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      @include combo-max-responsive(930px, 425px) {
+        #r__navigation__logo {
+          width: 40%;
+          margin-left: 1.25rem;
+          justify-content: flex-start;
+          .r__navigation__logo__logoImg {
+            margin-right: 2rem;
+          }
+        }
+      }
     }
   }
 }

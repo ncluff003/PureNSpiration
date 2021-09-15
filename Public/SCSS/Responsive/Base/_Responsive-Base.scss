@@ -145,6 +145,7 @@ Tablet Landscape:
             grid-row: 11 / span 2;
           }
 
+          // About Section
           .r__about-me-container {
             grid-column: 1 / -1;
             grid-row: 6 / span 12;
@@ -176,21 +177,149 @@ Tablet Landscape:
             grid-column: 6 / span 2;
             grid-row: 16 / span 1;
           }
+          .contact-form {
+            grid-column: 1 / -1;
+            grid-row: 6 / span 12;
+          }
         }
 
         // Tablet Small Landscape
-        @include combo-max-responsive(1000px, 625px) {
+        @include combo-max-responsive(1050px, 800px) {
           @include grid-layout(100vh, 100vw, repeat(18, 1fr), repeat(12, 1fr), 0, 0);
+
+          // Introduction Section
+          .r__typing-text-container {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 3;
+          }
+          .r__introduction-button-container {
+            grid-column: 1 / -1;
+            grid-row: 8 / span 2;
+          }
+
+          // About Section
+          .r__about-me-container {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 8;
+            &__option-slider {
+              &--option {
+                .r__about-me-video,
+                #r__aboutMeVideo {
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          // Skills Section
+          #skills {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 8;
+            padding-top: 1%;
+            .skill-card {
+              height: 80%;
+            }
+          }
+
+          // Portfolio Section
+          #project {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 8;
+            .project-card {
+              width: 90%;
+            }
+          }
+          .project-count {
+            grid-column: 9 / span 2;
+            grid-row: 12 / span 1;
+          }
+          .contact-form {
+            grid-column: 1 / -1;
+            grid-row: 4 / span 8;
+          }
         }
 
         // Tablet Small Portrait
         @include combo-max-responsive(800px, 1050px) {
           @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(18, 1fr), 0, 0);
+
+          .r__section-header {
+            grid-column: 1 / -1;
+          }
+
+          // Introduction Section
+          .r__typing-text-container {
+            grid-column: 1 / -1;
+            grid-row: 8 / span 3;
+          }
+          .r__introduction-button-container {
+            grid-column: 1 / -1;
+            grid-row: 11 / span 2;
+          }
         }
 
         // Mobile Large Landscape
         @include combo-max-responsive(930px, 425px) {
           @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
+
+          .r__section-header {
+            grid-row: 3 / span 2;
+            align-items: flex-start;
+          }
+
+          // About Section
+          .r__about-me-container {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 8;
+            &__option-slider {
+              &--option {
+                .r__about-me-video,
+                #r__aboutMeVideo {
+                  width: 100%;
+                }
+              }
+            }
+          }
+
+          // Skills Section
+          #skills {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 8;
+            padding-top: 1%;
+            .skill-card {
+              height: 80%;
+              width: 14rem;
+            }
+          }
+          // Portfolio Section
+          #project {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 5;
+            .project-card {
+              height: 40%;
+              width: 70%;
+              align-self: start;
+              &-content {
+                &-link-container {
+                  &--link {
+                    height: 90%;
+                  }
+                }
+              }
+            }
+          }
+          .project-count {
+            grid-column: 6 / span 2;
+            grid-row: 10 / span 1;
+          }
+          #contact {
+            grid-row: 2 / span 2;
+          }
+          .r__contact-form {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 5;
+          }
+          overflow-y: auto;
         }
 
         // Mobile Large Portrait
@@ -201,6 +330,34 @@ Tablet Landscape:
         // Mobile Small Landscape
         @include combo-max-responsive(800px, 400px) {
           @include grid-layout(100vh, 100vw, repeat(12, 1fr), repeat(10, 1fr), 0, 0);
+
+          // Introduction Section
+          .r__typing-text-container {
+            grid-column: 1 / -1;
+            grid-row: 4 / span 3;
+          }
+          .r__introduction-button-container {
+            grid-column: 1 / -1;
+            grid-row: 7 / span 2;
+          }
+
+          #project {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 5;
+            overflow-y: auto;
+            .project-card {
+              height: 40%;
+              width: 70%;
+              align-self: start;
+              &-content {
+                &-link-container {
+                  &--link {
+                    height: 90%;
+                  }
+                }
+              }
+            }
+          }
         }
 
         // Mobile Small Portrait
