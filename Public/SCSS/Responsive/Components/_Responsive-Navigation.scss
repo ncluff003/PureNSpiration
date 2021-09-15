@@ -32,9 +32,7 @@
           }
         }
         &__links {
-          &--linkItem {
-            display: none;
-          }
+          display: none;
         }
         .r__hamburger-menu {
           display: flex;
@@ -53,6 +51,22 @@
           .r__navigation__logo__logoImg {
             margin-right: 2rem;
           }
+        }
+      }
+
+      @include combo-max-responsive(425px, 930px) {
+        #r__navigation__logo {
+          width: 80%;
+          margin-left: 1.25rem;
+          justify-content: flex-start;
+          .r__navigation__logo__logoImg {
+            height: auto;
+            width: 5rem;
+            margin-right: 2rem;
+          }
+        }
+        &__links {
+          display: none;
         }
       }
     }

@@ -37861,6 +37861,57 @@ html {
     font-size: 1.2rem;
   }
 }
+@media (max-width: 425px) and (max-height: 930px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoText {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    font-size: 3.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 2.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    font-size: 1.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-typing-text-container {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card {
+    height: 80%;
+    width: 18rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container {
+    font-size: 7rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container p {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-title-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-cover-title-container {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-description-container {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    font-size: 1.2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-work-in-progress:after {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__project-count {
+    font-size: 2.4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form {
+    font-size: 1.2rem;
+  }
+}
 @media (max-width: 800px) and (max-height: 400px) {
   .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoText {
     font-size: 2rem;
@@ -55240,7 +55291,7 @@ html {
   .r__vertical-flex-container .r__navigation__logo__logoImg {
     margin-right: 1rem;
   }
-  .r__vertical-flex-container .r__navigation__links--linkItem {
+  .r__vertical-flex-container .r__navigation__links {
     display: none;
   }
   .r__vertical-flex-container .r__navigation .r__hamburger-menu {
@@ -55259,6 +55310,21 @@ html {
   }
   .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoImg {
     margin-right: 2rem;
+  }
+}
+@media (max-width: 425px) and (max-height: 930px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo {
+    width: 80%;
+    margin-left: 1.25rem;
+    justify-content: flex-start;
+  }
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoImg {
+    height: auto;
+    width: 5rem;
+    margin-right: 2rem;
+  }
+  .r__vertical-flex-container .r__navigation__links {
+    display: none;
   }
 }
 
