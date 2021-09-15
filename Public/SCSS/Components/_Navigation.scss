@@ -56,6 +56,38 @@
     }
   }
 
+  .navigation-menu {
+    @include SizeAndPositioning(fixed, 0, 0, flex, center, center, 0, 0, 0);
+    background-color: rgba($secondaryColor, 0.9);
+    z-index: 10;
+    opacity: 0;
+    transition: height 0.5s, width 0.5s, opacity 0.5s;
+    &-close {
+      @include SizeAndPositioning(absolute, 5rem, 5rem, none, center, center, 0, 0, 0);
+      top: 1rem;
+      right: 1rem;
+    }
+    &__links {
+      @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
+      flex-direction: column;
+      &--linkItem {
+        @include SizeAndPositioning(relative, 5%, 100%, flex, center, center, 0, 0, 0);
+        padding: 0 1rem;
+        list-style: none;
+        margin: 1rem 0;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        &__link {
+          &:hover {
+            cursor: pointer;
+          }
+          transition: opacity 0.5s;
+        }
+      }
+    }
+  }
+
   .navigation--sticky {
     position: fixed;
     background-color: rgba($secondaryColor, 0.95);

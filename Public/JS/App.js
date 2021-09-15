@@ -162,6 +162,7 @@ class App {
     this._setUpCards(slideOptions, index3);
     this._createCardButtonNavigation(aboutMeContainer);
     this._watchCardButtons(slideOptions, aboutMeContainer);
+    this._watchMenuButtons();
   }
 
   _goToCard(cardType, index, prevCards, nextCards) {
@@ -443,6 +444,30 @@ class App {
       grid.classList.add(`grid-container--hidden`);
     }
   }
+  _watchMenuButtons() {
+    menu.addEventListener(`click`, () => {
+      this._openMenu();
+    });
+    closeNav.addEventListener(`click`, () => {
+      this._closeMenu();
+    });
+  }
+
+  _openMenu() {
+    console.log('Hello', mobileNav);
+    mobileNav.style.height = `100%`;
+    mobileNav.style.width = `100%`;
+    mobileNav.style.opacity = 1;
+    closeNav.style.display = 'flex';
+    menu.style.display = 'none';
+  }
+  _closeMenu() {
+    mobileNav.style.height = 0;
+    mobileNav.style.width = 0;
+    mobileNav.style.opacity = 0;
+    closeNav.style.display = 'none';
+    menu.style.display = 'flex';
+  }
 }
 ///////////////////////////////////////////////
 // APP VARIABLES
@@ -450,6 +475,9 @@ let index, index2, index3;
 const allGrids = [...document.querySelectorAll(`.grid-container`)];
 const nav = document.querySelector(`.navigation`);
 const links = [...document.querySelectorAll(`.navigation__links--linkItem__link`)];
+const menu = document.querySelector(`.r__hamburger-menu`);
+const mobileNav = document.querySelector(`.navigation-menu`);
+const closeNav = document.querySelector(`.navigation-menu-close`);
 const navHeight = nav.getBoundingClientRect().height;
 const introduction = document.getElementsByClassName(`grid-container`)[0];
 const aboutMeContainer = document.querySelector(`.about-me-container__option-slider`);

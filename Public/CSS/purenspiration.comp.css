@@ -33,6 +33,28 @@ html {
 .vertical-flex-container .navigation--sticky {
   color: rgba(250, 250, 250, 0.75);
 }
+.vertical-flex-container .navigation-menu {
+  color: rgba(250, 250, 250, 0.75);
+}
+.vertical-flex-container .navigation-menu-close {
+  font-size: 3rem;
+  color: rgba(250, 250, 250, 0.75);
+  transition: color 0.5s;
+}
+.vertical-flex-container .navigation-menu-close:hover {
+  color: #FAFAFA;
+}
+.vertical-flex-container .navigation-menu__links {
+  font-size: 3rem;
+}
+.vertical-flex-container .navigation-menu__links--linkItem__link:link, .vertical-flex-container .navigation-menu__links--linkItem__link:visited {
+  color: rgba(250, 250, 250, 0.75);
+  transition: color 0.5s;
+  text-decoration: none;
+}
+.vertical-flex-container .navigation-menu__links--linkItem__link:link:hover, .vertical-flex-container .navigation-menu__links--linkItem__link:visited:hover {
+  color: #FAFAFA;
+}
 .vertical-flex-container .flex-section .grid-container .typing-text-container {
   font-size: 7rem;
   text-align: center;
@@ -31709,6 +31731,61 @@ html {
 }
 .vertical-flex-container .navigation .hamburger-menu {
   display: none;
+}
+.vertical-flex-container .navigation-menu {
+  position: fixed;
+  height: 0;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  background-color: rgba(0, 71, 171, 0.9);
+  z-index: 10;
+  opacity: 0;
+  transition: height 0.5s, width 0.5s, opacity 0.5s;
+}
+.vertical-flex-container .navigation-menu-close {
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  top: 1rem;
+  right: 1rem;
+}
+.vertical-flex-container .navigation-menu__links {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  flex-direction: column;
+}
+.vertical-flex-container .navigation-menu__links--linkItem {
+  position: relative;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding: 0 1rem;
+  list-style: none;
+  margin: 1rem 0;
+}
+.vertical-flex-container .navigation-menu__links--linkItem:last-of-type {
+  margin-bottom: 0;
+}
+.vertical-flex-container .navigation-menu__links--linkItem__link {
+  transition: opacity 0.5s;
+}
+.vertical-flex-container .navigation-menu__links--linkItem__link:hover {
+  cursor: pointer;
 }
 .vertical-flex-container .navigation--sticky {
   position: fixed;

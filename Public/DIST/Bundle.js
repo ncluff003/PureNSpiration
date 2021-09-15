@@ -4759,6 +4759,8 @@ var App = /*#__PURE__*/function () {
     this._createCardButtonNavigation(aboutMeContainer);
 
     this._watchCardButtons(slideOptions, aboutMeContainer);
+
+    this._watchMenuButtons();
   }
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__.default)(App, [{
@@ -5119,6 +5121,37 @@ var App = /*#__PURE__*/function () {
         _iterator4.f();
       }
     }
+  }, {
+    key: "_watchMenuButtons",
+    value: function _watchMenuButtons() {
+      var _this5 = this;
+
+      menu.addEventListener("click", function () {
+        _this5._openMenu();
+      });
+      closeNav.addEventListener("click", function () {
+        _this5._closeMenu();
+      });
+    }
+  }, {
+    key: "_openMenu",
+    value: function _openMenu() {
+      console.log('Hello', mobileNav);
+      mobileNav.style.height = "100%";
+      mobileNav.style.width = "100%";
+      mobileNav.style.opacity = 1;
+      closeNav.style.display = 'flex';
+      menu.style.display = 'none';
+    }
+  }, {
+    key: "_closeMenu",
+    value: function _closeMenu() {
+      mobileNav.style.height = 0;
+      mobileNav.style.width = 0;
+      mobileNav.style.opacity = 0;
+      closeNav.style.display = 'none';
+      menu.style.display = 'flex';
+    }
   }]);
 
   return App;
@@ -5134,6 +5167,9 @@ var nav = document.querySelector(".navigation");
 
 var links = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__.default)(document.querySelectorAll(".navigation__links--linkItem__link"));
 
+var menu = document.querySelector(".r__hamburger-menu");
+var mobileNav = document.querySelector(".navigation-menu");
+var closeNav = document.querySelector(".navigation-menu-close");
 var navHeight = nav.getBoundingClientRect().height;
 var introduction = document.getElementsByClassName("grid-container")[0];
 var aboutMeContainer = document.querySelector(".about-me-container__option-slider");

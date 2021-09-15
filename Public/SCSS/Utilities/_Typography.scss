@@ -56,6 +56,35 @@ html {
     }
   }
 
+  // Mobile Navigation
+  .navigation-menu {
+    color: rgba($colorOffWhite, 0.75);
+    &-close {
+      font-size: 3rem;
+      color: rgba($colorOffWhite, 0.75);
+      transition: color 0.5s;
+      &:hover {
+        color: $colorOffWhite;
+      }
+    }
+    &__links {
+      font-size: 3rem;
+      &--linkItem {
+        &__link {
+          &:link,
+          &:visited {
+            color: rgba($colorOffWhite, 0.75);
+            transition: color 0.5s;
+            text-decoration: none;
+            &:hover {
+              color: $colorOffWhite;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .flex-section {
     .grid-container {
       .typing-text-container {
