@@ -55,6 +55,7 @@
       }
 
       @include combo-max-responsive(425px, 930px) {
+        height: 6rem;
         #r__navigation__logo {
           width: 80%;
           margin-left: 1.25rem;

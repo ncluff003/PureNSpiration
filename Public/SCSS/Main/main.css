@@ -38135,6 +38135,221 @@ html {
     font-size: 3.6rem;
   }
 }
+@media (max-width: 1050px) and (max-height: 800px) {
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    font-size: 5.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-typing-text-container {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-cover-title-container {
+    font-size: 3.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-description-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__project-count {
+    font-size: 3.6rem;
+  }
+}
+@media (max-width: 800px) and (max-height: 1050px) {
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    font-size: 5.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    font-size: 1.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-typing-text-container {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-cover-title-container {
+    font-size: 2.4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-description-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-work-in-progress:after {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__project-count {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 930px) and (max-height: 425px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoText {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    font-size: 3.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 2.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    font-size: 1.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-typing-text-container {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card {
+    height: 80%;
+    width: 18rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container {
+    font-size: 7rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container p {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-title-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-cover-title-container {
+    font-size: 2.4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-description-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-work-in-progress:after {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__project-count {
+    font-size: 2.4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 425px) and (max-height: 930px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoText {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    font-size: 3.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 2.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text--cursor {
+    height: 45%;
+    width: 0.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    font-size: 1.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-typing-text-container {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card {
+    height: 80%;
+    width: 18rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container {
+    font-size: 7rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container p {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-title-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-cover-title-container {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-description-container {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    font-size: 1.2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-work-in-progress:after {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__project-count {
+    font-size: 2.4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 800px) and (max-height: 400px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoText {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    font-size: 3.5rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 2.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    font-size: 1.8rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-typing-text-container {
+    font-size: 3rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card {
+    height: 80%;
+    width: 18rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container {
+    font-size: 7rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-image-container p {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card .skill-title-container {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-cover-title-container {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-description-container {
+    font-size: 1.6rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    font-size: 1.2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-work-in-progress:after {
+    font-size: 4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__project-count {
+    font-size: 2.4rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form {
+    font-size: 1.2rem;
+  }
+}
 .gridTV {
   display: grid;
   height: 100vh;
@@ -55455,6 +55670,56 @@ html {
     margin-right: 1rem;
   }
 }
+@media (max-width: 800px) and (max-height: 1050px) {
+  .r__vertical-flex-container .r__navigation__logo {
+    margin-left: 2rem;
+    width: 40%;
+  }
+  .r__vertical-flex-container .r__navigation__logo__logoImg {
+    margin-right: 1rem;
+  }
+  .r__vertical-flex-container .r__navigation__links {
+    display: none;
+  }
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 3rem;
+  }
+  .r__vertical-flex-container .r__navigation .r__hamburger-menu:hover {
+    cursor: pointer;
+  }
+}
+@media (max-width: 930px) and (max-height: 425px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo {
+    width: 40%;
+    margin-left: 1.25rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoImg {
+    margin-right: 2rem;
+  }
+}
+@media (max-width: 425px) and (max-height: 930px) {
+  .r__vertical-flex-container .r__navigation #r__navigation__logo {
+    width: 80%;
+    margin-left: 1.25rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .r__vertical-flex-container .r__navigation #r__navigation__logo .r__navigation__logo__logoImg {
+    height: auto;
+    width: 5rem;
+    margin-right: 2rem;
+  }
+  .r__vertical-flex-container .r__navigation__links {
+    display: none;
+  }
+}
 
 @media (min-width: 2500px) {
   .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container {
@@ -56668,6 +56933,2432 @@ html {
     transition: all 0.75s;
   }
 }
+@media (max-width: 1050px) and (max-height: 1400px) {
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container--error {
+    margin-bottom: 2.75rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus + label {
+    -webkit-transform: translate(-2rem, -4.35rem) scale(0.85);
+            transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-2rem, -4.35rem) scale(0.85);
+            transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-2rem, -4.35rem) scale(0.85);
+            transform: translate(-2rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    -webkit-transform: translate(2rem);
+            transform: translate(2rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-moz-placeholder-shown) + label {
+    transform: translate(-5.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-ms-input-placeholder) + label {
+    transform: translate(-5.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus + label {
+    -webkit-transform: translate(-5.5rem, -4.35rem) scale(0.85);
+            transform: translate(-5.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-moz-placeholder-shown) + label {
+    transform: translate(-5.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-ms-input-placeholder) + label {
+    transform: translate(-5.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus + label {
+    -webkit-transform: translate(-5.5rem, -4.35rem) scale(0.85);
+            transform: translate(-5.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container {
+    position: relative;
+    height: 30%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+    resize: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-moz-placeholder-shown) + label {
+    transform: translate(-5.5rem, -12.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-ms-input-placeholder) + label {
+    transform: translate(-5.5rem, -12.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus + label {
+    -webkit-transform: translate(-5.5rem, -12.65rem) scale(0.85);
+            transform: translate(-5.5rem, -12.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message-label {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, -8rem);
+            transform: translate(2rem, -8rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: rgba(0, 71, 171, 0.8);
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:hover {
+    cursor: pointer;
+    background-color: #0047ab;
+    border: 0.3rem groove #0047ab;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:active {
+    background-color: #ffd700;
+    border: 0.3rem groove #ffd700;
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-good {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-bad {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-warning {
+    border: 0.3rem groove #ffd700;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+}
+@media (max-width: 1050px) and (max-height: 800px) {
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container--error {
+    margin-bottom: 2.75rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus + label {
+    -webkit-transform: translate(-2rem, -3.35rem) scale(0.85);
+            transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-2rem, -3.35rem) scale(0.85);
+            transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-2rem, -3.35rem) scale(0.85);
+            transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    -webkit-transform: translate(2rem);
+            transform: translate(2rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-moz-placeholder-shown) + label {
+    transform: translate(-5.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-ms-input-placeholder) + label {
+    transform: translate(-5.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus + label {
+    -webkit-transform: translate(-5.5rem, -3.35rem) scale(0.85);
+            transform: translate(-5.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-moz-placeholder-shown) + label {
+    transform: translate(-5.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-ms-input-placeholder) + label {
+    transform: translate(-5.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus + label {
+    -webkit-transform: translate(-5.5rem, -3.35rem) scale(0.85);
+            transform: translate(-5.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container {
+    position: relative;
+    height: 30%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+    resize: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-moz-placeholder-shown) + label {
+    transform: translate(-5.5rem, -9.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-ms-input-placeholder) + label {
+    transform: translate(-5.5rem, -9.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus + label {
+    -webkit-transform: translate(-5.5rem, -9.65rem) scale(0.85);
+            transform: translate(-5.5rem, -9.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message-label {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, -5.25rem);
+            transform: translate(2rem, -5.25rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: rgba(0, 71, 171, 0.8);
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:hover {
+    cursor: pointer;
+    background-color: #0047ab;
+    border: 0.3rem groove #0047ab;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:active {
+    background-color: #ffd700;
+    border: 0.3rem groove #ffd700;
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-good {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-bad {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-warning {
+    border: 0.3rem groove #ffd700;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+}
+@media (max-width: 800px) and (max-height: 1050px) {
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container--error {
+    margin-bottom: 2.75rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus + label {
+    -webkit-transform: translate(-2rem, -3.35rem) scale(0.85);
+            transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-2rem, -3.35rem) scale(0.85);
+            transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-2rem, -3.35rem) scale(0.85);
+            transform: translate(-2rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    -webkit-transform: translate(2rem);
+            transform: translate(2rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-moz-placeholder-shown) + label {
+    transform: translate(-4.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-ms-input-placeholder) + label {
+    transform: translate(-4.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus + label {
+    -webkit-transform: translate(-4.5rem, -3.35rem) scale(0.85);
+            transform: translate(-4.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-moz-placeholder-shown) + label {
+    transform: translate(-4.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-ms-input-placeholder) + label {
+    transform: translate(-4.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus + label {
+    -webkit-transform: translate(-4.5rem, -3.35rem) scale(0.85);
+            transform: translate(-4.5rem, -3.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container {
+    position: relative;
+    height: 30%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+    resize: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-moz-placeholder-shown) + label {
+    transform: translate(-4.5rem, -11.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-ms-input-placeholder) + label {
+    transform: translate(-4.5rem, -11.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus + label {
+    -webkit-transform: translate(-4.5rem, -11.65rem) scale(0.85);
+            transform: translate(-4.5rem, -11.65rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message-label {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, -7rem);
+            transform: translate(2rem, -7rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: rgba(0, 71, 171, 0.8);
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:hover {
+    cursor: pointer;
+    background-color: #0047ab;
+    border: 0.3rem groove #0047ab;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:active {
+    background-color: #ffd700;
+    border: 0.3rem groove #ffd700;
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-good {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-bad {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-warning {
+    border: 0.3rem groove #ffd700;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+}
+@media (max-width: 930px) and (max-height: 425px) {
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-message-container--error {
+    margin-bottom: 2.75rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:focus + label {
+    -webkit-transform: translate(-3rem, -2.35rem) scale(0.7);
+            transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--first-name .last-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .first-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-name-container--last-name .last-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container {
+    position: relative;
+    height: 7.5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus::placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus::placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:focus + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-3rem, -2.35rem) scale(0.7);
+            transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name-label,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:invalid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:invalid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:valid, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .organization-name:valid,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-moz-placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-moz-placeholder-shown) + label {
+    transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:-ms-input-placeholder) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:-ms-input-placeholder) + label {
+    transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name:focus + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name:focus + label {
+    -webkit-transform: translate(-3rem, -2.35rem) scale(0.7);
+            transform: translate(-3rem, -2.35rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--organization .position-name-label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-organization-container--position .position-name-label {
+    -webkit-transform: translate(2rem);
+            transform: translate(2rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-moz-placeholder-shown) + label {
+    transform: translate(-10.5rem, -2rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:-ms-input-placeholder) + label {
+    transform: translate(-10.5rem, -2rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:focus + label {
+    -webkit-transform: translate(-10.5rem, -2rem) scale(0.7);
+            transform: translate(-10.5rem, -2rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-email-container .email:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container {
+    position: relative;
+    height: 7.5%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 1.25rem 0 1.25rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-moz-placeholder-shown) + label {
+    transform: translate(-10.5rem, -2rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:-ms-input-placeholder) + label {
+    transform: translate(-10.5rem, -2rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:focus + label {
+    -webkit-transform: translate(-10.5rem, -2rem) scale(0.7);
+            transform: translate(-10.5rem, -2rem) scale(0.7);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject-label {
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, 0);
+            transform: translate(2rem, 0);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-subject-container .subject:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container {
+    position: relative;
+    height: 30%;
+    width: 86.75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 2rem 0 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: transparent;
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    padding: 1rem;
+    resize: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus {
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::-webkit-input-placeholder, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus::placeholder {
+    opacity: 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-moz-placeholder-shown) + label {
+    transform: translate(-4.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:-ms-input-placeholder) + label {
+    transform: translate(-4.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:not(:placeholder-shown) + label, .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:focus + label {
+    -webkit-transform: translate(-4.5rem, -4.35rem) scale(0.85);
+            transform: translate(-4.5rem, -4.35rem) scale(0.85);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message-label {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
+    transition: transform 0.75s, -webkit-transform 0.75s;
+    -webkit-transform: translate(2rem, -1rem);
+            transform: translate(2rem, -1rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:invalid {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-text-message-container .message:valid {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    margin: 0;
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: rotate(0) translate(0, 0);
+            transform: rotate(0) translate(0, 0);
+    background-color: rgba(0, 71, 171, 0.8);
+    border: 0.3rem groove rgba(0, 71, 171, 0.75);
+    -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:hover {
+    cursor: pointer;
+    background-color: #0047ab;
+    border: 0.3rem groove #0047ab;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form-submit-container .submit-message-button:active {
+    background-color: #ffd700;
+    border: 0.3rem groove #ffd700;
+    outline: none;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-good {
+    border: 0.3rem groove #008013;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-bad {
+    border: 0.3rem groove #cf352e;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form .input-warning {
+    border: 0.3rem groove #ffd700;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::-webkit-input-placeholder,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form ::placeholder {
+    opacity: 0;
+    -webkit-transition: all 0.75s;
+    transition: all 0.75s;
+  }
+}
 
 /*
 
@@ -56857,8 +59548,12 @@ Tablet Landscape:
     grid-column: 6/span 2;
     grid-row: 16/span 1;
   }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .contact-form {
+    grid-column: 1/-1;
+    grid-row: 6/span 12;
+  }
 }
-@media (max-width: 1000px) and (max-height: 625px) {
+@media (max-width: 1050px) and (max-height: 800px) {
   .r__vertical-flex-container .r__flex-section .r__grid-container {
     height: 100vh;
     width: 100vw;
@@ -56878,6 +59573,45 @@ Tablet Landscape:
     grid-template-rows: repeat(12, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 0;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    grid-column: 1/-1;
+    grid-row: 5/span 3;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container {
+    grid-column: 1/-1;
+    grid-row: 8/span 2;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container {
+    grid-column: 1/-1;
+    grid-row: 5/span 8;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-me-video,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option #r__aboutMeVideo {
+    width: 100%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills {
+    grid-column: 1/-1;
+    grid-row: 5/span 8;
+    padding-top: 1%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card {
+    height: 80%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project {
+    grid-column: 1/-1;
+    grid-row: 5/span 8;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card {
+    width: 90%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .project-count {
+    grid-column: 9/span 2;
+    grid-row: 12/span 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .contact-form {
+    grid-column: 1/-1;
+    grid-row: 4/span 8;
   }
 }
 @media (max-width: 800px) and (max-height: 1050px) {
@@ -56901,6 +59635,17 @@ Tablet Landscape:
     grid-column-gap: 0;
     grid-row-gap: 0;
   }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    grid-column: 1/-1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    grid-column: 1/-1;
+    grid-row: 8/span 3;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container {
+    grid-column: 1/-1;
+    grid-row: 11/span 2;
+  }
 }
 @media (max-width: 930px) and (max-height: 425px) {
   .r__vertical-flex-container .r__flex-section .r__grid-container {
@@ -56922,6 +59667,54 @@ Tablet Landscape:
     grid-template-rows: repeat(10, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 0;
+    overflow-y: auto;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
+    grid-row: 3/span 2;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container {
+    grid-column: 1/-1;
+    grid-row: 5/span 8;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option .r__about-me-video,
+.r__vertical-flex-container .r__flex-section .r__grid-container .r__about-me-container__option-slider--option #r__aboutMeVideo {
+    width: 100%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills {
+    grid-column: 1/-1;
+    grid-row: 5/span 8;
+    padding-top: 1%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #skills .skill-card {
+    height: 80%;
+    width: 14rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project {
+    grid-column: 1/-1;
+    grid-row: 5/span 5;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card {
+    height: 40%;
+    width: 70%;
+    -ms-flex-item-align: start;
+        align-self: start;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    height: 90%;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .project-count {
+    grid-column: 6/span 2;
+    grid-row: 10/span 1;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #contact {
+    grid-row: 2/span 2;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__contact-form {
+    grid-column: 1/-1;
+    grid-row: 5/span 5;
   }
 }
 @media (max-width: 425px) and (max-height: 930px) {
@@ -56945,6 +59738,23 @@ Tablet Landscape:
     grid-column-gap: 0;
     grid-row-gap: 0;
   }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    grid-column: 1/-1;
+    grid-row: 4/span 3;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container {
+    grid-column: 1/-1;
+    grid-row: 7/span 5;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
+    height: 80%;
+    width: 80%;
+    margin-bottom: 2rem;
+  }
 }
 @media (max-width: 800px) and (max-height: 400px) {
   .r__vertical-flex-container .r__flex-section .r__grid-container {
@@ -56966,6 +59776,28 @@ Tablet Landscape:
     grid-template-rows: repeat(10, 1fr);
     grid-column-gap: 0;
     grid-row-gap: 0;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    grid-column: 1/-1;
+    grid-row: 4/span 3;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container {
+    grid-column: 1/-1;
+    grid-row: 7/span 2;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project {
+    grid-column: 1/-1;
+    grid-row: 5/span 5;
+    overflow-y: auto;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card {
+    height: 40%;
+    width: 70%;
+    -ms-flex-item-align: start;
+        align-self: start;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container #project .project-card-content-link-container--link {
+    height: 90%;
   }
 }
 @media (max-width: 375px) and (max-height: 860px) {

@@ -26,6 +26,7 @@ Tablet Landscape:
 */
 
 @use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Mixins" as *;
+@use "../../../../Public/SCSS/Responsive/Utilities/Responsive-Variables" as *;
 
 .r__ {
   &vertical-flex-container {
@@ -325,6 +326,111 @@ Tablet Landscape:
         // Mobile Large Portrait
         @include combo-max-responsive(425px, 930px) {
           @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
+
+          .r__typing-text-container {
+            grid-column: 1 / -1;
+            grid-row: 4 / span 3;
+          }
+          .r__typing-text--cursor,
+          #introCursor {
+            height: 30%;
+            width: 0.5rem;
+          }
+          .r__introduction-button-container {
+            grid-column: 1 / -1;
+            grid-row: 7 / span 5;
+            flex-direction: column;
+            .r__introduction-button {
+              height: 25%;
+              width: 70%;
+            }
+          }
+
+          // About Section
+          .r__about-me-container {
+            grid-column: 1 / -1;
+            grid-row: 5 / span 6;
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container {
+                  .r__about-typing-text--cursor,
+                  #aboutCursor {
+                    height: 30%;
+                    width: 0.5rem;
+                  }
+                }
+                .r__about-me-video,
+                #r__aboutMeVideo {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          #skills {
+            grid-row: 1 / -1;
+            grid-row: 5 / span 7;
+            .skill-card {
+              height: 80%;
+            }
+            .card-button-left,
+            .card-button-right {
+              height: 5rem;
+              width: 5rem;
+              border: 0.2rem groove rgba($colorDarkGrey, 0.4);
+            }
+          }
+
+          #project {
+            grid-row: 1 / -1;
+            grid-row: 4 / span 8;
+            .project-card {
+              flex-direction: column;
+              height: 100%;
+              padding-top: 14.5%;
+              &-cover {
+                height: 42.5%;
+                width: 100%;
+                margin-bottom: 2rem;
+                &-image-container {
+                  height: 100%;
+                  width: 100%;
+                }
+              }
+              &-content {
+                height: 42.5%;
+                width: 100%;
+                padding: 0;
+                &-description-container {
+                  height: 100%;
+                  width: 100%;
+                  margin-bottom: 1rem;
+                }
+                &-link-container {
+                  height: 25%;
+                  width: 100%;
+                  &--link {
+                    height: 90%;
+                    width: 40%;
+                  }
+                }
+              }
+            }
+            .card-button-left,
+            .card-button-right {
+              height: 5rem;
+              width: 5rem;
+              border: 0.2rem groove rgba($colorDarkGrey, 0.4);
+            }
+          }
+          .r__project-count {
+            grid-column: 5 / span 2;
+            grid-row: 12 / span 1;
+          }
+
+          .r__contact-form {
+            grid-column: 1 / -1;
+            grid-row: 4 / span 8;
+          }
         }
 
         // Mobile Small Landscape

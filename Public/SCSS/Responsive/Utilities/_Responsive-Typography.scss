@@ -439,11 +439,11 @@
       .r__flex-section {
         .r__grid-container {
           .r__section-header {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
           }
           // Introduction Section
           .r__typing-text-container {
-            font-size: 2.8rem;
+            font-size: 1.6rem;
           }
           .r__introduction-button-container {
             .r__introduction-button {
@@ -455,8 +455,13 @@
             &__option-slider {
               &--option {
                 .r__about-typing-text-container {
-                  font-size: 3rem;
+                  font-size: 1.6rem;
                 }
+              }
+              .card-button-left,
+              .card-button-right {
+                font-size: 2rem;
+                color: rgba($colorDarkGrey, 0.6);
               }
             }
           }
@@ -464,17 +469,20 @@
           // Skills Section
           #skills {
             .skill-card {
-              height: 80%;
-              width: 18rem;
               .skill-image-container {
-                font-size: 7rem;
+                font-size: 12rem;
                 p {
-                  font-size: 1.6rem;
+                  font-size: 2.8rem;
                 }
               }
               .skill-title-container {
                 font-size: 2rem;
               }
+            }
+            .card-button-left,
+            .card-button-right {
+              font-size: 2rem;
+              color: rgba($colorDarkGrey, 0.6);
             }
           }
 
@@ -502,6 +510,11 @@
                 }
               }
             }
+            .card-button-left,
+            .card-button-right {
+              font-size: 2rem;
+              color: rgba($colorDarkGrey, 0.6);
+            }
           }
           .r__project-count {
             font-size: 2.4rem;
@@ -510,6 +523,12 @@
           // Contact Section
           .r__contact-form {
             font-size: 1.2rem;
+            &-message-container {
+              &--error,
+              &--success {
+                font-size: 1.2rem;
+              }
+            }
           }
         }
       }
