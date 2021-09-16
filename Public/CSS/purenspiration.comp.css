@@ -31756,6 +31756,9 @@ html {
   top: 1rem;
   right: 1rem;
 }
+.vertical-flex-container .navigation-menu-close:hover {
+  cursor: pointer;
+}
 .vertical-flex-container .navigation-menu__links {
   position: relative;
   height: 100%;
@@ -37774,6 +37777,11 @@ html {
     font-size: 4.8rem;
   }
 }
+@media (max-width: 1600px) and (max-height: 900px) {
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container {
+    font-size: 1.4rem;
+  }
+}
 @media (max-width: 1400px) and (max-height: 1050px) {
   .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
     font-size: 5.5rem;
@@ -37800,15 +37808,23 @@ html {
     font-size: 3.6rem;
   }
 }
+@media (max-width: 1150px) and (max-height: 900px) {
+  .r__vertical-flex-container .r__navigation__logo__logoText {
+    font-size: 2rem;
+  }
+  .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
+    font-size: 5rem;
+  }
+}
 @media (max-width: 1050px) and (max-height: 1400px) {
   .r__vertical-flex-container .r__navigation__links {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   .r__vertical-flex-container .r__flex-section .r__grid-container .r__section-header {
     font-size: 5.5rem;
   }
   .r__vertical-flex-container .r__flex-section .r__grid-container .r__typing-text-container {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
   .r__vertical-flex-container .r__flex-section .r__grid-container .r__introduction-button-container .r__introduction-button {
     font-size: 2rem;
@@ -55426,12 +55442,25 @@ html {
   grid-row: 24/span 1;
 }
 
+@media (max-width: 1600px) and (max-height: 900px) {
+  .r__vertical-flex-container .r__navigation__logo {
+    width: 22.5%;
+  }
+  .r__vertical-flex-container .r__navigation__logo__logoImg {
+    margin-right: 0.5rem;
+  }
+}
 @media (max-width: 1400px) and (max-height: 1050px) {
   .r__vertical-flex-container .r__navigation__logo {
     width: 25%;
   }
   .r__vertical-flex-container .r__navigation__logo__logoImg {
     margin-right: 1rem;
+  }
+}
+@media (max-width: 1200px) and (max-height: 900px) {
+  .r__vertical-flex-container .r__navigation__logo {
+    width: 27.5%;
   }
 }
 @media (max-width: 1050px) and (max-height: 1400px) {

@@ -4,6 +4,14 @@
 .r__ {
   &vertical-flex-container {
     .r__navigation {
+      @include combo-max-responsive(1600px, 900px) {
+        &__logo {
+          width: 22.5%;
+          &__logoImg {
+            margin-right: 0.5rem;
+          }
+        }
+      }
       // Tablet Landscape - Navigation
       @include combo-max-responsive(1400px, 1050px) {
         &__logo {
@@ -11,6 +19,12 @@
           &__logoImg {
             margin-right: 1rem;
           }
+        }
+      }
+
+      @include combo-max-responsive(1200px, 900px) {
+        &__logo {
+          width: 27.5%;
         }
       }
 

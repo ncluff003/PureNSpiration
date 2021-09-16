@@ -62,6 +62,20 @@
   }
 }
 
+@include combo-max-responsive(1600px, 900px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__flex-section {
+        .r__grid-container {
+          .r__introduction-button-container {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Tablet Large Landscape
 @include combo-max-responsive(1400px, 1050px) {
   .r__ {
@@ -124,6 +138,27 @@
   }
 }
 
+@include combo-max-responsive(1150px, 900px) {
+  .r__ {
+    &vertical-flex-container {
+      .r__navigation {
+        &__logo {
+          &__logoText {
+            font-size: 2rem;
+          }
+        }
+      }
+      .r__flex-section {
+        .r__grid-container {
+          .r__typing-text-container {
+            font-size: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Tablet Large Portrait
 @include combo-max-responsive(1050px, 1400px) {
   .r__ {
@@ -132,7 +167,7 @@
         // Tablet Large Portrait Navigation
 
         &__links {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
         }
       }
       .r__flex-section {
@@ -142,7 +177,7 @@
           }
           // Introduction Section
           .r__typing-text-container {
-            font-size: 4.5rem;
+            font-size: 4rem;
           }
           .r__introduction-button-container {
             .r__introduction-button {

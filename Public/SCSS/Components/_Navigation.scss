@@ -66,6 +66,9 @@
       @include SizeAndPositioning(absolute, 5rem, 5rem, none, center, center, 0, 0, 0);
       top: 1rem;
       right: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
     &__links {
       @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
