@@ -67,6 +67,7 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
 exports.emailMe = catchAsync(async (request, response, next) => {
   try {
     const postBody = request.body;
+    console.log(postBody);
     await new Email(
       postBody.firstName,
       postBody.lastName,
@@ -76,6 +77,8 @@ exports.emailMe = catchAsync(async (request, response, next) => {
       postBody.subject,
       postBody.message,
     ).contactMe();
+
+    console.log(`Email Sent.`);
 
     response.status(200).json({
       status: `Success`,

@@ -1,14 +1,13 @@
 import axios from 'axios';
 import qs from 'qs';
+import { app } from './App';
 
 export const emailMe = async (firstName, lastName, organization, position, email, subject, message) => {
-  document.querySelector(`.contact-form-message-container--error`).textContent = '';
-  document.querySelector(`.contact-form-message-container--success`).textContent = '';
   try {
     // SEND THE EMAL
     const response = await axios({
       method: `POST`,
-      url: `/`,
+      url: `/contact`,
       data: qs.stringify({
         firstName: firstName,
         lastName: lastName,
@@ -20,13 +19,22 @@ export const emailMe = async (firstName, lastName, organization, position, email
       }),
     });
     if (response.data.status === `Success`) {
-      document.querySelector(`.contact-form-message-container--error`).textContent = '';
-      document.querySelector(`.contact-form-message-container--success`).textContent = '';
-      document.querySelector(`.contact-form-message-container--success`).textContent = response.data.message;
+      const formResponse = document.querySelector(`.form-response`);
+      formResponse.classList.remove(`form-response--error`);
+      formResponse.classList.add(`form-response--success`);
+      formResponse.textContent = '';
+      app._selectStamp(2);
+      return (formResponse.textContent = response.data.message);
     }
   } catch (error) {
-    document.querySelector(`.contact-form-message-container--success`).textContent = '';
-    document.querySelector(`.contact-form-message-container--error`).textContent = '';
-    document.querySelector(`.contact-form-message-container--error`).textContent = error.response.data.message;
+    console.log(error, error.response);
+    if (error.response.data.status === `Internal Error` || error.response.data.status === `Error`) {
+      const formResponse = document.querySelector(`.form-response`);
+      formResponse.classList.remove(`form-response--success`);
+      formResponse.classList.add(`form-response--error`);
+      formResponse.textContent = '';
+      app._selectStamp(1);
+      return (formResponse.textContent = error.response.data.message);
+    }
   }
 };

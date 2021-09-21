@@ -328,6 +328,10 @@ Tablet Landscape:
         @include combo-max-responsive(425px, 930px) {
           @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
 
+          .r__section-header {
+            grid-row: 1 / span 2;
+          }
+
           .r__typing-text-container {
             grid-column: 1 / -1;
             grid-row: 4 / span 3;
@@ -368,7 +372,7 @@ Tablet Landscape:
             }
           }
           #skills {
-            grid-row: 1 / -1;
+            grid-column: 1 / -1;
             grid-row: 5 / span 7;
             .skill-card {
               height: 80%;
@@ -382,35 +386,43 @@ Tablet Landscape:
           }
 
           #project {
-            grid-row: 1 / -1;
-            grid-row: 4 / span 8;
+            grid-column: 1 / -1;
+            grid-row: 3 / span 10;
             .project-card {
+              -webkit-flex-direction: column;
               flex-direction: column;
               height: 100%;
-              padding-top: 14.5%;
+              max-width: 42.5rem;
+              width: 100%;
+              padding-top: 3rem;
               &-cover {
-                height: 42.5%;
+                height: 40%;
                 width: 100%;
                 margin-bottom: 2rem;
                 &-image-container {
-                  height: 100%;
+                  height: 80%;
+                  width: 100%;
+                }
+                &-title-container {
+                  height: 20%;
                   width: 100%;
                 }
               }
               &-content {
-                height: 42.5%;
+                height: 52.5%;
                 width: 100%;
                 padding: 0;
                 &-description-container {
-                  height: 100%;
+                  height: 70%;
                   width: 100%;
                   margin-bottom: 1rem;
+                  overflow-y: scroll;
                 }
                 &-link-container {
-                  height: 25%;
+                  height: 30%;
                   width: 100%;
                   &--link {
-                    height: 90%;
+                    height: 100%;
                     width: 40%;
                   }
                 }
@@ -472,13 +484,15 @@ Tablet Landscape:
           @include grid-layout(100vh, 100vw, repeat(10, 1fr), repeat(12, 1fr), 0, 0);
 
           .r__section-header {
-            grid-row: 2 / span 2;
+            grid-row: 1 / span 2;
           }
 
           // Introduction Section
-          .r__typing-text-container {
+          .r__typing-text-container,
+          #introTextContainer {
             grid-column: 1 / -1;
             grid-row: 4 / span 3;
+            padding: 0 2rem;
           }
           .r__typing-text--cursor,
           #introCursor {
@@ -495,6 +509,18 @@ Tablet Landscape:
             }
           }
 
+          // About Section
+          .r__about-me-container {
+            &__option-slider {
+              &--option {
+                .r__about-typing-text-container,
+                #aboutTextContainer {
+                  padding: 0 2rem;
+                }
+              }
+            }
+          }
+
           #skills {
             grid-column: 1 / -1;
             grid-row: 4 / span 8;
@@ -503,6 +529,9 @@ Tablet Landscape:
           #project {
             grid-column: 1 / -1;
             grid-row: 4 / span 8;
+            .project-card {
+              width: 90%;
+            }
           }
           .contact-form {
             grid-column: 1 / -1;

@@ -1,0 +1,12 @@
+@use "../../../Public/SCSS/Utilities/Mixins" as *;
+@use "../../../Public/SCSS/Utilities/Variables" as *;
+
+////////////////////////////////////////////////
+//  Master Grid Container
+.master-grid {
+  .master-flex-container {
+    @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
+    flex-direction: column;
+    overflow-y: auto;
+  }
+}

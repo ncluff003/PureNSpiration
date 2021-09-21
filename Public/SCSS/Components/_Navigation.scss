@@ -2,100 +2,26 @@
 @use "../../../Public/SCSS/Utilities/Variables" as *;
 
 ////////////////////////////////////////////////
-//  Vertical Flex Container
-
-.vertical-flex-container {
-  ////////////////////////////////////////////////
-  //  Navigation
-
+//  Master Grid Container
+.master-grid {
   .navigation {
-    @include SizeAndPositioning(absolute, 9rem, 100vw, flex, space-between, center, 0, 0, 0);
-    background-color: rgba($colorSilver, 0.4);
-    border-bottom: 0.4rem groove rgba($colorDarkGrey, 0.8);
-    z-index: 10;
-
-    ////////////////////////////////////////////////
-    //  Navigation Logo
-
-    &__logo {
-      @include SizeAndPositioning(relative, 100%, 20%, flex, space-evenly, center, 0, 0, 0);
-      margin-left: 6rem;
-      &__logoImg {
-        @include SizeAndPositioning(relative, 100%, 20%, flex, center, center, 0, 0, 0);
-        img {
-          @include SizingItem(relative, 70%, 100%);
-        }
-        margin-right: -2rem;
-      }
-    }
-
-    ////////////////////////////////////////////////
-    //  Navigation Links
-
-    &__links {
-      @include SizeAndPositioning(relative, 100%, 25%, flex, space-evenly, center, 0, 0, 0);
-      margin-right: 18rem;
-      &--linkItem {
-        @include SizeAndPositioning(relative, 98%, 100%, flex, center, center, 0, 0, 0);
-        padding: 0 1rem;
-        list-style: none;
-        &:not(:last-of-type) {
-          margin-right: 1.5rem;
-        }
-        &__link {
-          &:hover {
-            cursor: pointer;
-          }
-          transition: opacity 0.5s;
-        }
-      }
-    }
-
-    .hamburger-menu {
-      display: none;
-    }
-  }
-
-  .navigation-menu {
-    @include SizeAndPositioning(fixed, 0, 0, flex, center, center, 0, 0, 0);
-    background-color: rgba($secondaryColor, 0.9);
-    z-index: 10;
-    opacity: 0;
-    transition: height 0.5s, width 0.5s, opacity 0.5s;
-    &-close {
-      @include SizeAndPositioning(absolute, 5rem, 5rem, none, center, center, 0, 0, 0);
-      top: 1rem;
-      right: 1rem;
-      &:hover {
-        cursor: pointer;
-      }
+    @include SizeAndPositioning(relative, 100%, 100%, flex, space-evenly, center, 0, 0, 0);
+    flex-direction: column;
+    background-color: $secondaryColor;
+    &__my-image {
+      @include SizingItem(relative, auto, 55%);
+      padding: 0.5rem;
+      background-color: rgba($colorOffWhite, 0.9);
+      border: 0.3rem groove $colorOffWhite;
+      border-radius: 0.3rem;
     }
     &__links {
-      @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
+      @include SizeAndPositioning(relative, 35%, 80%, flex, space-evenly, center, 0, 0, 0);
       flex-direction: column;
-      &--linkItem {
-        @include SizeAndPositioning(relative, 5%, 100%, flex, center, center, 0, 0, 0);
-        padding: 0 1rem;
-        list-style: none;
-        margin: 1rem 0;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-        &__link {
-          &:hover {
-            cursor: pointer;
-          }
-          transition: opacity 0.5s;
-        }
-      }
     }
-  }
-
-  .navigation--sticky {
-    position: fixed;
-    background-color: rgba($secondaryColor, 0.95);
-    box-shadow: -0.5rem 0.5rem 0.5rem $colorDarkestGrey;
-    border-bottom: none;
-    animation: fadeInDown 0.25s linear;
+    &__my-logo {
+      @include SizingItem(relative, auto, 25%);
+    }
+    border-right: 0.4rem groove $colorDarkGrey;
   }
 }

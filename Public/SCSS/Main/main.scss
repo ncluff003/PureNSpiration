@@ -18,15 +18,18 @@
 //////////////////////////////////////////////
 //// Comp//onents
 
+@use "../../../Public/SCSS/Components/Master-Grid";
+@use "../../../Public/SCSS/Components/Master-Flex-Container";
 @use "../../../Public/SCSS/Components/Navigation";
-@use "../../../Public/SCSS/Components/Vertical-Flex-Container";
-@use "../../../Public/SCSS/Components/Flex-Section";
-@use "../../../Public/SCSS/Components/Grid-Container";
 @use "../../../Public/SCSS/Components/Button";
 @use "../../../Public/SCSS/Components/Form";
 
 ////////////////////////////////////////////
 //// Pages
+@use "../../../Public/SCSS/Pages/Home";
+@use "../../../Public/SCSS/Pages/About";
+@use "../../../Public/SCSS/Pages/Projects";
+@use "../../../Public/SCSS/Pages/Contact";
 
 ////////////////////////////////////////////
 //// Themes

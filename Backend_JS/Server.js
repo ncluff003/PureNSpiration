@@ -39,3 +39,12 @@ App.listen(PORT, () => {
 
 ////////////////////////////////////////////
 //  Reload App
+
+////////////////////////////////////////////
+//  Shut Down App On Unhandled Rejections
+process.on(`unhandledRejection`, (error) => {
+  console.log(`UNHANDLED REJECTION 💥 -- Shutting Down...`);
+  server.close(() => {
+    process.exit(1);
+  });
+});

@@ -1,0 +1,40 @@
+extends base
+
+block site-content
+  section.form-container
+    p.form-container__requirement-reminder.form-message ATTENTION | All Fields Are Required.
+    header.form-container__form-header
+      h2.form-container__form-header__addressed To: Nathan Cluff
+      img.stamp(src="/DIST/CSS/Images/email-stamp.png")
+      img.stamp(src="/DIST/CSS/Images/invalid-email-stamp.png")
+      img.stamp(src="/DIST/CSS/Images/valid-email-stamp.png")
+    form.form-container__contact-form
+      div.form-container__contact-form__name-containers
+        div.form-container__contact-form__name-containers__first-name-container
+          label.form-container__contact-form__name-containers__first-name-container--first-name-label#first-name-label(for="first-name") From:
+          input.form-container__contact-form__name-containers__first-name-container--first-name#first-name(type="text" name="first-name" placeholder="First Name" required)
+        div.form-container__contact-form__name-containers__last-name-container
+          input.form-container__contact-form__name-containers__last-name-container--last-name#last-name(type="text" name="last-name" placeholder="Last Name" required)
+      div.form-container__contact-form__organization-info-containers
+        div.form-container__contact-form__organization-info-containers__organization-name-container
+          label.form-container__contact-form__organization-info-containers__organization-name-container--organization-name-label#organization-name-label(for="organization-name") Organization Info:
+          input.form-container__contact-form__organization-info-containers__organization-name-container--organization-name#organization-name(type="text" name="organization-name" placeholder="Your Organization" pattern="^[^?!*,#,%,*,+,=]*^[^?!*,#,%,*,+,=]*$" required)
+        div.form-container__contact-form__organization-info-containers__organization-position-container
+          input.form-container__contact-form__organization-info-containers__organization-position-container--organization-position#organization-position(type="text" name="organization-position" placeholder="Your Position" required)
+      div.form-container__contact-form__email-containers
+        div.form-container__contact-form__email-containers__email-container
+          label.form-container__contact-form__email-containers__email-container--email-label#email-label(for="email") Email Address:
+          input.form-container__contact-form__email-containers__email-container--email#email(type="email" name="email" placeholder="Your Email" required)
+      div.form-container__contact-form__subject-containers
+        div.form-container__contact-form__subject-containers__subject-container
+          label.form-container__contact-form__subject-containers__subject-container--subject-label#subject-label(for="subject") Subject:
+          input.form-container__contact-form__subject-containers__subject-container--subject#subject(type="text" name="subject" placeholder="Email Subject" required)
+      div.form-container__contact-form__message-containers
+        div.form-container__contact-form__message-containers__message-container
+          label.form-container__contact-form__message-containers__message-container--message-label#message-label(for="message") Message:
+          textarea.form-container__contact-form__message-containers__message-container--message#message(type="text" name="message" placeholder="Your Message" required)
+          p.form-container__contact-form__message-containers__message-counter (1000 Characters Left)
+      div.form-container__contact-form__submit-containers
+        div.form-container__contact-form__submit-containers__submit-container
+          input.form-container__contact-form__submit-containers__submit-container--submit#submit(type="submit" name="submit" value="Send Message" required)
+    p.form-response.form-message Example Message
