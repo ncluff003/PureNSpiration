@@ -10,8 +10,8 @@ import { myCalendar } from './Calendar.js';
 // APP CLASS
 class App {
   constructor() {
-    if (window.location.pathname.includes('contact')) console.log(window.location.pathname);
     this._checkCurrentPage();
+    this._watchMobileNavigation();
   }
 
   _checkCurrentPage() {
@@ -25,8 +25,37 @@ class App {
     }
     if (window.location.pathname.includes('contact')) {
       this._selectStamp(0);
+      this._calculateCharactersLeft();
       this._watchForMail();
     }
+  }
+
+  _watchMobileNavigation() {
+    menu.addEventListener(`click`, (e) => {
+      e.preventDefault();
+      mobileNavigation.style.display = `flex`;
+      mobileNavigation.style.height = `100vh`;
+      mobileNavigation.style.width = `100vw`;
+      mobileNavigation.style.backgroundColor = `rgba(0, 71, 171, 0.8)`;
+      mobileNavigation.style.opacity = 1;
+      setTimeout(() => {
+        mobileNavigationLinks.style.opacity = 1;
+      }, 500);
+      menu.style.opacity = 0;
+      menuClose.style.display = 'flex';
+    });
+
+    menuClose.addEventListener(`click`, (e) => {
+      mobileNavigation.style.height = 0;
+      mobileNavigation.style.width = 0;
+      mobileNavigationLinks.style.opacity = 0;
+      menuClose.style.display = 'none';
+      menu.style.opacity = 1;
+      mobileNavigation.style.backgroundColor = 'transparent';
+      setTimeout(() => {
+        mobileNavigation.style.opacity = 0;
+      }, 250);
+    });
   }
 
   _watchForMail() {
@@ -39,25 +68,34 @@ class App {
         const organizationPosition = document.getElementById(`organization-position`).value;
         const email = document.getElementById(`email`).value;
         const subject = document.getElementById(`subject`).value;
-        const message = document.getElementById(`message`).value;
+        const yourMessage = message.value;
         console.log(firstName, lastName, organizationName, organizationPosition, email, subject, message);
-        emailMe(firstName, lastName, organizationName, organizationPosition, email, subject, message);
+        emailMe(firstName, lastName, organizationName, organizationPosition, email, subject, yourMessage);
       });
     }
   }
 
+  _calculateCharactersLeft() {
+    message.addEventListener(`keyup`, (e) => {
+      e.preventDefault();
+      messageCounter.textContent = `( ${maxMessage - message.value.length} Characters Left )`;
+    });
+  }
+
   _selectStamp(stampIndex) {
     stamps.forEach((s) => {
+      s.classList.remove(`r__stamp--active`);
       s.classList.remove(`stamp--active`);
     });
     stamps[stampIndex].classList.add(`stamp--active`);
+    stamps[stampIndex].classList.add(`r__stamp--active`);
   }
 
   _createCardButtonNavigation(cardContainer) {
     const buttonLeft = document.createElement('button');
     const buttonRight = document.createElement(`button`);
-    buttonLeft.classList.add(`button`, `card-button-left`);
-    buttonRight.classList.add(`button`, `card-button-right`);
+    buttonLeft.classList.add(`button`, `card-button-left`, `r__card-button-left`);
+    buttonRight.classList.add(`button`, `card-button-right`, `r__card-button-right`);
     buttonLeft.insertAdjacentHTML(`beforeend`, `<i class="fas fa-arrow-left"></img>`);
     buttonRight.insertAdjacentHTML(`beforeend`, `<i class="fas fa-arrow-right"></i>`);
     cardContainer.insertAdjacentElement(`afterbegin`, buttonLeft);
@@ -66,17 +104,26 @@ class App {
 
   _createDots() {
     statements.forEach((_, i) => {
-      aboutViewportNav.insertAdjacentHTML(`beforeend`, `<button class="about-me-statement-slider-navigation__dot" data-sliderOption="${i}"></button>`);
+      aboutViewportNav.insertAdjacentHTML(
+        `beforeend`,
+        `<button class="about-me-statement-slider-navigation__dot r__about-me-statement-slider-navigation__dot" data-sliderOption="${i}"></button>`,
+      );
     });
   }
   _activateDot(slide) {
     document.querySelectorAll(`.about-me-statement-slider-navigation__dot`).forEach((dot) => {
       dot.classList.remove(`about-me-statement-slider-navigation__dot--active`);
     });
+    document.querySelectorAll(`.r__about-me-statement-slider-navigation__dot`).forEach((dot) => {
+      dot.classList.remove(`r__about-me-statement-slider-navigation__dot--active`);
+    });
 
     document
       .querySelector(`.about-me-statement-slider-navigation__dot[data-sliderOption="${slide}"]`)
       .classList.add(`about-me-statement-slider-navigation__dot--active`);
+    document
+      .querySelector(`.r__about-me-statement-slider-navigation__dot[data-sliderOption="${slide}"]`)
+      .classList.add(`r__about-me-statement-slider-navigation__dot--active`);
   }
   _goToSlide(slide) {
     statements.forEach((s, i) => {
@@ -136,6 +183,11 @@ class App {
 ///////////////////////////////////////////////
 // APP VARIABLES
 
+const mobileNavigation = document.querySelector(`.r__navigation-mobile`);
+const mobileNavigationLinks = document.querySelector(`.r__navigation-mobile__links`);
+const menu = document.querySelector(`.r__navigation-menu-button`);
+const menuClose = document.querySelector(`.r__navigation-mobile-close`);
+
 const aboutSlider = document.querySelector(`.about-me-statement-slider`);
 const aboutViewportNav = document.querySelector(`.about-me-statement-slider-navigation`);
 const statements = [...document.querySelectorAll(`.about-me-statement`)];
@@ -145,6 +197,9 @@ let index;
 
 const stamps = [...document.querySelectorAll(`.stamp`)];
 const contactForm = document.querySelector(`.form-container__contact-form`);
+const message = document.getElementById(`message`);
+const messageCounter = document.querySelector(`.form-container__contact-form__message-containers__message-counter`);
+const maxMessage = 1000;
 const submitButton = document.querySelector(`.form-container__contact-form__submit-containers__submit-container--submit`);
 ///////////////////////////////////////////////
 // APP

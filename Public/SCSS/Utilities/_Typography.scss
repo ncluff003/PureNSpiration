@@ -115,7 +115,14 @@ html {
         }
         &__article {
           &__title {
-            font-size: 4rem;
+            font-size: 3.6rem;
+            color: $secondaryColor;
+            text-decoration: underline;
+            text-decoration-thickness: .4rem;
+            font-weight: bold;
+          }
+          &__short-summary {
+            font-size: 2.2rem;
             color: $secondaryColor;
           }
           &__sub-article {
@@ -134,16 +141,16 @@ html {
               text-indent: 2rem;
             }
           }
-        }
-        &__link {
-          &:link,
-          &:visited {
-            font-size: 1.4rem;
-            color: rgba($secondaryColor, 0.75);
-            text-decoration: none;
-          }
-          &:hover {
-            color: $colorOffWhite;
+          &__link {
+            &:link,
+            &:visited {
+              font-size: 1.4rem;
+              color: rgba($secondaryColor, 0.75);
+              text-decoration: none;
+            }
+            &:hover {
+              color: $colorOffWhite;
+            }
           }
         }
       }

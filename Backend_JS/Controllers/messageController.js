@@ -82,7 +82,7 @@ exports.emailMe = catchAsync(async (request, response, next) => {
 
     response.status(200).json({
       status: `Success`,
-      message: `Your email has been sent. Thank you ${request.body.firstName} for reaching out! 😄`,
+      message: `Email sent. Thank you ${request.body.firstName} for reaching out! 😄`,
     });
   } catch (error) {
     response.status(500).json({

@@ -1,52 +1,34 @@
 ////////////////////////////////////////////
-//// Utilities
-@use "../../../Public/SCSS/Utilities/Mixins";
-@use "../../../Public/SCSS/Utilities/Variables";
-@use "../../../Public/SCSS/Utilities/Typography";
-@use "../../../Public/SCSS/Utilities/Animations";
+// Utilities
+@use '../Utilities';
 
 //////////////////////////////////////////////
-//// Layo//ut
-
-@use "../../../Public/SCSS/Layout/GridTV";
-@use "../../../Public/SCSS/Layout/GridDesktop";
-@use "../../../Public/SCSS/Layout/GridTabPort";
-@use "../../../Public/SCSS/Layout/GridTabLand";
-@use "../../../Public/SCSS/Layout/GridMobilePort";
-@use "../../../Public/SCSS/Layout/GridMobileLand";
+// Layout
 
 //////////////////////////////////////////////
-//// Comp//onents
-
-@use "../../../Public/SCSS/Components/Master-Grid";
-@use "../../../Public/SCSS/Components/Master-Flex-Container";
-@use "../../../Public/SCSS/Components/Navigation";
-@use "../../../Public/SCSS/Components/Button";
-@use "../../../Public/SCSS/Components/Form";
+// Components
+@use '../Components';
 
 ////////////////////////////////////////////
-//// Pages
-@use "../../../Public/SCSS/Pages/Home";
-@use "../../../Public/SCSS/Pages/About";
-@use "../../../Public/SCSS/Pages/Projects";
-@use "../../../Public/SCSS/Pages/Contact";
+// Pages
+@use '../Pages';
 
 ////////////////////////////////////////////
-//// Themes
+// Themes
 
 ////////////////////////////////////////////
-//// Main
-@use "../../../Public/SCSS/Responsive/Main/Responsive-Main";
+// Vendors
+@use '../Vendors/scss/fontawesome.scss';
+@use '../Vendors/scss/fa-solid.scss';
+@use '../Vendors/scss/fa-brands.scss';
+@use '../Vendors/scss/fa-regular.scss';
+@use '../Vendors/Animate.css';
+@use '../Vendors/Normalize.css';
 
 ////////////////////////////////////////////
-//// Base
-@use "../../../Public/SCSS/Base/Base";
+// Base
+@use '../Base';
 
 ////////////////////////////////////////////
-//// Vendors
-@use "../Vendors/scss/fontawesome.scss";
-@use "../Vendors/scss/fa-solid.scss";
-@use "../Vendors/scss/fa-brands.scss";
-@use "../Vendors/scss/fa-regular.scss";
-@use "../Vendors/Animate.css";
-@use "../Vendors/Normalize.css";
+// Main
+@use '../../../Public/SCSS/Responsive/Main';

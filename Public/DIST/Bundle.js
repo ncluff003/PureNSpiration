@@ -2096,9 +2096,9 @@ var App = /*#__PURE__*/function () {
   function App() {
     (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
 
-    if (window.location.pathname.includes('contact')) console.log(window.location.pathname);
-
     this._checkCurrentPage();
+
+    this._watchMobileNavigation();
   }
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
@@ -2111,8 +2111,38 @@ var App = /*#__PURE__*/function () {
       if (window.location.pathname.includes('contact')) {
         this._selectStamp(0);
 
+        this._calculateCharactersLeft();
+
         this._watchForMail();
       }
+    }
+  }, {
+    key: "_watchMobileNavigation",
+    value: function _watchMobileNavigation() {
+      menu.addEventListener("click", function (e) {
+        e.preventDefault();
+        mobileNavigation.style.display = "flex";
+        mobileNavigation.style.height = "100vh";
+        mobileNavigation.style.width = "100vw";
+        mobileNavigation.style.backgroundColor = "rgba(0, 71, 171, 0.8)";
+        mobileNavigation.style.opacity = 1;
+        setTimeout(function () {
+          mobileNavigationLinks.style.opacity = 1;
+        }, 500);
+        menu.style.opacity = 0;
+        menuClose.style.display = 'flex';
+      });
+      menuClose.addEventListener("click", function (e) {
+        mobileNavigation.style.height = 0;
+        mobileNavigation.style.width = 0;
+        mobileNavigationLinks.style.opacity = 0;
+        menuClose.style.display = 'none';
+        menu.style.opacity = 1;
+        mobileNavigation.style.backgroundColor = 'transparent';
+        setTimeout(function () {
+          mobileNavigation.style.opacity = 0;
+        }, 250);
+      });
     }
   }, {
     key: "_watchForMail",
@@ -2126,27 +2156,37 @@ var App = /*#__PURE__*/function () {
           var organizationPosition = document.getElementById("organization-position").value;
           var email = document.getElementById("email").value;
           var subject = document.getElementById("subject").value;
-          var message = document.getElementById("message").value;
+          var yourMessage = message.value;
           console.log(firstName, lastName, organizationName, organizationPosition, email, subject, message);
-          (0,_Email__WEBPACK_IMPORTED_MODULE_3__.emailMe)(firstName, lastName, organizationName, organizationPosition, email, subject, message);
+          (0,_Email__WEBPACK_IMPORTED_MODULE_3__.emailMe)(firstName, lastName, organizationName, organizationPosition, email, subject, yourMessage);
         });
       }
+    }
+  }, {
+    key: "_calculateCharactersLeft",
+    value: function _calculateCharactersLeft() {
+      message.addEventListener("keyup", function (e) {
+        e.preventDefault();
+        messageCounter.textContent = "( ".concat(maxMessage - message.value.length, " Characters Left )");
+      });
     }
   }, {
     key: "_selectStamp",
     value: function _selectStamp(stampIndex) {
       stamps.forEach(function (s) {
+        s.classList.remove("r__stamp--active");
         s.classList.remove("stamp--active");
       });
       stamps[stampIndex].classList.add("stamp--active");
+      stamps[stampIndex].classList.add("r__stamp--active");
     }
   }, {
     key: "_createCardButtonNavigation",
     value: function _createCardButtonNavigation(cardContainer) {
       var buttonLeft = document.createElement('button');
       var buttonRight = document.createElement("button");
-      buttonLeft.classList.add("button", "card-button-left");
-      buttonRight.classList.add("button", "card-button-right");
+      buttonLeft.classList.add("button", "card-button-left", "r__card-button-left");
+      buttonRight.classList.add("button", "card-button-right", "r__card-button-right");
       buttonLeft.insertAdjacentHTML("beforeend", "<i class=\"fas fa-arrow-left\"></img>");
       buttonRight.insertAdjacentHTML("beforeend", "<i class=\"fas fa-arrow-right\"></i>");
       cardContainer.insertAdjacentElement("afterbegin", buttonLeft);
@@ -2156,7 +2196,7 @@ var App = /*#__PURE__*/function () {
     key: "_createDots",
     value: function _createDots() {
       statements.forEach(function (_, i) {
-        aboutViewportNav.insertAdjacentHTML("beforeend", "<button class=\"about-me-statement-slider-navigation__dot\" data-sliderOption=\"".concat(i, "\"></button>"));
+        aboutViewportNav.insertAdjacentHTML("beforeend", "<button class=\"about-me-statement-slider-navigation__dot r__about-me-statement-slider-navigation__dot\" data-sliderOption=\"".concat(i, "\"></button>"));
       });
     }
   }, {
@@ -2165,7 +2205,11 @@ var App = /*#__PURE__*/function () {
       document.querySelectorAll(".about-me-statement-slider-navigation__dot").forEach(function (dot) {
         dot.classList.remove("about-me-statement-slider-navigation__dot--active");
       });
+      document.querySelectorAll(".r__about-me-statement-slider-navigation__dot").forEach(function (dot) {
+        dot.classList.remove("r__about-me-statement-slider-navigation__dot--active");
+      });
       document.querySelector(".about-me-statement-slider-navigation__dot[data-sliderOption=\"".concat(slide, "\"]")).classList.add("about-me-statement-slider-navigation__dot--active");
+      document.querySelector(".r__about-me-statement-slider-navigation__dot[data-sliderOption=\"".concat(slide, "\"]")).classList.add("r__about-me-statement-slider-navigation__dot--active");
     }
   }, {
     key: "_goToSlide",
@@ -2247,6 +2291,10 @@ var App = /*#__PURE__*/function () {
 // APP VARIABLES
 
 
+var mobileNavigation = document.querySelector(".r__navigation-mobile");
+var mobileNavigationLinks = document.querySelector(".r__navigation-mobile__links");
+var menu = document.querySelector(".r__navigation-menu-button");
+var menuClose = document.querySelector(".r__navigation-mobile-close");
 var aboutSlider = document.querySelector(".about-me-statement-slider");
 var aboutViewportNav = document.querySelector(".about-me-statement-slider-navigation");
 
@@ -2259,6 +2307,9 @@ var index;
 var stamps = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelectorAll(".stamp"));
 
 var contactForm = document.querySelector(".form-container__contact-form");
+var message = document.getElementById("message");
+var messageCounter = document.querySelector(".form-container__contact-form__message-containers__message-counter");
+var maxMessage = 1000;
 var submitButton = document.querySelector(".form-container__contact-form__submit-containers__submit-container--submit"); ///////////////////////////////////////////////
 // APP
 
@@ -2429,30 +2480,32 @@ var emailMe = /*#__PURE__*/function () {
             response = _context.sent;
 
             if (!(response.data.status === "Success")) {
-              _context.next = 11;
+              _context.next = 13;
               break;
             }
 
             formResponse = document.querySelector(".form-response");
             formResponse.classList.remove("form-response--error");
+            formResponse.classList.remove("r__form-response--error");
             formResponse.classList.add("form-response--success");
+            formResponse.classList.add("r__form-response--success");
             formResponse.textContent = '';
 
             _App__WEBPACK_IMPORTED_MODULE_4__.app._selectStamp(2);
 
             return _context.abrupt("return", formResponse.textContent = response.data.message);
 
-          case 11:
-            _context.next = 23;
+          case 13:
+            _context.next = 27;
             break;
 
-          case 13:
-            _context.prev = 13;
+          case 15:
+            _context.prev = 15;
             _context.t0 = _context["catch"](0);
             console.log(_context.t0, _context.t0.response);
 
             if (!(_context.t0.response.data.status === "Internal Error" || _context.t0.response.data.status === "Error")) {
-              _context.next = 23;
+              _context.next = 27;
               break;
             }
 
@@ -2460,7 +2513,11 @@ var emailMe = /*#__PURE__*/function () {
 
             _formResponse.classList.remove("form-response--success");
 
+            _formResponse.classList.remove("r__form-response--success");
+
             _formResponse.classList.add("form-response--error");
+
+            _formResponse.classList.add("r__form-response--error");
 
             _formResponse.textContent = '';
 
@@ -2468,12 +2525,12 @@ var emailMe = /*#__PURE__*/function () {
 
             return _context.abrupt("return", _formResponse.textContent = _context.t0.response.data.message);
 
-          case 23:
+          case 27:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 13]]);
+    }, _callee, null, [[0, 15]]);
   }));
 
   return function emailMe(_x, _x2, _x3, _x4, _x5, _x6, _x7) {

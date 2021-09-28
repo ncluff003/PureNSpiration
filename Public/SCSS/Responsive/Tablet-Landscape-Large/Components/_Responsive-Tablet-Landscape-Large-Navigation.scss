@@ -1,0 +1,13 @@
+@use '../../../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+////////////////////////////////////////////////
+//  Master Grid Container
+.r__master-grid {
+  .r__navigation {
+    @include combo-max-responsive(1400px, 1050px) {
+      grid-column: 1 / span 4;
+      grid-row: 1 / -1;
+    }
+  }
+}

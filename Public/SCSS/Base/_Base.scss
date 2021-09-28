@@ -1,5 +1,5 @@
-@use "../../../Public/SCSS/Utilities/Mixins" as *;
-@use "../../../Public/SCSS/Utilities/Variables" as *;
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
 
 /*
     //////////////////////////////////
@@ -18,7 +18,7 @@
     //////////////////////////////////
     /// Glitches To Fix
 
-    GLITCH : Some of the About Container bottom is cut out before the keyboard arrows work, unlike the Skills & Portfolio Sections.
+    GLITCH : Gradient Overlay of Mobile Portrait Small does not stay at the bottom of the container.  It scrollw WITH the container items.
 
     //////////////////////////////////
     /// Adjustments To Make
@@ -26,6 +26,7 @@
     ADJUST : Remove Arrow Functions from Methods.
     ADJUST : Refactor Code to make it so functions / methods only use up to 5 parameters max.
     ADJUST : Remove unecessary style rules in my email stylesheet.
+    ADJUST : Readjust so every file imports the same variables, AND mixins.
 
 
     //////////////////////////////////

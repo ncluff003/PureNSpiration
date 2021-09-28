@@ -1,5 +1,42 @@
+// MEDIA QUERY MANAGER
+@mixin max-responsive($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin min-responsive($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin combo-max-responsive($max-width, $max-height) {
+  @media (max-width: $max-width) and (max-height: $max-height) {
+    @content;
+  }
+}
+
+@mixin combo-min-responsive($min-width, $min-height) {
+  @media (min-width: $min-width) and (min-height: $min-height) {
+    @content;
+  }
+}
+
+@mixin combo-maxMin-responsive($max-width, $min-height) {
+  @media (max-width: $max-width) and (min-height: $min-height) {
+    @content;
+  }
+}
+
+@mixin combo-minMax-responsive($min-width, $max-height) {
+  @media (min-width: $min-width) and (min-height: $max-height) {
+    @content;
+  }
+}
+
 //  Parametric Mixin That Needs The Height | Width | Column Template | Row Template | Column Gap | Row Gap
-@mixin gridLayout($height, $width, $columns, $rows, $columnGap, $rowGap) {
+@mixin grid-layout($height, $width, $columns, $rows, $columnGap, $rowGap) {
   height: $height;
   width: $width;
   -ms-grid-template-columns: $columns;
@@ -21,7 +58,7 @@
 }
 
 // Parametric Mixin For Grid Placement.  It Needs: Number of Columns | Column Span | Number of Rows | Row Span
-@mixin gridPlacement($columns, $columnSpan, $rows, $rowSpan) {
+@mixin grid-placement($columns, $columnSpan, $rows, $rowSpan) {
   .column {
     $x: 1;
     @while $x <= $columns {
@@ -76,41 +113,4 @@
   justify-content: $justify;
   align-items: $align;
   transform: rotate($rotate) translate($horizontal, $vertical);
-}
-
-// MEDIA QUERY MANAGER
-@mixin max-responsive($max-width) {
-  @media (max-width: $max-width) {
-    @content;
-  }
-}
-
-@mixin min-responsive($min-width) {
-  @media (min-width: $min-width) {
-    @content;
-  }
-}
-
-@mixin combo-max-responsive($max-width, $max-height) {
-  @media (max-width: $max-width) and (max-height: $max-height) {
-    @content;
-  }
-}
-
-@mixin combo-min-responsive($min-width, $min-height) {
-  @media (min-width: $min-width) and (min-height: $min-height) {
-    @content;
-  }
-}
-
-@mixin combo-maxMin-responsive($max-width, $min-height) {
-  @media (max-width: $max-width) and (min-height: $min-height) {
-    @content;
-  }
-}
-
-@mixin combo-minMax-responsive($min-width, $max-height) {
-  @media (min-width: $min-width) and (min-height: $max-height) {
-    @content;
-  }
 }

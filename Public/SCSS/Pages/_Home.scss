@@ -16,12 +16,14 @@
         &--subtext-start {
           position: relative;
           align-self: flex-start;
-          transform: translate(20.5rem, 8rem);
+          transform: translate(13.5rem, 8rem);
+          -moz-transform: translate(11.5rem, 8rem);
         }
         &--subtext-end {
           position: relative;
           align-self: flex-end;
-          transform: translate(-22.5rem, -11.5rem);
+          transform: translate(-16.5rem, -11.5rem);
+          -moz-transform: translate(-15rem, -11.5rem);
         }
       }
     }

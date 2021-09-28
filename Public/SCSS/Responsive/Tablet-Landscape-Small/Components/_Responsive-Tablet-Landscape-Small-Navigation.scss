@@ -1,0 +1,30 @@
+@use '../../../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+////////////////////////////////////////////////
+//  Master Grid Container
+.r__master-grid {
+  .r__navigation {
+    @include combo-max-responsive(1050px, 800px) {
+      grid-column: 1 / span 4;
+      grid-row: 1 / -1;
+      flex-direction: column;
+      padding: 2rem;
+      border: none;
+      border-right: 0.4rem groove $colorDarkGrey;
+      &__my-image {
+        height: auto;
+        width: 80%;
+      }
+
+      &__links {
+        flex-direction: column;
+      }
+
+      &__my-logo {
+        height: auto;
+        width: 50%;
+      }
+    }
+  }
+}

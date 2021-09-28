@@ -7,12 +7,12 @@
   .master-flex-container {
     &__child-flex-container {
       .cta-button {
-        @include SizeAndPositioning(relative, 20%, 35%, flex, center, center, 0, 0, 0);
+        @include SizeAndPositioning(relative, 20%, 35%, flex, center, center, -16.5rem, 1rem, 0);
         border: 0.3rem solid rgba($secondaryColor, 0.75);
         border-radius: 1.5rem;
         align-self: flex-end;
-        transform: translate(-22.5rem, -0.75rem);
         transition: color 0.5s, background-color 0.5s, border 0.5s;
+        -moz-transform: translate(-15rem, 1rem);
         &:hover {
           background-color: $secondaryColor;
           border: 0.3rem solid $secondaryColor;

@@ -8,7 +8,7 @@
     /////////////////
     // Contact Page
     .form-container {
-      @include SizeAndPositioning(relative, 77%, 85%, flex, space-between, space-evenly, 0, 0, 0);
+      @include SizeAndPositioning(relative, 79%, 85%, flex, space-between, space-evenly, 0, 0, 0);
       background: url('/DIST/CSS/Images/Letter-Border.svg');
       background-size: cover;
       background-repeat: no-repeat;

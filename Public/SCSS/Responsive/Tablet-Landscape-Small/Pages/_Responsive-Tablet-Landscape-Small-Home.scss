@@ -1,0 +1,31 @@
+@use '../../../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+////////////////////////////////////////////////
+//  Master Grid Container
+.r__master-grid {
+  .r__master-flex-container {
+    /////////////////
+    // Home Page
+    @include combo-max-responsive(1050px, 800px) {
+      &__child-flex-container {
+        @include SizeAndPositioning(relative, 50%, 90%, flex, center, center, 0, 0, 0);
+        flex-direction: column;
+        &__heading {
+          @include SizeAndPositioning(relative, 80%, 100%, flex, space-evenly, center, 0, 0, 0);
+          flex-direction: column;
+          &--subtext-start {
+            position: relative;
+            align-self: flex-start;
+            transform: translate(2rem, 6.5rem);
+          }
+          &--subtext-end {
+            position: relative;
+            align-self: flex-end;
+            transform: translate(-3.75rem, -8rem);
+          }
+        }
+      }
+    }
+  }
+}
