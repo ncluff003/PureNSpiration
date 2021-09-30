@@ -9,8 +9,8 @@
     // Contact Page
     .r__form-container {
       @include combo-max-responsive(1050px, 1400px) {
-        @include SizeAndPositioning(relative, 65%, 86%, flex, space-between, space-evenly, 0, 0, 0); // Only The Width of the form container changed.
-        background: url('/DIST/CSS/Images/Letter-Border-Tablet.svg');
+        @include SizeAndPositioning(relative, 85%, 75%, flex, space-between, space-evenly, 0, 0, 0); // Only The Width of the form container changed.
+        background: url('/DIST/CSS/Images/Letter-Border-Tablet-Portrait.svg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -32,7 +32,7 @@
           .r__stamp {
             @include SizeAndPositioning(absolute, 15rem, auto, none, center, center, 0, 0, 0);
             top: 0;
-            right: 0;
+            right: 1rem;
             &--active {
               display: flex;
             }

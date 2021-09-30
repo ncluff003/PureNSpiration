@@ -40,13 +40,16 @@
             }
           }
           &__article {
-            @include SizeAndPositioning(relative, 100%, 35%, flex, flex-start, flex-start, 0, 0, 0);
+            @include SizeAndPositioning(relative, min-content, 35%, flex, flex-start, flex-start, 0, 0, 0);
             flex-direction: column;
             transform: translateY(2rem);
             overflow-y: auto;
             &__title {
               @include SizingItem(relative, max-content, max-content);
               padding: 0 0 1rem;
+            }
+            &__short-summary {
+              @include SizeAndPositioning(relative, min-content, max-content, flex, flex-start, center, 0, 0, 0);
             }
             &__sub-article {
               &__title {
@@ -68,7 +71,7 @@
               }
             }
             &__link {
-              @include SizeAndPositioning(relative, 20%, 40%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 5rem, 40%, flex, center, center, 0, 0, 0);
               margin: 0.5rem 0;
               &:link,
               &:visited {

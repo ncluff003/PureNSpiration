@@ -9,15 +9,15 @@
     // Contact Page
     .r__form-container {
       &__contact-form {
-        @include combo-max-responsive(800px, 1050px) {
-          @include SizeAndPositioning(relative, 75%, 100%, flex, center, center, 0, 0, 0);
+        @include combo-max-responsive(1050px, 1400px) {
+          @include SizeAndPositioning(relative, 75%, 100%, flex, center, center, 9rem, 0, 0);
           flex-direction: column;
           &__name-containers {
-            @include SizeAndPositioning(relative, 10%, 100%, flex, flex-end, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
             margin: 0.5rem 0;
             &__first-name-container,
             &__last-name-container {
-              @include SizeAndPositioning(relative, 100%, 32.5%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
               margin: 0 1rem;
               &--first-name,
               &--last-name {
@@ -38,11 +38,11 @@
             }
           }
           &__organization-info-containers {
-            @include SizeAndPositioning(relative, 10%, 100%, flex, flex-end, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
             margin: 0.5rem 0;
             &__organization-name-container,
             &__organization-position-container {
-              @include SizeAndPositioning(relative, 100%, 32.5%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
               margin: 0 1rem;
               &--organization-name,
               &--organization-position {
@@ -61,10 +61,10 @@
             }
           }
           &__email-containers {
-            @include SizeAndPositioning(relative, 10%, 100%, flex, flex-end, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
             margin: 0.5rem 0;
             &__email-container {
-              @include SizeAndPositioning(relative, 100%, 65%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
               &--email {
                 @include SizingItem(relative, 80%, 100%);
                 background-color: transparent;
@@ -81,10 +81,10 @@
             }
           }
           &__subject-containers {
-            @include SizeAndPositioning(relative, 10%, 100%, flex, flex-end, center, 0, 0, 0);
-            margin: 0.5rem 0 5rem;
+            @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
+            margin: 0.5rem 0;
             &__subject-container {
-              @include SizeAndPositioning(relative, 100%, 65%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
               &--subject {
                 @include SizingItem(relative, 80%, 100%);
                 background-color: transparent;
@@ -101,10 +101,10 @@
             }
           }
           &__message-containers {
-            @include SizeAndPositioning(relative, 30%, 100%, flex, flex-end, center, 0, 0, 0);
-            margin: 1rem 0 0.5rem;
+            @include SizeAndPositioning(relative, 30%, 100%, flex, center, center, 0, 0, 0);
+            margin: 0.5rem 0;
             &__message-container {
-              @include SizeAndPositioning(relative, 100%, 65%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
               &--message {
                 @include SizingItem(relative, 100%, 100%);
                 background-color: transparent;
@@ -114,14 +114,14 @@
               }
               &--message-label {
                 @include SizingItem(absolute, max-content, max-content);
-                top: 12%;
+                top: 18%;
                 left: 0;
                 transform: translate(calc(-100% - 2rem), -50%);
               }
             }
             &__message-counter {
               @include SizingItem(absolute, max-content, max-content);
-              top: 26%;
+              top: 28.5%;
               left: 0;
               transform: translate(calc(-100% - 2rem), -50%);
             }
@@ -130,7 +130,7 @@
             @include SizeAndPositioning(relative, 20%, 100%, flex, center, center, 0, 0, 0);
             margin: 0.5rem 0;
             &__submit-container {
-              @include SizeAndPositioning(relative, 80%, 40%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
               &--submit {
                 @include SizingItem(relative, 80%, 100%);
                 background-color: transparent;

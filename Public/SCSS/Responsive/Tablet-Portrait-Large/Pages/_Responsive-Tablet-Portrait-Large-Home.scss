@@ -9,7 +9,7 @@
     // Home Page
     @include combo-max-responsive(1050px, 1400px) {
       &__child-flex-container {
-        @include SizeAndPositioning(relative, 50%, 85%, flex, center, center, 0, 0, 0);
+        @include SizeAndPositioning(relative, 50%, 90%, flex, center, center, 0, 0, 0);
         flex-direction: column;
         &__heading {
           @include SizeAndPositioning(relative, 80%, 100%, flex, space-evenly, center, 0, 0, 0);
@@ -17,12 +17,14 @@
           &--subtext-start {
             position: relative;
             align-self: flex-start;
-            transform: translate(1.75rem, 6.5rem);
+            transform: translate(4.25rem, 10.5rem);
+            -moz-transform: translate(2.75rem, 10.5rem);
           }
           &--subtext-end {
             position: relative;
             align-self: flex-end;
-            transform: translate(-4rem, -9.5rem);
+            transform: translate(-7rem, -12.5rem);
+            -moz-transform: translate(-6rem, -12.5rem);
           }
         }
       }

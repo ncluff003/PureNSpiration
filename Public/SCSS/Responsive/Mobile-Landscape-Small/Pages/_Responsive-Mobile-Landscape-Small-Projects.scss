@@ -22,7 +22,7 @@
             margin-bottom: 10rem;
           }
           &__image-container {
-            @include SizingItem(relative, 45%, 100%);
+            @include SizingItem(relative, 37%, 100%);
             box-shadow: 0 0 1rem 0.35rem $colorDarkGrey;
             margin: 0 0 1.5rem 0;
             img {
@@ -57,12 +57,12 @@
                 border-top: 0.3rem groove $colorDarkerGrey;
               }
               &__category {
-                @include SizingItem(relative, max-content, 100%);
-                padding: 0.5rem 0;
+                @include SizeAndPositioning(relative, max-content, 100%, flex, flex-start, center, 0, 0, 0);
+                padding: 0.5rem 0 0.5rem 2rem;
               }
               &__technology-used {
                 &__list-item {
-                  margin: 1rem 0;
+                  margin: 0.5rem 0;
                   &:last-of-type {
                     margin-bottom: 1rem;
                   }

@@ -47,7 +47,7 @@ html {
             color: $secondaryColor;
           }
           &--main-text {
-            font-size: 10rem;
+            font-size: 9.5rem;
             color: $primaryColor;
             letter-spacing: 0.3rem;
           }
@@ -120,6 +120,7 @@ html {
               font-size: 3rem;
               color: $secondaryColor;
               text-decoration: underline;
+              text-decoration-thickness: 0.4rem;
               font-weight: bold;
             }
             &__short-summary {

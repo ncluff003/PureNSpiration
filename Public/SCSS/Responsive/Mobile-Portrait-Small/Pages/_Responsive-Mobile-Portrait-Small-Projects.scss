@@ -42,7 +42,7 @@
             }
           }
           &__article {
-            @include SizeAndPositioning(relative, max-content, 100%, flex, flex-start, flex-start, 0, 0, 0);
+            @include SizeAndPositioning(relative, min-content, 100%, flex, flex-start, flex-start, 0, 0, 0);
             flex-flow: column nowrap;
             transform: translateY(1rem);
             overflow-y: visible;
@@ -51,6 +51,7 @@
               padding: 0 0 0.5rem;
             }
             &__sub-article {
+              overflow-y: visible;
               &__title {
                 @include SizingItem(relative, max-content, max-content);
                 padding: 1rem 0.5rem 0;

@@ -21,7 +21,7 @@ html {
             &:link,
             &:visited {
               text-decoration: none;
-              font-size: 2.4rem;
+              font-size: 3rem;
               color: rgba($colorOffWhite, 0.75);
             }
 
@@ -117,8 +117,11 @@ html {
           }
           &__article {
             &__title {
-              font-size: 2.6rem;
+              font-size: 2.4rem;
               color: $secondaryColor;
+            }
+            &__short-summary {
+              font-size: 1.6rem;
             }
             &__sub-article {
               &__title {

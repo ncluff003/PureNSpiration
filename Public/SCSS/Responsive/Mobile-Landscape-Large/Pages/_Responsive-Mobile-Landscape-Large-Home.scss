@@ -18,11 +18,13 @@
             position: relative;
             align-self: flex-start;
             transform: translate(4.75rem, 4.75rem);
+            -moz-transform: translate(3.75rem, 4.75rem);
           }
           &--subtext-end {
             position: relative;
             align-self: flex-end;
-            transform: translate(-6.5rem, -6.5rem);
+            transform: translate(-6.5rem, -5.75rem);
+            -moz-transform: translate(-5.875rem, -5.75rem);
           }
         }
       }

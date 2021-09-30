@@ -17,12 +17,14 @@
           &--subtext-start {
             position: relative;
             align-self: flex-start;
-            transform: translate(0rem, 5.5rem);
+            transform: translate(2rem, 5.5rem);
+            -moz-transform: translate(1.25rem, 5.5rem);
           }
           &--subtext-end {
             position: relative;
             align-self: flex-end;
-            transform: translate(-1.5rem, -6.5rem);
+            transform: translate(-3rem, -6.5rem);
+            -moz-transform: translate(-2.75rem, -6.5rem);
           }
         }
       }

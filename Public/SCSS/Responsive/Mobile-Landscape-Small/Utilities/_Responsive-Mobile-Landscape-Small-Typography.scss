@@ -174,7 +174,7 @@ html {
             &__last-name-container {
               &--first-name,
               &--last-name {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color: $secondaryColor;
               }
             }
@@ -190,7 +190,7 @@ html {
             &__organization-position-container {
               &--organization-name,
               &--organization-position {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color: $secondaryColor;
               }
               &--organization-name-label {
@@ -202,7 +202,7 @@ html {
           &__email-containers {
             &__email-container {
               &--email {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color: $secondaryColor;
               }
               &--email-label {
@@ -214,7 +214,7 @@ html {
           &__subject-containers {
             &__subject-container {
               &--subject {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color: $secondaryColor;
               }
               &--subject-label {
@@ -226,7 +226,7 @@ html {
           &__message-containers {
             &__message-container {
               &--message {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 color: $secondaryColor;
               }
               &--message-label {
@@ -255,7 +255,7 @@ html {
           }
         }
         .r__form-message {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
         }
         .r__form-response {
           color: $secondaryColor;

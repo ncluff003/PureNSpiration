@@ -41,10 +41,9 @@
             }
           }
           &__article {
-            @include SizeAndPositioning(relative, 100%, 45%, flex, flex-start, flex-start, 0, 0, 0);
+            @include SizeAndPositioning(relative, min-content, 45%, flex, flex-start, flex-start, 0, 0, 0);
             flex-direction: column;
             transform: translateY(1rem);
-            overflow-y: auto;
             &__title {
               @include SizingItem(relative, max-content, max-content);
               padding: 0 0 1rem;
@@ -71,7 +70,7 @@
               }
             }
             &__link {
-              @include SizeAndPositioning(relative, 12.5%, 40%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 5rem, 40%, flex, center, center, 0, 0, 0);
               margin: 0.5rem 0;
               &:link,
               &:visited {

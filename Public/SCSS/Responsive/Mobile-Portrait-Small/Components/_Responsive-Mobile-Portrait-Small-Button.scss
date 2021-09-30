@@ -8,11 +8,12 @@
     @include combo-max-responsive(375px, 800px) {
       &__child-flex-container {
         .r__cta-button {
-          @include SizeAndPositioning(relative, 20%, 55%, flex, center, center, -1.5rem, -9.75rem, 0);
+          @include SizeAndPositioning(relative, 20%, 55%, flex, center, center, -2rem, -9.75rem, 0);
           border: 0.3rem solid rgba($secondaryColor, 0.75);
           border-radius: 1.5rem;
           align-self: flex-end;
           transition: color 0.5s, background-color 0.5s, border 0.5s;
+          -moz-transform: translate(-1.5rem, -9.75rem);
           &:hover {
             background-color: $secondaryColor;
             border: 0.3rem solid $secondaryColor;

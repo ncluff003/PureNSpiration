@@ -9,7 +9,7 @@
     // Contact Page
     .r__form-container {
       @include combo-max-responsive(930px, 425px) {
-        @include SizeAndPositioning(relative, 80%, 82.5%, flex, space-between, center, 0, 0, 0); // Only The Width of the form container changed.
+        @include SizeAndPositioning(relative, 80%, 78%, flex, space-between, center, 0, 0, 0); // Only The Width of the form container changed.
         background: url('/DIST/CSS/Images/Letter-Border-Mobile.svg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -30,9 +30,10 @@
             left: 2rem;
           }
           .r__stamp {
-            @include SizeAndPositioning(absolute, 7rem, auto, none, center, center, 0, 0, 0);
+            @include SizeAndPositioning(absolute, 7rem, auto, none, center, center, 1.75rem, 0, 0);
             top: 0;
             right: 0;
+            -moz-transform: translate(1.75rem, 0);
             &--active {
               display: flex;
             }

@@ -7,7 +7,7 @@
   .r__master-flex-container {
     /////////////////
     // Home Page
-    @include combo-max-responsive(930px, 425px) {
+    @include combo-max-responsive(800px, 375px) {
       &__child-flex-container {
         @include SizeAndPositioning(relative, 90%, 90%, flex, center, center, 0, 0, 0);
         flex-direction: column;
@@ -18,11 +18,13 @@
             position: relative;
             align-self: flex-start;
             transform: translate(2rem, 4.75rem);
+            -moz-transform: translate(0.75rem, 4.75rem);
           }
           &--subtext-end {
             position: relative;
             align-self: flex-end;
             transform: translate(-3.5rem, -6.5rem);
+            -moz-transform: translate(-2.75rem, -6.5rem);
           }
         }
       }

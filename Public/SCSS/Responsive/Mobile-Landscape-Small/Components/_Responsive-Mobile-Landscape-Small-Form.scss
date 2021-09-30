@@ -101,7 +101,7 @@
             }
           }
           &__message-containers {
-            @include SizeAndPositioning(relative, 30%, 100%, flex, center, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 40%, 100%, flex, center, center, 0, 0, 0);
             margin: 0.5rem 0;
             &::before {
               display: none;
@@ -112,7 +112,7 @@
                 @include SizingItem(relative, 100%, 100%);
                 background-color: transparent;
                 border: 0.3rem solid rgba($secondaryColor, 0.75);
-                padding: 1.25rem 1rem;
+                padding: 0.5rem 0.5rem;
                 resize: none;
               }
               &--message-label {
@@ -131,11 +131,11 @@
           }
           &__submit-containers {
             @include SizeAndPositioning(relative, 20%, 100%, flex, center, center, 0, 0, 0);
-            margin: 0.5rem 0;
+            margin: 0.5rem 0 1rem;
             &__submit-container {
               @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
               &--submit {
-                @include SizingItem(relative, 80%, 100%);
+                @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
                 background-color: transparent;
                 border: 0.3rem outset rgba($secondaryColor, 0.75);
                 padding: 0.5rem;

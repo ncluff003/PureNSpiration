@@ -8,7 +8,7 @@
     @include combo-max-responsive(1050px, 1400px) {
       &__child-flex-container {
         .r__cta-button {
-          @include SizeAndPositioning(relative, 20%, 35%, flex, center, center, -3.5rem, -7.75rem, 0);
+          @include SizeAndPositioning(relative, 15%, 35%, flex, center, center, -6.5rem, -14rem, 0);
           border: 0.3rem solid rgba($secondaryColor, 0.75);
           border-radius: 1.5rem;
           align-self: flex-end;

@@ -16,7 +16,7 @@
           @include SizeAndPositioning(relative, 85%, 90%, flex, flex-start, center, 0, 0, 0);
           flex-direction: column;
           &:not(:first-of-type) {
-            margin-top: 5rem;
+            margin-top: 7.5rem;
           }
           &:last-of-type {
             margin-bottom: 10rem;
@@ -27,7 +27,7 @@
             margin: 0 0 1.5rem 0;
             img {
               @include SizingItem(relative, 100%, 100%);
-              object-fit: cover;
+              object-fit: contain;
             }
           }
           .r__work-in-progress {
@@ -41,11 +41,21 @@
               top: 40%;
             }
           }
+          &::after {
+            @include SizingItem(fixed, 55%, 100%);
+            right: 0;
+            bottom: 0;
+            overflow-y: scroll;
+            overscroll-behavior-y: contain;
+            pointer-events: none;
+            content: '';
+            background: linear-gradient(transparent 0%, transparent 70%, rgba($colorOffWhite, 0.9) 100%);
+            transform: translateY(2rem);
+          }
           &__article {
-            @include SizeAndPositioning(relative, 55%, 100%, flex, flex-start, flex-start, 0, 0, 0);
-            flex-flow: column wrap;
+            @include SizeAndPositioning(relative, min-content, 100%, flex, flex-start, flex-start, 0, 0, 0);
+            flex-flow: column;
             transform: translateY(1rem);
-            overflow-y: visible;
             &__title {
               @include SizingItem(relative, max-content, max-content);
               padding: 0 0 0.5rem;
@@ -70,12 +80,10 @@
               }
             }
             &__link {
-              @include SizeAndPositioning(relative, 20%, 40%, flex, center, center, 0, 0, 0);
+              @include SizeAndPositioning(relative, 5rem, 40%, flex, center, center, 0, 0, 0);
               margin: 1rem 0;
-              &:first-of-type {
-                margin-top: 2rem;
-              }
-              align-self: center;
+              padding: 2rem;
+              align-self: flex-start;
               &:link,
               &:visited {
                 border: 0.3rem solid rgba($secondaryColor, 0.75);

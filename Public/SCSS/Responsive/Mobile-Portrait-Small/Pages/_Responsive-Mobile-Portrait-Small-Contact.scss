@@ -9,7 +9,7 @@
     // Contact Page
     .r__form-container {
       @include combo-max-responsive(375px, 800px) {
-        @include SizeAndPositioning(relative, 85%, 100%, flex, space-between, space-evenly, 0, 0, 0); // Only The Width of the form container changed.
+        @include SizeAndPositioning(relative, 90%, 100%, flex, space-between, space-evenly, 0, 0, 0); // Only The Width of the form container changed.
         background: url('/DIST/CSS/Images/Letter-Border-Mobile-Portrait.svg');
         background-size: cover;
         background-repeat: no-repeat;
