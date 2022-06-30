@@ -32,9 +32,9 @@ block site-content
       div.form-container__contact-form__message-containers.r__form-container__contact-form__message-containers
         div.form-container__contact-form__message-containers__message-container.r__form-container__contact-form__message-containers__message-container
           label.form-container__contact-form__message-containers__message-container--message-label.r__form-container__contact-form__message-containers__message-container--message-label#message-label(for="message") Message:
-          textarea.form-container__contact-form__message-containers__message-container--message.r__form-container__contact-form__message-containers__message-container--message#message(type="text" name="message" placeholder="Your Message" maxLength="1000" required)
+          textarea.form-container__contact-form__message-containers__message-container--message.r__form-container__contact-form__message-containers__message-container--message#message(type="text" name="message" placeholder="Your Message" maxLength="1000" minLength="10" required)
           p.form-container__contact-form__message-containers__message-counter.r__form-container__contact-form__message-containers__message-counter ( 1000 Characters Left )
       div.form-container__contact-form__submit-containers.r__form-container__contact-form__submit-containers
         div.form-container__contact-form__submit-containers__submit-container.r__form-container__contact-form__submit-containers__submit-container
           input.form-container__contact-form__submit-containers__submit-container--submit.r__form-container__contact-form__submit-containers__submit-container--submit#submit(type="submit" name="submit" value="Send Message" required)
-    p.form-response.form-message.r__form-response.form-message.r__form-message Example Message
+    p.form-response.form-message.r__form-response.form-message.r__form-message 

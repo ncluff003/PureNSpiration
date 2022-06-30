@@ -12,6 +12,7 @@ class App {
   constructor() {
     this._checkCurrentPage();
     this._watchMobileNavigation();
+    this._watchNavigation(0.5, 1);
   }
 
   _checkCurrentPage() {
@@ -58,6 +59,25 @@ class App {
     });
   }
 
+  _watchNavigation() {
+    navigationLinks.forEach((n, i) => {
+      n.addEventListener('mouseover', (e) => {
+        e.preventDefault();
+        navigationLinks[i].style.opacity = 1;
+        navigationLinks.forEach((l, i) => {
+          if (n !== l) l.style.opacity = 0.5;
+        });
+      });
+      n.addEventListener('mouseout', (e) => {
+        e.preventDefault();
+        navigationLinks[i].style.opacity = 0.75;
+        navigationLinks.forEach((l, i) => {
+          if (n !== l) l.style.opacity = 0.75;
+        });
+      });
+    });
+  }
+
   _watchForMail() {
     if (contactForm) {
       submitButton.addEventListener(`click`, (e) => {
@@ -69,7 +89,6 @@ class App {
         const email = document.getElementById(`email`).value;
         const subject = document.getElementById(`subject`).value;
         const yourMessage = message.value;
-        console.log(firstName, lastName, organizationName, organizationPosition, email, subject, message);
         emailMe(firstName, lastName, organizationName, organizationPosition, email, subject, yourMessage);
       });
     }
@@ -133,20 +152,16 @@ class App {
 
   _watchAboutButtons(buttonLeft, buttonRight) {
     buttonLeft[0].addEventListener(`click`, (e) => {
-      console.log(buttonLeft);
       index--;
       if (index < 0) index = statements.length - 1;
       this._goToSlide(index);
-      console.log(index);
       this._activateDot(index);
     });
 
     buttonRight[0].addEventListener(`click`, (e) => {
-      console.log(buttonRight);
       index++;
       if (index === statements.length) index = 0;
       this._goToSlide(index);
-      console.log(index);
       this._activateDot(index);
     });
   }
@@ -185,6 +200,7 @@ class App {
 
 const mobileNavigation = document.querySelector(`.r__navigation-mobile`);
 const mobileNavigationLinks = document.querySelector(`.r__navigation-mobile__links`);
+const navigationLinks = [...document.querySelectorAll(`.navigation__links__link-item__link`)];
 const menu = document.querySelector(`.r__navigation-menu-button`);
 const menuClose = document.querySelector(`.r__navigation-mobile-close`);
 

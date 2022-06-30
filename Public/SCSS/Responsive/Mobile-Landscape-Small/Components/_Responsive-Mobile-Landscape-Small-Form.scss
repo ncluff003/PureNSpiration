@@ -10,7 +10,7 @@
     .r__form-container {
       &__contact-form {
         @include combo-max-responsive(800px, 375px) {
-          @include SizeAndPositioning(relative, 80%, 100%, flex, center, center, 7rem, 0, 0);
+          @include SizeAndPositioning(relative, 90%, 100%, flex, center, center, 7rem, 0, 0);
           flex-direction: column;
           &__name-containers {
             @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);

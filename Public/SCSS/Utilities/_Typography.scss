@@ -21,17 +21,7 @@ html {
           &:visited {
             text-decoration: none;
             font-size: 3.6rem;
-            color: rgba($colorOffWhite, 0.75);
-          }
-
-          &:hover {
             color: $colorOffWhite;
-            &:not(.navigation__links__linkItem__llink:hover) {
-              color: rgba($colorOffWhite, 0.5);
-            }
-            & + &:link {
-              color: rgba($colorOffWhite, 0.5);
-            }
           }
         }
       }
@@ -179,6 +169,12 @@ html {
             &--last-name {
               font-size: 2rem;
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+              }
+              &:valid {
+                color: #008013;
+              }
             }
           }
           &__first-name-container {
@@ -195,6 +191,12 @@ html {
             &--organization-position {
               font-size: 2rem;
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+              }
+              &:valid {
+                color: #008013;
+              }
             }
             &--organization-name-label {
               font-size: 2.4rem;
@@ -207,6 +209,12 @@ html {
             &--email {
               font-size: 2rem;
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+              }
+              &:valid {
+                color: #008013;
+              }
             }
             &--email-label {
               font-size: 2.4rem;
@@ -219,6 +227,12 @@ html {
             &--subject {
               font-size: 2rem;
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+              }
+              &:valid {
+                color: #008013;
+              }
             }
             &--subject-label {
               font-size: 2.4rem;
@@ -231,6 +245,12 @@ html {
             &--message {
               font-size: 2rem;
               color: $secondaryColor;
+              &:invalid {
+                color: #cf352e;
+              }
+              &:valid {
+                color: #008013;
+              }
             }
             &--message-label {
               font-size: 2.4rem;

@@ -2099,6 +2099,8 @@ var App = /*#__PURE__*/function () {
     this._checkCurrentPage();
 
     this._watchMobileNavigation();
+
+    this._watchNavigation(0.5, 1);
   }
 
   (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
@@ -2145,6 +2147,26 @@ var App = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "_watchNavigation",
+    value: function _watchNavigation() {
+      navigationLinks.forEach(function (n, i) {
+        n.addEventListener('mouseover', function (e) {
+          e.preventDefault();
+          navigationLinks[i].style.opacity = 1;
+          navigationLinks.forEach(function (l, i) {
+            if (n !== l) l.style.opacity = 0.5;
+          });
+        });
+        n.addEventListener('mouseout', function (e) {
+          e.preventDefault();
+          navigationLinks[i].style.opacity = 0.75;
+          navigationLinks.forEach(function (l, i) {
+            if (n !== l) l.style.opacity = 0.75;
+          });
+        });
+      });
+    }
+  }, {
     key: "_watchForMail",
     value: function _watchForMail() {
       if (contactForm) {
@@ -2157,7 +2179,6 @@ var App = /*#__PURE__*/function () {
           var email = document.getElementById("email").value;
           var subject = document.getElementById("subject").value;
           var yourMessage = message.value;
-          console.log(firstName, lastName, organizationName, organizationPosition, email, subject, message);
           (0,_Email__WEBPACK_IMPORTED_MODULE_3__.emailMe)(firstName, lastName, organizationName, organizationPosition, email, subject, yourMessage);
         });
       }
@@ -2224,24 +2245,18 @@ var App = /*#__PURE__*/function () {
       var _this = this;
 
       buttonLeft[0].addEventListener("click", function (e) {
-        console.log(buttonLeft);
         index--;
         if (index < 0) index = statements.length - 1;
 
         _this._goToSlide(index);
 
-        console.log(index);
-
         _this._activateDot(index);
       });
       buttonRight[0].addEventListener("click", function (e) {
-        console.log(buttonRight);
         index++;
         if (index === statements.length) index = 0;
 
         _this._goToSlide(index);
-
-        console.log(index);
 
         _this._activateDot(index);
       });
@@ -2293,6 +2308,9 @@ var App = /*#__PURE__*/function () {
 
 var mobileNavigation = document.querySelector(".r__navigation-mobile");
 var mobileNavigationLinks = document.querySelector(".r__navigation-mobile__links");
+
+var navigationLinks = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelectorAll(".navigation__links__link-item__link"));
+
 var menu = document.querySelector(".r__navigation-menu-button");
 var menuClose = document.querySelector(".r__navigation-mobile-close");
 var aboutSlider = document.querySelector(".about-me-statement-slider");

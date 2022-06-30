@@ -48,7 +48,7 @@ module.exports = class Email {
         secure: true,
         auth: {
           user: process.env.NAMECHEAP_EMAIL,
-          pass: process.env.EMAIL_PASSWORD,
+          pass: process.env.NAMECHEAP_PASSWORD,
         },
       });
     }

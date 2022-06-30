@@ -7,7 +7,7 @@
   .r__master-flex-container {
     /////////////////
     // About Page
-    @include combo-max-responsive(425px, 930px) {
+    @include combo-max-responsive(375px, 800px) {
       .r__about-me {
         @include SizeAndPositioning(relative, 100%, 100%, flex, center, center, 0, 0, 0);
         flex-direction: column;

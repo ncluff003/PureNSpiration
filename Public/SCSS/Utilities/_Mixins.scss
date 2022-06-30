@@ -36,7 +36,7 @@
 }
 
 //  Parametric Mixin That Needs The Height | Width | Column Template | Row Template | Column Gap | Row Gap
-@mixin grid-layout($height, $width, $columns, $rows, $columnGap, $rowGap) {
+@mixin gridLayout($height, $width, $columns, $rows, $columnGap, $rowGap) {
   height: $height;
   width: $width;
   -ms-grid-template-columns: $columns;
@@ -58,7 +58,7 @@
 }
 
 // Parametric Mixin For Grid Placement.  It Needs: Number of Columns | Column Span | Number of Rows | Row Span
-@mixin grid-placement($columns, $columnSpan, $rows, $rowSpan) {
+@mixin gridPlacement($columns, $columnSpan, $rows, $rowSpan) {
   .column {
     $x: 1;
     @while $x <= $columns {
@@ -105,11 +105,13 @@
   width: $width;
 }
 
-@mixin SizeAndPositioning($position, $height, $width, $display, $justify, $align, $horizontal, $vertical, $rotate) {
+@mixin SizeAndPositioning($position, $height, $width, $display, $direction, $wrap, $justify, $align, $horizontal, $vertical, $rotate) {
   position: $position;
   height: $height;
   width: $width;
   display: $display;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
   justify-content: $justify;
   align-items: $align;
   transform: rotate($rotate) translate($horizontal, $vertical);

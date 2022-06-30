@@ -22,7 +22,8 @@ const messageController = require(`./../Controllers/messageController`);
 
 ////////////////////////////////////////////
 //  Routing Middleware
-router.route(`/`).get(appController.renderApp);
+// router.route(`/`).get(appController.fetchData);
+router.route(`/`).get(appController.fetchData, appController.renderApp);
 router.route(`/about`).get(appController.introduceMe);
 router.route(`/projects`).get(appController.viewMyWork);
 router.route(`/contact`).get(appController.contactMe).post(messageController.validateEmail, messageController.emailMe);

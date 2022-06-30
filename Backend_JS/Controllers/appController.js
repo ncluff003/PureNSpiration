@@ -1,5 +1,9 @@
 ////////////////////////////////////////////
 //  Core Modules
+const http = require('http');
+const url = require('url');
+const fs = require('fs');
+const path = require('path');
 
 ////////////////////////////////////////////
 //  Third Party Modules
@@ -25,9 +29,24 @@ const catchAsync = require(`./../Utilities/catchAsync`);
 
 ////////////////////////////////////////////
 //  Exported Controllers
+
+exports.fetchData = catchAsync(async (request, response, next) => {
+  console.log(`Fetching...`);
+  // GET DATA FROM JSON FILE.
+  let pureData = JSON.parse(fs.readFileSync(`${__dirname}/../Data/pureData.json`, 'utf-8'));
+
+  console.log(pureData);
+  // STORE DATA FOR USE.
+  request.data = pureData;
+  next();
+});
+
 exports.renderApp = catchAsync(async (request, response) => {
+  const data = request.data;
+  console.log(data);
   response.status(200).render(`base`, {
     title: `Pure 'N' Spiration | Home`,
+    data: data,
     errorMessage: '',
     successMessage: '',
   });

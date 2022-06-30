@@ -16,10 +16,10 @@
           @include SizeAndPositioning(relative, min-content, 90%, flex, flex-start, center, 0, 0, 0);
           flex-direction: column;
           &:not(:first-of-type) {
-            margin-top: 10rem;
+            margin-top: 5rem;
           }
           &:last-of-type {
-            margin-bottom: 10rem;
+            margin-bottom: 5rem;
           }
           &__image-container {
             @include SizingItem(relative, 37%, 100%);

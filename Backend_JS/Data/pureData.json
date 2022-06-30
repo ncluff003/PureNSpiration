@@ -1,0 +1,132 @@
+{
+  "title": "Pure N Spiration",
+  "logo": "logo",
+  "developer": "Nathan Cluff",
+  "resume": "resume",
+  "headline": "Latter Day Saint  |  Husband  |  Father  |  Full-Stack Developer",
+  "about": [
+    {
+      "title": "Foundational Roles",
+      "foundationalRoles": [
+        {
+          "text": "Great pride, passion, and enthusiasm goes into each foundational role.  They each require of many things, and here are some of those things:"
+        },
+        {
+          "text": "Be unafraid and enjoy tackling challenges.  Be comfortable with the unnown.  Collaborate before making bigger decisions.  Strive to make solid decisions with sometimes limited information.  Be accountable for any outcome of the aforementioned decisions.  Strive to be ready and willing to try new things to learn and grow."
+        },
+        {
+          "text": "Each of the aformentied skills, traits, or abilities are what is striven for by me every single day in my programming journey.  They are key to who I am.  Though, do not just take my word for it."
+        }
+      ]
+    },
+    {
+      "title": "Interests",
+      "interestsText": {
+        "text": "“If you want to discover the true character of a person, you have only to observe what they are passionate about.",
+        "author": "Shannon L. Alder"
+      },
+      "interests": [
+        {
+          "icon": "",
+          "title": "Graphic Design",
+          "altTitle": "Graphic Design"
+        },
+        {
+          "icon": "",
+          "title": "Rocket League",
+          "altTitle": "Rocket League"
+        },
+        {
+          "icon": "",
+          "title": "Madden NFL",
+          "altTitle": "Madden NFL"
+        },
+        {
+          "icon": "",
+          "title": "Apples To Apples",
+          "altTitle": "Apples To Apples"
+        },
+        {
+          "icon": "",
+          "title": "Phase 10",
+          "altTitle": "Phase 10"
+        },
+        {
+          "icon": "",
+          "title": "Basketball",
+          "altTitle": "Basketball"
+        },
+        {
+          "icon": "",
+          "title": "Ping Pong",
+          "altTitle": "Ping Pong"
+        },
+        {
+          "icon": "",
+          "title": "Cooking",
+          "altTitle": "Cooking"
+        },
+        {
+          "icon": "",
+          "title": "Baking",
+          "altTitle": "Baking"
+        },
+        {
+          "icon": "",
+          "title": "Legos",
+          "altTitle": "Legos"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Pure N Spiration / Example Project",
+      "coverPhoto": "",
+      "description": "",
+      "technologies": "",
+      "link": "https://www.purenspiration.com",
+      "code": "https://github.com/ncluff003",
+      "media": [
+        {
+          "type": "video or photo",
+          "file": ""
+        }
+      ]
+    }
+  ],
+  "blog": {
+    "title": "Web-SlingN",
+    "data": {
+      "previousPage": "null",
+      "currentPage": 0,
+      "nextPage": 1,
+      "limit": 10,
+      "posts": [
+        {
+          "date": "2022-06-30T00:36:22.586Z",
+          "title": "Example Post",
+          "keyWords": [],
+          "content": [
+            {
+              "type": "video",
+              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "file": "./../../Public/DIST/CSS/Faolan.mp4"
+            },
+            {
+              "type": "paragraph",
+              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "file": "file"
+            },
+            {
+              "type": "image",
+              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "file": "./../../Public/DIST/CSS/Images/Hangman.svg"
+            }
+          ],
+          "author": "Nathan Cluff"
+        }
+      ]
+    }
+  }
+}

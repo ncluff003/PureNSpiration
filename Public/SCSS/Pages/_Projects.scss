@@ -11,12 +11,12 @@
       @include SizeAndPositioning(relative, 85%, 90%, flex, flex-start, flex-start, 0, 0, 0);
       flex-direction: column;
       &__project {
-        @include SizeAndPositioning(relative, 85%, 90%, flex, flex-start, flex-start, 0, 0, 0);
+        @include SizeAndPositioning(relative, 85%, 90%, flex, flex-start, flex-start, 0, -5rem, 0);
         &:not(:first-of-type) {
           margin-top: 5rem;
         }
         &:last-of-type {
-          margin-bottom: 10rem;
+          margin-bottom: 15rem;
         }
         &__image-container {
           @include SizingItem(relative, 100%, 65%);

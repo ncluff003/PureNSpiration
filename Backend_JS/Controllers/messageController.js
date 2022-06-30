@@ -47,12 +47,10 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
     if (!Validate.isName(postBody.lastName)) throw new Error(`Please give your last name with letters only.`);
     if (!Validate.isCompany(postBody.organization)) throw new Error(`Please provide your company's name without the following characters: #, %, *, =, +`);
     if (!Validate.isCompanyPosition(postBody.position))
-      throw new Error(`Please provide your position in the company without the following characters: \`, ~, !, @, #, $, %, ^, &, *, +, =, <, >, ?, |, [, ].`);
-    if (!Validate.isEmail(postBody.email)) throw new Error(`Please provide a valid email address with a valid extension.`);
+      throw new Error(`Please provide your company position without these characters: \`, ~, !, @, #, $, %, ^, &, *, +, =, <, >, ?, |, [, ].`);
+    if (!Validate.isEmail(postBody.email)) throw new Error(`Please provide a valid email address with a valid domain.`);
     if (!Validate.isValidEmailSubject(postBody.subject))
-      throw new Error(
-        `Please tell me the subject of this message using letters, numbers, & the following symbols: ~, !, $, %, #, *, (, ), -, |, ?, ., :, ', ", `,
-      );
+      throw new Error(`Please use only letters, numbers, & these symbols: ~, !, $, %, #, *, (, ), -, |, ?, ., :, ', ", in the subject`);
     if (postBody.message === '') throw new Error(`Please do not leave message box empty.`);
     console.log(`Email Passed Validation! 😄`);
   } catch (error) {
