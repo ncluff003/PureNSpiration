@@ -1,0 +1,36 @@
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(sprite.svg);
+}
+.icon-Phase-10-Card {
+  width: 32px;
+  height: 32px;
+  background-position: 0 0;
+}
+.icon-EA_Sports {
+  width: 32px;
+  height: 32px;
+  background-position: -64px 0;
+}
+.icon-Halo {
+  width: 32px;
+  height: 32px;
+  background-position: -128px 0;
+}
+.icon-Lego {
+  width: 32px;
+  height: 32px;
+  background-position: -192px 0;
+}
+.icon-PureNSpiration_Logo--night {
+  width: 32px;
+  height: 32px;
+  background-position: -256px 0;
+}
+.icon-RocketLeague {
+  width: 32px;
+  height: 32px;
+  background-position: -320px 0;
+}
+

@@ -50,6 +50,11 @@ exports.renderApp = catchAsync(async (request, response) => {
     errorMessage: '',
     successMessage: '',
   });
+
+  // response.status(200).json({
+  //   status: `Success`,
+  //   data: data,
+  // });
 });
 
 exports.introduceMe = catchAsync(async (request, response) => {

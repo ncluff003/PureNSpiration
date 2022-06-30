@@ -1,6 +1,7 @@
 {
   "title": "Pure N Spiration",
-  "logo": "logo",
+  "logo": "./../../Public/DIST/CSS/Images/PureNSpiration_Logo--day.svg",
+  "altLogo": "./../../Public/DIST/CSS/Images/PureNSpiration_Logo--night.svg",
   "developer": "Nathan Cluff",
   "resume": "resume",
   "headline": "Latter Day Saint  |  Husband  |  Father  |  Full-Stack Developer",
@@ -32,32 +33,32 @@
           "altTitle": "Graphic Design"
         },
         {
-          "icon": "",
+          "icon": "icon-RocketLeague",
           "title": "Rocket League",
           "altTitle": "Rocket League"
         },
         {
-          "icon": "",
+          "icon": "icon-EA_Sports",
           "title": "Madden NFL",
           "altTitle": "Madden NFL"
         },
         {
-          "icon": "",
+          "icon": "apple-whole",
           "title": "Apples To Apples",
           "altTitle": "Apples To Apples"
         },
         {
-          "icon": "",
-          "title": "Phase 10",
-          "altTitle": "Phase 10"
+          "icon": "diamond",
+          "title": "Card Games",
+          "altTitle": "Card Games"
         },
         {
-          "icon": "",
+          "icon": "basketball",
           "title": "Basketball",
           "altTitle": "Basketball"
         },
         {
-          "icon": "",
+          "icon": "table-tennis-paddle-ball",
           "title": "Ping Pong",
           "altTitle": "Ping Pong"
         },
@@ -67,12 +68,12 @@
           "altTitle": "Cooking"
         },
         {
-          "icon": "",
-          "title": "Baking",
-          "altTitle": "Baking"
+          "icon": "icon-Halo",
+          "title": "Halo",
+          "altTitle": "Halo"
         },
         {
-          "icon": "",
+          "icon": "icon-Lego",
           "title": "Legos",
           "altTitle": "Legos"
         }

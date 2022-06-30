@@ -96,6 +96,7 @@
     "pug": "^3.0.2",
     "require.js": "^1.0.0",
     "slugify": "^1.6.0",
+    "svgxuse": "^1.2.6",
     "validator": "^13.6.0",
     "xss-clean": "^0.1.1"
   },
