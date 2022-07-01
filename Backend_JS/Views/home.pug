@@ -1,0 +1,37 @@
+extends base
+
+block unique-content 
+  section.introduction-container.r__introduction-container.column_2-12.row_3-6
+    section.image-container.r__image-container
+      section.image-frame.r__image-frame
+        if data
+          img.image.r__image(src=`${data.data.photo}`)
+        else
+          img.image.r__image(src=`/DIST/CSS/Images/MyPhoto.jpg`)
+    section.introduction-container__introduction.r__introduction-container__introduction
+      section.name-container.r__name-container
+        if data
+          p.name.r__name= `${data.data.developer}` 
+          p.headline.r__headline= `${data.data.headline}` 
+        else
+          p.name.r__name= `Nathan Cluff` 
+          p.headline.r__headline= `Latter Day Saint  |  Husband  |  Father  |  Full-Stack Developer` 
+      section.cta-container.r__cta-container
+        a.cta-link.r__cta-link(href=`#`)
+          i.fas.fa-user.cta-icon.r__cta-icon
+          p.link-text.r__link-text Get To Know
+        a.cta-link.r__cta-link(href=`#`)
+          i.fas.fa-mobile-alt.cta-icon.r__cta-icon
+          p.link-text.r__link-text Contact
+  section.latest-project.r__latest-project.column_2-12.row_10-8.construction-zone
+    section.connect--home.r__connect--home 
+      p.connect--home__title.r__connect--home__title Connect
+      a.connect--home__link.r__connect--home__link(href=`#`)
+        i.fab.fa-linkedin
+      a.connect--home__link.r__connect--home__link(href=`#`)
+        i.fab.fa-github-square
+      a.connect--home__link.r__connect--home__link(href=`#`)
+        i.fab.fa-codepen
+      a.connect--home__link.r__connect--home__link(href=`#`)
+        i.fab.fa-telegram-plane
+    section.latest-project__project-view.r__latest-project__project-view

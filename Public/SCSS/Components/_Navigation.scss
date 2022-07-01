@@ -2,6 +2,80 @@
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
 .navigation {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-between, center, 0, 0, 0);
-  background-color: $secondaryColor;
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, flex-start, center, 0, 0, 0);
+  padding: 0 1rem;
+  transition: background-color 0.5s, border 0.5s;
+  &__link-list {
+    @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    &__link-item {
+      @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, center, center, 0, 0, 0);
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+      &__link {
+        @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, center, center, 0, 0, 0);
+        transition: color 0.5s;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 90%;
+          width: 0%;
+          content: '';
+          transition: border-color 0.5s;
+        }
+        &:hover {
+          cursor: pointer;
+
+          &::before {
+            width: 100%;
+            transition: border 0.5s, width 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.logo-container {
+  @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, space-between, center, 0, 0, 0);
+  .icon-PureNSpiration_Logo--night {
+    transition: color 0.5s;
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+.day {
+  .navigation {
+    background-color: $primaryColor;
+    border-bottom: 0.2rem groove $secondaryColor;
+    &__link-list {
+      &__link-item {
+        &__link {
+          &:before {
+            border-bottom: 0.4rem solid $colorOffWhite;
+          }
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+  .navigation {
+    background-color: $secondaryColor;
+    border-bottom: 0.2rem groove $primaryColor;
+    &__link-list {
+      &__link-item {
+        &__link {
+          &:before {
+            border-bottom: 0.4rem solid $colorDarkerGrey;
+          }
+        }
+      }
+    }
+  }
 }

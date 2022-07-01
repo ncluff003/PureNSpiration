@@ -1,8 +1,8 @@
 {
   "title": "Pure N Spiration",
-  "logo": "./../../Public/DIST/CSS/Images/PureNSpiration_Logo--day.svg",
-  "altLogo": "./../../Public/DIST/CSS/Images/PureNSpiration_Logo--night.svg",
+  "logo": "icon-PureNSpiration_Logo--night",
   "developer": "Nathan Cluff",
+  "photo": "/DIST/CSS/Images/MyPhoto.jpg",
   "resume": "resume",
   "headline": "Latter Day Saint  |  Husband  |  Father  |  Full-Stack Developer",
   "about": [
@@ -28,7 +28,7 @@
       },
       "interests": [
         {
-          "icon": "",
+          "icon": "image-polaroid",
           "title": "Graphic Design",
           "altTitle": "Graphic Design"
         },
@@ -63,7 +63,7 @@
           "altTitle": "Ping Pong"
         },
         {
-          "icon": "",
+          "icon": "hat-chef",
           "title": "Cooking",
           "altTitle": "Cooking"
         },

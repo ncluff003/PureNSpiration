@@ -5,8 +5,91 @@
 // Base
 
 html {
-  font-family: Purely Me, Century Gothic, Verdana, sans-serif;
+  font-family: Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-variant-ligatures: none;
+}
+
+/////////////////////////////////
+// Universal
+
+.navigation {
+  font-family: Roboto Condensed, Roboto Slab, Purely Me, Verdana, sans-serif;
+  &__link-list {
+    &__link-item {
+      &__link {
+        font-size: 2.4rem;
+        color: rgba($colorDarkerGrey, 0.5);
+        text-decoration: none;
+        &:visited {
+          color: rgba($colorDarkerGrey, 0.5);
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $colorDarkerGrey;
+          transition: color 0.5s;
+        }
+
+        &:active {
+          color: $colorOffWhite;
+        }
+      }
+    }
+  }
+}
+
+.icon-PureNSpiration_Logo--night {
+  font-size: 3.5rem;
+}
+
+.time-toggle {
+  &__switch {
+    &__icon {
+      font-size: 2rem;
+      &--sun {
+        @extend .time-toggle__switch__icon;
+        color: $primaryColor;
+      }
+      &--moon {
+        @extend .time-toggle__switch__icon;
+        color: $colorLighterGrey;
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// Home Page
+
+.name-container {
+  .name {
+    font-family: MADE Tommy Soft;
+    font-size: 8rem;
+    font-weight: bold;
+  }
+  .headline {
+    font-family: Roboto Condensed;
+    font-size: 2rem;
+  }
+}
+
+.cta-container {
+  .cta-link {
+    font-family: Roboto Condensed;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+
+.connect--home {
+  &__title {
+    @extend html;
+    font-size: 3rem;
+  }
+  &__link {
+    @extend html;
+    font-size: 5rem;
+  }
 }
 
 .icon-Lego {
@@ -24,12 +107,134 @@ html {
   font-size: 10rem;
 }
 
-.icon-PureNSpiration_Logo--night {
-  color: $colorDarkerGrey;
-  font-size: 4rem;
-}
-
 .icon-EA_Sports {
   color: $colorOffWhite;
   font-size: 10rem;
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+  .navigation {
+    .logo-container {
+      .icon-PureNSpiration_Logo--night {
+        color: $colorOffWhite;
+      }
+    }
+    &__link-list {
+      &__link-item {
+        &__link {
+          color: rgba($colorOffWhite, 0.75);
+          &:visited {
+            color: rgba($colorOffWhite, 0.75);
+          }
+
+          &:hover {
+            color: $colorOffWhite;
+          }
+
+          &:active {
+            color: $colorDarkerGrey;
+          }
+        }
+      }
+    }
+  }
+  .introduction-container {
+    &__introduction {
+      .name-container {
+        .name {
+          color: $primaryColor;
+        }
+        .headline {
+          color: $secondaryColor;
+        }
+      }
+      .cta-container {
+        .cta-link {
+          color: rgba($colorOffWhite, 0.8);
+          &:hover {
+            color: $colorOffWhite;
+          }
+        }
+      }
+    }
+  }
+  .latest-project {
+    .connect--home {
+      &__title {
+        color: $colorOffWhite;
+      }
+      &__link {
+        color: rgba($colorOffWhite, 0.8);
+        &:hover {
+          color: $colorOffWhite;
+        }
+      }
+    }
+  }
+}
+/////////////////////////////////
+// NIGHT SETTINGS
+
+.night {
+  .navigation {
+    .logo-container {
+      .icon-PureNSpiration_Logo--night {
+        color: $colorDarkerGrey;
+      }
+    }
+    &__link-list {
+      &__link-item {
+        &__link {
+          color: rgba($colorDarkerGrey, 0.5);
+          &:visited {
+            color: rgba($colorDarkerGrey, 0.5);
+          }
+
+          &:hover {
+            color: $colorDarkerGrey;
+          }
+
+          &:active {
+            color: $colorOffWhite;
+          }
+        }
+      }
+    }
+  }
+  .introduction-container {
+    &__introduction {
+      .name-container {
+        .name {
+          color: $secondaryColor;
+        }
+        .headline {
+          color: $primaryColor;
+        }
+      }
+      .cta-container {
+        .cta-link {
+          color: rgba($colorOffWhite, 0.8);
+          &:hover {
+            color: $colorOffWhite;
+          }
+        }
+      }
+    }
+  }
+  .latest-project {
+    .connect--home {
+      &__title {
+        color: $colorDarkerGrey;
+      }
+      &__link {
+        color: rgba($colorDarkerGrey, 0.8);
+        &:hover {
+          color: $colorDarkerGrey;
+        }
+      }
+    }
+  }
 }

@@ -1,31 +1,131 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-////////////////////////////////////////////////
-//  Master Grid Container
-.master-grid {
-  .master-flex-container {
-    /////////////////
-    // Home Page
-    &__child-flex-container {
-      @include SizeAndPositioning(relative, 33.3%, 85%, flex, center, center, 0, 0, 0);
-      flex-direction: column;
-      &__heading {
-        @include SizeAndPositioning(relative, 80%, 100%, flex, space-evenly, center, 0, 0, 0);
-        flex-direction: column;
-        &--subtext-start {
-          position: relative;
-          align-self: flex-start;
-          transform: translate(13.5rem, 8rem);
-          -moz-transform: translate(11.5rem, 8rem);
-        }
-        &--subtext-end {
-          position: relative;
-          align-self: flex-end;
-          transform: translate(-16.5rem, -11.5rem);
-          -moz-transform: translate(-15rem, -11.5rem);
+.introduction-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  &__introduction {
+    @include SizeAndPositioning(relative, 100%, 67%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+  }
+}
+
+.image-container {
+  @include SizeAndPositioning(relative, 100%, 33%, flex, row, nowrap, center, center, 0, 0, 0);
+}
+
+.image-frame {
+  @include SizeAndPositioning(relative, 25rem, 25rem, flex, row, nowrap, center, center, 0, 0, 0);
+  border-width: 0.3rem;
+  border-style: solid;
+  border-radius: 50%;
+  transition: border-color 0.5s;
+  .image {
+    @include SizingItem(relative, 100%, 100%);
+    border-radius: 50%;
+  }
+}
+
+.name-container {
+  @include SizeAndPositioning(relative, 60%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
+  .name {
+    transform: translate(0, 1.5rem);
+    transition: color 0.5s;
+  }
+  .headline {
+    transform: translate(1rem, 0);
+    transition: color 0.5s;
+  }
+}
+
+.cta-container {
+  @include SizeAndPositioning(relative, 40%, 100%, flex, row, nowrap, flex-end, flex-start, 0, 0, 0);
+  padding-right: 9rem;
+}
+
+.cta-link {
+  @include SizeAndPositioning(relative, 4rem, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  transition: background-color 0.5s;
+  &:not(:last-of-type) {
+    margin-right: 2rem;
+  }
+  &:hover {
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+  }
+}
+
+.cta-icon {
+  margin-right: 2rem;
+}
+
+.latest-project {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+}
+
+.connect--home {
+  @include SizeAndPositioning(relative, 100%, 20%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+  transition: background-color 0.5s;
+  &__link {
+    transition: background-color 0.5s;
+    &:hover {
+      cursor: pointer;
+      transition: background-color, color 0.5s;
+    }
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+  .introduction-container {
+    .image-container {
+      .image-frame {
+        border-color: $primaryColor;
+      }
+    }
+    &__introduction {
+      .cta-container {
+        .cta-link {
+          background-color: rgba($secondaryColor, 0.8);
+          &:hover {
+            background-color: $secondaryColor;
+          }
         }
       }
+    }
+  }
+  .latest-project {
+    .connect--home {
+      background-color: $primaryColor;
+    }
+  }
+}
+/////////////////////////////////
+// NIGHT SETTINGS
+
+.night {
+  .introduction-container {
+    .image-container {
+      .image-frame {
+        border-color: $secondaryColor;
+      }
+    }
+    &__introduction {
+      .cta-container {
+        .cta-link {
+          background-color: rgba($primaryColor, 0.8);
+          &:hover {
+            background-color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+  .latest-project {
+    .connect--home {
+      background-color: $secondaryColor;
     }
   }
 }

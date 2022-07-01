@@ -1,0 +1,73 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.time-toggle {
+  @include SizeAndPositioning(absolute, 80%, 7.5%, flex, row, nowrap, flex-start, center, 0, 0, 0);
+  top: 50%;
+  right: 1rem;
+  transform: translate(0, -50%);
+  padding: 0.2rem;
+  border-radius: 5rem;
+  transition: background-color 0.5s, border 0.5s;
+  &__switch {
+    @include SizeAndPositioning(relative, 100%, 25%, flex, row, nowrap, center, center, 0, 0, 0);
+    border-radius: 5rem;
+    transition: transform 0.5s;
+    &:hover {
+      cursor: pointer;
+      transition: background-color 0.5s, transform 0.5s;
+    }
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+.day {
+  .navigation {
+    .time-toggle {
+      background-color: rgba($colorLighterGrey, 0.75);
+      border: 0.2rem inset $primaryColorLight;
+      &__switch {
+        transform: translate(0, 0);
+        background-color: rgba($tertiaryColor, 0.9);
+        &:hover {
+          background-color: $tertiaryColor;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+  .navigation {
+    .time-toggle {
+      background-color: rgba($colorDarkestGrey, 0.75);
+      border: 0.2rem inset $secondaryColorLight;
+      &__switch {
+        transform: translate(298%, 0);
+        background-color: rgba($secondaryColorDark, 0.9);
+        &:hover {
+          background-color: $secondaryColorLight;
+        }
+      }
+    }
+  }
+}
+
+// .night-switch {
+//   background-color: rgba(navy, 0.8);
+//   &:hover {
+//     background-color: #0047ab;
+//     transition: background-color 0.5s;
+//   }
+// }
+
+// .day-switch {
+//   background-color: rgba(#0047ab, 0.8);
+//   &:hover {
+//     background-color: skyblue;
+//     transition: background-color 0.5s;
+//   }
+// }

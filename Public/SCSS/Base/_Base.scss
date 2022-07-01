@@ -68,3 +68,28 @@ body {
   stroke: currentColor;
   fill: currentColor;
 }
+
+.icon-PureNSpiration_Logo--night {
+  margin-right: 2rem;
+}
+
+.closed {
+  display: none !important;
+}
+.open {
+  display: flex;
+}
+
+.day {
+  background-color: $colorOffWhite;
+  transition: background-color 0.5s;
+}
+
+.night {
+  background-color: $colorDarkerGrey;
+  transition: background-color 0.5s;
+}
+
+.construction-zone {
+  background-color: rgba($colorOffWhite, 0.2);
+}

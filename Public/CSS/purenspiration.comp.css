@@ -3,9 +3,66 @@
   font-family: Purely Me;
   src: url("./purely_me_regular-webfont.woff2") format("woff2"), url("./purely_me_regular-webfont.woff") format("woff"), url("./Purely_Me_Regular.eot"), url("./Purely_Me_Regular.ttf");
 }
-html {
-  font-family: Purely Me, Century Gothic, Verdana, sans-serif;
+html, .connect--home__link, .connect--home__title {
+  font-family: Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-variant-ligatures: none;
+}
+
+.navigation {
+  font-family: Roboto Condensed, Roboto Slab, Purely Me, Verdana, sans-serif;
+}
+.navigation__link-list__link-item__link {
+  font-size: 2.4rem;
+  color: rgba(51, 51, 51, 0.5);
+  text-decoration: none;
+}
+.navigation__link-list__link-item__link:visited {
+  color: rgba(51, 51, 51, 0.5);
+}
+.navigation__link-list__link-item__link:hover {
+  cursor: pointer;
+  color: #333333;
+  transition: color 0.5s;
+}
+.navigation__link-list__link-item__link:active {
+  color: #fafafa;
+}
+
+.icon-PureNSpiration_Logo--night {
+  font-size: 3.5rem;
+}
+
+.time-toggle__switch__icon, .time-toggle__switch__icon--moon, .time-toggle__switch__icon--sun {
+  font-size: 2rem;
+}
+.time-toggle__switch__icon--sun {
+  color: #ffd700;
+}
+.time-toggle__switch__icon--moon {
+  color: #bbbbbb;
+}
+
+.name-container .name {
+  font-family: MADE Tommy Soft;
+  font-size: 8rem;
+  font-weight: bold;
+}
+.name-container .headline {
+  font-family: Roboto Condensed;
+  font-size: 2rem;
+}
+
+.cta-container .cta-link {
+  font-family: Roboto Condensed;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.connect--home__title {
+  font-size: 3rem;
+}
+.connect--home__link {
+  font-size: 5rem;
 }
 
 .icon-Lego {
@@ -23,14 +80,83 @@ html {
   font-size: 10rem;
 }
 
-.icon-PureNSpiration_Logo--night {
-  color: #333333;
-  font-size: 4rem;
-}
-
 .icon-EA_Sports {
   color: #fafafa;
   font-size: 10rem;
+}
+
+.day .navigation .logo-container .icon-PureNSpiration_Logo--night {
+  color: #fafafa;
+}
+.day .navigation__link-list__link-item__link {
+  color: rgba(250, 250, 250, 0.75);
+}
+.day .navigation__link-list__link-item__link:visited {
+  color: rgba(250, 250, 250, 0.75);
+}
+.day .navigation__link-list__link-item__link:hover {
+  color: #fafafa;
+}
+.day .navigation__link-list__link-item__link:active {
+  color: #333333;
+}
+.day .introduction-container__introduction .name-container .name {
+  color: #ffd700;
+}
+.day .introduction-container__introduction .name-container .headline {
+  color: #00b358;
+}
+.day .introduction-container__introduction .cta-container .cta-link {
+  color: rgba(250, 250, 250, 0.8);
+}
+.day .introduction-container__introduction .cta-container .cta-link:hover {
+  color: #fafafa;
+}
+.day .latest-project .connect--home__title {
+  color: #fafafa;
+}
+.day .latest-project .connect--home__link {
+  color: rgba(250, 250, 250, 0.8);
+}
+.day .latest-project .connect--home__link:hover {
+  color: #fafafa;
+}
+
+.night .navigation .logo-container .icon-PureNSpiration_Logo--night {
+  color: #333333;
+}
+.night .navigation__link-list__link-item__link {
+  color: rgba(51, 51, 51, 0.5);
+}
+.night .navigation__link-list__link-item__link:visited {
+  color: rgba(51, 51, 51, 0.5);
+}
+.night .navigation__link-list__link-item__link:hover {
+  color: #333333;
+}
+.night .navigation__link-list__link-item__link:active {
+  color: #fafafa;
+}
+.night .introduction-container__introduction .name-container .name {
+  color: #00b358;
+}
+.night .introduction-container__introduction .name-container .headline {
+  color: #ffd700;
+}
+.night .introduction-container__introduction .cta-container .cta-link {
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .introduction-container__introduction .cta-container .cta-link:hover {
+  color: #fafafa;
+}
+.night .latest-project .connect--home__title {
+  color: #333333;
+}
+.night .latest-project .connect--home__link {
+  color: rgba(51, 51, 51, 0.8);
+}
+.night .latest-project .connect--home__link:hover {
+  color: #333333;
 }
 
 .gridDesktop {
@@ -31405,9 +31531,327 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding: 0 1rem;
+  transition: background-color 0.5s, border 0.5s;
+}
+.navigation__link-list {
+  position: relative;
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.navigation__link-list__link-item {
+  position: relative;
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.navigation__link-list__link-item:not(:last-of-type) {
+  margin-right: 2rem;
+}
+.navigation__link-list__link-item__link {
+  position: relative;
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  transition: color 0.5s;
+}
+.navigation__link-list__link-item__link::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90%;
+  width: 0%;
+  content: "";
+  transition: border-color 0.5s;
+}
+.navigation__link-list__link-item__link:hover {
+  cursor: pointer;
+}
+.navigation__link-list__link-item__link:hover::before {
+  width: 100%;
+  transition: border 0.5s, width 0.5s;
+}
+
+.logo-container {
+  position: relative;
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   transform: rotate(0) translate(0, 0);
+}
+.logo-container .icon-PureNSpiration_Logo--night {
+  transition: color 0.5s;
+}
+
+.day .navigation {
+  background-color: #ffd700;
+  border-bottom: 0.2rem groove #00b358;
+}
+.day .navigation__link-list__link-item__link:before {
+  border-bottom: 0.4rem solid #fafafa;
+}
+
+.night .navigation {
+  background-color: #00b358;
+  border-bottom: 0.2rem groove #ffd700;
+}
+.night .navigation__link-list__link-item__link:before {
+  border-bottom: 0.4rem solid #333333;
+}
+
+.time-toggle {
+  position: absolute;
+  height: 80%;
+  width: 7.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  top: 50%;
+  right: 1rem;
+  transform: translate(0, -50%);
+  padding: 0.2rem;
+  border-radius: 5rem;
+  transition: background-color 0.5s, border 0.5s;
+}
+.time-toggle__switch {
+  position: relative;
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  border-radius: 5rem;
+  transition: transform 0.5s;
+}
+.time-toggle__switch:hover {
+  cursor: pointer;
+  transition: background-color 0.5s, transform 0.5s;
+}
+
+.day .navigation .time-toggle {
+  background-color: rgba(187, 187, 187, 0.75);
+  border: 0.2rem inset #ffdf33;
+}
+.day .navigation .time-toggle__switch {
+  transform: translate(0, 0);
+  background-color: rgba(255, 61, 0, 0.9);
+}
+.day .navigation .time-toggle__switch:hover {
+  background-color: #ff3d00;
+}
+
+.night .navigation .time-toggle {
+  background-color: rgba(17, 17, 17, 0.75);
+  border: 0.2rem inset #00e671;
+}
+.night .navigation .time-toggle__switch {
+  transform: translate(298%, 0);
+  background-color: rgba(0, 128, 63, 0.9);
+}
+.night .navigation .time-toggle__switch:hover {
+  background-color: #00e671;
+}
+
+.introduction-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.introduction-container__introduction {
+  position: relative;
+  height: 100%;
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+
+.image-container {
+  position: relative;
+  height: 100%;
+  width: 33%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+
+.image-frame {
+  position: relative;
+  height: 25rem;
+  width: 25rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  border-width: 0.3rem;
+  border-style: solid;
+  border-radius: 50%;
+  transition: border-color 0.5s;
+}
+.image-frame .image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.name-container {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.name-container .name {
+  transform: translate(0, 1.5rem);
+  transition: color 0.5s;
+}
+.name-container .headline {
+  transform: translate(1rem, 0);
+  transition: color 0.5s;
+}
+
+.cta-container {
+  position: relative;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  transform: rotate(0) translate(0, 0);
+  padding-right: 9rem;
+}
+
+.cta-link {
+  position: relative;
+  height: 4rem;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  transition: background-color 0.5s;
+}
+.cta-link:not(:last-of-type) {
+  margin-right: 2rem;
+}
+.cta-link:hover {
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.cta-icon {
+  margin-right: 2rem;
+}
+
+.latest-project {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+
+.connect--home {
+  position: relative;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  transition: background-color 0.5s;
+}
+.connect--home__link {
+  transition: background-color 0.5s;
+}
+.connect--home__link:hover {
+  cursor: pointer;
+  transition: background-color, color 0.5s;
+}
+
+.day .introduction-container .image-container .image-frame {
+  border-color: #ffd700;
+}
+.day .introduction-container__introduction .cta-container .cta-link {
+  background-color: rgba(0, 179, 88, 0.8);
+}
+.day .introduction-container__introduction .cta-container .cta-link:hover {
+  background-color: #00b358;
+}
+.day .latest-project .connect--home {
+  background-color: #ffd700;
+}
+
+.night .introduction-container .image-container .image-frame {
+  border-color: #00b358;
+}
+.night .introduction-container__introduction .cta-container .cta-link {
+  background-color: rgba(255, 215, 0, 0.8);
+}
+.night .introduction-container__introduction .cta-container .cta-link:hover {
+  background-color: #ffd700;
+}
+.night .latest-project .connect--home {
   background-color: #00b358;
 }
 
@@ -40243,12 +40687,9 @@ readers do not read off random characters that represent icons */
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
 html {
-  font-family: Purely Me, Century Gothic, Verdana, sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  font-family: Purely Me, Century Gothic, Verdana, sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /**
@@ -40276,8 +40717,7 @@ main,
 menu,
 nav,
 section,
-summary {
-  /* 1 */
+summary { /* 1 */
   display: block;
 }
 
@@ -40322,10 +40762,8 @@ template,
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
 a {
-  background-color: transparent;
-  /* 1 */
-  -webkit-text-decoration-skip: objects;
-  /* 2 */
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
 }
 
 /**
@@ -40344,12 +40782,9 @@ a:hover {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -40445,10 +40880,8 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -40463,12 +40896,9 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /* Forms
@@ -40481,10 +40911,8 @@ button,
 input,
 select,
 textarea {
-  font: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font: inherit; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -40499,8 +40927,7 @@ optgroup {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -40509,8 +40936,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -40523,8 +40949,7 @@ button,
 html [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
-  /* 2 */
+  -webkit-appearance: button; /* 2 */
 }
 
 /**
@@ -40564,18 +40989,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -40591,10 +41010,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -40610,10 +41027,8 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -40637,10 +41052,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /*
@@ -40706,6 +41119,32 @@ body {
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+
+.icon-PureNSpiration_Logo--night {
+  margin-right: 2rem;
+}
+
+.closed {
+  display: none !important;
+}
+
+.open {
+  display: flex;
+}
+
+.day {
+  background-color: #fafafa;
+  transition: background-color 0.5s;
+}
+
+.night {
+  background-color: #333333;
+  transition: background-color 0.5s;
+}
+
+.construction-zone {
+  background-color: rgba(250, 250, 250, 0.2);
 }
 
 /*# sourceMappingURL=purenspiration.comp.css.map */
