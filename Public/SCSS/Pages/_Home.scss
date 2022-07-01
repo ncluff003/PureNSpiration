@@ -61,16 +61,45 @@
 
 .latest-project {
   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  &__project-view {
+    @include SizeAndPositioning(relative, 100%, 80%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+    &__header {
+      @include SizeAndPositioning(relative, 15%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+    }
+    &__cover-photo {
+      @include SizeAndPositioning(relative, 70%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+      &__image {
+        @include SizingItem(relative, 90%, auto);
+      }
+    }
+    &__link-container {
+      @include SizeAndPositioning(relative, 15%, 100%, flex, row, nowrap, center, flex-start, 0, 0, 0);
+      &__link {
+        @include SizeAndPositioning(relative, 90%, 25%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+        border-radius: 5rem;
+        &:not(:last-of-type) {
+          margin-right: 2rem;
+        }
+        &:hover {
+          cursor: pointer;
+          transition: background-color 0.5s, color 0.5s;
+        }
+      }
+    }
+  }
 }
 
 .connect--home {
   @include SizeAndPositioning(relative, 100%, 20%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
   transition: background-color 0.5s;
+  &__title {
+    transition: color 0.5s;
+  }
   &__link {
-    transition: background-color 0.5s;
+    transition: background-color 0.5s, color 0.5s;
     &:hover {
       cursor: pointer;
-      transition: background-color, color 0.5s;
+      transition: background-color 0.5s, color 0.5s;
     }
   }
 }
@@ -97,8 +126,19 @@
     }
   }
   .latest-project {
+    border: 0.2rem solid $primaryColor;
     .connect--home {
       background-color: $primaryColor;
+    }
+    &__project-view {
+      &__link-container {
+        &__link {
+          background-color: rgba($secondaryColor, 0.8);
+          &:hover {
+            background-color: $secondaryColor;
+          }
+        }
+      }
     }
   }
 }
@@ -124,8 +164,19 @@
     }
   }
   .latest-project {
+    border: 0.2rem solid $secondaryColor;
     .connect--home {
       background-color: $secondaryColor;
+    }
+    &__project-view {
+      &__link-container {
+        &__link {
+          background-color: rgba($primaryColor, 0.8);
+          &:hover {
+            background-color: $primaryColor;
+          }
+        }
+      }
     }
   }
 }

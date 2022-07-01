@@ -19,17 +19,16 @@ const router = express.Router();
 //  My Middleware
 const appController = require(`./../Controllers/appController`);
 const messageController = require(`./../Controllers/messageController`);
-const blogRouter = require('./blogRoutes');
+const blogController = require(`./../Controllers/blogController`);
 
 ////////////////////////////////////////////
 //  Routing Middleware
 // router.route(`/`).get(appController.fetchData);
-router.route(`/`).get(appController.fetchData, appController.renderApp);
+router.route(`/`).get(blogController.renderBlog);
+router.route(`/posts/latest`).get(blogController.getLatestPost);
 router.route(`/about`).get(appController.introduceMe);
 router.route(`/projects`).get(appController.viewMyWork);
 router.route(`/contact`).get(appController.contactMe).post(messageController.validateEmail, messageController.emailMe);
-
-router.use(`/blog`, blogRouter);
 ////////////////////////////////////////////
 //  My Modules
 

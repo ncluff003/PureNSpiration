@@ -54,7 +54,13 @@
       &__link-item {
         &__link {
           &:before {
-            border-bottom: 0.4rem solid $colorOffWhite;
+            border-bottom: 0.4rem solid $colorDarkerGrey;
+          }
+
+          &:active {
+            &:before {
+              border-bottom-color: $tertiaryColor;
+            }
           }
         }
       }
@@ -72,7 +78,13 @@
       &__link-item {
         &__link {
           &:before {
-            border-bottom: 0.4rem solid $colorDarkerGrey;
+            border-bottom: 0.4rem solid $colorOffWhite;
+          }
+
+          &:active {
+            &:before {
+              border-bottom-color: $primaryColor;
+            }
           }
         }
       }

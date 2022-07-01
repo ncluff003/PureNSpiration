@@ -5,6 +5,9 @@
 // import { Project } from './projectCard.js';
 // import { emailMe } from './Email';
 // import { myCalendar } from './Calendar.js';
+import * as Utility from './Utility';
+import * as API from './API-Calls';
+import * as Blog from './Blog';
 
 ///////////////////////////////////////////////
 // APP CLASS
@@ -12,6 +15,7 @@
   class App {
     constructor() {
       this.watchToggle();
+      this._fetchLatestBlogPost();
     }
 
     watchToggle() {
@@ -19,21 +23,14 @@
         e.preventDefault();
         grid.classList.toggle('day');
         grid.classList.toggle('night');
-        if (sunIcon.classList.contains('closed')) {
-          sunIcon.classList.remove('closed');
-          sunIcon.classList.add('open');
-        } else {
-          sunIcon.classList.add('closed');
-          sunIcon.classList.remove('open');
-        }
-        if (moonIcon.classList.contains('closed')) {
-          moonIcon.classList.remove('closed');
-          moonIcon.classList.add('open');
-        } else {
-          moonIcon.classList.add('closed');
-          moonIcon.classList.remove('open');
-        }
+        sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
+        moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
       });
+    }
+
+    async _fetchLatestBlogPost() {
+      let post = await API.fetchLatestPost();
+      Blog.renderBlogPost(post);
     }
   }
   ///////////////////////////////////////////////

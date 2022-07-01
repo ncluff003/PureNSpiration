@@ -1,0 +1,36 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.blog-content-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  padding: 3rem;
+}
+
+.blog-content {
+  @include SizeAndPositioning(relative, max-content, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+}
+
+.blog-paragraph {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.blog-video {
+  @include SizingItem(relative, auto, 100%);
+  margin-bottom: 3rem;
+}
+
+.blog-image {
+  @include SizingItem(relative, auto, 100%);
+  margin-bottom: 3rem;
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+}
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+}
