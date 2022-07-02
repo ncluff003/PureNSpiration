@@ -78,6 +78,7 @@ exports.introduceMe = catchAsync(async (request, response) => {
 });
 
 exports.viewMyWork = catchAsync(async (request, response) => {
+  const data = pureData;
   response.status(200).render(`projects`, {
     title: `Pure 'N' Spiration | My Work`,
     data: {
@@ -90,6 +91,7 @@ exports.viewMyWork = catchAsync(async (request, response) => {
 });
 
 exports.getBlog = catchAsync(async (request, response) => {
+  const data = pureData;
   response.status(200).render(`blog`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {
@@ -102,6 +104,7 @@ exports.getBlog = catchAsync(async (request, response) => {
 });
 
 exports.getBlogPost = catchAsync(async (request, response) => {
+  const data = pureData;
   response.status(200).render(`blogPost`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {
@@ -114,6 +117,7 @@ exports.getBlogPost = catchAsync(async (request, response) => {
 });
 
 exports.viewResume = catchAsync(async (request, response) => {
+  const data = pureData;
   response.status(200).render(`resume`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {
@@ -126,6 +130,7 @@ exports.viewResume = catchAsync(async (request, response) => {
 });
 
 exports.contactMe = catchAsync(async (request, response) => {
+  const data = pureData;
   response.status(200).render(`contact`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {

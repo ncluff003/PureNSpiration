@@ -1,0 +1,63 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.connection-container {
+  @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, space-evenly, center, 230%, 0, 0);
+}
+
+.connect-navigation__pre-text {
+  @include SizingItem(relative, max-content, max-content);
+  margin-right: 2rem;
+}
+
+.connect--navigation {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  &:after {
+    @include SizingItem(absolute, 100%, 100%);
+    content: '';
+    left: 0;
+    transition: background-color 0.5s, width 0.5s;
+  }
+  &__link-list {
+    @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    &__link-item {
+      list-style: none;
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+      &__link {
+        &:hover {
+          transition: color 0.5s;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+  .navigation {
+    .connection-container {
+      .connect--navigation {
+        &:after {
+          background-color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+  .navigation {
+    .connection-container {
+      .connect--navigation {
+        &:after {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+}

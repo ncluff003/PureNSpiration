@@ -6,34 +6,10 @@
   border-radius: 2rem;
 }
 
-.blog-header {
-  @include SizeAndPositioning(relative, 30%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
-  .blog-date {
-    align-self: flex-start;
-    transform: translate(75%, 40%);
-    transition: color 0.5s;
-  }
-  .blog-title {
-    transition: color 0.5s;
-  }
-  .blog-post-title {
-    align-self: flex-end;
-    transform: translate(-50%, -5%);
-    transition: color 0.5s;
-  }
-}
-
-.blog-content-container {
-  @include SizeAndPositioning(relative, 70%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
-  padding: 3rem 3rem 5rem 3rem;
-  border-radius: 2rem;
-  overflow-y: auto;
-  transition: border 0.5s;
-}
-
 .blog-link-container {
   @include SizeAndPositioning(absolute, max-content, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
   border-top-left-radius: 2rem;
+  border-bottom-right-radius: 1.5rem;
   bottom: 0;
   right: 0;
   padding: 0 2rem;

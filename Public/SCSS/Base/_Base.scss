@@ -80,6 +80,38 @@ body {
   display: flex;
 }
 
+.full-width {
+  width: 100%;
+}
+
+.zero-width {
+  width: 0;
+}
+
+.pseudo-before-full-width {
+  &:before {
+    width: 100%;
+  }
+}
+
+.pseudo-before-zero-width {
+  &:before {
+    width: 0;
+  }
+}
+
+.pseudo-after-full-width {
+  &:after {
+    width: 100%;
+  }
+}
+
+.pseudo-after-zero-width {
+  &:after {
+    width: 0;
+  }
+}
+
 .day {
   background-color: $colorOffWhite;
   transition: background-color 0.5s;

@@ -4586,6 +4586,35 @@ var fetchLatestPost = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./Public/JS/About.js":
+/*!****************************!*\
+  !*** ./Public/JS/About.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "watchAbout": function() { return /* binding */ watchAbout; }
+/* harmony export */ });
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+var watchAbout = function watchAbout() {
+  console.log("Watching...");
+  var connectButton = document.querySelector('.navigation-connection-button');
+  var connectButtonIcon = connectButton.firstChild;
+  console.log(connectButtonIcon);
+  var connectNavigation = document.querySelector('.connect--navigation');
+  connectButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    connectButtonIcon.classList.contains('fa-angle-left') ? _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(connectButtonIcon, "fa-angle-left", "fa-angle-right") : _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(connectButtonIcon, "fa-angle-right", "fa-angle-left");
+    connectNavigation.classList.contains("pseudo-after-full-width") ? _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(connectNavigation, "pseudo-after-full-width", "pseudo-after-zero-width") : _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(connectNavigation, "pseudo-after-zero-width", "pseudo-after-full-width");
+  });
+};
+
+/***/ }),
+
 /***/ "./Public/JS/Blog.js":
 /*!***************************!*\
   !*** ./Public/JS/Blog.js ***!
@@ -20872,6 +20901,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
 /* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
 /* harmony import */ var _Blog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Blog */ "./Public/JS/Blog.js");
+/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./About */ "./Public/JS/About.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 
 
@@ -20886,6 +20916,7 @@ __webpack_require__.r(__webpack_exports__);
 // import { myCalendar } from './Calendar.js';
 
 
+
  ///////////////////////////////////////////////
 // APP CLASS
 
@@ -20898,6 +20929,8 @@ __webpack_require__.r(__webpack_exports__);
       this.watchToggle();
 
       this._fetchLatestBlogPost();
+
+      _About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{

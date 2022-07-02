@@ -1,6 +1,31 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
+.blog-header {
+  @include SizeAndPositioning(relative, 30%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  .blog-date {
+    align-self: flex-start;
+    transform: translate(60%, 40%);
+    transition: color 0.5s;
+  }
+  .blog-title {
+    transition: color 0.5s;
+  }
+  .blog-post-title {
+    align-self: flex-end;
+    transform: translate(-50%, -5%);
+    transition: color 0.5s;
+  }
+}
+
+.blog-content-container {
+  @include SizeAndPositioning(relative, 70%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  padding: 3rem 3rem 5rem 3rem;
+  border-radius: 2rem;
+  overflow-y: auto;
+  transition: border 0.5s;
+}
+
 .blog-content {
   @include SizeAndPositioning(relative, max-content, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
 }

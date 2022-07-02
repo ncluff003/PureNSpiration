@@ -27,6 +27,7 @@ const blogRouter = require('./blogRoutes');
 router.route(`/`).get(appController.fetchData, appController.renderApp);
 router.route(`/about`).get(appController.introduceMe);
 router.route(`/projects`).get(appController.viewMyWork);
+router.route(`/resume`).get(appController.viewResume);
 router.route(`/contact`).get(appController.contactMe).post(messageController.validateEmail, messageController.emailMe);
 
 router.use(`/blog`, blogRouter);

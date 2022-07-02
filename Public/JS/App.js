@@ -8,6 +8,7 @@
 import * as Utility from './Utility';
 import * as API from './API-Calls';
 import * as Blog from './Blog';
+import * as About from './About';
 
 ///////////////////////////////////////////////
 // APP CLASS
@@ -17,6 +18,7 @@ import * as Blog from './Blog';
       this.adjustLinkContainer();
       this.watchToggle();
       this._fetchLatestBlogPost();
+      About.watchAbout();
     }
 
     adjustLinkContainer() {

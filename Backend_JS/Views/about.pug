@@ -1,1 +1,24 @@
 extends base
+
+block connection-links
+  section.connection-container.r__connection-container
+    p.connect-navigation__pre-text.r__connect-navigation__pre-text Connect
+    button.button--circle__extra-small.r__button--circle__extra-small.navigation-connection-button.r__navigation-connection-button
+      i.fas.fa-angle-left.button--circle__extra-small__icon
+    section.connect--navigation.r__connect--navigation.pseudo-after-full-width
+      ul.connect--navigation__link-list.r__connect--navigation__link-list 
+        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
+          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://www.linkedin.com/in/ncluff003`)
+            i.fab.fa-linkedin
+        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
+          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://github.com/ncluff003`)
+            i.fab.fa-github-square
+        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
+          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://codepen.io/ncluff3`)
+            i.fab.fa-codepen
+        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
+          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://t.me/ncluff003`)  
+            i.fab.fa-telegram-plane
+
+block unique-content
+  p Hello World

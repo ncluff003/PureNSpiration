@@ -42,6 +42,29 @@ html {
   font-size: 3.5rem;
 }
 
+.connection-container {
+  .connect-navigation__pre-text {
+    @extend html;
+    font-size: 2.4rem;
+  }
+
+  .connect--navigation {
+    &__link-list {
+      &__link-item {
+        @extend html;
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+.button--circle {
+  &__extra-small {
+    @extend html;
+    font-size: 2.4rem;
+  }
+}
+
 .time-toggle {
   &__switch {
     &__icon {
@@ -191,6 +214,40 @@ html {
         }
       }
     }
+    .connection-container {
+      .connect-navigation__pre-text {
+        color: rgba($colorDarkerGrey, 0.8);
+      }
+      .button--circle {
+        &__extra-small {
+          color: rgba($colorDarkerGrey, 0.8);
+          &:hover {
+            color: $colorDarkerGrey;
+          }
+          &:active {
+            color: $colorOffWhite;
+          }
+        }
+      }
+      .connect--navigation {
+        &__link-list {
+          &__link-item {
+            &__link {
+              color: rgba($colorDarkerGrey, 0.8);
+              &:hover {
+                color: $colorDarkerGrey;
+              }
+              &:visited {
+                color: rgba($colorDarkerGrey, 0.8);
+              }
+              &:active {
+                color: $tertiaryColor;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .introduction-container {
     &__introduction {
@@ -307,6 +364,40 @@ html {
 
           &:active {
             color: $primaryColor;
+          }
+        }
+      }
+    }
+    .connection-container {
+      .connect-navigation__pre-text {
+        color: rgba($colorOffWhite, 0.8);
+      }
+      .button--circle {
+        &__extra-small {
+          color: rgba($colorOffWhite, 0.8);
+          &:hover {
+            color: $colorOffWhite;
+          }
+          &:active {
+            color: $colorDarkerGrey;
+          }
+        }
+      }
+      .connect--navigation {
+        &__link-list {
+          &__link-item {
+            &__link {
+              color: rgba($colorOffWhite, 0.8);
+              &:hover {
+                color: $colorOffWhite;
+              }
+              &:visited {
+                color: rgba($colorOffWhite, 0.8);
+              }
+              &:active {
+                color: $colorDarkerGrey;
+              }
+            }
           }
         }
       }

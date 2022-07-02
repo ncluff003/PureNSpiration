@@ -1,41 +1,62 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-////////////////////////////////////////////////
-//  Master Grid Container
-.master-grid {
-  .master-flex-container {
-    &__child-flex-container {
-      .cta-button {
-        @include SizeAndPositioning(relative, 20%, 35%, flex, center, center, -16.5rem, 1rem, 0);
-        border: 0.3rem solid rgba($secondaryColor, 0.75);
-        border-radius: 1.5rem;
-        align-self: flex-end;
-        transition: color 0.5s, background-color 0.5s, border 0.5s;
-        -moz-transform: translate(-15rem, 1rem);
-        &:hover {
-          background-color: $secondaryColor;
-          border: 0.3rem solid $secondaryColor;
+.navigation-connection-button {
+  margin-right: 2rem;
+}
+
+.button--circle {
+  &__extra-small {
+    @include SizeAndPositioning(relative, 4rem, 4rem, flex, row, nowrap, center, center, 0, 0, 0);
+    min-width: 4rem;
+    background-color: transparent;
+    border-radius: 5rem;
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+  .navigation {
+    .connection-container {
+      .button--circle {
+        &__extra-small {
+          background-color: rgba($primaryColorLighter, 0.8);
+          border: 0.2rem groove rgba($colorDarkerGrey, 0.8);
+          &:hover {
+            cursor: pointer;
+            background-color: $primaryColor;
+            border: 0.2rem groove $colorDarkerGrey;
+            transition: color 0.5s, background-color 0.5s, border 0.5s;
+          }
+          &:active {
+            border: 0.2rem inset $colorOffWhite;
+            background-color: $tertiaryColor;
+          }
         }
       }
     }
-    .about-me {
-      &-statement-slider {
-        .card-button {
-          &-left,
-          &-right {
-            @include SizeAndPositioning(relative, 20%, 10%, flex, center, center, 0, 0, 0);
-            border: 0.3rem outset rgba($secondaryColor, 0.75);
-            border-radius: 5rem;
-            background-color: transparent;
-            transition: color 0.5s, background-color 0.5s;
-            &:hover {
-              cursor: pointer;
-              background-color: $secondaryColor;
-            }
-            &:active {
-              border: 0.3rem inset rgba($secondaryColor, 0.75);
-            }
+  }
+}
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+  .navigation {
+    .connection-container {
+      .button--circle {
+        &__extra-small {
+          background-color: rgba($secondaryColorLight, 0.8);
+          border: 0.2rem groove rgba($colorOffWhite, 0.8);
+          &:hover {
+            cursor: pointer;
+            background-color: $secondaryColor;
+            border: 0.2rem groove $colorOffWhite;
+            transition: color 0.5s, background-color 0.5s, border 0.5s;
+          }
+          &:active {
+            border: 0.2rem inset $colorDarkerGrey;
+            background-color: $primaryColor;
           }
         }
       }
