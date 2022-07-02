@@ -61,6 +61,7 @@
 
 .latest-project {
   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  border-radius: 2rem;
   &__project-view {
     @include SizeAndPositioning(relative, 100%, 80%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
     &__header {
@@ -92,6 +93,8 @@
 .connect--home {
   @include SizeAndPositioning(relative, 100%, 20%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
   transition: background-color 0.5s;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
   &__title {
     transition: color 0.5s;
   }

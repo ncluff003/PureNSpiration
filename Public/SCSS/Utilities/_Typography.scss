@@ -135,6 +135,14 @@ html {
   text-indent: 4rem;
 }
 
+.blog-link-container {
+  &--cta-link {
+    font-family: Roboto Condensed, Purely Me, Verdana, san-serif;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+
 .icon-Lego {
   color: $colorOffWhite;
   font-size: 10rem;
@@ -200,6 +208,13 @@ html {
           &:hover {
             color: $colorOffWhite;
           }
+          &:visited {
+            color: rgba($colorOffWhite, 0.8);
+          }
+          &:active {
+            background-color: $tertiaryColor;
+            color: $colorOffWhite;
+          }
         }
       }
     }
@@ -251,6 +266,21 @@ html {
         }
       }
     }
+    .blog-link-container {
+      &--cta-link {
+        color: rgba($colorDarkerGrey, 0.8);
+        &:hover {
+          color: $colorDarkerGrey;
+        }
+
+        &:visited {
+          color: rgba($colorOffWhite, 0.8);
+        }
+        &:active {
+          color: $tertiaryColor;
+        }
+      }
+    }
   }
 }
 /////////////////////////////////
@@ -297,6 +327,13 @@ html {
           color: rgba($colorOffWhite, 0.8);
           &:hover {
             color: $colorOffWhite;
+          }
+          &:visited {
+            color: rgba($colorOffWhite, 0.8);
+          }
+          &:active {
+            background-color: $secondaryColor;
+            color: $colorDarkerGrey;
           }
         }
       }
@@ -347,6 +384,20 @@ html {
     .blog-content-container {
       .blog-content {
         .blog-paragraph {
+          color: $primaryColor;
+        }
+      }
+    }
+    .blog-link-container {
+      &--cta-link {
+        color: rgba($colorOffWhite, 0.8);
+        &:hover {
+          color: $colorOffWhite;
+        }
+        &:visited {
+          color: rgba($colorOffWhite, 0.8);
+        }
+        &:active {
           color: $primaryColor;
         }
       }

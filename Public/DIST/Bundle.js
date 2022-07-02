@@ -4692,6 +4692,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addClasses": function() { return /* binding */ addClasses; },
 /* harmony export */   "insertElement": function() { return /* binding */ insertElement; },
+/* harmony export */   "multiplyTwo": function() { return /* binding */ multiplyTwo; },
 /* harmony export */   "removeClasses": function() { return /* binding */ removeClasses; },
 /* harmony export */   "replaceClassName": function() { return /* binding */ replaceClassName; }
 /* harmony export */ });
@@ -4713,6 +4714,9 @@ var removeClasses = function removeClasses(element, classes) {
   classes.forEach(function (c) {
     element.classList.remove(c);
   });
+};
+var multiplyTwo = function multiplyTwo(numberOne, numberTwo) {
+  return numberOne * numberTwo;
 };
 
 /***/ }),
@@ -20868,6 +20872,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
 /* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
 /* harmony import */ var _Blog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Blog */ "./Public/JS/Blog.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 
 
 
@@ -20889,12 +20894,26 @@ __webpack_require__.r(__webpack_exports__);
     function App() {
       (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
 
+      this.adjustLinkContainer();
       this.watchToggle();
 
       this._fetchLatestBlogPost();
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
+      key: "adjustLinkContainer",
+      value: function adjustLinkContainer() {
+        var linkContainer = document.querySelector('.blog-link-container');
+
+        if (linkContainer) {
+          var width = linkContainer.getBoundingClientRect().width;
+          var height = linkContainer.getBoundingClientRect().height;
+          console.log(_Utility__WEBPACK_IMPORTED_MODULE_4__.multiplyTwo(5, 10));
+          linkContainer.style.width = "".concat(width + _Utility__WEBPACK_IMPORTED_MODULE_4__.multiplyTwo(10, 10), "px");
+          linkContainer.style.height = "".concat(height + _Utility__WEBPACK_IMPORTED_MODULE_4__.multiplyTwo(2, 10), "px");
+        }
+      }
+    }, {
       key: "watchToggle",
       value: function watchToggle() {
         timeToggle.addEventListener('click', function (e) {

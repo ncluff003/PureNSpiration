@@ -20,3 +20,7 @@ export const removeClasses = (element, classes) => {
     element.classList.remove(c);
   });
 };
+
+export const multiplyTwo = (numberOne, numberTwo) => {
+  return numberOne * numberTwo;
+};

@@ -3,6 +3,7 @@
 
 .latest-blog-post {
   @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+  border-radius: 2rem;
 }
 
 .blog-header {
@@ -24,17 +25,45 @@
 
 .blog-content-container {
   @include SizeAndPositioning(relative, 70%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  padding: 3rem 3rem 5rem 3rem;
   border-radius: 2rem;
   overflow-y: auto;
   transition: border 0.5s;
+}
+
+.blog-link-container {
+  @include SizeAndPositioning(absolute, max-content, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  border-top-left-radius: 2rem;
+  bottom: 0;
+  right: 0;
+  padding: 0 2rem;
+
+  &--cta-link {
+    @include SizeAndPositioning(relative, 60%, 50%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    border-radius: 5rem;
+    &:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+    &:hover {
+      cursor: pointer;
+      transition: background-color 0.5s, color 0.5s;
+    }
+  }
 }
 
 /////////////////////////////////
 // DAY SETTINGS
 .day {
   .latest-blog-post {
-    .blog-content-container {
-      border: 0.2rem groove rgba($secondaryColor, 0.5);
+    border: 0.2rem groove rgba($secondaryColor, 0.5);
+    .blog-link-container {
+      background-color: rgba($colorDarkerGrey, 0.2);
+      &--cta-link {
+        background-color: rgba($primaryColor, 0.8);
+        &:hover {
+          background-color: $primaryColor;
+        }
+      }
     }
   }
 }
@@ -43,8 +72,15 @@
 // NIGHT SETTINGS
 .night {
   .latest-blog-post {
-    .blog-content-container {
-      border: 0.2rem groove rgba($primaryColor, 0.5);
+    border: 0.2rem groove rgba($primaryColor, 0.5);
+    .blog-link-container {
+      background-color: rgba($colorOffWhite, 0.2);
+      &--cta-link {
+        background-color: rgba($secondaryColor, 0.8);
+        &:hover {
+          background-color: $secondaryColor;
+        }
+      }
     }
   }
 }

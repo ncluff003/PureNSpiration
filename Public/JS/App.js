@@ -14,8 +14,20 @@ import * as Blog from './Blog';
 (function () {
   class App {
     constructor() {
+      this.adjustLinkContainer();
       this.watchToggle();
       this._fetchLatestBlogPost();
+    }
+
+    adjustLinkContainer() {
+      const linkContainer = document.querySelector('.blog-link-container');
+      if (linkContainer) {
+        let width = linkContainer.getBoundingClientRect().width;
+        let height = linkContainer.getBoundingClientRect().height;
+        console.log(Utility.multiplyTwo(5, 10));
+        linkContainer.style.width = `${width + Utility.multiplyTwo(10, 10)}px`;
+        linkContainer.style.height = `${height + Utility.multiplyTwo(2, 10)}px`;
+      }
     }
 
     watchToggle() {
