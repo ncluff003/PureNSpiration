@@ -7,8 +7,9 @@
 // import { myCalendar } from './Calendar.js';
 import * as Utility from './Utility';
 import * as API from './API-Calls';
-import * as Blog from './Blog';
 import * as About from './About';
+import * as Blog from './Blog';
+import * as Project from './Project';
 
 ///////////////////////////////////////////////
 // APP CLASS
@@ -18,7 +19,9 @@ import * as About from './About';
       this.adjustLinkContainer();
       this.watchToggle();
       this._fetchLatestBlogPost();
+      this._fetchLatestProject();
       About.watchAbout();
+      // API.fetchSkills();
     }
 
     adjustLinkContainer() {
@@ -44,7 +47,13 @@ import * as About from './About';
 
     async _fetchLatestBlogPost() {
       let post = await API.fetchLatestPost();
+      console.log(post);
       Blog.renderBlogPost(post);
+    }
+
+    async _fetchLatestProject() {
+      let project = await API.fetchLatestProject();
+      Project.renderLatestProject(project);
     }
   }
   ///////////////////////////////////////////////

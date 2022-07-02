@@ -19,22 +19,21 @@ const router = express.Router();
 //  My Middleware
 const appController = require(`./../Controllers/appController`);
 const messageController = require(`./../Controllers/messageController`);
-const projectRouter = require('./projectRoutes');
-const blogRouter = require('./blogRoutes');
-const aboutRouter = require('./aboutRoutes');
-const contactRouter = require('./contactRoutes');
+const projectController = require(`./../Controllers/projectController`);
+const aboutController = require(`./../Controllers/aboutController`);
 
 ////////////////////////////////////////////
 //  Routing Middleware
 // router.route(`/`).get(appController.fetchData);
-router.route(`/`).get(appController.renderApp);
-
-router.use(`/about`, aboutRouter);
-router.use(`/projects`, projectRouter);
-router.use(`/blog`, blogRouter);
-router.use(`/contact`, contactRouter);
+router.route(`/`).get(aboutController.introduceMe);
+router.route(`/foundation`).get(aboutController.getFoundation);
+router.route(`/profileLinks`).get(aboutController.getProfileLinks);
+router.route(`/interests`).get(aboutController.getInterests);
+router.route(`/skills`).get(aboutController.getSkills);
+// router.route(`/latest`).get(projectController.getLatestProject);
+// router.route(`/about`).get(appController.introduceMe);
+// router.route(`/projects`).get(appController.viewMyWork);
 // router.route(`/contact`).get(appController.contactMe).post(messageController.validateEmail, messageController.emailMe);
-
 ////////////////////////////////////////////
 //  My Modules
 

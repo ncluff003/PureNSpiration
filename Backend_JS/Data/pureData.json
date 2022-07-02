@@ -4,6 +4,12 @@
   "developer": "Nathan Cluff",
   "photo": "/DIST/CSS/Images/MyPhoto.jpg",
   "resume": "resume",
+  "profileLinks": {
+    "LinkedIn": "https://www.linkedin.com/in/ncluff003",
+    "Githubb": "https://github.com/ncluff003",
+    "Codepen": "https://codepen.io/ncluff3",
+    "Telegram": "https://t.me/ncluff003"
+  },
   "headline": "Latter Day Saint  |  Husband  |  Father  |  Full-Stack Developer",
   "about": [
     {
@@ -78,17 +84,163 @@
           "altTitle": "Legos"
         }
       ]
+    },
+    {
+      "title": "Skills",
+      "chartLabel": "Skill Proficiency",
+      "skillProficiencies": [
+        "Novice",
+        "Hello World",
+        "Basic Syntax",
+        "To-Do List",
+        "Inefficient Functionality",
+        "Working Knowledge",
+        "Intermediate",
+        "Documentation Wizard",
+        "Savant",
+        "Sensei"
+      ],
+      "skills": [
+        {
+          "title": "HTML5",
+          "proficiency": 9,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "CSS3",
+          "proficiency": 9,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "SCSS",
+          "proficiency": 9,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Less",
+          "proficiency": 6,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "JavaScript",
+          "proficiency": 8,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Vue.js",
+          "proficiency": 6,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "React.js",
+          "proficiency": 4,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Node.js",
+          "proficiency": 8,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Express.js",
+          "proficiency": 8,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "MongoDB",
+          "proficiency": 8,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Git",
+          "proficiency": 7,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Github",
+          "proficiency": 7,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Webpack",
+          "proficiency": 7,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Parcel",
+          "proficiency": 6,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Postman",
+          "proficiency": 7,
+          "backgroundColor": "",
+          "borderColor": ""
+        },
+        {
+          "title": "Command Line",
+          "proficiency": 7,
+          "backgroundColor": "",
+          "borderColor": ""
+        }
+      ]
     }
   ],
   "projects": [
     {
-      "title": "Pure N Spiration / Example Project",
-      "coverPhoto": "",
-      "photoAltText": "",
-      "description": "",
-      "technologies": "",
+      "title": "Pure N Spiration",
+      "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
+      "photoAltText": "Pure N Spiration Cover Photo",
+      "description": "Nathan Cluff's Purely Inspired Portfolio Website",
+      "technologies": "HTML5, CSS3, SCSS, JavaScript, Vue.js, Node.js, Express.js, JSON",
       "link": "https://www.purenspiration.com",
-      "code": "https://github.com/ncluff003",
+      "code": "https://github.com/ncluff003/PureNSpiration",
+      "media": [
+        {
+          "type": "video or photo",
+          "altText": "",
+          "file": ""
+        }
+      ]
+    },
+    {
+      "title": "Hangman",
+      "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
+      "photoAltText": "Hangman Cover Photo",
+      "description": "The game of hangman.  Pick one letter at a time to see if you can guess a custom word or phrase.",
+      "technologies": "HTML5, CSS3, SCSS, JavaScript, Vue.js, Node.js, Express.js, JSON",
+      "link": "https://ncluff003.github.io/Hangman/",
+      "code": "https://github.com/ncluff003/Hangman",
+      "media": [
+        {
+          "type": "video or photo",
+          "altText": "",
+          "file": ""
+        }
+      ]
+    },
+    {
+      "title": "King Richard",
+      "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
+      "photoAltText": "King Richard Cover Photo",
+      "description": "A zero based budget made for everyone.",
+      "technologies": "HTML5, CSS3, SCSS, JavaScript, Node.js, Express.js, JSON",
+      "link": "https://www.purenspiration.com",
+      "code": "https://github.com/ncluff003/KingRichard-Budget",
       "media": [
         {
           "type": "video or photo",
@@ -107,6 +259,7 @@
       "limit": 10,
       "posts": [
         {
+          "id": 0,
           "date": "2022-06-30T00:36:22.586Z",
           "title": "Example Post",
           "keyWords": [],
@@ -146,5 +299,9 @@
         }
       ]
     }
+  },
+  "contact": {
+    "text": "Regardless of the message or feedback being positive, negative, or neutral, I hope you feel free to share it with me!  😄",
+    "shortText": "Please feel free to get in touch! 😄"
   }
 }

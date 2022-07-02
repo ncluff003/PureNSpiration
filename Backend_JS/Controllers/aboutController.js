@@ -1,6 +1,6 @@
 ////////////////////////////////////////////
 //  Core Modules
-const https = require('https');
+const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
@@ -21,7 +21,6 @@ const path = require('path');
 //  My Middleware
 const catchAsync = require(`./../Utilities/catchAsync`);
 const calendar = require(`./../Models/calendarModel`);
-const { request } = require('http');
 
 ////////////////////////////////////////////
 //  Routing Middleware
@@ -35,11 +34,67 @@ const { request } = require('http');
 // MAKE REQUEST FOR AND STORE DATA FROM JSON FILE.
 let pureData = JSON.parse(fs.readFileSync(`${__dirname}/../Data/pureData.json`, 'utf-8'));
 
-exports.renderApp = catchAsync(async (request, response) => {
-  // const data = request.data;
+exports.introduceMe = catchAsync(async (request, response) => {
   const data = pureData;
-  response.status(200).render(`home`, {
-    title: `Pure 'N' Spiration | Home`,
+  response.status(200).render(`about`, {
+    title: `Pure 'N' Spiration | About Me`,
+    data: {
+      data: data,
+      calendar: calendar,
+    },
+    errorMessage: '',
+    successMessage: '',
+  });
+});
+
+exports.getProfileLinks = catchAsync(async (request, response, next) => {
+  const data = pureData;
+  const profileLinks = data.profileLinks;
+  response.status(200).json({
+    status: `Success`,
+    data: {
+      profileLinks: profileLinks,
+    },
+  });
+});
+
+exports.getFoundation = catchAsync(async (request, response, next) => {
+  const foundation = pureData.about[0];
+  response.status(200).json({
+    status: `Success`,
+    data: {
+      foundation: foundation,
+    },
+  });
+});
+
+exports.getInterests = catchAsync(async (request, response, next) => {
+  const data = pureData;
+  const interests = data.about[1];
+  response.status(200).json({
+    status: `Success`,
+    data: {
+      interests: interests,
+    },
+  });
+});
+
+exports.getSkills = catchAsync(async (request, response, next) => {
+  const data = pureData;
+  const skills = data.about[2];
+  response.status(200).json({
+    status: `Success`,
+    data: {
+      skills: skills,
+    },
+  });
+});
+
+exports.renderBlog = catchAsync(async (request, response) => {
+  // const data = request.data;
+  console.log(data);
+  response.status(200).render(`blog`, {
+    title: `Pure 'N' Spiration | Web SlingN -- Blog`,
     data: {
       data: data,
       calendar: calendar,
@@ -52,19 +107,6 @@ exports.renderApp = catchAsync(async (request, response) => {
   //   status: `Success`,
   //   data: data,
   // });
-});
-
-exports.introduceMe = catchAsync(async (request, response) => {
-  const data = pureData;
-  response.status(200).render(`about`, {
-    title: `Pure 'N' Spiration | About Me`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
-  });
 });
 
 exports.viewMyWork = catchAsync(async (request, response) => {
@@ -80,8 +122,27 @@ exports.viewMyWork = catchAsync(async (request, response) => {
   });
 });
 
+exports.getLatestProject = catchAsync(async (request, response, next) => {
+  console.log(`Project Fetching...`);
+  let projects = pureData.projects;
+  let latest = projects[projects.length - 1];
+  console.log(latest);
+  response.status(200).json({
+    status: `Success`,
+    data: latest,
+  });
+});
+
+exports.getLatestPost = catchAsync(async (request, response, next) => {
+  let posts = pureData.blog.data.posts;
+  let latest = posts[posts.length - 1];
+  response.status(200).json({
+    status: `Success`,
+    data: latest,
+  });
+});
+
 exports.getBlog = catchAsync(async (request, response) => {
-  const data = pureData;
   response.status(200).render(`blog`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {
@@ -94,7 +155,6 @@ exports.getBlog = catchAsync(async (request, response) => {
 });
 
 exports.getBlogPost = catchAsync(async (request, response) => {
-  const data = pureData;
   response.status(200).render(`blogPost`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {
@@ -107,27 +167,18 @@ exports.getBlogPost = catchAsync(async (request, response) => {
 });
 
 exports.viewResume = catchAsync(async (request, response) => {
-  const url = `./../My_Resume_Full-Stack.pdf`;
-  const fileStream = fs.createWriteStream(`${url}`);
-  response.pipe(fileStream);
-  fileStream.on(`finish`, () => {
-    fileStream.close();
-    console.log(`File Downloaded.`);
+  response.status(200).render(`resume`, {
+    title: `Pure 'N' Spiration | Contact Me`,
+    data: {
+      data: data,
+      calendar: calendar,
+    },
+    errorMessage: '',
+    successMessage: '',
   });
-  // const data = pureData;
-  // response.status(200).render(`resume`, {
-  //   title: `Pure 'N' Spiration | Contact Me`,
-  //   data: {
-  //     data: data,
-  //     calendar: calendar,
-  //   },
-  //   errorMessage: '',
-  //   successMessage: '',
-  // });
 });
 
 exports.contactMe = catchAsync(async (request, response) => {
-  const data = pureData;
   response.status(200).render(`contact`, {
     title: `Pure 'N' Spiration | Contact Me`,
     data: {

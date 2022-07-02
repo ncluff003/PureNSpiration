@@ -24,8 +24,11 @@ const blogController = require(`./../Controllers/blogController`);
 ////////////////////////////////////////////
 //  Routing Middleware
 // router.route(`/`).get(appController.fetchData);
-router.route(`/`).get(blogController.renderBlog);
 router.route(`/posts/latest`).get(blogController.getLatestPost);
+
+router.route(`/`).get(blogController.renderBlog);
+router.route(`/posts`).get(blogController.getAllPosts);
+router.route(`/posts/:id`).get(blogController.getPost);
 router.route(`/about`).get(appController.introduceMe);
 router.route(`/projects`).get(appController.viewMyWork);
 router.route(`/contact`).get(appController.contactMe).post(messageController.validateEmail, messageController.emailMe);
