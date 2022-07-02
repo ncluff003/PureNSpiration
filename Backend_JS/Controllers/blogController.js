@@ -47,11 +47,6 @@ exports.renderBlog = catchAsync(async (request, response) => {
     errorMessage: '',
     successMessage: '',
   });
-
-  // response.status(200).json({
-  //   status: `Success`,
-  //   data: data,
-  // });
 });
 
 exports.getLatestPost = catchAsync(async (request, response, next) => {
@@ -85,78 +80,5 @@ exports.getPost = catchAsync(async (request, response, next) => {
   response.status(200).json({
     status: `Success`,
     data: post,
-  });
-});
-
-exports.introduceMe = catchAsync(async (request, response) => {
-  const data = pureData;
-  response.status(200).render(`about`, {
-    title: `Pure 'N' Spiration | About Me`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
-  });
-});
-
-exports.viewMyWork = catchAsync(async (request, response) => {
-  response.status(200).render(`projects`, {
-    title: `Pure 'N' Spiration | My Work`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
-  });
-});
-
-exports.getBlog = catchAsync(async (request, response) => {
-  response.status(200).render(`blog`, {
-    title: `Pure 'N' Spiration | Contact Me`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
-  });
-});
-
-exports.getBlogPost = catchAsync(async (request, response) => {
-  response.status(200).render(`blogPost`, {
-    title: `Pure 'N' Spiration | Contact Me`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
-  });
-});
-
-exports.viewResume = catchAsync(async (request, response) => {
-  response.status(200).render(`resume`, {
-    title: `Pure 'N' Spiration | Contact Me`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
-  });
-});
-
-exports.contactMe = catchAsync(async (request, response) => {
-  response.status(200).render(`contact`, {
-    title: `Pure 'N' Spiration | Contact Me`,
-    data: {
-      data: data,
-      calendar: calendar,
-    },
-    errorMessage: '',
-    successMessage: '',
   });
 });
