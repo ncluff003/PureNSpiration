@@ -8,9 +8,7 @@ export const fetchLatestPost = async () => {
   };
   try {
     const response = await axios(options);
-    console.log(response);
     let latest = response.data.data;
-    console.log(latest);
     return latest;
   } catch (error) {
     console.log(error);
@@ -25,7 +23,6 @@ export const fetchLatestProject = async () => {
   try {
     const response = await axios(options);
     let latest = response.data.data;
-    console.log(latest);
     return latest;
   } catch (error) {
     console.log(error);
@@ -49,12 +46,12 @@ export const fetchProfileLinks = async () => {
 export const fetchFoundation = async () => {
   const options = {
     method: `GET`,
-    url: `/about/foundation`,
+    url: `/about/foundation/data`,
   };
   try {
     const response = await axios(options);
-    console.log(response.data);
-    return latest;
+    let foundation = response.data;
+    return foundation;
   } catch (error) {
     console.log(error);
   }
@@ -63,7 +60,7 @@ export const fetchFoundation = async () => {
 export const fetchSkills = async () => {
   const options = {
     method: `GET`,
-    url: `/about/skills`,
+    url: `/about/skills/data`,
   };
   try {
     const response = await axios(options);

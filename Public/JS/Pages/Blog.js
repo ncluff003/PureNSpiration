@@ -1,14 +1,12 @@
 import { DateTime } from 'luxon';
-import * as Utility from './Utility';
+import * as Utility from './../Utility';
 
 const renderPhoto = (container, content) => {
   const image = document.createElement('img');
   Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
   let index = content.file.indexOf(`DIST/CSS`);
   image.src = content.file.slice(index);
-  console.log(image);
   Utility.insertElement(`beforeend`, container, image);
-  console.log(content, image);
 };
 const renderVideo = (container, content) => {
   const video = document.createElement('video');
@@ -33,7 +31,6 @@ const renderDate = (content) => {
   let day = new Date(postDate).getDate();
   let currentDate = DateTime.local(year, month, day);
   currentDate = currentDate.plus({ day: 1 });
-  // console.log(DateTime.local(), DateTime.local().offset, DateTime.local().plus({ day: DateTime.local().offset / -60 }));
 
   const dates = document.querySelectorAll('.blog-date');
   let date;
@@ -53,7 +50,6 @@ const renderTitle = (content) => {
 };
 
 export const renderBlogPost = (content) => {
-  console.log(content);
   let postContent = document.querySelector('.blog-content');
   renderTitle(content);
   renderDate(content);

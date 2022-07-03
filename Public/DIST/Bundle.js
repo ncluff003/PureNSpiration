@@ -4568,22 +4568,20 @@ var fetchLatestPost = /*#__PURE__*/function () {
 
           case 4:
             response = _context.sent;
-            console.log(response);
             _latest = response.data.data;
-            console.log(_latest);
             return _context.abrupt("return", _latest);
 
-          case 11:
-            _context.prev = 11;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](1);
             console.log(_context.t0);
 
-          case 14:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[1, 11]]);
+    }, _callee, null, [[1, 9]]);
   }));
 
   return function fetchLatestPost() {
@@ -4609,20 +4607,19 @@ var fetchLatestProject = /*#__PURE__*/function () {
           case 4:
             response = _context2.sent;
             _latest2 = response.data.data;
-            console.log(_latest2);
             return _context2.abrupt("return", _latest2);
 
-          case 10:
-            _context2.prev = 10;
+          case 9:
+            _context2.prev = 9;
             _context2.t0 = _context2["catch"](1);
             console.log(_context2.t0);
 
-          case 13:
+          case 12:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[1, 10]]);
+    }, _callee2, null, [[1, 9]]);
   }));
 
   return function fetchLatestProject() {
@@ -4668,14 +4665,14 @@ var fetchProfileLinks = /*#__PURE__*/function () {
 }();
 var fetchFoundation = /*#__PURE__*/function () {
   var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee4() {
-    var options, response;
+    var options, response, foundation;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             options = {
               method: "GET",
-              url: "/about/foundation"
+              url: "/about/foundation/data"
             };
             _context4.prev = 1;
             _context4.next = 4;
@@ -4683,8 +4680,8 @@ var fetchFoundation = /*#__PURE__*/function () {
 
           case 4:
             response = _context4.sent;
-            console.log(response.data);
-            return _context4.abrupt("return", latest);
+            foundation = response.data;
+            return _context4.abrupt("return", foundation);
 
           case 9:
             _context4.prev = 9;
@@ -4712,7 +4709,7 @@ var fetchSkills = /*#__PURE__*/function () {
           case 0:
             options = {
               method: "GET",
-              url: "/about/skills"
+              url: "/about/skills/data"
             };
             _context5.prev = 1;
             _context5.next = 4;
@@ -4744,10 +4741,76 @@ var fetchSkills = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./Public/JS/About.js":
-/*!****************************!*\
-  !*** ./Public/JS/About.js ***!
-  \****************************/
+/***/ "./Public/JS/Pages/About-Foundation.js":
+/*!*********************************************!*\
+  !*** ./Public/JS/Pages/About-Foundation.js ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "watchFoundation": function() { return /* binding */ watchFoundation; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../API-Calls */ "./Public/JS/API-Calls.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+
+
+
+var watchFoundation = /*#__PURE__*/function () {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
+    var foundation, foundationInformationTitle, foundationInformationSubTitle, foundationParagraphs, foundationLink;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            if (!(window.location.href === "http://127.0.0.1:3333/about/foundation")) {
+              _context.next = 14;
+              break;
+            }
+
+            _context.next = 3;
+            return _API_Calls__WEBPACK_IMPORTED_MODULE_3__.fetchFoundation();
+
+          case 3:
+            foundation = _context.sent;
+            foundationInformationTitle = document.querySelector('.foundation-container__information__header__title');
+            foundationInformationTitle.textContent = foundation.data.foundation.about[0].title;
+            foundationInformationSubTitle = document.querySelector('.foundation-container__information__header__sub-title');
+            foundationInformationSubTitle.textContent = foundation.data.foundation.headline;
+            foundationParagraphs = document.querySelectorAll('.foundation-container__information__paragraph-container__paragraph');
+            foundationParagraphs.forEach(function (paragraph, i) {
+              paragraph.textContent = foundation.data.foundation.about[0].foundationalRoles[i].text;
+            });
+            foundationLink = document.querySelector('.foundation-container__information__link');
+            foundationLink.href = foundation.data.foundation.profileLinks.Github;
+            foundationLink.target = "_blank";
+            console.log(foundation);
+
+          case 14:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function watchFoundation() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
+/***/ "./Public/JS/Pages/About.js":
+/*!**********************************!*\
+  !*** ./Public/JS/Pages/About.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4755,8 +4818,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "watchAbout": function() { return /* binding */ watchAbout; }
 /* harmony export */ });
-/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _About_Foundation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./About-Foundation */ "./Public/JS/Pages/About-Foundation.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
 
 var watchAbout = function watchAbout() {
   console.log("Watching...");
@@ -4764,7 +4829,6 @@ var watchAbout = function watchAbout() {
 
   if (connectButton) {
     var connectButtonIcon = connectButton.firstChild;
-    console.log(connectButtonIcon);
     var connectNavigation = document.querySelector('.connect--navigation');
     connectButton.addEventListener("click", function (e) {
       e.preventDefault();
@@ -4772,14 +4836,16 @@ var watchAbout = function watchAbout() {
       connectNavigation.classList.contains("pseudo-after-full-width") ? _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(connectNavigation, "pseudo-after-full-width", "pseudo-after-zero-width") : _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(connectNavigation, "pseudo-after-zero-width", "pseudo-after-full-width");
     });
   }
+
+  _About_Foundation__WEBPACK_IMPORTED_MODULE_1__.watchFoundation();
 };
 
 /***/ }),
 
-/***/ "./Public/JS/Blog.js":
-/*!***************************!*\
-  !*** ./Public/JS/Blog.js ***!
-  \***************************/
+/***/ "./Public/JS/Pages/Blog.js":
+/*!*********************************!*\
+  !*** ./Public/JS/Pages/Blog.js ***!
+  \*********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4788,8 +4854,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "renderBlogPost": function() { return /* binding */ renderBlogPost; }
 /* harmony export */ });
 /* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
-/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
-/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
 
 
 
@@ -4798,9 +4863,7 @@ var renderPhoto = function renderPhoto(container, content) {
   _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(image, ["blog-image", "r__blog-image"]);
   var index = content.file.indexOf("DIST/CSS");
   image.src = content.file.slice(index);
-  console.log(image);
   _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", container, image);
-  console.log(content, image);
 };
 
 var renderVideo = function renderVideo(container, content) {
@@ -4828,8 +4891,7 @@ var renderDate = function renderDate(content) {
   var currentDate = luxon__WEBPACK_IMPORTED_MODULE_1__.DateTime.local(year, month, day);
   currentDate = currentDate.plus({
     day: 1
-  }); // console.log(DateTime.local(), DateTime.local().offset, DateTime.local().plus({ day: DateTime.local().offset / -60 }));
-
+  });
   var dates = document.querySelectorAll('.blog-date');
   var date;
 
@@ -4850,7 +4912,6 @@ var renderTitle = function renderTitle(content) {
 };
 
 var renderBlogPost = function renderBlogPost(content) {
-  console.log(content);
   var postContent = document.querySelector('.blog-content');
   renderTitle(content);
   renderDate(content);
@@ -4871,42 +4932,58 @@ var renderBlogPost = function renderBlogPost(content) {
 
 /***/ }),
 
-/***/ "./Public/JS/Project.js":
-/*!******************************!*\
-  !*** ./Public/JS/Project.js ***!
-  \******************************/
+/***/ "./Public/JS/Pages/Project.js":
+/*!************************************!*\
+  !*** ./Public/JS/Pages/Project.js ***!
+  \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderLatestProject": function() { return /* binding */ renderLatestProject; }
+/* harmony export */   "renderLatestProject": function() { return /* binding */ renderLatestProject; },
+/* harmony export */   "watchProjectPage": function() { return /* binding */ watchProjectPage; }
 /* harmony export */ });
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 var renderLatestLinks = function renderLatestLinks(content) {
   var links = document.querySelectorAll('.latest-project__project-view__link-container__link');
   var codeLink = links[0];
   var siteLink = links[1];
-  codeLink.href = content.code;
-  siteLink.href = content.link;
+
+  if (codeLink) {
+    codeLink.href = content.code;
+  }
+
+  if (siteLink) {
+    siteLink.href = content.link;
+  }
 };
 
 var renderLatestCoverPhoto = function renderLatestCoverPhoto(photo, altText) {
   var coverPhoto = document.querySelector('.latest-project__project-view__cover-photo__image');
-  coverPhoto.src = photo;
-  coverPhoto.alt = altText;
+
+  if (coverPhoto) {
+    coverPhoto.src = photo;
+    coverPhoto.alt = altText;
+  }
 };
 
 var renderLatestProjectTitle = function renderLatestProjectTitle(project) {
   var projectTitle = document.querySelector('.latest-project__project-view__header__title');
-  projectTitle.textContent = project.title;
+
+  if (projectTitle) {
+    projectTitle.textContent = project.title;
+  }
 };
 
 var renderLatestProject = function renderLatestProject(content) {
   renderLatestProjectTitle(content);
   renderLatestCoverPhoto(content.coverPhoto, content.photoAltText);
   renderLatestLinks(content);
-  console.log(content);
+};
+var watchProjectPage = function watchProjectPage() {
+  if (window.location.href !== "http://127.0.0.1:3333/projects") return;
+  console.log("Watching Projects...");
 };
 
 /***/ }),
@@ -21101,9 +21178,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
 /* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
-/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./About */ "./Public/JS/About.js");
-/* harmony import */ var _Blog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Blog */ "./Public/JS/Blog.js");
-/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Project */ "./Public/JS/Project.js");
+/* harmony import */ var _Pages_About__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Pages/About */ "./Public/JS/Pages/About.js");
+/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
+/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 
 
@@ -21111,10 +21188,6 @@ __webpack_require__.r(__webpack_exports__);
 
 ////////////////////////////////////////////////
 // IMPORTED VALUES
-// import { Paragraph } from './Paragraph.js';
-// import { Skill } from './skillCard.js';
-// import { Project } from './projectCard.js';
-// import { emailMe } from './Email';
 // import { myCalendar } from './Calendar.js';
 
 
@@ -21135,7 +21208,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this._fetchLatestProject();
 
-      _About__WEBPACK_IMPORTED_MODULE_6__.watchAbout(); // API.fetchSkills();
+      _Pages_About__WEBPACK_IMPORTED_MODULE_6__.watchAbout();
+      _Pages_Project__WEBPACK_IMPORTED_MODULE_8__.watchProjectPage(); // API.fetchSkills();
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
@@ -21176,10 +21250,9 @@ __webpack_require__.r(__webpack_exports__);
 
                 case 2:
                   post = _context.sent;
-                  console.log(post);
-                  _Blog__WEBPACK_IMPORTED_MODULE_7__.renderBlogPost(post);
+                  _Pages_Blog__WEBPACK_IMPORTED_MODULE_7__.renderBlogPost(post);
 
-                case 5:
+                case 4:
                 case "end":
                   return _context.stop();
               }
@@ -21207,7 +21280,7 @@ __webpack_require__.r(__webpack_exports__);
 
                 case 2:
                   project = _context2.sent;
-                  _Project__WEBPACK_IMPORTED_MODULE_8__.renderLatestProject(project);
+                  _Pages_Project__WEBPACK_IMPORTED_MODULE_8__.renderLatestProject(project);
 
                 case 4:
                 case "end":

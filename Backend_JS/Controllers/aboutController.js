@@ -59,7 +59,7 @@ exports.getProfileLinks = catchAsync(async (request, response, next) => {
 });
 
 exports.getFoundation = catchAsync(async (request, response, next) => {
-  const foundation = pureData.about[0];
+  const foundation = pureData;
   response.status(200).json({
     status: `Success`,
     data: {
@@ -87,5 +87,44 @@ exports.getSkills = catchAsync(async (request, response, next) => {
     data: {
       skills: skills,
     },
+  });
+});
+
+exports.renderFoundation = catchAsync(async (request, response, next) => {
+  data = pureData;
+  response.status(200).render(`about-foundation`, {
+    title: `Pure 'N' Spiration | About Me -- Foundation`,
+    data: {
+      data: data,
+      calendar: calendar,
+    },
+    errorMessage: '',
+    successMessage: '',
+  });
+});
+
+exports.renderInterests = catchAsync(async (request, response, next) => {
+  data = pureData;
+  response.status(200).render(`about-interests`, {
+    title: `Pure 'N' Spiration | About Me -- Interests`,
+    data: {
+      data: data,
+      calendar: calendar,
+    },
+    errorMessage: '',
+    successMessage: '',
+  });
+});
+
+exports.renderSkills = catchAsync(async (request, response, next) => {
+  data = pureData;
+  response.status(200).render(`about-skills`, {
+    title: `Pure 'N' Spiration | About Me -- Skills`,
+    data: {
+      data: data,
+      calendar: calendar,
+    },
+    errorMessage: '',
+    successMessage: '',
   });
 });

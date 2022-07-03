@@ -22,11 +22,17 @@ const aboutController = require(`./../Controllers/aboutController`);
 ////////////////////////////////////////////
 //  Routing Middleware
 
+// RENDERING PAGES
 router.route(`/`).get(aboutController.aboutMe);
-router.route(`/foundation`).get(aboutController.getFoundation);
+router.route(`/foundation`).get(aboutController.renderFoundation);
+router.route(`/interests`).get(aboutController.renderInterests);
+router.route(`/skills`).get(aboutController.renderSkills);
+
+// GETTING DATA
 router.route(`/profileLinks`).get(aboutController.getProfileLinks);
-router.route(`/interests`).get(aboutController.getInterests);
-router.route(`/skills`).get(aboutController.getSkills);
+router.route(`/foundation/data`).get(aboutController.getFoundation);
+router.route(`/interests/data`).get(aboutController.getInterests);
+router.route(`/skills/data`).get(aboutController.getSkills);
 
 ////////////////////////////////////////////
 //  My Modules

@@ -64,6 +64,7 @@
   border-radius: 2rem;
   &__project-view {
     @include SizeAndPositioning(relative, 100%, 80%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+    padding: 1rem 0;
     &__header {
       @include SizeAndPositioning(relative, 15%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
     }

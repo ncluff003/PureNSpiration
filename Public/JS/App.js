@@ -1,15 +1,11 @@
 ////////////////////////////////////////////////
 // IMPORTED VALUES
-// import { Paragraph } from './Paragraph.js';
-// import { Skill } from './skillCard.js';
-// import { Project } from './projectCard.js';
-// import { emailMe } from './Email';
 // import { myCalendar } from './Calendar.js';
 import * as Utility from './Utility';
 import * as API from './API-Calls';
-import * as About from './About';
-import * as Blog from './Blog';
-import * as Project from './Project';
+import * as About from './Pages/About';
+import * as Blog from './Pages/Blog';
+import * as Project from './Pages/Project';
 
 ///////////////////////////////////////////////
 // APP CLASS
@@ -21,6 +17,7 @@ import * as Project from './Project';
       this._fetchLatestBlogPost();
       this._fetchLatestProject();
       About.watchAbout();
+      Project.watchProjectPage();
       // API.fetchSkills();
     }
 
@@ -47,7 +44,6 @@ import * as Project from './Project';
 
     async _fetchLatestBlogPost() {
       let post = await API.fetchLatestPost();
-      console.log(post);
       Blog.renderBlogPost(post);
     }
 

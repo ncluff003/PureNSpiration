@@ -1,0 +1,24 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.foundation-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  &__icon-container {
+    @include SizeAndPositioning(relative, 100%, 35%, flex, column, nowrap, center, center, 0, 0, 0);
+    &__icon {
+      margin-bottom: 2rem;
+    }
+  }
+  &__information {
+    @include SizeAndPositioning(relative, 100%, 65%, flex, column, nowrap, center, center, 0, 0, 0);
+    &__header {
+      @include SizeAndPositioning(relative, 20%, 100%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+      &__sub-title {
+        transform: translate(6rem, -1.75rem);
+      }
+    }
+    &__paragraph-container {
+      @include SizeAndPositioning(relative, calc(80% / 3), 100%, flex, row, nowrap, center, center, 0, 0, 0);
+    }
+  }
+}

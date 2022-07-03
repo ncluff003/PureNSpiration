@@ -166,6 +166,51 @@ html {
   }
 }
 
+/////////////////////////////////
+// About Page
+
+.about-link {
+  text-decoration: none;
+  &__icon {
+    font-size: 25rem;
+  }
+  &__text {
+    font-size: 4rem;
+  }
+}
+
+/////////////////////////////////
+// About Page -- Foundation
+
+.foundation-container {
+  &__icon-container {
+    &__icon {
+      font-size: 25rem;
+    }
+    &__title {
+      font-size: 5rem;
+    }
+  }
+  &__information {
+    @extend html;
+    &__header {
+      &__title {
+        font-size: 8rem;
+        font-weight: bold;
+      }
+      &__sub-title {
+        font-size: 2rem;
+      }
+    }
+    &__paragraph-container {
+      font-size: 2rem;
+      &__paragraph {
+        text-indent: 4rem;
+      }
+    }
+  }
+}
+
 .icon-Lego {
   color: $colorOffWhite;
   font-size: 10rem;
@@ -339,7 +384,52 @@ html {
       }
     }
   }
+
+  /////////////////////////////////
+  // About Page
+
+  .about-link {
+    color: rgba($primaryColorDark, 0.8);
+    &__icon {
+      font-size: 25rem;
+    }
+    &__text {
+      font-size: 4rem;
+    }
+    &:visited {
+      color: rgba($primaryColorDark, 0.8);
+    }
+    &:hover {
+      color: $primaryColor;
+    }
+    &:active {
+      color: $tertiaryColor;
+    }
+  }
+  /////////////////////////////////
+  // About Page -- Foundation
+
+  .foundation-container {
+    &__icon-container {
+      color: $primaryColor;
+      // &__icon {
+      //   font-size: 25rem;
+      // }
+      // &__title {
+      //   font-size: 5rem;
+      // }
+    }
+    &__information {
+      color: $colorDarkerGrey;
+      &__header {
+        &__title {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
 }
+
 /////////////////////////////////
 // NIGHT SETTINGS
 
@@ -491,6 +581,54 @@ html {
         &:active {
           color: $primaryColor;
         }
+      }
+    }
+  }
+
+  /////////////////////////////////
+  // About Page
+
+  .about-link {
+    color: rgba($secondaryColorDark, 0.8);
+    &__icon {
+      font-size: 25rem;
+    }
+    &__text {
+      font-size: 4rem;
+    }
+    &:visited {
+      color: rgba($secondaryColorDark, 0.8);
+    }
+    &:hover {
+      color: $secondaryColor;
+    }
+    &:active {
+      color: $primaryColor;
+    }
+  }
+
+  /////////////////////////////////
+  // About Page -- Foundation
+
+  .foundation-container {
+    &__icon-container {
+      color: $secondaryColor;
+      // &__icon {
+      //   font-size: 25rem;
+      // }
+      // &__title {
+      //   font-size: 5rem;
+      // }
+    }
+    &__information {
+      color: $secondaryColor;
+      &__header {
+        &__sub-title {
+          color: $primaryColor;
+        }
+      }
+      &__paragraph-container {
+        color: $secondaryColor;
       }
     }
   }
