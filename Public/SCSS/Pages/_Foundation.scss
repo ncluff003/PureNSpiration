@@ -20,5 +20,75 @@
     &__paragraph-container {
       @include SizeAndPositioning(relative, calc(80% / 3), 100%, flex, row, nowrap, center, center, 0, 0, 0);
     }
+    &__link {
+      @include SizeAndPositioning(relative, 10%, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+      border-radius: 5rem;
+      padding: 2rem;
+      align-self: flex-start;
+      &__text {
+        margin-right: 2rem;
+      }
+      &:hover {
+        cursor: pointer;
+        transition: background-color 0.5s, color 0.5s;
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+.day {
+  .foundation-container {
+    &__icon-container {
+      &__icon {
+      }
+    }
+    &__information {
+      &__header {
+        &__sub-title {
+        }
+      }
+      &__paragraph-container {
+      }
+      &__link {
+        background-color: rgba($primaryColor, 0.8);
+        &:hover {
+          background-color: $primaryColor;
+        }
+        &:active {
+          background-color: $tertiaryColor;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+  .foundation-container {
+    &__icon-container {
+      &__icon {
+      }
+    }
+    &__information {
+      &__header {
+        &__sub-title {
+        }
+      }
+      &__paragraph-container {
+      }
+      &__link {
+        background-color: rgba($secondaryColor, 0.8);
+
+        &:hover {
+          background-color: $secondaryColor;
+        }
+        &:active {
+          background-color: $primaryColor;
+        }
+      }
+    }
   }
 }

@@ -208,6 +208,10 @@ html {
         text-indent: 4rem;
       }
     }
+    &__link {
+      font-size: 2rem;
+      text-decoration: none;
+    }
   }
 }
 
@@ -426,6 +430,15 @@ html {
           color: $secondaryColor;
         }
       }
+      &__link {
+        color: rgba($colorDarkerGrey, 0.8);
+        &:hover {
+          color: $colorDarkerGrey;
+        }
+        &:active {
+          color: $colorOffWhite;
+        }
+      }
     }
   }
 }
@@ -629,6 +642,15 @@ html {
       }
       &__paragraph-container {
         color: $secondaryColor;
+      }
+      &__link {
+        color: rgba($colorOffWhite, 0.8);
+        &:hover {
+          color: $colorOffWhite;
+        }
+        &:active {
+          color: $colorDarkerGrey;
+        }
       }
     }
   }

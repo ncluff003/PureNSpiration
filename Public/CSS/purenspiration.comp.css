@@ -147,6 +147,10 @@ html, .foundation-container__information, .latest-project, .connect--home__link,
 .foundation-container__information__paragraph-container__paragraph {
   text-indent: 4rem;
 }
+.foundation-container__information__link {
+  font-size: 2rem;
+  text-decoration: none;
+}
 
 .icon-Lego {
   color: #fafafa;
@@ -297,6 +301,15 @@ html, .foundation-container__information, .latest-project, .connect--home__link,
 .day .foundation-container__information__header__title {
   color: #00b358;
 }
+.day .foundation-container__information__link {
+  color: rgba(51, 51, 51, 0.8);
+}
+.day .foundation-container__information__link:hover {
+  color: #333333;
+}
+.day .foundation-container__information__link:active {
+  color: #fafafa;
+}
 
 .night .navigation .logo-container .icon-PureNSpiration_Logo--night {
   color: #fafafa;
@@ -431,6 +444,15 @@ html, .foundation-container__information, .latest-project, .connect--home__link,
 }
 .night .foundation-container__information__paragraph-container {
   color: #00b358;
+}
+.night .foundation-container__information__link {
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .foundation-container__information__link:hover {
+  color: #fafafa;
+}
+.night .foundation-container__information__link:active {
+  color: #333333;
 }
 
 .gridDesktop {
@@ -32578,6 +32600,47 @@ html, .foundation-container__information, .latest-project, .connect--home__link,
   justify-content: center;
   align-items: center;
   transform: rotate(0) translate(0, 0);
+}
+.foundation-container__information__link {
+  position: relative;
+  height: 10%;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  border-radius: 5rem;
+  padding: 2rem;
+  align-self: flex-start;
+}
+.foundation-container__information__link__text {
+  margin-right: 2rem;
+}
+.foundation-container__information__link:hover {
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.day .foundation-container__information__link {
+  background-color: rgba(255, 215, 0, 0.8);
+}
+.day .foundation-container__information__link:hover {
+  background-color: #ffd700;
+}
+.day .foundation-container__information__link:active {
+  background-color: #ff3d00;
+}
+
+.night .foundation-container__information__link {
+  background-color: rgba(0, 179, 88, 0.8);
+}
+.night .foundation-container__information__link:hover {
+  background-color: #00b358;
+}
+.night .foundation-container__information__link:active {
+  background-color: #ffd700;
 }
 
 /*!
