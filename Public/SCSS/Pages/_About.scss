@@ -1,9 +1,6 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-/////////////////////////////////
-// DAY SETTINGS
-
 .about-link {
   @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
   transition: color 0.5s;
@@ -15,6 +12,16 @@
 
 .interests-contact-container {
   @include SizeAndPositioning(relative, 15%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+  &__contact-link {
+    @include SizeAndPositioning(relative, 4rem, max-content, flex, row, nowrap, space-evenly, center, 100%, 0, 0);
+    padding: 0 3rem;
+    border-radius: 5rem;
+    &__text {
+      margin-right: 2rem;
+      transition: color 0.5s;
+    }
+    transition: background-color 0.5s, color 0.5s;
+  }
 }
 
 .icon-container {
@@ -22,15 +29,52 @@
 }
 
 .interest-current {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, flex-start, center, 0, 0, 0);
+  // padding-left: 12%;
+  // padding-left: 39%;
+  // padding-left: 11%;
+  padding-left: 37%;
+  overflow-x: hidden;
+  &:before {
+    @include SizingItem(absolute, 100%, 100%);
+    content: '';
+    left: 0;
+    z-index: 1;
+    transition: background-image 0.125s;
+  }
 }
 
 .interest-icon-container {
-  @include SizeAndPositioning(relative, 12rem, 12rem, flex, column, nowrap, center, center, 0, 0, 0);
+  @include SizeAndPositioning(absolute, 12rem, 12rem, flex, column, nowrap, space-evenly, center, 0, -50%, 0);
+  top: 50%;
+  left: 45%;
+  transition: transform 1s;
+  &__icon {
+    margin-bottom: 2rem;
+  }
+  // min-width: 86.15rem;
+  // min-width: 28.716rem;
+  // margin: 0 2rem;
+}
+
+.previous-interest {
+  margin: 0 0 0 5rem;
+  transform: translate(-100%, 0);
+  min-width: 12rem;
+}
+.current-interest {
+  // margin: 0 30rem;
+  margin: 0 0rem;
+  transform: translate(0, -50%);
+}
+.next-interest {
+  min-width: 12rem;
+  transform: translate(100%, 0);
+  margin: 0 5rem 0 0;
 }
 
 .cylinder-left {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -2rem, 0, 0);
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -1.3rem, 0, 0);
   border-top: 1.65rem solid $primaryColorLighter;
   border-left: 1.65rem solid $primaryColorLighter;
   border-right: 1.65rem solid $primaryColorDark;
@@ -59,9 +103,9 @@
 }
 
 .cylinder-right {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -5rem, 0, 0);
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -1.5rem, 0, 0);
   background-color: transparent;
-  border: 1.65rem solid rgba($primaryColorLighter, 1);
+  border: 1.85rem solid rgba($primaryColorLighter, 1);
   border-radius: 45%;
   z-index: 0;
   // &__left {
@@ -79,7 +123,7 @@
 }
 
 .cylinder-wall {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -4rem, 0, 0);
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 2rem, 0, 0);
   &-image {
     @include SizingItem(relative, 100%, 100%);
   }
@@ -95,10 +139,80 @@
   // border-bottom-left-radius: 3rem;
 }
 
+/////////////////////////////////
+// DAY SETTINGS
+
 .day {
+  .interests-container {
+    .interests-grid {
+      .interest-current {
+        &:before {
+          background-image: linear-gradient(to right, $colorOffWhite 0%, $colorOffWhite 5%, transparent 50%, transparent 80%, $colorOffWhite 100%);
+        }
+      }
+      .cylinder-left {
+        border-top: 1.65rem solid $primaryColorLighter;
+        border-left: 1.65rem solid $primaryColorLighter;
+        border-right: 1.65rem solid $primaryColorDark;
+        border-bottom: 1.65rem solid $primaryColorLighter;
+        background-color: transparent;
+      }
+
+      .cylinder-wall {
+        @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 2rem, 0, 0);
+        &-image {
+          @include SizingItem(relative, 100%, 100%);
+        }
+      }
+
+      .cylinder-right {
+        background-color: transparent;
+        border: 1.85rem solid rgba($primaryColorLighter, 1);
+      }
+    }
+    .interests-contact-container {
+      &__contact-link {
+        background-color: rgba($primaryColor, 0.8);
+      }
+    }
+  }
 }
 /////////////////////////////////
 // NIGHT SETTINGS
 
 .night {
+  .interests-container {
+    .interests-grid {
+      .interest-current {
+        &:before {
+          background-image: linear-gradient(to right, $colorDarkerGrey 0%, transparent 50%, transparent 80%, $colorDarkerGrey 100%);
+        }
+      }
+
+      .cylinder-left {
+        border-top: 1.65rem solid $secondaryColorLighter;
+        border-left: 1.65rem solid $secondaryColorLighter;
+        border-right: 1.65rem solid $secondaryColorDark;
+        border-bottom: 1.65rem solid $secondaryColorLighter;
+        background-color: transparent;
+      }
+
+      .cylinder-wall {
+        @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 2rem, 0, 0);
+        &-image {
+          @include SizingItem(relative, 100%, 100%);
+        }
+      }
+
+      .cylinder-right {
+        background-color: transparent;
+        border: 1.85rem solid rgba($secondaryColorLighter, 1);
+      }
+    }
+    .interests-contact-container {
+      &__contact-link {
+        background-color: rgba($secondaryColor, 0.8);
+      }
+    }
+  }
 }

@@ -58,9 +58,14 @@ html {
   }
 }
 
-.button--circle {
-  &__extra-small {
-    @extend html;
+.button {
+  &--circle {
+    &__extra-small {
+      @extend html;
+      font-size: 2.4rem;
+    }
+  }
+  &--control-flow {
     font-size: 2.4rem;
   }
 }
@@ -226,13 +231,36 @@ html {
   }
 }
 
+/////////////////////////////////
+// About Page -- Interests
+
+.interests-container {
+  &__quote-container {
+    @extend html;
+    &__quote {
+      font-size: 2.4rem;
+      &__author {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
 .interest-icon-container {
   @extend html;
   &__icon {
     font-size: 10rem;
   }
   &__text {
-    font-size: 3rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+.interests-contact-container {
+  &__contact-link {
+    @extend html;
+    font-size: 2rem;
   }
 }
 
@@ -288,14 +316,16 @@ html {
       .connect-navigation__pre-text {
         color: rgba($colorDarkerGrey, 0.8);
       }
-      .button--circle {
-        &__extra-small {
-          color: rgba($colorDarkerGrey, 0.8);
-          &:hover {
-            color: $colorDarkerGrey;
-          }
-          &:active {
-            color: $colorOffWhite;
+      .button {
+        &--circle {
+          &__extra-small {
+            color: rgba($colorDarkerGrey, 0.8);
+            &:hover {
+              color: $colorDarkerGrey;
+            }
+            &:active {
+              color: $colorOffWhite;
+            }
           }
         }
       }
@@ -473,32 +503,62 @@ html {
     }
   }
   .interests-container {
+    &__quote-container {
+      color: $secondaryColor;
+    }
     .interests-grid {
+      .cylinder-wall {
+        .button {
+          &--control-flow {
+            color: rgba($colorDarkerGrey, 0.8);
+            &:hover {
+              color: $colorOffWhite;
+            }
+          }
+        }
+      }
       .interest-icon-container {
         &__icon {
-          color: $primaryColorDark;
+          color: $secondaryColor;
         }
         &__text {
-          color: $primaryColorDark;
+          color: $secondaryColor;
         }
         .icon-Lego {
-          color: $secondaryColorDark;
+          color: $secondaryColor;
           font-size: 10rem;
         }
 
         .icon-Halo {
-          color: $secondaryColorDark;
+          color: $secondaryColor;
           font-size: 10rem;
         }
 
         .icon-RocketLeague {
-          color: $secondaryColorDark;
+          color: $secondaryColor;
           font-size: 10rem;
         }
 
         .icon-EA_Sports {
-          color: $secondaryColorDark;
+          color: $secondaryColor;
           font-size: 10rem;
+        }
+      }
+    }
+    .interests-contact-container {
+      &__contact-link {
+        color: rgba($colorDarkerGrey, 0.8);
+        text-decoration: none;
+        &:visited {
+          color: rgba($colorDarkerGrey, 0.8);
+        }
+
+        &:hover {
+          color: $colorDarkerGrey;
+        }
+
+        &:active {
+          color: $tertiaryColor;
         }
       }
     }
@@ -537,14 +597,16 @@ html {
       .connect-navigation__pre-text {
         color: rgba($colorOffWhite, 0.8);
       }
-      .button--circle {
-        &__extra-small {
-          color: rgba($colorOffWhite, 0.8);
-          &:hover {
-            color: $colorOffWhite;
-          }
-          &:active {
-            color: $colorDarkerGrey;
+      .button {
+        &--circle {
+          &__extra-small {
+            color: rgba($colorOffWhite, 0.8);
+            &:hover {
+              color: $colorOffWhite;
+            }
+            &:active {
+              color: $colorDarkerGrey;
+            }
           }
         }
       }
@@ -726,32 +788,62 @@ html {
     }
   }
   .interests-container {
+    &__quote-container {
+      color: $primaryColor;
+    }
     .interests-grid {
+      .cylinder-wall {
+        .button {
+          &--control-flow {
+            color: rgba($colorDarkerGrey, 0.8);
+            &:hover {
+              color: $colorOffWhite;
+            }
+          }
+        }
+      }
       .interest-icon-container {
         &__icon {
-          color: $primaryColorDark;
+          color: $primaryColor;
         }
         &__text {
-          color: $primaryColorDark;
+          color: $primaryColor;
         }
         .icon-Lego {
-          color: $primaryColorDark;
+          color: $primaryColor;
           font-size: 10rem;
         }
 
         .icon-Halo {
-          color: $primaryColorDark;
+          color: $primaryColor;
           font-size: 10rem;
         }
 
         .icon-RocketLeague {
-          color: $primaryColorDark;
+          color: $primaryColor;
           font-size: 10rem;
         }
 
         .icon-EA_Sports {
-          color: $primaryColorDark;
+          color: $primaryColor;
           font-size: 10rem;
+        }
+      }
+    }
+    .interests-contact-container {
+      &__contact-link {
+        color: rgba($colorOffWhite, 0.8);
+        text-decoration: none;
+        &:visited {
+          color: rgba($colorOffWhite, 0.8);
+        }
+
+        &:hover {
+          color: $colorOffWhite;
+        }
+
+        &:active {
+          color: $primaryColor;
         }
       }
     }

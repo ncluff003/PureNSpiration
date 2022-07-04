@@ -4854,6 +4854,7 @@ var watchFoundation = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "watchInterestPipe": function() { return /* binding */ watchInterestPipe; },
 /* harmony export */   "watchInterests": function() { return /* binding */ watchInterests; }
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -4867,38 +4868,68 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var buildInterests = function buildInterests(interest) {
-  var container = document.querySelector('.interest-current');
-  console.log(interest); // svg.icon(class=`icon-PureNSpiration_Logo--night`)
-  // use(xlink:href=`/DIST/CSS/symbol-defs.svg#icon-PureNSpiration_Logo--night`)
+var flowLeft = function flowLeft(interests, index) {
+  interests.forEach(function (interest, i) {
+    interest.style.transform = "translate(".concat(i * 250 + index * 250, "%, ").concat(-50, "%)");
+  });
+  console.log(index);
+};
 
-  if (interest.vendor === "icomoon") {
-    var SVG = document.createElement('svg');
-    SVG.classList.add("icon");
-    SVG.classList.add("".concat(interest.icon));
-    var USE = document.createElement('use');
-    USE.setAttribute("xlink:href", "/DIST/CSS/symbol-defs.svg#".concat(interest.icon));
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", SVG, USE);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, SVG);
-  }
+var flowRight = function flowRight(interests, index) {
+  interests.forEach(function (interest, i) {
+    interest.style.transform = "translate(".concat(i * 250 + index * 250, "%, ").concat(-50, "%)");
+  });
+  console.log(index);
+};
 
-  if (interest.vendor === "fontAwesome") {
-    var i = document.createElement('i');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(i, ["fas", "fa-".concat(interest.icon), "interest", "r__interest"]);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, i);
-    console.log(i);
-  }
+var watchFlowButtons = function watchFlowButtons(left, right, interests, index) {
+  left.addEventListener('click', function (e) {
+    e.preventDefault();
+    index--;
+    if (index * -1 === interests.length) index = interests.length * -1 + 1;
+    flowLeft(interests, index);
+  });
+  right.addEventListener('click', function (e) {
+    e.preventDefault();
+    index++;
+    if (index >= 0) index = 0;
+    flowRight(interests, index);
+  });
+};
+
+var setupInterestSlider = function setupInterestSlider(interests) {
+  interests.forEach(function (interest, i) {
+    interest.style.transform = "translate(".concat(i * 250, "%, ").concat(-50, "%)");
+  });
+};
+
+var watchInterestPipe = function watchInterestPipe() {
+  var testContent = document.querySelector('.grid');
+  var isNight = false;
+  testContent.classList.contains('night') ? isNight = true : isNight = false;
+  console.log(isNight);
+  var cylinderImage = document.querySelector('.cylinder-wall-image');
+  isNight === true ? cylinderImage.src = "/DIST/CSS/Images/Cut-Out-Cylinder3.svg" : cylinderImage.src = "/DIST/CSS/Images/Cut-Out-Cylinder2.svg";
+};
+
+var checkTimeOfDayForInterests = function checkTimeOfDayForInterests() {
+  var testContent = document.querySelector('.grid');
+  var isNight = false;
+  testContent.classList.contains('night') ? isNight = true : isNight = false;
+  console.log(isNight);
+  var cylinderImage = document.querySelector('.cylinder-wall-image');
+  isNight === true ? cylinderImage.src = "/DIST/CSS/Images/Cut-Out-Cylinder3.svg" : cylinderImage.src = "/DIST/CSS/Images/Cut-Out-Cylinder2.svg";
 };
 
 var watchInterests = /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
-    var myInterests, iconPageTitle, interestsQuotes, interests;
+    var myInterests, iconPageTitle, interestsQuote, interestsQuoteAuthor, interests, flowLeftButton, flowRightButton, interestIndex;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             if (!(window.location.href === "http://127.0.0.1:3333/about/interests")) {
-              _context.next = 12;
+              _context.next = 19;
               break;
             }
 
@@ -4909,16 +4940,21 @@ var watchInterests = /*#__PURE__*/function () {
           case 4:
             myInterests = _context.sent;
             console.log(myInterests);
+            checkTimeOfDayForInterests();
             iconPageTitle = document.querySelector('.icon-container__text');
             iconPageTitle.textContent = myInterests.data.interests.title;
-            interestsQuotes = document.querySelectorAll('.interests-container__quote-container__quote');
-            interestsQuotes[0].textContent = myInterests.data.interests.interestsText.text;
-            interestsQuotes[1].textContent = myInterests.data.interests.interestsText.author;
-            interests = myInterests.data.interests.interests; // interests.forEach((interest) => {
-            //   buildInterests(interest);
-            // });
+            interestsQuote = document.querySelector('.interests-container__quote-container__quote');
+            interestsQuoteAuthor = document.querySelector('.interests-container__quote-container__quote__author');
+            interestsQuote.textContent = myInterests.data.interests.interestsText.text;
+            interestsQuoteAuthor.textContent = myInterests.data.interests.interestsText.author;
+            interests = document.querySelectorAll('.interest-icon-container');
+            flowLeftButton = document.querySelector('.button-flow-left');
+            flowRightButton = document.querySelector('.button-flow-right');
+            interestIndex = 0;
+            setupInterestSlider(interests);
+            watchFlowButtons(flowLeftButton, flowRightButton, interests, interestIndex);
 
-          case 12:
+          case 19:
           case "end":
             return _context.stop();
         }
@@ -21308,8 +21344,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
 /* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
 /* harmony import */ var _Pages_About__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Pages/About */ "./Public/JS/Pages/About.js");
-/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
-/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
+/* harmony import */ var _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/About-Interests */ "./Public/JS/Pages/About-Interests.js");
+/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
+/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 
 
@@ -21318,6 +21355,7 @@ __webpack_require__.r(__webpack_exports__);
 ////////////////////////////////////////////////
 // IMPORTED VALUES
 // import { myCalendar } from './Calendar.js';
+
 
 
 
@@ -21338,7 +21376,7 @@ __webpack_require__.r(__webpack_exports__);
       this._fetchLatestProject();
 
       _Pages_About__WEBPACK_IMPORTED_MODULE_6__.watchAbout();
-      _Pages_Project__WEBPACK_IMPORTED_MODULE_8__.watchProjectPage(); // API.fetchSkills();
+      _Pages_Project__WEBPACK_IMPORTED_MODULE_9__.watchProjectPage(); // API.fetchSkills();
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
@@ -21363,6 +21401,10 @@ __webpack_require__.r(__webpack_exports__);
           grid.classList.toggle('night');
           sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_4__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_4__.replaceClassName(sunIcon, "open", "closed");
           moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_4__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_4__.replaceClassName(moonIcon, "open", "closed");
+
+          if (window.location.href === "http://127.0.0.1:3333/about/interests") {
+            _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_7__.watchInterestPipe();
+          }
         });
       }
     }, {
@@ -21379,7 +21421,7 @@ __webpack_require__.r(__webpack_exports__);
 
                 case 2:
                   post = _context.sent;
-                  _Pages_Blog__WEBPACK_IMPORTED_MODULE_7__.renderBlogPost(post);
+                  _Pages_Blog__WEBPACK_IMPORTED_MODULE_8__.renderBlogPost(post);
 
                 case 4:
                 case "end":
@@ -21409,7 +21451,7 @@ __webpack_require__.r(__webpack_exports__);
 
                 case 2:
                   project = _context2.sent;
-                  _Pages_Project__WEBPACK_IMPORTED_MODULE_8__.renderLatestProject(project);
+                  _Pages_Project__WEBPACK_IMPORTED_MODULE_9__.renderLatestProject(project);
 
                 case 4:
                 case "end":

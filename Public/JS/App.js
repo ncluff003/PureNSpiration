@@ -4,6 +4,7 @@
 import * as Utility from './Utility';
 import * as API from './API-Calls';
 import * as About from './Pages/About';
+import * as Interests from './Pages/About-Interests';
 import * as Blog from './Pages/Blog';
 import * as Project from './Pages/Project';
 
@@ -39,6 +40,9 @@ import * as Project from './Pages/Project';
         grid.classList.toggle('night');
         sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
         moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
+        if (window.location.href === `http://127.0.0.1:3333/about/interests`) {
+          Interests.watchInterestPipe();
+        }
       });
     }
 

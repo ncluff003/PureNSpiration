@@ -29,13 +29,13 @@
     {
       "title": "Interests",
       "interestsText": {
-        "text": "“If you want to discover the true character of a person, you have only to observe what they are passionate about.",
-        "author": "Shannon L. Alder"
+        "text": "If you want to discover the true character of a person, you have only to observe what they are passionate about.",
+        "author": "~ Shannon L. Alder"
       },
       "interests": [
         {
           "vendor": "fontAwesome",
-          "icon": "image-polaroid",
+          "icon": "photo-film",
           "title": "Graphic Design",
           "altTitle": "Graphic Design"
         },
@@ -77,7 +77,7 @@
         },
         {
           "vendor": "fontAwesome",
-          "icon": "hat-chef",
+          "icon": "kitchen-set",
           "title": "Cooking",
           "altTitle": "Cooking"
         },

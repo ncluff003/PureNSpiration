@@ -5,12 +5,33 @@
   margin-right: 2rem;
 }
 
-.button--circle {
-  &__extra-small {
-    @include SizeAndPositioning(relative, 4rem, 4rem, flex, row, nowrap, center, center, 0, 0, 0);
-    min-width: 4rem;
-    background-color: transparent;
+.button {
+  &--circle {
+    &__extra-small {
+      @include SizeAndPositioning(relative, 4rem, 4rem, flex, row, nowrap, center, center, 0, 0, 0);
+      min-width: 4rem;
+      background-color: transparent;
+      border-radius: 5rem;
+    }
+  }
+
+  &--control-flow {
+    @include SizeAndPositioning(absolute, 5rem, 5rem, flex, row, nowrap, center, center, 0, 0, 0);
+    min-width: 5rem;
     border-radius: 5rem;
+
+    &:hover {
+      cursor: pointer;
+      transition: background-color 0.5s, color 0.5s, border 0.5s;
+    }
+  }
+
+  &-flow-left {
+    transform: translate(-19rem, 0);
+  }
+
+  &-flow-right {
+    transform: translate(23rem, 0);
   }
 }
 
@@ -20,19 +41,43 @@
 .day {
   .navigation {
     .connection-container {
-      .button--circle {
-        &__extra-small {
-          background-color: rgba($primaryColorLighter, 0.8);
-          border: 0.2rem groove rgba($colorDarkerGrey, 0.8);
-          &:hover {
-            cursor: pointer;
-            background-color: $primaryColor;
-            border: 0.2rem groove $colorDarkerGrey;
-            transition: color 0.5s, background-color 0.5s, border 0.5s;
+      .button {
+        &--circle {
+          &__extra-small {
+            background-color: rgba($primaryColorLighter, 0.8);
+            border: 0.2rem groove rgba($colorDarkerGrey, 0.8);
+            &:hover {
+              cursor: pointer;
+              background-color: $primaryColor;
+              border: 0.2rem groove $colorDarkerGrey;
+              transition: color 0.5s, background-color 0.5s, border 0.5s;
+            }
+            &:active {
+              border: 0.2rem inset $colorOffWhite;
+              background-color: $tertiaryColor;
+            }
           }
-          &:active {
-            border: 0.2rem inset $colorOffWhite;
-            background-color: $tertiaryColor;
+        }
+      }
+    }
+  }
+  .interests-container {
+    .interests-grid {
+      .cylinder-wall {
+        .button {
+          &--control-flow {
+            background-color: rgba($secondaryColorDark, 0.8);
+            border: 0.2rem outset rgba($secondaryColorDarker, 0.8);
+
+            &:hover {
+              background-color: $secondaryColor;
+              border: 0.2rem outset $secondaryColorLighter;
+            }
+
+            &:active {
+              background-color: $tertiaryColor;
+              border: 0.2rem inset $tertiaryColorDarker;
+            }
           }
         }
       }
@@ -44,19 +89,43 @@
 .night {
   .navigation {
     .connection-container {
-      .button--circle {
-        &__extra-small {
-          background-color: rgba($secondaryColorLight, 0.8);
-          border: 0.2rem groove rgba($colorOffWhite, 0.8);
-          &:hover {
-            cursor: pointer;
-            background-color: $secondaryColor;
-            border: 0.2rem groove $colorOffWhite;
-            transition: color 0.5s, background-color 0.5s, border 0.5s;
+      .button {
+        &--circle {
+          &__extra-small {
+            background-color: rgba($secondaryColorLight, 0.8);
+            border: 0.2rem groove rgba($colorOffWhite, 0.8);
+            &:hover {
+              cursor: pointer;
+              background-color: $secondaryColor;
+              border: 0.2rem groove $colorOffWhite;
+              transition: color 0.5s, background-color 0.5s, border 0.5s;
+            }
+            &:active {
+              border: 0.2rem inset $colorDarkerGrey;
+              background-color: $primaryColor;
+            }
           }
-          &:active {
-            border: 0.2rem inset $colorDarkerGrey;
-            background-color: $primaryColor;
+        }
+      }
+    }
+  }
+  .interests-container {
+    .interests-grid {
+      .cylinder-wall {
+        .button {
+          &--control-flow {
+            background-color: rgba($primaryColorDark, 0.8);
+            border: 0.2rem outset rgba($primaryColorDarker, 0.8);
+
+            &:hover {
+              background-color: $primaryColor;
+              border: 0.2rem outset $primaryColorLighter;
+            }
+
+            &:active {
+              background-color: $primaryColor;
+              border: 0.2rem inset $primaryColorDarker;
+            }
           }
         }
       }
