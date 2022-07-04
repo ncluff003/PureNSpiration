@@ -47,11 +47,15 @@ block unique-content
             - let vendor = interest.vendor;
             - let fontAwesomeBoolean = false;
             - if (vendor === `fontAwesome`) fontAwesomeBoolean = !fontAwesomeBoolean
+            - console.log(fontAwesomeBoolean)
             if !fontAwesomeBoolean
-              svg.icon(class=`${interest.icon}`)
-                use(xlink:href=`/DIST/CSS/symbol-defs.svg#${interest.icon}`)
+              section.interest-icon-container.r__interest-icon-container
+                svg.icon(class=`${interest.icon}`)
+                  use(xlink:href=`/DIST/CSS/symbol-defs.svg#${interest.icon}`)
             else 
-              i(class=`fas fa-${interest.icon}`)
+              - console.log(`fa-${interest.icon}`)
+              section.interest-icon-container.r__interest-icon-container
+                i(class=`fas fa-${interest.icon} interest-icon-container__icon r__interest-icon-container__icon`)
     section.interests-contact-container.r__interests-contact-container
       a.interests-contact-container__contact-link.r__interests-contact-container__contact-link(href="/contact")
         p.interests-contact-container__contact-link__text.r__interests-contact-container__contact-link__text Get In Touch 

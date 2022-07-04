@@ -226,6 +226,16 @@ html {
   }
 }
 
+.interest-icon-container {
+  @extend html;
+  &__icon {
+    font-size: 10rem;
+  }
+  &__text {
+    font-size: 3rem;
+  }
+}
+
 .icon-Lego {
   color: $colorOffWhite;
   font-size: 10rem;
@@ -462,6 +472,37 @@ html {
       color: $primaryColor;
     }
   }
+  .interests-container {
+    .interests-grid {
+      .interest-icon-container {
+        &__icon {
+          color: $primaryColorDark;
+        }
+        &__text {
+          color: $primaryColorDark;
+        }
+        .icon-Lego {
+          color: $secondaryColorDark;
+          font-size: 10rem;
+        }
+
+        .icon-Halo {
+          color: $secondaryColorDark;
+          font-size: 10rem;
+        }
+
+        .icon-RocketLeague {
+          color: $secondaryColorDark;
+          font-size: 10rem;
+        }
+
+        .icon-EA_Sports {
+          color: $secondaryColorDark;
+          font-size: 10rem;
+        }
+      }
+    }
+  }
 }
 
 /////////////////////////////////
@@ -682,6 +723,37 @@ html {
     }
     &__text {
       color: $secondaryColor;
+    }
+  }
+  .interests-container {
+    .interests-grid {
+      .interest-icon-container {
+        &__icon {
+          color: $primaryColorDark;
+        }
+        &__text {
+          color: $primaryColorDark;
+        }
+        .icon-Lego {
+          color: $primaryColorDark;
+          font-size: 10rem;
+        }
+
+        .icon-Halo {
+          color: $primaryColorDark;
+          font-size: 10rem;
+        }
+
+        .icon-RocketLeague {
+          color: $primaryColorDark;
+          font-size: 10rem;
+        }
+
+        .icon-EA_Sports {
+          color: $primaryColorDark;
+          font-size: 10rem;
+        }
+      }
     }
   }
 }

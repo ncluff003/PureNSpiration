@@ -25,6 +25,10 @@
   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
 }
 
+.interest-icon-container {
+  @include SizeAndPositioning(relative, 12rem, 12rem, flex, column, nowrap, center, center, 0, 0, 0);
+}
+
 .cylinder-left {
   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -2rem, 0, 0);
   border-top: 1.65rem solid $primaryColorLighter;
