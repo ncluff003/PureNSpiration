@@ -99,6 +99,7 @@
       "title": "Skills",
       "chartLabel": "Skill Proficiency",
       "skillProficiencies": [
+        "NeoPhyte",
         "Novice",
         "Hello World",
         "Basic Syntax",
@@ -113,99 +114,99 @@
       "skills": [
         {
           "title": "HTML5",
-          "proficiency": 9,
-          "backgroundColor": "",
-          "borderColor": ""
+          "proficiency": 10,
+          "backgroundColor": "rgba(14,1,232, .2)",
+          "borderColor": "rgba(14,1,232, 1)"
         },
         {
           "title": "CSS3",
-          "proficiency": 9,
-          "backgroundColor": "",
-          "borderColor": ""
+          "proficiency": 10,
+          "backgroundColor": "rgba(138,4,166,.2)",
+          "borderColor": "rgba(138,4,166,1)"
         },
         {
           "title": "SCSS",
-          "proficiency": 9,
-          "backgroundColor": "",
-          "borderColor": ""
+          "proficiency": 10,
+          "backgroundColor": "rgba(0,151,151, .2)",
+          "borderColor": "rgba(0,151,151, 1)"
         },
         {
           "title": "Less",
           "proficiency": 6,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(255,61,0, .2)",
+          "borderColor": "rgba(255,61,0, 1)"
         },
         {
           "title": "JavaScript",
           "proficiency": 8,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(255, 215, 0, 0.2)",
+          "borderColor": "rgba(255, 215, 0, 1)"
         },
         {
           "title": "Vue.js",
           "proficiency": 6,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(0,179,88, .2)",
+          "borderColor": "rgba(0,179,88, 1)"
         },
         {
           "title": "React.js",
           "proficiency": 4,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(62,19,175, .2)",
+          "borderColor": "rgba(62,19,175,1)"
         },
         {
           "title": "Node.js",
           "proficiency": 8,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(0,71,171, .2)",
+          "borderColor": "rgba(0,71,171, 1)"
         },
         {
           "title": "Express.js",
           "proficiency": 8,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(255,255,56, .2)",
+          "borderColor": "rgba(255,255,56, 1)"
         },
         {
           "title": "MongoDB",
           "proficiency": 8,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(101,67,33, .2)",
+          "borderColor": "rgba(101,67,33,1)"
         },
         {
           "title": "Git",
           "proficiency": 7,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(252,146,0,.2)",
+          "borderColor": "rgba(252,146,0,1)"
         },
         {
           "title": "Github",
           "proficiency": 7,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(252,6,0,.2)",
+          "borderColor": "rgba(252,6,0,1)"
         },
         {
           "title": "Webpack",
           "proficiency": 7,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(30,126,10,.2)",
+          "borderColor": "rgba(30,126,10,1)"
         },
         {
           "title": "Parcel",
           "proficiency": 6,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgb(5,208,255,.2)",
+          "borderColor": "rgb(5,208,255,1)"
         },
         {
           "title": "Postman",
           "proficiency": 7,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgba(125,10,66,.2)",
+          "borderColor": "rgba(125,10,66,1)"
         },
         {
           "title": "Command Line",
           "proficiency": 7,
-          "backgroundColor": "",
-          "borderColor": ""
+          "backgroundColor": "rgb(21,29,104,.2)",
+          "borderColor": "rgb(21,29,104,1)"
         }
       ]
     }

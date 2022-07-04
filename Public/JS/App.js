@@ -5,6 +5,7 @@ import * as Utility from './Utility';
 import * as API from './API-Calls';
 import * as About from './Pages/About';
 import * as Interests from './Pages/About-Interests';
+import * as Skills from './Pages/About-Skills';
 import * as Blog from './Pages/Blog';
 import * as Project from './Pages/Project';
 
@@ -34,7 +35,7 @@ import * as Project from './Pages/Project';
     }
 
     watchToggle() {
-      timeToggle.addEventListener('click', (e) => {
+      timeToggle.addEventListener('click', async (e) => {
         e.preventDefault();
         grid.classList.toggle('day');
         grid.classList.toggle('night');
