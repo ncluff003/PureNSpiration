@@ -215,6 +215,17 @@ html {
   }
 }
 
+.icon-container {
+  @extend html;
+  &__icon {
+    font-size: 25rem;
+  }
+  &__text {
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+
 .icon-Lego {
   color: $colorOffWhite;
   font-size: 10rem;
@@ -441,6 +452,16 @@ html {
       }
     }
   }
+
+  .icon-container {
+    @extend html;
+    &__icon {
+      color: $primaryColor;
+    }
+    &__text {
+      color: $primaryColor;
+    }
+  }
 }
 
 /////////////////////////////////
@@ -652,6 +673,15 @@ html {
           color: $colorDarkerGrey;
         }
       }
+    }
+  }
+  .icon-container {
+    @extend html;
+    &__icon {
+      color: $secondaryColor;
+    }
+    &__text {
+      color: $secondaryColor;
     }
   }
 }

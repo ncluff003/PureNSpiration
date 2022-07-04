@@ -57,6 +57,20 @@ export const fetchFoundation = async () => {
   }
 };
 
+export const fetchInterests = async () => {
+  const options = {
+    method: `GET`,
+    url: `/about/interests/data`,
+  };
+  try {
+    const response = await axios(options);
+    let interests = response.data;
+    return interests;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const fetchSkills = async () => {
   const options = {
     method: `GET`,

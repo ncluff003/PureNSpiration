@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="648.18854"
+   height="359.96765"
+   viewBox="0 0 648.18854 359.96765"
+   version="1.1"
+   id="SVGRoot"
+   inkscape:version="1.2 (56b05e47e7, 2022-06-09, custom)"
+   sodipodi:docname="Cut-Out-Cylinder.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs6191">
+    <linearGradient
+       id="linearGradient2382"
+       inkscape:collect="always">
+      <stop
+         id="stop2376"
+         offset="0"
+         style="stop-color:#9b8300;stop-opacity:1" />
+      <stop
+         style="stop-color:#9b8300;stop-opacity:1"
+         offset="0.64009047"
+         id="stop2378" />
+      <stop
+         id="stop2380"
+         offset="1"
+         style="stop-color:#e4cf5d;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2382"
+       id="linearGradient5886"
+       gradientUnits="userSpaceOnUse"
+       x1="-308.75089"
+       y1="283.80203"
+       x2="-315.78214"
+       y2="283.80203" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2382"
+       id="linearGradient5918"
+       gradientUnits="userSpaceOnUse"
+       x1="-308.75089"
+       y1="283.80203"
+       x2="-315.78214"
+       y2="283.80203" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2382"
+       id="linearGradient5951"
+       gradientUnits="userSpaceOnUse"
+       x1="-308.75089"
+       y1="283.80203"
+       x2="-315.78214"
+       y2="283.80203" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="438.4062"
+     inkscape:cy="241.42646"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="975"
+     inkscape:window-x="0"
+     inkscape:window-y="40"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6749"
+       color="#3f3fff"
+       opacity="0"
+       spacingx="16"
+       spacingy="12"
+       originx="-1171.1607"
+       originy="-711.25376" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6194">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-566.81279,-352.5168)">
+    <g
+       id="g6086"
+       transform="translate(-149.58346,-16.04313)"
+       inkscape:export-filename="Cut-Out-Cylinder.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="path107715"
+         style="opacity:0.2" />
+      <g
+         id="path5984" />
+    </g>
+  </g>
+</svg>

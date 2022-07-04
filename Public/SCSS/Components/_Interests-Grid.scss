@@ -1,0 +1,8 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.interests-grid {
+  @include SizeAndPositioning(relative, 70%, 100%, grid, row, nowrap, space-evenly, center, 0, 0, 0);
+  @include gridLayout(70%, 100%, repeat(13, 1fr), repeat(13, 1fr), 0, 0);
+  @include gridPlacement(13, 13, 13, 13);
+}

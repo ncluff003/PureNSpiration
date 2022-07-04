@@ -34,51 +34,61 @@
       },
       "interests": [
         {
+          "vendor": "fontAwesome",
           "icon": "image-polaroid",
           "title": "Graphic Design",
           "altTitle": "Graphic Design"
         },
         {
+          "vendor": "icomoon",
           "icon": "icon-RocketLeague",
           "title": "Rocket League",
           "altTitle": "Rocket League"
         },
         {
+          "vendor": "icomoon",
           "icon": "icon-EA_Sports",
           "title": "Madden NFL",
           "altTitle": "Madden NFL"
         },
         {
+          "vendor": "fontAwesome",
           "icon": "apple-whole",
           "title": "Apples To Apples",
           "altTitle": "Apples To Apples"
         },
         {
+          "vendor": "fontAwesome",
           "icon": "diamond",
           "title": "Card Games",
           "altTitle": "Card Games"
         },
         {
+          "vendor": "fontAwesome",
           "icon": "basketball",
           "title": "Basketball",
           "altTitle": "Basketball"
         },
         {
+          "vendor": "fontAwesome",
           "icon": "table-tennis-paddle-ball",
           "title": "Ping Pong",
           "altTitle": "Ping Pong"
         },
         {
+          "vendor": "fontAwesome",
           "icon": "hat-chef",
           "title": "Cooking",
           "altTitle": "Cooking"
         },
         {
+          "vendor": "icomoon",
           "icon": "icon-Halo",
           "title": "Halo",
           "altTitle": "Halo"
         },
         {
+          "vendor": "icomoon",
           "icon": "icon-Lego",
           "title": "Legos",
           "altTitle": "Legos"

@@ -9,6 +9,88 @@
   transition: color 0.5s;
 }
 
+.interests-container__quote-container {
+  @include SizeAndPositioning(relative, 15%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
+}
+
+.interests-contact-container {
+  @include SizeAndPositioning(relative, 15%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+}
+
+.icon-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+}
+
+.interest-current {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+}
+
+.cylinder-left {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -2rem, 0, 0);
+  border-top: 1.65rem solid $primaryColorLighter;
+  border-left: 1.65rem solid $primaryColorLighter;
+  border-right: 1.65rem solid $primaryColorDark;
+  border-bottom: 1.65rem solid $primaryColorLighter;
+  background-color: transparent;
+  border-radius: 50%;
+  // &__left {
+  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -3rem, 0, 0);
+  //   border-top: 1.65rem solid $primaryColorLighter;
+  //   border-left: 1.65rem solid $primaryColorLighter;
+  //   border-bottom: 1.65rem solid $primaryColorLighter;
+  //   background-color: transparent;
+  //   // background-color: rgba($primaryColorLighter, 0.3);
+  //   border-radius: 45%;
+  //   z-index: 4;
+  // }
+  // &__right {
+  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -3rem, 0, 0);
+  //   border-top: 1.65rem solid $primaryColorLighter;
+  //   border-right: 1.65rem solid $primaryColorDark;
+  //   border-bottom: 1.65rem solid $primaryColorLighter;
+  //   background-color: rgba($primaryColorLighter, 0.6);
+  //   border-radius: 45%;
+  //   z-index: 1;
+  // }
+}
+
+.cylinder-right {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -5rem, 0, 0);
+  background-color: transparent;
+  border: 1.65rem solid rgba($primaryColorLighter, 1);
+  border-radius: 45%;
+  z-index: 0;
+  // &__left {
+  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  //   background-color: transparent;
+  //   border-left: 1rem solid rgba($primaryColorLight, 0.6);
+  //   border-radius: 50%;
+  // }
+  // &__right {
+  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  //   background-color: transparent;
+  //   border-right: 1rem solid rgba($primaryColorLight, 0.6);
+  //   border-radius: 45%;
+  // }
+}
+
+.cylinder-wall {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -4rem, 0, 0);
+  &-image {
+    @include SizingItem(relative, 100%, 100%);
+  }
+  z-index: 3;
+  // background-image: url('./../Vendors/Cut-Out-Cylinder.svg');
+  // background-image: url('./../Vendors/Cut-Out-Cylinder.svg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+
+  // background-color: rgba($primaryColorLight, 0.6);
+  // border-radius: 10% 0% 0% 10% / 50% 0% 0% 50%;
+  // border-top-left-radius: 3rem;
+  // border-bottom-left-radius: 3rem;
+}
+
 .day {
 }
 /////////////////////////////////
