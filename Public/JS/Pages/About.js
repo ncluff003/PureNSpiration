@@ -1,6 +1,7 @@
 import * as Utility from './../Utility';
 import * as Foundation from './About-Foundation';
 import * as Interests from './About-Interests';
+import * as Skills from './About-Skills';
 
 export const watchAbout = () => {
   console.log(`Watching...`);
@@ -21,4 +22,5 @@ export const watchAbout = () => {
 
   Foundation.watchFoundation();
   Interests.watchInterests();
+  Skills.watchSkills();
 };

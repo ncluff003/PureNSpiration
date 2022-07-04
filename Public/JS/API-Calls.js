@@ -80,7 +80,7 @@ export const fetchSkills = async () => {
     const response = await axios(options);
     let skills = response.data.data.skills;
     console.log(skills);
-    return latest;
+    return skills;
   } catch (error) {
     console.log(error);
   }

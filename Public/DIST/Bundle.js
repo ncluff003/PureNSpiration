@@ -4757,7 +4757,7 @@ var fetchSkills = /*#__PURE__*/function () {
             response = _context6.sent;
             skills = response.data.data.skills;
             console.log(skills);
-            return _context6.abrupt("return", latest);
+            return _context6.abrupt("return", skills);
 
           case 10:
             _context6.prev = 10;
@@ -4969,6 +4969,62 @@ var watchInterests = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./Public/JS/Pages/About-Skills.js":
+/*!*****************************************!*\
+  !*** ./Public/JS/Pages/About-Skills.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "watchSkills": function() { return /* binding */ watchSkills; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../API-Calls */ "./Public/JS/API-Calls.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+
+
+var watchSkills = /*#__PURE__*/function () {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
+    var mySkills, iconTitle;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            if (!(window.location.href === "http://127.0.0.1:3333/about/skills")) {
+              _context.next = 8;
+              break;
+            }
+
+            console.log("Skills");
+            _context.next = 4;
+            return _API_Calls__WEBPACK_IMPORTED_MODULE_2__.fetchSkills();
+
+          case 4:
+            mySkills = _context.sent;
+            console.log(mySkills);
+            iconTitle = document.querySelector('.icon-container__text');
+            iconTitle.textContent = mySkills.title;
+
+          case 8:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function watchSkills() {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
 /***/ "./Public/JS/Pages/About.js":
 /*!**********************************!*\
   !*** ./Public/JS/Pages/About.js ***!
@@ -4983,7 +5039,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
 /* harmony import */ var _About_Foundation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./About-Foundation */ "./Public/JS/Pages/About-Foundation.js");
 /* harmony import */ var _About_Interests__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./About-Interests */ "./Public/JS/Pages/About-Interests.js");
+/* harmony import */ var _About_Skills__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About-Skills */ "./Public/JS/Pages/About-Skills.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
 
 
 
@@ -5003,6 +5061,7 @@ var watchAbout = function watchAbout() {
 
   _About_Foundation__WEBPACK_IMPORTED_MODULE_1__.watchFoundation();
   _About_Interests__WEBPACK_IMPORTED_MODULE_2__.watchInterests();
+  _About_Skills__WEBPACK_IMPORTED_MODULE_3__.watchSkills();
 };
 
 /***/ }),
