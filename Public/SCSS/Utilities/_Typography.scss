@@ -264,6 +264,14 @@ html {
   }
 }
 
+.skills-link-container {
+  .portfolio-link {
+    @extend html;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+}
+
 .icon-Lego {
   color: $colorOffWhite;
   font-size: 10rem;
@@ -563,6 +571,22 @@ html {
       }
     }
   }
+  .skills-link-container {
+    .portfolio-link {
+      color: rgba($colorDarkerGrey, 0.8);
+      &:visited {
+        color: rgba($colorDarkerGrey, 0.8);
+      }
+
+      &:hover {
+        color: $colorDarkerGrey;
+      }
+
+      &:active {
+        color: $colorOffWhite;
+      }
+    }
+  }
 }
 
 /////////////////////////////////
@@ -845,6 +869,22 @@ html {
         &:active {
           color: $primaryColor;
         }
+      }
+    }
+  }
+  .skills-link-container {
+    .portfolio-link {
+      color: rgba($colorOffWhite, 0.8);
+      &:visited {
+        color: rgba($colorOffWhite, 0.8);
+      }
+
+      &:hover {
+        color: $colorOffWhite;
+      }
+
+      &:active {
+        color: $colorDarkerGrey;
       }
     }
   }

@@ -139,6 +139,19 @@
   // border-bottom-left-radius: 3rem;
 }
 
+.skills-link-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+  .portfolio-link {
+    @include SizeAndPositioning(relative, 5rem, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    border-radius: 5rem;
+    padding: 0 2rem;
+    transition: background-color 0.5s, color 0.5s;
+    &__text {
+      margin-right: 2rem;
+    }
+  }
+}
+
 /////////////////////////////////
 // DAY SETTINGS
 
@@ -173,6 +186,20 @@
     .interests-contact-container {
       &__contact-link {
         background-color: rgba($primaryColor, 0.8);
+      }
+    }
+  }
+  .skills-container {
+    .skills-link-container {
+      .portfolio-link {
+        background-color: rgba($primaryColor, 0.8);
+        &:hover {
+          background-color: $primaryColor;
+        }
+
+        &:active {
+          background-color: $tertiaryColor;
+        }
       }
     }
   }
@@ -212,6 +239,20 @@
     .interests-contact-container {
       &__contact-link {
         background-color: rgba($secondaryColor, 0.8);
+      }
+    }
+  }
+  .skills-container {
+    .skills-link-container {
+      .portfolio-link {
+        background-color: rgba($secondaryColor, 0.8);
+        &:hover {
+          background-color: $secondaryColor;
+        }
+
+        &:active {
+          background-color: $primaryColor;
+        }
       }
     }
   }

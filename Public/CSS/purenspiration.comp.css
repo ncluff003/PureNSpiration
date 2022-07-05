@@ -2,7 +2,7 @@
   font-family: Purely Me;
   src: url("./purely_me_regular-webfont.woff2") format("woff2"), url("./purely_me_regular-webfont.woff") format("woff"), url("./Purely_Me_Regular.eot"), url("./Purely_Me_Regular.ttf");
 }
-html, .night .icon-container, .day .icon-container, .interests-contact-container__contact-link, .interest-icon-container, .interests-container__quote-container, .icon-container, .foundation-container__information, .latest-project, .connect--home__link, .connect--home__title, .button--circle__extra-small, .connection-container .connect--navigation__link-list__link-item, .connection-container .connect-navigation__pre-text {
+html, .night .icon-container, .day .icon-container, .skills-link-container .portfolio-link, .interests-contact-container__contact-link, .interest-icon-container, .interests-container__quote-container, .icon-container, .foundation-container__information, .latest-project, .connect--home__link, .connect--home__title, .button--circle__extra-small, .connection-container .connect--navigation__link-list__link-item, .connection-container .connect-navigation__pre-text {
   font-family: Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-variant-ligatures: none;
 }
@@ -179,6 +179,11 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
 
 .interests-contact-container__contact-link {
   font-size: 2rem;
+}
+
+.skills-link-container .portfolio-link {
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 .icon-Lego {
@@ -389,6 +394,18 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
 .day .interests-container .interests-contact-container__contact-link:active {
   color: #ff3d00;
 }
+.day .skills-link-container .portfolio-link {
+  color: rgba(51, 51, 51, 0.8);
+}
+.day .skills-link-container .portfolio-link:visited {
+  color: rgba(51, 51, 51, 0.8);
+}
+.day .skills-link-container .portfolio-link:hover {
+  color: #333333;
+}
+.day .skills-link-container .portfolio-link:active {
+  color: #fafafa;
+}
 
 .night .navigation .logo-container .icon-PureNSpiration_Logo--night {
   color: #fafafa;
@@ -582,6 +599,18 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
 }
 .night .interests-container .interests-contact-container__contact-link:active {
   color: #ffd700;
+}
+.night .skills-link-container .portfolio-link {
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .skills-link-container .portfolio-link:visited {
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .skills-link-container .portfolio-link:hover {
+  color: #fafafa;
+}
+.night .skills-link-container .portfolio-link:active {
+  color: #333333;
 }
 
 .gridDesktop {
@@ -32233,6 +32262,9 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
   border-radius: 5rem;
   transition: background-color 0.5s, border 0.5s;
 }
+.time-toggle:hover {
+  cursor: pointer;
+}
 .time-toggle__switch {
   position: relative;
   height: 100%;
@@ -34975,6 +35007,35 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
   width: 100%;
 }
 
+.skills-link-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.skills-link-container .portfolio-link {
+  position: relative;
+  height: 5rem;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  border-radius: 5rem;
+  padding: 0 2rem;
+  transition: background-color 0.5s, color 0.5s;
+}
+.skills-link-container .portfolio-link__text {
+  margin-right: 2rem;
+}
+
 .day .interests-container .interests-grid .interest-current:before {
   background-image: linear-gradient(to right, #fafafa 0%, #fafafa 5%, transparent 50%, transparent 80%, #fafafa 100%);
 }
@@ -35007,6 +35068,15 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
 }
 .day .interests-container .interests-contact-container__contact-link {
   background-color: rgba(255, 215, 0, 0.8);
+}
+.day .skills-container .skills-link-container .portfolio-link {
+  background-color: rgba(255, 215, 0, 0.8);
+}
+.day .skills-container .skills-link-container .portfolio-link:hover {
+  background-color: #ffd700;
+}
+.day .skills-container .skills-link-container .portfolio-link:active {
+  background-color: #ff3d00;
 }
 
 .night .interests-container .interests-grid .interest-current:before {
@@ -35041,6 +35111,15 @@ html, .night .icon-container, .day .icon-container, .interests-contact-container
 }
 .night .interests-container .interests-contact-container__contact-link {
   background-color: rgba(0, 179, 88, 0.8);
+}
+.night .skills-container .skills-link-container .portfolio-link {
+  background-color: rgba(0, 179, 88, 0.8);
+}
+.night .skills-container .skills-link-container .portfolio-link:hover {
+  background-color: #00b358;
+}
+.night .skills-container .skills-link-container .portfolio-link:active {
+  background-color: #ffd700;
 }
 
 .foundation-container {
