@@ -1,0 +1,17 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.vue-projects-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-between, center, 0, 0, 0);
+}
+
+// #vueApp {
+//   position: relative;
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   flex-flow: row nowrap;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   transform: translate(0, 0) rotate(0);
+// }

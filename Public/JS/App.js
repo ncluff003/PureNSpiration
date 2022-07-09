@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////
 // IMPORTED VALUES
 // import { myCalendar } from './Calendar.js';
+import * as Projects from './Projects';
 import * as Utility from './Utility';
 import * as API from './API-Calls';
 import * as About from './Pages/About';

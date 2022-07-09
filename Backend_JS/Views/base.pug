@@ -11,6 +11,7 @@ html.no-js
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(http-equiv="Content-Security-Policy", content="script-src *")
     title= title
     meta(name="description" content="" )
     meta(name="viewport" content="width=device-width, initial-scale=1" )
@@ -19,6 +20,8 @@ html.no-js
     link(rel="stylesheet" href="/DIST/CSS/purenspiration.css" )
 
     //- script(src="node_modules/svgxuse/svgxuse.js" defer)
+    //- script(src="https://unpkg.com/vue@3.0.2/dist/vue.global.js" type="module" defer)
+    //- script(src="https://cdn.jsdelivr.net/npm/vue@2.7.0/dist/vue.js")
     script(defer src="/DIST/Bundle.js?5da18932f3c722f0e631")
     //- script(defer src="/JS/App.js" type="module")
     //- script(src="/reload.js")
@@ -59,3 +62,4 @@ html.no-js
             i.fas.fa-moon.time-toggle__switch__icon--moon.open
       
       block unique-content
+    block vue-scripts
