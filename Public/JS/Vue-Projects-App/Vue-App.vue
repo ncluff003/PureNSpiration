@@ -1,14 +1,18 @@
 <!-- import * as Vue from 'vue'; const app = Vue.createApp({ data() { return { message: 'Hello Vue!', }; }, }).mount('#vueApp'); console.log(app);
  -->
 <!-- <template lang="pug"> -->
+<!-- Vue.config.devtools = true; -->
+
 <template>
-  <Slider :projectData="message" />
-  <Container :projectData="message" />
+  <Slider :projectData="data" @projectSelected="storeProject" />
+  <Container :projectData="data" :project="projectSelected" />
 </template>
 
 <script>
 import Slider from './Vue_Parts/_Project-Slider';
 import Container from './Vue_Parts/_Project-Container';
+import axios from 'axios';
+import API from './../API-Calls';
 
 export default {
   // -- These two lines of code are used for components.
@@ -16,6 +20,10 @@ export default {
   components: { Slider, Container },
   data() {
     return {
+      data: null,
+      projectSelected: null,
+      tempSkill: '',
+      skills: [],
       count: 0,
       message: `Hello From Vue!`,
       name: `Nathan Cluff`,
@@ -40,22 +48,44 @@ export default {
     };
   },
   methods: {
-    decrease() {
-      this.age--;
+    addSkill(e) {
+      e.preventDefault();
+      if (e.key === `Enter` && this.tempSkill) {
+        this.skills.push(this.tempSkill);
+        this.tempSkill = '';
+      }
     },
-    increase() {
-      this.age++;
+    storeProject(project) {
+      this.projectSelected = project;
     },
+  },
 
-    show() {
-      this.showInfo = !this.showInfo;
-    },
-    showBooks() {
-      this.showBOOKS = !this.showBOOKS;
-    },
-    handleClick() {
-      console.log(this.$refs.name.value);
-    },
+  // async beforeCreate() {
+  //   const options = {
+  //     method: `GET`,
+  //     url: `/data`,
+  //   };
+  //   try {
+  //     const response = await axios(options);
+  //     console.log(response.data, response.data.data.title);
+  //     this.data = response.data.data.projects;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
+
+  async beforeMount() {
+    const options = {
+      method: `GET`,
+      url: `/data`,
+    };
+    try {
+      const response = await axios(options);
+      console.log(response.data.data, response.data.data.title);
+      this.data = response.data.data.projects;
+    } catch (error) {
+      console.error(error);
+    }
   },
   // template: `<h2> {{ message }} </h2>`,
   mounted() {
@@ -74,7 +104,7 @@ export default {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   transform: translate(0, 0) rotate(0);
 }

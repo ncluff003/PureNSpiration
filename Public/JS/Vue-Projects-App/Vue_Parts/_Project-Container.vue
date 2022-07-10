@@ -1,7 +1,7 @@
 <template>
   <section class="vue-projects-container r__vue-projects-container">
-    <Display :projectData="projectData" />
-    <Description projectData="" />
+    <Display :project="project" />
+    <Description :project="project" />
   </section>
 </template>
 <script>
@@ -10,7 +10,14 @@ import Description from './_Project-Description';
 
 export default {
   components: { Display, Description },
-  props: ['projectData'],
+  props: ['projectData', 'project'],
+  data() {
+    return {
+      projects: '',
+      selectedProject: this.project,
+    };
+  },
+  mounted() {},
 };
 </script>
 <style lang="scss" scoped>

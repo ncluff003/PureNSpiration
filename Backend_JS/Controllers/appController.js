@@ -21,6 +21,7 @@ const path = require('path');
 //  My Middleware
 const catchAsync = require(`./../Utilities/catchAsync`);
 const calendar = require(`./../Models/calendarModel`);
+const { request } = require('http');
 
 ////////////////////////////////////////////
 //  Routing Middleware
@@ -33,6 +34,14 @@ const calendar = require(`./../Models/calendarModel`);
 
 // MAKE REQUEST FOR AND STORE DATA FROM JSON FILE.
 let pureData = JSON.parse(fs.readFileSync(`${__dirname}/../Data/pureData.json`, 'utf-8'));
+
+exports.returnMyData = catchAsync(async (request, response, next) => {
+  const data = pureData;
+  response.status(200).json({
+    status: `Success`,
+    data,
+  });
+});
 
 exports.renderApp = catchAsync(async (request, response) => {
   const data = pureData;

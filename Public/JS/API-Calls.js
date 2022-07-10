@@ -1,6 +1,19 @@
 import axios from 'axios';
 import qs from 'qs';
 
+export const fetchAllData = async () => {
+  const options = {
+    method: `GET`,
+    url: `/data`,
+  };
+  try {
+    const response = await axios(options);
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const fetchLatestPost = async () => {
   const options = {
     method: `GET`,

@@ -1,9 +1,9 @@
 <template>
-  <h2>Hello From Media</h2>
+  <h2>{{ project }}</h2>
 </template>
 <script>
 export default {
-  props: [`projectData`],
+  props: [`project`],
 };
 </script>
 <style lang="scss" scoped></style>
