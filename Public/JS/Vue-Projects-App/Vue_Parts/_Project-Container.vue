@@ -36,14 +36,14 @@ export default {
 // DAY STYLES
 .day {
   .vue-projects-container {
-    background-color: #cccccc;
+    // background-color: #cccccc;
   }
 }
 
 // NIGHT STYLES
 .night {
   .vue-projects-container {
-    background-color: #0047ab;
+    // background-color: #0047ab;
   }
 }
 </style>

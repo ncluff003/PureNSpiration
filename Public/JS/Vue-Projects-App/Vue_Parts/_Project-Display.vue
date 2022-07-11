@@ -22,7 +22,7 @@ export default {
 .vue-project__cover-photo-display {
   position: relative;
   height: 55%;
-  width: 75%;
+  width: 90%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -33,7 +33,7 @@ export default {
 .project-cover-photo {
   position: relative;
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 /* DAY STYLES */

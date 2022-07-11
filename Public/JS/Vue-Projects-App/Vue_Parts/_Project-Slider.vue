@@ -98,8 +98,8 @@ export default {
 /* DAY STYLES */
 .day {
   .vue-projects-slider {
-    border-left: 0.3rem solid #ffd700;
-    border-right: 0.3rem solid #ffd700;
+    border-left: 0.3rem groove #ffd700;
+    border-right: 0.3rem groove #ffd700;
     background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);
   }
   .vue-project-option {
@@ -120,9 +120,9 @@ export default {
 /* NIGHT STYLES */
 .night {
   .vue-projects-slider {
-    border-left: 0.3rem solid #00b358;
-    border-right: 0.3rem solid #00b358;
-    background-image: linear-gradient(to bottom, #00b358 0%, transparent 5%, transparent 95%, #00b358 100%);
+    border-left: 0.3rem groove #00b358;
+    border-right: 0.3rem groove #00b358;
+    background-image: linear-gradient(to bottom, #333333 0%, rgba(#fefefe, 0.25) 5%, rgba(#fefefe, 0.25) 95%, #333333 100%);
     .vue-project-option {
       &__title {
         color: rgba(#00b358, 0.5);

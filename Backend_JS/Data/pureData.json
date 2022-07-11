@@ -216,7 +216,7 @@
       "title": "Pure N Spiration",
       "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
       "photoAltText": "Pure N Spiration Cover Photo",
-      "description": "Nathan Cluff's Purely Inspired Portfolio Website",
+      "description": ["Nathan Cluff's Purely Inspired Portfolio Website"],
       "technologies": "HTML5, CSS3, SCSS, JavaScript, Vue.js, Node.js, Express.js, JSON",
       "link": "https://www.purenspiration.com",
       "code": "https://github.com/ncluff003/PureNSpiration",
@@ -232,15 +232,15 @@
       "title": "Hangman",
       "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
       "photoAltText": "Hangman Cover Photo",
-      "description": "The game of hangman.  Pick one letter at a time to see if you can guess a custom word or phrase.",
+      "description": ["The game of hangman.  Pick one letter at a time to see if you can guess a custom word or phrase."],
       "technologies": "HTML5, CSS3, SCSS, JavaScript, Vue.js, Node.js, Express.js, JSON",
       "link": "https://ncluff003.github.io/Hangman/",
       "code": "https://github.com/ncluff003/Hangman",
       "media": [
         {
-          "type": "video or photo",
-          "altText": "",
-          "file": ""
+          "type": "video",
+          "altText": "Video Of Faloan",
+          "file": "./../../Public/DIST/CSS/Videos/Faolan.mp4"
         }
       ]
     },
@@ -248,7 +248,10 @@
       "title": "King Richard",
       "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
       "photoAltText": "King Richard Cover Photo",
-      "description": "A zero based budget made for everyone.",
+      "description": [
+        "A zero based budget made for everyone.",
+        "It is especially made to be adaptable to anyone in the world.  Hopefully, it also can be for anyone in any kind of circumstance."
+      ],
       "technologies": "HTML5, CSS3, SCSS, JavaScript, Node.js, Express.js, JSON",
       "link": "https://www.purenspiration.com",
       "code": "https://github.com/ncluff003/KingRichard-Budget",

@@ -81,7 +81,6 @@ export default {
     };
     try {
       const response = await axios(options);
-      console.log(response.data.data, response.data.data.title);
       this.data = response.data.data.projects;
     } catch (error) {
       console.error(error);
