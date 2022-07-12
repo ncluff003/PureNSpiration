@@ -5292,12 +5292,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "watchBlog": function() { return /* binding */ watchBlog; }
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
-/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
-/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../API-Calls */ "./Public/JS/API-Calls.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../API-Calls */ "./Public/JS/API-Calls.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
 
 
 
@@ -5306,17 +5308,22 @@ __webpack_require__.r(__webpack_exports__);
 
 var renderBlogExerpts = function renderBlogExerpts(posts) {
   var postContainer = document.querySelector('.blog-post-container');
+
+  (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(postContainer.childNodes).forEach(function (child) {
+    return child.remove();
+  });
+
   posts.forEach(function (post, i) {
     var exerptContainer = document.createElement('section');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptContainer, ["blog-exerpt", "r__blog-exerpt"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(exerptContainer, ["blog-exerpt", "r__blog-exerpt"]);
     exerptContainer.dataset.id = post.id;
     var exerptHeader = document.createElement('header');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptHeader, ["blog-exerpt__header", "r__blog-exerpt__header"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(exerptHeader, ["blog-exerpt__header", "r__blog-exerpt__header"]);
     var exerptTitle = document.createElement('p');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptTitle, ["blog-exerpt-title", "r__blog-exerpt-title"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(exerptTitle, ["blog-exerpt-title", "r__blog-exerpt-title"]);
     exerptTitle.textContent = post.title;
     var exerptDateCreated = document.createElement('p');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptDateCreated, ["blog-exerpt-date-created", "r__blog-exerpt-date-created"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(exerptDateCreated, ["blog-exerpt-date-created", "r__blog-exerpt-date-created"]);
     var dateOptions = {
       day: 'numeric',
       month: 'long',
@@ -5324,48 +5331,48 @@ var renderBlogExerpts = function renderBlogExerpts(posts) {
     };
     var dateFormat = new Intl.DateTimeFormat(navigator.language, dateOptions);
     exerptDateCreated.textContent = dateFormat.format(new Date(post.date));
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptHeader, exerptTitle);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptHeader, exerptDateCreated);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptHeader, exerptTitle);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptHeader, exerptDateCreated);
     var exerptContentContainer = document.createElement('section');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptContentContainer, ["blog-exerpt-content-container", "r__blog-exerpt-content-container"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(exerptContentContainer, ["blog-exerpt-content-container", "r__blog-exerpt-content-container"]);
     var exerpt = document.createElement('p');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerpt, ["blog-exerpt__exerpt", "r__blog-exerpt__exerpt"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(exerpt, ["blog-exerpt__exerpt", "r__blog-exerpt__exerpt"]);
     exerpt.textContent = post.content[0].data.slice(0, 200);
     var postLink = document.createElement('a');
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(postLink, ["post-link", "r__post-link"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(postLink, ["post-link", "r__post-link"]);
     postLink.setAttribute('href', "/blog/posts/".concat(post.id));
     postLink.textContent = "Go To Post";
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContentContainer, exerpt);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContentContainer, postLink);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContainer, exerptHeader);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContainer, exerptContentContainer);
-    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', postContainer, exerptContainer);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptContentContainer, exerpt);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptContentContainer, postLink);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptContainer, exerptHeader);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptContainer, exerptContentContainer);
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', postContainer, exerptContainer);
   });
 };
 
 var renderPhoto = function renderPhoto(container, content) {
   var image = document.createElement('img');
-  _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(image, ["blog-image", "r__blog-image"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(image, ["blog-image", "r__blog-image"]);
   var index = content.file.indexOf("DIST/CSS");
   image.src = content.file.slice(index);
-  _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, image);
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, image);
 };
 
 var renderVideo = function renderVideo(container, content) {
   var video = document.createElement('video');
-  _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(video, ["blog-video", "r__blog-video"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(video, ["blog-video", "r__blog-video"]);
   video.controls = true;
   var index = content.file.indexOf("DIST/CSS");
   video.src = content.file.slice(index);
   video.type = "video/".concat(content.file.slice(content.file.length - 3));
-  _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, video);
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, video);
 };
 
 var renderParagraph = function renderParagraph(container, content) {
   var paragraph = document.createElement('p');
   paragraph.textContent = content.data;
-  _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(paragraph, ["blog-paragraph", "r__blog-paragraph"]);
-  _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, paragraph);
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(paragraph, ["blog-paragraph", "r__blog-paragraph"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, paragraph);
 };
 
 var renderDate = function renderDate(content) {
@@ -5373,7 +5380,7 @@ var renderDate = function renderDate(content) {
   var year = new Date(postDate).getFullYear();
   var month = new Date(postDate).getMonth() + 1;
   var day = new Date(postDate).getDate();
-  var currentDate = luxon__WEBPACK_IMPORTED_MODULE_4__.DateTime.local(year, month, day);
+  var currentDate = luxon__WEBPACK_IMPORTED_MODULE_5__.DateTime.local(year, month, day);
   currentDate = currentDate.plus({
     day: 1
   });
@@ -5382,7 +5389,7 @@ var renderDate = function renderDate(content) {
 
   if (dates.length === 1) {
     date = dates[0];
-    date.textContent = "".concat(currentDate.toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_4__.DateTime.DATE_FULL), " ");
+    date.textContent = "".concat(currentDate.toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_5__.DateTime.DATE_FULL), " ");
   }
 };
 
@@ -5415,34 +5422,138 @@ var renderBlogPost = function renderBlogPost(content) {
   });
 };
 var watchBlog = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
-    var blog, posts;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee3() {
+    var blog, page, _blog, previousPage, currentPage, nextPage, pageLeft, pageRight;
+
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
             blog = document.querySelector('.blog');
 
             if (!blog) {
-              _context.next = 8;
+              _context3.next = 19;
               break;
             }
 
             console.log("Watching...");
-            _context.next = 5;
-            return _API_Calls__WEBPACK_IMPORTED_MODULE_3__.fetchBlogPosts();
+            page = document.querySelector('.page');
+            _context3.next = 6;
+            return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts();
 
-          case 5:
-            posts = _context.sent;
-            renderBlogExerpts(posts);
-            console.log(posts);
+          case 6:
+            _blog = _context3.sent;
+            console.log(_blog);
+            renderBlogExerpts(_blog.posts);
+            console.log(_blog.posts);
+            previousPage = 0;
+            currentPage = _blog.blog.data.currentPage;
+            nextPage = currentPage + 1;
+            console.log(currentPage);
+            pageLeft = document.querySelector('.page-left');
+            pageRight = document.querySelector('.page-right');
 
-          case 8:
+            if (previousPage === 0) {
+              pageLeft.classList.add('end');
+            }
+
+            pageLeft.addEventListener('click', /*#__PURE__*/function () {
+              var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee(e) {
+                return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee$(_context) {
+                  while (1) {
+                    switch (_context.prev = _context.next) {
+                      case 0:
+                        e.preventDefault();
+
+                        if (!pageLeft.classList.contains('end')) {
+                          _context.next = 3;
+                          break;
+                        }
+
+                        return _context.abrupt("return");
+
+                      case 3:
+                        pageRight.classList.remove('end');
+                        _context.next = 6;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(previousPage);
+
+                      case 6:
+                        _blog = _context.sent;
+                        previousPage--;
+                        currentPage--;
+                        nextPage--;
+                        renderBlogExerpts(_blog.posts);
+
+                        if (previousPage === 0) {
+                          pageLeft.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 13:
+                      case "end":
+                        return _context.stop();
+                    }
+                  }
+                }, _callee);
+              }));
+
+              return function (_x) {
+                return _ref2.apply(this, arguments);
+              };
+            }());
+            pageRight.addEventListener('click', /*#__PURE__*/function () {
+              var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee2(e) {
+                return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee2$(_context2) {
+                  while (1) {
+                    switch (_context2.prev = _context2.next) {
+                      case 0:
+                        e.preventDefault();
+
+                        if (!pageRight.classList.contains('end')) {
+                          _context2.next = 3;
+                          break;
+                        }
+
+                        return _context2.abrupt("return");
+
+                      case 3:
+                        pageLeft.classList.remove('end');
+                        _context2.next = 6;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(nextPage);
+
+                      case 6:
+                        _blog = _context2.sent;
+                        previousPage++;
+                        currentPage++;
+                        nextPage++;
+                        renderBlogExerpts(_blog.posts);
+
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 13:
+                      case "end":
+                        return _context2.stop();
+                    }
+                  }
+                }, _callee2);
+              }));
+
+              return function (_x2) {
+                return _ref3.apply(this, arguments);
+              };
+            }()); // ADJUSTMENTS WILL BE MADE BECAUSE I REMEMBERED THAT THE BLOG ACTUALLY HAS A PREVIOUS, CURRENT, AND NEXT PAGE VALUE TO USE.
+
+          case 19:
           case "end":
-            return _context.stop();
+            return _context3.stop();
         }
       }
-    }, _callee);
+    }, _callee3);
   }));
 
   return function watchBlog() {

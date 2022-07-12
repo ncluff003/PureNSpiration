@@ -35625,13 +35625,13 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
   transform: rotate(0) translate(0, 0);
 }
 .blog-page-navigation__icon {
-  transition: color 0.5s;
+  transition: color 0.25s;
 }
 .blog-page-navigation__icon:hover {
   cursor: pointer;
 }
 .blog-page-navigation .page {
-  transition: color 0.5s;
+  transition: color 0.25s;
 }
 
 .day .blog .blog-search-container .search-select {

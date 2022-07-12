@@ -4,6 +4,7 @@ import * as API from './../API-Calls';
 
 const renderBlogExerpts = (posts) => {
   const postContainer = document.querySelector('.blog-post-container');
+  [...postContainer.childNodes].forEach((child) => child.remove());
   posts.forEach((post, i) => {
     let exerptContainer = document.createElement('section');
     Utility.addClasses(exerptContainer, [`blog-exerpt`, `r__blog-exerpt`]);
@@ -121,8 +122,49 @@ export const watchBlog = async () => {
   const blog = document.querySelector('.blog');
   if (blog) {
     console.log(`Watching...`);
-    let posts = await API.fetchBlogPosts();
-    renderBlogExerpts(posts);
-    console.log(posts);
+    let page = document.querySelector('.page');
+    let blog = await API.fetchBlogPosts();
+    console.log(blog);
+    renderBlogExerpts(blog.posts);
+    console.log(blog.posts);
+    let previousPage = 0;
+    let currentPage = blog.blog.data.currentPage;
+    let nextPage = currentPage + 1;
+    console.log(currentPage);
+    const pageLeft = document.querySelector('.page-left');
+    const pageRight = document.querySelector('.page-right');
+    if (previousPage === 0) {
+      pageLeft.classList.add('end');
+    }
+    pageLeft.addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (pageLeft.classList.contains('end')) return;
+      pageRight.classList.remove('end');
+      blog = await API.fetchBlogPosts(previousPage);
+      previousPage--;
+      currentPage--;
+      nextPage--;
+      renderBlogExerpts(blog.posts);
+      if (previousPage === 0) {
+        pageLeft.classList.add('end');
+      }
+      page.textContent = `Page ${currentPage}`;
+    });
+    pageRight.addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (pageRight.classList.contains('end')) return;
+      pageLeft.classList.remove('end');
+      blog = await API.fetchBlogPosts(nextPage);
+      previousPage++;
+      currentPage++;
+      nextPage++;
+      renderBlogExerpts(blog.posts);
+      if (blog.posts.length < blog.blog.data.limit) {
+        pageRight.classList.add('end');
+      }
+      page.textContent = `Page ${currentPage}`;
+    });
+
+    // ADJUSTMENTS WILL BE MADE BECAUSE I REMEMBERED THAT THE BLOG ACTUALLY HAS A PREVIOUS, CURRENT, AND NEXT PAGE VALUE TO USE.
   }
 };
