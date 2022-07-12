@@ -1,7 +1,13 @@
 <template>
   <section class="vue-projects-container r__vue-projects-container">
     <section class="vue-project__cover-photo-display r__vue-project__cover-photo-display">
-      <img :src="project.media[0].file" :alt="project.media[0].altText" class="project-cover-photo r__project-cover-photo" />
+      <video :src="project.media[0].file" class="project-cover-video r__project-cover-video" v-show="project.media[0].type === 'video'"></video>
+      <img
+        :src="project.media[0].file"
+        :alt="project.media[0].altText"
+        class="project-cover-photo r__project-cover-photo"
+        v-show="project.media[0].type === 'photo'"
+      />
     </section>
     <section class="vue-project__description-container r__vue-project__description-container">
       <header class="project-title r__project-title">
@@ -17,17 +23,10 @@
               class="vue-media-option__video r__vue-media-option__video"
               :src="media.file"
               :alt="media.altText"
-              controls="true"
+              :type="`video/${media.file.slice(media.file.length - 3)}`"
               v-if="media.type === 'video'"
-              @click="setDisplay"
             ></video>
-            <img
-              :src="media.file"
-              :alt="media.altText"
-              class="vue-media-option__image r__vue-media-optoin__image"
-              v-if="media.type === 'photo'"
-              @click="setDisplay"
-            />
+            <img :src="media.file" :alt="media.altText" class="vue-media-option__image r__vue-media-optoin__image" v-if="media.type === 'photo'" />
           </section>
         </section>
         <button class="vue-media-right r__vue-media-right" @click="mediaScrollRight">
@@ -39,8 +38,6 @@
         <p class="vue-project-description r__vue-project-description" v-for="text in project.description" :key="text">{{ text }}</p>
       </section>
     </section>
-    <!-- <Display :project="project" />
-    <Description :project="project" /> -->
   </section>
 </template>
 <script>
@@ -65,6 +62,19 @@ export default {
       this.mediaOptionIndex--;
       if (this.mediaOptionIndex < 0) this.mediaOptionIndex = 0;
       mediaSlider.scrollTo({ top: 0, left: mediaOptions[this.mediaOptionIndex].offsetLeft });
+      const projectPhotoDisplay = document.querySelector('.project-cover-photo');
+      const projectVideoDisplay = document.querySelector('.project-cover-video');
+      if (mediaOptions[this.mediaOptionIndex].firstElementChild.__vnode.type === 'video') {
+        projectVideoDisplay.src = mediaOptions[this.mediaOptionIndex].firstElementChild.src;
+        projectPhotoDisplay.style.display = 'none';
+        projectVideoDisplay.style.display = 'flex';
+        projectVideoDisplay.controls = true;
+      }
+      if (mediaOptions[this.mediaOptionIndex].firstElementChild.__vnode.type === 'img') {
+        projectPhotoDisplay.src = mediaOptions[this.mediaOptionIndex].firstElementChild.src;
+        projectPhotoDisplay.style.display = 'flex';
+        projectVideoDisplay.style.display = 'none';
+      }
     },
     mediaScrollRight(e) {
       const mediaOptions = [...document.querySelectorAll('.vue-media-option')];
@@ -72,11 +82,19 @@ export default {
       this.mediaOptionIndex++;
       if (this.mediaOptionIndex > mediaOptions.length - 1) this.mediaOptionIndex = mediaOptions.length - 1;
       mediaSlider.scrollTo({ top: 0, left: mediaOptions[this.mediaOptionIndex].offsetLeft });
-    },
-    setDisplay(e) {
-      e.preventDefault();
-      console.log([...document.querySelectorAll('.vue-media-option')]);
-      console.log(e);
+      const projectPhotoDisplay = document.querySelector('.project-cover-photo');
+      const projectVideoDisplay = document.querySelector('.project-cover-video');
+      if (mediaOptions[this.mediaOptionIndex].firstElementChild.__vnode.type === 'video') {
+        projectVideoDisplay.src = mediaOptions[this.mediaOptionIndex].firstElementChild.src;
+        projectPhotoDisplay.style.display = 'none';
+        projectVideoDisplay.style.display = 'flex';
+        projectVideoDisplay.controls = true;
+      }
+      if (mediaOptions[this.mediaOptionIndex].firstElementChild.__vnode.type === 'img') {
+        projectPhotoDisplay.src = mediaOptions[this.mediaOptionIndex].firstElementChild.src;
+        projectPhotoDisplay.style.display = 'flex';
+        projectVideoDisplay.style.display = 'none';
+      }
     },
   },
   computed: {
@@ -116,7 +134,8 @@ export default {
   transition: background-color 0.5s, border 0.5s, color 0.5s;
 }
 
-.project-cover-photo {
+.project-cover-photo,
+.project-cover-video {
   position: relative;
   height: 100%;
   width: auto;
