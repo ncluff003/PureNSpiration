@@ -4533,6 +4533,7 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "fetchAllData": function() { return /* binding */ fetchAllData; },
+/* harmony export */   "fetchBlogPosts": function() { return /* binding */ fetchBlogPosts; },
 /* harmony export */   "fetchFoundation": function() { return /* binding */ fetchFoundation; },
 /* harmony export */   "fetchInterests": function() { return /* binding */ fetchInterests; },
 /* harmony export */   "fetchLatestPost": function() { return /* binding */ fetchLatestPost; },
@@ -4628,54 +4629,61 @@ var fetchLatestPost = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
-var fetchLatestProject = /*#__PURE__*/function () {
-  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3() {
-    var options, response, _latest2;
-
+var fetchBlogPosts = /*#__PURE__*/function () {
+  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3(page, limit) {
+    var options, response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
             options = {
               method: "GET",
-              url: "/projects/latest"
+              url: "/blog/posts"
             };
-            _context3.prev = 1;
-            _context3.next = 4;
+
+            if (page) {
+              options.url = "/blog/posts?page=".concat(page);
+            }
+
+            if (page && limit) {
+              options.url = "/blog/posts?page=".concat(page, "&limit=").concat(limit);
+            }
+
+            _context3.prev = 3;
+            _context3.next = 6;
             return axios__WEBPACK_IMPORTED_MODULE_2___default()(options);
 
-          case 4:
+          case 6:
             response = _context3.sent;
-            _latest2 = response.data.data;
-            return _context3.abrupt("return", _latest2);
+            return _context3.abrupt("return", response.data.data);
 
-          case 9:
-            _context3.prev = 9;
-            _context3.t0 = _context3["catch"](1);
-            console.log(_context3.t0);
+          case 10:
+            _context3.prev = 10;
+            _context3.t0 = _context3["catch"](3);
 
           case 12:
           case "end":
             return _context3.stop();
         }
       }
-    }, _callee3, null, [[1, 9]]);
+    }, _callee3, null, [[3, 10]]);
   }));
 
-  return function fetchLatestProject() {
+  return function fetchBlogPosts(_x, _x2) {
     return _ref3.apply(this, arguments);
   };
 }();
-var fetchProfileLinks = /*#__PURE__*/function () {
+var fetchLatestProject = /*#__PURE__*/function () {
   var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee4() {
-    var options, response;
+    var options, response, _latest2;
+
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             options = {
               method: "GET",
-              url: "/about/profileLinks"
+              url: "/projects/latest"
             };
             _context4.prev = 1;
             _context4.next = 4;
@@ -4683,8 +4691,8 @@ var fetchProfileLinks = /*#__PURE__*/function () {
 
           case 4:
             response = _context4.sent;
-            console.log(response.data);
-            return _context4.abrupt("return", latest);
+            _latest2 = response.data.data;
+            return _context4.abrupt("return", _latest2);
 
           case 9:
             _context4.prev = 9;
@@ -4699,20 +4707,20 @@ var fetchProfileLinks = /*#__PURE__*/function () {
     }, _callee4, null, [[1, 9]]);
   }));
 
-  return function fetchProfileLinks() {
+  return function fetchLatestProject() {
     return _ref4.apply(this, arguments);
   };
 }();
-var fetchFoundation = /*#__PURE__*/function () {
+var fetchProfileLinks = /*#__PURE__*/function () {
   var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee5() {
-    var options, response, foundation;
+    var options, response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             options = {
               method: "GET",
-              url: "/about/foundation/data"
+              url: "/about/profileLinks"
             };
             _context5.prev = 1;
             _context5.next = 4;
@@ -4720,8 +4728,8 @@ var fetchFoundation = /*#__PURE__*/function () {
 
           case 4:
             response = _context5.sent;
-            foundation = response.data;
-            return _context5.abrupt("return", foundation);
+            console.log(response.data);
+            return _context5.abrupt("return", latest);
 
           case 9:
             _context5.prev = 9;
@@ -4736,20 +4744,20 @@ var fetchFoundation = /*#__PURE__*/function () {
     }, _callee5, null, [[1, 9]]);
   }));
 
-  return function fetchFoundation() {
+  return function fetchProfileLinks() {
     return _ref5.apply(this, arguments);
   };
 }();
-var fetchInterests = /*#__PURE__*/function () {
+var fetchFoundation = /*#__PURE__*/function () {
   var _ref6 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee6() {
-    var options, response, interests;
+    var options, response, foundation;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
             options = {
               method: "GET",
-              url: "/about/interests/data"
+              url: "/about/foundation/data"
             };
             _context6.prev = 1;
             _context6.next = 4;
@@ -4757,8 +4765,8 @@ var fetchInterests = /*#__PURE__*/function () {
 
           case 4:
             response = _context6.sent;
-            interests = response.data;
-            return _context6.abrupt("return", interests);
+            foundation = response.data;
+            return _context6.abrupt("return", foundation);
 
           case 9:
             _context6.prev = 9;
@@ -4773,20 +4781,20 @@ var fetchInterests = /*#__PURE__*/function () {
     }, _callee6, null, [[1, 9]]);
   }));
 
-  return function fetchInterests() {
+  return function fetchFoundation() {
     return _ref6.apply(this, arguments);
   };
 }();
-var fetchSkills = /*#__PURE__*/function () {
+var fetchInterests = /*#__PURE__*/function () {
   var _ref7 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee7() {
-    var options, response, skills;
+    var options, response, interests;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee7$(_context7) {
       while (1) {
         switch (_context7.prev = _context7.next) {
           case 0:
             options = {
               method: "GET",
-              url: "/about/skills/data"
+              url: "/about/interests/data"
             };
             _context7.prev = 1;
             _context7.next = 4;
@@ -4794,25 +4802,62 @@ var fetchSkills = /*#__PURE__*/function () {
 
           case 4:
             response = _context7.sent;
-            skills = response.data.data.skills;
-            console.log(skills);
-            return _context7.abrupt("return", skills);
+            interests = response.data;
+            return _context7.abrupt("return", interests);
 
-          case 10:
-            _context7.prev = 10;
+          case 9:
+            _context7.prev = 9;
             _context7.t0 = _context7["catch"](1);
             console.log(_context7.t0);
 
-          case 13:
+          case 12:
           case "end":
             return _context7.stop();
         }
       }
-    }, _callee7, null, [[1, 10]]);
+    }, _callee7, null, [[1, 9]]);
+  }));
+
+  return function fetchInterests() {
+    return _ref7.apply(this, arguments);
+  };
+}();
+var fetchSkills = /*#__PURE__*/function () {
+  var _ref8 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee8() {
+    var options, response, skills;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            options = {
+              method: "GET",
+              url: "/about/skills/data"
+            };
+            _context8.prev = 1;
+            _context8.next = 4;
+            return axios__WEBPACK_IMPORTED_MODULE_2___default()(options);
+
+          case 4:
+            response = _context8.sent;
+            skills = response.data.data.skills;
+            console.log(skills);
+            return _context8.abrupt("return", skills);
+
+          case 10:
+            _context8.prev = 10;
+            _context8.t0 = _context8["catch"](1);
+            console.log(_context8.t0);
+
+          case 13:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, _callee8, null, [[1, 10]]);
   }));
 
   return function fetchSkills() {
-    return _ref7.apply(this, arguments);
+    return _ref8.apply(this, arguments);
   };
 }();
 
@@ -5243,36 +5288,84 @@ var watchAbout = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderBlogPost": function() { return /* binding */ renderBlogPost; }
+/* harmony export */   "renderBlogPost": function() { return /* binding */ renderBlogPost; },
+/* harmony export */   "watchBlog": function() { return /* binding */ watchBlog; }
 /* harmony export */ });
-/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
-/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../API-Calls */ "./Public/JS/API-Calls.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 
 
+
+
+
+
+var renderBlogExerpts = function renderBlogExerpts(posts) {
+  var postContainer = document.querySelector('.blog-post-container');
+  posts.forEach(function (post, i) {
+    var exerptContainer = document.createElement('section');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptContainer, ["blog-exerpt", "r__blog-exerpt"]);
+    exerptContainer.dataset.id = post.id;
+    var exerptHeader = document.createElement('header');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptHeader, ["blog-exerpt__header", "r__blog-exerpt__header"]);
+    var exerptTitle = document.createElement('p');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptTitle, ["blog-exerpt-title", "r__blog-exerpt-title"]);
+    exerptTitle.textContent = post.title;
+    var exerptDateCreated = document.createElement('p');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptDateCreated, ["blog-exerpt-date-created", "r__blog-exerpt-date-created"]);
+    var dateOptions = {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    };
+    var dateFormat = new Intl.DateTimeFormat(navigator.language, dateOptions);
+    exerptDateCreated.textContent = dateFormat.format(new Date(post.date));
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptHeader, exerptTitle);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptHeader, exerptDateCreated);
+    var exerptContentContainer = document.createElement('section');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerptContentContainer, ["blog-exerpt-content-container", "r__blog-exerpt-content-container"]);
+    var exerpt = document.createElement('p');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(exerpt, ["blog-exerpt__exerpt", "r__blog-exerpt__exerpt"]);
+    exerpt.textContent = post.content[0].data.slice(0, 200);
+    var postLink = document.createElement('a');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(postLink, ["post-link", "r__post-link"]);
+    postLink.setAttribute('href', "/blog/posts/".concat(post.id));
+    postLink.textContent = "Go To Post";
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContentContainer, exerpt);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContentContainer, postLink);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContainer, exerptHeader);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', exerptContainer, exerptContentContainer);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', postContainer, exerptContainer);
+  });
+};
 
 var renderPhoto = function renderPhoto(container, content) {
   var image = document.createElement('img');
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(image, ["blog-image", "r__blog-image"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(image, ["blog-image", "r__blog-image"]);
   var index = content.file.indexOf("DIST/CSS");
   image.src = content.file.slice(index);
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", container, image);
+  _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, image);
 };
 
 var renderVideo = function renderVideo(container, content) {
   var video = document.createElement('video');
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(video, ["blog-video", "r__blog-video"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(video, ["blog-video", "r__blog-video"]);
   video.controls = true;
   var index = content.file.indexOf("DIST/CSS");
   video.src = content.file.slice(index);
   video.type = "video/".concat(content.file.slice(content.file.length - 3));
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", container, video);
+  _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, video);
 };
 
 var renderParagraph = function renderParagraph(container, content) {
   var paragraph = document.createElement('p');
   paragraph.textContent = content.data;
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(paragraph, ["blog-paragraph", "r__blog-paragraph"]);
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", container, paragraph);
+  _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(paragraph, ["blog-paragraph", "r__blog-paragraph"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", container, paragraph);
 };
 
 var renderDate = function renderDate(content) {
@@ -5280,7 +5373,7 @@ var renderDate = function renderDate(content) {
   var year = new Date(postDate).getFullYear();
   var month = new Date(postDate).getMonth() + 1;
   var day = new Date(postDate).getDate();
-  var currentDate = luxon__WEBPACK_IMPORTED_MODULE_1__.DateTime.local(year, month, day);
+  var currentDate = luxon__WEBPACK_IMPORTED_MODULE_4__.DateTime.local(year, month, day);
   currentDate = currentDate.plus({
     day: 1
   });
@@ -5289,7 +5382,7 @@ var renderDate = function renderDate(content) {
 
   if (dates.length === 1) {
     date = dates[0];
-    date.textContent = "".concat(currentDate.toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_1__.DateTime.DATE_FULL), " ");
+    date.textContent = "".concat(currentDate.toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_4__.DateTime.DATE_FULL), " ");
   }
 };
 
@@ -5321,6 +5414,41 @@ var renderBlogPost = function renderBlogPost(content) {
     }
   });
 };
+var watchBlog = /*#__PURE__*/function () {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
+    var blog, posts;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            blog = document.querySelector('.blog');
+
+            if (!blog) {
+              _context.next = 8;
+              break;
+            }
+
+            console.log("Watching...");
+            _context.next = 5;
+            return _API_Calls__WEBPACK_IMPORTED_MODULE_3__.fetchBlogPosts();
+
+          case 5:
+            posts = _context.sent;
+            renderBlogExerpts(posts);
+            console.log(posts);
+
+          case 8:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function watchBlog() {
+    return _ref.apply(this, arguments);
+  };
+}();
 
 /***/ }),
 
@@ -5392,7 +5520,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Vue_Projects_App_Vue_App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Vue-Projects-App/Vue-App.vue */ "./Public/JS/Vue-Projects-App/Vue-App.vue");
 
 
-(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_Vue_Projects_App_Vue_App_vue__WEBPACK_IMPORTED_MODULE_1__["default"]).mount('#vueApp');
+
+if (document.getElementById('vueApp')) {
+  (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_Vue_Projects_App_Vue_App_vue__WEBPACK_IMPORTED_MODULE_1__["default"]).mount('#vueApp');
+}
 
 /***/ }),
 
@@ -53168,7 +53299,8 @@ __webpack_require__.r(__webpack_exports__);
       this._fetchLatestProject();
 
       _Pages_About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
-      _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage(); // API.fetchSkills();
+      _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage();
+      _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.watchBlog(); // API.fetchSkills();
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{

@@ -1,5 +1,56 @@
 import { DateTime } from 'luxon';
 import * as Utility from './../Utility';
+import * as API from './../API-Calls';
+
+const renderBlogExerpts = (posts) => {
+  const postContainer = document.querySelector('.blog-post-container');
+  posts.forEach((post, i) => {
+    let exerptContainer = document.createElement('section');
+    Utility.addClasses(exerptContainer, [`blog-exerpt`, `r__blog-exerpt`]);
+    exerptContainer.dataset.id = post.id;
+
+    let exerptHeader = document.createElement('header');
+    Utility.addClasses(exerptHeader, [`blog-exerpt__header`, `r__blog-exerpt__header`]);
+
+    let exerptTitle = document.createElement('p');
+    Utility.addClasses(exerptTitle, [`blog-exerpt-title`, `r__blog-exerpt-title`]);
+    exerptTitle.textContent = post.title;
+
+    let exerptDateCreated = document.createElement('p');
+    Utility.addClasses(exerptDateCreated, [`blog-exerpt-date-created`, `r__blog-exerpt-date-created`]);
+
+    let dateOptions = {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    };
+    let dateFormat = new Intl.DateTimeFormat(navigator.language, dateOptions);
+    exerptDateCreated.textContent = dateFormat.format(new Date(post.date));
+
+    Utility.insertElement('beforeend', exerptHeader, exerptTitle);
+    Utility.insertElement('beforeend', exerptHeader, exerptDateCreated);
+
+    const exerptContentContainer = document.createElement('section');
+    Utility.addClasses(exerptContentContainer, [`blog-exerpt-content-container`, `r__blog-exerpt-content-container`]);
+
+    let exerpt = document.createElement('p');
+    Utility.addClasses(exerpt, [`blog-exerpt__exerpt`, `r__blog-exerpt__exerpt`]);
+    exerpt.textContent = post.content[0].data.slice(0, 200);
+
+    let postLink = document.createElement('a');
+    Utility.addClasses(postLink, [`post-link`, `r__post-link`]);
+    postLink.setAttribute('href', `/blog/posts/${post.id}`);
+    postLink.textContent = `Go To Post`;
+
+    Utility.insertElement('beforeend', exerptContentContainer, exerpt);
+    Utility.insertElement('beforeend', exerptContentContainer, postLink);
+
+    Utility.insertElement('beforeend', exerptContainer, exerptHeader);
+    Utility.insertElement('beforeend', exerptContainer, exerptContentContainer);
+
+    Utility.insertElement('beforeend', postContainer, exerptContainer);
+  });
+};
 
 const renderPhoto = (container, content) => {
   const image = document.createElement('img');
@@ -64,4 +115,14 @@ export const renderBlogPost = (content) => {
       renderVideo(postContent, piece);
     }
   });
+};
+
+export const watchBlog = async () => {
+  const blog = document.querySelector('.blog');
+  if (blog) {
+    console.log(`Watching...`);
+    let posts = await API.fetchBlogPosts();
+    renderBlogExerpts(posts);
+    console.log(posts);
+  }
 };

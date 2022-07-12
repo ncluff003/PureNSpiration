@@ -19,3 +19,23 @@ block connection-links
         li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
           a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://t.me/ncluff003`)  
             i.fab.fa-telegram-plane
+
+block unique-content
+  section.blog-container.r__blog-container.column_1-24.row_2-17
+    section.blog.r__blog.construction-zone
+      header.blog-heading.r__blog-heading
+        p.blog-heading__title.r__blog-heading__title=data.data.blog.title
+      section.blog-search-container.r__block-search-container
+        - let searchTypes = [`Text`, `Date`, `Title`];
+        select.search-select.r__search-select
+          each searchType in searchTypes
+            option.search-select-option.r__search-select-option= searchType
+        input.search-input.r__search-input(type="text" placeholder="Enter Search Terms")
+        button.button--search.r__button--search
+          i.fas.fa-magnifying-glass.button--search__icon.r__button--search__icon 
+          p.button--search__text.r__button--search__text Search
+      section.blog-post-container.r__blog-post-container 
+      section.blog-page-navigation.r__blog-page-navigation 
+        i.fas.fa-circle-arrow-left.blog-page-navigation__icon.r__blog-page-navigation_icon
+        p.page.r__page Page 1 / 4
+        i.fas.fa-circle-arrow-right.blog-page-navigation__icon.r__blog-page-navigation_icon

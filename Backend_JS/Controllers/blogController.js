@@ -60,11 +60,29 @@ exports.getLatestPost = catchAsync(async (request, response, next) => {
 });
 
 exports.getAllPosts = catchAsync(async (request, response, next) => {
+  console.log(request.query);
   let posts = pureData.blog.data.posts;
-  response.status(200).json({
-    status: `Success`,
-    data: posts,
-  });
+  console.log(posts);
+  if (request.query.page && request.query.limit) {
+    let page = request.query.page * 1 || 1;
+    let limit = request.query.limit * 1 || 10;
+    let skip = page - 1 * limit;
+    // Page 1 = Posts 0 - 9 | Page 2 = Posts 10 - 19 | Page 3 = Posts 20 - 29 ...
+    let paginatedPosts = posts.map((post, i) => {
+      if (posts.indexOf(post) >= skip && posts.indexOf(post) < page * limit) {
+        return post;
+      }
+    });
+    response.status(200).json({
+      status: `Success`,
+      data: paginatedPosts,
+    });
+  } else {
+    response.status(200).json({
+      status: `Success`,
+      data: posts,
+    });
+  }
 });
 
 exports.getPost = catchAsync(async (request, response, next) => {

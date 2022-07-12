@@ -33,6 +33,17 @@
   &-flow-right {
     transform: translate(23rem, 0);
   }
+
+  &--search {
+    @include SizeAndPositioning(relative, 100%, 15%, flex, row, nowrap, space-around, center, 0, 0, 0);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 /////////////////////////////////
@@ -83,6 +94,18 @@
       }
     }
   }
+  .blog {
+    .blog-search-container {
+      .button--search {
+        border: 0.2rem solid rgba($primaryColor, 0.8);
+        background-color: rgba($primaryColorDark, 0.8);
+        &:hover {
+          border: 0.2rem solid $primaryColor;
+          background-color: $primaryColor;
+        }
+      }
+    }
+  }
 }
 /////////////////////////////////
 // NIGHT SETTINGS
@@ -127,6 +150,18 @@
               border: 0.2rem inset $primaryColorDarker;
             }
           }
+        }
+      }
+    }
+  }
+  .blog {
+    .blog-search-container {
+      .button--search {
+        border: 0.2rem solid rgba($secondaryColor, 0.8);
+        background-color: rgba($secondaryColorDark, 0.8);
+        &:hover {
+          border: 0.2rem solid $secondaryColor;
+          background-color: $secondaryColor;
         }
       }
     }

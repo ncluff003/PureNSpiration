@@ -28,6 +28,7 @@ router.route(`/posts/latest`).get(blogController.getLatestPost);
 router.route(`/`).get(blogController.renderBlog);
 router.route(`/posts`).get(blogController.getAllPosts);
 router.route(`/posts/:id`).get(blogController.getPost);
+// router.route(`/posts?page=&limit`).get(blogController.getAllPosts);
 
 ////////////////////////////////////////////
 //  My Modules

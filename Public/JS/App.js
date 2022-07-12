@@ -21,6 +21,7 @@ import * as Project from './Pages/Project';
       this._fetchLatestProject();
       About.watchAbout();
       Project.watchProjectPage();
+      Blog.watchBlog();
       // API.fetchSkills();
     }
 

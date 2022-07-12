@@ -28,6 +28,23 @@ export const fetchLatestPost = async () => {
   }
 };
 
+export const fetchBlogPosts = async (page, limit) => {
+  const options = {
+    method: `GET`,
+    url: `/blog/posts`,
+  };
+  if (page) {
+    options.url = `/blog/posts?page=${page}`;
+  }
+  if (page && limit) {
+    options.url = `/blog/posts?page=${page}&limit=${limit}`;
+  }
+  try {
+    const response = await axios(options);
+    return response.data.data;
+  } catch (error) {}
+};
+
 export const fetchLatestProject = async () => {
   const options = {
     method: `GET`,

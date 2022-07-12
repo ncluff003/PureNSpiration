@@ -1,0 +1,208 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.blog-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+}
+
+.blog {
+  @include SizeAndPositioning(relative, 100vh, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+}
+
+.blog-heading {
+  @include SizeAndPositioning(relative, 25%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
+  transition: color 0.5s;
+}
+
+.blog-search-container {
+  @include SizeAndPositioning(relative, 4rem, 70%, flex, row, nowrap, center, center, 0, 0, 0);
+  margin-bottom: 2rem;
+}
+
+.search-select {
+  @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, center, center, 0, 0, 0);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.5s, border 0.5s, color 0.5s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.search-input {
+  @include SizeAndPositioning(relative, 100%, 50%, row, flex, nowrap, flex-start, center, 0, 0, 0);
+  padding: 0 0 0 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.5s, border 0.5s, color 0.5s;
+  &:focus {
+    outline: none;
+  }
+}
+
+.blog-post-container {
+  @include SizeAndPositioning(relative, calc(100% - (40% + 4rem)), 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  overflow-y: auto;
+}
+
+.blog-exerpt {
+  @include SizeAndPositioning(relative, 30rem, 50%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+  min-height: 30rem;
+  border-radius: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  &:hover {
+    cursor: pointer;
+    transition: background-color 0.25s, border 0.25s;
+    .blog-exerpt__header {
+      .blog-exerpt-date-created,
+      .blog-exerpt-title {
+        transition: color 0.25s;
+      }
+    }
+    .blog-exerpt-content-container {
+      &:after {
+        background-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba($secondaryColor, 0.8) 80%, $secondaryColor 90%);
+      }
+      transition: background 0.5s;
+    }
+  }
+}
+
+.blog-exerpt-date-created {
+  @include SizingItem(absolute, max-content, max-content);
+  top: 2rem;
+  right: 2rem;
+}
+
+.blog-exerpt-content-container {
+  @include SizeAndPositioning(relative, 50%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.blog-exerpt__exerpt {
+  transition: color 0.5s;
+}
+
+.post-link {
+  @include SizingItem(absolute, max-content, max-content);
+  bottom: 0.5rem;
+  right: 4rem;
+  z-index: 5;
+  transition: color 0.5s;
+}
+
+.blog-page-navigation {
+  @include SizeAndPositioning(relative, calc(100% - (100% - (10% + 4rem))), 50%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  &__icon {
+    &:hover {
+      cursor: pointer;
+    }
+    transition: color 0.5s;
+  }
+
+  .page {
+    transition: color 0.5s;
+  }
+}
+
+.day {
+  .blog {
+    .blog-search-container {
+      .search-select {
+        border: 0.2rem solid rgba($primaryColor, 0.8);
+        background-color: rgba($primaryColorDark, 0.8);
+        &:hover {
+          border: 0.2rem solid $primaryColor;
+          background-color: $primaryColor;
+        }
+      }
+      .search-input {
+        border: 0.2rem solid rgba($primaryColor, 0.8);
+        background-color: rgba($colorOffWhite, 0.8);
+        &:focus {
+          border: 0.2rem solid $primaryColor;
+          background-color: $colorOffWhite;
+        }
+      }
+    }
+    .blog-post-container {
+      .blog-exerpt {
+        border: 0.2rem solid rgba($primaryColor, 0.8);
+        .blog-exerpt-content-container {
+          &:after {
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba($colorOffWhite, 0.8) 70%, $colorOffWhite 90%);
+          }
+        }
+        &:hover {
+          background-color: $primaryColor;
+          border: 0.2rem solid $primaryColor;
+          .blog-exerpt-content-container {
+            .post-link {
+              &:hover {
+                transition: color 0.5s;
+              }
+            }
+            &:after {
+              background-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba($primaryColor, 0.8) 80%, $primaryColor 90%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.night {
+  .blog {
+    .blog-search-container {
+      .search-select {
+        border: 0.2rem solid rgba($secondaryColor, 0.8);
+        background-color: rgba($secondaryColorDark, 0.8);
+        &:hover {
+          border: 0.2rem solid $secondaryColor;
+          background-color: $secondaryColor;
+        }
+      }
+      .search-input {
+        border: 0.2rem solid rgba($secondaryColor, 0.8);
+        background-color: rgba($colorOffWhite, 0.8);
+        &:focus {
+          border: 0.2rem solid $secondaryColor;
+          background-color: $colorOffWhite;
+        }
+      }
+    }
+    .blog-post-container {
+      .blog-exerpt {
+        border: 0.2rem solid rgba($secondaryColor, 0.8);
+        .blog-exerpt-content-container {
+          &:after {
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba($colorDarkerGrey, 0.8) 70%, $colorDarkerGrey 90%);
+          }
+        }
+        &:hover {
+          background-color: $secondaryColor;
+          border: 0.2rem solid $primaryColor;
+          .blog-exerpt-content-container {
+            .post-link {
+              &:hover {
+                transition: color 0.5s;
+              }
+            }
+            &:after {
+              background-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba($secondaryColor, 0.8) 80%, $secondaryColor 90%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
