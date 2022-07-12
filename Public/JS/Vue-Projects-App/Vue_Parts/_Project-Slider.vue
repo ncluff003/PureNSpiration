@@ -45,7 +45,7 @@ export default {
 .vue-project-option {
   position: relative;
   height: auto;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
@@ -60,6 +60,8 @@ export default {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    border: 1rem solid transparent;
+    padding: 1.5rem;
 
     img {
       position: relative;
@@ -84,7 +86,6 @@ export default {
   &:hover {
     cursor: pointer;
     .vue-project-option__cover-photo-container {
-      padding: 1.5rem;
       transition: width 0.5s, border 0.5s;
 
       img {
@@ -104,14 +105,14 @@ export default {
   }
   .vue-project-option {
     &__title {
-      color: rgba(#ffd700, 0.5);
+      color: rgba(#333, 0.5);
     }
     &:hover {
       .vue-project-option__cover-photo-container {
         border: 1rem solid #ffd700;
       }
       .vue-project-option__title {
-        color: #ffd700;
+        color: #333;
       }
     }
   }

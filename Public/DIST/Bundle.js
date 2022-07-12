@@ -5260,7 +5260,7 @@ var renderPhoto = function renderPhoto(container, content) {
 
 var renderVideo = function renderVideo(container, content) {
   var video = document.createElement('video');
-  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(video, ["blog-video", "blog-video"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(video, ["blog-video", "r__blog-video"]);
   video.controls = true;
   var index = content.file.indexOf("DIST/CSS");
   video.src = content.file.slice(index);
@@ -5572,21 +5572,64 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Project_Display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_Project-Display */ "./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Display.vue");
-/* harmony import */ var _Project_Description__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_Project-Description */ "./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Description.vue");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _Project_Display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_Project-Display */ "./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Display.vue");
+/* harmony import */ var _Project_Description__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_Project-Description */ "./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Description.vue");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../Utility */ "./Public/JS/Utility.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Display: _Project_Display__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Description: _Project_Description__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Display: _Project_Display__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Description: _Project_Description__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   props: ['projectData', 'project'],
   data: function data() {
     return {
       projects: '',
-      selectedProject: this.project
+      selectedProject: this.project,
+      mediaOptionIndex: 0
     };
+  },
+  methods: {
+    mediaScrollLeft: function mediaScrollLeft(e) {
+      var mediaOptions = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelectorAll('.vue-media-option'));
+
+      var mediaSlider = e.target.closest('.vue-media-left').nextSibling;
+      this.mediaOptionIndex--;
+      if (this.mediaOptionIndex < 0) this.mediaOptionIndex = 0;
+      mediaSlider.scrollTo({
+        top: 0,
+        left: mediaOptions[this.mediaOptionIndex].offsetLeft
+      });
+    },
+    mediaScrollRight: function mediaScrollRight(e) {
+      var mediaOptions = (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelectorAll('.vue-media-option'));
+
+      var mediaSlider = e.target.closest('.vue-media-right').previousElementSibling;
+      this.mediaOptionIndex++;
+      if (this.mediaOptionIndex > mediaOptions.length - 1) this.mediaOptionIndex = mediaOptions.length - 1;
+      mediaSlider.scrollTo({
+        top: 0,
+        left: mediaOptions[this.mediaOptionIndex].offsetLeft
+      });
+    },
+    setDisplay: function setDisplay(e) {
+      e.preventDefault();
+      console.log((0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(document.querySelectorAll('.vue-media-option')));
+      console.log(e);
+    }
+  },
+  computed: {
+    selectedProjectMedia: function selectedProjectMedia() {
+      var mediaContainer = document.createElement('section');
+      _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(mediaContainer, ["vue-media-container", "r__vue-media-container"]);
+      var media = this.project.media;
+      return media;
+    }
   },
   mounted: function mounted() {}
 });
@@ -5612,14 +5655,16 @@ __webpack_require__.r(__webpack_exports__);
     return {
       projectTitle: '',
       projectTech: '',
-      projectDescription: ''
+      projectDescription: '',
+      myProject: null
     };
-  },
-  updated: function updated() {
-    this.projectTitle = this.project.title;
-    this.projectTech = this.project.technologies;
-    this.projectDescription = this.project.description;
-  }
+  } // updated() {
+  //   this.projectTitle = this.project.title;
+  //   this.projectTech = this.project.technologies;
+  //   this.projectDescription = this.project.description;
+  //   this.myProject = this.project;
+  // },
+
 });
 
 /***/ }),
@@ -5639,11 +5684,11 @@ __webpack_require__.r(__webpack_exports__);
       image: '',
       alt: ''
     };
-  },
-  updated: function updated() {
-    this.image = this.project.coverPhoto;
-    this.alt = this.project.photoAltText;
-  }
+  } // updated() {
+  //   this.image = this.project.coverPhoto;
+  //   this.alt = this.project.photoAltText;
+  // },
+
 });
 
 /***/ }),
@@ -5656,6 +5701,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Utility */ "./Public/JS/Utility.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["project"],
   data: function data() {
@@ -5664,10 +5711,11 @@ __webpack_require__.r(__webpack_exports__);
       projectSelected: false
     };
   },
-  updated: function updated() {
-    this.projectMedia = this.project.media;
-    this.projectSelected = true;
-  }
+  methods: {} // updated() {
+  //   this.projectMedia = this.project.media;
+  //   console.log(this.projectMedia);
+  // },
+
 });
 
 /***/ }),
@@ -5721,12 +5769,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onProjectSelected: $options.storeProject
   }, null, 8
   /* PROPS */
-  , ["projectData", "onProjectSelected"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Container, {
+  , ["projectData", "onProjectSelected"]), $data.projectSelected !== null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Container, {
+    key: 0,
     projectData: $data.data,
     project: $data.projectSelected
   }, null, 8
   /* PROPS */
-  , ["projectData", "project"])], 64
+  , ["projectData", "project"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -5754,20 +5803,112 @@ var _withScopeId = function _withScopeId(n) {
 var _hoisted_1 = {
   class: "vue-projects-container r__vue-projects-container"
 };
+var _hoisted_2 = {
+  class: "vue-project__cover-photo-display r__vue-project__cover-photo-display"
+};
+var _hoisted_3 = ["src", "alt"];
+var _hoisted_4 = {
+  class: "vue-project__description-container r__vue-project__description-container"
+};
+var _hoisted_5 = {
+  class: "project-title r__project-title"
+};
+var _hoisted_6 = {
+  class: "project-title__title r__project-title__title"
+};
+var _hoisted_7 = {
+  class: "vue-project-media r__vue-project-media"
+};
+
+var _hoisted_8 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+    class: "fas fa-arrow-left left-icon"
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_9 = [_hoisted_8];
+var _hoisted_10 = {
+  class: "vue-media-slider r__vue-media-slider"
+};
+var _hoisted_11 = ["src", "alt"];
+var _hoisted_12 = ["src", "alt"];
+
+var _hoisted_13 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+    class: "fas fa-arrow-right right-icon"
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_14 = [_hoisted_13];
+var _hoisted_15 = {
+  class: "vue-project-technologies r__vue-project-technologies"
+};
+var _hoisted_16 = {
+  class: "vue-project-description-container r__vue-project-description-container"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Display = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Display");
-
-  var _component_Description = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Description");
-
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Display, {
-    project: $props.project
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $props.project.media[0].file,
+    alt: $props.project.media[0].altText,
+    class: "project-cover-photo r__project-cover-photo"
   }, null, 8
   /* PROPS */
-  , ["project"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Description, {
-    project: $props.project
-  }, null, 8
-  /* PROPS */
-  , ["project"])]);
+  , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.project.title), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    class: "vue-media-left r__vue-media-left",
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.mediaScrollLeft && $options.mediaScrollLeft.apply($options, arguments);
+    })
+  }, _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.project.media, function (media) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", {
+      class: "vue-media-option r__vue-media-option",
+      key: media
+    }, [media.type === 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("video", {
+      key: 0,
+      class: "vue-media-option__video r__vue-media-option__video",
+      src: media.file,
+      alt: media.altText,
+      controls: "true",
+      onClick: _cache[1] || (_cache[1] = function () {
+        return $options.setDisplay && $options.setDisplay.apply($options, arguments);
+      })
+    }, null, 8
+    /* PROPS */
+    , _hoisted_11)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), media.type === 'photo' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
+      key: 1,
+      src: media.file,
+      alt: media.altText,
+      class: "vue-media-option__image r__vue-media-optoin__image",
+      onClick: _cache[2] || (_cache[2] = function () {
+        return $options.setDisplay && $options.setDisplay.apply($options, arguments);
+      })
+    }, null, 8
+    /* PROPS */
+    , _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    class: "vue-media-right r__vue-media-right",
+    onClick: _cache[3] || (_cache[3] = function () {
+      return $options.mediaScrollRight && $options.mediaScrollRight.apply($options, arguments);
+    })
+  }, _hoisted_14)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.project.technologies), 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_16, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.project.description, function (text) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", {
+      class: "vue-project-description r__vue-project-description",
+      key: text
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(text), 1
+    /* TEXT */
+    );
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <Display :project=\"project\" />\n    <Description :project=\"project\" /> ")]);
 }
 
 /***/ }),
@@ -5886,33 +6027,11 @@ var _hoisted_1 = {
   class: "vue-project-media r__vue-project-media"
 };
 
-var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    class: "vue-media-left r__vue-media-left"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    class: "fas fa-arrow-left left-icon"
-  })], -1
-  /* HOISTED */
-  );
-});
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<button class=\"vue-media-left r__vue-media-left\" data-v-ba7b9696><i class=\"fas fa-arrow-left left-icon\" data-v-ba7b9696></i></button><section class=\"vue-media-slider r__vue-media-slider\" data-v-ba7b9696></section><button class=\"vue-media-right r__vue-media-right\" data-v-ba7b9696><i class=\"fas fa-arrow-right right-icon\" data-v-ba7b9696></i></button>", 3);
 
-var _hoisted_3 = {
-  key: 0,
-  class: "vue-media-slider r__vue-media-slider"
-};
-
-var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    class: "vue-media-right r__vue-media-right"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-    class: "fas fa-arrow-right right-icon"
-  })], -1
-  /* HOISTED */
-  );
-});
-
+var _hoisted_5 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [_hoisted_2, $data.projectSelected ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_3)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_4]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, _hoisted_5);
 }
 
 /***/ }),
@@ -19812,7 +19931,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".vue-projects-container[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: 60%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}", "",{"version":3,"sources":["webpack://./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Container.vue","webpack://./_Project-Container.vue"],"names":[],"mappings":"AACA;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,wBAAA;EACA,8BAAA;EACA,mBAAA;EACA,oCAAA;EACA,0DAAA;ACAF","sourcesContent":["\n.vue-projects-container {\n  position: relative;\n  height: 100%;\n  width: 60%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n// DAY STYLES\n.day {\n  .vue-projects-container {\n    // background-color: #cccccc;\n  }\n}\n\n// NIGHT STYLES\n.night {\n  .vue-projects-container {\n    // background-color: #0047ab;\n  }\n}\n",".vue-projects-container {\n  position: relative;\n  height: 100%;\n  width: 60%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".vue-projects-container[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: 60%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project__cover-photo-display[data-v-58c8935c] {\n  position: relative;\n  height: 55%;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.project-cover-photo[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: auto;\n}\n.vue-project__description-container[data-v-58c8935c] {\n  position: relative;\n  height: 45%;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  padding: 1rem 2rem 0;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.project-title[data-v-58c8935c] {\n  position: absolute;\n  height: max-content;\n  width: max-content;\n  top: 1rem;\n  left: 2rem;\n  font-family: Roboto Slab, Verdana, sans-serif;\n  font-size: 4rem;\n  font-weight: bold;\n}\n.vue-project-technologies[data-v-58c8935c] {\n  position: absolute;\n  height: max-content;\n  width: max-content;\n  top: 1rem;\n  right: 2rem;\n  font-family: Roboto Slab, Verdana, sans-serif;\n  font-size: 1.6rem;\n  font-weight: bold;\n}\n.vue-project-description-container[data-v-58c8935c] {\n  position: relative;\n  height: 80%;\n  width: 50%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: flex-start;\n  padding: 6rem 3rem 0 3rem;\n  overflow-y: auto;\n}\n.vue-project-description-container p[data-v-58c8935c] {\n  font-size: 1.4rem;\n  font-family: Roboto Slab;\n  line-height: 1.5;\n  text-indent: 2rem;\n  margin-bottom: 1rem;\n}\n.vue-project-media[data-v-58c8935c] {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left[data-v-58c8935c],\n.vue-project-media .vue-media-right[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: 15%;\n  border: none;\n  transition: background-color 0.5s;\n}\n.vue-project-media .vue-media-left .left-icon[data-v-58c8935c],\n.vue-project-media .vue-media-left .right-icon[data-v-58c8935c],\n.vue-project-media .vue-media-right .left-icon[data-v-58c8935c],\n.vue-project-media .vue-media-right .right-icon[data-v-58c8935c] {\n  font-size: 3rem;\n  font-weight: bold;\n  transition: color 0.5s;\n}\n.vue-project-media .vue-media-left[data-v-58c8935c]:hover,\n.vue-project-media .vue-media-right[data-v-58c8935c]:hover {\n  cursor: pointer;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left:hover .left-icon[data-v-58c8935c],\n.vue-project-media .vue-media-left:hover .right-icon[data-v-58c8935c],\n.vue-project-media .vue-media-right:hover .left-icon[data-v-58c8935c],\n.vue-project-media .vue-media-right:hover .right-icon[data-v-58c8935c] {\n  transition: color 0.5s;\n}\n.vue-project-media .vue-media-slider[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: 70%;\n  display: flex;\n  padding: 0.5rem;\n  justify-content: flex-start;\n  align-content: center;\n  overflow-x: auto;\n  scroll-behavior: smooth;\n}\n.vue-project-media .vue-media-slider .vue-media-option[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: max-content;\n  opacity: 0.5;\n}\n.vue-project-media .vue-media-slider .vue-media-option__video[data-v-58c8935c], .vue-project-media .vue-media-slider .vue-media-option__image[data-v-58c8935c] {\n  position: relative;\n  height: 100%;\n  width: 19rem;\n  margin-right: 0.5rem;\n}\n.vue-project-media .vue-media-slider .vue-media-option[data-v-58c8935c]:hover {\n  cursor: pointer;\n  opacity: 1;\n  transition: opacity 0.5s;\n}\n.vue-project-media .vue-media-slider .vue-project-video[data-v-58c8935c] {\n  position: absoulte;\n  top: 50%;\n  left: 50%;\n  height: 100%;\n  width: auto;\n  transform: translateY(-50%);\n}\n.vue-project-media .vue-media-slider .vue-project-video[data-v-58c8935c]:hover {\n  cursor: pointer;\n}\n.day .vue-project__description-container .project-title[data-v-58c8935c] {\n  color: #333333;\n}\n.day .vue-project__description-container .vue-project-technologies[data-v-58c8935c] {\n  color: #333333;\n}\n.day .vue-project__description-container .vue-project-description-container p[data-v-58c8935c] {\n  color: #333333;\n}\n.day .vue-project__description-container .vue-project-media[data-v-58c8935c] {\n  border: 0.5rem solid #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-right[data-v-58c8935c] {\n  background-color: rgba(255, 215, 0, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left .left-icon[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-left .right-icon[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-right .left-icon[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-right .right-icon[data-v-58c8935c] {\n  color: rgba(254, 254, 254, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left[data-v-58c8935c]:hover,\n.day .vue-project__description-container .vue-project-media .vue-media-right[data-v-58c8935c]:hover {\n  background-color: #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon[data-v-58c8935c],\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon[data-v-58c8935c] {\n  color: #fefefe;\n}\n\n/* NIGHT STYLES */\n.night .vue-project__description-container .project-title[data-v-58c8935c] {\n  color: #00b358;\n}\n.night .vue-project__description-container .vue-project-technologies[data-v-58c8935c] {\n  color: #00b358;\n}\n.night .vue-project__description-container .vue-project-description-container p[data-v-58c8935c] {\n  color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media[data-v-58c8935c] {\n  border: 0.5rem solid #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-right[data-v-58c8935c] {\n  background-color: rgba(0, 179, 88, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left .left-icon[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-left .right-icon[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-right .left-icon[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-right .right-icon[data-v-58c8935c] {\n  color: rgba(254, 254, 254, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left[data-v-58c8935c]:hover,\n.night .vue-project__description-container .vue-project-media .vue-media-right[data-v-58c8935c]:hover {\n  background-color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon[data-v-58c8935c],\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon[data-v-58c8935c] {\n  color: #fefefe;\n}", "",{"version":3,"sources":["webpack://./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Container.vue","webpack://./_Project-Container.vue"],"names":[],"mappings":"AACA;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,wBAAA;EACA,8BAAA;EACA,mBAAA;EACA,oCAAA;EACA,0DAAA;ACAF;ADKA;EACE,kBAAA;EACA,WAAA;EACA,UAAA;EACA,aAAA;EACA,qBAAA;EACA,uBAAA;EACA,mBAAA;EACA,0DAAA;ACFF;ADKA;EACE,kBAAA;EACA,YAAA;EACA,WAAA;ACFF;ADMA;EACE,kBAAA;EACA,WAAA;EACA,UAAA;EACA,aAAA;EACA,qBAAA;EACA,6BAAA;EACA,mBAAA;EACA,oBAAA;EACA,0DAAA;ACHF;ADMA;EACE,kBAAA;EACA,mBAAA;EACA,kBAAA;EACA,SAAA;EACA,UAAA;EACA,6CAAA;EACA,eAAA;EACA,iBAAA;ACHF;ADMA;EACE,kBAAA;EACA,mBAAA;EACA,kBAAA;EACA,SAAA;EACA,WAAA;EACA,6CAAA;EACA,iBAAA;EACA,iBAAA;ACHF;ADMA;EACE,kBAAA;EACA,WAAA;EACA,UAAA;EACA,aAAA;EACA,wBAAA;EACA,2BAAA;EACA,uBAAA;EACA,yBAAA;EACA,gBAAA;ACHF;ADKE;EACE,iBAAA;EACA,wBAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;ACHJ;ADSA;EACE,kBAAA;EACA,WAAA;EACA,UAAA;EACA,qBAAA;EACA,aAAA;EACA,qBAAA;EACA,8BAAA;EACA,uBAAA;EACA,0DAAA;ACNF;ADQE;;EAEE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,YAAA;EACA,iCAAA;ACNJ;ADQI;;;;EAEE,eAAA;EACA,iBAAA;EACA,sBAAA;ACJN;ADOI;;EACE,eAAA;EACA,0DAAA;ACJN;ADKM;;;;EAEE,sBAAA;ACDR;ADME;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,eAAA;EACA,2BAAA;EACA,qBAAA;EACA,gBAAA;EACA,uBAAA;ACJJ;ADMI;EACE,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;ACJN;ADKM;EAEE,kBAAA;EACA,YAAA;EACA,YAAA;EACA,oBAAA;ACJR;ADOM;EACE,eAAA;EACA,UAAA;EACA,wBAAA;ACLR;ADQI;EACE,kBAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,WAAA;EACA,2BAAA;ACNN;ADOM;EACE,eAAA;ACLR;ADeI;EACE,cAAA;ACZN;ADcI;EACE,cAAA;ACZN;ADgBM;EACE,cAAA;ACdR;ADiBI;EACE,4BAAA;ACfN;ADgBM;;EAEE,wCAAA;ACdR;ADeQ;;;;EAEE,+BAAA;ACXV;ADcQ;;EACE,yBAAA;ACXV;ADaU;;;;EAEE,cAAA;ACTZ;;ADiBA,iBAAA;AAII;EACE,cAAA;ACjBN;ADmBI;EACE,cAAA;ACjBN;ADoBM;EACE,cAAA;AClBR;ADsBI;EACE,4BAAA;ACpBN;ADqBM;;EAEE,uCAAA;ACnBR;ADoBQ;;;;EAEE,+BAAA;AChBV;ADkBQ;;EACE,yBAAA;ACfV;ADgBU;;;;EAEE,cAAA;ACZZ","sourcesContent":["\n.vue-projects-container {\n  position: relative;\n  height: 100%;\n  width: 60%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n// PROJECT DISPLAY\n\n.vue-project__cover-photo-display {\n  position: relative;\n  height: 55%;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n.project-cover-photo {\n  position: relative;\n  height: 100%;\n  width: auto;\n}\n\n// PROJECT DESCRIPTION\n.vue-project__description-container {\n  position: relative;\n  height: 45%;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  padding: 1rem 2rem 0;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n.project-title {\n  position: absolute;\n  height: max-content;\n  width: max-content;\n  top: 1rem;\n  left: 2rem;\n  font-family: Roboto Slab, Verdana, sans-serif;\n  font-size: 4rem;\n  font-weight: bold;\n}\n\n.vue-project-technologies {\n  position: absolute;\n  height: max-content;\n  width: max-content;\n  top: 1rem;\n  right: 2rem;\n  font-family: Roboto Slab, Verdana, sans-serif;\n  font-size: 1.6rem;\n  font-weight: bold;\n}\n\n.vue-project-description-container {\n  position: relative;\n  height: 80%;\n  width: 50%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: flex-start;\n  padding: 6rem 3rem 0 3rem;\n  overflow-y: auto;\n\n  p {\n    font-size: 1.4rem;\n    font-family: Roboto Slab;\n    line-height: 1.5;\n    text-indent: 2rem;\n    margin-bottom: 1rem;\n  }\n}\n\n// PROJECT MEDIA\n\n.vue-project-media {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n\n  .vue-media-left,\n  .vue-media-right {\n    position: relative;\n    height: 100%;\n    width: 15%;\n    border: none;\n    transition: background-color 0.5s;\n\n    .left-icon,\n    .right-icon {\n      font-size: 3rem;\n      font-weight: bold;\n      transition: color 0.5s;\n    }\n\n    &:hover {\n      cursor: pointer;\n      transition: background-color 0.5s, border 0.5s, color 0.5s;\n      .left-icon,\n      .right-icon {\n        transition: color 0.5s;\n      }\n    }\n  }\n\n  .vue-media-slider {\n    position: relative;\n    height: 100%;\n    width: 70%;\n    display: flex;\n    padding: 0.5rem;\n    justify-content: flex-start;\n    align-content: center;\n    overflow-x: auto;\n    scroll-behavior: smooth;\n\n    .vue-media-option {\n      position: relative;\n      height: 100%;\n      width: max-content;\n      opacity: 0.5;\n      &__video,\n      &__image {\n        position: relative;\n        height: 100%;\n        width: 19rem;\n        margin-right: 0.5rem;\n      }\n\n      &:hover {\n        cursor: pointer;\n        opacity: 1;\n        transition: opacity 0.5s;\n      }\n    }\n    .vue-project-video {\n      position: absoulte;\n      top: 50%;\n      left: 50%;\n      height: 100%;\n      width: auto;\n      transform: translateY(-50%);\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n}\n\n// DAY STYLES\n.day {\n  .vue-project__description-container {\n    // border: 0.3rem groove #ffd700;\n    .project-title {\n      color: #333333;\n    }\n    .vue-project-technologies {\n      color: #333333;\n    }\n\n    .vue-project-description-container {\n      p {\n        color: #333333;\n      }\n    }\n    .vue-project-media {\n      border: 0.5rem solid #ffd700;\n      .vue-media-left,\n      .vue-media-right {\n        background-color: rgba(#ffd700, 0.7);\n        .left-icon,\n        .right-icon {\n          color: rgba(#fefefe, 0.7);\n        }\n\n        &:hover {\n          background-color: #ffd700;\n\n          .left-icon,\n          .right-icon {\n            color: #fefefe;\n          }\n        }\n      }\n    }\n  }\n}\n\n/* NIGHT STYLES */\n.night {\n  .vue-project__description-container {\n    // border: 0.3rem groove #00b358;\n    .project-title {\n      color: #00b358;\n    }\n    .vue-project-technologies {\n      color: #00b358;\n    }\n    .vue-project-description-container {\n      p {\n        color: #00b358;\n      }\n    }\n\n    .vue-project-media {\n      border: 0.5rem solid #00b358;\n      .vue-media-left,\n      .vue-media-right {\n        background-color: rgba(#00b358, 0.7);\n        .left-icon,\n        .right-icon {\n          color: rgba(#fefefe, 0.7);\n        }\n        &:hover {\n          background-color: #00b358;\n          .left-icon,\n          .right-icon {\n            color: #fefefe;\n          }\n        }\n      }\n    }\n  }\n}\n",".vue-projects-container {\n  position: relative;\n  height: 100%;\n  width: 60%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-between;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n.vue-project__cover-photo-display {\n  position: relative;\n  height: 55%;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n.project-cover-photo {\n  position: relative;\n  height: 100%;\n  width: auto;\n}\n\n.vue-project__description-container {\n  position: relative;\n  height: 45%;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  padding: 1rem 2rem 0;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n\n.project-title {\n  position: absolute;\n  height: max-content;\n  width: max-content;\n  top: 1rem;\n  left: 2rem;\n  font-family: Roboto Slab, Verdana, sans-serif;\n  font-size: 4rem;\n  font-weight: bold;\n}\n\n.vue-project-technologies {\n  position: absolute;\n  height: max-content;\n  width: max-content;\n  top: 1rem;\n  right: 2rem;\n  font-family: Roboto Slab, Verdana, sans-serif;\n  font-size: 1.6rem;\n  font-weight: bold;\n}\n\n.vue-project-description-container {\n  position: relative;\n  height: 80%;\n  width: 50%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: flex-start;\n  padding: 6rem 3rem 0 3rem;\n  overflow-y: auto;\n}\n.vue-project-description-container p {\n  font-size: 1.4rem;\n  font-family: Roboto Slab;\n  line-height: 1.5;\n  text-indent: 2rem;\n  margin-bottom: 1rem;\n}\n\n.vue-project-media {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left,\n.vue-project-media .vue-media-right {\n  position: relative;\n  height: 100%;\n  width: 15%;\n  border: none;\n  transition: background-color 0.5s;\n}\n.vue-project-media .vue-media-left .left-icon,\n.vue-project-media .vue-media-left .right-icon,\n.vue-project-media .vue-media-right .left-icon,\n.vue-project-media .vue-media-right .right-icon {\n  font-size: 3rem;\n  font-weight: bold;\n  transition: color 0.5s;\n}\n.vue-project-media .vue-media-left:hover,\n.vue-project-media .vue-media-right:hover {\n  cursor: pointer;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left:hover .left-icon,\n.vue-project-media .vue-media-left:hover .right-icon,\n.vue-project-media .vue-media-right:hover .left-icon,\n.vue-project-media .vue-media-right:hover .right-icon {\n  transition: color 0.5s;\n}\n.vue-project-media .vue-media-slider {\n  position: relative;\n  height: 100%;\n  width: 70%;\n  display: flex;\n  padding: 0.5rem;\n  justify-content: flex-start;\n  align-content: center;\n  overflow-x: auto;\n  scroll-behavior: smooth;\n}\n.vue-project-media .vue-media-slider .vue-media-option {\n  position: relative;\n  height: 100%;\n  width: max-content;\n  opacity: 0.5;\n}\n.vue-project-media .vue-media-slider .vue-media-option__video, .vue-project-media .vue-media-slider .vue-media-option__image {\n  position: relative;\n  height: 100%;\n  width: 19rem;\n  margin-right: 0.5rem;\n}\n.vue-project-media .vue-media-slider .vue-media-option:hover {\n  cursor: pointer;\n  opacity: 1;\n  transition: opacity 0.5s;\n}\n.vue-project-media .vue-media-slider .vue-project-video {\n  position: absoulte;\n  top: 50%;\n  left: 50%;\n  height: 100%;\n  width: auto;\n  transform: translateY(-50%);\n}\n.vue-project-media .vue-media-slider .vue-project-video:hover {\n  cursor: pointer;\n}\n\n.day .vue-project__description-container .project-title {\n  color: #333333;\n}\n.day .vue-project__description-container .vue-project-technologies {\n  color: #333333;\n}\n.day .vue-project__description-container .vue-project-description-container p {\n  color: #333333;\n}\n.day .vue-project__description-container .vue-project-media {\n  border: 0.5rem solid #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left,\n.day .vue-project__description-container .vue-project-media .vue-media-right {\n  background-color: rgba(255, 215, 0, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-left .right-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right .right-icon {\n  color: rgba(254, 254, 254, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover {\n  background-color: #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon {\n  color: #fefefe;\n}\n\n/* NIGHT STYLES */\n.night .vue-project__description-container .project-title {\n  color: #00b358;\n}\n.night .vue-project__description-container .vue-project-technologies {\n  color: #00b358;\n}\n.night .vue-project__description-container .vue-project-description-container p {\n  color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media {\n  border: 0.5rem solid #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left,\n.night .vue-project__description-container .vue-project-media .vue-media-right {\n  background-color: rgba(0, 179, 88, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-left .right-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right .right-icon {\n  color: rgba(254, 254, 254, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover {\n  background-color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon {\n  color: #fefefe;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -19884,7 +20003,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".vue-project-media[data-v-ba7b9696] {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left[data-v-ba7b9696],\n.vue-project-media .vue-media-right[data-v-ba7b9696] {\n  position: relative;\n  height: 100%;\n  width: 15%;\n  border: none;\n}\n.vue-project-media .vue-media-left .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-left .right-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right .right-icon[data-v-ba7b9696] {\n  font-size: 3rem;\n  font-weight: bold;\n}\n.vue-project-media .vue-media-left[data-v-ba7b9696]:hover,\n.vue-project-media .vue-media-right[data-v-ba7b9696]:hover {\n  cursor: pointer;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left:hover .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-left:hover .right-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right:hover .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right:hover .right-icon[data-v-ba7b9696] {\n  transition: color 0.5s;\n}\n.day .vue-project__description-container .vue-project-media[data-v-ba7b9696] {\n  border: 0.5rem solid #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696] {\n  background-color: rgba(255, 215, 0, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-left .right-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right .right-icon[data-v-ba7b9696] {\n  color: rgba(254, 254, 254, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696]:hover,\n.day .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696]:hover {\n  background-color: #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon[data-v-ba7b9696] {\n  color: #fefefe;\n}\n.night .vue-project__description-container .vue-project-media[data-v-ba7b9696] {\n  border: 0.5rem solid #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696] {\n  background-color: rgba(0, 179, 88, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-left .right-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right .right-icon[data-v-ba7b9696] {\n  color: rgba(254, 254, 254, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696]:hover,\n.night .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696]:hover {\n  background-color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon[data-v-ba7b9696] {\n  color: #fefefe;\n}", "",{"version":3,"sources":["webpack://./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Media.vue","webpack://./_Project-Media.vue"],"names":[],"mappings":"AACA;EACE,kBAAA;EACA,WAAA;EACA,UAAA;EACA,qBAAA;EACA,aAAA;EACA,qBAAA;EACA,8BAAA;EACA,uBAAA;EACA,0DAAA;ACAF;ADEE;;EAEE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,YAAA;ACAJ;ADEI;;;;EAEE,eAAA;EACA,iBAAA;ACEN;ADCI;;EACE,eAAA;EACA,0DAAA;ACEN;ADDM;;;;EAEE,sBAAA;ACKR;ADEI;EACE,4BAAA;ACCN;ADAM;;EAEE,wCAAA;ACER;ADDQ;;;;EAEE,+BAAA;ACKV;ADFQ;;EACE,yBAAA;ACKV;ADHU;;;;EAEE,cAAA;ACOZ;ADGI;EACE,4BAAA;ACAN;ADCM;;EAEE,uCAAA;ACCR;ADAQ;;;;EAEE,+BAAA;ACIV;ADFQ;;EACE,yBAAA;ACKV;ADJU;;;;EAEE,cAAA;ACQZ","sourcesContent":["\n.vue-project-media {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n\n  .vue-media-left,\n  .vue-media-right {\n    position: relative;\n    height: 100%;\n    width: 15%;\n    border: none;\n\n    .left-icon,\n    .right-icon {\n      font-size: 3rem;\n      font-weight: bold;\n    }\n\n    &:hover {\n      cursor: pointer;\n      transition: background-color 0.5s, border 0.5s, color 0.5s;\n      .left-icon,\n      .right-icon {\n        transition: color 0.5s;\n      }\n    }\n  }\n}\n.day {\n  .vue-project__description-container {\n    .vue-project-media {\n      border: 0.5rem solid #ffd700;\n      .vue-media-left,\n      .vue-media-right {\n        background-color: rgba(#ffd700, 0.7);\n        .left-icon,\n        .right-icon {\n          color: rgba(#fefefe, 0.7);\n        }\n\n        &:hover {\n          background-color: #ffd700;\n\n          .left-icon,\n          .right-icon {\n            color: #fefefe;\n          }\n        }\n      }\n    }\n  }\n}\n\n.night {\n  .vue-project__description-container {\n    .vue-project-media {\n      border: 0.5rem solid #00b358;\n      .vue-media-left,\n      .vue-media-right {\n        background-color: rgba(#00b358, 0.7);\n        .left-icon,\n        .right-icon {\n          color: rgba(#fefefe, 0.7);\n        }\n        &:hover {\n          background-color: #00b358;\n          .left-icon,\n          .right-icon {\n            color: #fefefe;\n          }\n        }\n      }\n    }\n  }\n}\n",".vue-project-media {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left,\n.vue-project-media .vue-media-right {\n  position: relative;\n  height: 100%;\n  width: 15%;\n  border: none;\n}\n.vue-project-media .vue-media-left .left-icon,\n.vue-project-media .vue-media-left .right-icon,\n.vue-project-media .vue-media-right .left-icon,\n.vue-project-media .vue-media-right .right-icon {\n  font-size: 3rem;\n  font-weight: bold;\n}\n.vue-project-media .vue-media-left:hover,\n.vue-project-media .vue-media-right:hover {\n  cursor: pointer;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left:hover .left-icon,\n.vue-project-media .vue-media-left:hover .right-icon,\n.vue-project-media .vue-media-right:hover .left-icon,\n.vue-project-media .vue-media-right:hover .right-icon {\n  transition: color 0.5s;\n}\n\n.day .vue-project__description-container .vue-project-media {\n  border: 0.5rem solid #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left,\n.day .vue-project__description-container .vue-project-media .vue-media-right {\n  background-color: rgba(255, 215, 0, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-left .right-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right .right-icon {\n  color: rgba(254, 254, 254, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover {\n  background-color: #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon {\n  color: #fefefe;\n}\n\n.night .vue-project__description-container .vue-project-media {\n  border: 0.5rem solid #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left,\n.night .vue-project__description-container .vue-project-media .vue-media-right {\n  background-color: rgba(0, 179, 88, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-left .right-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right .right-icon {\n  color: rgba(254, 254, 254, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover {\n  background-color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon {\n  color: #fefefe;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".vue-project-media[data-v-ba7b9696] {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left[data-v-ba7b9696],\n.vue-project-media .vue-media-right[data-v-ba7b9696] {\n  position: relative;\n  height: 100%;\n  width: 15%;\n  border: none;\n}\n.vue-project-media .vue-media-left .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-left .right-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right .right-icon[data-v-ba7b9696] {\n  font-size: 3rem;\n  font-weight: bold;\n}\n.vue-project-media .vue-media-left[data-v-ba7b9696]:hover,\n.vue-project-media .vue-media-right[data-v-ba7b9696]:hover {\n  cursor: pointer;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left:hover .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-left:hover .right-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right:hover .left-icon[data-v-ba7b9696],\n.vue-project-media .vue-media-right:hover .right-icon[data-v-ba7b9696] {\n  transition: color 0.5s;\n}\n.vue-project-media .vue-media-slider[data-v-ba7b9696] {\n  position: relative;\n  height: 100%;\n  width: 70%;\n  display: flex;\n  padding: 0.5rem;\n  justify-content: flex-start;\n  align-content: center;\n}\n.vue-project-media .vue-media-slider .vue-project-video[data-v-ba7b9696] {\n  position: absoulte;\n  top: 50%;\n  left: 50%;\n  height: 100%;\n  width: auto;\n  transform: translateY(-50%);\n}\n.vue-project-media .vue-media-slider .vue-project-video[data-v-ba7b9696]:hover {\n  cursor: pointer;\n}\n.day .vue-project__description-container .vue-project-media[data-v-ba7b9696] {\n  border: 0.5rem solid #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696] {\n  background-color: rgba(255, 215, 0, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-left .right-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right .right-icon[data-v-ba7b9696] {\n  color: rgba(254, 254, 254, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696]:hover,\n.day .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696]:hover {\n  background-color: #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon[data-v-ba7b9696],\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon[data-v-ba7b9696] {\n  color: #fefefe;\n}\n.night .vue-project__description-container .vue-project-media[data-v-ba7b9696] {\n  border: 0.5rem solid #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696] {\n  background-color: rgba(0, 179, 88, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-left .right-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right .right-icon[data-v-ba7b9696] {\n  color: rgba(254, 254, 254, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left[data-v-ba7b9696]:hover,\n.night .vue-project__description-container .vue-project-media .vue-media-right[data-v-ba7b9696]:hover {\n  background-color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon[data-v-ba7b9696],\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon[data-v-ba7b9696] {\n  color: #fefefe;\n}", "",{"version":3,"sources":["webpack://./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Media.vue","webpack://./_Project-Media.vue"],"names":[],"mappings":"AACA;EACE,kBAAA;EACA,WAAA;EACA,UAAA;EACA,qBAAA;EACA,aAAA;EACA,qBAAA;EACA,8BAAA;EACA,uBAAA;EACA,0DAAA;ACAF;ADEE;;EAEE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,YAAA;ACAJ;ADEI;;;;EAEE,eAAA;EACA,iBAAA;ACEN;ADCI;;EACE,eAAA;EACA,0DAAA;ACEN;ADDM;;;;EAEE,sBAAA;ACKR;ADAE;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,eAAA;EACA,2BAAA;EACA,qBAAA;ACEJ;ADDI;EACE,kBAAA;EACA,QAAA;EACA,SAAA;EACA,YAAA;EACA,WAAA;EACA,2BAAA;ACGN;ADFM;EACE,eAAA;ACIR;ADGI;EACE,4BAAA;ACAN;ADCM;;EAEE,wCAAA;ACCR;ADAQ;;;;EAEE,+BAAA;ACIV;ADDQ;;EACE,yBAAA;ACIV;ADFU;;;;EAEE,cAAA;ACMZ;ADII;EACE,4BAAA;ACDN;ADEM;;EAEE,uCAAA;ACAR;ADCQ;;;;EAEE,+BAAA;ACGV;ADDQ;;EACE,yBAAA;ACIV;ADHU;;;;EAEE,cAAA;ACOZ","sourcesContent":["\n.vue-project-media {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n\n  .vue-media-left,\n  .vue-media-right {\n    position: relative;\n    height: 100%;\n    width: 15%;\n    border: none;\n\n    .left-icon,\n    .right-icon {\n      font-size: 3rem;\n      font-weight: bold;\n    }\n\n    &:hover {\n      cursor: pointer;\n      transition: background-color 0.5s, border 0.5s, color 0.5s;\n      .left-icon,\n      .right-icon {\n        transition: color 0.5s;\n      }\n    }\n  }\n\n  .vue-media-slider {\n    position: relative;\n    height: 100%;\n    width: 70%;\n    display: flex;\n    padding: 0.5rem;\n    justify-content: flex-start;\n    align-content: center;\n    .vue-project-video {\n      position: absoulte;\n      top: 50%;\n      left: 50%;\n      height: 100%;\n      width: auto;\n      transform: translateY(-50%);\n      &:hover {\n        cursor: pointer;\n      }\n    }\n  }\n}\n.day {\n  .vue-project__description-container {\n    .vue-project-media {\n      border: 0.5rem solid #ffd700;\n      .vue-media-left,\n      .vue-media-right {\n        background-color: rgba(#ffd700, 0.7);\n        .left-icon,\n        .right-icon {\n          color: rgba(#fefefe, 0.7);\n        }\n\n        &:hover {\n          background-color: #ffd700;\n\n          .left-icon,\n          .right-icon {\n            color: #fefefe;\n          }\n        }\n      }\n    }\n  }\n}\n\n.night {\n  .vue-project__description-container {\n    .vue-project-media {\n      border: 0.5rem solid #00b358;\n      .vue-media-left,\n      .vue-media-right {\n        background-color: rgba(#00b358, 0.7);\n        .left-icon,\n        .right-icon {\n          color: rgba(#fefefe, 0.7);\n        }\n        &:hover {\n          background-color: #00b358;\n          .left-icon,\n          .right-icon {\n            color: #fefefe;\n          }\n        }\n      }\n    }\n  }\n}\n",".vue-project-media {\n  position: relative;\n  height: 40%;\n  width: 50%;\n  border-radius: 0.5rem;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: space-between;\n  align-items: flex-start;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left,\n.vue-project-media .vue-media-right {\n  position: relative;\n  height: 100%;\n  width: 15%;\n  border: none;\n}\n.vue-project-media .vue-media-left .left-icon,\n.vue-project-media .vue-media-left .right-icon,\n.vue-project-media .vue-media-right .left-icon,\n.vue-project-media .vue-media-right .right-icon {\n  font-size: 3rem;\n  font-weight: bold;\n}\n.vue-project-media .vue-media-left:hover,\n.vue-project-media .vue-media-right:hover {\n  cursor: pointer;\n  transition: background-color 0.5s, border 0.5s, color 0.5s;\n}\n.vue-project-media .vue-media-left:hover .left-icon,\n.vue-project-media .vue-media-left:hover .right-icon,\n.vue-project-media .vue-media-right:hover .left-icon,\n.vue-project-media .vue-media-right:hover .right-icon {\n  transition: color 0.5s;\n}\n.vue-project-media .vue-media-slider {\n  position: relative;\n  height: 100%;\n  width: 70%;\n  display: flex;\n  padding: 0.5rem;\n  justify-content: flex-start;\n  align-content: center;\n}\n.vue-project-media .vue-media-slider .vue-project-video {\n  position: absoulte;\n  top: 50%;\n  left: 50%;\n  height: 100%;\n  width: auto;\n  transform: translateY(-50%);\n}\n.vue-project-media .vue-media-slider .vue-project-video:hover {\n  cursor: pointer;\n}\n\n.day .vue-project__description-container .vue-project-media {\n  border: 0.5rem solid #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left,\n.day .vue-project__description-container .vue-project-media .vue-media-right {\n  background-color: rgba(255, 215, 0, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-left .right-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right .right-icon {\n  color: rgba(254, 254, 254, 0.7);\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover {\n  background-color: #ffd700;\n}\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon,\n.day .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon {\n  color: #fefefe;\n}\n\n.night .vue-project__description-container .vue-project-media {\n  border: 0.5rem solid #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left,\n.night .vue-project__description-container .vue-project-media .vue-media-right {\n  background-color: rgba(0, 179, 88, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-left .right-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right .right-icon {\n  color: rgba(254, 254, 254, 0.7);\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover {\n  background-color: #00b358;\n}\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-left:hover .right-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .left-icon,\n.night .vue-project__description-container .vue-project-media .vue-media-right:hover .right-icon {\n  color: #fefefe;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -19908,7 +20027,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".vue-projects-slider[data-v-f3189440] {\n  position: relative;\n  height: 100%;\n  width: 20%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  background-color: transparent;\n  -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  overflow-y: auto;\n  padding-top: 3rem;\n}\n.vue-project-option[data-v-f3189440] {\n  position: relative;\n  height: auto;\n  width: 100%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5rem;\n}\n.vue-project-option__cover-photo-container[data-v-f3189440] {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n}\n.vue-project-option__cover-photo-container img[data-v-f3189440] {\n  position: relative;\n  height: auto;\n  width: 90%;\n  justify-self: center;\n}\n.vue-project-option__title[data-v-f3189440] {\n  position: absolute;\n  right: 4rem;\n  bottom: -3rem;\n  font-family: Roboto Condensed;\n  font-size: 2rem;\n  font-weight: bold;\n  transition: color 0.5s;\n}\n.vue-project-option[data-v-f3189440]:hover {\n  cursor: pointer;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container[data-v-f3189440] {\n  padding: 1.5rem;\n  transition: width 0.5s, border 0.5s;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container img[data-v-f3189440] {\n  width: 100%;\n  transition: width 0.5s;\n}\n\n/* DAY STYLES */\n.day .vue-projects-slider[data-v-f3189440] {\n  border-left: 0.3rem groove #ffd700;\n  border-right: 0.3rem groove #ffd700;\n  background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);\n}\n.day .vue-project-option__title[data-v-f3189440] {\n  color: rgba(255, 215, 0, 0.5);\n}\n.day .vue-project-option:hover .vue-project-option__cover-photo-container[data-v-f3189440] {\n  border: 1rem solid #ffd700;\n}\n.day .vue-project-option:hover .vue-project-option__title[data-v-f3189440] {\n  color: #ffd700;\n}\n\n/* NIGHT STYLES */\n.night .vue-projects-slider[data-v-f3189440] {\n  border-left: 0.3rem groove #00b358;\n  border-right: 0.3rem groove #00b358;\n  background-image: linear-gradient(to bottom, #333333 0%, rgba(254, 254, 254, 0.25) 5%, rgba(254, 254, 254, 0.25) 95%, #333333 100%);\n}\n.night .vue-projects-slider .vue-project-option__title[data-v-f3189440] {\n  color: rgba(0, 179, 88, 0.5);\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__cover-photo-container[data-v-f3189440] {\n  border: 1rem solid #00b358;\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__title[data-v-f3189440] {\n  color: #00b358;\n}", "",{"version":3,"sources":["webpack://./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Slider.vue","webpack://./_Project-Slider.vue"],"names":[],"mappings":"AACA;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,wBAAA;EACA,2BAAA;EACA,mBAAA;EACA,oCAAA;EACA,6BAAA;EACA,yFAAA;EACA,iFAAA;EACA,gBAAA;EACA,iBAAA;ACAF;ADGA;EACE,kBAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,wBAAA;EACA,6BAAA;EACA,mBAAA;EACA,mBAAA;ACAF;ADEE;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,qBAAA;EACA,uBAAA;EACA,mBAAA;ACAJ;ADEI;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,oBAAA;ACAN;ADIE;EACE,kBAAA;EACA,WAAA;EACA,aAAA;EAEA,6BAAA;EAEA,eAAA;EACA,iBAAA;EACA,sBAAA;ACJJ;ADOE;EACE,eAAA;ACLJ;ADMI;EACE,eAAA;EACA,mCAAA;ACJN;ADMM;EACE,WAAA;EACA,sBAAA;ACJR;;ADUA,eAAA;AAEE;EACE,kCAAA;EACA,mCAAA;EACA,uGAAA;ACRJ;ADWI;EACE,6BAAA;ACTN;ADYM;EACE,0BAAA;ACVR;ADYM;EACE,cAAA;ACVR;;ADgBA,iBAAA;AAEE;EACE,kCAAA;EACA,mCAAA;EACA,mIAAA;ACdJ;ADgBM;EACE,4BAAA;ACdR;ADiBQ;EACE,0BAAA;ACfV;ADiBQ;EACE,cAAA;ACfV","sourcesContent":["\n.vue-projects-slider {\n  position: relative;\n  height: 100%;\n  width: 20%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  background-color: transparent;\n  -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  overflow-y: auto;\n  padding-top: 3rem;\n}\n\n.vue-project-option {\n  position: relative;\n  height: auto;\n  width: 100%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5rem;\n\n  &__cover-photo-container {\n    position: relative;\n    height: auto;\n    width: 90%;\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: center;\n    align-items: center;\n\n    img {\n      position: relative;\n      height: auto;\n      width: 90%;\n      justify-self: center;\n    }\n  }\n\n  &__title {\n    position: absolute;\n    right: 4rem;\n    bottom: -3rem;\n\n    font-family: Roboto Condensed;\n    // font-family: Roboto Slab, Roboto Condensed;\n    font-size: 2rem;\n    font-weight: bold;\n    transition: color 0.5s;\n  }\n\n  &:hover {\n    cursor: pointer;\n    .vue-project-option__cover-photo-container {\n      padding: 1.5rem;\n      transition: width 0.5s, border 0.5s;\n\n      img {\n        width: 100%;\n        transition: width 0.5s;\n      }\n    }\n  }\n}\n\n/* DAY STYLES */\n.day {\n  .vue-projects-slider {\n    border-left: 0.3rem groove #ffd700;\n    border-right: 0.3rem groove #ffd700;\n    background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);\n  }\n  .vue-project-option {\n    &__title {\n      color: rgba(#ffd700, 0.5);\n    }\n    &:hover {\n      .vue-project-option__cover-photo-container {\n        border: 1rem solid #ffd700;\n      }\n      .vue-project-option__title {\n        color: #ffd700;\n      }\n    }\n  }\n}\n\n/* NIGHT STYLES */\n.night {\n  .vue-projects-slider {\n    border-left: 0.3rem groove #00b358;\n    border-right: 0.3rem groove #00b358;\n    background-image: linear-gradient(to bottom, #333333 0%, rgba(#fefefe, 0.25) 5%, rgba(#fefefe, 0.25) 95%, #333333 100%);\n    .vue-project-option {\n      &__title {\n        color: rgba(#00b358, 0.5);\n      }\n      &:hover {\n        .vue-project-option__cover-photo-container {\n          border: 1rem solid #00b358;\n        }\n        .vue-project-option__title {\n          color: #00b358;\n        }\n      }\n    }\n  }\n}\n",".vue-projects-slider {\n  position: relative;\n  height: 100%;\n  width: 20%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  background-color: transparent;\n  -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  overflow-y: auto;\n  padding-top: 3rem;\n}\n\n.vue-project-option {\n  position: relative;\n  height: auto;\n  width: 100%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5rem;\n}\n.vue-project-option__cover-photo-container {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n}\n.vue-project-option__cover-photo-container img {\n  position: relative;\n  height: auto;\n  width: 90%;\n  justify-self: center;\n}\n.vue-project-option__title {\n  position: absolute;\n  right: 4rem;\n  bottom: -3rem;\n  font-family: Roboto Condensed;\n  font-size: 2rem;\n  font-weight: bold;\n  transition: color 0.5s;\n}\n.vue-project-option:hover {\n  cursor: pointer;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container {\n  padding: 1.5rem;\n  transition: width 0.5s, border 0.5s;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container img {\n  width: 100%;\n  transition: width 0.5s;\n}\n\n/* DAY STYLES */\n.day .vue-projects-slider {\n  border-left: 0.3rem groove #ffd700;\n  border-right: 0.3rem groove #ffd700;\n  background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);\n}\n.day .vue-project-option__title {\n  color: rgba(255, 215, 0, 0.5);\n}\n.day .vue-project-option:hover .vue-project-option__cover-photo-container {\n  border: 1rem solid #ffd700;\n}\n.day .vue-project-option:hover .vue-project-option__title {\n  color: #ffd700;\n}\n\n/* NIGHT STYLES */\n.night .vue-projects-slider {\n  border-left: 0.3rem groove #00b358;\n  border-right: 0.3rem groove #00b358;\n  background-image: linear-gradient(to bottom, #333333 0%, rgba(254, 254, 254, 0.25) 5%, rgba(254, 254, 254, 0.25) 95%, #333333 100%);\n}\n.night .vue-projects-slider .vue-project-option__title {\n  color: rgba(0, 179, 88, 0.5);\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__cover-photo-container {\n  border: 1rem solid #00b358;\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__title {\n  color: #00b358;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".vue-projects-slider[data-v-f3189440] {\n  position: relative;\n  height: 100%;\n  width: 20%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  background-color: transparent;\n  -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  overflow-y: auto;\n  padding-top: 3rem;\n}\n.vue-project-option[data-v-f3189440] {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5rem;\n}\n.vue-project-option__cover-photo-container[data-v-f3189440] {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  border: 1rem solid transparent;\n  padding: 1.5rem;\n}\n.vue-project-option__cover-photo-container img[data-v-f3189440] {\n  position: relative;\n  height: auto;\n  width: 90%;\n  justify-self: center;\n}\n.vue-project-option__title[data-v-f3189440] {\n  position: absolute;\n  right: 4rem;\n  bottom: -3rem;\n  font-family: Roboto Condensed;\n  font-size: 2rem;\n  font-weight: bold;\n  transition: color 0.5s;\n}\n.vue-project-option[data-v-f3189440]:hover {\n  cursor: pointer;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container[data-v-f3189440] {\n  transition: width 0.5s, border 0.5s;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container img[data-v-f3189440] {\n  width: 100%;\n  transition: width 0.5s;\n}\n\n/* DAY STYLES */\n.day .vue-projects-slider[data-v-f3189440] {\n  border-left: 0.3rem groove #ffd700;\n  border-right: 0.3rem groove #ffd700;\n  background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);\n}\n.day .vue-project-option__title[data-v-f3189440] {\n  color: rgba(51, 51, 51, 0.5);\n}\n.day .vue-project-option:hover .vue-project-option__cover-photo-container[data-v-f3189440] {\n  border: 1rem solid #ffd700;\n}\n.day .vue-project-option:hover .vue-project-option__title[data-v-f3189440] {\n  color: #333;\n}\n\n/* NIGHT STYLES */\n.night .vue-projects-slider[data-v-f3189440] {\n  border-left: 0.3rem groove #00b358;\n  border-right: 0.3rem groove #00b358;\n  background-image: linear-gradient(to bottom, #333333 0%, rgba(254, 254, 254, 0.25) 5%, rgba(254, 254, 254, 0.25) 95%, #333333 100%);\n}\n.night .vue-projects-slider .vue-project-option__title[data-v-f3189440] {\n  color: rgba(0, 179, 88, 0.5);\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__cover-photo-container[data-v-f3189440] {\n  border: 1rem solid #00b358;\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__title[data-v-f3189440] {\n  color: #00b358;\n}", "",{"version":3,"sources":["webpack://./Public/JS/Vue-Projects-App/Vue_Parts/_Project-Slider.vue","webpack://./_Project-Slider.vue"],"names":[],"mappings":"AACA;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,wBAAA;EACA,2BAAA;EACA,mBAAA;EACA,oCAAA;EACA,6BAAA;EACA,yFAAA;EACA,iFAAA;EACA,gBAAA;EACA,iBAAA;ACAF;ADGA;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,wBAAA;EACA,6BAAA;EACA,mBAAA;EACA,mBAAA;ACAF;ADEE;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,aAAA;EACA,qBAAA;EACA,uBAAA;EACA,mBAAA;EACA,8BAAA;EACA,eAAA;ACAJ;ADEI;EACE,kBAAA;EACA,YAAA;EACA,UAAA;EACA,oBAAA;ACAN;ADIE;EACE,kBAAA;EACA,WAAA;EACA,aAAA;EAEA,6BAAA;EAEA,eAAA;EACA,iBAAA;EACA,sBAAA;ACJJ;ADOE;EACE,eAAA;ACLJ;ADMI;EACE,mCAAA;ACJN;ADMM;EACE,WAAA;EACA,sBAAA;ACJR;;ADUA,eAAA;AAEE;EACE,kCAAA;EACA,mCAAA;EACA,uGAAA;ACRJ;ADWI;EACE,4BAAA;ACTN;ADYM;EACE,0BAAA;ACVR;ADYM;EACE,WAAA;ACVR;;ADgBA,iBAAA;AAEE;EACE,kCAAA;EACA,mCAAA;EACA,mIAAA;ACdJ;ADgBM;EACE,4BAAA;ACdR;ADiBQ;EACE,0BAAA;ACfV;ADiBQ;EACE,cAAA;ACfV","sourcesContent":["\n.vue-projects-slider {\n  position: relative;\n  height: 100%;\n  width: 20%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  background-color: transparent;\n  -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  overflow-y: auto;\n  padding-top: 3rem;\n}\n\n.vue-project-option {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5rem;\n\n  &__cover-photo-container {\n    position: relative;\n    height: auto;\n    width: 90%;\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: center;\n    align-items: center;\n    border: 1rem solid transparent;\n    padding: 1.5rem;\n\n    img {\n      position: relative;\n      height: auto;\n      width: 90%;\n      justify-self: center;\n    }\n  }\n\n  &__title {\n    position: absolute;\n    right: 4rem;\n    bottom: -3rem;\n\n    font-family: Roboto Condensed;\n    // font-family: Roboto Slab, Roboto Condensed;\n    font-size: 2rem;\n    font-weight: bold;\n    transition: color 0.5s;\n  }\n\n  &:hover {\n    cursor: pointer;\n    .vue-project-option__cover-photo-container {\n      transition: width 0.5s, border 0.5s;\n\n      img {\n        width: 100%;\n        transition: width 0.5s;\n      }\n    }\n  }\n}\n\n/* DAY STYLES */\n.day {\n  .vue-projects-slider {\n    border-left: 0.3rem groove #ffd700;\n    border-right: 0.3rem groove #ffd700;\n    background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);\n  }\n  .vue-project-option {\n    &__title {\n      color: rgba(#333, 0.5);\n    }\n    &:hover {\n      .vue-project-option__cover-photo-container {\n        border: 1rem solid #ffd700;\n      }\n      .vue-project-option__title {\n        color: #333;\n      }\n    }\n  }\n}\n\n/* NIGHT STYLES */\n.night {\n  .vue-projects-slider {\n    border-left: 0.3rem groove #00b358;\n    border-right: 0.3rem groove #00b358;\n    background-image: linear-gradient(to bottom, #333333 0%, rgba(#fefefe, 0.25) 5%, rgba(#fefefe, 0.25) 95%, #333333 100%);\n    .vue-project-option {\n      &__title {\n        color: rgba(#00b358, 0.5);\n      }\n      &:hover {\n        .vue-project-option__cover-photo-container {\n          border: 1rem solid #00b358;\n        }\n        .vue-project-option__title {\n          color: #00b358;\n        }\n      }\n    }\n  }\n}\n",".vue-projects-slider {\n  position: relative;\n  height: 100%;\n  width: 20%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: flex-start;\n  align-items: center;\n  transform: translate(0, 0) rotate(0);\n  background-color: transparent;\n  -webkit-transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  transition: background-color 0.5s, border 0.5s, color 0.5s, background-image 0.5s;\n  overflow-y: auto;\n  padding-top: 3rem;\n}\n\n.vue-project-option {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: space-evenly;\n  align-items: center;\n  margin-bottom: 5rem;\n}\n.vue-project-option__cover-photo-container {\n  position: relative;\n  height: auto;\n  width: 90%;\n  display: flex;\n  flex-flow: row nowrap;\n  justify-content: center;\n  align-items: center;\n  border: 1rem solid transparent;\n  padding: 1.5rem;\n}\n.vue-project-option__cover-photo-container img {\n  position: relative;\n  height: auto;\n  width: 90%;\n  justify-self: center;\n}\n.vue-project-option__title {\n  position: absolute;\n  right: 4rem;\n  bottom: -3rem;\n  font-family: Roboto Condensed;\n  font-size: 2rem;\n  font-weight: bold;\n  transition: color 0.5s;\n}\n.vue-project-option:hover {\n  cursor: pointer;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container {\n  transition: width 0.5s, border 0.5s;\n}\n.vue-project-option:hover .vue-project-option__cover-photo-container img {\n  width: 100%;\n  transition: width 0.5s;\n}\n\n/* DAY STYLES */\n.day .vue-projects-slider {\n  border-left: 0.3rem groove #ffd700;\n  border-right: 0.3rem groove #ffd700;\n  background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);\n}\n.day .vue-project-option__title {\n  color: rgba(51, 51, 51, 0.5);\n}\n.day .vue-project-option:hover .vue-project-option__cover-photo-container {\n  border: 1rem solid #ffd700;\n}\n.day .vue-project-option:hover .vue-project-option__title {\n  color: #333;\n}\n\n/* NIGHT STYLES */\n.night .vue-projects-slider {\n  border-left: 0.3rem groove #00b358;\n  border-right: 0.3rem groove #00b358;\n  background-image: linear-gradient(to bottom, #333333 0%, rgba(254, 254, 254, 0.25) 5%, rgba(254, 254, 254, 0.25) 95%, #333333 100%);\n}\n.night .vue-projects-slider .vue-project-option__title {\n  color: rgba(0, 179, 88, 0.5);\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__cover-photo-container {\n  border: 1rem solid #00b358;\n}\n.night .vue-projects-slider .vue-project-option:hover .vue-project-option__title {\n  color: #00b358;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -52668,6 +52787,48 @@ module.exports = $gOPD;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
+  \*********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _arrayLikeToArray; }
+/* harmony export */ });
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \**********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _arrayWithoutHoles; }
+/* harmony export */ });
+/* harmony import */ var _arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(arr);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
@@ -52764,6 +52925,89 @@ function _createClass(Constructor, protoProps, staticProps) {
     writable: false
   });
   return Constructor;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _iterableToArray; }
+/* harmony export */ });
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \**********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _nonIterableSpread; }
+/* harmony export */ });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \**********************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _toConsumableArray; }
+/* harmony export */ });
+/* harmony import */ var _arrayWithoutHoles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
+/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableSpread_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
+
+
+
+
+function _toConsumableArray(arr) {
+  return (0,_arrayWithoutHoles_js__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || (0,_iterableToArray_js__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || (0,_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__["default"])(arr) || (0,_nonIterableSpread_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js ***!
+  \*******************************************************************************/
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ _unsupportedIterableToArray; }
+/* harmony export */ });
+/* harmony import */ var _arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
 }
 
 /***/ })

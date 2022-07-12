@@ -12,10 +12,10 @@ export default {
       alt: '',
     };
   },
-  updated() {
-    this.image = this.project.coverPhoto;
-    this.alt = this.project.photoAltText;
-  },
+  // updated() {
+  //   this.image = this.project.coverPhoto;
+  //   this.alt = this.project.photoAltText;
+  // },
 };
 </script>
 <style lang="scss" scoped>

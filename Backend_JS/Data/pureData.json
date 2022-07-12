@@ -222,9 +222,9 @@
       "code": "https://github.com/ncluff003/PureNSpiration",
       "media": [
         {
-          "type": "video or photo",
-          "altText": "",
-          "file": ""
+          "type": "photo",
+          "altText": "Pure N Spiration Cover Photo",
+          "file": "/DIST/CSS/Images/Computer_Desktop_Image.svg"
         }
       ]
     },
@@ -238,9 +238,14 @@
       "code": "https://github.com/ncluff003/Hangman",
       "media": [
         {
+          "type": "photo",
+          "altText": "Hangman Cover Photo",
+          "file": "/DIST/CSS/Images/Computer_Desktop_Image.svg"
+        },
+        {
           "type": "video",
           "altText": "Video Of Faloan",
-          "file": "./../../Public/DIST/CSS/Videos/Faolan.mp4"
+          "file": "/DIST/CSS/Videos/Faolan.mp4"
         }
       ]
     },
@@ -257,9 +262,9 @@
       "code": "https://github.com/ncluff003/KingRichard-Budget",
       "media": [
         {
-          "type": "video or photo",
-          "altText": "",
-          "file": ""
+          "type": "photo",
+          "altText": "King Richard Budget Cover Photo",
+          "file": "/DIST/CSS/Images/Computer_Desktop_Image.svg"
         }
       ]
     }

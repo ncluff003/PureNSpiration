@@ -3,13 +3,14 @@
     <button class="vue-media-left r__vue-media-left">
       <i class="fas fa-arrow-left left-icon"></i>
     </button>
-    <section class="vue-media-slider r__vue-media-slider" v-if="projectSelected"></section>
+    <section class="vue-media-slider r__vue-media-slider"></section>
     <button class="vue-media-right r__vue-media-right">
       <i class="fas fa-arrow-right right-icon"></i>
     </button>
   </section>
 </template>
 <script>
+import * as Utility from './../../Utility';
 export default {
   props: [`project`],
   data() {
@@ -18,10 +19,11 @@ export default {
       projectSelected: false,
     };
   },
-  updated() {
-    this.projectMedia = this.project.media;
-    this.projectSelected = true;
-  },
+  methods: {},
+  // updated() {
+  //   this.projectMedia = this.project.media;
+  //   console.log(this.projectMedia);
+  // },
 };
 </script>
 <style lang="scss" scoped>
@@ -55,6 +57,27 @@ export default {
       .left-icon,
       .right-icon {
         transition: color 0.5s;
+      }
+    }
+  }
+
+  .vue-media-slider {
+    position: relative;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    padding: 0.5rem;
+    justify-content: flex-start;
+    align-content: center;
+    .vue-project-video {
+      position: absoulte;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: auto;
+      transform: translateY(-50%);
+      &:hover {
+        cursor: pointer;
       }
     }
   }

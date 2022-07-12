@@ -5,7 +5,7 @@
 
 <template>
   <Slider :projectData="data" @projectSelected="storeProject" />
-  <Container :projectData="data" :project="projectSelected" />
+  <Container :projectData="data" :project="projectSelected" v-if="projectSelected !== null" />
 </template>
 
 <script>

@@ -21,13 +21,15 @@ export default {
       projectTitle: '',
       projectTech: '',
       projectDescription: '',
+      myProject: null,
     };
   },
-  updated() {
-    this.projectTitle = this.project.title;
-    this.projectTech = this.project.technologies;
-    this.projectDescription = this.project.description;
-  },
+  // updated() {
+  //   this.projectTitle = this.project.title;
+  //   this.projectTech = this.project.technologies;
+  //   this.projectDescription = this.project.description;
+  //   this.myProject = this.project;
+  // },
 };
 </script>
 <style lang="scss" scoped>

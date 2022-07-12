@@ -10,7 +10,7 @@ const renderPhoto = (container, content) => {
 };
 const renderVideo = (container, content) => {
   const video = document.createElement('video');
-  Utility.addClasses(video, [`blog-video`, `blog-video`]);
+  Utility.addClasses(video, [`blog-video`, `r__blog-video`]);
   video.controls = true;
   let index = content.file.indexOf(`DIST/CSS`);
   video.src = content.file.slice(index);
