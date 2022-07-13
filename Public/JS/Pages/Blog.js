@@ -122,15 +122,74 @@ export const watchBlog = async () => {
   const blog = document.querySelector('.blog');
   if (blog) {
     console.log(`Watching...`);
-    let isCustomResults = false;
     let page = document.querySelector('.page');
+
+    // GETTING ALL POSTS AT START
     let blog = await API.fetchBlogPosts();
-    console.log(blog);
+
+    // RENDERING ALL POSTS AT START
     renderBlogExerpts(blog.posts);
-    console.log(blog.posts);
+
+    // INITIALIZE SEARCH OPTIONS, INPUT, AND BUTTON
+    const searchSelect = document.querySelector('.search-select');
+    const blogSearchOptions = document.querySelectorAll('.search-select-option');
+    const blogSearchInput = document.querySelector('.search-input');
+    const blogSearchButton = document.querySelector('.button--search');
+
+    // WATCH SELECT OPTIONS TO DETERMINE THE SEARCH OPTION
+    blogSearchOptions.forEach((option) => {
+      option.addEventListener('click', (e) => {
+        if (option.value === `Title`) {
+          blogSearchInput.type = `text`;
+        } else {
+          blogSearchInput.type = option.value.toLowerCase();
+        }
+      });
+    });
+
     let previousPage = 0;
     let currentPage = blog.blog.data.currentPage;
     let nextPage = currentPage + 1;
+
+    // WATCHING SEARCH BUTTON
+    blogSearchButton.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      // CHECKING IF SEARCH INPUT IS EMPTY
+      if (blogSearchInput.value === '') {
+        // RETURN ALL BLOG POSTS
+        let blog = await API.fetchBlogPosts();
+
+        // RENDER ALL BLOG POSTS
+        renderBlogExerpts(blog.posts);
+      } else {
+        // CHECKING VALUE OF SELECT INPUT
+        if (searchSelect.value === `Text`) {
+          console.log(blogSearchInput.value);
+          previousPage = 0;
+          currentPage = blog.blog.data.currentPage;
+          nextPage = currentPage + 1;
+          blog = await API.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+          renderBlogExerpts(blog.posts);
+        }
+        if (searchSelect.value === `Date`) {
+          console.log(blogSearchInput.value);
+          previousPage = 0;
+          currentPage = blog.blog.data.currentPage;
+          nextPage = currentPage + 1;
+          blog = await API.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+        }
+        if (searchSelect.value === `Title`) {
+          console.log(blogSearchInput.value);
+          previousPage = 0;
+          currentPage = blog.blog.data.currentPage;
+          nextPage = currentPage + 1;
+          blog = await API.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+          renderBlogExerpts(blog.posts);
+        }
+      }
+    });
+
     console.log(currentPage);
     const pageLeft = document.querySelector('.page-left');
     const pageRight = document.querySelector('.page-right');
@@ -166,29 +225,29 @@ export const watchBlog = async () => {
       }
       page.textContent = `Page ${currentPage}`;
     });
-    let searchTerm;
-    const blogSearchOptions = document.querySelectorAll('.search-select-option');
-    const blogSearchInput = document.querySelector('.search-input');
-    blogSearchOptions.forEach((option) => {
-      option.addEventListener('click', (e) => {
-        searchTerm = option.value;
-        blogSearchInput.type = option.value.toLowerCase();
-        if (searchTerm === `Title`) blogSearchInput.type = `text`;
-      });
-    });
+    // let searchTerm;
+    // const blogSearchOptions = document.querySelectorAll('.search-select-option');
+    // blogSearchOptions.forEach((option) => {
+    //   option.addEventListener('click', (e) => {
+    //     searchTerm = option.value;
+    //     blogSearchInput.type = option.value.toLowerCase();
+    //     if (searchTerm === `Title`) blogSearchInput.type = `text`;
+    //   });
+    // });
 
-    const blogSearchButton = document.querySelector('.button--search');
-    blogSearchButton.addEventListener('click', (e) => {
-      isCustomResults = true;
-      if (blogSearchInput.type === `date`) {
-        console.log(new Date(blogSearchInput.value));
-      } else {
-        console.log(blogSearchInput.value);
-        if (isCustomResults === true) {
-          currentPage = 1;
-        }
-        let blog = API.fetchSpecificBlogPosts(blogSearchInput.value, currentPage);
-      }
-    });
+    // blogSearchButton.addEventListener('click', async (e) => {
+    //   if (blogSearchInput.type === `date`) {
+    //     console.log(new Date(blogSearchInput.value));
+    //     let blog = await API.fetchSpecificBlogPosts(blogSearchInput.value, blogSearchInput.type, currentPage);
+    //     console.log(blog.posts);
+    //     renderBlogExerpts(blog.posts);
+    //   } else {
+    //     console.log(blogSearchInput.value);
+    //     searchTerm = document.querySelector('.search-select').value;
+    //     let type;
+    //     type = searchTerm.toLowerCase();
+    //     let blog = await API.fetchSpecificBlogPosts(blogSearchInput.value, type, currentPage);
+    //   }
+    // });
   }
 };

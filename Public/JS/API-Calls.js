@@ -28,28 +28,29 @@ export const fetchLatestPost = async () => {
   }
 };
 
-export const fetchSpecificBlogPosts = async (term, page, limit) => {
+export const fetchSpecificBlogPosts = async (term, type, page, limit) => {
   const options = {
     method: `GET`,
-    url: `/blog/posts?terms=${term}`,
+    url: `/blog/posts?terms=${term}&type=${type}`,
   };
   try {
     const response = await axios(options);
+    console.log(response.data.data);
+    return response.data.data;
   } catch (error) {
     console.log(error);
   }
 };
 
-export const fetchBlogPosts = async (page, limit) => {
+export const fetchBlogPosts = async (page, limit, terms, type) => {
   const options = {
     method: `GET`,
-    url: `/blog/posts`,
   };
-  if (page) {
-    options.url = `/blog/posts?page=${page}`;
+  if (!page && !limit && !terms && !type) {
+    options.url = `/blog/posts`;
   }
-  if (page && limit) {
-    options.url = `/blog/posts?page=${page}&limit=${limit}`;
+  if (page && terms && type) {
+    options.url = `/blog/posts?page=${page}&terms=${terms}&type=${type}`;
   }
   try {
     const response = await axios(options);
