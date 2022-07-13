@@ -175,11 +175,9 @@ export const watchBlog = async () => {
         // CHECKING VALUE OF SELECT INPUT
         if (searchSelect.value === `Text`) {
           pageRight.classList.remove('end');
-          console.log(blogSearchInput.value);
           previousPage = 0;
           currentPage = blog.blog.data.currentPage;
           nextPage = currentPage + 1;
-          console.log(previousPage, currentPage, nextPage);
           blog = await API.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
           renderBlogExerpts(blog.posts);
           pageLeft.classList.add('end');
@@ -190,11 +188,9 @@ export const watchBlog = async () => {
         }
         if (searchSelect.value === `Date`) {
           pageRight.classList.remove('end');
-          console.log(blogSearchInput.value);
           previousPage = 0;
           currentPage = blog.blog.data.currentPage;
           nextPage = currentPage + 1;
-          console.log(previousPage, currentPage, nextPage);
           blog = await API.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
           renderBlogExerpts(blog.posts);
           pageLeft.classList.add('end');
@@ -205,11 +201,9 @@ export const watchBlog = async () => {
         }
         if (searchSelect.value === `Title`) {
           pageRight.classList.remove('end');
-          console.log(blogSearchInput.value);
           previousPage = 0;
           currentPage = blog.blog.data.currentPage;
           nextPage = currentPage + 1;
-          console.log(previousPage, currentPage, nextPage);
           blog = await API.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
           renderBlogExerpts(blog.posts);
           pageLeft.classList.add('end');

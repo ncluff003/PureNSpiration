@@ -5539,25 +5539,23 @@ var watchBlog = /*#__PURE__*/function () {
                         renderBlogExerpts(_blog2.posts);
                         page.textContent = "Page ".concat(currentPage);
                         pageLeft.classList.add('end');
-                        _context.next = 56;
+                        _context.next = 50;
                         break;
 
                       case 14:
                         if (!(searchSelect.value === "Text")) {
-                          _context.next = 28;
+                          _context.next = 26;
                           break;
                         }
 
                         pageRight.classList.remove('end');
-                        console.log(blogSearchInput.value);
                         previousPage = 0;
                         currentPage = _blog.blog.data.currentPage;
                         nextPage = currentPage + 1;
-                        console.log(previousPage, currentPage, nextPage);
-                        _context.next = 23;
+                        _context.next = 21;
                         return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
 
-                      case 23:
+                      case 21:
                         _blog = _context.sent;
                         renderBlogExerpts(_blog.posts);
                         pageLeft.classList.add('end');
@@ -5568,22 +5566,20 @@ var watchBlog = /*#__PURE__*/function () {
 
                         page.textContent = "Page ".concat(currentPage);
 
-                      case 28:
+                      case 26:
                         if (!(searchSelect.value === "Date")) {
-                          _context.next = 42;
+                          _context.next = 38;
                           break;
                         }
 
                         pageRight.classList.remove('end');
-                        console.log(blogSearchInput.value);
                         previousPage = 0;
                         currentPage = _blog.blog.data.currentPage;
                         nextPage = currentPage + 1;
-                        console.log(previousPage, currentPage, nextPage);
-                        _context.next = 37;
+                        _context.next = 33;
                         return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
 
-                      case 37:
+                      case 33:
                         _blog = _context.sent;
                         renderBlogExerpts(_blog.posts);
                         pageLeft.classList.add('end');
@@ -5594,22 +5590,20 @@ var watchBlog = /*#__PURE__*/function () {
 
                         page.textContent = "Page ".concat(currentPage);
 
-                      case 42:
+                      case 38:
                         if (!(searchSelect.value === "Title")) {
-                          _context.next = 56;
+                          _context.next = 50;
                           break;
                         }
 
                         pageRight.classList.remove('end');
-                        console.log(blogSearchInput.value);
                         previousPage = 0;
                         currentPage = _blog.blog.data.currentPage;
                         nextPage = currentPage + 1;
-                        console.log(previousPage, currentPage, nextPage);
-                        _context.next = 51;
+                        _context.next = 45;
                         return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
 
-                      case 51:
+                      case 45:
                         _blog = _context.sent;
                         renderBlogExerpts(_blog.posts);
                         pageLeft.classList.add('end');
@@ -5620,7 +5614,7 @@ var watchBlog = /*#__PURE__*/function () {
 
                         page.textContent = "Page ".concat(currentPage);
 
-                      case 56:
+                      case 50:
                       case "end":
                         return _context.stop();
                     }
