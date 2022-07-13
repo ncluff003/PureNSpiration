@@ -122,6 +122,7 @@ export const watchBlog = async () => {
   const blog = document.querySelector('.blog');
   if (blog) {
     console.log(`Watching...`);
+    let isCustomResults = false;
     let page = document.querySelector('.page');
     let blog = await API.fetchBlogPosts();
     console.log(blog);
@@ -150,6 +151,7 @@ export const watchBlog = async () => {
       }
       page.textContent = `Page ${currentPage}`;
     });
+
     pageRight.addEventListener('click', async (e) => {
       e.preventDefault();
       if (pageRight.classList.contains('end')) return;
@@ -164,7 +166,29 @@ export const watchBlog = async () => {
       }
       page.textContent = `Page ${currentPage}`;
     });
+    let searchTerm;
+    const blogSearchOptions = document.querySelectorAll('.search-select-option');
+    const blogSearchInput = document.querySelector('.search-input');
+    blogSearchOptions.forEach((option) => {
+      option.addEventListener('click', (e) => {
+        searchTerm = option.value;
+        blogSearchInput.type = option.value.toLowerCase();
+        if (searchTerm === `Title`) blogSearchInput.type = `text`;
+      });
+    });
 
-    // ADJUSTMENTS WILL BE MADE BECAUSE I REMEMBERED THAT THE BLOG ACTUALLY HAS A PREVIOUS, CURRENT, AND NEXT PAGE VALUE TO USE.
+    const blogSearchButton = document.querySelector('.button--search');
+    blogSearchButton.addEventListener('click', (e) => {
+      isCustomResults = true;
+      if (blogSearchInput.type === `date`) {
+        console.log(new Date(blogSearchInput.value));
+      } else {
+        console.log(blogSearchInput.value);
+        if (isCustomResults === true) {
+          currentPage = 1;
+        }
+        let blog = API.fetchSpecificBlogPosts(blogSearchInput.value, currentPage);
+      }
+    });
   }
 };

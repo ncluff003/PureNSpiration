@@ -28,6 +28,18 @@ export const fetchLatestPost = async () => {
   }
 };
 
+export const fetchSpecificBlogPosts = async (term, page, limit) => {
+  const options = {
+    method: `GET`,
+    url: `/blog/posts?terms=${term}`,
+  };
+  try {
+    const response = await axios(options);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const fetchBlogPosts = async (page, limit) => {
   const options = {
     method: `GET`,
@@ -42,7 +54,9 @@ export const fetchBlogPosts = async (page, limit) => {
   try {
     const response = await axios(options);
     return response.data.data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const fetchLatestProject = async () => {
