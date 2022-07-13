@@ -4668,7 +4668,7 @@ var fetchSpecificBlogPosts = /*#__PURE__*/function () {
   };
 }();
 var fetchBlogPosts = /*#__PURE__*/function () {
-  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee4(page, limit, terms, type) {
+  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee4(page, terms, type) {
     var options, response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee4$(_context4) {
       while (1) {
@@ -4678,36 +4678,40 @@ var fetchBlogPosts = /*#__PURE__*/function () {
               method: "GET"
             };
 
-            if (!page && !limit && !terms && !type) {
+            if (!page && !terms && !type) {
               options.url = "/blog/posts";
+            }
+
+            if (page && !terms && !type) {
+              options.url = "/blog/posts?page=".concat(page);
             }
 
             if (page && terms && type) {
               options.url = "/blog/posts?page=".concat(page, "&terms=").concat(terms, "&type=").concat(type);
             }
 
-            _context4.prev = 3;
-            _context4.next = 6;
+            _context4.prev = 4;
+            _context4.next = 7;
             return axios__WEBPACK_IMPORTED_MODULE_2___default()(options);
 
-          case 6:
+          case 7:
             response = _context4.sent;
             return _context4.abrupt("return", response.data.data);
 
-          case 10:
-            _context4.prev = 10;
-            _context4.t0 = _context4["catch"](3);
+          case 11:
+            _context4.prev = 11;
+            _context4.t0 = _context4["catch"](4);
             console.log(_context4.t0);
 
-          case 13:
+          case 14:
           case "end":
             return _context4.stop();
         }
       }
-    }, _callee4, null, [[3, 10]]);
+    }, _callee4, null, [[4, 11]]);
   }));
 
-  return function fetchBlogPosts(_x5, _x6, _x7, _x8) {
+  return function fetchBlogPosts(_x5, _x6, _x7) {
     return _ref4.apply(this, arguments);
   };
 }();
@@ -5368,7 +5372,8 @@ var renderBlogExerpts = function renderBlogExerpts(posts) {
       year: 'numeric'
     };
     var dateFormat = new Intl.DateTimeFormat(navigator.language, dateOptions);
-    exerptDateCreated.textContent = dateFormat.format(new Date(post.date));
+    var refinedDate = new Date(new Date(post.date).setHours(new Date(post.date).getHours() + new Date(post.date).getTimezoneOffset() / 60));
+    exerptDateCreated.textContent = dateFormat.format(new Date(refinedDate));
     _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptHeader, exerptTitle);
     _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', exerptHeader, exerptDateCreated);
     var exerptContentContainer = document.createElement('section');
@@ -5501,7 +5506,9 @@ var watchBlog = /*#__PURE__*/function () {
             });
             previousPage = 0;
             currentPage = _blog.blog.data.currentPage;
-            nextPage = currentPage + 1; // WATCHING SEARCH BUTTON
+            nextPage = currentPage + 1;
+            pageLeft = document.querySelector('.page-left');
+            pageRight = document.querySelector('.page-right'); // WATCHING SEARCH BUTTON
 
             blogSearchButton.addEventListener('click', /*#__PURE__*/function () {
               var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee(e) {
@@ -5511,74 +5518,109 @@ var watchBlog = /*#__PURE__*/function () {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:
-                        e.preventDefault(); // CHECKING IF SEARCH INPUT IS EMPTY
+                        e.preventDefault();
+                        previousPage = 0;
+                        currentPage = _blog.blog.data.currentPage;
+                        nextPage = currentPage + 1; // CHECKING IF SEARCH INPUT IS EMPTY
 
                         if (!(blogSearchInput.value === '')) {
-                          _context.next = 8;
+                          _context.next = 14;
                           break;
                         }
 
-                        _context.next = 4;
+                        pageRight.classList.remove('end'); // RETURN ALL BLOG POSTS
+
+                        _context.next = 8;
                         return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts();
 
-                      case 4:
+                      case 8:
                         _blog2 = _context.sent;
                         // RENDER ALL BLOG POSTS
                         renderBlogExerpts(_blog2.posts);
-                        _context.next = 34;
+                        page.textContent = "Page ".concat(currentPage);
+                        pageLeft.classList.add('end');
+                        _context.next = 56;
                         break;
 
-                      case 8:
+                      case 14:
                         if (!(searchSelect.value === "Text")) {
-                          _context.next = 17;
+                          _context.next = 28;
                           break;
                         }
 
+                        pageRight.classList.remove('end');
                         console.log(blogSearchInput.value);
                         previousPage = 0;
                         currentPage = _blog.blog.data.currentPage;
                         nextPage = currentPage + 1;
-                        _context.next = 15;
-                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+                        console.log(previousPage, currentPage, nextPage);
+                        _context.next = 23;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
 
-                      case 15:
+                      case 23:
                         _blog = _context.sent;
                         renderBlogExerpts(_blog.posts);
+                        pageLeft.classList.add('end');
 
-                      case 17:
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 28:
                         if (!(searchSelect.value === "Date")) {
-                          _context.next = 25;
+                          _context.next = 42;
                           break;
                         }
 
+                        pageRight.classList.remove('end');
                         console.log(blogSearchInput.value);
                         previousPage = 0;
                         currentPage = _blog.blog.data.currentPage;
                         nextPage = currentPage + 1;
-                        _context.next = 24;
-                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+                        console.log(previousPage, currentPage, nextPage);
+                        _context.next = 37;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
 
-                      case 24:
-                        _blog = _context.sent;
-
-                      case 25:
-                        if (!(searchSelect.value === "Title")) {
-                          _context.next = 34;
-                          break;
-                        }
-
-                        console.log(blogSearchInput.value);
-                        previousPage = 0;
-                        currentPage = _blog.blog.data.currentPage;
-                        nextPage = currentPage + 1;
-                        _context.next = 32;
-                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
-
-                      case 32:
+                      case 37:
                         _blog = _context.sent;
                         renderBlogExerpts(_blog.posts);
+                        pageLeft.classList.add('end');
 
-                      case 34:
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 42:
+                        if (!(searchSelect.value === "Title")) {
+                          _context.next = 56;
+                          break;
+                        }
+
+                        pageRight.classList.remove('end');
+                        console.log(blogSearchInput.value);
+                        previousPage = 0;
+                        currentPage = _blog.blog.data.currentPage;
+                        nextPage = currentPage + 1;
+                        console.log(previousPage, currentPage, nextPage);
+                        _context.next = 51;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
+
+                      case 51:
+                        _blog = _context.sent;
+                        renderBlogExerpts(_blog.posts);
+                        pageLeft.classList.add('end');
+
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 56:
                       case "end":
                         return _context.stop();
                     }
@@ -5591,8 +5633,6 @@ var watchBlog = /*#__PURE__*/function () {
               };
             }());
             console.log(currentPage);
-            pageLeft = document.querySelector('.page-left');
-            pageRight = document.querySelector('.page-right');
 
             if (previousPage === 0) {
               pageLeft.classList.add('end');
@@ -5660,10 +5700,16 @@ var watchBlog = /*#__PURE__*/function () {
 
                       case 3:
                         pageLeft.classList.remove('end');
-                        _context3.next = 6;
+
+                        if (!(blogSearchInput.value === '')) {
+                          _context3.next = 14;
+                          break;
+                        }
+
+                        _context3.next = 7;
                         return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(nextPage);
 
-                      case 6:
+                      case 7:
                         _blog = _context3.sent;
                         previousPage++;
                         currentPage++;
@@ -5676,7 +5722,78 @@ var watchBlog = /*#__PURE__*/function () {
 
                         page.textContent = "Page ".concat(currentPage);
 
-                      case 13:
+                      case 14:
+                        if (!(blogSearchInput.value !== '')) {
+                          _context3.next = 45;
+                          break;
+                        }
+
+                        if (!(searchSelect.value === "Text")) {
+                          _context3.next = 25;
+                          break;
+                        }
+
+                        _context3.next = 18;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(nextPage, blogSearchInput.value, searchSelect.value.toLowerCase());
+
+                      case 18:
+                        _blog = _context3.sent;
+                        previousPage++;
+                        currentPage++;
+                        nextPage++;
+                        renderBlogExerpts(_blog.posts);
+
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 25:
+                        if (!(searchSelect.value === "Date")) {
+                          _context3.next = 35;
+                          break;
+                        }
+
+                        _context3.next = 28;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(nextPage, blogSearchInput.value, searchSelect.value.toLowerCase());
+
+                      case 28:
+                        _blog = _context3.sent;
+                        previousPage++;
+                        currentPage++;
+                        nextPage++;
+                        renderBlogExerpts(_blog.posts);
+
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 35:
+                        if (!(searchSelect.value === "Title")) {
+                          _context3.next = 45;
+                          break;
+                        }
+
+                        _context3.next = 38;
+                        return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchBlogPosts(nextPage, blogSearchInput.value, searchSelect.value.toLowerCase());
+
+                      case 38:
+                        _blog = _context3.sent;
+                        previousPage++;
+                        currentPage++;
+                        nextPage++;
+                        renderBlogExerpts(_blog.posts);
+
+                        if (_blog.posts.length < _blog.blog.data.limit) {
+                          pageRight.classList.add('end');
+                        }
+
+                        page.textContent = "Page ".concat(currentPage);
+
+                      case 45:
                       case "end":
                         return _context3.stop();
                     }
@@ -5687,29 +5804,7 @@ var watchBlog = /*#__PURE__*/function () {
               return function (_x3) {
                 return _ref4.apply(this, arguments);
               };
-            }()); // let searchTerm;
-            // const blogSearchOptions = document.querySelectorAll('.search-select-option');
-            // blogSearchOptions.forEach((option) => {
-            //   option.addEventListener('click', (e) => {
-            //     searchTerm = option.value;
-            //     blogSearchInput.type = option.value.toLowerCase();
-            //     if (searchTerm === `Title`) blogSearchInput.type = `text`;
-            //   });
-            // });
-            // blogSearchButton.addEventListener('click', async (e) => {
-            //   if (blogSearchInput.type === `date`) {
-            //     console.log(new Date(blogSearchInput.value));
-            //     let blog = await API.fetchSpecificBlogPosts(blogSearchInput.value, blogSearchInput.type, currentPage);
-            //     console.log(blog.posts);
-            //     renderBlogExerpts(blog.posts);
-            //   } else {
-            //     console.log(blogSearchInput.value);
-            //     searchTerm = document.querySelector('.search-select').value;
-            //     let type;
-            //     type = searchTerm.toLowerCase();
-            //     let blog = await API.fetchSpecificBlogPosts(blogSearchInput.value, type, currentPage);
-            //   }
-            // });
+            }());
 
           case 23:
           case "end":

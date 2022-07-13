@@ -60,8 +60,8 @@ exports.getLatestPost = catchAsync(async (request, response, next) => {
 });
 
 exports.getAllPosts = catchAsync(async (request, response, next) => {
-  console.log(request.query, typeof request.query);
   let query = request.query;
+  console.log(query);
   let blog = pureData.blog;
   let posts = pureData.blog.data.posts;
   let page = query.page * 1 || 1;
@@ -73,9 +73,24 @@ exports.getAllPosts = catchAsync(async (request, response, next) => {
     // Page 1 = Posts 0 - 9 | Page 2 = Posts 10 - 19 | Page 3 = Posts 20 - 29 ...
     let paginatedPosts = posts.filter((post, i) => {
       if (posts.indexOf(post) >= skip && posts.indexOf(post) < page * limit) {
-        post.date = new Date(
-          new Date(new Date(new Date(post.date).setHours(new Date(post.date).getHours() + new Date(post.date).getTimezoneOffset() / 60))).setHours(0, 0, 0, 0),
-        ).toISOString();
+        return post;
+      }
+    });
+    console.log(paginatedPosts);
+    response.status(200).json({
+      status: `Success`,
+      data: {
+        blog: blog,
+        posts: paginatedPosts,
+      },
+    });
+  }
+
+  // THE PAGINATED RETURNED POSTS BASED ONLY ON PAGE
+  if (query.page && !query.limit && !query.terms && !query.type) {
+    // Page 1 = Posts 0 - 9 | Page 2 = Posts 10 - 19 | Page 3 = Posts 20 - 29 ...
+    let paginatedPosts = posts.filter((post, i) => {
+      if (posts.indexOf(post) >= skip && posts.indexOf(post) < page * limit) {
         return post;
       }
     });
@@ -95,7 +110,9 @@ exports.getAllPosts = catchAsync(async (request, response, next) => {
       post.content.forEach((content) => {
         console.log(content);
         if (content.data.includes(query.terms)) {
-          filteredPosts.push(post);
+          if (!filteredPosts.includes(post)) {
+            filteredPosts.push(post);
+          }
         }
       });
     });
@@ -139,7 +156,37 @@ exports.getAllPosts = catchAsync(async (request, response, next) => {
     });
   }
 
-  // if (request.query.type === `date`) {
+  if (request.query.type === `date`) {
+    console.log(new Date(query.terms).toISOString());
+    console.log(query.page, posts);
+    let filteredPosts = posts.filter((post, i) => {
+      console.log(new Date(post.date).toISOString());
+      if (new Date(query.terms).toISOString() === new Date(post.date).toISOString()) {
+        return post;
+      }
+    });
+    console.log(filteredPosts);
+
+    console.log(`------------------------------------------------------`);
+    console.log(filteredPosts.sort((a, b) => a.title - b.title));
+    console.log(`------------------------------------------------------`);
+
+    let paginatedPosts = filteredPosts.filter((post, i) => {
+      if (filteredPosts.indexOf(post) >= skip && filteredPosts.indexOf(post) < page * limit) {
+        return post;
+      }
+    });
+
+    console.log(paginatedPosts);
+
+    response.status(200).json({
+      status: `Success`,
+      data: {
+        blog: blog,
+        posts: paginatedPosts,
+      },
+    });
+  }
   //   let blog = pureData.blog;
   //   let posts = pureData.blog.data.posts;
 

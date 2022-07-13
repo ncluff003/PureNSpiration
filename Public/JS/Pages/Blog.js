@@ -26,7 +26,8 @@ const renderBlogExerpts = (posts) => {
       year: 'numeric',
     };
     let dateFormat = new Intl.DateTimeFormat(navigator.language, dateOptions);
-    exerptDateCreated.textContent = dateFormat.format(new Date(post.date));
+    let refinedDate = new Date(new Date(post.date).setHours(new Date(post.date).getHours() + new Date(post.date).getTimezoneOffset() / 60));
+    exerptDateCreated.textContent = dateFormat.format(new Date(refinedDate));
 
     Utility.insertElement('beforeend', exerptHeader, exerptTitle);
     Utility.insertElement('beforeend', exerptHeader, exerptDateCreated);
@@ -150,49 +151,77 @@ export const watchBlog = async () => {
     let previousPage = 0;
     let currentPage = blog.blog.data.currentPage;
     let nextPage = currentPage + 1;
+    const pageLeft = document.querySelector('.page-left');
+    const pageRight = document.querySelector('.page-right');
 
     // WATCHING SEARCH BUTTON
     blogSearchButton.addEventListener('click', async (e) => {
       e.preventDefault();
+      previousPage = 0;
+      currentPage = blog.blog.data.currentPage;
+      nextPage = currentPage + 1;
 
       // CHECKING IF SEARCH INPUT IS EMPTY
       if (blogSearchInput.value === '') {
+        pageRight.classList.remove('end');
         // RETURN ALL BLOG POSTS
         let blog = await API.fetchBlogPosts();
 
         // RENDER ALL BLOG POSTS
         renderBlogExerpts(blog.posts);
+        page.textContent = `Page ${currentPage}`;
+        pageLeft.classList.add('end');
       } else {
         // CHECKING VALUE OF SELECT INPUT
         if (searchSelect.value === `Text`) {
+          pageRight.classList.remove('end');
           console.log(blogSearchInput.value);
           previousPage = 0;
           currentPage = blog.blog.data.currentPage;
           nextPage = currentPage + 1;
-          blog = await API.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+          console.log(previousPage, currentPage, nextPage);
+          blog = await API.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
           renderBlogExerpts(blog.posts);
+          pageLeft.classList.add('end');
+          if (blog.posts.length < blog.blog.data.limit) {
+            pageRight.classList.add('end');
+          }
+          page.textContent = `Page ${currentPage}`;
         }
         if (searchSelect.value === `Date`) {
+          pageRight.classList.remove('end');
           console.log(blogSearchInput.value);
           previousPage = 0;
           currentPage = blog.blog.data.currentPage;
           nextPage = currentPage + 1;
-          blog = await API.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+          console.log(previousPage, currentPage, nextPage);
+          blog = await API.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
+          renderBlogExerpts(blog.posts);
+          pageLeft.classList.add('end');
+          if (blog.posts.length < blog.blog.data.limit) {
+            pageRight.classList.add('end');
+          }
+          page.textContent = `Page ${currentPage}`;
         }
         if (searchSelect.value === `Title`) {
+          pageRight.classList.remove('end');
           console.log(blogSearchInput.value);
           previousPage = 0;
           currentPage = blog.blog.data.currentPage;
           nextPage = currentPage + 1;
-          blog = await API.fetchBlogPosts(1, 5, blogSearchInput.value, searchSelect.value.toLowerCase());
+          console.log(previousPage, currentPage, nextPage);
+          blog = await API.fetchBlogPosts(1, blogSearchInput.value, searchSelect.value.toLowerCase());
           renderBlogExerpts(blog.posts);
+          pageLeft.classList.add('end');
+          if (blog.posts.length < blog.blog.data.limit) {
+            pageRight.classList.add('end');
+          }
+          page.textContent = `Page ${currentPage}`;
         }
       }
     });
 
     console.log(currentPage);
-    const pageLeft = document.querySelector('.page-left');
-    const pageRight = document.querySelector('.page-right');
     if (previousPage === 0) {
       pageLeft.classList.add('end');
     }
@@ -215,39 +244,52 @@ export const watchBlog = async () => {
       e.preventDefault();
       if (pageRight.classList.contains('end')) return;
       pageLeft.classList.remove('end');
-      blog = await API.fetchBlogPosts(nextPage);
-      previousPage++;
-      currentPage++;
-      nextPage++;
-      renderBlogExerpts(blog.posts);
-      if (blog.posts.length < blog.blog.data.limit) {
-        pageRight.classList.add('end');
+      if (blogSearchInput.value === '') {
+        blog = await API.fetchBlogPosts(nextPage);
+        previousPage++;
+        currentPage++;
+        nextPage++;
+        renderBlogExerpts(blog.posts);
+        if (blog.posts.length < blog.blog.data.limit) {
+          pageRight.classList.add('end');
+        }
+        page.textContent = `Page ${currentPage}`;
       }
-      page.textContent = `Page ${currentPage}`;
+      if (blogSearchInput.value !== '') {
+        if (searchSelect.value === `Text`) {
+          blog = await API.fetchBlogPosts(nextPage, blogSearchInput.value, searchSelect.value.toLowerCase());
+          previousPage++;
+          currentPage++;
+          nextPage++;
+          renderBlogExerpts(blog.posts);
+          if (blog.posts.length < blog.blog.data.limit) {
+            pageRight.classList.add('end');
+          }
+          page.textContent = `Page ${currentPage}`;
+        }
+        if (searchSelect.value === `Date`) {
+          blog = await API.fetchBlogPosts(nextPage, blogSearchInput.value, searchSelect.value.toLowerCase());
+          previousPage++;
+          currentPage++;
+          nextPage++;
+          renderBlogExerpts(blog.posts);
+          if (blog.posts.length < blog.blog.data.limit) {
+            pageRight.classList.add('end');
+          }
+          page.textContent = `Page ${currentPage}`;
+        }
+        if (searchSelect.value === `Title`) {
+          blog = await API.fetchBlogPosts(nextPage, blogSearchInput.value, searchSelect.value.toLowerCase());
+          previousPage++;
+          currentPage++;
+          nextPage++;
+          renderBlogExerpts(blog.posts);
+          if (blog.posts.length < blog.blog.data.limit) {
+            pageRight.classList.add('end');
+          }
+          page.textContent = `Page ${currentPage}`;
+        }
+      }
     });
-    // let searchTerm;
-    // const blogSearchOptions = document.querySelectorAll('.search-select-option');
-    // blogSearchOptions.forEach((option) => {
-    //   option.addEventListener('click', (e) => {
-    //     searchTerm = option.value;
-    //     blogSearchInput.type = option.value.toLowerCase();
-    //     if (searchTerm === `Title`) blogSearchInput.type = `text`;
-    //   });
-    // });
-
-    // blogSearchButton.addEventListener('click', async (e) => {
-    //   if (blogSearchInput.type === `date`) {
-    //     console.log(new Date(blogSearchInput.value));
-    //     let blog = await API.fetchSpecificBlogPosts(blogSearchInput.value, blogSearchInput.type, currentPage);
-    //     console.log(blog.posts);
-    //     renderBlogExerpts(blog.posts);
-    //   } else {
-    //     console.log(blogSearchInput.value);
-    //     searchTerm = document.querySelector('.search-select').value;
-    //     let type;
-    //     type = searchTerm.toLowerCase();
-    //     let blog = await API.fetchSpecificBlogPosts(blogSearchInput.value, type, currentPage);
-    //   }
-    // });
   }
 };

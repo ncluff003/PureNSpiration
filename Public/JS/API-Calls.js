@@ -42,12 +42,15 @@ export const fetchSpecificBlogPosts = async (term, type, page, limit) => {
   }
 };
 
-export const fetchBlogPosts = async (page, limit, terms, type) => {
+export const fetchBlogPosts = async (page, terms, type) => {
   const options = {
     method: `GET`,
   };
-  if (!page && !limit && !terms && !type) {
+  if (!page && !terms && !type) {
     options.url = `/blog/posts`;
+  }
+  if (page && !terms && !type) {
+    options.url = `/blog/posts?page=${page}`;
   }
   if (page && terms && type) {
     options.url = `/blog/posts?page=${page}&terms=${terms}&type=${type}`;
