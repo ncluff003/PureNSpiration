@@ -4540,7 +4540,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "fetchLatestProject": function() { return /* binding */ fetchLatestProject; },
 /* harmony export */   "fetchProfileLinks": function() { return /* binding */ fetchProfileLinks; },
 /* harmony export */   "fetchSkills": function() { return /* binding */ fetchSkills; },
-/* harmony export */   "fetchSpecificBlogPosts": function() { return /* binding */ fetchSpecificBlogPosts; }
+/* harmony export */   "fetchSpecificBlogPost": function() { return /* binding */ fetchSpecificBlogPost; }
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
@@ -4630,16 +4630,16 @@ var fetchLatestPost = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
-var fetchSpecificBlogPosts = /*#__PURE__*/function () {
-  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3(term, type, page, limit) {
+var fetchSpecificBlogPost = /*#__PURE__*/function () {
+  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee3(id) {
     var options, response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
             options = {
-              method: "GET",
-              url: "/blog/posts?terms=".concat(term, "&type=").concat(type)
+              method: "POST",
+              url: "/blog/posts/".concat(id)
             };
             _context3.prev = 1;
             _context3.next = 4;
@@ -4647,8 +4647,8 @@ var fetchSpecificBlogPosts = /*#__PURE__*/function () {
 
           case 4:
             response = _context3.sent;
-            console.log(response.data.data);
-            return _context3.abrupt("return", response.data.data);
+            console.log(response.data.data, response.data);
+            return _context3.abrupt("return", response.data.data[0]);
 
           case 9:
             _context3.prev = 9;
@@ -4663,7 +4663,7 @@ var fetchSpecificBlogPosts = /*#__PURE__*/function () {
     }, _callee3, null, [[1, 9]]);
   }));
 
-  return function fetchSpecificBlogPosts(_x, _x2, _x3, _x4) {
+  return function fetchSpecificBlogPost(_x) {
     return _ref3.apply(this, arguments);
   };
 }();
@@ -4711,7 +4711,7 @@ var fetchBlogPosts = /*#__PURE__*/function () {
     }, _callee4, null, [[4, 11]]);
   }));
 
-  return function fetchBlogPosts(_x5, _x6, _x7) {
+  return function fetchBlogPosts(_x2, _x3, _x4) {
     return _ref4.apply(this, arguments);
   };
 }();
@@ -5398,6 +5398,11 @@ var renderPhoto = function renderPhoto(container, content) {
   _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(image, ["blog-image", "r__blog-image"]);
   var index = content.file.indexOf("DIST/CSS");
   image.src = content.file.slice(index);
+
+  if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts")) {
+    image.src = "../../".concat(content.file.slice(index));
+  }
+
   _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, image);
 };
 
@@ -5407,6 +5412,11 @@ var renderVideo = function renderVideo(container, content) {
   video.controls = true;
   var index = content.file.indexOf("DIST/CSS");
   video.src = content.file.slice(index);
+
+  if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts")) {
+    video.src = "../../".concat(content.file.slice(index));
+  }
+
   video.type = "video/".concat(content.file.slice(content.file.length - 3));
   _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, video);
 };
@@ -5466,7 +5476,7 @@ var renderBlogPost = function renderBlogPost(content) {
 };
 var watchBlog = /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().mark(function _callee4() {
-    var blog, page, _blog, searchSelect, blogSearchOptions, blogSearchInput, blogSearchButton, previousPage, currentPage, nextPage, pageLeft, pageRight;
+    var blog, page, _blog, searchSelect, blogSearchOptions, blogSearchInput, blogSearchButton, previousPage, currentPage, nextPage, pageLeft, pageRight, id, post;
 
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default().wrap(function _callee4$(_context4) {
       while (1) {
@@ -5801,6 +5811,23 @@ var watchBlog = /*#__PURE__*/function () {
             }());
 
           case 23:
+            if (!window.location.href.startsWith("http://127.0.0.1:3333/blog/posts/")) {
+              _context4.next = 32;
+              break;
+            }
+
+            console.log("Fetching...");
+            id = window.location.href.split('/')[5];
+            console.log(id);
+            _context4.next = 29;
+            return _API_Calls__WEBPACK_IMPORTED_MODULE_4__.fetchSpecificBlogPost(id);
+
+          case 29:
+            post = _context4.sent;
+            console.log(post);
+            renderBlogPost(post);
+
+          case 32:
           case "end":
             return _context4.stop();
         }
@@ -53720,14 +53747,19 @@ __webpack_require__.r(__webpack_exports__);
             while (1) {
               switch (_context2.prev = _context2.next) {
                 case 0:
-                  _context2.next = 2;
+                  if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts/")) {
+                    _context2.next = 5;
+                    break;
+                  }
+
+                  _context2.next = 3;
                   return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestPost();
 
-                case 2:
+                case 3:
                   post = _context2.sent;
                   _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.renderBlogPost(post);
 
-                case 4:
+                case 5:
                 case "end":
                   return _context2.stop();
               }

@@ -109,7 +109,7 @@ exports.getAllPosts = catchAsync(async (request, response, next) => {
     posts.forEach((post, i) => {
       post.content.forEach((content) => {
         console.log(content);
-        if (content.data.includes(query.terms)) {
+        if (content.data.toLowerCase().includes(query.terms.toLowerCase())) {
           if (!filteredPosts.includes(post)) {
             filteredPosts.push(post);
           }
@@ -187,39 +187,30 @@ exports.getAllPosts = catchAsync(async (request, response, next) => {
       },
     });
   }
-  //   let blog = pureData.blog;
-  //   let posts = pureData.blog.data.posts;
+});
 
-  //   let filteredPosts = posts.filter((post, i) => {
-  //     if (new Date(request.query.terms).toISOString() === new Date(post.date).toISOString()) {
-  //       return post;
-  //     }
-  //   });
-  //   let page = request.query.page * 1 || 1;
-  //   let limit = request.query.limit * 1 || 5;
-  //   let skip = (page - 1) * limit;
-  //   // console.log(`---------------------------------------------------------------------------------`);
-  //   // console.log(filteredPosts);
+exports.getSpecificPost = catchAsync(async (request, response, next) => {
+  let id = request.params.id;
+  const data = pureData;
+  let posts = data.blog.data.posts;
+  let selectedPost = posts.filter((post) => {
+    if (Number(id) === `NaN`) {
+      id = 0;
+    }
+    if (post.id === Number(id)) {
+      return post;
+    }
+  });
 
-  //   let paginatedPosts = filteredPosts.filter((post, i) => {
-  //     if (filteredPosts.indexOf(post) >= skip && filteredPosts.indexOf(post) < page * limit) {
-  //       post.date = new Date(
-  //         new Date(new Date(new Date(post.date).setHours(new Date(post.date).getHours() + new Date(post.date).getTimezoneOffset() / 60))).setHours(0, 0, 0, 0),
-  //       ).toISOString();
-  //       return post;
-  //     }
-  //   });
-  //   response.status(200).json({
-  //     status: `Success`,
-  //     data: {
-  //       blog: blog,
-  //       posts: paginatedPosts,
-  //     },
-  //   });
-  // }
+  response.status(200).json({
+    status: `Success`,
+    data: selectedPost,
+  });
 });
 
 exports.getPost = catchAsync(async (request, response, next) => {
+  const data = pureData;
+  let blog = pureData.blog;
   let id = Number(request.params.id);
   let posts = pureData.blog.data.posts;
   let post;
@@ -229,8 +220,21 @@ exports.getPost = catchAsync(async (request, response, next) => {
     }
   });
 
-  response.status(200).json({
-    status: `Success`,
-    data: post,
+  let title = `Pure 'N' Spiration | Web SlingN -- ${post.title}`;
+  // response.status(200).json({
+  //   status: `Success`,
+  //   data: post,
+  // });
+
+  response.status(200).render(`blog-post`, {
+    title: title,
+    data: {
+      data: data,
+      blog: blog,
+      post: post,
+      calendar: calendar,
+    },
+    errorMessage: '',
+    successMessage: '',
   });
 });

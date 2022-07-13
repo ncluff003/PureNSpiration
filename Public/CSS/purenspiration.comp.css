@@ -88,7 +88,8 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
   font-size: 2.4rem;
 }
 
-.latest-blog-post {
+.latest-blog-post,
+.selected-blog-post {
   font-size: 2rem;
 }
 
@@ -318,30 +319,38 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
 .day .latest-project__project-view__link-container__link:hover {
   color: #fafafa;
 }
-.day .latest-blog-post .blog-header .blog-title {
+.day .latest-blog-post .blog-header .blog-title,
+.day .selected-blog-post .blog-header .blog-title {
   color: #00b358;
 }
-.day .latest-blog-post .blog-header .blog-date {
+.day .latest-blog-post .blog-header .blog-date,
+.day .selected-blog-post .blog-header .blog-date {
   font-size: 3rem;
   color: #ffd700;
 }
-.day .latest-blog-post .blog-header .blog-post-title {
+.day .latest-blog-post .blog-header .blog-post-title,
+.day .selected-blog-post .blog-header .blog-post-title {
   font-size: 4rem;
   color: #ffd700;
 }
-.day .latest-blog-post .blog-content-container .blog-content .blog-paragraph {
+.day .latest-blog-post .blog-content-container .blog-content .blog-paragraph,
+.day .selected-blog-post .blog-content-container .blog-content .blog-paragraph {
   color: #00b358;
 }
-.day .latest-blog-post .blog-link-container--cta-link {
+.day .latest-blog-post .blog-link-container--cta-link,
+.day .selected-blog-post .blog-link-container--cta-link {
   color: rgba(51, 51, 51, 0.8);
 }
-.day .latest-blog-post .blog-link-container--cta-link:hover {
+.day .latest-blog-post .blog-link-container--cta-link:hover,
+.day .selected-blog-post .blog-link-container--cta-link:hover {
   color: #333333;
 }
-.day .latest-blog-post .blog-link-container--cta-link:visited {
+.day .latest-blog-post .blog-link-container--cta-link:visited,
+.day .selected-blog-post .blog-link-container--cta-link:visited {
   color: rgba(250, 250, 250, 0.8);
 }
-.day .latest-blog-post .blog-link-container--cta-link:active {
+.day .latest-blog-post .blog-link-container--cta-link:active,
+.day .selected-blog-post .blog-link-container--cta-link:active {
   color: #ff3d00;
 }
 .day .about-link {
@@ -588,30 +597,38 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
 .night .latest-project__project-view__link-container__link:hover {
   color: #fafafa;
 }
-.night .latest-blog-post .blog-header .blog-title {
+.night .latest-blog-post .blog-header .blog-title,
+.night .selected-blog-post .blog-header .blog-title {
   color: #ffd700;
 }
-.night .latest-blog-post .blog-header .blog-date {
+.night .latest-blog-post .blog-header .blog-date,
+.night .selected-blog-post .blog-header .blog-date {
   font-size: 3rem;
   color: #00b358;
 }
-.night .latest-blog-post .blog-header .blog-post-title {
+.night .latest-blog-post .blog-header .blog-post-title,
+.night .selected-blog-post .blog-header .blog-post-title {
   font-size: 4rem;
   color: #00b358;
 }
-.night .latest-blog-post .blog-content-container .blog-content .blog-paragraph {
+.night .latest-blog-post .blog-content-container .blog-content .blog-paragraph,
+.night .selected-blog-post .blog-content-container .blog-content .blog-paragraph {
   color: #ffd700;
 }
-.night .latest-blog-post .blog-link-container--cta-link {
+.night .latest-blog-post .blog-link-container--cta-link,
+.night .selected-blog-post .blog-link-container--cta-link {
   color: rgba(250, 250, 250, 0.8);
 }
-.night .latest-blog-post .blog-link-container--cta-link:hover {
+.night .latest-blog-post .blog-link-container--cta-link:hover,
+.night .selected-blog-post .blog-link-container--cta-link:hover {
   color: #fafafa;
 }
-.night .latest-blog-post .blog-link-container--cta-link:visited {
+.night .latest-blog-post .blog-link-container--cta-link:visited,
+.night .selected-blog-post .blog-link-container--cta-link:visited {
   color: rgba(250, 250, 250, 0.8);
 }
-.night .latest-blog-post .blog-link-container--cta-link:active {
+.night .latest-blog-post .blog-link-container--cta-link:active,
+.night .selected-blog-post .blog-link-container--cta-link:active {
   color: #ffd700;
 }
 .night .about-link {
@@ -32659,6 +32676,16 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
   height: auto;
   width: 100%;
   margin-bottom: 3rem;
+}
+
+.day .selected-blog-post {
+  border-left: 0.3rem groove #ffd700;
+  border-right: 0.3rem groove #ffd700;
+}
+
+.night .selected-blog-post {
+  border-left: 0.3rem groove #00b358;
+  border-right: 0.3rem groove #00b358;
 }
 
 .modal, .modal--foundation, .modal--interests, .modal--skills {

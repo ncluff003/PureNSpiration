@@ -52,8 +52,16 @@
 // DAY SETTINGS
 
 .day {
+  .selected-blog-post {
+    border-left: 0.3rem groove $primaryColor;
+    border-right: 0.3rem groove $primaryColor;
+  }
 }
 /////////////////////////////////
 // NIGHT SETTINGS
 .night {
+  .selected-blog-post {
+    border-left: 0.3rem groove $secondaryColor;
+    border-right: 0.3rem groove $secondaryColor;
+  }
 }

@@ -28,15 +28,15 @@ export const fetchLatestPost = async () => {
   }
 };
 
-export const fetchSpecificBlogPosts = async (term, type, page, limit) => {
+export const fetchSpecificBlogPost = async (id) => {
   const options = {
-    method: `GET`,
-    url: `/blog/posts?terms=${term}&type=${type}`,
+    method: `POST`,
+    url: `/blog/posts/${id}`,
   };
   try {
     const response = await axios(options);
-    console.log(response.data.data);
-    return response.data.data;
+    console.log(response.data.data, response.data);
+    return response.data.data[0];
   } catch (error) {
     console.log(error);
   }

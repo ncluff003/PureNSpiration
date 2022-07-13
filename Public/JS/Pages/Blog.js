@@ -59,6 +59,9 @@ const renderPhoto = (container, content) => {
   Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
   let index = content.file.indexOf(`DIST/CSS`);
   image.src = content.file.slice(index);
+  if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts`)) {
+    image.src = `../../${content.file.slice(index)}`;
+  }
   Utility.insertElement(`beforeend`, container, image);
 };
 const renderVideo = (container, content) => {
@@ -67,6 +70,9 @@ const renderVideo = (container, content) => {
   video.controls = true;
   let index = content.file.indexOf(`DIST/CSS`);
   video.src = content.file.slice(index);
+  if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts`)) {
+    video.src = `../../${content.file.slice(index)}`;
+  }
   video.type = `video/${content.file.slice(content.file.length - 3)}`;
   Utility.insertElement(`beforeend`, container, video);
 };
@@ -285,5 +291,13 @@ export const watchBlog = async () => {
         }
       }
     });
+  }
+  if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts/`)) {
+    console.log(`Fetching...`);
+    let id = window.location.href.split('/')[5];
+    console.log(id);
+    let post = await API.fetchSpecificBlogPost(id);
+    console.log(post);
+    renderBlogPost(post);
   }
 };

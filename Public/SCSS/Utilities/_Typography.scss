@@ -137,7 +137,8 @@ html {
   }
 }
 
-.latest-blog-post {
+.latest-blog-post,
+.selected-blog-post {
   font-size: 2rem;
 }
 
@@ -459,7 +460,8 @@ html {
       }
     }
   }
-  .latest-blog-post {
+  .latest-blog-post,
+  .selected-blog-post {
     .blog-header {
       .blog-title {
         color: $secondaryColor;
@@ -847,7 +849,8 @@ html {
       }
     }
   }
-  .latest-blog-post {
+  .latest-blog-post,
+  .selected-blog-post {
     .blog-header {
       .blog-title {
         color: $primaryColor;

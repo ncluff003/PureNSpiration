@@ -50,8 +50,10 @@ import * as Project from './Pages/Project';
     }
 
     async _fetchLatestBlogPost() {
-      let post = await API.fetchLatestPost();
-      Blog.renderBlogPost(post);
+      if (!window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts/`)) {
+        let post = await API.fetchLatestPost();
+        Blog.renderBlogPost(post);
+      }
     }
 
     async _fetchLatestProject() {
