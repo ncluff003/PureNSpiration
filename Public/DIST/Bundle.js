@@ -4905,6 +4905,262 @@ var fetchSkills = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./Public/JS/App.js":
+/*!**************************!*\
+  !*** ./Public/JS/App.js ***!
+  \**************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Projects */ "./Public/JS/Projects.js");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
+/* harmony import */ var _Pages_About__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/About */ "./Public/JS/Pages/About.js");
+/* harmony import */ var _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/About-Interests */ "./Public/JS/Pages/About-Interests.js");
+/* harmony import */ var _Pages_About_Skills__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/About-Skills */ "./Public/JS/Pages/About-Skills.js");
+/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
+/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
+/* harmony import */ var _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Pages/Contact */ "./Public/JS/Pages/Contact.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+
+
+
+////////////////////////////////////////////////
+// IMPORTED VALUES
+// import { myCalendar } from './Calendar.js';
+
+
+
+
+
+
+
+
+ ///////////////////////////////////////////////
+// APP CLASS
+
+(function () {
+  var App = /*#__PURE__*/function () {
+    function App() {
+      (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
+
+      this.adjustLinkContainer();
+      this.watchToggle();
+
+      this._fetchLatestBlogPost();
+
+      this._fetchLatestProject();
+
+      _Pages_About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
+      _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage();
+      _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.watchBlog();
+      _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__.watchContactForm(); // API.fetchSkills();
+    }
+
+    (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
+      key: "adjustLinkContainer",
+      value: function adjustLinkContainer() {
+        var linkContainer = document.querySelector('.blog-link-container');
+
+        if (linkContainer) {
+          var width = linkContainer.getBoundingClientRect().width;
+          var height = linkContainer.getBoundingClientRect().height;
+          console.log(_Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(5, 10));
+          linkContainer.style.width = "".concat(width + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(10, 10), "px");
+          linkContainer.style.height = "".concat(height + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(2, 10), "px");
+        }
+      }
+    }, {
+      key: "watchToggle",
+      value: function watchToggle() {
+        timeToggle.addEventListener('click', /*#__PURE__*/function () {
+          var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee(e) {
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    e.preventDefault();
+                    grid.classList.toggle('day');
+                    grid.classList.toggle('night');
+                    sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
+                    moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
+
+                    if (window.location.href === "http://127.0.0.1:3333/about/interests") {
+                      _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__.watchInterestPipe();
+                    }
+
+                  case 6:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          return function (_x) {
+            return _ref.apply(this, arguments);
+          };
+        }());
+      }
+    }, {
+      key: "_fetchLatestBlogPost",
+      value: function () {
+        var _fetchLatestBlogPost2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee2() {
+          var post;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts/")) {
+                    _context2.next = 5;
+                    break;
+                  }
+
+                  _context2.next = 3;
+                  return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestPost();
+
+                case 3:
+                  post = _context2.sent;
+                  _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.renderBlogPost(post);
+
+                case 5:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }));
+
+        function _fetchLatestBlogPost() {
+          return _fetchLatestBlogPost2.apply(this, arguments);
+        }
+
+        return _fetchLatestBlogPost;
+      }()
+    }, {
+      key: "_fetchLatestProject",
+      value: function () {
+        var _fetchLatestProject2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee3() {
+          var project;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  _context3.next = 2;
+                  return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestProject();
+
+                case 2:
+                  project = _context3.sent;
+                  _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.renderLatestProject(project);
+
+                case 4:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3);
+        }));
+
+        function _fetchLatestProject() {
+          return _fetchLatestProject2.apply(this, arguments);
+        }
+
+        return _fetchLatestProject;
+      }()
+    }]);
+
+    return App;
+  }(); ///////////////////////////////////////////////
+  // APP
+
+
+  var grid = document.querySelector('.grid');
+  var timeToggle = document.querySelector('.time-toggle');
+  var sunIcon = document.querySelector('.time-toggle__switch__icon--sun');
+  var moonIcon = document.querySelector('.time-toggle__switch__icon--moon');
+  var app = new App();
+})();
+
+/***/ }),
+
+/***/ "./Public/JS/Email.js":
+/*!****************************!*\
+  !*** ./Public/JS/Email.js ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "emailMe": function() { return /* binding */ emailMe; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js");
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App */ "./Public/JS/App.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+
+
+
+
+var emailMe = /*#__PURE__*/function () {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(firstName, lastName, email, subject, message) {
+    var response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return axios__WEBPACK_IMPORTED_MODULE_2___default()({
+              method: "POST",
+              url: "/contact",
+              data: qs__WEBPACK_IMPORTED_MODULE_3___default().stringify({
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                subject: subject,
+                message: message
+              })
+            });
+
+          case 3:
+            response = _context.sent;
+            _context.next = 9;
+            break;
+
+          case 6:
+            _context.prev = 6;
+            _context.t0 = _context["catch"](0);
+            console.log(_context.t0);
+
+          case 9:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[0, 6]]);
+  }));
+
+  return function emailMe(_x, _x2, _x3, _x4, _x5) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
 /***/ "./Public/JS/Pages/About-Foundation.js":
 /*!*********************************************!*\
   !*** ./Public/JS/Pages/About-Foundation.js ***!
@@ -5839,6 +6095,66 @@ var watchBlog = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+
+/***/ }),
+
+/***/ "./Public/JS/Pages/Contact.js":
+/*!************************************!*\
+  !*** ./Public/JS/Pages/Contact.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "watchContactForm": function() { return /* binding */ watchContactForm; }
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Email__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../Email */ "./Public/JS/Email.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+
+
+var watchContactForm = function watchContactForm() {
+  console.log("Contacting...");
+  var firstName = document.getElementById('fname').value;
+  var lastName = document.getElementById('lname').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('subject').value;
+  var message = document.getElementById('message').value;
+  var sendMessageButton = document.querySelector('.button--send-message');
+  sendMessageButton.addEventListener('click', /*#__PURE__*/function () {
+    var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(e) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              e.preventDefault();
+              _context.next = 3;
+              return _Email__WEBPACK_IMPORTED_MODULE_2__.emailMe(firstName, lastName, email, subject, message);
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }());
+  var messageContainer = document.querySelector('.form-input--message');
+  var characterCounter = document.querySelector('.character-count');
+  messageContainer.addEventListener('keyup', function (e) {
+    e.preventDefault();
+    characterCounter.textContent = "".concat(5000 - messageContainer.value.length, " Characters Left");
+    console.log(messageContainer.value.length);
+  });
+};
 
 /***/ }),
 
@@ -53637,186 +53953,12 @@ function _unsupportedIterableToArray(o, minLen) {
 /******/ 	}();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-!function() {
-"use strict";
-/*!**************************!*\
-  !*** ./Public/JS/App.js ***!
-  \**************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Projects */ "./Public/JS/Projects.js");
-/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
-/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
-/* harmony import */ var _Pages_About__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/About */ "./Public/JS/Pages/About.js");
-/* harmony import */ var _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/About-Interests */ "./Public/JS/Pages/About-Interests.js");
-/* harmony import */ var _Pages_About_Skills__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/About-Skills */ "./Public/JS/Pages/About-Skills.js");
-/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
-/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
-/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
-
-
-
-
-////////////////////////////////////////////////
-// IMPORTED VALUES
-// import { myCalendar } from './Calendar.js';
-
-
-
-
-
-
-
- ///////////////////////////////////////////////
-// APP CLASS
-
-(function () {
-  var App = /*#__PURE__*/function () {
-    function App() {
-      (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
-
-      this.adjustLinkContainer();
-      this.watchToggle();
-
-      this._fetchLatestBlogPost();
-
-      this._fetchLatestProject();
-
-      _Pages_About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
-      _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage();
-      _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.watchBlog(); // API.fetchSkills();
-    }
-
-    (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
-      key: "adjustLinkContainer",
-      value: function adjustLinkContainer() {
-        var linkContainer = document.querySelector('.blog-link-container');
-
-        if (linkContainer) {
-          var width = linkContainer.getBoundingClientRect().width;
-          var height = linkContainer.getBoundingClientRect().height;
-          console.log(_Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(5, 10));
-          linkContainer.style.width = "".concat(width + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(10, 10), "px");
-          linkContainer.style.height = "".concat(height + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(2, 10), "px");
-        }
-      }
-    }, {
-      key: "watchToggle",
-      value: function watchToggle() {
-        timeToggle.addEventListener('click', /*#__PURE__*/function () {
-          var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee(e) {
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee$(_context) {
-              while (1) {
-                switch (_context.prev = _context.next) {
-                  case 0:
-                    e.preventDefault();
-                    grid.classList.toggle('day');
-                    grid.classList.toggle('night');
-                    sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
-                    moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
-
-                    if (window.location.href === "http://127.0.0.1:3333/about/interests") {
-                      _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__.watchInterestPipe();
-                    }
-
-                  case 6:
-                  case "end":
-                    return _context.stop();
-                }
-              }
-            }, _callee);
-          }));
-
-          return function (_x) {
-            return _ref.apply(this, arguments);
-          };
-        }());
-      }
-    }, {
-      key: "_fetchLatestBlogPost",
-      value: function () {
-        var _fetchLatestBlogPost2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee2() {
-          var post;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts/")) {
-                    _context2.next = 5;
-                    break;
-                  }
-
-                  _context2.next = 3;
-                  return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestPost();
-
-                case 3:
-                  post = _context2.sent;
-                  _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.renderBlogPost(post);
-
-                case 5:
-                case "end":
-                  return _context2.stop();
-              }
-            }
-          }, _callee2);
-        }));
-
-        function _fetchLatestBlogPost() {
-          return _fetchLatestBlogPost2.apply(this, arguments);
-        }
-
-        return _fetchLatestBlogPost;
-      }()
-    }, {
-      key: "_fetchLatestProject",
-      value: function () {
-        var _fetchLatestProject2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee3() {
-          var project;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee3$(_context3) {
-            while (1) {
-              switch (_context3.prev = _context3.next) {
-                case 0:
-                  _context3.next = 2;
-                  return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestProject();
-
-                case 2:
-                  project = _context3.sent;
-                  _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.renderLatestProject(project);
-
-                case 4:
-                case "end":
-                  return _context3.stop();
-              }
-            }
-          }, _callee3);
-        }));
-
-        function _fetchLatestProject() {
-          return _fetchLatestProject2.apply(this, arguments);
-        }
-
-        return _fetchLatestProject;
-      }()
-    }]);
-
-    return App;
-  }(); ///////////////////////////////////////////////
-  // APP
-
-
-  var grid = document.querySelector('.grid');
-  var timeToggle = document.querySelector('.time-toggle');
-  var sunIcon = document.querySelector('.time-toggle__switch__icon--sun');
-  var moonIcon = document.querySelector('.time-toggle__switch__icon--moon');
-  var app = new App();
-})();
-}();
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./Public/JS/App.js");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=Bundle.js.map

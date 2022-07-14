@@ -9,6 +9,7 @@ import * as Interests from './Pages/About-Interests';
 import * as Skills from './Pages/About-Skills';
 import * as Blog from './Pages/Blog';
 import * as Project from './Pages/Project';
+import * as Contact from './Pages/Contact';
 
 ///////////////////////////////////////////////
 // APP CLASS
@@ -22,6 +23,7 @@ import * as Project from './Pages/Project';
       About.watchAbout();
       Project.watchProjectPage();
       Blog.watchBlog();
+      Contact.watchContactForm();
       // API.fetchSkills();
     }
 

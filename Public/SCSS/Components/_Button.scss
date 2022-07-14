@@ -44,6 +44,18 @@
       cursor: pointer;
     }
   }
+
+  &--send-message {
+    @include SizeAndPositioning(absolute, 3rem, 10rem, flex, row, nowrap, center, center, 0, 0, 0);
+    border-radius: 1rem;
+    bottom: 2rem;
+    right: 2.5rem;
+    transition: border 0.5s, background-color 0.5s, color 0.5s;
+    z-index: 10;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 /////////////////////////////////
@@ -106,6 +118,24 @@
       }
     }
   }
+  .contact-me-section {
+    .form {
+      &-section--message {
+        .button--send-message {
+          background-color: rgba($primaryColorDark, 0.8);
+          border: 0.2rem solid rgba($primaryColor, 0.8);
+          &:hover {
+            background-color: $primaryColor;
+            border: 0.2rem solid $primaryColorLight;
+          }
+          &:active {
+            border: 0.2rem solid $tertiaryColorLight;
+            background-color: $tertiaryColor;
+          }
+        }
+      }
+    }
+  }
 }
 /////////////////////////////////
 // NIGHT SETTINGS
@@ -162,6 +192,24 @@
         &:hover {
           border: 0.2rem solid $secondaryColor;
           background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+  .contact-me-section {
+    .form {
+      &-section--message {
+        .button--send-message {
+          background-color: rgba($secondaryColorDark, 0.8);
+          border: 0.2rem solid rgba($secondaryColor, 0.8);
+          &:hover {
+            background-color: $secondaryColor;
+            border: 0.2rem solid $secondaryColorLight;
+          }
+          &:active {
+            border: 0.2rem solid $primaryColorLight;
+            background-color: $primaryColor;
+          }
         }
       }
     }

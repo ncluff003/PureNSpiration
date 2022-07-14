@@ -41,8 +41,10 @@ block unique-content
         input.form-input.r__form-input#subject(type="subject" placeholder="Subject" name="subject" required)
         label.form-label.r__form-label(for="subject") Subject
       section.form-section--message.r__form-section--message
-        textarea.form-input--message.r__form-input--message#message(name="message" required) 
+        textarea.form-input--message.r__form-input--message#message(name="message" minLength="5" maxLength="5000" required) 
         label.form-label--message.r__form-label--message Message
+        button.button--send-message.r__button--send-message Send
+      p.character-count.r__character-count 5000 Characters Left
 
 
 //- block site-content

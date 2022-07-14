@@ -97,6 +97,11 @@
   }
 }
 
+.character-count {
+  @include SizingItem(relative, max-content, max-content);
+  transform: translate(18rem, -2rem);
+}
+
 .day {
   .contact-me-section {
     .form {

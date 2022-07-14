@@ -68,6 +68,10 @@ html {
   &--control-flow {
     font-size: 2.4rem;
   }
+  &--send-message {
+    @extend html;
+    font-size: 2rem;
+  }
 }
 
 .time-toggle {
@@ -358,8 +362,7 @@ html {
 }
 
 .form {
-  .form-section,
-  .form-section--message {
+  .form-section {
     .form-input {
       @extend html;
       font-size: 2rem;
@@ -374,11 +377,25 @@ html {
       &--name {
         @extend .form-label;
       }
-      &--message {
-        @extend .form-label;
-        font-size: 1.6rem;
+    }
+  }
+  .form-section--message {
+    .form-label--message {
+      @extend html;
+      font-size: 1.6rem;
+    }
+    .form-input--message {
+      @extend html;
+      font-size: 2rem;
+      &--name {
+        @extend .form-input;
       }
     }
+  }
+  .character-count {
+    @extend html;
+    font-size: 2rem;
+    color: $secondaryColor;
   }
 }
 
@@ -779,20 +796,14 @@ html {
       }
     }
     .form {
-      .form-section,
-      .form-section--message {
-        .form-label,
-        .form-label--message {
+      .form-section {
+        .form-label {
           color: rgba($secondaryColorDark, 0.8);
           &--name {
             @extend .form-label;
           }
-          &--message {
-            @extend .form-label;
-          }
         }
-        .form-input,
-        .form-input--message {
+        .form-input {
           color: rgba($secondaryColorDark, 0.8);
           &--name {
             @extend .form-input;
@@ -805,13 +816,38 @@ html {
             color: $primaryColor;
           }
 
-          &:valid + label,
+          &:valid + label {
+            color: $secondaryColor;
+          }
+          &:invalid + label {
+            color: $colorError;
+          }
+        }
+      }
+
+      .form-section--message {
+        .form-label--message {
+          @extend .form-label--message;
+        }
+        .form-input--message {
+          color: rgba($secondaryColorDark, 0.8);
+          &:focus {
+            color: $secondaryColor;
+          }
           &:valid + .form-label--message {
             color: $secondaryColor;
           }
-          &:invalid + label,
-          &:valid + .form-label--message {
+          &:invalid + .form-label--message {
             color: $colorError;
+          }
+        }
+        .button--send-message {
+          color: rgba($colorDarkerGrey, 0.8);
+          &:hover {
+            color: $colorDarkerGrey;
+          }
+          &:active {
+            color: $colorOffWhite;
           }
         }
       }
@@ -1220,10 +1256,8 @@ html {
       }
     }
     .form {
-      .form-section,
-      .form-section--message {
-        .form-label,
-        .form-label--message {
+      .form-section {
+        .form-label {
           color: rgba($secondaryColorDark, 0.8);
           &--name {
             @extend .form-label;
@@ -1232,8 +1266,7 @@ html {
             @extend .form-label;
           }
         }
-        .form-input,
-        .form-input--message {
+        .form-input {
           color: rgba($secondaryColorDark, 0.8);
           &--name {
             @extend .form-input;
@@ -1254,6 +1287,39 @@ html {
           &:invalid + label,
           &:invalid + .form-label--message {
             color: $colorError;
+          }
+        }
+      }
+      .form-section--message {
+        .form-label--message {
+          @extend .form-label--message;
+        }
+        .form-input--message {
+          color: rgba($secondaryColorDark, 0.8);
+
+          &:focus {
+            color: $secondaryColor;
+          }
+
+          &:focus + label,
+          &:not(:placeholder-shown) + label {
+            color: $primaryColor;
+          }
+
+          &:valid + .form-label--message {
+            color: $secondaryColor;
+          }
+          &:invalid + .form-label--message {
+            color: $colorError;
+          }
+        }
+        .button--send-message {
+          color: rgba($colorOffWhite, 0.8);
+          &:hover {
+            color: $colorOffWhite;
+          }
+          &:active {
+            color: $colorDarkerGrey;
           }
         }
       }

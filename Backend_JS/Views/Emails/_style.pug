@@ -50,17 +50,28 @@ style.
     display: block;
     margin: 0 auto !important;
     /* makes it centered */
-    max-width: 600px;
-    padding: 10px;
-    width: 600px; 
+    max-width: 800px;
+    padding: 20px;
+    width: 800px; 
   }
   .content {
     box-sizing: border-box;
     display: block;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 800px;
     padding: 10px; 
   }
+
+  .mail-detail-content .container {
+    max-width: 1000px;
+    width: 1000px;
+    padding: 40px 20px 20px;
+  }
+
+  .mail-detail-content .content {
+    max-width: 1000px;
+  }
+
   .main {
     background: #0047ABBB;
     border-radius: 3px;
@@ -79,13 +90,17 @@ style.
 
   .email-header {
     height: 100px;
-    width: 600px;
+    width: 750px;
     background-color: transparent;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     font-size: 1.6rem;
+  }
+
+  .mail-detail-content .email-header {
+    width: 900px;
   }
 
   .email-header .name {
@@ -135,6 +150,19 @@ style.
     font-size: 20px;
     display: flex;
     justify-content: center;
+    transform: translateX(5rem);
+    
+    color: #FFD700;
+  }
+
+  .mail-detail-content .salutations {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    justify-self: flex-end;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    transform: translateX(7rem);
     
     color: #FFD700;
   }
@@ -171,37 +199,17 @@ style.
     font-size: 18px;
   }
 
-  .from-container .from-position {
-    font-size: 12px;
-    transform: translateY(-1.2rem);
-  }
-
-  .from-container .from-organization {
-    font-size: 12px;
-    transform: translateY(-2.4rem);
-  }
-
   .from-container .from-email {
     font-size: 12px;
-    transform: translateY(-3.6rem);
+    transform: translateY(-1rem);
   }
 
   .mail-detail-content .from-container .from {
     margin: .6rem 0;
   }
 
-  .mail-detail-content .from-container .from-position {
-    transform: translateY(-1.2rem);
-    margin: .6rem 0;
-  }
-
-  .mail-detail-content .from-container .from-organization {
-    transform: translateY(-2.4rem);
-    margin: .6rem 0;
-  }
-
   .mail-detail-content .from-container .from-email {
-    transform: translateY(-3.6rem);
+    transform: translateY(-1rem);
     margin: .6rem 0;
     a[href] {
       text-decoration: none;
