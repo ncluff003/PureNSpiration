@@ -1,190 +1,130 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-////////////////////////////////////////////////
-//  Master Grid Container
-.master-grid {
-  .master-flex-container {
-    /////////////////
-    // Contact Page
-    .form-container {
-      &__contact-form {
-        @include SizeAndPositioning(relative, 75%, 100%, flex, center, center, 9rem, 0, 0);
-        flex-direction: column;
-        &__name-containers {
-          @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
-          margin: 0.5rem 0;
-          &__first-name-container,
-          &__last-name-container {
-            @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
-            margin: 0 1rem;
-            &--first-name,
-            &--last-name {
-              @include SizingItem(relative, 80%, 100%);
-              background-color: transparent;
-              border: none;
-              border-bottom: 0.3rem solid rgba($secondaryColor, 0.75);
-              padding: 0.5rem;
-              &:invalid {
-                background-color: rgba(#cf352e, 0.1);
-                border-bottom: 0.3rem solid rgba(#cf352e, 0.75);
-              }
-              &:valid {
-                background-color: rgba(#008013, 0.1);
-                border-bottom: 0.3rem solid rgba(#008013, 0.75);
-              }
-            }
+.form {
+  @include SizeAndPositioning(relative, 100%, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  padding-top: 10rem;
+}
+
+.form-section {
+  @include SizeAndPositioning(relative, 5rem, 100%, flex, column, wrap, space-evenly, center, 0, 0, 0);
+  margin: 2rem 0;
+  &--message {
+    @extend .form-section;
+    height: 50%;
+  }
+}
+
+.form-input {
+  @include SizeAndPositioning(relative, 100%, 97.5%, flex, row, nowrap, flex-start, center, 0, 0, 0);
+  padding-left: 2rem;
+  border-radius: 0.5rem;
+  &--name {
+    @extend .form-input;
+    width: 47.5%;
+
+    &:not(:placeholder-shown) + .form-label--name,
+    &:focus + .form-label--name {
+      transform: translate(-2rem, -7rem) scale(0.8);
+    }
+  }
+
+  &--message {
+    @include SizeAndPositioning(relative, 97.5%, 97%, flex, row, wrap, flex-start, flex-start, 0, 0, 0);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    resize: none;
+    z-index: 5;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &::placeholder {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  &:focus {
+    outline: none;
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &:valid {
+    border: 0.2rem solid $secondaryColor;
+  }
+  &:invalid {
+    border: 0.2rem solid $colorError;
+  }
+
+  &:not(:placeholder-shown) + label,
+  &:focus + label {
+    transform: translate(-5rem, -7rem) scale(0.8);
+  }
+}
+
+.form-label {
+  @include SizeAndPositioning(absolute, 100%, 100%, flex, row, nowrap, flex-start, center, 0, 0, 0);
+  transition: transform 0.5s;
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%);
+  &--name {
+    @extend .form-label;
+    width: 47.5%;
+    &:first-of-type {
+      top: 50%;
+      left: 2rem;
+      transform: translate(0, -50%);
+    }
+    &:last-of-type {
+      top: 50%;
+      left: calc(52.5% + 0.5rem);
+      transform: translate(0, -50%);
+    }
+  }
+
+  &--message {
+    @extend .form-label;
+    height: 4rem;
+    top: -1rem;
+    left: 2rem;
+  }
+}
+
+.day {
+  .contact-me-section {
+    .form {
+      .form-section,
+      &--message {
+        .form-input--message {
+          &:valid {
+            border: 0.2rem solid $secondaryColor;
           }
-          &__first-name-container {
-            &--first-name-label {
-              @include SizingItem(absolute, max-content, max-content);
-              top: 50%;
-              left: 0;
-              transform: translate(calc(-100% - 2rem), -50%);
-            }
-          }
-        }
-        &__organization-info-containers {
-          @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
-          margin: 0.5rem 0;
-          &__organization-name-container,
-          &__organization-position-container {
-            @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
-            margin: 0 1rem;
-            &--organization-name,
-            &--organization-position {
-              @include SizingItem(relative, 80%, 100%);
-              background-color: transparent;
-              border: none;
-              border-bottom: 0.3rem solid rgba($secondaryColor, 0.75);
-              padding: 0.5rem;
-              &:invalid {
-                background-color: rgba(#cf352e, 0.1);
-                border-bottom: 0.3rem solid rgba(#cf352e, 0.75);
-              }
-              &:valid {
-                background-color: rgba(#008013, 0.1);
-                border-bottom: 0.3rem solid rgba(#008013, 0.75);
-              }
-            }
-            &--organization-name-label {
-              @include SizingItem(absolute, max-content, max-content);
-              top: 50%;
-              left: 0;
-              transform: translate(calc(-100% - 2rem), -50%);
-            }
-          }
-        }
-        &__email-containers {
-          @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
-          margin: 0.5rem 0;
-          &__email-container {
-            @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
-            &--email {
-              @include SizingItem(relative, 80%, 100%);
-              background-color: transparent;
-              border: none;
-              border-bottom: 0.3rem solid rgba($secondaryColor, 0.75);
-              padding: 0.5rem;
-              &:invalid {
-                background-color: rgba(#cf352e, 0.1);
-                border-bottom: 0.3rem solid rgba(#cf352e, 0.75);
-              }
-              &:valid {
-                background-color: rgba(#008013, 0.1);
-                border-bottom: 0.3rem solid rgba(#008013, 0.75);
-              }
-            }
-            &--email-label {
-              @include SizingItem(absolute, max-content, max-content);
-              top: 50%;
-              left: 0;
-              transform: translate(calc(-100% - 2rem), -50%);
-            }
-          }
-        }
-        &__subject-containers {
-          @include SizeAndPositioning(relative, 10%, 100%, flex, center, center, 0, 0, 0);
-          margin: 0.5rem 0;
-          &__subject-container {
-            @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
-            &--subject {
-              @include SizingItem(relative, 80%, 100%);
-              background-color: transparent;
-              border: none;
-              border-bottom: 0.3rem solid rgba($secondaryColor, 0.75);
-              padding: 0.5rem;
-              &:invalid {
-                background-color: rgba(#cf352e, 0.1);
-                border-bottom: 0.3rem solid rgba(#cf352e, 0.75);
-              }
-              &:valid {
-                background-color: rgba(#008013, 0.1);
-                border-bottom: 0.3rem solid rgba(#008013, 0.75);
-              }
-            }
-            &--subject-label {
-              @include SizingItem(absolute, max-content, max-content);
-              top: 50%;
-              left: 0;
-              transform: translate(calc(-100% - 2rem), -50%);
-            }
+          &:invalid {
+            border: 0.2rem solid $colorError;
           }
         }
-        &__message-containers {
-          @include SizeAndPositioning(relative, 30%, 100%, flex, center, center, 0, 0, 0);
-          margin: 0.5rem 0;
-          &__message-container {
-            @include SizeAndPositioning(relative, 100%, 50%, flex, center, center, 0, 0, 0);
-            &--message {
-              @include SizingItem(relative, 100%, 100%);
-              background-color: transparent;
-              border: 0.3rem solid rgba($secondaryColor, 0.75);
-              padding: 1.25rem 1rem;
-              resize: none;
-              &:invalid {
-                background-color: rgba(#cf352e, 0.1);
-                border: 0.3rem solid rgba(#cf352e, 0.75);
-              }
-              &:valid {
-                background-color: rgba(#008013, 0.1);
-                border: 0.3rem solid rgba(#008013, 0.75);
-              }
-            }
-            &--message-label {
-              @include SizingItem(absolute, max-content, max-content);
-              top: 18%;
-              left: 0;
-              transform: translate(calc(-100% - 2rem), -50%);
-            }
+      }
+    }
+  }
+}
+.night {
+  .contact-me-section {
+    .form {
+      .form-section,
+      &--message {
+        .form-input--message {
+          &:valid {
+            border: 0.2rem solid $secondaryColor;
           }
-          &__message-counter {
-            @include SizingItem(absolute, max-content, max-content);
-            top: 33%;
-            left: 0;
-            transform: translate(calc(-100% - 2rem), -50%);
-          }
-        }
-        &__submit-containers {
-          @include SizeAndPositioning(relative, 20%, 100%, flex, center, center, 0, 0, 0);
-          margin: 0.5rem 0;
-          &__submit-container {
-            @include SizeAndPositioning(relative, 100%, 25%, flex, center, center, 0, 0, 0);
-            &--submit {
-              @include SizingItem(relative, 80%, 100%);
-              background-color: transparent;
-              border: 0.3rem outset rgba($secondaryColor, 0.75);
-              padding: 0.5rem;
-              transition: background-color 0.5s, color 0.5s;
-              &:hover {
-                cursor: pointer;
-                background-color: $secondaryColor;
-              }
-              &:active {
-                border: 0.3rem inset $primaryColor;
-                background-color: $primaryColor;
-              }
-            }
+          &:invalid {
+            border: 0.2rem solid $colorError;
           }
         }
       }

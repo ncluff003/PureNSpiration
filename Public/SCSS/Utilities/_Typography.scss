@@ -343,6 +343,46 @@ html {
 }
 
 /////////////////////////////////
+// CONTACT PAGE
+
+.contact-greeting {
+  @extend html;
+  &__heading {
+    font-size: 6rem;
+    font-weight: bold;
+  }
+  &__greeting {
+    font-size: 2rem;
+    text-indent: 3rem;
+  }
+}
+
+.form {
+  .form-section,
+  .form-section--message {
+    .form-input {
+      @extend html;
+      font-size: 2rem;
+      &--name {
+        @extend .form-input;
+      }
+    }
+
+    .form-label {
+      @extend html;
+      font-size: 2rem;
+      &--name {
+        @extend .form-label;
+      }
+      &--message {
+        @extend .form-label;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+/////////////////////////////////
 // DAY SETTINGS
 
 .day {
@@ -723,6 +763,56 @@ html {
         }
         &:active {
           color: $primaryColorDark;
+        }
+      }
+    }
+  }
+  .contact-me-section {
+    .personal-photo-container {
+      .contact-greeting {
+        &__heading {
+          color: $secondaryColor;
+        }
+        &__greeting {
+          color: $colorDarkerGrey;
+        }
+      }
+    }
+    .form {
+      .form-section,
+      .form-section--message {
+        .form-label,
+        .form-label--message {
+          color: rgba($secondaryColorDark, 0.8);
+          &--name {
+            @extend .form-label;
+          }
+          &--message {
+            @extend .form-label;
+          }
+        }
+        .form-input,
+        .form-input--message {
+          color: rgba($secondaryColorDark, 0.8);
+          &--name {
+            @extend .form-input;
+          }
+          &:focus {
+            color: $secondaryColor;
+          }
+          &:focus + label,
+          &:not(:placeholder-shown) + label {
+            color: $primaryColor;
+          }
+
+          &:valid + label,
+          &:valid + .form-label--message {
+            color: $secondaryColor;
+          }
+          &:invalid + label,
+          &:valid + .form-label--message {
+            color: $colorError;
+          }
         }
       }
     }
@@ -1114,6 +1204,57 @@ html {
         }
         &:active {
           color: $primaryColorDark;
+        }
+      }
+    }
+  }
+  .contact-me-section {
+    .personal-photo-container {
+      .contact-greeting {
+        &__heading {
+          color: $secondaryColor;
+        }
+        &__greeting {
+          color: $primaryColor;
+        }
+      }
+    }
+    .form {
+      .form-section,
+      .form-section--message {
+        .form-label,
+        .form-label--message {
+          color: rgba($secondaryColorDark, 0.8);
+          &--name {
+            @extend .form-label;
+          }
+          &--message {
+            @extend .form-label;
+          }
+        }
+        .form-input,
+        .form-input--message {
+          color: rgba($secondaryColorDark, 0.8);
+          &--name {
+            @extend .form-input;
+          }
+
+          &:focus {
+            color: $secondaryColor;
+          }
+          &:focus + label,
+          &:not(:placeholder-shown) + label {
+            color: $primaryColor;
+          }
+
+          &:valid + label,
+          &:valid + .form-label--message {
+            color: $secondaryColor;
+          }
+          &:invalid + label,
+          &:invalid + .form-label--message {
+            color: $colorError;
+          }
         }
       }
     }

@@ -20,6 +20,31 @@ block connection-links
           a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://t.me/ncluff003`)  
             i.fab.fa-telegram-plane
 
+block unique-content
+  section.contact-me-section.r__contact-me-section.column_6-14.row_2-22
+    section.personal-photo-container.r__personal-photo-container 
+      section.personal-photo.r__personal-photo 
+        img.personal-photo__image.r__personal-photo__image(src="/DIST/CSS/Images/MyPhoto.jpg", alt="Nathan Cluff Headshot")
+      section.contact-greeting.r__contact-greeting 
+        p.contact-greeting__heading.r__contact-greeting__heading Contact
+        p.contact-greeting__greeting.r__contact-greeting__greeting Whether it is critical feedback on a post, or as simple as saying hello, I hope you feel free to get in touch!
+    form.form.r__form
+      section.form-section.r__form-section
+        input.form-input--name.r__form-input--name#fname(type="text" placeholder="First Name" name="fname" required)
+        label.form-label--name.r__form-label--name(for="fname") First Name 
+        input.form-input--name.r__form-input--name#lname(type="text" placeholder="Last Name" name="lname" required) 
+        label.form-label--name.r__form-label--name(for="lname") Last Name
+      section.form-section.r__form-section
+        input.form-input.r__form-input#email(type="email" placeholder="Email" name="email" required)
+        label.form-label.r__form-label(for="email") Email Address
+      section.form-section.r__form-section
+        input.form-input.r__form-input#subject(type="subject" placeholder="Subject" name="subject" required)
+        label.form-label.r__form-label(for="subject") Subject
+      section.form-section--message.r__form-section--message
+        textarea.form-input--message.r__form-input--message#message(name="message" required) 
+        label.form-label--message.r__form-label--message Message
+
+
 //- block site-content
 //-   section.form-container.r__form-container
 //-     p.form-container__requirement-reminder.form-message.r__form-container__requirement-reminder.r__form-message ATTENTION | All Fields Are Required.

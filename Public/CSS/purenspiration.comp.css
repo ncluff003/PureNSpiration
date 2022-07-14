@@ -2,7 +2,30 @@
   font-family: Purely Me;
   src: url("./purely_me_regular-webfont.woff2") format("woff2"), url("./purely_me_regular-webfont.woff") format("woff"), url("./Purely_Me_Regular.eot"), url("./Purely_Me_Regular.ttf");
 }
-html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog-exerpt, .blog-search-container, .blog-heading, .skills-link-container .portfolio-link, .interests-contact-container__contact-link, .interest-icon-container, .interests-container__quote-container, .icon-container, .foundation-container__information, .latest-project, .connect--home__link, .connect--home__title, .button--circle__extra-small, .connection-container .connect--navigation__link-list__link-item, .connection-container .connect-navigation__pre-text {
+html, .night .icon-container, .day .icon-container, .form .form-section .form-label, .night .contact-me-section .form .form-section .form-label--message,
+.night .contact-me-section .form .form-section .form-label--message--message, .night .contact-me-section .form .form-section .form-label--name,
+.night .contact-me-section .form .form-section .form-label--message--name, .day .contact-me-section .form .form-section .form-label--message,
+.day .contact-me-section .form .form-section .form-label--message--message, .day .contact-me-section .form .form-section .form-label--name,
+.day .contact-me-section .form .form-section .form-label--message--name, .form .form-section .form-label--message, .form .form-section .form-label--name,
+.form .form-section--message .form-label,
+.night .contact-me-section .form .form-section--message .form-label--message,
+.night .contact-me-section .form .form-section--message .form-label--message--message,
+.night .contact-me-section .form .form-section--message .form-label--name,
+.night .contact-me-section .form .form-section--message .form-label--message--name,
+.day .contact-me-section .form .form-section--message .form-label--message,
+.day .contact-me-section .form .form-section--message .form-label--message--message,
+.day .contact-me-section .form .form-section--message .form-label--name,
+.day .contact-me-section .form .form-section--message .form-label--message--name,
+.form .form-section--message .form-label--message,
+.form .form-section--message .form-label--name, .form .form-section .form-input, .night .contact-me-section .form .form-section .form-input--name,
+.night .contact-me-section .form .form-section .form-input--message--name, .day .contact-me-section .form .form-section .form-input--name,
+.day .contact-me-section .form .form-section .form-input--message--name, .form .form-section .form-input--name,
+.form .form-section--message .form-input,
+.night .contact-me-section .form .form-section--message .form-input--name,
+.night .contact-me-section .form .form-section--message .form-input--message--name,
+.day .contact-me-section .form .form-section--message .form-input--name,
+.day .contact-me-section .form .form-section--message .form-input--message--name,
+.form .form-section--message .form-input--name, .contact-greeting, .blog-page-navigation, .blog-exerpt, .blog-search-container, .blog-heading, .skills-link-container .portfolio-link, .interests-contact-container__contact-link, .interest-icon-container, .interests-container__quote-container, .icon-container, .foundation-container__information, .latest-project, .connect--home__link, .connect--home__title, .button--circle__extra-small, .connection-container .connect--navigation__link-list__link-item, .connection-container .connect-navigation__pre-text {
   font-family: Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-variant-ligatures: none;
 }
@@ -241,6 +264,49 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
 }
 .blog-page-navigation .page {
   font-size: 3rem;
+}
+
+.contact-greeting__heading {
+  font-size: 6rem;
+  font-weight: bold;
+}
+.contact-greeting__greeting {
+  font-size: 2rem;
+  text-indent: 3rem;
+}
+
+.form .form-section .form-input, .night .contact-me-section .form .form-section .form-input--name,
+.night .contact-me-section .form .form-section .form-input--message--name, .day .contact-me-section .form .form-section .form-input--name,
+.day .contact-me-section .form .form-section .form-input--message--name, .form .form-section .form-input--name,
+.form .form-section--message .form-input,
+.night .contact-me-section .form .form-section--message .form-input--name,
+.night .contact-me-section .form .form-section--message .form-input--message--name,
+.day .contact-me-section .form .form-section--message .form-input--name,
+.day .contact-me-section .form .form-section--message .form-input--message--name,
+.form .form-section--message .form-input--name {
+  font-size: 2rem;
+}
+.form .form-section .form-label, .night .contact-me-section .form .form-section .form-label--message,
+.night .contact-me-section .form .form-section .form-label--message--message, .night .contact-me-section .form .form-section .form-label--name,
+.night .contact-me-section .form .form-section .form-label--message--name, .day .contact-me-section .form .form-section .form-label--message,
+.day .contact-me-section .form .form-section .form-label--message--message, .day .contact-me-section .form .form-section .form-label--name,
+.day .contact-me-section .form .form-section .form-label--message--name, .form .form-section .form-label--message, .form .form-section .form-label--name,
+.form .form-section--message .form-label,
+.night .contact-me-section .form .form-section--message .form-label--message,
+.night .contact-me-section .form .form-section--message .form-label--message--message,
+.night .contact-me-section .form .form-section--message .form-label--name,
+.night .contact-me-section .form .form-section--message .form-label--message--name,
+.day .contact-me-section .form .form-section--message .form-label--message,
+.day .contact-me-section .form .form-section--message .form-label--message--message,
+.day .contact-me-section .form .form-section--message .form-label--name,
+.day .contact-me-section .form .form-section--message .form-label--message--name,
+.form .form-section--message .form-label--message,
+.form .form-section--message .form-label--name {
+  font-size: 2rem;
+}
+.form .form-section .form-label--message,
+.form .form-section--message .form-label--message {
+  font-size: 1.6rem;
 }
 
 .day .navigation .logo-container .icon-PureNSpiration_Logo--night {
@@ -517,6 +583,86 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
 }
 .day .blog .blog-page-navigation .end:active {
   color: #ccac00;
+}
+.day .contact-me-section .personal-photo-container .contact-greeting__heading {
+  color: #00b358;
+}
+.day .contact-me-section .personal-photo-container .contact-greeting__greeting {
+  color: #333333;
+}
+.day .contact-me-section .form .form-section .form-label,
+.day .contact-me-section .form .form-section .form-label--message--message, .day .contact-me-section .form .form-section .form-label--name,
+.day .contact-me-section .form .form-section .form-label--message--name,
+.day .contact-me-section .form .form-section .form-label--message,
+.day .contact-me-section .form .form-section--message .form-label,
+.day .contact-me-section .form .form-section--message .form-label--message--message,
+.day .contact-me-section .form .form-section--message .form-label--name,
+.day .contact-me-section .form .form-section--message .form-label--message--name,
+.day .contact-me-section .form .form-section--message .form-label--message {
+  color: rgba(0, 128, 63, 0.8);
+}
+.day .contact-me-section .form .form-section .form-input, .day .contact-me-section .form .form-section .form-input--name,
+.day .contact-me-section .form .form-section .form-input--message--name,
+.day .contact-me-section .form .form-section .form-input--message,
+.day .contact-me-section .form .form-section--message .form-input,
+.day .contact-me-section .form .form-section--message .form-input--name,
+.day .contact-me-section .form .form-section--message .form-input--message--name,
+.day .contact-me-section .form .form-section--message .form-input--message {
+  color: rgba(0, 128, 63, 0.8);
+}
+.day .contact-me-section .form .form-section .form-input:focus, .day .contact-me-section .form .form-section .form-input--name:focus,
+.day .contact-me-section .form .form-section .form-input--message--name:focus,
+.day .contact-me-section .form .form-section .form-input--message:focus,
+.day .contact-me-section .form .form-section--message .form-input:focus,
+.day .contact-me-section .form .form-section--message .form-input--name:focus,
+.day .contact-me-section .form .form-section--message .form-input--message--name:focus,
+.day .contact-me-section .form .form-section--message .form-input--message:focus {
+  color: #00b358;
+}
+.day .contact-me-section .form .form-section .form-input:focus + label, .day .contact-me-section .form .form-section .form-input--name:focus + label,
+.day .contact-me-section .form .form-section .form-input--message--name:focus + label, .day .contact-me-section .form .form-section .form-input:not(:placeholder-shown) + label, .day .contact-me-section .form .form-section .form-input--name:not(:placeholder-shown) + label,
+.day .contact-me-section .form .form-section .form-input--message--name:not(:placeholder-shown) + label,
+.day .contact-me-section .form .form-section .form-input--message:focus + label,
+.day .contact-me-section .form .form-section .form-input--message:not(:placeholder-shown) + label,
+.day .contact-me-section .form .form-section--message .form-input:focus + label,
+.day .contact-me-section .form .form-section--message .form-input--name:focus + label,
+.day .contact-me-section .form .form-section--message .form-input--message--name:focus + label,
+.day .contact-me-section .form .form-section--message .form-input:not(:placeholder-shown) + label,
+.day .contact-me-section .form .form-section--message .form-input--name:not(:placeholder-shown) + label,
+.day .contact-me-section .form .form-section--message .form-input--message--name:not(:placeholder-shown) + label,
+.day .contact-me-section .form .form-section--message .form-input--message:focus + label,
+.day .contact-me-section .form .form-section--message .form-input--message:not(:placeholder-shown) + label {
+  color: #ffd700;
+}
+.day .contact-me-section .form .form-section .form-input:valid + label, .day .contact-me-section .form .form-section .form-input--name:valid + label,
+.day .contact-me-section .form .form-section .form-input--message--name:valid + label, .day .contact-me-section .form .form-section .form-input:valid + .form-label--message, .day .contact-me-section .form .form-section .form-input--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section .form-input--message--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section .form-input--message:valid + label,
+.day .contact-me-section .form .form-section .form-input--message:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input:valid + label,
+.day .contact-me-section .form .form-section--message .form-input--name:valid + label,
+.day .contact-me-section .form .form-section--message .form-input--message--name:valid + label,
+.day .contact-me-section .form .form-section--message .form-input:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input--message--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input--message:valid + label,
+.day .contact-me-section .form .form-section--message .form-input--message:valid + .form-label--message {
+  color: #00b358;
+}
+.day .contact-me-section .form .form-section .form-input:invalid + label, .day .contact-me-section .form .form-section .form-input--name:invalid + label,
+.day .contact-me-section .form .form-section .form-input--message--name:invalid + label, .day .contact-me-section .form .form-section .form-input:valid + .form-label--message, .day .contact-me-section .form .form-section .form-input--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section .form-input--message--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section .form-input--message:invalid + label,
+.day .contact-me-section .form .form-section .form-input--message:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input:invalid + label,
+.day .contact-me-section .form .form-section--message .form-input--name:invalid + label,
+.day .contact-me-section .form .form-section--message .form-input--message--name:invalid + label,
+.day .contact-me-section .form .form-section--message .form-input:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input--message--name:valid + .form-label--message,
+.day .contact-me-section .form .form-section--message .form-input--message:invalid + label,
+.day .contact-me-section .form .form-section--message .form-input--message:valid + .form-label--message {
+  color: #cf352e;
 }
 
 .night .navigation .logo-container .icon-PureNSpiration_Logo--night {
@@ -798,6 +944,86 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
 }
 .night .blog .blog-page-navigation .end:active {
   color: #ccac00;
+}
+.night .contact-me-section .personal-photo-container .contact-greeting__heading {
+  color: #00b358;
+}
+.night .contact-me-section .personal-photo-container .contact-greeting__greeting {
+  color: #ffd700;
+}
+.night .contact-me-section .form .form-section .form-label,
+.night .contact-me-section .form .form-section .form-label--message--message, .night .contact-me-section .form .form-section .form-label--name,
+.night .contact-me-section .form .form-section .form-label--message--name,
+.night .contact-me-section .form .form-section .form-label--message,
+.night .contact-me-section .form .form-section--message .form-label,
+.night .contact-me-section .form .form-section--message .form-label--message--message,
+.night .contact-me-section .form .form-section--message .form-label--name,
+.night .contact-me-section .form .form-section--message .form-label--message--name,
+.night .contact-me-section .form .form-section--message .form-label--message {
+  color: rgba(0, 128, 63, 0.8);
+}
+.night .contact-me-section .form .form-section .form-input, .night .contact-me-section .form .form-section .form-input--name,
+.night .contact-me-section .form .form-section .form-input--message--name,
+.night .contact-me-section .form .form-section .form-input--message,
+.night .contact-me-section .form .form-section--message .form-input,
+.night .contact-me-section .form .form-section--message .form-input--name,
+.night .contact-me-section .form .form-section--message .form-input--message--name,
+.night .contact-me-section .form .form-section--message .form-input--message {
+  color: rgba(0, 128, 63, 0.8);
+}
+.night .contact-me-section .form .form-section .form-input:focus, .night .contact-me-section .form .form-section .form-input--name:focus,
+.night .contact-me-section .form .form-section .form-input--message--name:focus,
+.night .contact-me-section .form .form-section .form-input--message:focus,
+.night .contact-me-section .form .form-section--message .form-input:focus,
+.night .contact-me-section .form .form-section--message .form-input--name:focus,
+.night .contact-me-section .form .form-section--message .form-input--message--name:focus,
+.night .contact-me-section .form .form-section--message .form-input--message:focus {
+  color: #00b358;
+}
+.night .contact-me-section .form .form-section .form-input:focus + label, .night .contact-me-section .form .form-section .form-input--name:focus + label,
+.night .contact-me-section .form .form-section .form-input--message--name:focus + label, .night .contact-me-section .form .form-section .form-input:not(:placeholder-shown) + label, .night .contact-me-section .form .form-section .form-input--name:not(:placeholder-shown) + label,
+.night .contact-me-section .form .form-section .form-input--message--name:not(:placeholder-shown) + label,
+.night .contact-me-section .form .form-section .form-input--message:focus + label,
+.night .contact-me-section .form .form-section .form-input--message:not(:placeholder-shown) + label,
+.night .contact-me-section .form .form-section--message .form-input:focus + label,
+.night .contact-me-section .form .form-section--message .form-input--name:focus + label,
+.night .contact-me-section .form .form-section--message .form-input--message--name:focus + label,
+.night .contact-me-section .form .form-section--message .form-input:not(:placeholder-shown) + label,
+.night .contact-me-section .form .form-section--message .form-input--name:not(:placeholder-shown) + label,
+.night .contact-me-section .form .form-section--message .form-input--message--name:not(:placeholder-shown) + label,
+.night .contact-me-section .form .form-section--message .form-input--message:focus + label,
+.night .contact-me-section .form .form-section--message .form-input--message:not(:placeholder-shown) + label {
+  color: #ffd700;
+}
+.night .contact-me-section .form .form-section .form-input:valid + label, .night .contact-me-section .form .form-section .form-input--name:valid + label,
+.night .contact-me-section .form .form-section .form-input--message--name:valid + label, .night .contact-me-section .form .form-section .form-input:valid + .form-label--message, .night .contact-me-section .form .form-section .form-input--name:valid + .form-label--message,
+.night .contact-me-section .form .form-section .form-input--message--name:valid + .form-label--message,
+.night .contact-me-section .form .form-section .form-input--message:valid + label,
+.night .contact-me-section .form .form-section .form-input--message:valid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input:valid + label,
+.night .contact-me-section .form .form-section--message .form-input--name:valid + label,
+.night .contact-me-section .form .form-section--message .form-input--message--name:valid + label,
+.night .contact-me-section .form .form-section--message .form-input:valid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input--name:valid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input--message--name:valid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input--message:valid + label,
+.night .contact-me-section .form .form-section--message .form-input--message:valid + .form-label--message {
+  color: #00b358;
+}
+.night .contact-me-section .form .form-section .form-input:invalid + label, .night .contact-me-section .form .form-section .form-input--name:invalid + label,
+.night .contact-me-section .form .form-section .form-input--message--name:invalid + label, .night .contact-me-section .form .form-section .form-input:invalid + .form-label--message, .night .contact-me-section .form .form-section .form-input--name:invalid + .form-label--message,
+.night .contact-me-section .form .form-section .form-input--message--name:invalid + .form-label--message,
+.night .contact-me-section .form .form-section .form-input--message:invalid + label,
+.night .contact-me-section .form .form-section .form-input--message:invalid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input:invalid + label,
+.night .contact-me-section .form .form-section--message .form-input--name:invalid + label,
+.night .contact-me-section .form .form-section--message .form-input--message--name:invalid + label,
+.night .contact-me-section .form .form-section--message .form-input:invalid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input--name:invalid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input--message--name:invalid + .form-label--message,
+.night .contact-me-section .form .form-section--message .form-input--message:invalid + label,
+.night .contact-me-section .form .form-section--message .form-input--message:invalid + .form-label--message {
+  color: #cf352e;
 }
 
 .gridDesktop {
@@ -32295,6 +32521,140 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
   background-color: #00b358;
 }
 
+.form {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding-top: 10rem;
+}
+
+.form-section, .form-section--message {
+  position: relative;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  margin: 2rem 0;
+}
+.form-section--message {
+  height: 50%;
+}
+
+.form-input, .form-input--name {
+  position: relative;
+  height: 100%;
+  width: 97.5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding-left: 2rem;
+  border-radius: 0.5rem;
+}
+.form-input--name {
+  width: 47.5%;
+}
+.form-input--name:not(:placeholder-shown) + .form-label--name, .form-input--name:focus + .form-label--name {
+  transform: translate(-2rem, -7rem) scale(0.8);
+}
+.form-input--message {
+  position: relative;
+  height: 97.5%;
+  width: 97%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transform: rotate(0) translate(0, 0);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  resize: none;
+  z-index: 5;
+}
+.form-input--message:focus {
+  outline: none;
+}
+.form-input::-webkit-input-placeholder, .form-input--name::-webkit-input-placeholder, .form-input::-moz-placeholder, .form-input--name::-moz-placeholder, .form-input::placeholder, .form-input--name::placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.form-input:focus, .form-input--name:focus {
+  outline: none;
+}
+.form-input:focus::-webkit-input-placeholder, .form-input--name:focus::-webkit-input-placeholder, .form-input:focus::-moz-placeholder, .form-input--name:focus::-moz-placeholder, .form-input:focus::placeholder, .form-input--name:focus::placeholder {
+  opacity: 1;
+}
+.form-input:valid, .form-input--name:valid {
+  border: 0.2rem solid #00b358;
+}
+.form-input:invalid, .form-input--name:invalid {
+  border: 0.2rem solid #cf352e;
+}
+.form-input:not(:placeholder-shown) + label, .form-input--name:not(:placeholder-shown) + label, .form-input:focus + label, .form-input--name:focus + label {
+  transform: translate(-5rem, -7rem) scale(0.8);
+}
+
+.form-label, .form-label--message, .form-label--name {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  transition: transform 0.5s;
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%);
+}
+.form-label--name {
+  width: 47.5%;
+}
+.form-label--name:first-of-type {
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%);
+}
+.form-label--name:last-of-type {
+  top: 50%;
+  left: calc(52.5% + 0.5rem);
+  transform: translate(0, -50%);
+}
+.form-label--message {
+  height: 4rem;
+  top: -1rem;
+  left: 2rem;
+}
+
+.day .contact-me-section .form .form-section .form-input--message:valid, .day .contact-me-section .form .form-section--message .form-input--message:valid, .day .contact-me-section .form--message .form-input--message:valid {
+  border: 0.2rem solid #00b358;
+}
+.day .contact-me-section .form .form-section .form-input--message:invalid, .day .contact-me-section .form .form-section--message .form-input--message:invalid, .day .contact-me-section .form--message .form-input--message:invalid {
+  border: 0.2rem solid #cf352e;
+}
+
+.night .contact-me-section .form .form-section .form-input--message:valid, .night .contact-me-section .form .form-section--message .form-input--message:valid, .night .contact-me-section .form--message .form-input--message:valid {
+  border: 0.2rem solid #00b358;
+}
+.night .contact-me-section .form .form-section .form-input--message:invalid, .night .contact-me-section .form .form-section--message .form-input--message:invalid, .night .contact-me-section .form--message .form-input--message:invalid {
+  border: 0.2rem solid #cf352e;
+}
+
 .navigation {
   position: relative;
   height: 100%;
@@ -35725,6 +36085,88 @@ html, .night .icon-container, .day .icon-container, .blog-page-navigation, .blog
 }
 .night .blog .blog-post-container .blog-exerpt:hover .blog-exerpt-content-container:after {
   background-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0, 179, 88, 0.8) 80%, #00b358 90%);
+}
+
+.contact-me-section {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+
+.personal-photo-container {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+
+.contact-form {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+
+.personal-photo {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.personal-photo__image {
+  position: relative;
+  height: 70%;
+  width: auto;
+  border-radius: 50%;
+  transition: border 0.5s;
+}
+
+.contact-greeting {
+  position: relative;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding: 0 3rem 3rem;
+}
+.contact-greeting__heading {
+  transition: color 0.5s;
+}
+.contact-greeting__greeting {
+  transition: color 0.5s;
+}
+
+.day .contact-me-section .personal-photo-container .personal-photo__image {
+  border: 0.3rem solid #ffd700;
+}
+
+.night .contact-me-section .personal-photo-container .personal-photo__image {
+  border: 0.3rem solid #00b358;
 }
 
 /*!

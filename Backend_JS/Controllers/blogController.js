@@ -135,7 +135,7 @@ exports.getAllPosts = catchAsync(async (request, response, next) => {
 
   if (query.type === `title`) {
     let filteredPosts = posts.filter((post, i) => {
-      if (post.title.includes(query.terms)) {
+      if (post.title.toLowerCase().includes(query.terms.toLowerCase())) {
         return post;
       }
     });
