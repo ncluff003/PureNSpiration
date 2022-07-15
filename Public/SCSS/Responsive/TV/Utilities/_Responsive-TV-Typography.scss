@@ -47,5 +47,13 @@ html {
         }
       }
     }
+    .r__about-link {
+      &__icon {
+        font-size: 45rem;
+      }
+      &__text {
+        font-size: 8rem;
+      }
+    }
   }
 }

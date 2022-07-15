@@ -55126,6 +55126,12 @@ html {
   .r__grid .r__latest-project__project-view__header__title {
     font-size: 6rem;
   }
+  .r__grid .r__about-link__icon {
+    font-size: 45rem;
+  }
+  .r__grid .r__about-link__text {
+    font-size: 8rem;
+  }
 }
 
 @media (min-width: 2500px) {
@@ -72506,6 +72512,60 @@ html {
   }
   .r__grid .r__latest-blog-post .r__blog-header {
     justify-content: center;
+  }
+}
+
+.cta-container {
+  position: relative;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  transform: rotate(0) translate(0, 0);
+  padding-right: 9rem;
+}
+
+.cta-link {
+  position: relative;
+  height: 4rem;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  transition: background-color 0.5s;
+}
+.cta-link:not(:last-of-type) {
+  margin-right: 2rem;
+}
+.cta-link:hover {
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.cta-icon {
+  margin-right: 2rem;
+}
+
+@media (min-width: 2500px) {
+  .r__grid .r__about-link:first-of-type {
+    grid-column: 10/span 9;
+    grid-row: 6/span 15;
+  }
+  .r__grid .r__about-link:nth-of-type(2) {
+    grid-column: 21/span 9;
+    grid-row: 6/span 15;
+  }
+  .r__grid .r__about-link:last-of-type {
+    grid-column: 33/span 9;
+    grid-row: 6/span 15;
   }
 }
 
