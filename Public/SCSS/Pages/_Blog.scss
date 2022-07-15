@@ -6,7 +6,7 @@
 }
 
 .blog {
-  @include SizeAndPositioning(relative, 100vh, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  @include SizeAndPositioning(relative, 100%, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
 }
 
 .blog-heading {

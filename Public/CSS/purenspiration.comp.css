@@ -41211,7 +41211,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 
 .blog {
   position: relative;
-  height: 100vh;
+  height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -55163,18 +55163,45 @@ html {
   .r__grid .r__interests-contact-container__contact-link {
     font-size: 4rem;
   }
-}
-.r__grid .r__icon-container__icon {
-  font-size: 45rem;
-}
-.r__grid .r__icon-container__text {
-  font-size: 8rem;
-}
-.r__grid .r__skills-container .r__skills-link-container .r__portfolio-link__text {
-  font-size: 4rem;
-}
-.r__grid .r__skills-container .r__skills-link-container .r__portfolio-link__icon {
-  font-size: 4rem;
+  .r__grid .r__icon-container__icon {
+    font-size: 45rem;
+  }
+  .r__grid .r__icon-container__text {
+    font-size: 8rem;
+  }
+  .r__grid .r__skills-container .r__skills-link-container .r__portfolio-link__text {
+    font-size: 4rem;
+  }
+  .r__grid .r__skills-container .r__skills-link-container .r__portfolio-link__icon {
+    font-size: 4rem;
+  }
+  .r__grid .r__blog .r__blog-heading__title {
+    font-size: 10rem;
+  }
+  .r__grid .r__selected-blog-post .r__blog-header .r__blog-date {
+    font-size: 4rem;
+  }
+  .r__grid .r__selected-blog-post .r__blog-header .r__blog-title {
+    font-size: 12rem;
+  }
+  .r__grid .r__selected-blog-post .r__blog-header .r__blog-post-title {
+    font-size: 7rem;
+  }
+  .r__grid .r__selected-blog-post .r__blog-content-container .r__blog-content .r__blog-paragraph {
+    font-size: 3rem;
+  }
+  .r__grid .r__contact-me-section .r__form .r__form-section .r__form-input, .r__grid .r__contact-me-section .r__form .r__form-section .r__form-input--name {
+    font-size: 2.4rem;
+  }
+  .r__grid .r__contact-me-section .r__form .r__form-section .r__form-label, .r__grid .r__contact-me-section .r__form .r__form-section .r__form-label--name {
+    font-size: 2.4rem;
+  }
+  .r__grid .r__contact-me-section .r__form .r__form-section--message .r__form-label--message {
+    font-size: 1.92rem;
+  }
+  .r__grid .r__contact-me-section .r__form .r__form-section--message .r__form-input--message {
+    font-size: 2.4rem;
+  }
 }
 
 @media (min-width: 2500px) {
@@ -72673,6 +72700,34 @@ html {
     grid-column: 2/span 44;
     grid-row: 3/span 21;
   }
+}
+
+@media (min-width: 2500px) {
+  .r__grid .r__blog-container {
+    grid-column: 1/-1;
+    grid-row: 2/span 23;
+  }
+}
+
+@media (min-width: 2500px) {
+  .r__grid .r__selected-blog-post {
+    grid-column: 15/span 20;
+    grid-row: 2/span 23;
+  }
+}
+
+.r__grid .r__contact-me-section {
+  grid-column: 15/span 20;
+  grid-row: 2/span 23;
+}
+.r__grid .r__contact-me-section .r__personal-photo-container .r__personal-photo {
+  height: 50%;
+}
+.r__grid .r__contact-me-section .r__personal-photo-container .r__contact-greeting {
+  height: 50%;
+}
+.r__grid .r__contact-me-section .r__form-section {
+  height: 7rem;
 }
 
 /*# sourceMappingURL=purenspiration.comp.css.map */

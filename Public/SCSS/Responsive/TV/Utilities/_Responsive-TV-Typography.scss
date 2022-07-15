@@ -112,25 +112,87 @@ html {
         font-size: 4rem;
       }
     }
-  }
 
-  // ABOUT PAGE -- SKILLS
-  .r__icon-container {
-    &__icon {
-      font-size: 45rem;
+    // ABOUT PAGE -- SKILLS
+    .r__icon-container {
+      &__icon {
+        font-size: 45rem;
+      }
+      &__text {
+        font-size: 8rem;
+      }
     }
-    &__text {
-      font-size: 8rem;
+    .r__skills-container {
+      .r__skills-link-container {
+        .r__portfolio-link {
+          &__text {
+            font-size: 4rem;
+          }
+          &__icon {
+            font-size: 4rem;
+          }
+        }
+      }
     }
-  }
-  .r__skills-container {
-    .r__skills-link-container {
-      .r__portfolio-link {
-        &__text {
+
+    // BLOG PAGE
+    .r__blog {
+      .r__blog-heading {
+        &__title {
+          font-size: 10rem;
+        }
+      }
+    }
+
+    // BLOG PAGE -- SINGLE POST
+
+    .r__selected-blog-post {
+      .r__blog-header {
+        .r__blog-date {
           font-size: 4rem;
         }
-        &__icon {
-          font-size: 4rem;
+
+        .r__blog-title {
+          font-size: 12rem;
+        }
+
+        .r__blog-post-title {
+          font-size: 7rem;
+        }
+      }
+      .r__blog-content-container {
+        .r__blog-content {
+          .r__blog-paragraph {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    // CONTACT ME
+    .r__contact-me-section {
+      .r__form {
+        .r__form-section {
+          .r__form-input {
+            font-size: 2.4rem;
+            &--name {
+              @extend .r__form-input;
+            }
+          }
+          .r__form-label {
+            font-size: 2.4rem;
+            &--name {
+              @extend .r__form-label;
+            }
+          }
+        }
+        .r__form-section--message {
+          .r__form-label--message {
+            font-size: 1.92rem;
+          }
+          .r__form-input--message {
+            font-size: 2.4rem;
+          }
         }
       }
     }

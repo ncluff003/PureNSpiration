@@ -248,6 +248,10 @@ export default {
   font-family: Roboto Slab, Verdana, sans-serif;
   font-size: 4rem;
   font-weight: bold;
+
+  @include responsiveBreakPoint('tv') {
+    font-size: 6rem;
+  }
 }
 
 .vue-project-technologies {
@@ -259,6 +263,9 @@ export default {
   font-family: Roboto Slab, Verdana, sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
+  @include responsiveBreakPoint('tv') {
+    font-size: 2rem;
+  }
 }
 
 .vue-project-description-container {
@@ -278,6 +285,10 @@ export default {
     line-height: 1.5;
     text-indent: 2rem;
     margin-bottom: 1rem;
+
+    @include responsiveBreakPoint('tv') {
+      font-size: 2rem;
+    }
   }
 }
 
