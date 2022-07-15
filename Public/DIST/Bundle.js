@@ -4961,7 +4961,8 @@ __webpack_require__.r(__webpack_exports__);
       _Pages_About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
       _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage();
       _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.watchBlog();
-      _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__.watchContactForm(); // API.fetchSkills();
+      _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__.watchContactForm(); // this._watchToAdaptGrid();
+      // API.fetchSkills();
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
@@ -5074,6 +5075,123 @@ __webpack_require__.r(__webpack_exports__);
 
         return _fetchLatestProject;
       }()
+    }, {
+      key: "_listenForQueryChanges",
+      value: function _listenForQueryChanges(query, element, removedClasses, addedClasses) {
+        console.log(query);
+        console.log("I am listening to ".concat(query.media));
+
+        if (query.matches) {
+          removedClasses.forEach(function (name) {
+            grid.classList.remove(name);
+            grid.classList.remove("r__".concat(name));
+          });
+          _Utility__WEBPACK_IMPORTED_MODULE_5__.addClasses(element, addedClasses);
+        }
+      } // _watchToAdaptGrid() {
+      //   const classNames = [`gridTV`, `gridDesktop`, `gridMobileLand`, `gridMobilePort`, `gridTabLand`, `gridTabPort`];
+      //   const grid = document.querySelector('.grid');
+      //   console.log(window);
+      //   // TV QUERY
+      //   let tvQuery = window.matchMedia(`(min-width: 2500px)`);
+      //   // DESKTOP QUERY
+      //   let desktopQuery = window.matchMedia(`(min-width: 1401px) and (min-height: 1051px)`);
+      //   // LARGE QUERIES
+      //   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
+      //   let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+      //   let largeMobileLandQuery = window.matchMedia(`(max-width: 930px) and (max-height: 425px)`);
+      //   let largeMobilePortQuery = window.matchMedia(`(max-width: 425px) and (max-height: 930px)`);
+      //   // SMALL QUERIES
+      //   let smallTabLandQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`);
+      //   let smallTabPortQuery = window.matchMedia(`(max-width: 800px) and (max-height: 1050px)`);
+      //   let smallMobileLandQuery = window.matchMedia(`(max-width: 800px) and (max-height: 375px)`);
+      //   let smallMobilePortQuery = window.matchMedia(`(max-width: 375px) and (max-height: 800px)`);
+      //   const screen = {
+      //     smallMobilePort: [window.matchMedia(`(max-width: 375px) and (max-height: 800px)`), [`gridMobilePort`, `r__gridMobilePort`]],
+      //     smallMobileLand: [window.matchMedia(`(max-width: 800px) and (max-height: 375px)`), [`gridMobileLand`, `r__gridMobileLand`]],
+      //     largeMobilePort: [window.matchMedia(`(max-width: 425px) and (max-height: 930px)`), [`gridMobilePort`, `r__gridMobilePort`]],
+      //     largeMobileLand: [window.matchMedia(`(max-width: 930px) and (max-height: 425px)`), [`gridMobileLand`, `r__gridMobileLand`]],
+      //     smallTabPort: [window.matchMedia(`(max-width: 800px) and (max-height: 1050px)`), [`gridTabPort`, `r__gridTabPort`]],
+      //     smallTabLand: [window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`), [`gridTabLand`, `r__gridTabLand`]],
+      //     largeTabPort: [window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`), [`gridTabPort`, `r__gridTabPort`]],
+      //     largeTabLand: [window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`), [`gridTabLand`, `r__gridTabLand`]],
+      //     desktopQuery: [window.matchMedia(`(min-width: 1401px) and (min-height: 1051px)`), [`gridDesktop`, `r__gridDesktop`]],
+      //     tvQuery: [window.matchMedia(`(min-width: 2500px)`), [`gridTV`, `r__gridTV`]],
+      //   };
+      //   for (let [scr, mq] of Object.entries(screen)) {
+      //     if (mq)
+      //       mq[0].addEventListener('change', (e) => {
+      //         console.log(mq[0], mq[1]);
+      //         if (e.matches) {
+      //           this._listenForQueryChanges(mq[0], grid, classNames, mq[1]);
+      //         }
+      //       });
+      //   }
+      //   // LISTENERS FOR QUERIES
+      //   // smallMobilePortQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(smallMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
+      //   // );
+      //   // smallMobileLandQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(smallMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
+      //   // );
+      //   // smallTabPortQuery.addEventListener('change', this._listenForQueryChanges(smallTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
+      //   // smallTabLandQuery.addEventListener('change', this._listenForQueryChanges(smallTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
+      //   // largeMobilePortQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(largeMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
+      //   // );
+      //   // largeMobileLandQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(largeMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
+      //   // );
+      //   // largeTabPortQuery.addEventListener('change', this._listenForQueryChanges(largeTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
+      //   // largeTabLandQuery.addEventListener('change', this._listenForQueryChanges(largeTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
+      //   // tvQuery.addEventListener('change', (e) => {
+      //   //   console.log(e.matches, e);
+      //   //   if (e.matches) {
+      //   //     classNames.forEach((name) => {
+      //   //       grid.classList.remove(name);
+      //   //       grid.classList.remove(`r__${name}`);
+      //   //     });
+      //   //     Utility.addClasses(grid, [`gridTV`, `r__gridTV`]);
+      //   //   }
+      //   // });
+      //   // desktopQuery.addEventListener('change', (e) => {
+      //   //   console.log(e.matches, e);
+      //   //   if (e.matches) {
+      //   //     classNames.forEach((name) => {
+      //   //       grid.classList.remove(name);
+      //   //       grid.classList.remove(`r__${name}`);
+      //   //     });
+      //   //     Utility.addClasses(grid, [`gridDesktop`, `r__gridDesktop`]);
+      //   //   }
+      //   // });
+      //   // smallMobilePortQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(smallMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
+      //   // );
+      //   // smallMobileLandQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(smallMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
+      //   // );
+      //   // smallTabPortQuery.addEventListener('change', this._listenForQueryChanges(smallTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
+      //   // smallTabLandQuery.addEventListener('change', this._listenForQueryChanges(smallTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
+      //   // largeMobilePortQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(largeMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
+      //   // );
+      //   // largeMobileLandQuery.addEventListener(
+      //   //   'change',
+      //   //   this._listenForQueryChanges(largeMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
+      //   // );
+      //   // largeTabPortQuery.addEventListener('change', this._listenForQueryChanges(largeTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
+      //   // largeTabLandQuery.addEventListener('change', this._listenForQueryChanges(largeTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
+      //   // desktopQuery.addEventListener('change', this._listenForQueryChanges(desktopQuery, grid, classNames, [`gridDesktop`, `r__gridDesktop`]));
+      //   // tvQuery.addEventListener('change', this._listenForQueryChanges(tvQuery, grid, classNames, [`gridTV`, `r__gridTV`]));
+      // }
+
     }]);
 
     return App;
@@ -6119,41 +6237,45 @@ __webpack_require__.r(__webpack_exports__);
 
 var watchContactForm = function watchContactForm() {
   console.log("Contacting...");
-  var firstName = document.getElementById('fname').value;
-  var lastName = document.getElementById('lname').value;
-  var email = document.getElementById('email').value;
-  var subject = document.getElementById('subject').value;
-  var message = document.getElementById('message').value;
-  var sendMessageButton = document.querySelector('.button--send-message');
-  sendMessageButton.addEventListener('click', /*#__PURE__*/function () {
-    var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(e) {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              e.preventDefault();
-              _context.next = 3;
-              return _Email__WEBPACK_IMPORTED_MODULE_2__.emailMe(firstName, lastName, email, subject, message);
+  var contactMeSection = document.querySelector('.contact-me-section');
 
-            case 3:
-            case "end":
-              return _context.stop();
+  if (contactMeSection) {
+    var firstName = document.getElementById('fname').value;
+    var lastName = document.getElementById('lname').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    var sendMessageButton = document.querySelector('.button--send-message');
+    sendMessageButton.addEventListener('click', /*#__PURE__*/function () {
+      var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(e) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                e.preventDefault();
+                _context.next = 3;
+                return _Email__WEBPACK_IMPORTED_MODULE_2__.emailMe(firstName, lastName, email, subject, message);
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
           }
-        }
-      }, _callee);
-    }));
+        }, _callee);
+      }));
 
-    return function (_x) {
-      return _ref.apply(this, arguments);
-    };
-  }());
-  var messageContainer = document.querySelector('.form-input--message');
-  var characterCounter = document.querySelector('.character-count');
-  messageContainer.addEventListener('keyup', function (e) {
-    e.preventDefault();
-    characterCounter.textContent = "".concat(5000 - messageContainer.value.length, " Characters Left");
-    console.log(messageContainer.value.length);
-  });
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+    var messageContainer = document.querySelector('.form-input--message');
+    var characterCounter = document.querySelector('.character-count');
+    messageContainer.addEventListener('keyup', function (e) {
+      e.preventDefault();
+      characterCounter.textContent = "".concat(5000 - messageContainer.value.length, " Characters Left");
+      console.log(messageContainer.value.length);
+    });
+  }
 };
 
 /***/ }),
@@ -6243,11 +6365,14 @@ if (document.getElementById('vueApp')) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "addClasses": function() { return /* binding */ addClasses; },
+/* harmony export */   "clearIntervalInstigator": function() { return /* binding */ clearIntervalInstigator; },
 /* harmony export */   "insertElement": function() { return /* binding */ insertElement; },
 /* harmony export */   "multiplyTwo": function() { return /* binding */ multiplyTwo; },
+/* harmony export */   "reloadPage": function() { return /* binding */ reloadPage; },
 /* harmony export */   "removeClasses": function() { return /* binding */ removeClasses; },
 /* harmony export */   "replaceClassName": function() { return /* binding */ replaceClassName; }
 /* harmony export */ });
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 var replaceClassName = function replaceClassName(element, classReplaced, replacementClass) {
   element.classList.remove(classReplaced);
   element.classList.add(replacementClass);
@@ -6269,6 +6394,15 @@ var removeClasses = function removeClasses(element, classes) {
 };
 var multiplyTwo = function multiplyTwo(numberOne, numberTwo) {
   return numberOne * numberTwo;
+};
+var reloadPage = function reloadPage() {
+  setTimeout(function () {
+    window.location.reload();
+  }, 2000);
+};
+var clearIntervalInstigator = function clearIntervalInstigator(interval) {
+  clearInterval(interval);
+  console.log("cleared");
 };
 
 /***/ }),

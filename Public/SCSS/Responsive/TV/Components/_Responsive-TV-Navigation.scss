@@ -2,12 +2,19 @@
 @use '../../../../../Public/SCSS/Utilities/Mixins' as *;
 
 ////////////////////////////////////////////////
-//  Master Grid Container
-.r__master-grid {
+//  TV NAVIGATION
+
+.r__grid {
   .r__navigation {
-    @include min-responsive(2500px) {
-      grid-column: 1 / span 8;
-      grid-row: 1 / -1;
+    @include responsiveBreakPoint('tv') {
+      grid-column: 1 / -1;
+      grid-row: 1 / span 1;
+    }
+  }
+  .r__time-toggle {
+    @include responsiveBreakPoint('tv') {
+      width: 5.5%;
+      transform: translateY(-42%);
     }
   }
 }

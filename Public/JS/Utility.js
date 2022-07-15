@@ -24,3 +24,14 @@ export const removeClasses = (element, classes) => {
 export const multiplyTwo = (numberOne, numberTwo) => {
   return numberOne * numberTwo;
 };
+
+export const reloadPage = () => {
+  setTimeout(() => {
+    window.location.reload();
+  }, 2000);
+};
+
+export const clearIntervalInstigator = (interval) => {
+  clearInterval(interval);
+  console.log(`cleared`);
+};
