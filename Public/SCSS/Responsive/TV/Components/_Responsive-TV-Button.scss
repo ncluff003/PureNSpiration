@@ -22,5 +22,19 @@
         }
       }
     }
+    .r__contact-me-section {
+      .r__form {
+        &-section {
+          &--message {
+            .button {
+              &--send-message {
+                height: 4rem;
+                width: 12rem;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

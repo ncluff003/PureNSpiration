@@ -72602,6 +72602,10 @@ html {
   .r__grid .r__interests-container .r__interests-grid .r__cylinder-wall .r__button-flow-right {
     transform: translate(28rem, 0);
   }
+  .r__grid .r__contact-me-section .r__form-section--message .button--send-message {
+    height: 4rem;
+    width: 12rem;
+  }
 }
 
 .cta-container {
