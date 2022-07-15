@@ -2,7 +2,7 @@
   font-family: Purely Me;
   src: url("./purely_me_regular-webfont.woff2") format("woff2"), url("./purely_me_regular-webfont.woff") format("woff"), url("./Purely_Me_Regular.eot"), url("./Purely_Me_Regular.ttf");
 }
-html, .night .icon-container, .day .icon-container, .form .character-count, .form .form-section--message .form-input--message, .form .form-section--message .form-label--message, .night .contact-me-section .form .form-section--message .form-label--message, .day .contact-me-section .form .form-section--message .form-label--message, .form .form-section .form-label, .night .contact-me-section .form .form-section .form-label--message, .night .contact-me-section .form .form-section .form-label--name, .day .contact-me-section .form .form-section .form-label--name, .form .form-section .form-label--name, .form .form-section .form-input, .night .contact-me-section .form .form-section .form-input--name, .day .contact-me-section .form .form-section .form-input--name, .form .form-section .form-section--message .form-input--message--name, .form .form-section--message .form-section .form-input--message--name, .form .form-section .form-input--name, .contact-greeting, .blog-page-navigation, .blog-exerpt, .blog-search-container, .blog-heading, .skills-link-container .portfolio-link, .interests-contact-container__contact-link, .interest-icon-container, .interests-container__quote-container, .icon-container, .foundation-container__information, .latest-project, .connect--home__link, .connect--home__title, .button--send-message, .button--circle__extra-small, .connection-container .connect--navigation__link-list__link-item, .connection-container .connect-navigation__pre-text {
+html, .night .icon-container, .day .icon-container, .form .character-count, .form .form-section--message .form-input--message, .form .form-section--message .form-label--message, .night .contact-me-section .form .form-section--message .form-label--message, .day .contact-me-section .form .form-section--message .form-label--message, .form .form-section .form-label, .night .contact-me-section .form .form-section .form-label--message, .night .contact-me-section .form .form-section .form-label--name, .day .contact-me-section .form .form-section .form-label--name, .form .form-section .form-label--name, .form .form-section .form-input, .night .contact-me-section .form .form-section .form-input--name, .day .contact-me-section .form .form-section .form-input--name, .form .form-section .form-section--message .form-input--message--name, .form .form-section--message .form-section .form-input--message--name, .form .form-section .form-input--name, .contact-greeting, .blog-page-navigation, .blog-exerpt, .blog-search-container, .blog-heading, .skills-link-container .portfolio-link, .interests-contact-container__contact-link, .interest-icon-container, .interests-container__quote-container, .icon-container, .foundation-container__information, .foundation-container__icon-container, .about-link, .latest-project, .connect--home__link, .connect--home__title, .button--send-message, .button--circle__extra-small, .connection-container .connect--navigation__link-list__link-item, .connection-container .connect-navigation__pre-text {
   font-family: Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-variant-ligatures: none;
 }
@@ -55132,6 +55132,49 @@ html {
   .r__grid .r__about-link__text {
     font-size: 8rem;
   }
+  .r__grid .r__foundation-container__icon-container__icon {
+    font-size: 45rem;
+  }
+  .r__grid .r__foundation-container__icon-container__title {
+    font-size: 8rem;
+  }
+  .r__grid .r__foundation-container__information__header__title {
+    font-size: 12rem;
+  }
+  .r__grid .r__foundation-container__information__header__sub-title {
+    font-size: 3rem;
+  }
+  .r__grid .r__foundation-container__information__paragraph-container {
+    font-size: 3rem;
+  }
+  .r__grid .r__foundation-container__information__link {
+    font-size: 3rem;
+  }
+  .r__grid .r__interests-container__quote-container__quote {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .r__grid .r__interests-container__quote-container__quote__author {
+    font-size: 3rem;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-wall .button--control-flow {
+    font-size: 4rem;
+  }
+  .r__grid .r__interests-contact-container__contact-link {
+    font-size: 4rem;
+  }
+}
+.r__grid .r__icon-container__icon {
+  font-size: 45rem;
+}
+.r__grid .r__icon-container__text {
+  font-size: 8rem;
+}
+.r__grid .r__skills-container .r__skills-link-container .r__portfolio-link__text {
+  font-size: 4rem;
+}
+.r__grid .r__skills-container .r__skills-link-container .r__portfolio-link__icon {
+  font-size: 4rem;
 }
 
 @media (min-width: 2500px) {
@@ -72451,6 +72494,12 @@ html {
 }
 
 @media (min-width: 2500px) {
+  .r__connection-container {
+    transform: translate(400%, 0);
+  }
+}
+
+@media (min-width: 2500px) {
   .r__grid .r__introduction-container {
     grid-column: 2/span 28;
     grid-row: 3/span 10;
@@ -72515,6 +72564,19 @@ html {
   }
 }
 
+@media (min-width: 2500px) {
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-wall .r__button--control-flow {
+    height: 9rem;
+    width: 9rem;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-wall .r__button-flow-left {
+    transform: translate(-25rem, 0);
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-wall .r__button-flow-right {
+    transform: translate(28rem, 0);
+  }
+}
+
 .cta-container {
   position: relative;
   height: 40%;
@@ -72566,6 +72628,50 @@ html {
   .r__grid .r__about-link:last-of-type {
     grid-column: 33/span 9;
     grid-row: 6/span 15;
+  }
+  .r__grid .r__foundation-container {
+    grid-column: 7/span 35;
+    grid-row: 6/span 14;
+  }
+  .r__grid .r__interests-container {
+    grid-column: 17/span 27;
+    grid-row: 4/span 20;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+  }
+  .r__grid .r__interests-container__quote-container {
+    height: 20%;
+    justify-content: space-between;
+  }
+  .r__grid .r__interests-container .r__interests-grid {
+    height: 56%;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-right {
+    transform: translate(-2.6rem, 0) rotate(0);
+    border-radius: 40%;
+    border-width: 2.25rem;
+  }
+  .r__grid .r__interests-contact-container__contact-link {
+    height: 10rem;
+  }
+  .r__grid .r__icon-container {
+    grid-column: 5/span 12;
+    grid-row: 7/span 12;
+  }
+  .r__grid .r__skills-container {
+    grid-column: 18/span 28;
+    grid-row: 5/span 18;
+  }
+  .r__grid .r__skills-container .r__skills-link-container .r__portfolio-link {
+    height: 10rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  .r__grid .r__projects-container {
+    grid-column: 2/span 44;
+    grid-row: 3/span 21;
   }
 }
 

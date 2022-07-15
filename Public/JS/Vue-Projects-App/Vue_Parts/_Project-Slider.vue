@@ -26,6 +26,91 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+// MEDIA QUERY MANAGER
+@mixin max-responsive($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin min-responsive($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin combo-max-responsive($max-width, $max-height) {
+  @media (max-width: $max-width) and (max-height: $max-height) {
+    @content;
+  }
+}
+
+@mixin combo-min-responsive($min-width, $min-height) {
+  @media (min-width: $min-width) and (min-height: $min-height) {
+    @content;
+  }
+}
+
+@mixin combo-maxMin-responsive($max-width, $min-height) {
+  @media (max-width: $max-width) and (min-height: $min-height) {
+    @content;
+  }
+}
+
+@mixin combo-minMax-responsive($min-width, $max-height) {
+  @media (min-width: $min-width) and (min-height: $max-height) {
+    @content;
+  }
+}
+
+@mixin responsiveBreakPoint($breakpoint) {
+  @if ($breakpoint == 'smallMobilePort') {
+    @include combo-max-responsive(375px, 800px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'smallMobileLand') {
+    @include combo-max-responsive(800px, 375px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 'largeMobilePort') {
+    @include combo-max-responsive(425px, 930px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'largeMobileLand') {
+    @include combo-max-responsive(930px, 425px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 'smallTabPort') {
+    @include combo-max-responsive(800px, 1050px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'smallTabLand') {
+    @include combo-max-responsive(1050px, 800px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 'largeTabPort') {
+    @include combo-max-responsive(1050px, 1400px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'largeTabLand') {
+    @include combo-max-responsive(1400px, 1050px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == 'desktop') {
+    @include combo-min-responsive(1401px, 1051px) {
+      @content;
+    }
+  } @else if ($breakpoint == 'tv') {
+    @include min-responsive(2500px) {
+      @content;
+    }
+  }
+}
+
 .vue-projects-slider {
   position: relative;
   height: 100%;
@@ -92,6 +177,15 @@ export default {
         width: 100%;
         transition: width 0.5s;
       }
+    }
+  }
+}
+
+@include responsiveBreakPoint('tv') {
+  .vue-project-option {
+    &__title {
+      font-size: 3rem;
+      transform: translate(-3rem, 1rem);
     }
   }
 }

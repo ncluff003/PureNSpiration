@@ -71,6 +71,15 @@ const renderChart = (skills) => {
   return mySkills;
 };
 
+const updateChart = (breakPoint, chart) => {
+  if (breakPoint === `TV`) {
+    chart.options.scales.x.ticks.font.size = 28;
+    chart.options.scales.y.ticks.font.size = 28;
+
+    chart.update();
+  }
+};
+
 export const watchSkills = async () => {
   if (window.location.href === `http://127.0.0.1:3333/about/skills`) {
     console.log(`Skills`);
@@ -81,6 +90,12 @@ export const watchSkills = async () => {
 
     let chart = renderChart(mySkills);
     console.log(chart);
+
+    // TV QUERY
+    let tvQuery = window.matchMedia(`(min-width: 2500px)`);
+    if (tvQuery.matches) {
+      updateChart(`TV`, chart);
+    }
     return chart;
   }
 };

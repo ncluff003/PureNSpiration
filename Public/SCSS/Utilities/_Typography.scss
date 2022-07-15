@@ -180,6 +180,7 @@ html {
 // About Page
 
 .about-link {
+  @extend html;
   text-decoration: none;
   &__icon {
     font-size: 25rem;
@@ -194,6 +195,7 @@ html {
 
 .foundation-container {
   &__icon-container {
+    @extend html;
     &__icon {
       font-size: 25rem;
     }

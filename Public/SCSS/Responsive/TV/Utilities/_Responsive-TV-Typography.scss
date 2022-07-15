@@ -12,6 +12,7 @@ html {
 // TV TYPOGRAPHY
 .r__grid {
   @include responsiveBreakPoint('tv') {
+    // HOME PAGE
     .r__introduction-container {
       &__introduction {
         .r__name-container {
@@ -47,12 +48,90 @@ html {
         }
       }
     }
+
+    // BASIC ABOUT PAGE
     .r__about-link {
       &__icon {
         font-size: 45rem;
       }
       &__text {
         font-size: 8rem;
+      }
+    }
+
+    // ABOUT PAGE -- FOUNDATION
+    .r__foundation-container {
+      &__icon-container {
+        &__icon {
+          font-size: 45rem;
+        }
+        &__title {
+          font-size: 8rem;
+        }
+      }
+      &__information {
+        &__header {
+          &__title {
+            font-size: 12rem;
+          }
+          &__sub-title {
+            font-size: 3rem;
+          }
+        }
+        &__paragraph-container {
+          font-size: 3rem;
+        }
+        &__link {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    // ABOUT PAGE -- INTERESTS
+    .r__interests-container {
+      &__quote-container {
+        &__quote {
+          font-size: 5rem;
+          text-align: center;
+          &__author {
+            font-size: 3rem;
+          }
+        }
+      }
+      .r__interests-grid {
+        .r__cylinder-wall {
+          .button--control-flow {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+
+    .r__interests-contact-container {
+      &__contact-link {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  // ABOUT PAGE -- SKILLS
+  .r__icon-container {
+    &__icon {
+      font-size: 45rem;
+    }
+    &__text {
+      font-size: 8rem;
+    }
+  }
+  .r__skills-container {
+    .r__skills-link-container {
+      .r__portfolio-link {
+        &__text {
+          font-size: 4rem;
+        }
+        &__icon {
+          font-size: 4rem;
+        }
       }
     }
   }

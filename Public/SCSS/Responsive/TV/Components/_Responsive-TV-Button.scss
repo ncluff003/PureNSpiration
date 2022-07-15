@@ -3,5 +3,24 @@
 
 .r__grid {
   @include responsiveBreakPoint('tv') {
+    // ABOUT INTERESTS
+    .r__interests-container {
+      .r__interests-grid {
+        .r__cylinder-wall {
+          .r__button {
+            &--control-flow {
+              height: 9rem;
+              width: 9rem;
+            }
+            &-flow-left {
+              transform: translate(-25rem, 0);
+            }
+            &-flow-right {
+              transform: translate(28rem, 0);
+            }
+          }
+        }
+      }
+    }
   }
 }
