@@ -1,0 +1,12 @@
+@use '../../../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+.r__grid {
+  .r__navigation {
+    .r__connection-container {
+      @include responsiveBreakPoint('largeTabLand') {
+        transform: translate(50%, 0);
+      }
+    }
+  }
+}
