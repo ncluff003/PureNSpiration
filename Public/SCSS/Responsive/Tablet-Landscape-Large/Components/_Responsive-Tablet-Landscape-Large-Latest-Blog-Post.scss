@@ -1,0 +1,19 @@
+@use '../../../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+.r__grid {
+  .r__latest-blog-post {
+    @include responsiveBreakPoint('largeTabLand') {
+      grid-column: 10 / span 8;
+      grid-row: 6 / span 6;
+      width: 90%;
+      margin: 0 auto;
+      .r__blog-header {
+        justify-content: center;
+        .r__blog-date {
+          transform: translate(100%, 40%);
+        }
+      }
+    }
+  }
+}

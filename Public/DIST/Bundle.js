@@ -4971,8 +4971,10 @@ __webpack_require__.r(__webpack_exports__);
         var linkContainer = document.querySelector('.blog-link-container');
 
         if (linkContainer) {
+          console.log(linkContainer);
           var width = linkContainer.getBoundingClientRect().width;
           var height = linkContainer.getBoundingClientRect().height;
+          console.log(height);
           console.log(_Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(5, 10));
           linkContainer.style.width = "".concat(width + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(10, 10), "px");
           linkContainer.style.height = "".concat(height + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(2, 10), "px");

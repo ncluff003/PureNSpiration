@@ -1,13 +1,14 @@
 @use '../../../../../Public/SCSS/Utilities/Variables' as *;
 @use '../../../../../Public/SCSS/Utilities/Mixins' as *;
 
-////////////////////////////////////////////////
-//  Master Grid Container
-.r__master-grid {
+.r__grid {
   .r__navigation {
-    @include combo-max-responsive(1400px, 1050px) {
-      grid-column: 1 / span 4;
-      grid-row: 1 / -1;
+    @include responsiveBreakPoint('largeTabLand') {
+    }
+  }
+  .r__time-toggle {
+    @include responsiveBreakPoint('largeTabLand') {
+      width: 20%;
     }
   }
 }

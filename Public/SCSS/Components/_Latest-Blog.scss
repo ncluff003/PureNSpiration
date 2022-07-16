@@ -15,7 +15,8 @@
   padding: 0 2rem;
 
   &--cta-link {
-    @include SizeAndPositioning(relative, 60%, 50%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    @include SizeAndPositioning(relative, max-content, 50%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    padding: 1rem;
     border-radius: 5rem;
     &:not(:last-of-type) {
       margin-right: 2rem;
