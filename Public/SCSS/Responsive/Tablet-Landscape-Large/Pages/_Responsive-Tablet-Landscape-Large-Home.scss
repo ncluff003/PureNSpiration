@@ -7,9 +7,9 @@
       .r__introduction-container__introduction {
         .r__cta-container {
           @include SizeAndPositioning(relative, 40%, 100%, flex, row, nowrap, flex-end, flex-start, 0, 0, 0);
-          padding-right: 9rem;
+          padding-right: 0rem;
           .r__cta-link {
-            @include SizeAndPositioning(relative, 4rem, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+            @include SizeAndPositioning(relative, 4rem, max-content, flex, row, nowrap, space-evenly, center, 0, -5rem, 0);
             padding: 1rem 2rem;
             border-radius: 5rem;
             transition: background-color 0.5s;

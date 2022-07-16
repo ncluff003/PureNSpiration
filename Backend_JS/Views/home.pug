@@ -52,7 +52,10 @@ block unique-content
   section.latest-blog-post.r__latest-blog-post.column_16-8.row_3-15
     section.blog-header.r__blog-header 
       p.blog-date.r__blog-date 1 July 2022
-      p.blog-title.r__blog-title Web SlingN
+      if data
+        p.blog-title.r__blog-title= `${data.data.blog.title}`
+      else
+        p.blog-title.r__blog-title Web Sling `N`
       p.blog-post-title.r__blog-post-title Semantic HTML
     section.blog-content-container.r__blog-content-container 
       section.blog-content.r__blog-content

@@ -1,33 +1,40 @@
 @use '../../../../../Public/SCSS/Utilities/Variables' as *;
 @use '../../../../../Public/SCSS/Utilities/Mixins' as *;
 
-////////////////////////////////////////////////
-//  Master Grid Container
-.r__master-grid {
-  .r__master-flex-container {
-    /////////////////
-    // Home Page
-    @include combo-max-responsive(1050px, 1400px) {
-      &__child-flex-container {
-        @include SizeAndPositioning(relative, 50%, 90%, flex, center, center, 0, 0, 0);
-        flex-direction: column;
-        &__heading {
-          @include SizeAndPositioning(relative, 80%, 100%, flex, space-evenly, center, 0, 0, 0);
-          flex-direction: column;
-          &--subtext-start {
-            position: relative;
-            align-self: flex-start;
-            transform: translate(4.25rem, 10.5rem);
-            -moz-transform: translate(2.75rem, 10.5rem);
-          }
-          &--subtext-end {
-            position: relative;
-            align-self: flex-end;
-            transform: translate(-7rem, -12.5rem);
-            -moz-transform: translate(-6rem, -12.5rem);
+.r__grid {
+  @include responsiveBreakPoint('largeTabPort') {
+    .r__introduction-container {
+      grid-column: 3 / span 8;
+      grid-row: 6 / span 11;
+
+      flex-flow: column nowrap;
+
+      .r__image-container {
+        height: 33%;
+        width: 100%;
+      }
+
+      &__introduction {
+        height: 67%;
+        width: 100%;
+        justify-content: flex-start;
+        .r__name-container {
+          align-items: center;
+          height: 20%;
+        }
+        .r__cta-container {
+          justify-content: center;
+
+          .r__cta-link {
+            transform: rotate(0) translate(0, 3rem);
           }
         }
       }
+    }
+
+    .r__latest-project,
+    .r__latest-blog-post {
+      display: none;
     }
   }
 }
