@@ -75766,5 +75766,33 @@ html {
     grid-row: 6/span 4;
   }
 }
+.r__grid .r__foundation-container {
+  grid-column: 3/span 14;
+  grid-row: 5/span 6;
+}
+.r__grid .r__interests-container {
+  grid-column: 7/span 10;
+  grid-row: 4/span 6;
+}
+.r__grid .r__interests-container .r__interests-grid .r__cylinder-left {
+  transform: translate(-4rem, 0);
+  height: 92.5%;
+  width: 125%;
+}
+.r__grid .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container {
+  height: 12rem;
+  width: 12rem;
+}
+.r__grid .r__interests-container .r__interests-grid .r__cylinder-right {
+  height: 95.5%;
+  width: 100%;
+  transform: rotate(0) translate(2.25rem, 0);
+  border-radius: 50%;
+  border-width: 1.5rem;
+}
+.r__grid .r__icon-container {
+  grid-column: 2/span 5;
+  grid-row: 6/span 3;
+}
 
 /*# sourceMappingURL=purenspiration.comp.css.map */
