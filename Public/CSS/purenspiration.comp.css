@@ -72771,6 +72771,12 @@ html {
     font-size: 3rem;
   }
 }
+.r__grid .r__interests-container__quote-container__quote {
+  text-indent: 4rem;
+}
+.r__grid .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container__icon {
+  font-size: 7rem;
+}
 
 @media (max-width: 1400px) and (max-height: 1050px) {
   .r__grid {
@@ -75793,6 +75799,17 @@ html {
 .r__grid .r__icon-container {
   grid-column: 2/span 5;
   grid-row: 6/span 3;
+}
+.r__grid .r__skills-container {
+  grid-column: 6/span 12;
+  grid-row: 4/span 6;
+}
+
+@media (max-width: 1400px) and (max-height: 1050px) {
+  .r__grid .r__projects-container {
+    grid-column: 2/span 16;
+    grid-row: 3/span 9;
+  }
 }
 
 /*# sourceMappingURL=purenspiration.comp.css.map */

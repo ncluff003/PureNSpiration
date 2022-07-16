@@ -67,4 +67,22 @@ html {
       }
     }
   }
+
+  // ABOUT PAGE
+  .r__interests-container {
+    &__quote-container {
+      &__quote {
+        text-indent: 4rem;
+      }
+    }
+    .r__interests-grid {
+      .r__interest-current {
+        .r__interest-icon-container {
+          &__icon {
+            font-size: 7rem;
+          }
+        }
+      }
+    }
+  }
 }

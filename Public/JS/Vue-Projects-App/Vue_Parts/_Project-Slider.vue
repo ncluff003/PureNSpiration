@@ -190,6 +190,19 @@ export default {
   }
 }
 
+@include responsiveBreakPoint('largeTabLand') {
+  .vue-project-option {
+    width: 100%;
+    &__cover-photo-container {
+      border: 0.5rem solid transparent;
+    }
+
+    &__title {
+      transform: translate(-1rem, -0.5rem);
+    }
+  }
+}
+
 /* DAY STYLES */
 .day {
   .vue-projects-slider {
@@ -207,6 +220,12 @@ export default {
       }
       .vue-project-option__title {
         color: #333;
+      }
+
+      @include responsiveBreakPoint('largeTabLand') {
+        .vue-project-option__cover-photo-container {
+          border: 0.5rem solid #00b358;
+        }
       }
     }
   }
@@ -228,6 +247,12 @@ export default {
         }
         .vue-project-option__title {
           color: #00b358;
+        }
+
+        @include responsiveBreakPoint('largeTabLand') {
+          .vue-project-option__cover-photo-container {
+            border: 0.5rem solid #00b358;
+          }
         }
       }
     }
