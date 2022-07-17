@@ -7,6 +7,9 @@
       &__link-list {
         display: none;
       }
+      .r__time-toggle {
+        width: 20%;
+      }
     }
     .r__navigation-container {
       @include SizeAndPositioning(absolute, 0vh, 0vw, flex, column, nowrap, center, center, 0, 0, 0);

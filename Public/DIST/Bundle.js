@@ -5439,8 +5439,9 @@ var flowLeft = function flowLeft(interests, index) {
   }); // SET UP LIKE THIS IF LARGE TABLET IN LANDSCAPE
 
   var largeTabLandQuery = window.matchMedia("(max-width: 1400px) and (max-height: 1050px)");
+  var largeTabPortQuery = window.matchMedia("(max-width: 1050px) and (max-height: 1400px)");
 
-  if (largeTabLandQuery.matches) {
+  if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach(function (interest, i) {
       interest.style.transform = "translate(".concat(-10 + i * 250 + index * 250, "%, ").concat(-50, "%)");
     });
@@ -5453,8 +5454,9 @@ var flowRight = function flowRight(interests, index) {
   }); // SET UP LIKE THIS IF LARGE TABLET IN LANDSCAPE
 
   var largeTabLandQuery = window.matchMedia("(max-width: 1400px) and (max-height: 1050px)");
+  var largeTabPortQuery = window.matchMedia("(max-width: 1050px) and (max-height: 1400px)");
 
-  if (largeTabLandQuery.matches) {
+  if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach(function (interest, i) {
       interest.style.transform = "translate(".concat(-10 + i * 250 + index * 250, "%, ").concat(-50, "%)");
     });
@@ -5481,8 +5483,9 @@ var setupInterestSlider = function setupInterestSlider(interests) {
     interest.style.transform = "translate(".concat(i * 250, "%, ").concat(-50, "%)");
   });
   var largeTabLandQuery = window.matchMedia("(max-width: 1400px) and (max-height: 1050px)");
+  var largeTabPortQuery = window.matchMedia("(max-width: 1050px) and (max-height: 1400px)");
 
-  if (largeTabLandQuery.matches) {
+  if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach(function (interest, i) {
       interest.style.transform = "translate(".concat(i * 250 - 10, "%, ").concat(-50, "%)");
     });

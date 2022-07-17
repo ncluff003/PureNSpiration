@@ -5,17 +5,21 @@
   @include responsiveBreakPoint('largeTabPort') {
     .r__introduction-container {
       grid-column: 3 / span 8;
-      grid-row: 6 / span 11;
+      grid-row: 5 / span 11;
 
       flex-flow: column nowrap;
 
       .r__image-container {
-        height: 33%;
+        height: 67%;
         width: 100%;
+        .r__image-frame {
+          height: 40rem;
+          width: 40rem;
+        }
       }
 
       &__introduction {
-        height: 67%;
+        height: 33%;
         width: 100%;
         justify-content: flex-start;
         .r__name-container {
@@ -26,7 +30,7 @@
           justify-content: center;
 
           .r__cta-link {
-            transform: rotate(0) translate(0, 3rem);
+            transform: rotate(0) translate(0, 5rem);
           }
         }
       }

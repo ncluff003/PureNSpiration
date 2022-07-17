@@ -81,25 +81,6 @@
   border-bottom: 1.65rem solid $primaryColorLighter;
   background-color: transparent;
   border-radius: 50%;
-  // &__left {
-  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -3rem, 0, 0);
-  //   border-top: 1.65rem solid $primaryColorLighter;
-  //   border-left: 1.65rem solid $primaryColorLighter;
-  //   border-bottom: 1.65rem solid $primaryColorLighter;
-  //   background-color: transparent;
-  //   // background-color: rgba($primaryColorLighter, 0.3);
-  //   border-radius: 45%;
-  //   z-index: 4;
-  // }
-  // &__right {
-  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, -3rem, 0, 0);
-  //   border-top: 1.65rem solid $primaryColorLighter;
-  //   border-right: 1.65rem solid $primaryColorDark;
-  //   border-bottom: 1.65rem solid $primaryColorLighter;
-  //   background-color: rgba($primaryColorLighter, 0.6);
-  //   border-radius: 45%;
-  //   z-index: 1;
-  // }
 }
 
 .cylinder-right {
@@ -108,18 +89,6 @@
   border: 1.85rem solid rgba($primaryColorLighter, 1);
   border-radius: 45%;
   z-index: 0;
-  // &__left {
-  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
-  //   background-color: transparent;
-  //   border-left: 1rem solid rgba($primaryColorLight, 0.6);
-  //   border-radius: 50%;
-  // }
-  // &__right {
-  //   @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
-  //   background-color: transparent;
-  //   border-right: 1rem solid rgba($primaryColorLight, 0.6);
-  //   border-radius: 45%;
-  // }
 }
 
 .cylinder-wall {
@@ -128,15 +97,6 @@
     @include SizingItem(relative, 100%, 100%);
   }
   z-index: 3;
-  // background-image: url('./../Vendors/Cut-Out-Cylinder.svg');
-  // background-image: url('./../Vendors/Cut-Out-Cylinder.svg');
-  // background-size: cover;
-  // background-repeat: no-repeat;
-
-  // background-color: rgba($primaryColorLight, 0.6);
-  // border-radius: 10% 0% 0% 10% / 50% 0% 0% 50%;
-  // border-top-left-radius: 3rem;
-  // border-bottom-left-radius: 3rem;
 }
 
 .skills-link-container {

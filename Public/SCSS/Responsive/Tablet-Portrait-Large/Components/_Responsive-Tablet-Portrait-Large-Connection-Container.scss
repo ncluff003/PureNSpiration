@@ -1,0 +1,12 @@
+@use '../../../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+@include responsiveBreakPoint('largeTabPort') {
+  .r__grid {
+    .r__navigation {
+      .r__connection-container {
+        transform: translate(5%, 0);
+      }
+    }
+  }
+}

@@ -76038,14 +76038,69 @@ html {
   .r__grid .r__button--mobile-navigation__icon, .r__grid .r__navigation-container .r__mobile-navigation__link-list__link-item__link .r__button--mobile-navigation__icon {
     font-size: 2.25rem;
   }
+  .r__grid .r__about-link__icon, .r__grid .r__navigation-container .r__mobile-navigation__link-list__link-item__link .r__about-link__icon {
+    font-size: 20rem;
+  }
+  .r__grid .r__foundation-container__icon-container__icon, .r__grid .r__navigation-container .r__mobile-navigation__link-list__link-item__link .r__foundation-container__icon-container__icon {
+    font-size: 20rem;
+  }
+  .r__grid .r__icon-container__icon, .r__grid .r__navigation-container .r__mobile-navigation__link-list__link-item__link .r__icon-container__icon {
+    font-size: 20rem;
+  }
+  .r__grid .r__interests-container__quote-container__quote, .r__grid .r__navigation-container .r__mobile-navigation__link-list__link-item__link .r__interests-container__quote-container__quote {
+    font-size: 3rem;
+  }
+  .r__grid .r__interests-container__quote-container__quote__author, .r__grid .r__navigation-container .r__mobile-navigation__link-list__link-item__link .r__interests-container__quote-container__quote__author {
+    font-size: 2rem;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-wall .r__button--control-flow {
+    font-size: 2rem;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container__icon {
+    font-size: 6rem;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container__text {
+    font-size: 1.6rem;
+  }
   .day .r__button--mobile-navigation__icon {
     color: rgba(250, 250, 250, 0.8);
   }
+  .day .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-Lego {
+    color: #00803f;
+    font-size: 6rem;
+  }
+  .day .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-Halo {
+    color: #00803f;
+    font-size: 6rem;
+  }
+  .day .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-RocketLeague {
+    color: #00803f;
+    font-size: 6rem;
+  }
+  .day .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-EA_Sports {
+    color: #00803f;
+    font-size: 6rem;
+  }
+  .night .r__button--mobile-navigation__icon {
+    color: rgba(51, 51, 51, 0.8);
+  }
+  .night .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-Lego {
+    color: #ccac00;
+    font-size: 7rem;
+  }
+  .night .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-Halo {
+    color: #ccac00;
+    font-size: 7rem;
+  }
+  .night .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-RocketLeague {
+    color: #ccac00;
+    font-size: 7rem;
+  }
+  .night .r__interests-container .r__interests-grid .r__interest-current .r__interest-icon-container .icon-EA_Sports {
+    color: #ccac00;
+    font-size: 7rem;
+  }
 }
-.night .r__button--mobile-navigation__icon {
-  color: rgba(51, 51, 51, 0.8);
-}
-
 @media (max-width: 1050px) and (max-height: 1400px) {
   .r__button--mobile-navigation {
     position: absolute;
@@ -76096,6 +76151,17 @@ html {
   }
   .r__button--mobile-navigation__icon {
     transition: opacity 0.5s, color 0.5s;
+  }
+  .r__button--control-flow {
+    height: 4rem;
+    width: 4rem;
+    min-width: 4rem;
+  }
+  .r__button-flow-left {
+    transform: translate(-13rem, 0);
+  }
+  .r__button-flow-right {
+    transform: translate(16rem, 0);
   }
   .r__navigation-open::before {
     transform: translate(-50%, -100%) rotate(-45deg);
@@ -78978,6 +79044,9 @@ html {
   .r__grid .r__navigation__link-list {
     display: none;
   }
+  .r__grid .r__navigation .r__time-toggle {
+    width: 20%;
+  }
   .r__grid .r__navigation-container {
     position: absolute;
     height: 0vh;
@@ -79048,17 +79117,26 @@ html {
 }
 
 @media (max-width: 1050px) and (max-height: 1400px) {
+  .r__grid .r__navigation .r__connection-container {
+    transform: translate(5%, 0);
+  }
+}
+@media (max-width: 1050px) and (max-height: 1400px) {
   .r__grid .r__introduction-container {
     grid-column: 3/span 8;
-    grid-row: 6/span 11;
+    grid-row: 5/span 11;
     flex-flow: column nowrap;
   }
   .r__grid .r__introduction-container .r__image-container {
-    height: 33%;
+    height: 67%;
     width: 100%;
   }
+  .r__grid .r__introduction-container .r__image-container .r__image-frame {
+    height: 40rem;
+    width: 40rem;
+  }
   .r__grid .r__introduction-container__introduction {
-    height: 67%;
+    height: 33%;
     width: 100%;
     justify-content: flex-start;
   }
@@ -79070,11 +79148,70 @@ html {
     justify-content: center;
   }
   .r__grid .r__introduction-container__introduction .r__cta-container .r__cta-link {
-    transform: rotate(0) translate(0, 3rem);
+    transform: rotate(0) translate(0, 5rem);
   }
   .r__grid .r__latest-project,
 .r__grid .r__latest-blog-post {
     display: none;
+  }
+}
+
+@media (max-width: 1050px) and (max-height: 1400px) {
+  .r__grid .r__about-link:first-of-type {
+    grid-column: 4/span 6;
+    grid-row: 5/span 3;
+  }
+  .r__grid .r__about-link:nth-of-type(2) {
+    grid-column: 4/span 6;
+    grid-row: 9/span 3;
+  }
+  .r__grid .r__about-link:last-of-type {
+    grid-column: 4/span 6;
+    grid-row: 13/span 3;
+  }
+  .r__grid .r__foundation-container {
+    grid-column: 3/span 8;
+    grid-row: 5/span 11;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .r__grid .r__foundation-container__icon-container {
+    width: 100%;
+    height: 30%;
+  }
+  .r__grid .r__foundation-container__information {
+    width: 100%;
+    height: 60%;
+  }
+  .r__grid .r__icon-container {
+    grid-column: 4/span 6;
+    grid-row: 4/span 3;
+  }
+  .r__grid .r__interests-container {
+    grid-column: 3/span 8;
+    grid-row: 8/span 10;
+  }
+  .r__grid .r__interests-container__quote-container {
+    justify-content: space-around;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-left {
+    transform: translate(-3rem, 0);
+    height: 55.5%;
+    width: 100%;
+    border-top: 1rem solid #ffe766;
+    border-left: 1rem solid #ffe766;
+    border-right: 1rem solid #ccac00;
+    border-bottom: 1rem solid #ffe766;
+  }
+  .r__grid .r__interests-container .r__interests-grid .r__cylinder-right {
+    height: 57.5%;
+  }
+  .r__grid .r__interests-container .r__interests-contact-container {
+    align-items: flex-start;
+  }
+  .r__grid .r__interests-container .r__interests-contact-container__contact-link {
+    height: 6rem;
+    transform: translate(75%, -10rem);
   }
 }
 

@@ -40,6 +40,54 @@ html {
         font-size: 2.25rem;
       }
     }
+
+    .r__about-link {
+      &__icon {
+        font-size: 20rem;
+      }
+    }
+
+    .r__foundation-container {
+      &__icon-container {
+        &__icon {
+          font-size: 20rem;
+        }
+      }
+    }
+
+    .r__icon-container {
+      &__icon {
+        font-size: 20rem;
+      }
+    }
+
+    .r__interests-container {
+      &__quote-container {
+        &__quote {
+          font-size: 3rem;
+          &__author {
+            font-size: 2rem;
+          }
+        }
+      }
+      .r__interests-grid {
+        .r__cylinder-wall {
+          .r__button--control-flow {
+            font-size: 2rem;
+          }
+        }
+        .r__interest-current {
+          .r__interest-icon-container {
+            &__icon {
+              font-size: 6rem;
+            }
+            &__text {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
   }
 
   .day {
@@ -48,12 +96,69 @@ html {
         color: rgba($colorOffWhite, 0.8);
       }
     }
+
+    .r__interests-container {
+      .r__interests-grid {
+        .r__interest-current {
+          .r__interest-icon-container {
+            .icon-Lego {
+              color: $secondaryColorDark;
+              font-size: 6rem;
+            }
+
+            .icon-Halo {
+              color: $secondaryColorDark;
+              font-size: 6rem;
+            }
+
+            .icon-RocketLeague {
+              color: $secondaryColorDark;
+              font-size: 6rem;
+            }
+
+            .icon-EA_Sports {
+              color: $secondaryColorDark;
+              font-size: 6rem;
+            }
+          }
+        }
+      }
+    }
   }
-}
-.night {
-  .r__button--mobile-navigation {
-    &__icon {
-      color: rgba($colorDarkerGrey, 0.8);
+
+  .night {
+    .r__button--mobile-navigation {
+      &__icon {
+        color: rgba($colorDarkerGrey, 0.8);
+      }
+    }
+
+    .r__interests-container {
+      .r__interests-grid {
+        .r__interest-current {
+          .r__interest-icon-container {
+            .icon-Lego {
+              color: $primaryColorDark;
+              font-size: 7rem;
+            }
+
+            .icon-Halo {
+              color: $primaryColorDark;
+              font-size: 7rem;
+            }
+
+            .icon-RocketLeague {
+              color: $primaryColorDark;
+              font-size: 7rem;
+            }
+
+            .icon-EA_Sports {
+              color: $primaryColorDark;
+              font-size: 7rem;
+            }
+          }
+        }
+      }
     }
   }
 }

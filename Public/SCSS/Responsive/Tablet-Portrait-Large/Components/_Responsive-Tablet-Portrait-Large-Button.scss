@@ -43,6 +43,17 @@
         transition: opacity 0.5s, color 0.5s;
       }
     }
+    &--control-flow {
+      height: 4rem;
+      width: 4rem;
+      min-width: 4rem;
+    }
+    &-flow-left {
+      transform: translate(-13rem, 0);
+    }
+    &-flow-right {
+      transform: translate(16rem, 0);
+    }
   }
 
   .r__navigation-open {

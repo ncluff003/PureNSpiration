@@ -8,7 +8,8 @@ const flowLeft = (interests, index) => {
 
   // SET UP LIKE THIS IF LARGE TABLET IN LANDSCAPE
   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
-  if (largeTabLandQuery.matches) {
+  let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+  if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach((interest, i) => {
       interest.style.transform = `translate(${-10 + i * 250 + index * 250}%, ${-50}%)`;
     });
@@ -22,7 +23,8 @@ const flowRight = (interests, index) => {
 
   // SET UP LIKE THIS IF LARGE TABLET IN LANDSCAPE
   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
-  if (largeTabLandQuery.matches) {
+  let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+  if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach((interest, i) => {
       interest.style.transform = `translate(${-10 + i * 250 + index * 250}%, ${-50}%)`;
     });
@@ -50,7 +52,8 @@ const setupInterestSlider = (interests) => {
   });
 
   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
-  if (largeTabLandQuery.matches) {
+  let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+  if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach((interest, i) => {
       interest.style.transform = `translate(${i * 250 - 10}%, ${-50}%)`;
     });
