@@ -4984,25 +4984,69 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     }, {
+      key: "addDefaultSetting",
+      value: function addDefaultSetting(grid, setting) {
+        grid.classList.add(setting);
+        sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
+        moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
+        localStorage.setItem('setting', setting);
+      }
+    }, {
+      key: "changeSetting",
+      value: function changeSetting(grid, setting) {
+        grid.classList.toggle('day');
+        grid.classList.toggle('night');
+        sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
+        moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
+
+        if (setting === 'day') {
+          localStorage.setItem('setting', 'night');
+        } else {
+          localStorage.setItem('setting', 'day');
+        }
+      }
+    }, {
       key: "watchToggle",
       value: function watchToggle() {
+        var _this = this;
+
+        var grid = document.querySelector('.grid');
+        var defaultSetting = 'day';
+        var setting = localStorage.getItem('setting');
+
+        if (!setting) {
+          setting = defaultSetting;
+        }
+
+        this.addDefaultSetting(grid, setting);
+
+        if (setting === 'day') {
+          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open");
+          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
+        } else {
+          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open");
+          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
+        } // sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
+        // moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
+
+
         timeToggle.addEventListener('click', /*#__PURE__*/function () {
           var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee(e) {
+            var currentSetting;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee$(_context) {
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
                     e.preventDefault();
-                    grid.classList.toggle('day');
-                    grid.classList.toggle('night');
-                    sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
-                    moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
+                    currentSetting = localStorage.getItem('setting');
+
+                    _this.changeSetting(grid, currentSetting);
 
                     if (window.location.href === "http://127.0.0.1:3333/about/interests") {
                       _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__.watchInterestPipe();
                     }
 
-                  case 6:
+                  case 4:
                   case "end":
                     return _context.stop();
                 }

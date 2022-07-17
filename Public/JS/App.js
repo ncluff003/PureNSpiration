@@ -42,13 +42,47 @@ import * as Contact from './Pages/Contact';
       }
     }
 
+    addDefaultSetting(grid, setting) {
+      grid.classList.add(setting);
+      sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
+      moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
+      localStorage.setItem('setting', setting);
+    }
+
+    changeSetting(grid, setting) {
+      grid.classList.toggle('day');
+      grid.classList.toggle('night');
+      sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
+      moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
+      if (setting === 'day') {
+        localStorage.setItem('setting', 'night');
+      } else {
+        localStorage.setItem('setting', 'day');
+      }
+    }
+
     watchToggle() {
+      const grid = document.querySelector('.grid');
+      let defaultSetting = 'day';
+      let setting = localStorage.getItem('setting');
+      if (!setting) {
+        setting = defaultSetting;
+      }
+      this.addDefaultSetting(grid, setting);
+      if (setting === 'day') {
+        Utility.replaceClassName(sunIcon, `closed`, `open`);
+        Utility.replaceClassName(moonIcon, `open`, `closed`);
+      } else {
+        Utility.replaceClassName(moonIcon, `closed`, `open`);
+        Utility.replaceClassName(sunIcon, `open`, `closed`);
+      }
+      // sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
+      // moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
+
       timeToggle.addEventListener('click', async (e) => {
         e.preventDefault();
-        grid.classList.toggle('day');
-        grid.classList.toggle('night');
-        sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
-        moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
+        let currentSetting = localStorage.getItem('setting');
+        this.changeSetting(grid, currentSetting);
         if (window.location.href === `http://127.0.0.1:3333/about/interests`) {
           Interests.watchInterestPipe();
         }
