@@ -207,6 +207,12 @@
           "proficiency": 7,
           "backgroundColor": "rgb(21,29,104,.2)",
           "borderColor": "rgb(21,29,104,1)"
+        },
+        {
+          "title": "Problem Solving",
+          "proficiency": 9,
+          "backgroundColor": "rgba(255, 215, 0, 0.2)",
+          "borderColor": "rgba(255, 215, 0, 1)"
         }
       ]
     }

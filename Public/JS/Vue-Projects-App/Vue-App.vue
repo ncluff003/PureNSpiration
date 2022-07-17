@@ -200,6 +200,14 @@ export default {
     justify-content: flex-start;
   }
 }
+@include responsiveBreakPoint('largeTabPort') {
+  #vueApp {
+    height: 85%;
+    width: 100%;
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
+  }
+}
 
 /* DAY STYLES */
 .day {

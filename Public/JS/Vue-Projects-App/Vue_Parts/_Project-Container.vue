@@ -374,6 +374,27 @@ export default {
   }
 }
 
+@include responsiveBreakPoint('largeTabPort') {
+  .r__grid {
+    #vueApp {
+      .r__vue-projects-container {
+        height: 100%;
+        width: 100%;
+        .r__vue-project__cover-photo-display {
+          width: 100%;
+          .r__project-cover-photo {
+            width: 100%;
+          }
+        }
+        .r__vue-project__description-container {
+          width: 100%;
+          flex-flow: column nowrap;
+        }
+      }
+    }
+  }
+}
+
 // DAY STYLES
 .day {
   .vue-project__description-container {
