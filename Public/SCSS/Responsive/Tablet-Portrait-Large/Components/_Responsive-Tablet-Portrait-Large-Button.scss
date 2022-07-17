@@ -1,2 +1,108 @@
 @use '../../../../../Public/SCSS/Utilities/Variables' as *;
 @use '../../../../../Public/SCSS/Utilities/Mixins' as *;
+
+@include responsiveBreakPoint('largeTabPort') {
+  .r__button {
+    &--mobile-navigation {
+      @include SizeAndPositioning(absolute, 10rem, 10rem, flex, column, nowrap, center, center, 0, 0, 0);
+      border-radius: 50%;
+      background-color: transparent;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 26%);
+      z-index: 15;
+      &:hover {
+        cursor: pointer;
+        transition: background-color 0.5s, color 0.5s, border 0.5s, transform 0.5s;
+        &::before,
+        &::after {
+          transition: border 0.5s, color 0.5s, transform 0.5s;
+        }
+      }
+
+      &::before,
+      &::after {
+        @include SizingItem(absolute, 0.2rem, 2rem);
+        content: '';
+        border-radius: 0.2rem;
+      }
+      &::before {
+        @include SizingItem(absolute, 0.2rem, 2rem);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -300%);
+      }
+      &::after {
+        @include SizingItem(absolute, 0.2rem, 2rem);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 150%);
+      }
+
+      &__icon {
+        transition: opacity 0.5s, color 0.5s;
+      }
+    }
+  }
+
+  .r__navigation-open {
+    &::before {
+      transform: translate(-50%, -100%) rotate(-45deg); // Before
+    }
+    &::after {
+      transform: translate(-50%, -90%) rotate(45deg); // After
+    }
+
+    &__icon {
+      opacity: 0;
+    }
+  }
+
+  .day {
+    .r__button {
+      &--mobile-navigation {
+        border: 0.4rem solid rgba($colorOffWhite, 1);
+        background-color: rgba($primaryColorDark, 0.8);
+        &::before,
+        &::after {
+          border: 0.2rem solid rgba($colorOffWhite, 0.8);
+        }
+        &:hover {
+          background-color: $primaryColorLight;
+          &::before,
+          &::after {
+            border: 0.2rem solid $colorOffWhite;
+          }
+        }
+        &:active {
+          border: 0.4rem solid rgba($colorOffWhite, 1);
+          background-color: $tertiaryColorLight;
+        }
+      }
+    }
+  }
+  .night {
+    .r__button {
+      &--mobile-navigation {
+        border: 0.4rem solid rgba($colorDarkerGrey, 1);
+        background-color: rgba($secondaryColorDark, 0.8);
+        &::before,
+        &::after {
+          border: 0.2rem solid rgba($colorDarkerGrey, 0.8);
+        }
+
+        &:hover {
+          background-color: $secondaryColorLight;
+          &::before,
+          &::after {
+            border: 0.2rem solid $colorDarkerGrey;
+          }
+        }
+        &:active {
+          border: 0.4rem solid rgba($colorDarkerGrey, 1);
+          background-color: $primaryColorLight;
+        }
+      }
+    }
+  }
+}

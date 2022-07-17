@@ -24,6 +24,7 @@ import * as Contact from './Pages/Contact';
       Project.watchProjectPage();
       Blog.watchBlog();
       Contact.watchContactForm();
+      this._watchMobileNavigation();
       // this._watchToAdaptGrid();
       // API.fetchSkills();
     }
@@ -64,6 +65,21 @@ import * as Contact from './Pages/Contact';
     async _fetchLatestProject() {
       let project = await API.fetchLatestProject();
       Project.renderLatestProject(project);
+    }
+
+    _watchMobileNavigation() {
+      const mobileNavButton = document.querySelector('.r__button--mobile-navigation');
+      const mobileNavButtonIcon = document.querySelector('.r__button--mobile-navigation__icon');
+      const mobileNavigation = document.querySelector('.r__navigation-container');
+
+      if (mobileNavButton && mobileNavigation) {
+        mobileNavButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          mobileNavButton.classList.toggle('r__navigation-open');
+          mobileNavButtonIcon.classList.toggle('r__navigation-open__icon');
+          mobileNavigation.classList.toggle('r__navigation-container__open');
+        });
+      }
     }
 
     _listenForQueryChanges(query, element, removedClasses, addedClasses) {

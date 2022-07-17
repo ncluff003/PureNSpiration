@@ -4961,8 +4961,11 @@ __webpack_require__.r(__webpack_exports__);
       _Pages_About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
       _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage();
       _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.watchBlog();
-      _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__.watchContactForm(); // this._watchToAdaptGrid();
+      _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__.watchContactForm();
+
+      this._watchMobileNavigation(); // this._watchToAdaptGrid();
       // API.fetchSkills();
+
     }
 
     (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
@@ -5077,6 +5080,22 @@ __webpack_require__.r(__webpack_exports__);
 
         return _fetchLatestProject;
       }()
+    }, {
+      key: "_watchMobileNavigation",
+      value: function _watchMobileNavigation() {
+        var mobileNavButton = document.querySelector('.r__button--mobile-navigation');
+        var mobileNavButtonIcon = document.querySelector('.r__button--mobile-navigation__icon');
+        var mobileNavigation = document.querySelector('.r__navigation-container');
+
+        if (mobileNavButton && mobileNavigation) {
+          mobileNavButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            mobileNavButton.classList.toggle('r__navigation-open');
+            mobileNavButtonIcon.classList.toggle('r__navigation-open__icon');
+            mobileNavigation.classList.toggle('r__navigation-container__open');
+          });
+        }
+      }
     }, {
       key: "_listenForQueryChanges",
       value: function _listenForQueryChanges(query, element, removedClasses, addedClasses) {
