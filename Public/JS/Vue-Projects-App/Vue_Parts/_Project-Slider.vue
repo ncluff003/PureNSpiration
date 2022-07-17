@@ -203,12 +203,42 @@ export default {
   }
 }
 
+@include responsiveBreakPoint('largeTabPort') {
+  .r__vue-projects-slider {
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 20%;
+    width: 100%;
+    max-width: 87.5rem;
+    padding: 0 0 0 3rem;
+  }
+
+  .r__vue-project-option {
+    height: 90%;
+    width: auto;
+    min-width: 20rem;
+    flex-direction: row;
+    margin-right: 5rem;
+    margin-bottom: 0;
+    &__title {
+      transform: translate(0rem, -2.5rem);
+    }
+  }
+}
+
 /* DAY STYLES */
 .day {
   .vue-projects-slider {
     border-left: 0.3rem groove #ffd700;
     border-right: 0.3rem groove #ffd700;
     background-image: linear-gradient(to bottom, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);
+
+    @include responsiveBreakPoint('largeTabPort') {
+      border-top: 0.3rem groove #ffd700;
+      border-bottom: 0.3rem groove #ffd700;
+      background-image: linear-gradient(to right, #ffd700 0%, transparent 5%, transparent 95%, #ffd700 100%);
+    }
   }
   .vue-project-option {
     &__title {
@@ -237,6 +267,11 @@ export default {
     border-left: 0.3rem groove #00b358;
     border-right: 0.3rem groove #00b358;
     background-image: linear-gradient(to bottom, #333333 0%, rgba(#fefefe, 0.25) 5%, rgba(#fefefe, 0.25) 95%, #333333 100%);
+    @include responsiveBreakPoint('largeTabPort') {
+      border-top: 0.3rem groove #00b358;
+      border-bottom: 0.3rem groove #00b358;
+      background-image: linear-gradient(to right, #00b358 0%, transparent 5%, transparent 95%, #00b358 100%);
+    }
     .vue-project-option {
       &__title {
         color: rgba(#00b358, 0.5);

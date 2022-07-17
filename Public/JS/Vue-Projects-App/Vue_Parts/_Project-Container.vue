@@ -382,13 +382,33 @@ export default {
         width: 100%;
         .r__vue-project__cover-photo-display {
           width: 100%;
-          .r__project-cover-photo {
+          .r__project-cover-photo,
+          .r__project-cover-video {
             width: 100%;
           }
         }
         .r__vue-project__description-container {
           width: 100%;
           flex-flow: column nowrap;
+          .r__vue-project-media {
+            width: 87%;
+          }
+
+          .r__project-title {
+            top: 14rem;
+            left: 8rem;
+          }
+
+          .r__vue-project-technologies {
+            top: 15rem;
+            right: 8rem;
+            font-size: 1.2rem;
+          }
+
+          .r__vue-project-description-container {
+            width: 90%;
+            transform: translateY(1rem);
+          }
         }
       }
     }
