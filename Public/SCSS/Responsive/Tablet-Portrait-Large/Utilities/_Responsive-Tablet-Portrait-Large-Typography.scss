@@ -88,6 +88,15 @@ html {
         }
       }
     }
+    .r__blog-container {
+      .r__blog {
+        .r__blog-heading {
+          &__title {
+            font-size: 7.5rem;
+          }
+        }
+      }
+    }
   }
 
   .day {
