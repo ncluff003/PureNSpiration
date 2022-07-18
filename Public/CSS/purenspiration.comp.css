@@ -82362,4 +82362,38 @@ html {
   }
 }
 
+@media (max-width: 1050px) and (max-height: 800px) {
+  .r__grid .r__introduction-container {
+    grid-column: 3/span 15;
+    grid-row: 4/span 8;
+  }
+  .r__grid .r__introduction-container .r__image-container .r__image-frame {
+    height: 30rem;
+    width: 30rem;
+    transform: translate(-3rem, -2rem);
+  }
+  .r__grid .r__introduction-container .r__name-container {
+    transform: translate(-3rem, 0rem) rotate(0);
+  }
+  .r__grid .r__introduction-container .r__introduction-container__introduction .r__cta-container {
+    justify-content: center;
+    align-items: flex-end;
+    transform: translate(-3rem, 8rem) rotate(0);
+  }
+}
+@media (max-width: 1050px) and (max-height: 800px) {
+  .r__grid .r__about-link:first-of-type {
+    grid-column: 1/span 6;
+    grid-row: 4/span 6;
+  }
+  .r__grid .r__about-link:nth-of-type(2) {
+    grid-column: 7/span 6;
+    grid-row: 4/span 6;
+  }
+  .r__grid .r__about-link:last-of-type {
+    grid-column: 13/span 6;
+    grid-row: 4/span 6;
+  }
+}
+
 /*# sourceMappingURL=purenspiration.comp.css.map */
