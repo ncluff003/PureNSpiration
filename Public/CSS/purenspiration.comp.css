@@ -79246,4 +79246,14 @@ html {
   }
 }
 
+@media (max-width: 1050px) and (max-height: 1400px) {
+  .r__grid .r__selected-blog-post {
+    grid-column: 3/span 8;
+    grid-row: 3/span 16;
+  }
+  .r__grid .r__selected-blog-post .r__blog-header {
+    justify-content: center;
+  }
+}
+
 /*# sourceMappingURL=purenspiration.comp.css.map */
