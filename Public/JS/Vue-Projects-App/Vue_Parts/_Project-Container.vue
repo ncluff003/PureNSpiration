@@ -1,5 +1,9 @@
 <template>
   <section class="vue-projects-container r__vue-projects-container">
+    <section class="project-link-container r__project-link-container">
+      <a :href="project.link" class="project-link r__project-link">View Site</a>
+      <a :href="project.code" class="project-link r__project-link">View Code</a>
+    </section>
     <section class="vue-project__cover-photo-display r__vue-project__cover-photo-display">
       <video :src="project.media[0].file" class="project-cover-video r__project-cover-video" v-show="project.media[0].type === 'video'"></video>
       <img
@@ -380,6 +384,34 @@ export default {
       .r__vue-projects-container {
         height: 100%;
         width: 100%;
+
+        .r__project-link-container {
+          position: absolute;
+          top: -7rem;
+          left: 2rem;
+          height: max-content;
+          width: max-content;
+          padding: 2rem;
+          z-index: 10;
+
+          .r__project-link {
+            height: 4rem;
+            width: max-content;
+            border-radius: 5rem;
+            padding: 1rem;
+            text-decoration: none;
+            font-size: 2rem;
+            font-family: Roboto Condensed;
+            font-weight: bold;
+            &:first-of-type {
+              margin-right: 2rem;
+            }
+            &:hover {
+              cursor: pointer;
+              transition: color 0.5s, background-color 0.5s;
+            }
+          }
+        }
         .r__vue-project__cover-photo-display {
           width: 100%;
           .r__project-cover-photo,
@@ -392,22 +424,23 @@ export default {
           flex-flow: column nowrap;
           .r__vue-project-media {
             width: 87%;
+            transform: translateY(1rem);
           }
 
           .r__project-title {
-            top: 14rem;
+            top: 16rem;
             left: 8rem;
           }
 
           .r__vue-project-technologies {
-            top: 15rem;
+            top: 17rem;
             right: 8rem;
             font-size: 1.2rem;
           }
 
           .r__vue-project-description-container {
             width: 90%;
-            transform: translateY(1rem);
+            transform: translateY(3rem);
           }
         }
       }
@@ -417,20 +450,32 @@ export default {
 
 // DAY STYLES
 .day {
+  .r__vue-projects-container {
+    .r__project-link-container {
+      .r__project-link {
+        background-color: rgba(#ffd700, 0.8);
+        color: rgba(#333333, 0.8);
+        &:hover {
+          background: #ffd700;
+          color: #333333;
+        }
+      }
+    }
+  }
   .vue-project__description-container {
     // border: 0.3rem groove #ffd700;
     .project-title {
       color: #333333;
     }
-    .vue-project-technologies {
-      color: #333333;
-    }
-
     .vue-project-description-container {
       p {
         color: #333333;
       }
     }
+    .vue-project-technologies {
+      color: #333333;
+    }
+
     .vue-project-media {
       border: 0.5rem solid #ffd700;
       .vue-media-left,
@@ -456,6 +501,18 @@ export default {
 
 /* NIGHT STYLES */
 .night {
+  .r__vue-projects-container {
+    .r__project-link-container {
+      .r__project-link {
+        background-color: rgba(#00b358, 0.8);
+        color: rgba(#fefefe, 0.8);
+        &:hover {
+          background-color: #00b358;
+          color: #fefefe;
+        }
+      }
+    }
+  }
   .vue-project__description-container {
     // border: 0.3rem groove #00b358;
     .project-title {
@@ -464,6 +521,7 @@ export default {
     .vue-project-technologies {
       color: #00b358;
     }
+
     .vue-project-description-container {
       p {
         color: #00b358;
