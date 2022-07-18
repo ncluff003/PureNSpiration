@@ -17,5 +17,28 @@
         grid-row: 4 / span 6;
       }
     }
+
+    .r__foundation-container {
+      grid-column: 3 / span 14;
+      grid-row: 3 / span 9;
+      flex-direction: row;
+      &__icon-container {
+        height: 100%;
+        width: 30%;
+      }
+      &__information {
+        height: 100%;
+        width: 60%;
+        &__header {
+          &__sub-title {
+            transform: translate(0rem, -0.75rem);
+          }
+        }
+        &__paragraph-container {
+          height: max-content;
+          margin-bottom: 2rem;
+        }
+      }
+    }
   }
 }

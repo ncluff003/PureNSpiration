@@ -22,5 +22,18 @@ html {
         }
       }
     }
+
+    .r__foundation-container {
+      &__information {
+        &__header {
+          &__title {
+            font-size: 5rem;
+          }
+        }
+        &__paragraph-container {
+          font-size: 1.6rem;
+        }
+      }
+    }
   }
 }
