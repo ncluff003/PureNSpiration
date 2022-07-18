@@ -209,9 +209,11 @@ export default {
     overflow-x: auto;
     overflow-y: hidden;
     height: 20%;
+    min-height: 20%;
     width: 100%;
     max-width: 87.5rem;
     padding: 0 0 0 3rem;
+    margin-top: 4rem;
   }
 
   .r__vue-project-option {

@@ -1,9 +1,5 @@
 <template>
   <section class="vue-projects-container r__vue-projects-container">
-    <section class="project-link-container r__project-link-container">
-      <a :href="project.link" class="project-link r__project-link">View Site</a>
-      <a :href="project.code" class="project-link r__project-link">View Code</a>
-    </section>
     <section class="vue-project__cover-photo-display r__vue-project__cover-photo-display">
       <video :src="project.media[0].file" class="project-cover-video r__project-cover-video" v-show="project.media[0].type === 'video'"></video>
       <img
@@ -17,6 +13,10 @@
       <header class="project-title r__project-title">
         <p class="project-title__title r__project-title__title">{{ project.title }}</p>
       </header>
+      <section class="project-link-container r__project-link-container">
+        <a :href="project.link" class="project-link r__project-link">View Site</a>
+        <a :href="project.code" class="project-link r__project-link">View Code</a>
+      </section>
       <section class="vue-project-media r__vue-project-media">
         <button class="vue-media-left r__vue-media-left" @click="mediaScrollLeft">
           <i class="fas fa-arrow-left left-icon"></i>
@@ -210,6 +210,34 @@ export default {
   transition: background-color 0.5s, border 0.5s, color 0.5s;
 }
 
+.r__project-link-container {
+  position: absolute;
+  top: 25rem;
+  left: 17rem;
+  height: max-content;
+  width: max-content;
+  padding: 2rem;
+  z-index: 10;
+
+  .r__project-link {
+    height: 4rem;
+    width: max-content;
+    border-radius: 5rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    font-size: 2.4rem;
+    font-family: Roboto Condensed;
+    font-weight: bold;
+    &:first-of-type {
+      margin-right: 2rem;
+    }
+    &:hover {
+      cursor: pointer;
+      transition: color 0.5s, background-color 0.5s;
+    }
+  }
+}
+
 // PROJECT DISPLAY
 
 .vue-project__cover-photo-display {
@@ -378,6 +406,70 @@ export default {
   }
 }
 
+@include responsiveBreakPoint('tv') {
+  .r__vue-projects-container {
+    .r__project-link-container {
+      position: absolute;
+      top: 35rem;
+      left: 15rem;
+      height: max-content;
+      width: max-content;
+      padding: 2rem;
+      z-index: 10;
+
+      .r__project-link {
+        height: 4rem;
+        width: max-content;
+        border-radius: 5rem;
+        padding: 1.5rem;
+        text-decoration: none;
+        font-size: 2.4rem;
+        font-family: Roboto Condensed;
+        font-weight: bold;
+        &:first-of-type {
+          margin-right: 2rem;
+        }
+        &:hover {
+          cursor: pointer;
+          transition: color 0.5s, background-color 0.5s;
+        }
+      }
+    }
+  }
+}
+
+@include responsiveBreakPoint('largeTabLand') {
+  .r__vue-projects-container {
+    .r__project-link-container {
+      position: absolute;
+      top: 27rem;
+      left: 5rem;
+      height: max-content;
+      width: max-content;
+      padding: 2rem;
+      z-index: 10;
+
+      .r__project-link {
+        height: 4rem;
+        width: max-content;
+        border-radius: 5rem;
+        padding: 1.5rem;
+        text-decoration: none;
+        font-size: 2.4rem;
+        font-family: Roboto Condensed;
+        font-weight: bold;
+        &:first-of-type {
+          margin-right: 2rem;
+        }
+        &:hover {
+          cursor: pointer;
+          transition: color 0.5s, background-color 0.5s;
+        }
+      }
+    }
+  }
+}
+
 @include responsiveBreakPoint('largeTabPort') {
   .r__grid {
     #vueApp {
@@ -386,9 +478,10 @@ export default {
         width: 100%;
 
         .r__project-link-container {
-          position: absolute;
-          top: -7rem;
-          left: 2rem;
+          position: relative;
+          top: 0;
+          left: 0;
+          align-self: flex-start;
           height: max-content;
           width: max-content;
           padding: 2rem;
@@ -425,15 +518,16 @@ export default {
           .r__vue-project-media {
             width: 87%;
             transform: translateY(1rem);
+            margin-bottom: 5rem;
           }
 
           .r__project-title {
-            top: 16rem;
+            top: 21rem;
             left: 8rem;
           }
 
           .r__vue-project-technologies {
-            top: 17rem;
+            top: 23rem;
             right: 8rem;
             font-size: 1.2rem;
           }
