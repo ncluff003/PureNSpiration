@@ -9,9 +9,15 @@ const flowLeft = (interests, index) => {
   // SET UP LIKE THIS IF LARGE TABLET IN LANDSCAPE
   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
   let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+  let smallTabLandQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`);
   if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach((interest, i) => {
       interest.style.transform = `translate(${-10 + i * 250 + index * 250}%, ${-50}%)`;
+    });
+  }
+  if (smallTabLandQuery.matches) {
+    interests.forEach((interest, i) => {
+      interest.style.transform = `translate(${-15 + i * 250 + index * 250}%, ${-50}%)`;
     });
   }
 };
@@ -24,9 +30,15 @@ const flowRight = (interests, index) => {
   // SET UP LIKE THIS IF LARGE TABLET IN LANDSCAPE
   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
   let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+  let smallTabLandQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`);
   if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach((interest, i) => {
       interest.style.transform = `translate(${-10 + i * 250 + index * 250}%, ${-50}%)`;
+    });
+  }
+  if (smallTabLandQuery.matches) {
+    interests.forEach((interest, i) => {
+      interest.style.transform = `translate(${-15 + i * 250 + index * 250}%, ${-50}%)`;
     });
   }
 };
@@ -53,9 +65,15 @@ const setupInterestSlider = (interests) => {
 
   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
   let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
+  let smallTabLandQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`);
   if (largeTabLandQuery.matches || largeTabPortQuery.matches) {
     interests.forEach((interest, i) => {
       interest.style.transform = `translate(${i * 250 - 10}%, ${-50}%)`;
+    });
+  }
+  if (smallTabLandQuery.matches) {
+    interests.forEach((interest, i) => {
+      interest.style.transform = `translate(${i * 250 - 15}%, ${-50}%)`;
     });
   }
 };
