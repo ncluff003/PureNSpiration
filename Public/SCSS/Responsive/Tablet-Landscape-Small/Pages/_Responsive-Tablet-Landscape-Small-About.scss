@@ -40,5 +40,25 @@
         }
       }
     }
+
+    .r__interests-container {
+      grid-column: 7 / span 10;
+      grid-row: 4 / span 9;
+      .r__interests-grid {
+        .r__cylinder-left {
+          height: 62.5%;
+          transform: translate(-2.5rem, 0);
+        }
+        .r__cylinder-right {
+          height: 62.5%;
+          border-width: 1.25rem;
+        }
+      }
+    }
+
+    .r__icon-container {
+      grid-column: 2 / span 4;
+      grid-row: 5 / span 4;
+    }
   }
 }

@@ -54,6 +54,13 @@ const renderBlogExerpts = (posts) => {
   });
 };
 
+const renderQuote = (container, content) => {
+  const quote = document.createElement('blockquote');
+  Utility.addClasses(quote, ['blog-quote', 'r__blog-quote']);
+  quote.textContent = content.data;
+  Utility.insertElement(`beforeend`, container, quote);
+};
+
 const renderPhoto = (container, content) => {
   const image = document.createElement('img');
   Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
@@ -78,7 +85,7 @@ const renderVideo = (container, content) => {
 };
 const renderParagraph = (container, content) => {
   const paragraph = document.createElement('p');
-  paragraph.textContent = content.data;
+  paragraph.innerHTML = content.data;
   Utility.addClasses(paragraph, [`blog-paragraph`, `r__blog-paragraph`]);
   Utility.insertElement(`beforeend`, container, paragraph);
 };
@@ -121,6 +128,9 @@ export const renderBlogPost = (content) => {
     }
     if (piece.type === `video`) {
       renderVideo(postContent, piece);
+    }
+    if (piece.type === `quote`) {
+      renderQuote(postContent, piece);
     }
   });
 };

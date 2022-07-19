@@ -5871,6 +5871,13 @@ var renderBlogExerpts = function renderBlogExerpts(posts) {
   });
 };
 
+var renderQuote = function renderQuote(container, content) {
+  var quote = document.createElement('blockquote');
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(quote, ['blog-quote', 'r__blog-quote']);
+  quote.textContent = content.data;
+  _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, quote);
+};
+
 var renderPhoto = function renderPhoto(container, content) {
   var image = document.createElement('img');
   _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(image, ["blog-image", "r__blog-image"]);
@@ -5901,7 +5908,7 @@ var renderVideo = function renderVideo(container, content) {
 
 var renderParagraph = function renderParagraph(container, content) {
   var paragraph = document.createElement('p');
-  paragraph.textContent = content.data;
+  paragraph.innerHTML = content.data;
   _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(paragraph, ["blog-paragraph", "r__blog-paragraph"]);
   _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, paragraph);
 };
@@ -5949,6 +5956,10 @@ var renderBlogPost = function renderBlogPost(content) {
 
     if (piece.type === "video") {
       renderVideo(postContent, piece);
+    }
+
+    if (piece.type === "quote") {
+      renderQuote(postContent, piece);
     }
   });
 };
