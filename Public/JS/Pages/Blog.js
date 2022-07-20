@@ -61,6 +61,19 @@ const renderQuote = (container, content) => {
   Utility.insertElement(`beforeend`, container, quote);
 };
 
+const renderMultiplePhotos = (container, content) => {
+  content.file.forEach((photo) => {
+    const image = document.createElement('img');
+    Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
+    let index = photo.file.indexOf(`DIST/CSS`);
+    image.src = photo.file.slice(index);
+    if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts`)) {
+      image.src = `../../${photo.file.slice(index)}`;
+    }
+    Utility.insertElement(`beforeend`, container, image);
+  });
+};
+
 const renderPhoto = (container, content) => {
   const image = document.createElement('img');
   Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
@@ -125,6 +138,9 @@ export const renderBlogPost = (content) => {
     }
     if (piece.type === `photo`) {
       renderPhoto(postContent, piece);
+    }
+    if (piece.type === `photos`) {
+      renderMultiplePhotos(postContent, piece);
     }
     if (piece.type === `video`) {
       renderVideo(postContent, piece);

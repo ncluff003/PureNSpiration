@@ -5899,6 +5899,21 @@ var renderQuote = function renderQuote(container, content) {
   _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, quote);
 };
 
+var renderMultiplePhotos = function renderMultiplePhotos(container, content) {
+  content.file.forEach(function (photo) {
+    var image = document.createElement('img');
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(image, ["blog-image", "r__blog-image"]);
+    var index = photo.file.indexOf("DIST/CSS");
+    image.src = photo.file.slice(index);
+
+    if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts")) {
+      image.src = "../../".concat(photo.file.slice(index));
+    }
+
+    _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, image);
+  });
+};
+
 var renderPhoto = function renderPhoto(container, content) {
   var image = document.createElement('img');
   _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(image, ["blog-image", "r__blog-image"]);
@@ -5973,6 +5988,10 @@ var renderBlogPost = function renderBlogPost(content) {
 
     if (piece.type === "photo") {
       renderPhoto(postContent, piece);
+    }
+
+    if (piece.type === "photos") {
+      renderMultiplePhotos(postContent, piece);
     }
 
     if (piece.type === "video") {
