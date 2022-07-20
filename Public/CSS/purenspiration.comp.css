@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: Purely Me;
   src: url("./purely_me_regular-webfont.woff2") format("woff2"), url("./purely_me_regular-webfont.woff") format("woff"), url("./Purely_Me_Regular.eot"), url("./Purely_Me_Regular.ttf");
@@ -109,13 +110,26 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   font-size: 3rem;
 }
 .blog-header .blog-post-title {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
 .blog-paragraph {
   font-family: Roboto Slab, Roboto Condensed, Purely Me, Verdana, san-serif;
   font-size: 1.6rem;
   text-indent: 4rem;
+  line-height: 1.75;
+}
+
+.blog-quote__text {
+  font-family: Roboto Slab, Roboto Condensed, Purely Me, Verdana, san-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  text-indent: 4rem;
+  word-wrap: break-word;
+}
+.blog-quote__text:before, .blog-quote__text:after {
+  line-height: 1;
+  font-size: 8rem;
 }
 
 .blog-link-container--cta-link {
@@ -350,7 +364,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 }
 .day .latest-blog-post .blog-header .blog-title,
 .day .selected-blog-post .blog-header .blog-title {
-  color: #00b358;
+  color: #ffd700;
 }
 .day .latest-blog-post .blog-header .blog-date,
 .day .selected-blog-post .blog-header .blog-date {
@@ -359,12 +373,16 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 }
 .day .latest-blog-post .blog-header .blog-post-title,
 .day .selected-blog-post .blog-header .blog-post-title {
-  font-size: 4rem;
-  color: #ffd700;
+  color: #00b358;
 }
 .day .latest-blog-post .blog-content-container .blog-content .blog-paragraph,
 .day .selected-blog-post .blog-content-container .blog-content .blog-paragraph {
   color: #00b358;
+}
+.day .latest-blog-post .blog-content-container .blog-content .blog-quote__text:before, .day .latest-blog-post .blog-content-container .blog-content .blog-quote__text:after,
+.day .selected-blog-post .blog-content-container .blog-content .blog-quote__text:before,
+.day .selected-blog-post .blog-content-container .blog-content .blog-quote__text:after {
+  color: rgba(51, 51, 51, 0.8);
 }
 .day .latest-blog-post .blog-link-container--cta-link,
 .day .selected-blog-post .blog-link-container--cta-link {
@@ -673,7 +691,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 }
 .night .latest-blog-post .blog-header .blog-title,
 .night .selected-blog-post .blog-header .blog-title {
-  color: #ffd700;
+  color: #00b358;
 }
 .night .latest-blog-post .blog-header .blog-date,
 .night .selected-blog-post .blog-header .blog-date {
@@ -682,12 +700,20 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 }
 .night .latest-blog-post .blog-header .blog-post-title,
 .night .selected-blog-post .blog-header .blog-post-title {
-  font-size: 4rem;
-  color: #00b358;
+  color: #ffd700;
 }
 .night .latest-blog-post .blog-content-container .blog-content .blog-paragraph,
 .night .selected-blog-post .blog-content-container .blog-content .blog-paragraph {
-  color: #ffd700;
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-quote__text,
+.night .selected-blog-post .blog-content-container .blog-content .blog-quote__text {
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-quote__text:before, .night .latest-blog-post .blog-content-container .blog-content .blog-quote__text:after,
+.night .selected-blog-post .blog-content-container .blog-content .blog-quote__text:before,
+.night .selected-blog-post .blog-content-container .blog-content .blog-quote__text:after {
+  color: rgba(255, 215, 0, 0.8);
 }
 .night .latest-blog-post .blog-link-container--cta-link,
 .night .selected-blog-post .blog-link-container--cta-link {
@@ -38347,21 +38373,31 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   transform: rotate(0) translate(0, 0);
 }
 .blog-header .blog-date {
-  align-self: flex-start;
-  transform: translate(60%, 40%);
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
   transition: color 0.5s;
 }
 .blog-header .blog-title {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
   transition: color 0.5s;
 }
 .blog-header .blog-post-title {
-  align-self: flex-end;
-  transform: translate(-50%, -5%);
+  position: absolute;
+  height: max-content;
+  width: max-content;
+  padding: 2rem 2rem 0;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
   transition: color 0.5s;
 }
 
@@ -38375,7 +38411,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
-  padding: 3rem 3rem 5rem 3rem;
+  padding: 0rem 4rem 5rem 4rem;
   border-radius: 2rem;
   overflow-y: auto;
   transition: border 0.5s;
@@ -38398,6 +38434,21 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   padding: 3rem 0;
   margin: 3rem 0;
   transition: border 0.5s;
+}
+
+.blog-quote {
+  position: relative;
+  height: max-content;
+  width: 90%;
+  padding: 3rem;
+}
+.blog-quote__text::before {
+  position: absolute;
+  top: 0.5rem;
+  left: -2rem;
+  content: "‘";
+  content: "“";
+  margin: 0.5rem;
 }
 
 .blog-video {
@@ -38438,11 +38489,23 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 .day .selected-blog-post {
   border-left: 0.3rem groove #ffd700;
   border-right: 0.3rem groove #ffd700;
+  background-color: rgba(187, 187, 187, 0.2);
 }
+.day .selected-blog-post .blog-content-container .blog-content .blog-quote {
+  background-color: rgba(153, 153, 153, 0.25);
+  border-radius: 0.5rem;
+}
+
 .night .selected-blog-post {
   border-left: 0.3rem groove #00b358;
   border-right: 0.3rem groove #00b358;
+  background-color: rgba(250, 250, 250, 0.1);
 }
+.night .selected-blog-post .blog-content-container .blog-content .blog-quote {
+  border-radius: 0.5rem;
+  background-color: rgba(0, 128, 63, 0.25);
+}
+
 .modal, .modal--foundation, .modal--interests, .modal--skills {
   position: relative;
   height: 100%;

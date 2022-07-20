@@ -291,12 +291,12 @@
           "content": [
             {
               "type": "paragraph",
-              "data": "Welcome to my blog!  Whether you are new to the craft or not, the goal is to provide quality content.  Before starting into the technical details, I would love to share a couple of quotes that I recently came across which had hit home with me.",
+              "data": "Welcome to my blog! &nbsp Whether you are new to the craft or not, the goal is to provide quality content.  Before starting into the technical details, I would love to share a couple of quotes that I recently came across which had hit home with me.",
               "file": "file"
             },
             {
               "type": "quote",
-              "data": "The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one. ~ Mark Twain",
+              "data": "<p class='blog-quote__text r__blog-quote__text'>The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one. ~ Mark Twain</p>",
               "file": "file"
             },
             {
@@ -306,7 +306,7 @@
             },
             {
               "type": "quote",
-              "data": "The only thing that stands between you and grand success in living are these two things: getting started and never quitting! ~ Robert H. Schuller",
+              "data": "<p class='blog-quote__text r__blog-quote__text'>The only thing that stands between you and grand success in living are these two things: getting started and never quitting! ~ Robert H. Schuller</p>",
               "file": "file"
             },
             {
@@ -380,7 +380,7 @@
             },
             {
               "type": "quote",
-              "data": "cd ..",
+              "data": "<p class='blog-quote__text r__blog-quote__text'>cd ..</p>",
               "file": "file"
             },
             {
@@ -390,7 +390,7 @@
             },
             {
               "type": "quote",
-              "data": "cd yourFilePathHere",
+              "data": "<p class='blog-quote__text r__blog-quote__text'>cd yourFilePathHere</p>",
               "file": "file"
             },
             {

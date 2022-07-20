@@ -5895,7 +5895,7 @@ var renderBlogExerpts = function renderBlogExerpts(posts) {
 var renderQuote = function renderQuote(container, content) {
   var quote = document.createElement('blockquote');
   _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(quote, ['blog-quote', 'r__blog-quote']);
-  quote.textContent = content.data;
+  quote.innerHTML = content.data;
   _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, quote);
 };
 

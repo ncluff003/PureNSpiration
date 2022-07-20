@@ -57,7 +57,7 @@ const renderBlogExerpts = (posts) => {
 const renderQuote = (container, content) => {
   const quote = document.createElement('blockquote');
   Utility.addClasses(quote, ['blog-quote', 'r__blog-quote']);
-  quote.textContent = content.data;
+  quote.innerHTML = content.data;
   Utility.insertElement(`beforeend`, container, quote);
 };
 

@@ -158,7 +158,7 @@ html {
     font-size: 3rem;
   }
   .blog-post-title {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 }
 
@@ -166,6 +166,22 @@ html {
   font-family: Roboto Slab, Roboto Condensed, Purely Me, Verdana, san-serif;
   font-size: 1.6rem;
   text-indent: 4rem;
+  line-height: 1.75;
+}
+
+.blog-quote {
+  &__text {
+    font-family: Roboto Slab, Roboto Condensed, Purely Me, Verdana, san-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-indent: 4rem;
+    word-wrap: break-word;
+    &:before,
+    &:after {
+      line-height: 1;
+      font-size: 8rem;
+    }
+  }
 }
 
 .blog-link-container {
@@ -523,21 +539,28 @@ html {
   .selected-blog-post {
     .blog-header {
       .blog-title {
-        color: $secondaryColor;
+        color: $primaryColor;
       }
       .blog-date {
         font-size: 3rem;
         color: $primaryColor;
       }
       .blog-post-title {
-        font-size: 4rem;
-        color: $primaryColor;
+        color: $secondaryColor;
       }
     }
     .blog-content-container {
       .blog-content {
         .blog-paragraph {
           color: $secondaryColor;
+        }
+        .blog-quote {
+          &__text {
+            &:before,
+            &:after {
+              color: rgba($colorDarkerGrey, 0.8);
+            }
+          }
         }
       }
     }
@@ -981,21 +1004,29 @@ html {
   .selected-blog-post {
     .blog-header {
       .blog-title {
-        color: $primaryColor;
+        color: $secondaryColor;
       }
       .blog-date {
         font-size: 3rem;
         color: $secondaryColor;
       }
       .blog-post-title {
-        font-size: 4rem;
-        color: $secondaryColor;
+        color: $primaryColor;
       }
     }
     .blog-content-container {
       .blog-content {
         .blog-paragraph {
-          color: $primaryColor;
+          color: rgba($colorOffWhite, 0.8);
+        }
+        .blog-quote {
+          &__text {
+            color: rgba($colorOffWhite, 0.8);
+            &:before,
+            &:after {
+              color: rgba($primaryColor, 0.8);
+            }
+          }
         }
       }
     }

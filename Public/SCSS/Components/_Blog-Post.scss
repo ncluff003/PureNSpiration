@@ -2,25 +2,36 @@
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
 .blog-header {
-  @include SizeAndPositioning(relative, 30%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  @include SizeAndPositioning(relative, 30%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
   .blog-date {
-    align-self: flex-start;
-    transform: translate(60%, 40%);
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    // align-self: flex-start;
+    // transform: translate(60%, 40%);
     transition: color 0.5s;
   }
   .blog-title {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
     transition: color 0.5s;
   }
   .blog-post-title {
-    align-self: flex-end;
-    transform: translate(-50%, -5%);
+    @include SizingItem(absolute, max-content, max-content);
+    padding: 2rem 2rem 0;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    // transform: translate(-50%, -5%);
     transition: color 0.5s;
   }
 }
 
 .blog-content-container {
   @include SizeAndPositioning(relative, 70%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
-  padding: 3rem 3rem 5rem 3rem;
+  padding: 0rem 4rem 5rem 4rem;
   border-radius: 2rem;
   overflow-y: auto;
   transition: border 0.5s;
@@ -35,6 +46,29 @@
   padding: 3rem 0;
   margin: 3rem 0;
   transition: border 0.5s;
+}
+
+.blog-quote {
+  @include SizingItem(relative, max-content, 90%);
+  padding: 3rem;
+  &__text {
+    &::before {
+      position: absolute;
+      top: 0.5rem;
+      left: -2rem;
+      content: '\2018';
+      content: '\201C';
+      margin: 0.5rem;
+    }
+    // &::after {
+    //   position: absolute;
+    //   bottom: 0;
+    //   right: 2.5rem;
+    //   content: '\2019';
+    //   content: '\201D';
+    //   margin: 0.5rem;
+    // }
+  }
 }
 
 .blog-video {
@@ -66,10 +100,15 @@
   .selected-blog-post {
     border-left: 0.3rem groove $primaryColor;
     border-right: 0.3rem groove $primaryColor;
+    background-color: rgba($colorLighterGrey, 0.2);
     .blog-content-container {
       .blog-content {
         .blog-paragraph {
           // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
+        }
+        .blog-quote {
+          background-color: rgba($colorLightGrey, 0.25);
+          border-radius: 0.5rem;
         }
       }
     }
@@ -81,10 +120,15 @@
   .selected-blog-post {
     border-left: 0.3rem groove $secondaryColor;
     border-right: 0.3rem groove $secondaryColor;
+    background-color: rgba($colorOffWhite, 0.1);
     .blog-content-container {
       .blog-content {
         .blog-paragraph {
           // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
+        }
+        .blog-quote {
+          border-radius: 0.5rem;
+          background-color: rgba($secondaryColorDark, 0.25);
         }
       }
     }
