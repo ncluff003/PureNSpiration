@@ -103,14 +103,14 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   font-weight: 500;
 }
 .blog-header .blog-title {
-  font-family: Roboto Slab, Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
-  font-weight: bold;
+  font-family: Purely Me, Century Gothic, Verdana, sans-serif;
+  font-size: 4rem;
 }
 .blog-header .blog-date {
   font-size: 3rem;
 }
 .blog-header .blog-post-title {
-  font-size: 6rem;
+  font-size: 8rem;
 }
 
 .blog-paragraph {
@@ -118,6 +118,9 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   font-size: 1.6rem;
   text-indent: 4rem;
   line-height: 1.75;
+}
+.blog-paragraph a {
+  text-decoration: none;
 }
 
 .blog-quote__text {
@@ -378,6 +381,22 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 .day .latest-blog-post .blog-content-container .blog-content .blog-paragraph,
 .day .selected-blog-post .blog-content-container .blog-content .blog-paragraph {
   color: #00b358;
+}
+.day .latest-blog-post .blog-content-container .blog-content .blog-paragraph a,
+.day .selected-blog-post .blog-content-container .blog-content .blog-paragraph a {
+  color: rgba(204, 172, 0, 0.8);
+}
+.day .latest-blog-post .blog-content-container .blog-content .blog-paragraph a:hover,
+.day .selected-blog-post .blog-content-container .blog-content .blog-paragraph a:hover {
+  color: #ffd700;
+}
+.day .latest-blog-post .blog-content-container .blog-content .blog-paragraph a:active,
+.day .selected-blog-post .blog-content-container .blog-content .blog-paragraph a:active {
+  color: #ff3d00;
+}
+.day .latest-blog-post .blog-content-container .blog-content .blog-paragraph a:visited,
+.day .selected-blog-post .blog-content-container .blog-content .blog-paragraph a:visited {
+  color: rgba(204, 172, 0, 0.8);
 }
 .day .latest-blog-post .blog-content-container .blog-content .blog-quote__text:before, .day .latest-blog-post .blog-content-container .blog-content .blog-quote__text:after,
 .day .selected-blog-post .blog-content-container .blog-content .blog-quote__text:before,
@@ -705,6 +724,22 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 .night .latest-blog-post .blog-content-container .blog-content .blog-paragraph,
 .night .selected-blog-post .blog-content-container .blog-content .blog-paragraph {
   color: rgba(250, 250, 250, 0.8);
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-paragraph a,
+.night .selected-blog-post .blog-content-container .blog-content .blog-paragraph a {
+  color: rgba(0, 128, 63, 0.8);
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-paragraph a:hover,
+.night .selected-blog-post .blog-content-container .blog-content .blog-paragraph a:hover {
+  color: #00b358;
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-paragraph a:active,
+.night .selected-blog-post .blog-content-container .blog-content .blog-paragraph a:active {
+  color: #ffd700;
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-paragraph a:visited,
+.night .selected-blog-post .blog-content-container .blog-content .blog-paragraph a:visited {
+  color: rgba(0, 128, 63, 0.8);
 }
 .night .latest-blog-post .blog-content-container .blog-content .blog-quote__text,
 .night .selected-blog-post .blog-content-container .blog-content .blog-quote__text {
@@ -38386,8 +38421,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 .blog-header .blog-title {
   position: absolute;
   top: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 3rem;
   transition: color 0.5s;
 }
 .blog-header .blog-post-title {
@@ -38432,8 +38466,13 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 .blog-paragraph {
   position: relative;
   padding: 3rem 0;
-  margin: 3rem 0;
   transition: border 0.5s;
+}
+.blog-paragraph a {
+  transition: color 0.5;
+}
+.blog-paragraph a:hover {
+  cursor: pointer;
 }
 
 .blog-quote {
@@ -38441,6 +38480,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   height: max-content;
   width: 90%;
   padding: 3rem;
+  margin: 1rem 0;
 }
 .blog-quote__text::before {
   position: absolute;
@@ -38465,6 +38505,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   position: relative;
   height: 40rem;
   width: auto;
+  margin: 1rem 0;
   margin-bottom: 3rem;
 }
 
@@ -38478,6 +38519,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   justify-content: space-evenly;
   align-items: center;
   transform: rotate(0) translate(0, 0);
+  margin: 1rem 0;
 }
 .blog-photos-container img {
   position: relative;

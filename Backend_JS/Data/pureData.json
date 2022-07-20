@@ -291,17 +291,17 @@
           "content": [
             {
               "type": "paragraph",
-              "data": "Welcome to my blog! &nbsp Whether you are new to the craft or not, the goal is to provide quality content.  Before starting into the technical details, I would love to share a couple of quotes that I recently came across which had hit home with me.",
+              "data": "Welcome to my blog! &nbsp Whether you are new to the craft or not, the goal is to provide quality content. &nbsp Before starting into the technical details, I would love to share a couple of quotes that I recently came across which had hit home with me.",
               "file": "file"
             },
             {
               "type": "quote",
-              "data": "<p class='blog-quote__text r__blog-quote__text'>The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one. ~ Mark Twain</p>",
+              "data": "<p class='blog-quote__text r__blog-quote__text'>The secret of getting ahead is getting started. &nbsp The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one. ~ Mark Twain</p>",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "The beginning of this quote hit home because anyone can overthink exactly what it takes to be a web or software developer, let alone anything.  Especially as things get going, it will start looking like a foreign language, but gradually, as you take one simple task at a time, you will begin to understand what you are doing more and more.",
+              "data": "The beginning of this quote hit home because anyone can overthink exactly what it takes to be a web or software developer, let alone anything. &nbsp Especially as things get going, it will start looking like a foreign language, but gradually, as you take one simple task at a time, you will begin to understand what you are doing more and more.",
               "file": "file"
             },
             {
@@ -311,17 +311,17 @@
             },
             {
               "type": "paragraph",
-              "data": "This one really hit home because as you understand more and more, you will at some point begin to understand there is lots you do not know that you do not know.  So..., something called 'impostor syndrome' could creep into your own thoughts and feelings.  So, just as important as getting started is the decision to NOT QUIT.  Eventually, things will become more comfortable in the not knowing, and little by little, you will begin to understand more of WHY things work the way they do, let alone HOW to do things.",
+              "data": "This one really hit home because as you understand more and more, you will at some point begin to understand there is lots you do not know that you do not know. &nbsp So..., something called 'impostor syndrome' could creep into your own thoughts and feelings. &nbsp So, just as important as getting started is the decision to NOT QUIT. &nbsp Eventually, things will become more comfortable in the not knowing, and little by little, you will begin to understand more of WHY things work the way they do, let alone HOW to do things.",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "So..., without further ado, let's get started.  This post is about getting started on a project with VS Code.  It is the code editor or IDE of choice for me, and of course I would recommend it greatly.  However, you can use whatever editor of choice, but just so you are aware, some things that might work in VS Code from this post, might not work for the editor you choose.  And, just just so you have the opportunity to give VS Code a test drive, you can download it right <a href='https://code.visualstudio.com/Download'>here.</a>",
+              "data": "So..., without further ado, let's get started. &nbsp This post is about getting started on a project with VS Code. &nbsp It is the code editor or IDE of choice for me, and of course I would recommend it greatly. &nbsp However, you can use whatever editor of choice, but just so you are aware, some things that might work in VS Code from this post, might not work for the editor you choose.  And, just just so you have the opportunity to give VS Code a test drive, you can download it right <a href='https://code.visualstudio.com/Download'>here.</a>",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "There are at least a few ways to get started with a project that I know of, and some of them will be covered here.  The first is to use the 'GUI', or Graphical User Interface of your computer as well as VS Code.  At this point you have a choice between two different methods of utilizing your GUI.  The first is to give your mouse a right click on the desktop.  It will provide you with the options of creating a new folder or a new file, amongst other options.",
+              "data": "There are at least a few ways to get started with a project that I know of, and some of them will be covered here. &nbsp The first is to use the 'GUI', or Graphical User Interface of your computer as well as VS Code. &nbsp At this point you have a choice between two different methods of utilizing your GUI. &nbsp The first is to give your mouse a right click on the desktop. &nbsp It will provide you with the options of creating a new folder or a new file, amongst other options.",
               "file": "file"
             },
             {
@@ -343,7 +343,7 @@
             },
             {
               "type": "paragraph",
-              "data": "Either way you choose of those, you will need a new folder to begin a project with in VS Code or your editor.  The main reason I suggest using VS Code in the process of starting a project is what I presume to be a unique feature of VS Code in regards to using what people dread....the terminal or command line.  Before we go there, we can finish up here on getting things started with the GUI.  So, the next logical step is to open up your code, editor, and in my case it is VS Code.  From here, I would have two ways of opening up a project folder to begin working in.  Those are the open folder button that appears on the left, and clicking file and then open folder.",
+              "data": "Either way you choose of those, you will need a new folder to begin a project with in VS Code or your editor. &nbsp The main reason I suggest using VS Code in the process of starting a project is what I presume to be a unique feature of VS Code in regards to using what people dread....the terminal or command line. &nbsp Before we go there, we can finish up here on getting things started with the GUI. &nbsp So, the next logical step is to open up your code, editor, and in my case it is VS Code. &nbsp From here, I would have two ways of opening up a project folder to begin working in. &nbsp Those are the open folder button that appears on the left, and clicking file and then open folder.",
               "file": "file"
             },
             {
@@ -354,17 +354,17 @@
             },
             {
               "type": "paragraph",
-              "data": "If you went this route, which many developers do, congratulations!  You are now ready to start going onto the next steps, which if you stay tuned for each of my posts, I will cover sometime in the nearer future.  Just as a brief intro, those would be to build up your file structure, whether manually or using an npm package, of which I will explain in more detail there, and if you are really new, just getting straight to creating a basic few files of an index.html, style.css, and index.js if you are wanting to work on some practice.  Though, if it is the latter, I could recommend a few sites to get some of that practice with at the end of this post.",
+              "data": "If you went this route, which many developers do, congratulations! &nbsp You are now ready to start going onto the next steps, which if you stay tuned for each of my posts, I will cover sometime in the nearer future. &nbsp Just as a brief intro, those would be to build up your file structure, whether manually or using an npm package, of which I will explain in more detail there, and if you are really new, just getting straight to creating a basic few files of an index.html, style.css, and index.js if you are wanting to work on some practice. &nbsp Though, if it is the latter, I could recommend a few sites to get some of that practice with at the end of this post.",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "Let's backtrack to beginning to when we are back at the desktop, just about to start another project.  The primary method that I personally use is through the command line / terminal.  Now, I understand fully if Windows users are comfortable with their Command Prompt or Power Shell, but truthfully, even as a user who had used Windows all of my life, I would be lying if I said I preferred that so called terminal.  For Windows users, I would want to suggest, or introduce you to Git Bash.  It is a terminal which uses similar commands to, I know **Shudder** Apple, and Linux.  I apologize in advance to the comments from Apple users, as I really do not hate Apple computers, but I am sure some users of either have some disdain for one another.  Anyway, I digress, you would give yourself a very pleasurable experience with the command line by getting Git Bash <a href='https://gitforwindows.org/'>here.</a>",
+              "data": "Let's backtrack to beginning to when we are back at the desktop, just about to start another project. &nbsp The primary method that I personally use is through the command line / terminal. &nbsp Now, I understand fully if Windows users are comfortable with their Command Prompt or Power Shell, but truthfully, even as a user who had used Windows all of my life, I would be lying if I said I preferred that so called terminal. &nbsp For Windows users, I would want to suggest, or introduce you to Git Bash. &nbsp It is a terminal which uses similar commands to, I know **Shudder** Apple, and Linux. &nbsp I apologize in advance to the comments from Apple users, as I really do not hate Apple computers, but I am sure some users of either have some disdain for one another. &nbsp Anyway, I digress, you would give yourself a very pleasurable experience with the command line by getting Git Bash <a href='https://gitforwindows.org/'>here.</a>",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "Anyway, the command line, I know, can generate some dread in some people.  However, I will give you some basic understanding as far as what you will need to be able to get started on a project here, with at least a link in which will lead you to a place where you can learn some basic commands to help you get even more comfortable in this environment.  I'll try to include both Linux and Apple user's guides so there is not any confusion as to if a command will work on both an Apple or Linux machine.  Now, let's get diving in.",
+              "data": "Anyway, the command line, I know, can generate some dread in some people. &nbsp However, I will give you some basic understanding as far as what you will need to be able to get started on a project here, with at least a link in which will lead you to a place where you can learn some basic commands to help you get even more comfortable in this environment. &nbsp I'll try to include both Linux and Apple user's guides so there is not any confusion as to if a command will work on both an Apple or Linux machine.  Now, let's get diving in.",
               "file": "file"
             },
             {
@@ -375,7 +375,7 @@
             },
             {
               "type": "paragraph",
-              "data": "The first image is of the terminal of mine, which I will say up front will look different from yours.  However, the structure of the first line you see, should be roughly the same.  It will have your user, and ultimately end in the tilde, which would reflect your 'home' directory or folder.  It is different than being in the 'root', as Apple and Linux users understand.  Anyway, the first command you will see, is in the second image.  It is the 'cd' command, or in other words, 'change directory'.  This is how one would traverse, or go through their file systems.  Going up in the file system requires only the following command.",
+              "data": "The first image is of the terminal of mine, which I will say up front will look different from yours. &nbsp However, the structure of the first line you see, should be roughly the same. &nbsp It will have your user, and ultimately end in the tilde, which would reflect your 'home' directory or folder. &nbsp It is different than being in the 'root', as Apple and Linux users understand. &nbsp Anyway, the first command you will see, is in the second image. &nbsp It is the 'cd' command, or in other words, 'change directory'. &nbsp This is how one would traverse, or go through their file systems. &nbsp Going up in the file system requires only the following command.",
               "file": "file"
             },
             {
@@ -385,7 +385,7 @@
             },
             {
               "type": "paragraph",
-              "data": "To go up further than that, you add a '/..' for each level up the file system you desire to go up to.  Typically, you should not go beyond your 'home' directory, however.  Anyway, to continue, to go down into a folder, you would put in the following command.",
+              "data": "To go up further than that, you add a '/..' for each level up the file system you desire to go up to. &nbsp Typically, you should not go beyond your 'home' directory, however. &nbsp Anyway, to continue, to go down into a folder, you would put in the following command.",
               "file": "file"
             },
             {
@@ -395,7 +395,7 @@
             },
             {
               "type": "paragraph",
-              "data": "In other words, you would need to know the relative file path to the folder you are interested in moving to.  Though, if you are new, how would you find out where to go?  The easiest answer is the next command that I will share with you.",
+              "data": "In other words, you would need to know the relative file path to the folder you are interested in moving to. &nbsp Though, if you are new, how would you find out where to go? &nbsp The easiest answer is the next command that I will share with you.",
               "file": "file"
             },
             {
@@ -409,7 +409,7 @@
             },
             {
               "type": "paragraph",
-              "data": "The 'ls' command, or in other words is the 'list directory' command.  It lists the contents of the current directory you are in.  It will help you determine where is the next step towards where you are heading to.  Also, to give you another command you would find useful to know where you are presently, is the 'pwd' command.  It is short for 'Present Working Directory'.  More can be found on that one as well as more in the links I will provide.  Anyway, let's move on.  You are now in the directory that you wanted to go to.  At least, you are in the directory you want the project folder to live in.  What is the next step?  Creating the project folder.  How do we do that?",
+              "data": "The 'ls' command, or in other words is the 'list directory' command. &nbsp It lists the contents of the current directory you are in. &nbsp It will help you determine where is the next step towards where you are heading to. &nbsp Also, to give you another command you would find useful to know where you are presently, is the 'pwd' command. &nbsp It is short for 'Present Working Directory'. &nbsp More can be found on that one as well as more in the links I will provide. &nbsp Anyway, let's move on. &nbsp You are now in the directory that you wanted to go to. &nbsp At least, you are in the directory you want the project folder to live in. &nbsp What is the next step? &nbsp Creating the project folder. &nbsp How do we do that?",
               "file": "file"
             },
             {
@@ -423,7 +423,7 @@
             },
             {
               "type": "paragraph",
-              "data": "The first image gives you the answer to creating a new folder in the current directory you are in.  That will be the project folder you are going to open VS Code in.  The second image gives you the way that you will be able to create a file with inside of the project folder when you change directory or 'cd' into it after it is created.  So, now that you have created the project folder, and maybe could have created the file you want to work with, what's next?  For those who are more seasoned, it is to start by creating their folder structure, or wait until they have VS Code up to use something like 'create React App', 'Vue CLI', or something similar which creates a bare bones 'MVC' or Model / View / Controller architecture for their new project.  Believe me, those things may sound daunting right now, but in time, they will become so second nature, it will be just fine.  Just focus on one small step at a time.  Next is using the following command.",
+              "data": "The first image gives you the answer to creating a new folder in the current directory you are in. &nbsp That will be the project folder you are going to open VS Code in. &nbsp The second image gives you the way that you will be able to create a file with inside of the project folder when you change directory or 'cd' into it after it is created. &nbsp So, now that you have created the project folder, and maybe could have created the file you want to work with, what's next? &nbsp For those who are more seasoned, it is to start by creating their folder structure, or wait until they have VS Code up to use something like 'create React App', 'Vue CLI', or something similar which creates a bare bones 'MVC' or Model / View / Controller architecture for their new project. &nbsp Believe me, those things may sound daunting right now, but in time, they will become so second nature, it will be just fine. &nbsp Just focus on one small step at a time. &nbsp Next is using the following command.",
               "file": "file"
             },
             {
@@ -434,17 +434,17 @@
             },
             {
               "type": "paragraph",
-              "data": "Now, for those using VS Code, like me, using the command shown in the image above, provides the next step to open VS Code inside of the project folder to get started.  Then we would likely open up the integrated terminal inside of VS Code, and get things started from there.  Though, rest assured, if you had gotten this far and still feel a little iffy about the command line, you can open up the code editor of your choice, whether VS Code or not, and then use the GUI to open up the folder you had just created and get going as you are more comfortable with.  At least, you will have gotten a brief test drive of the command line, and will most definitely be better for it.  Anyway, we shall end it right here, as going beyond this can get things to be even longer winded than it has already, haha.",
+              "data": "Now, for those using VS Code, like me, using the command shown in the image above, provides the next step to open VS Code inside of the project folder to get started. &nbsp Then we would likely open up the integrated terminal inside of VS Code, and get things started from there. &nbsp Though, rest assured, if you had gotten this far and still feel a little iffy about the command line, you can open up the code editor of your choice, whether VS Code or not, and then use the GUI to open up the folder you had just created and get going as you are more comfortable with. &nbsp At least, you will have gotten a brief test drive of the command line, and will most definitely be better for it. &nbsp Anyway, we shall end it right here, as going beyond this can get things to be even longer winded than it has already, haha.",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "If you loved the content here, or heck, if you hated it so badly, I would greatly appreciate it if you went <a href='/contact'>here</a> and gave me the feedback, whether it was good or bad.  It is great if it is good, as it is the goal for it to hopefully help those who need help.  If it is bad, well, criticism never hurt anyone, especially if you could point out ways that I could improve the content that I am posting.  I am always eager to learn, and understand more fully what is being talked about.  As promised, the links that I wanted to share are below, as well as other ways I can be reached or connected with.  Cheers!",
+              "data": "If you loved the content here, or heck, if you hated it so badly, I would greatly appreciate it if you went <a href='/contact'>here</a> and gave me the feedback, whether it was good or bad. &nbsp It is great if it is good, as it is the goal for it to hopefully help those who need help. &nbsp If it is bad, well, criticism never hurt anyone, especially if you could point out ways that I could improve the content that I am posting. &nbsp I am always eager to learn, and understand more fully what is being talked about. &nbsp As promised, the links that I wanted to share are below, as well as other ways I can be reached or connected with. &nbsp Cheers!",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "<ul><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
+              "data": "<ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
               "file": "file"
             },
             {

@@ -14,8 +14,7 @@
   .blog-title {
     position: absolute;
     top: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 3rem;
     transition: color 0.5s;
   }
   .blog-post-title {
@@ -44,13 +43,20 @@
 .blog-paragraph {
   position: relative;
   padding: 3rem 0;
-  margin: 3rem 0;
   transition: border 0.5s;
+
+  a {
+    transition: color 0.5;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .blog-quote {
   @include SizingItem(relative, max-content, 90%);
   padding: 3rem;
+  margin: 1rem 0;
   &__text {
     &::before {
       position: absolute;
@@ -81,12 +87,13 @@
 
 .blog-image {
   @include SizingItem(relative, 40rem, auto);
+  margin: 1rem 0;
   margin-bottom: 3rem;
 }
 
 .blog-photos-container {
   @include SizeAndPositioning(relative, max-content, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
-
+  margin: 1rem 0;
   img {
     @include SizingItem(relative, 40rem, auto);
     margin: 0 1rem;

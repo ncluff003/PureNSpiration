@@ -151,14 +151,14 @@ html {
   font-family: Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-weight: 500;
   .blog-title {
-    font-family: Roboto Slab, Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
-    font-weight: bold;
+    font-family: Purely Me, Century Gothic, Verdana, sans-serif;
+    font-size: 4rem;
   }
   .blog-date {
     font-size: 3rem;
   }
   .blog-post-title {
-    font-size: 6rem;
+    font-size: 8rem;
   }
 }
 
@@ -167,6 +167,9 @@ html {
   font-size: 1.6rem;
   text-indent: 4rem;
   line-height: 1.75;
+  a {
+    text-decoration: none;
+  }
 }
 
 .blog-quote {
@@ -553,6 +556,22 @@ html {
       .blog-content {
         .blog-paragraph {
           color: $secondaryColor;
+
+          a {
+            color: rgba($primaryColorDark, 0.8);
+
+            &:hover {
+              color: $primaryColor;
+            }
+
+            &:active {
+              color: $tertiaryColor;
+            }
+
+            &:visited {
+              color: rgba($primaryColorDark, 0.8);
+            }
+          }
         }
         .blog-quote {
           &__text {
@@ -1018,6 +1037,21 @@ html {
       .blog-content {
         .blog-paragraph {
           color: rgba($colorOffWhite, 0.8);
+          a {
+            color: rgba($secondaryColorDark, 0.8);
+
+            &:hover {
+              color: $secondaryColor;
+            }
+
+            &:active {
+              color: $primaryColor;
+            }
+
+            &:visited {
+              color: rgba($secondaryColorDark, 0.8);
+            }
+          }
         }
         .blog-quote {
           &__text {
