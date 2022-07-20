@@ -38395,7 +38395,9 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 
 .blog-paragraph {
   position: relative;
-  margin-bottom: 3rem;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  transition: border 0.5s;
 }
 
 .blog-video {
@@ -38437,12 +38439,10 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   border-left: 0.3rem groove #ffd700;
   border-right: 0.3rem groove #ffd700;
 }
-
 .night .selected-blog-post {
   border-left: 0.3rem groove #00b358;
   border-right: 0.3rem groove #00b358;
 }
-
 .modal, .modal--foundation, .modal--interests, .modal--skills {
   position: relative;
   height: 100%;

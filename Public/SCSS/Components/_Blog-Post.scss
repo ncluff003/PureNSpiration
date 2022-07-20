@@ -32,7 +32,9 @@
 
 .blog-paragraph {
   position: relative;
-  margin-bottom: 3rem;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  transition: border 0.5s;
 }
 
 .blog-video {
@@ -64,6 +66,13 @@
   .selected-blog-post {
     border-left: 0.3rem groove $primaryColor;
     border-right: 0.3rem groove $primaryColor;
+    .blog-content-container {
+      .blog-content {
+        .blog-paragraph {
+          // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
+        }
+      }
+    }
   }
 }
 /////////////////////////////////
@@ -72,5 +81,12 @@
   .selected-blog-post {
     border-left: 0.3rem groove $secondaryColor;
     border-right: 0.3rem groove $secondaryColor;
+    .blog-content-container {
+      .blog-content {
+        .blog-paragraph {
+          // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
+        }
+      }
+    }
   }
 }

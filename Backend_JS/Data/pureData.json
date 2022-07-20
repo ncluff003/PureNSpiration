@@ -340,6 +340,43 @@
               "data": "",
               "file": "/DIST/CSS/Web-Sling-N_Blog/Images/Create_New_Document_Or_Folder--FE.png",
               "altText": "Creating A New Folder Or Document Using File Explorer."
+            },
+            {
+              "type": "paragraph",
+              "data": "Either way you choose of those, you will need a new folder to begin a project with in VS Code or your editor.  The main reason I suggest using VS Code in the process of starting a project is what I presume to be a unique feature of VS Code in regards to using what people dread....the terminal or command line.  Before we go there, we can finish up here on getting things started with the GUI.  So, the next logical step is to open up your code, editor, and in my case it is VS Code.  From here, I would have two ways of opening up a project folder to begin working in.  Those are the open folder button that appears on the left, and clicking file and then open folder.",
+              "file": "file"
+            },
+            {
+              "type": "photo",
+              "data": "",
+              "file": "/DIST/CSS/Web-Sling-N_Blog/Images/Open_Folder_VSCode.png",
+              "altText": "Creating A New Folder Or Document Using File Explorer."
+            },
+            {
+              "type": "paragraph",
+              "data": "If you went this route, which many developers do, congratulations!  You are now ready to start going onto the next steps, which if you stay tuned for each of my posts, I will cover sometime in the nearer future.  Just as a brief intro, those would be to build up your file structure, whether manually or using an npm package, of which I will explain in more detail there, and if you are really new, just getting straight to creating a basic few files of an index.html, style.css, and index.js if you are wanting to work on some practice.  Though, if it is the latter, I could recommend a few sites to get some of that practice with at the end of this post.",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "Let's backtrack to beginning to when we are back at the desktop, just about to start another project.  The primary method that I personally use is through the command line / terminal.  Now, I understand fully if Windows users are comfortable with their Command Prompt or Power Shell, but truthfully, even as a user who had used Windows all of my life, I would be lying if I said I preferred that so called terminal.  For Windows users, I would want to suggest, or introduce you to Git Bash.  It is a terminal which uses similar commands to, I know **Shudder** Apple, and Linux.  I apologize in advance to the comments from Apple users, as I really do not hate Apple computers, but I am sure some users of either have some disdain for one another.  Anyway, I digress, you would give yourself a very pleasurable experience with the command line by getting Git Bash <a href='https://gitforwindows.org/'>here.</a>",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "Anyway, the command line, I know, can generate some dread in some people.  However, I will give you some basic understanding as far as what you will need to be able to get started on a project here, with at least a link in which will lead you to a place where you can learn some basic commands to help you get even more comfortable in this environment.  I'll try to include both Linux and Apple user's guides so there is not any confusion as to if a command will work on both an Apple or Linux machine.  Now, let's get diving in.",
+              "file": "file"
+            },
+            {
+              "type": "photos",
+              "data": "",
+              "file": ["/DIST/CSS/Web-Sling-N_Blog/Images/Terminal.png", "/DIST/CSS/Web-Sling-N_Blog/Images/Change_Folders--CL.png"],
+              "altTexts": ["Image of the terminal.", "Command for changing folders or directories in the terminal."]
+            },
+            {
+              "type": "paragraph",
+              "data": "The first image is of the terminal of mine, which I will say up front will look different from yours.  However, the structure of the first line you see, should be roughly the same.  It will have your user, and ultimately end in the tilde, which would reflect your 'home' directory or folder.  It is different than being in the 'root', as Apple and Linux users understand.  Anyway, the first command you will see, is in the second image.  It is the 'cd' command, or in other words, 'change directory'.  This is how one would traverse, or go through their file systems.  Going up in the file system requires only the following command.",
+              "file": "file"
             }
           ],
           "author": "Nathan Cluff"
