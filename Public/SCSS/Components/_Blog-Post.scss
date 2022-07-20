@@ -44,8 +44,17 @@
 }
 
 .blog-image {
-  @include SizingItem(relative, auto, 100%);
+  @include SizingItem(relative, 40rem, auto);
   margin-bottom: 3rem;
+}
+
+.blog-photos-container {
+  @include SizeAndPositioning(relative, max-content, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+
+  img {
+    @include SizingItem(relative, 40rem, auto);
+    margin: 0 1rem;
+  }
 }
 
 /////////////////////////////////

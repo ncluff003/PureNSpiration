@@ -62,28 +62,37 @@ const renderQuote = (container, content) => {
 };
 
 const renderMultiplePhotos = (container, content) => {
-  content.file.forEach((photo) => {
+  const multipleImageContainer = document.createElement('section');
+  Utility.addClasses(multipleImageContainer, [`blog-photos-container`, `r__blog-photos-container`]);
+  content.file.forEach((photo, i) => {
     const image = document.createElement('img');
     Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
-    let index = photo.file.indexOf(`DIST/CSS`);
-    image.src = photo.file.slice(index);
+    console.log(`Hi`, photo);
+    let index = photo.indexOf(`DIST/CSS`);
+    image.src = photo.slice(index);
+    image.alt = content.altTexts[i];
     if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts`)) {
-      image.src = `../../${photo.file.slice(index)}`;
+      image.src = `../../${photo.slice(index)}`;
     }
-    Utility.insertElement(`beforeend`, container, image);
+    Utility.insertElement('beforeend', multipleImageContainer, image);
+    // image.style.width = `${100 / content.file.length - 2.5}%`;
   });
+  Utility.insertElement(`beforeend`, container, multipleImageContainer);
 };
 
 const renderPhoto = (container, content) => {
   const image = document.createElement('img');
   Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
   let index = content.file.indexOf(`DIST/CSS`);
+  console.log(content.file);
   image.src = content.file.slice(index);
+  image.alt = content.altText;
   if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts`)) {
     image.src = `../../${content.file.slice(index)}`;
   }
   Utility.insertElement(`beforeend`, container, image);
 };
+
 const renderVideo = (container, content) => {
   const video = document.createElement('video');
   Utility.addClasses(video, [`blog-video`, `r__blog-video`]);

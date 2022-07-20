@@ -291,33 +291,55 @@
           "content": [
             {
               "type": "paragraph",
-              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "data": "Welcome to my blog!  Whether you are new to the craft or not, the goal is to provide quality content.  Before starting into the technical details, I would love to share a couple of quotes that I recently came across which had hit home with me.",
               "file": "file"
             },
             {
-              "type": "video",
-              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-              "file": "./../../Public/DIST/CSS/Videos/Faolan.mp4"
+              "type": "quote",
+              "data": "The secret of getting ahead is getting started. The secret of getting started is breaking your complex overwhelming tasks into small manageable tasks, and starting on the first one. ~ Mark Twain",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "The beginning of this quote hit home because anyone can overthink exactly what it takes to be a web or software developer, let alone anything.  Especially as things get going, it will start looking like a foreign language, but gradually, as you take one simple task at a time, you will begin to understand what you are doing more and more.",
+              "file": "file"
             },
             {
               "type": "quote",
-              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "data": "The only thing that stands between you and grand success in living are these two things: getting started and never quitting! ~ Robert H. Schuller",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "This one really hit home because as you understand more and more, you will at some point begin to understand there is lots you do not know that you do not know.  So..., something called 'impostor syndrome' could creep into your own thoughts and feelings.  So, just as important as getting started is the decision to NOT QUIT.  Eventually, things will become more comfortable in the not knowing, and little by little, you will begin to understand more of WHY things work the way they do, let alone HOW to do things.",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "So..., without further ado, let's get started.  This post is about getting started on a project with VS Code.  It is the code editor or IDE of choice for me, and of course I would recommend it greatly.  However, you can use whatever editor of choice, but just so you are aware, some things that might work in VS Code from this post, might not work for the editor you choose.  And, just just so you have the opportunity to give VS Code a test drive, you can download it right <a href='https://code.visualstudio.com/Download'>here.</a>",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "There are at least a few ways to get started with a project that I know of, and some of them will be covered here.  The first is to use the 'GUI', or Graphical User Interface of your computer as well as VS Code.  At this point you have a choice between two different methods of utilizing your GUI.  The first is to give your mouse a right click on the desktop.  It will provide you with the options of creating a new folder or a new file, amongst other options.",
+              "file": "file"
+            },
+            {
+              "type": "photos",
+              "data": "",
+              "file": ["/DIST/CSS/Web-Sling-N_Blog/Images/Create_New_Folder--RC.png", "/DIST/CSS/Web-Sling-N_Blog/Images/Create_New_Document--RC.png"],
+              "altTexts": ["Creating A New Folder By Right Click On The Desktop.", "Creating A New Document By Right Clicking On The Desktop."]
+            },
+            {
+              "type": "paragraph",
+              "data": "The Second, is to open your file explorer, and click on File, which will present you with the option of creating a new folder or file where you currently are in your file system.",
               "file": "file"
             },
             {
               "type": "photo",
-              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-              "file": "./../../Public/DIST/CSS/Images/Hangman.svg"
-            },
-            {
-              "type": "paragraph",
-              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-              "file": "file"
-            },
-            {
-              "type": "paragraph",
-              "data": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-              "file": "file"
+              "data": "",
+              "file": "/DIST/CSS/Web-Sling-N_Blog/Images/Create_New_Document_Or_Folder--FE.png",
+              "altText": "Creating A New Folder Or Document Using File Explorer."
             }
           ],
           "author": "Nathan Cluff"
