@@ -377,6 +377,75 @@
               "type": "paragraph",
               "data": "The first image is of the terminal of mine, which I will say up front will look different from yours.  However, the structure of the first line you see, should be roughly the same.  It will have your user, and ultimately end in the tilde, which would reflect your 'home' directory or folder.  It is different than being in the 'root', as Apple and Linux users understand.  Anyway, the first command you will see, is in the second image.  It is the 'cd' command, or in other words, 'change directory'.  This is how one would traverse, or go through their file systems.  Going up in the file system requires only the following command.",
               "file": "file"
+            },
+            {
+              "type": "quote",
+              "data": "cd ..",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "To go up further than that, you add a '/..' for each level up the file system you desire to go up to.  Typically, you should not go beyond your 'home' directory, however.  Anyway, to continue, to go down into a folder, you would put in the following command.",
+              "file": "file"
+            },
+            {
+              "type": "quote",
+              "data": "cd yourFilePathHere",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "In other words, you would need to know the relative file path to the folder you are interested in moving to.  Though, if you are new, how would you find out where to go?  The easiest answer is the next command that I will share with you.",
+              "file": "file"
+            },
+            {
+              "type": "photos",
+              "data": "",
+              "file": [
+                "/DIST/CSS/Web-Sling-N_Blog/Images/List_Directory_Command--CL.png",
+                "/DIST/CSS/Web-Sling-N_Blog/Images/Present_Working_Directory_Command--CL.png"
+              ],
+              "altTexts": ["Command for listing the current directory's contents.", "Command for showing the currenty directory you are in on the file system."]
+            },
+            {
+              "type": "paragraph",
+              "data": "The 'ls' command, or in other words is the 'list directory' command.  It lists the contents of the current directory you are in.  It will help you determine where is the next step towards where you are heading to.  Also, to give you another command you would find useful to know where you are presently, is the 'pwd' command.  It is short for 'Present Working Directory'.  More can be found on that one as well as more in the links I will provide.  Anyway, let's move on.  You are now in the directory that you wanted to go to.  At least, you are in the directory you want the project folder to live in.  What is the next step?  Creating the project folder.  How do we do that?",
+              "file": "file"
+            },
+            {
+              "type": "photos",
+              "data": "",
+              "file": ["/DIST/CSS/Web-Sling-N_Blog/Images/Create_New_Folder--CL.png", "/DIST/CSS/Web-Sling-N_Blog/Images/Create_New_Document--CL.png"],
+              "altTexts": [
+                "Command for creating a new directory or folder in the current folder you are in on the file system.",
+                "Command for creating a new file or document in the current folder you are in on the file system."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "data": "The first image gives you the answer to creating a new folder in the current directory you are in.  That will be the project folder you are going to open VS Code in.  The second image gives you the way that you will be able to create a file with inside of the project folder when you change directory or 'cd' into it after it is created.  So, now that you have created the project folder, and maybe could have created the file you want to work with, what's next?  For those who are more seasoned, it is to start by creating their folder structure, or wait until they have VS Code up to use something like 'create React App', 'Vue CLI', or something similar which creates a bare bones 'MVC' or Model / View / Controller architecture for their new project.  Believe me, those things may sound daunting right now, but in time, they will become so second nature, it will be just fine.  Just focus on one small step at a time.  Next is using the following command.",
+              "file": "file"
+            },
+            {
+              "type": "photo",
+              "data": "",
+              "file": "/DIST/CSS/Web-Sling-N_Blog/Images/Open_Folder_In_VSCode--CL.png",
+              "altText": "Opening a project for Visual Studio Code from the command line."
+            },
+            {
+              "type": "paragraph",
+              "data": "Now, for those using VS Code, like me, using the command shown in the image above, provides the next step to open VS Code inside of the project folder to get started.  Then we would likely open up the integrated terminal inside of VS Code, and get things started from there.  Though, rest assured, if you had gotten this far and still feel a little iffy about the command line, you can open up the code editor of your choice, whether VS Code or not, and then use the GUI to open up the folder you had just created and get going as you are more comfortable with.  At least, you will have gotten a brief test drive of the command line, and will most definitely be better for it.  Anyway, we shall end it right here, as going beyond this can get things to be even longer winded than it has already, haha.",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "If you loved the content here, or heck, if you hated it so badly, I would greatly appreciate it if you went <a href='/contact'>here</a> and gave me the feedback, whether it was good or bad.  It is great if it is good, as it is the goal for it to hopefully help those who need help.  If it is bad, well, criticism never hurt anyone, especially if you could point out ways that I could improve the content that I am posting.  I am always eager to learn, and understand more fully what is being talked about.  As promised, the links that I wanted to share are below, as well as other ways I can be reached or connected with.  Cheers!",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "<ul><li><a href='https://www.codepen.io'></a></li><li><a href='https://www.repl.it'></a></li><li><a href='https://www.w3schools.com'></a></li><li><a href='https://developer.mozilla.org/en-US/'></a></li><li><a href=''></a></li><li><a href=''></a></li><li><a href=''></a></li><ul>",
+              "file": "file"
             }
           ],
           "author": "Nathan Cluff"
