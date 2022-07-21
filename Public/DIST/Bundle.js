@@ -5955,7 +5955,7 @@ var renderVideo = function renderVideo(container, content) {
 
 var renderParagraph = function renderParagraph(container, content) {
   var paragraph = document.createElement('p');
-  paragraph.innerHTML = content.data;
+  paragraph.innerHTML = "".concat(content.data);
   _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(paragraph, ["blog-paragraph", "r__blog-paragraph"]);
   _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement("beforeend", container, paragraph);
 };

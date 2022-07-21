@@ -51,6 +51,19 @@
       cursor: pointer;
     }
   }
+
+  .blog-links-shared {
+    list-style: none;
+    li {
+      a {
+        &::before {
+          position: absolute;
+          content: '\279f';
+          left: -2rem;
+        }
+      }
+    }
+  }
 }
 
 .blog-quote {
@@ -100,6 +113,13 @@
   }
 }
 
+.blog-feedback-links {
+  @include SizeAndPositioning(relative, max-content, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+  .connect-link {
+    @include SizeAndPositioning(relative, max-content, max-content, flex, row, nowrap, center, center, 0, 0, 0);
+  }
+}
+
 /////////////////////////////////
 // DAY SETTINGS
 
@@ -114,6 +134,7 @@
           // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
         }
         .blog-quote {
+          // background-color: rgba($colorLightGrey, 0.25);
           background-color: rgba($colorLightGrey, 0.25);
           border-radius: 0.5rem;
         }

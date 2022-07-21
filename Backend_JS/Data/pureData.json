@@ -321,7 +321,17 @@
             },
             {
               "type": "paragraph",
-              "data": "There are at least a few ways to get started with a project that I know of, and some of them will be covered here. &nbsp The first is to use the 'GUI', or Graphical User Interface of your computer as well as VS Code. &nbsp At this point you have a choice between two different methods of utilizing your GUI. &nbsp The first is to give your mouse a right click on the desktop. &nbsp It will provide you with the options of creating a new folder or a new file, amongst other options.",
+              "data": "There are at least a few ways to get started with a project that I know of, and some of them will be covered here. &nbsp The first is to use the 'GUI', or Graphical User Interface of your computer as well as VS Code. &nbsp At this point you have a choice between two different methods of utilizing your GUI.",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "<h2 class='blog-section-heading r__blog-section-heading'>First Option -- Graphical User Interface</h2>",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "The first is to give your mouse a right click on the desktop. &nbsp It will provide you with the options of creating a new folder or a new file, amongst other options.",
               "file": "file"
             },
             {
@@ -365,6 +375,11 @@
             {
               "type": "paragraph",
               "data": "Anyway, the command line, I know, can generate some dread in some people. &nbsp However, I will give you some basic understanding as far as what you will need to be able to get started on a project here, with at least a link in which will lead you to a place where you can learn some basic commands to help you get even more comfortable in this environment. &nbsp I'll try to include both Linux and Apple user's guides so there is not any confusion as to if a command will work on both an Apple or Linux machine.  Now, let's get diving in.",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "<h2 class='blog-section-heading r__blog-section-heading'>Second Option -- Command Line</h2>",
               "file": "file"
             },
             {
@@ -444,12 +459,17 @@
             },
             {
               "type": "paragraph",
-              "data": "<ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
+              "data": "<h3 class='blog-link-header r__blog-link-header'>Resources I Wanted To Share &nbsp 😄</h3><ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "<section><a href='/contact'><i class='fas fa-envelope blog-connect-icon r__blog-connect-icon'></i></a><a href='https://www.linkedin.com/in/ncluff003'><i class='fab fa-linkedin blog-connect-icon r__blog-connect-icon'></i></a><a href='https://github.com/ncluff003'><i class='fab fa-github blog-connect-icon r__blog-connect-icon'></i></a><a href='https://codepen.io/ncluff3'><i class='fab fa-codepen blog-connect-icon r__blog-connect-icon'></i></a><a href='https://t.me/ncluff003'><i class='fab fa-telegram blog-connect-icon r__blog-connect-icon'></i></a></section>",
+              "data": "<h3>Feel Free To Reach Out Or Provide Feedback! &nbsp &nbsp 😄</h3>",
+              "file": "file"
+            },
+            {
+              "type": "paragraph",
+              "data": "<section class='blog-feedback-links r__blog-feedback-links'><a href='/contact' class='connect-link r__connect-link'><i class='fas fa-envelope blog-connect-icon r__blog-connect-icon'></i></a><a href='https://www.linkedin.com/in/ncluff003' class='connect-link r__connect-link'><i class='fab fa-linkedin blog-connect-icon r__blog-connect-icon'></i></a><a href='https://github.com/ncluff003' class='connect-link r__connect-link'><i class='fab fa-github blog-connect-icon r__blog-connect-icon'></i></a><a href='https://codepen.io/ncluff3' class='connect-link r__connect-link'><i class='fab fa-codepen blog-connect-icon r__blog-connect-icon'></i></a><a href='https://t.me/ncluff003' class='connect-link r__connect-link'><i class='fab fa-telegram blog-connect-icon r__blog-connect-icon'></i></a></section>",
               "file": "file"
             }
           ],
@@ -1006,7 +1026,7 @@
             },
             {
               "type": "paragraph",
-              "data": "<ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
+              "data": "<h3 class='blog-link-header r__blog-link-header'>Resources I Wanted To Share 😄</h3><ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
               "file": "file"
             },
             {

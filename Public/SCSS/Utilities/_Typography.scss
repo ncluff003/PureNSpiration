@@ -185,6 +185,12 @@ html {
   a {
     text-decoration: none;
   }
+
+  .blog-feedback-links {
+    .connect-link {
+      font-size: 4rem;
+    }
+  }
 }
 
 .blog-quote {
@@ -571,7 +577,7 @@ html {
     .blog-content-container {
       .blog-content {
         .blog-paragraph {
-          color: $secondaryColor;
+          color: $colorDarkerGrey;
 
           a {
             color: rgba($primaryColorDark, 0.8);
@@ -591,9 +597,10 @@ html {
         }
         .blog-quote {
           &__text {
+            color: $colorDarkerGrey;
             &:before,
             &:after {
-              color: rgba($colorDarkerGrey, 0.8);
+              color: rgba($secondaryColorDark, 0.8);
             }
           }
         }

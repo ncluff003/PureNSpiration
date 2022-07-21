@@ -110,7 +110,7 @@ const renderVideo = (container, content) => {
 };
 const renderParagraph = (container, content) => {
   const paragraph = document.createElement('p');
-  paragraph.innerHTML = content.data;
+  paragraph.innerHTML = `${content.data}`;
   Utility.addClasses(paragraph, [`blog-paragraph`, `r__blog-paragraph`]);
   Utility.insertElement(`beforeend`, container, paragraph);
 };
