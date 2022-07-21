@@ -4,7 +4,7 @@
 .grid {
   .introduction-container {
     @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
-    &__introduction {
+    .introduction-container__introduction {
       @include SizeAndPositioning(relative, 100%, 67%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
       .cta-container {
         @include SizeAndPositioning(relative, 40%, 100%, flex, row, nowrap, flex-end, flex-start, 0, 0, 0);

@@ -92,6 +92,17 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   font-size: 2.4rem;
 }
 
+.latest-blog-post .blog-header .blog-title {
+  font-family: Purely Me, Century Gothic, Verdana, sans-serif;
+  font-size: 3rem;
+}
+.latest-blog-post .blog-header .blog-date {
+  font-size: 3rem;
+}
+.latest-blog-post .blog-header .blog-post-title {
+  font-size: 4rem;
+}
+
 .latest-blog-post,
 .selected-blog-post {
   font-size: 2rem;
@@ -38387,6 +38398,10 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 .day .latest-blog-post .blog-link-container--cta-link:hover {
   background-color: #ffd700;
 }
+.day .latest-blog-post .blog-content-container .blog-content .blog-quote {
+  background-color: rgba(153, 153, 153, 0.25);
+  border-radius: 0.5rem;
+}
 
 .night .latest-blog-post {
   border: 0.2rem groove rgba(255, 215, 0, 0.5);
@@ -38399,6 +38414,10 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
 }
 .night .latest-blog-post .blog-link-container--cta-link:hover {
   background-color: #00b358;
+}
+.night .latest-blog-post .blog-content-container .blog-content .blog-quote {
+  border-radius: 0.5rem;
+  background-color: rgba(0, 128, 63, 0.25);
 }
 
 .blog-header {
@@ -40677,7 +40696,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   align-items: center;
   transform: rotate(0) translate(0, 0);
 }
-.grid .introduction-container__introduction {
+.grid .introduction-container .introduction-container__introduction {
   position: relative;
   height: 100%;
   width: 67%;
@@ -40688,7 +40707,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   align-items: center;
   transform: rotate(0) translate(0, 0);
 }
-.grid .introduction-container__introduction .cta-container {
+.grid .introduction-container .introduction-container__introduction .cta-container {
   position: relative;
   height: 40%;
   width: 100%;
@@ -40700,7 +40719,7 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   transform: rotate(0) translate(0, 0);
   padding-right: 9rem;
 }
-.grid .introduction-container__introduction .cta-container .cta-link {
+.grid .introduction-container .introduction-container__introduction .cta-container .cta-link {
   position: relative;
   height: 4rem;
   width: max-content;
@@ -40714,14 +40733,14 @@ html, .night .icon-container, .day .icon-container, .form .character-count, .for
   border-radius: 5rem;
   transition: background-color 0.5s;
 }
-.grid .introduction-container__introduction .cta-container .cta-link:not(:last-of-type) {
+.grid .introduction-container .introduction-container__introduction .cta-container .cta-link:not(:last-of-type) {
   margin-right: 2rem;
 }
-.grid .introduction-container__introduction .cta-container .cta-link:hover {
+.grid .introduction-container .introduction-container__introduction .cta-container .cta-link:hover {
   cursor: pointer;
   transition: background-color 0.5s, color 0.5s;
 }
-.grid .introduction-container__introduction .cta-container .cta-link .cta-icon {
+.grid .introduction-container .introduction-container__introduction .cta-container .cta-link .cta-icon {
   margin-right: 2rem;
 }
 
@@ -82501,7 +82520,7 @@ html {
     width: 30rem;
     transform: translate(-3rem, -2rem);
   }
-  .r__grid .r__introduction-container .r__name-container {
+  .r__grid .r__introduction-container .r__introduction-container__introduction .r__name-container {
     transform: translate(-3rem, 0rem) rotate(0);
   }
   .r__grid .r__introduction-container .r__introduction-container__introduction .r__cta-container {

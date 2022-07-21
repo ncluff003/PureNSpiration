@@ -13,11 +13,11 @@
           transform: translate(-3rem, -2rem);
         }
       }
-      .r__name-container {
-        transform: translate(-3rem, 0rem) rotate(0);
-      }
 
       .r__introduction-container__introduction {
+        .r__name-container {
+          transform: translate(-3rem, 0rem) rotate(0);
+        }
         .r__cta-container {
           justify-content: center;
           align-items: flex-end;

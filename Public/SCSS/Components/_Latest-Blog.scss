@@ -42,6 +42,17 @@
         }
       }
     }
+    .blog-content-container {
+      .blog-content {
+        .blog-paragraph {
+          // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
+        }
+        .blog-quote {
+          background-color: rgba($colorLightGrey, 0.25);
+          border-radius: 0.5rem;
+        }
+      }
+    }
   }
 }
 
@@ -56,6 +67,17 @@
         background-color: rgba($secondaryColor, 0.8);
         &:hover {
           background-color: $secondaryColor;
+        }
+      }
+    }
+    .blog-content-container {
+      .blog-content {
+        .blog-paragraph {
+          // border-bottom: 0.3rem groove rgba($colorOffWhite, 0.5);
+        }
+        .blog-quote {
+          border-radius: 0.5rem;
+          background-color: rgba($secondaryColorDark, 0.25);
         }
       }
     }

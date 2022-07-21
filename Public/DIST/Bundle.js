@@ -5905,13 +5905,17 @@ var renderMultiplePhotos = function renderMultiplePhotos(container, content) {
   content.file.forEach(function (photo, i) {
     var image = document.createElement('img');
     _Utility__WEBPACK_IMPORTED_MODULE_3__.addClasses(image, ["blog-image", "r__blog-image"]);
-    console.log("Hi", photo);
     var index = photo.indexOf("DIST/CSS");
     image.src = photo.slice(index);
     image.alt = content.altTexts[i];
 
     if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts")) {
       image.src = "../../".concat(photo.slice(index));
+    }
+
+    if (window.location.href.startsWith("http://127.0.0.1:3333/")) {
+      image.style.width = "".concat(100 / content.file.length, "%");
+      image.style.height = 'auto';
     }
 
     _Utility__WEBPACK_IMPORTED_MODULE_3__.insertElement('beforeend', multipleImageContainer, image); // image.style.width = `${100 / content.file.length - 2.5}%`;

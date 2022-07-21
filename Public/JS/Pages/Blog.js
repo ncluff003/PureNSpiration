@@ -67,12 +67,15 @@ const renderMultiplePhotos = (container, content) => {
   content.file.forEach((photo, i) => {
     const image = document.createElement('img');
     Utility.addClasses(image, [`blog-image`, `r__blog-image`]);
-    console.log(`Hi`, photo);
     let index = photo.indexOf(`DIST/CSS`);
     image.src = photo.slice(index);
     image.alt = content.altTexts[i];
     if (window.location.href.startsWith(`http://127.0.0.1:3333/blog/posts`)) {
       image.src = `../../${photo.slice(index)}`;
+    }
+    if (window.location.href.startsWith(`http://127.0.0.1:3333/`)) {
+      image.style.width = `${100 / content.file.length}%`;
+      image.style.height = 'auto';
     }
     Utility.insertElement('beforeend', multipleImageContainer, image);
     // image.style.width = `${100 / content.file.length - 2.5}%`;

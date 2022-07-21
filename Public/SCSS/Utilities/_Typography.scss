@@ -141,6 +141,21 @@ html {
   }
 }
 
+.latest-blog-post {
+  .blog-header {
+    .blog-title {
+      font-family: Purely Me, Century Gothic, Verdana, sans-serif;
+      font-size: 3rem;
+    }
+    .blog-date {
+      font-size: 3rem;
+    }
+    .blog-post-title {
+      font-size: 4rem;
+    }
+  }
+}
+
 .latest-blog-post,
 .selected-blog-post {
   font-size: 2rem;
@@ -538,6 +553,7 @@ html {
       }
     }
   }
+
   .latest-blog-post,
   .selected-blog-post {
     .blog-header {
