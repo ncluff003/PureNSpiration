@@ -21,7 +21,6 @@ const path = require('path');
 //  My Middleware
 const catchAsync = require(`./../Utilities/catchAsync`);
 const calendar = require(`./../Models/calendarModel`);
-const { request } = require('http');
 
 ////////////////////////////////////////////
 //  Routing Middleware
@@ -45,7 +44,7 @@ exports.returnMyData = catchAsync(async (request, response, next) => {
 
 exports.renderApp = catchAsync(async (request, response) => {
   const data = pureData;
-  response.status(200).render(`home`, {
+  response.status(200).render(`app`, {
     title: `Pure 'N' Spiration | Home`,
     data: {
       data: data,

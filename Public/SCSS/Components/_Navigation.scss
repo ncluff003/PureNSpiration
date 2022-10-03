@@ -22,7 +22,7 @@
     &__ring {
       @include SizeAndPositioning(relative, 39rem, 39rem, flex, column, nowrap, center, center, 0, 0, 0);
       border-radius: 50%;
-      transition: transform 2s;
+      transition: transform 1s;
 
       &__navigation {
         @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
@@ -33,12 +33,12 @@
           @include SizeAndPositioning(absolute, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
           border-radius: 50%;
           text-decoration: none;
-          transition: border 2s;
+          transition: border 1s;
 
           &__text {
             @include SizingItem(relative, max-content, max-content);
             top: -22rem;
-            transition: transform 2s, color 0.5s;
+            transition: transform 1s, color 0.5s;
           }
 
           &:first-of-type {

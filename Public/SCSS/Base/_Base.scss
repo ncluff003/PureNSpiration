@@ -56,7 +56,7 @@ html {
 body {
   box-sizing: border-box;
   @include SizingItem(relative, 100%, 100vw);
-  background-color: $colorDarkerGrey;
+  background-color: $colorDarkGrey;
   overflow-x: hidden;
 }
 

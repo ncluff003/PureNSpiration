@@ -5531,7 +5531,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var watch = /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee() {
-    var links, buttons, contactButton, workButton, leftDoor, rightDoor, doorOpener;
+    var links, buttons, contactButton, workButton, contactButtonTwo, leftDoor, rightDoor, doorOpener, infoContainer, slides, slideButtonContainer, slideIndex, slideButtons, slideContainers, innerSlides, skillSlideNavContainer, skillSlideContainer, innerSlideButtons;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -5542,11 +5542,16 @@ var watch = /*#__PURE__*/function () {
             console.log(buttons);
             contactButton = buttons[1];
             workButton = buttons[2];
+            contactButtonTwo = buttons[4];
             contactButton.addEventListener("click", function (e) {
               e.preventDefault();
               links[4].click();
             });
             workButton.addEventListener("click", function (e) {
+              e.preventDefault();
+              links[4].click();
+            });
+            contactButtonTwo.addEventListener("click", function (e) {
               e.preventDefault();
               links[4].click();
             });
@@ -5558,9 +5563,71 @@ var watch = /*#__PURE__*/function () {
               [leftDoor, rightDoor].forEach(function (door) {
                 return _Utility__WEBPACK_IMPORTED_MODULE_2__.toggleClasses(door, ["door-open"]);
               });
+              _Utility__WEBPACK_IMPORTED_MODULE_2__.toggleClasses(doorOpener, ["closed", "open"]);
+            });
+            infoContainer = document.querySelector('.about-flex-container__information-container');
+            slides = document.querySelectorAll('.about-flex-container__information-container__slide');
+            slideButtonContainer = document.querySelector('.about-flex-container__information-container__button-container');
+            slideIndex = 0;
+            slides.forEach(function (slide, i) {
+              var button = document.createElement('button');
+              slide.dataset.slide = i;
+              button.dataset.slide = i;
+              _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(button, ["about-flex-container__information-container__button-container__button", "r__about-flex-container__information-container__button-container__button"]);
+              _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", slideButtonContainer, button);
+
+              if (i === 0) {
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(button, ["about-flex-container__information-container__button-container__button--active"]);
+              }
+
+              slide.style.transform = "translate(".concat(100 * i, "%, ", 0, "%)");
+            });
+            slideButtons = document.querySelectorAll('.about-flex-container__information-container__button-container__button');
+            slideButtons.forEach(function (button, i) {
+              button.addEventListener("click", function (e) {
+                e.preventDefault();
+                slideIndex = Number(button.dataset.slide);
+                slides.forEach(function (slide, i) {
+                  slide.style.transform = "translate(".concat(100 * i + Number(button.dataset.slide) * -100, "%, ", 0, "%)");
+                });
+                slideButtons.forEach(function (button) {
+                  return _Utility__WEBPACK_IMPORTED_MODULE_2__.removeClasses(button, ["about-flex-container__information-container__button-container__button--active"]);
+                });
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(button, ["about-flex-container__information-container__button-container__button--active"]);
+              });
+            });
+            slideContainers = document.querySelectorAll('.about-flex-container__information-container__slide__container');
+            innerSlides = document.querySelectorAll('.about-flex-container__information-container__slide__container__inner-slide');
+            skillSlideNavContainer = document.querySelector('.about-flex-container__information-container__slide__container__button-nav-container');
+            skillSlideContainer = slideContainers[1];
+            innerSlides.forEach(function (slide, i) {
+              var button = document.createElement('button');
+              _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(button, ["about-flex-container__information-container__slide__container__button-nav-container__button", "r__about-flex-container__information-container__slide__container__button-nav-container__button"]);
+
+              if (i === 0) {
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(button, ["about-flex-container__information-container__slide__container__button-nav-container__button--active"]);
+              }
+
+              _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement("beforeend", skillSlideNavContainer, button);
+              slide.dataset['inner_slide'] = i;
+              button.dataset['inner_slide'] = i;
+              slide.style.transform = "translate(".concat(0, "%, ", 100 * i, "%)");
+            });
+            innerSlideButtons = document.querySelectorAll('.about-flex-container__information-container__slide__container__button-nav-container__button');
+            innerSlideButtons.forEach(function (button, i) {
+              button.addEventListener("click", function (e) {
+                e.preventDefault();
+                innerSlides.forEach(function (slide, i) {
+                  slide.style.transform = "translate(".concat(0, "%, ", 100 * i + Number(button.dataset['inner_slide']) * -100, "%)");
+                });
+                innerSlideButtons.forEach(function (button) {
+                  return _Utility__WEBPACK_IMPORTED_MODULE_2__.removeClasses(button, ["about-flex-container__information-container__slide__container__button-nav-container__button--active"]);
+                });
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(button, ["about-flex-container__information-container__slide__container__button-nav-container__button--active"]);
+              });
             });
 
-          case 12:
+          case 28:
           case "end":
             return _context.stop();
         }

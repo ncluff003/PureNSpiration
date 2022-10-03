@@ -97,6 +97,46 @@ html {
   }
 }
 
+.flex-container {
+  @extend html;
+  &--about {
+    .about-flex-container {
+      &__information-container {
+        &__slide {
+          &__header {
+            &__text {
+              font-size: 5rem;
+              font-weight: normal;
+              color: $primaryColor;
+            }
+          }
+          &__container {
+            &__text-container {
+              font-size: 2rem;
+            }
+            &__inner-slide {
+              &__header {
+                &__text {
+                  font-size: 3rem;
+                  font-weight: normal;
+                }
+              }
+              &__skill-container {
+                &__skill {
+                  font-size: 2.4rem;
+                  &:hover {
+                    color: $colorMidDarkGrey;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .day {
   &--sky {
     color: $colorDarkerGrey;
