@@ -35,6 +35,10 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
   color: #003278;
 }
 
+.pentagon-side {
+  color: #fafafa;
+}
+
 .button--navigation {
   font-size: 3rem;
   font-weight: bold;
@@ -46,6 +50,7 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
 .button--cta {
   font-size: 2.4rem;
   color: rgba(250, 250, 250, 0.25);
+  text-decoration: none;
 }
 .button--cta:hover {
   color: #333333;
@@ -31496,11 +31501,11 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
   justify-content: center;
   align-items: center;
   transform: rotate(0) translate(0, 0);
-  border: 0.2rem solid red;
+  border: 0.2rem solid transparent;
   border-radius: 50%;
   transform: rotateX(-90deg) rotateZ(0deg);
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  transition: transform 2s;
 }
 .pentagon__inside-ring {
   position: absolute;
@@ -31525,7 +31530,7 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
   justify-content: center;
   align-items: center;
   transform: rotate(0) translate(0, 0);
-  background-color: rgba(250, 250, 250, 0.25);
+  background-color: #111111;
 }
 .pentagon__inside-ring:first-of-type {
   transform: rotate(0deg);
@@ -37001,7 +37006,7 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
   grid-row: 18/span 1;
 }
 
-.flex-container, .flex-container--home {
+.flex-container, .flex-container--contact, .flex-container--resume, .flex-container--projects, .flex-container--about, .flex-container--home {
   position: relative;
   height: 100%;
   width: 100%;
@@ -37016,7 +37021,106 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
   flex-direction: column;
   justify-content: space-between;
 }
-
+.flex-container--about .about-flex-container {
+  position: relative;
+  height: 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.flex-container--about .about-flex-container__introduction-container {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.flex-container--about .about-flex-container__introduction-container__picture-frame {
+  position: relative;
+  height: 75%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  overflow: hidden;
+  border-radius: 50%;
+}
+.flex-container--about .about-flex-container__introduction-container__picture-frame__picture {
+  position: relative;
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+}
+.flex-container--about .about-flex-container__introduction-container__button-container {
+  position: relative;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.flex-container--about .about-flex-container__information-container {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: center;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  border: 0.2rem groove rgba(250, 250, 250, 0.8);
+  border-radius: 1.5rem;
+}
+.flex-container--about .about-flex-container__information-container__left-door, .flex-container--about .about-flex-container__information-container__right-door {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  transition: width 0.5s, opacity 0.75s;
+  background-color: rgba(250, 250, 250, 0.125);
+}
+.flex-container--about .about-flex-container__information-container__left-door {
+  top: 0;
+  left: 0;
+  border-right: 0.2rem groove rgba(250, 250, 250, 0.125);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.flex-container--about .about-flex-container__information-container__right-door {
+  top: 0;
+  right: 0;
+  border-left: 0.2rem groove rgba(250, 250, 250, 0.125);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.flex-container--about .about-flex-container__information-container .door-open:first-of-type {
+  width: 0;
+  opacity: 0;
+}
+.flex-container--about .about-flex-container__information-container .door-open:last-of-type {
+  width: 0;
+  opacity: 0;
+}
 .overhead-container {
   position: absolute;
   height: 10%;
@@ -37178,6 +37282,12 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
 }
 .button--hero {
   transform: translate(34rem, -1.5rem);
+}
+.button--about-doors {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .form {
@@ -37398,14 +37508,14 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
   transform: rotate(0) translate(0, 0);
   border-radius: 50%;
   text-decoration: none;
-  transition: border 0.5s;
+  transition: border 2s;
 }
 .navigation-header__container__ring__navigation__link__text {
   position: relative;
   height: max-content;
   width: max-content;
   top: -22rem;
-  transition: transform 0.5s, color 0.5s;
+  transition: transform 2s, color 0.5s;
 }
 .navigation-header__container__ring__navigation__link:nth-of-type(2) {
   transform: rotate(72deg);
@@ -37421,6 +37531,7 @@ html, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-he
 }
 .navigation-header__container__ring__navigation .clicked {
   border-top: 5.5rem solid #fafafa;
+  transition: border 2s;
 }
 .navigation-header__container__ring__navigation .clicked .navigation-header__container__ring__navigation__link__text {
   transform: translateY(4.5rem);

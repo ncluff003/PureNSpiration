@@ -94,4 +94,10 @@
   &--hero {
     transform: translate(34rem, -1.5rem);
   }
+  &--about-doors {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

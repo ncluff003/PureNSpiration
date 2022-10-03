@@ -54,6 +54,7 @@ html {
 
 .pentagon-side {
   @extend html;
+  color: $colorOffWhite;
 }
 
 .button {
@@ -71,6 +72,7 @@ html {
     @extend .button;
     font-size: 2.4rem;
     color: rgba($colorOffWhite, 0.25);
+    text-decoration: none;
     &:hover {
       color: $colorDarkerGrey;
     }

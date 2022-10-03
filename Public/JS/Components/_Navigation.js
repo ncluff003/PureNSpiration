@@ -60,4 +60,10 @@ export const watch = () => {
       }
     });
   });
+
+  const buttons = document.querySelectorAll('.button--cta');
+  const homeCTA = buttons[0];
+  homeCTA.addEventListener(`click`, (e) => {
+    links[2].click();
+  });
 };
