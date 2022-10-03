@@ -1,0 +1,16 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.hero-container {
+  @include SizeAndPositioning(relative, 90%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
+  .full-name,
+  .position {
+    height: max-content;
+    width: max-content;
+    margin: 0;
+  }
+
+  .position {
+    @include SizeAndPositioning(relative, max-content, max-content, flex, row, nowrap, center, center, 19.5rem, -3.25rem, 0);
+  }
+}

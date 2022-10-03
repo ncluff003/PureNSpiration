@@ -1,51 +1,86 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-.navigation {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, flex-start, center, 0, 0, 0);
-  padding: 0 1rem;
-  transition: background-color 0.5s, border 0.5s;
-  &__link-list {
-    @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
-    &__link-item {
-      @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, center, center, 0, 0, 0);
-      &:not(:last-of-type) {
-        margin-right: 2rem;
-      }
-      &__link {
-        @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, center, center, 0, 0, 0);
-        transition: color 0.5s;
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 90%;
-          width: 0%;
-          content: '';
-          transition: border-color 0.5s;
-        }
-        &:hover {
-          cursor: pointer;
+.navigation-header {
+  @include SizeAndPositioning(absolute, 100vh, 100vw, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+  background-color: rgba($secondaryColorDark, 0.85);
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  .navigation-close-icon {
+    @include SizingItem(absolute, 5rem, 5rem);
+    top: 3rem;
+    right: 3rem;
+    z-index: 11;
+    &:hover {
+      cursor: pointer;
+      transition: color 0.5s;
+    }
+  }
+  &__container {
+    @include SizeAndPositioning(relative, 100%, 30%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+    &__ring {
+      @include SizeAndPositioning(relative, 39rem, 39rem, flex, column, nowrap, center, center, 0, 0, 0);
+      border-radius: 50%;
+      transition: transform 2s;
 
-          &::before {
-            width: 100%;
-            transition: border 0.5s, width 0.5s;
+      &__navigation {
+        @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
+        border: 2rem solid $colorOffWhite;
+        border-radius: 50%;
+        transition: border 0.5s;
+        &__link {
+          @include SizeAndPositioning(absolute, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+          border-radius: 50%;
+          text-decoration: none;
+          transition: border 0.5s;
+
+          &__text {
+            @include SizingItem(relative, max-content, max-content);
+            top: -22rem;
+            transition: transform 0.5s, color 0.5s;
+          }
+
+          &:first-of-type {
+          }
+          &:nth-of-type(2) {
+            transform: rotate(72deg);
+          }
+          &:nth-of-type(3) {
+            transform: rotate(144deg);
+          }
+          &:nth-of-type(4) {
+            transform: rotate(216deg);
+          }
+          &:nth-of-type(5) {
+            transform: rotate(288deg);
+          }
+        }
+
+        .clicked {
+          border-top: 5.5rem solid $colorOffWhite;
+          .navigation-header__container__ring__navigation__link__text {
+            transform: translateY(4.5rem);
           }
         }
       }
     }
+    .rotate-zero {
+      transform: rotate(0deg);
+    }
+    .rotate-seventy-two {
+      transform: rotate(-72deg);
+    }
+    .rotate-one-forty-four {
+      transform: rotate(-144deg);
+    }
+    .rotate-two-sixteen {
+      transform: rotate(-216deg);
+    }
+    .rotate-two-eighty-eight {
+      transform: rotate(-288deg);
+    }
   }
-}
-
-.logo-container {
-  @include SizeAndPositioning(relative, 100%, max-content, flex, row, nowrap, space-between, center, 0, 0, 0);
-  .icon-PureNSpiration_Logo--night {
-    transition: color 0.5s;
-  }
-}
-
-.navigation-container {
-  display: none;
 }
 
 /////////////////////////////////

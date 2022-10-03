@@ -18,13 +18,8 @@ html.no-js
     link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon" )
     
     link(rel="stylesheet" href="/DIST/CSS/purenspiration.css" )
-
-    //- script(src="node_modules/svgxuse/svgxuse.js" defer)
-    //- script(src="https://unpkg.com/vue@3.0.2/dist/vue.global.js" type="module" defer)
-    //- script(src="https://cdn.jsdelivr.net/npm/vue@2.7.0/dist/vue.js")
     script(defer src="/DIST/Bundle.js?5da18932f3c722f0e631")
-    //- script(defer src="/JS/App.js" type="module")
-    //- script(src="/reload.js")
+
 
   body.disable-scrollbars
     <!--[if lt IE 7]>
@@ -33,50 +28,11 @@ html.no-js
         | browser. Please upgrade your browser to improve your experience.
     <![endif]-->
     // VERTICAL
-    section.grid.r__grid
-      nav.navigation.r__navigation.column_1-24.row_1-1
-        section.logo-container.r__logo-container
-          if data
-            svg.icon(class=`${data.data.logo}`)
-              use(xlink:href=`/DIST/CSS/symbol-defs.svg#${data.data.logo}`)
-          else 
-            svg.icon(class=`icon-PureNSpiration_Logo--night`)
-              use(xlink:href=`/DIST/CSS/symbol-defs.svg#icon-PureNSpiration_Logo--night`)
-        ul.navigation__link-list.r__navigation__link-list 
-          li.navigation__link-list__link-item.r__navigation__link-list__link-item
-            a.navigation__link-list__link-item__link.r__navigation__link-list__link-item__link(href="/") Home
-          li.navigation__link-list__link-item.r__navigation__link-list__link-item
-            a.navigation__link-list__link-item__link.r__navigation__link-list__link-item__link(href="/about") About
-          li.navigation__link-list__link-item.r__navigation__link-list__link-item
-            a.navigation__link-list__link-item__link.r__navigation__link-list__link-item__link(href="/projects") Projects
-          li.navigation__link-list__link-item.r__navigation__link-list__link-item
-            a.navigation__link-list__link-item__link.r__navigation__link-list__link-item__link(href="/blog") Blog
-          li.navigation__link-list__link-item.r__navigation__link-list__link-item
-            a.navigation__link-list__link-item__link.r__navigation__link-list__link-item__link(href="https://www.dropbox.com/s/1b47bqabvcj89uq/My_Resume_Full-Stack.pdf?dl=0" target="_blank") Resume
-          li.navigation__link-list__link-item.r__navigation__link-list__link-item
-            a.navigation__link-list__link-item__link.r__navigation__link-list__link-item__link(href="/contact") Contact
-        block connection-links
-        section.time-toggle.r__time-toggle
-          section.time-toggle__switch.r__time-toggle__switch
-            i.fas.fa-sun.time-toggle__switch__icon--sun.closed
-            i.fas.fa-moon.time-toggle__switch__icon--moon.open
-      button.button--mobile-navigation.r__button--mobile-navigation
-        i.fas.fa-minus.button--mobile-navigation__icon.r__button--mobile-navigation__icon
-      section.navigation-container.r__navigation-container
-        nav.mobile-navigation.r__mobile-navigation 
-          ul.mobile-navigation__link-list.r__mobile-navigation__link-list 
-            li.mobile-navigation__link-list__link-item.r__mobile-navigation__link-list__link-item
-              a.mobile-navigation__link-list__link-item__link.r__mobile-navigation__link-list__link-item__link(href="/") Home
-            li.mobile-navigation__link-list__link-item.r__mobile-navigation__link-list__link-item
-              a.mobile-navigation__link-list__link-item__link.r__mobile-navigation__link-list__link-item__link(href="/about") About
-            li.mobile-navigation__link-list__link-item.r__mobile-navigation__link-list__link-item
-              a.mobile-navigation__link-list__link-item__link.r__mobile-navigation__link-list__link-item__link(href="/projects") Projects
-            li.mobile-navigation__link-list__link-item.r__mobile-navigation__link-list__link-item
-              a.mobile-navigation__link-list__link-item__link.r__mobile-navigation__link-list__link-item__link(href="/blog") Blog
-            li.mobile-navigation__link-list__link-item.r__mobile-navigation__link-list__link-item
-              a.mobile-navigation__link-list__link-item__link.r__mobile-navigation__link-list__link-item__link(href="https://www.dropbox.com/s/1b47bqabvcj89uq/My_Resume_Full-Stack.pdf?dl=0" target="_blank") Resume
-            li.mobile-navigation__link-list__link-item.r__mobile-navigation__link-list__link-item
-              a.mobile-navigation__link-list__link-item__link.r__mobile-navigation__link-list__link-item__link(href="/contact") Contact
-      
-      block unique-content
-    block vue-scripts
+    .overhead-container.r__overhead-container
+      svg.icon(class=`icon-PureNSpiration_Logo--night`)
+        use(xlink:href=`/DIST/CSS/symbol-defs.svg#icon-PureNSpiration_Logo--night`)
+      button.button--navigation.r__button--navigation Open Navigation 
+      .time-toggle.r__time-toggle 
+        button.time-toggle__switch.r__time-toggle__switch 
+        p.time-toggle__text.r__time-toggle__text Night  
+    block unique-content

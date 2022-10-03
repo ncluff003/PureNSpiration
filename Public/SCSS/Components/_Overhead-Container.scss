@@ -1,0 +1,36 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.overhead-container {
+  @include SizeAndPositioning(absolute, 10%, 100%, flex, row, nowrap, space-between, center, 0, 0, 0);
+  padding: 2rem;
+  z-index: 10;
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+  .navigation {
+    .connection-container {
+      .connect--navigation {
+        &:after {
+          background-color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+/////////////////////////////////
+// NIGHT SETTINGS
+.night {
+  .navigation {
+    .connection-container {
+      .connect--navigation {
+        &:after {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+}

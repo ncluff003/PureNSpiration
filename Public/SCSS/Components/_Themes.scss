@@ -1,0 +1,14 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.day {
+}
+
+.night {
+  .button {
+    &--navigation {
+      border: 0.3rem solid rgba($colorOffWhite, 0.8);
+      background-color: rgba($colorOffWhite, 0.8);
+    }
+  }
+}

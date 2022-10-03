@@ -60,6 +60,10 @@ body {
   overflow-x: hidden;
 }
 
+.navigation-header--open {
+  transform: translateY(0);
+}
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -115,11 +119,17 @@ body {
 .day {
   background-color: $colorOffWhite;
   transition: background-color 0.5s;
+  &--sky {
+    background: url('./../../DIST/CSS/Images/Day-Sky.jpg');
+  }
 }
 
 .night {
   background-color: $colorDarkerGrey;
   transition: background-color 0.5s;
+  &--sky {
+    background: url('./../../DIST/CSS/Images/Night-Sky.jpg');
+  }
 }
 
 .construction-zone {

@@ -1,0 +1,66 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.pentagon {
+  @include SizeAndPositioning(relative, 100vh, auto, flex, row, nowrap, center, center, 0, 0, 0);
+  border: 0.2rem solid red;
+  border-radius: 50%;
+  transform: rotateX(-90deg) rotateZ(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  &__inside-ring {
+    @include SizeAndPositioning(absolute, 100vh, auto, flex, row, nowrap, center, center, 0, 0, 0);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    .pentagon-side {
+      @include SizeAndPositioning(absolute, 100vh, 100vw, flex, column, nowrap, center, center, 0, 0, 0);
+      background-color: rgba($colorOffWhite, 0.25);
+    }
+    &:first-of-type {
+      transform: rotate(0deg);
+      .pentagon-side {
+        transform: translate(0, -148%) rotateX(90deg);
+      }
+    }
+    &:nth-of-type(2) {
+      transform: rotate(72deg);
+      .pentagon-side {
+        transform: translate(0, -148%) rotateX(90deg);
+      }
+    }
+    &:nth-of-type(3) {
+      transform: rotate(144deg);
+      .pentagon-side {
+        transform: translate(0, -148%) rotateX(90deg);
+      }
+    }
+    &:nth-of-type(4) {
+      transform: rotate(216deg);
+      .pentagon-side {
+        transform: translate(0, -148%) rotateX(90deg);
+      }
+    }
+    &:last-of-type {
+      transform: rotate(288deg);
+      .pentagon-side {
+        transform: translate(0, -148%) rotateX(90deg);
+      }
+    }
+  }
+}
+
+.rotate-zero {
+  transform: rotateX(-90deg) rotateZ(0deg);
+}
+.rotate-seventy-two {
+  transform: rotateX(-90deg) rotateZ(-72deg);
+}
+.rotate-one-forty-four {
+  transform: rotateX(-90deg) rotateZ(-144deg);
+}
+.rotate-two-sixteen {
+  transform: rotateX(-90deg) rotateZ(-216deg);
+}
+.rotate-two-eighty-eight {
+  transform: rotateX(-90deg) rotateZ(-288deg);
+}

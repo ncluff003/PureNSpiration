@@ -459,12 +459,12 @@
             },
             {
               "type": "paragraph",
-              "data": "<h3 class='blog-link-header r__blog-link-header'>Resources I Wanted To Share &nbsp 😄</h3><ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
+              "data": "<h2 class='blog-link-header r__blog-link-header'>Resources I Wanted To Share &nbsp 😄</h2><ul class='blog-links-shared r__blog-links-shared'><li><a href='https://www.codepen.io'>Codepen</a></li><li><a href='https://www.repl.it'>Repl</a></li><li><a href='https://www.w3schools.com'>W3Schools</a></li><li><a href='https://developer.mozilla.org/en-US/'>Mozilla Developer Docs</a></li><li><a href='https://www.hostinger.com/tutorials/linux-commands'>Linux Command Line Basics</a></li><li><a href='https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html'>Command Line Basis For Apple</a></li><ul>",
               "file": "file"
             },
             {
               "type": "paragraph",
-              "data": "<h3>Feel Free To Reach Out Or Provide Feedback! &nbsp &nbsp 😄</h3>",
+              "data": "<h2>Feel Free To Reach Out Or Provide Feedback! &nbsp &nbsp 😄</h2>",
               "file": "file"
             },
             {

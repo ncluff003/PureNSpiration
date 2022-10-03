@@ -1,0 +1,20 @@
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0rem transparent, 0 0 1rem transparent;
+  }
+  25% {
+    box-shadow: 0 0 1rem transparent, 0 0 2rem transparent;
+  }
+  50% {
+    box-shadow: 0 0 2rem $primaryColor, 0 0 4rem $colorError;
+  }
+  75% {
+    box-shadow: 0 0 1rem transparent, 0 0 2rem transparent;
+  }
+  100% {
+    box-shadow: 0 0 0rem transparent, 0 0 1rem transparent;
+  }
+}

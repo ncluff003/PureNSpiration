@@ -21,6 +21,16 @@ export const removeClasses = (element, classes) => {
   });
 };
 
+export const toggleClass = (element, className) => {
+  return element.classList.toggle(className);
+};
+
+export const toggleClasses = (element, classNames) => {
+  classNames.forEach((className) => {
+    element.classList.toggle(className);
+  });
+};
+
 export const multiplyTwo = (numberOne, numberTwo) => {
   return numberOne * numberTwo;
 };

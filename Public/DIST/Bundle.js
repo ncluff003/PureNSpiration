@@ -4913,23 +4913,18 @@ var fetchSkills = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Projects */ "./Public/JS/Projects.js");
-/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
-/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
-/* harmony import */ var _Pages_About__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/About */ "./Public/JS/Pages/About.js");
-/* harmony import */ var _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/About-Interests */ "./Public/JS/Pages/About-Interests.js");
-/* harmony import */ var _Pages_About_Skills__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/About-Skills */ "./Public/JS/Pages/About-Skills.js");
-/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
-/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
-/* harmony import */ var _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Pages/Contact */ "./Public/JS/Pages/Contact.js");
-/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
-
-
+/* harmony import */ var _Components_Navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/_Navigation */ "./Public/JS/Components/_Navigation.js");
+/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Projects */ "./Public/JS/Projects.js");
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Utility */ "./Public/JS/Utility.js");
+/* harmony import */ var _API_Calls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./API-Calls */ "./Public/JS/API-Calls.js");
+/* harmony import */ var _Pages_About__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Pages/About */ "./Public/JS/Pages/About.js");
+/* harmony import */ var _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Pages/About-Interests */ "./Public/JS/Pages/About-Interests.js");
+/* harmony import */ var _Pages_About_Skills__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Pages/About-Skills */ "./Public/JS/Pages/About-Skills.js");
+/* harmony import */ var _Pages_Blog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Pages/Blog */ "./Public/JS/Pages/Blog.js");
+/* harmony import */ var _Pages_Project__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Pages/Project */ "./Public/JS/Pages/Project.js");
+/* harmony import */ var _Pages_Contact__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Pages/Contact */ "./Public/JS/Pages/Contact.js");
 
 
 ////////////////////////////////////////////////
@@ -4943,333 +4938,103 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
  ///////////////////////////////////////////////
 // APP CLASS
 
 (function () {
-  var App = /*#__PURE__*/function () {
-    function App() {
-      (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
+  var App = /*#__PURE__*/(0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_0__["default"])(function App() {
+    (0,_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, App);
 
-      this.adjustLinkContainer();
-      this.watchToggle();
+    _Components_Navigation__WEBPACK_IMPORTED_MODULE_2__.watch();
+  });
 
-      this._fetchLatestBlogPost();
-
-      this._fetchLatestProject();
-
-      _Pages_About__WEBPACK_IMPORTED_MODULE_7__.watchAbout();
-      _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.watchProjectPage();
-      _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.watchBlog();
-      _Pages_Contact__WEBPACK_IMPORTED_MODULE_12__.watchContactForm();
-
-      this._watchMobileNavigation(); // this._watchToAdaptGrid();
-      // API.fetchSkills();
-
-    }
-
-    (0,_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(App, [{
-      key: "adjustLinkContainer",
-      value: function adjustLinkContainer() {
-        var linkContainer = document.querySelector('.blog-link-container');
-
-        if (linkContainer) {
-          console.log(linkContainer);
-          var width = linkContainer.getBoundingClientRect().width;
-          var height = linkContainer.getBoundingClientRect().height;
-          console.log(height);
-          console.log(_Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(5, 10));
-          linkContainer.style.width = "".concat(width + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(10, 10), "px");
-          linkContainer.style.height = "".concat(height + _Utility__WEBPACK_IMPORTED_MODULE_5__.multiplyTwo(2, 10), "px");
-        }
-      }
-    }, {
-      key: "addDefaultSetting",
-      value: function addDefaultSetting(grid, setting) {
-        grid.classList.add(setting);
-        sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
-        moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
-        localStorage.setItem('setting', setting);
-      }
-    }, {
-      key: "changeSetting",
-      value: function changeSetting(grid, setting) {
-        grid.classList.toggle('day');
-        grid.classList.toggle('night');
-        sunIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
-        moonIcon.classList.contains('closed') ? _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open") : _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
-
-        if (setting === 'day') {
-          localStorage.setItem('setting', 'night');
-        } else {
-          localStorage.setItem('setting', 'day');
-        }
-      }
-    }, {
-      key: "watchToggle",
-      value: function watchToggle() {
-        var _this = this;
-
-        var grid = document.querySelector('.grid');
-        var defaultSetting = 'day';
-        var setting = localStorage.getItem('setting');
-
-        if (!setting) {
-          setting = defaultSetting;
-        }
-
-        this.addDefaultSetting(grid, setting);
-
-        if (setting === 'day') {
-          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "closed", "open");
-          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "open", "closed");
-        } else {
-          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(moonIcon, "closed", "open");
-          _Utility__WEBPACK_IMPORTED_MODULE_5__.replaceClassName(sunIcon, "open", "closed");
-        } // sunIcon.classList.contains('closed') ? Utility.replaceClassName(sunIcon, `closed`, `open`) : Utility.replaceClassName(sunIcon, `open`, `closed`);
-        // moonIcon.classList.contains('closed') ? Utility.replaceClassName(moonIcon, `closed`, `open`) : Utility.replaceClassName(moonIcon, `open`, `closed`);
-
-
-        timeToggle.addEventListener('click', /*#__PURE__*/function () {
-          var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee(e) {
-            var currentSetting;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee$(_context) {
-              while (1) {
-                switch (_context.prev = _context.next) {
-                  case 0:
-                    e.preventDefault();
-                    currentSetting = localStorage.getItem('setting');
-
-                    _this.changeSetting(grid, currentSetting);
-
-                    if (window.location.href === "http://127.0.0.1:3333/about/interests") {
-                      _Pages_About_Interests__WEBPACK_IMPORTED_MODULE_8__.watchInterestPipe();
-                    }
-
-                  case 4:
-                  case "end":
-                    return _context.stop();
-                }
-              }
-            }, _callee);
-          }));
-
-          return function (_x) {
-            return _ref.apply(this, arguments);
-          };
-        }());
-      }
-    }, {
-      key: "_fetchLatestBlogPost",
-      value: function () {
-        var _fetchLatestBlogPost2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee2() {
-          var post;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  if (window.location.href.startsWith("http://127.0.0.1:3333/blog/posts/")) {
-                    _context2.next = 5;
-                    break;
-                  }
-
-                  _context2.next = 3;
-                  return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestPost();
-
-                case 3:
-                  post = _context2.sent;
-                  _Pages_Blog__WEBPACK_IMPORTED_MODULE_10__.renderBlogPost(post);
-
-                case 5:
-                case "end":
-                  return _context2.stop();
-              }
-            }
-          }, _callee2);
-        }));
-
-        function _fetchLatestBlogPost() {
-          return _fetchLatestBlogPost2.apply(this, arguments);
-        }
-
-        return _fetchLatestBlogPost;
-      }()
-    }, {
-      key: "_fetchLatestProject",
-      value: function () {
-        var _fetchLatestProject2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().mark(function _callee3() {
-          var project;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default().wrap(function _callee3$(_context3) {
-            while (1) {
-              switch (_context3.prev = _context3.next) {
-                case 0:
-                  _context3.next = 2;
-                  return _API_Calls__WEBPACK_IMPORTED_MODULE_6__.fetchLatestProject();
-
-                case 2:
-                  project = _context3.sent;
-                  _Pages_Project__WEBPACK_IMPORTED_MODULE_11__.renderLatestProject(project);
-
-                case 4:
-                case "end":
-                  return _context3.stop();
-              }
-            }
-          }, _callee3);
-        }));
-
-        function _fetchLatestProject() {
-          return _fetchLatestProject2.apply(this, arguments);
-        }
-
-        return _fetchLatestProject;
-      }()
-    }, {
-      key: "_watchMobileNavigation",
-      value: function _watchMobileNavigation() {
-        var mobileNavButton = document.querySelector('.r__button--mobile-navigation');
-        var mobileNavButtonIcon = document.querySelector('.r__button--mobile-navigation__icon');
-        var mobileNavigation = document.querySelector('.r__navigation-container');
-
-        if (mobileNavButton && mobileNavigation) {
-          mobileNavButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            mobileNavButton.classList.toggle('r__navigation-open');
-            mobileNavButtonIcon.classList.toggle('r__navigation-open__icon');
-            mobileNavigation.classList.toggle('r__navigation-container__open');
-          });
-        }
-      }
-    }, {
-      key: "_listenForQueryChanges",
-      value: function _listenForQueryChanges(query, element, removedClasses, addedClasses) {
-        console.log(query);
-        console.log("I am listening to ".concat(query.media));
-
-        if (query.matches) {
-          removedClasses.forEach(function (name) {
-            grid.classList.remove(name);
-            grid.classList.remove("r__".concat(name));
-          });
-          _Utility__WEBPACK_IMPORTED_MODULE_5__.addClasses(element, addedClasses);
-        }
-      } // _watchToAdaptGrid() {
-      //   const classNames = [`gridTV`, `gridDesktop`, `gridMobileLand`, `gridMobilePort`, `gridTabLand`, `gridTabPort`];
-      //   const grid = document.querySelector('.grid');
-      //   console.log(window);
-      //   // TV QUERY
-      //   let tvQuery = window.matchMedia(`(min-width: 2500px)`);
-      //   // DESKTOP QUERY
-      //   let desktopQuery = window.matchMedia(`(min-width: 1401px) and (min-height: 1051px)`);
-      //   // LARGE QUERIES
-      //   let largeTabLandQuery = window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`);
-      //   let largeTabPortQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`);
-      //   let largeMobileLandQuery = window.matchMedia(`(max-width: 930px) and (max-height: 425px)`);
-      //   let largeMobilePortQuery = window.matchMedia(`(max-width: 425px) and (max-height: 930px)`);
-      //   // SMALL QUERIES
-      //   let smallTabLandQuery = window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`);
-      //   let smallTabPortQuery = window.matchMedia(`(max-width: 800px) and (max-height: 1050px)`);
-      //   let smallMobileLandQuery = window.matchMedia(`(max-width: 800px) and (max-height: 375px)`);
-      //   let smallMobilePortQuery = window.matchMedia(`(max-width: 375px) and (max-height: 800px)`);
-      //   const screen = {
-      //     smallMobilePort: [window.matchMedia(`(max-width: 375px) and (max-height: 800px)`), [`gridMobilePort`, `r__gridMobilePort`]],
-      //     smallMobileLand: [window.matchMedia(`(max-width: 800px) and (max-height: 375px)`), [`gridMobileLand`, `r__gridMobileLand`]],
-      //     largeMobilePort: [window.matchMedia(`(max-width: 425px) and (max-height: 930px)`), [`gridMobilePort`, `r__gridMobilePort`]],
-      //     largeMobileLand: [window.matchMedia(`(max-width: 930px) and (max-height: 425px)`), [`gridMobileLand`, `r__gridMobileLand`]],
-      //     smallTabPort: [window.matchMedia(`(max-width: 800px) and (max-height: 1050px)`), [`gridTabPort`, `r__gridTabPort`]],
-      //     smallTabLand: [window.matchMedia(`(max-width: 1050px) and (max-height: 800px)`), [`gridTabLand`, `r__gridTabLand`]],
-      //     largeTabPort: [window.matchMedia(`(max-width: 1050px) and (max-height: 1400px)`), [`gridTabPort`, `r__gridTabPort`]],
-      //     largeTabLand: [window.matchMedia(`(max-width: 1400px) and (max-height: 1050px)`), [`gridTabLand`, `r__gridTabLand`]],
-      //     desktopQuery: [window.matchMedia(`(min-width: 1401px) and (min-height: 1051px)`), [`gridDesktop`, `r__gridDesktop`]],
-      //     tvQuery: [window.matchMedia(`(min-width: 2500px)`), [`gridTV`, `r__gridTV`]],
-      //   };
-      //   for (let [scr, mq] of Object.entries(screen)) {
-      //     if (mq)
-      //       mq[0].addEventListener('change', (e) => {
-      //         console.log(mq[0], mq[1]);
-      //         if (e.matches) {
-      //           this._listenForQueryChanges(mq[0], grid, classNames, mq[1]);
-      //         }
-      //       });
-      //   }
-      //   // LISTENERS FOR QUERIES
-      //   // smallMobilePortQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(smallMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
-      //   // );
-      //   // smallMobileLandQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(smallMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
-      //   // );
-      //   // smallTabPortQuery.addEventListener('change', this._listenForQueryChanges(smallTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
-      //   // smallTabLandQuery.addEventListener('change', this._listenForQueryChanges(smallTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
-      //   // largeMobilePortQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(largeMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
-      //   // );
-      //   // largeMobileLandQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(largeMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
-      //   // );
-      //   // largeTabPortQuery.addEventListener('change', this._listenForQueryChanges(largeTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
-      //   // largeTabLandQuery.addEventListener('change', this._listenForQueryChanges(largeTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
-      //   // tvQuery.addEventListener('change', (e) => {
-      //   //   console.log(e.matches, e);
-      //   //   if (e.matches) {
-      //   //     classNames.forEach((name) => {
-      //   //       grid.classList.remove(name);
-      //   //       grid.classList.remove(`r__${name}`);
-      //   //     });
-      //   //     Utility.addClasses(grid, [`gridTV`, `r__gridTV`]);
-      //   //   }
-      //   // });
-      //   // desktopQuery.addEventListener('change', (e) => {
-      //   //   console.log(e.matches, e);
-      //   //   if (e.matches) {
-      //   //     classNames.forEach((name) => {
-      //   //       grid.classList.remove(name);
-      //   //       grid.classList.remove(`r__${name}`);
-      //   //     });
-      //   //     Utility.addClasses(grid, [`gridDesktop`, `r__gridDesktop`]);
-      //   //   }
-      //   // });
-      //   // smallMobilePortQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(smallMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
-      //   // );
-      //   // smallMobileLandQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(smallMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
-      //   // );
-      //   // smallTabPortQuery.addEventListener('change', this._listenForQueryChanges(smallTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
-      //   // smallTabLandQuery.addEventListener('change', this._listenForQueryChanges(smallTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
-      //   // largeMobilePortQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(largeMobilePortQuery, grid, classNames, [`gridMobilePort`, `r__gridMobilePort`]),
-      //   // );
-      //   // largeMobileLandQuery.addEventListener(
-      //   //   'change',
-      //   //   this._listenForQueryChanges(largeMobileLandQuery, grid, classNames, [`gridMobileLand`, `r__gridMobileLand`]),
-      //   // );
-      //   // largeTabPortQuery.addEventListener('change', this._listenForQueryChanges(largeTabPortQuery, grid, classNames, [`gridTabPort`, `r__gridTabPort`]));
-      //   // largeTabLandQuery.addEventListener('change', this._listenForQueryChanges(largeTabLandQuery, grid, classNames, [`gridTabLand`, `r__gridTabLand`]));
-      //   // desktopQuery.addEventListener('change', this._listenForQueryChanges(desktopQuery, grid, classNames, [`gridDesktop`, `r__gridDesktop`]));
-      //   // tvQuery.addEventListener('change', this._listenForQueryChanges(tvQuery, grid, classNames, [`gridTV`, `r__gridTV`]));
-      // }
-
-    }]);
-
-    return App;
-  }(); ///////////////////////////////////////////////
-  // APP
-
-
-  var grid = document.querySelector('.grid');
-  var timeToggle = document.querySelector('.time-toggle');
-  var sunIcon = document.querySelector('.time-toggle__switch__icon--sun');
-  var moonIcon = document.querySelector('.time-toggle__switch__icon--moon');
   var app = new App();
 })();
+
+/***/ }),
+
+/***/ "./Public/JS/Components/_Navigation.js":
+/*!*********************************************!*\
+  !*** ./Public/JS/Components/_Navigation.js ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "watch": function() { return /* binding */ watch; }
+/* harmony export */ });
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
+/* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
+var watch = function watch() {
+  var navigationButton = document.querySelector('.button--navigation');
+  var navigationHeader = document.querySelector('.navigation-header');
+  var navigationCloseIcon = document.querySelector('.navigation-close-icon');
+  navigationButton.addEventListener('click', function (e) {
+    _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(navigationHeader, "navigation-header--open");
+  });
+  navigationCloseIcon.addEventListener('click', function (e) {
+    _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(navigationHeader, "navigation-header--open");
+  });
+  var links = document.querySelectorAll('.navigation-header__container__ring__navigation__link');
+  var navigationRing = document.querySelector('.navigation-header__container__ring');
+  var pentagon = document.querySelector('.pentagon');
+  links.forEach(function (link, i) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      if (link.textContent === "Home") {
+        console.log(link.textContent);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(navigationRing, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(pentagon, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        links.forEach(function (link) {
+          return _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(link, ["clicked"]);
+        });
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(navigationRing, ["rotate-zero"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(pentagon, ["rotate-zero"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(link, ["clicked"]);
+      } else if (link.textContent === "About") {
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(navigationRing, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(pentagon, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(navigationRing, ["rotate-seventy-two"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(pentagon, ["rotate-seventy-two"]);
+        links.forEach(function (link) {
+          return _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(link, ["clicked"]);
+        });
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(link, ["clicked"]);
+      } else if (link.textContent === "Portfolio") {
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(navigationRing, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(pentagon, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(navigationRing, ["rotate-one-forty-four"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(pentagon, ["rotate-one-forty-four"]);
+        links.forEach(function (link) {
+          return _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(link, ["clicked"]);
+        });
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(link, ["clicked"]);
+      } else if (link.textContent === "Resume") {
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(navigationRing, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(pentagon, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(navigationRing, ["rotate-two-sixteen"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(pentagon, ["rotate-two-sixteen"]);
+        links.forEach(function (link) {
+          return _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(link, ["clicked"]);
+        });
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(link, ["clicked"]);
+      } else if (link.textContent === "Contact") {
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(navigationRing, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(pentagon, ["rotate-zero", "rotate-seventy-two", "rotate-one-forty-four", "rotate-two-sixteen", "rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(navigationRing, ["rotate-two-eighty-eight"]);
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(pentagon, ["rotate-two-eighty-eight"]);
+        links.forEach(function (link) {
+          return _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(link, ["clicked"]);
+        });
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(link, ["clicked"]);
+      }
+    });
+  });
+};
 
 /***/ }),
 
@@ -6536,7 +6301,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "multiplyTwo": function() { return /* binding */ multiplyTwo; },
 /* harmony export */   "reloadPage": function() { return /* binding */ reloadPage; },
 /* harmony export */   "removeClasses": function() { return /* binding */ removeClasses; },
-/* harmony export */   "replaceClassName": function() { return /* binding */ replaceClassName; }
+/* harmony export */   "replaceClassName": function() { return /* binding */ replaceClassName; },
+/* harmony export */   "toggleClass": function() { return /* binding */ toggleClass; },
+/* harmony export */   "toggleClasses": function() { return /* binding */ toggleClasses; }
 /* harmony export */ });
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
 var replaceClassName = function replaceClassName(element, classReplaced, replacementClass) {
@@ -6556,6 +6323,14 @@ var addClasses = function addClasses(element, classes) {
 var removeClasses = function removeClasses(element, classes) {
   classes.forEach(function (c) {
     element.classList.remove(c);
+  });
+};
+var toggleClass = function toggleClass(element, className) {
+  return element.classList.toggle(className);
+};
+var toggleClasses = function toggleClasses(element, classNames) {
+  classNames.forEach(function (className) {
+    element.classList.toggle(className);
   });
 };
 var multiplyTwo = function multiplyTwo(numberOne, numberTwo) {

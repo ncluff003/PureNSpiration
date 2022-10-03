@@ -61,6 +61,9 @@
           content: '\279f';
           left: -2rem;
         }
+        &:hover {
+          transition: color 0.5s;
+        }
       }
     }
   }
@@ -117,6 +120,7 @@
   @include SizeAndPositioning(relative, max-content, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
   .connect-link {
     @include SizeAndPositioning(relative, max-content, max-content, flex, row, nowrap, center, center, 0, 0, 0);
+    transition: color 0.5s;
   }
 }
 

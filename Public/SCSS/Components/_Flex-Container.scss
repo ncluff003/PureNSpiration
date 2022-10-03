@@ -1,0 +1,11 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.flex-container {
+  @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+  &--home {
+    @extend .flex-container;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
