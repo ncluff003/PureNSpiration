@@ -5,7 +5,40 @@
   &--projects {
     @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
     overflow: hidden;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
+
+    &__project-navigation {
+      @include SizeAndPositioning(absolute, max-content, max-content, flex, column, nowrap, space-evenly, center, 0, -50%, 0);
+      top: 50%;
+      right: 2rem;
+      .up,
+      .down {
+        &:hover {
+          cursor: pointer;
+          transition: color 0.5s;
+        }
+      }
+      &__button {
+        @include SizingItem(relative, 2rem, 2rem);
+        border-radius: 50%;
+        margin-bottom: 1.5rem;
+        &:first-of-type {
+          margin-top: 1.5rem;
+        }
+        border: 0.2rem solid rgba($colorOffWhite, 0.8);
+        background-color: rgba($colorOffWhite, 0.8);
+
+        &:hover {
+          cursor: pointer;
+          border-color: $secondaryColor;
+          background-color: $secondaryColor;
+          transition: background-color 0.5s, border 0.5s;
+        }
+
+        &:active {
+          border-color: $primaryColor;
+          background-color: $primaryColor;
+        }
+      }
+    }
   }
 }

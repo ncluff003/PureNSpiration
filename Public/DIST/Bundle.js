@@ -6280,13 +6280,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "watch": function() { return /* binding */ watch; }
 /* harmony export */ });
+/* harmony import */ var _Utility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Utility */ "./Public/JS/Utility.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
 var watch = function watch() {
   var projectContainer = document.querySelector('.flex-container--projects');
   var projects = document.querySelectorAll('.project-container');
+  var projectNavigationContainer = document.createElement("aside");
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(projectNavigationContainer, ["flex-container--projects__project-navigation", "r__flex-container--projects__project-navigation"]);
+  var projectUpArrow = document.createElement('i');
+  var projectDownArrow = document.createElement('i');
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(projectUpArrow, ["fas", "fa-angle-up", "up", "r__up"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(projectDownArrow, ["fas", "fa-angle-down", "down", "r__down"]);
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElements("beforeend", projectNavigationContainer, [projectUpArrow, projectDownArrow]);
   projects.forEach(function (project, i) {
     project.style.transform = "translate(".concat(0, "%, ", 100 * i, "%)");
+    var button = document.createElement('button');
+    button.dataset.project = i;
+    _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(button, ["flex-container--projects__project-navigation__button", "r__flex-container--projects__project-navigation__button"]);
+    _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforebegin", projectDownArrow, button);
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      projects.forEach(function (project, i) {
+        project.style.transform = "translate(".concat(0, "%, ", 100 * i + Number(button.dataset.project) * -100, "%)");
+      });
+    });
   });
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", projectContainer, projectNavigationContainer);
   projectContainer.addEventListener("scroll", function (e) {
     e.preventDefault();
     console.log(projectContainer.scrollTop, projectContainer.scrollY);
@@ -6326,6 +6346,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addClasses": function() { return /* binding */ addClasses; },
 /* harmony export */   "clearIntervalInstigator": function() { return /* binding */ clearIntervalInstigator; },
 /* harmony export */   "insertElement": function() { return /* binding */ insertElement; },
+/* harmony export */   "insertElements": function() { return /* binding */ insertElements; },
 /* harmony export */   "multiplyTwo": function() { return /* binding */ multiplyTwo; },
 /* harmony export */   "reloadPage": function() { return /* binding */ reloadPage; },
 /* harmony export */   "removeClasses": function() { return /* binding */ removeClasses; },
@@ -6341,6 +6362,13 @@ var replaceClassName = function replaceClassName(element, classReplaced, replace
 var insertElement = function insertElement(position, container, element) {
   if (container) {
     container.insertAdjacentElement(position, element);
+  }
+};
+var insertElements = function insertElements(position, container, elements) {
+  if (container) {
+    elements.forEach(function (element) {
+      return insertElement(position, container, element);
+    });
   }
 };
 var addClasses = function addClasses(element, classes) {

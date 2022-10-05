@@ -1,0 +1,14 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.flex-container {
+  &--resume {
+    @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
+    .resume-container {
+      @include SizeAndPositioning(relative, max-content, max-content, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+      border: 1rem solid $primaryColor;
+      padding: 3rem;
+      margin-top: 9rem;
+    }
+  }
+}

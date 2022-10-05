@@ -2,6 +2,12 @@
   "title": "Pure N Spiration",
   "logo": "icon-PureNSpiration_Logo--night",
   "developer": "Nathan Cluff",
+  "position": "Full Stack Developer",
+  "contact-info": {
+    "email": "ncluff003@purenspiration.com",
+    "phone": "(385) 455-0345",
+    "location": "Sandy, UT"
+  },
   "photo": "/DIST/CSS/Images/MyPhoto.jpg",
   "resume": "resume",
   "profileLinks": {
@@ -131,88 +137,130 @@
           "borderColor": "rgba(0,151,151, 1)"
         },
         {
-          "title": "Less",
+          "title": "JavaScript",
           "proficiency": 7,
           "backgroundColor": "rgba(255,61,0, .2)",
           "borderColor": "rgba(255,61,0, 1)"
         },
         {
-          "title": "JavaScript",
+          "title": "Express.js",
           "proficiency": 9,
           "backgroundColor": "rgba(255, 215, 0, 0.2)",
           "borderColor": "rgba(255, 215, 0, 1)"
         },
         {
-          "title": "Vue.js",
+          "title": "Git",
           "proficiency": 8,
           "backgroundColor": "rgba(0,179,88, .2)",
           "borderColor": "rgba(0,179,88, 1)"
         },
         {
-          "title": "React.js",
+          "title": "Node.js",
           "proficiency": 4,
           "backgroundColor": "rgba(62,19,175, .2)",
           "borderColor": "rgba(62,19,175,1)"
         },
         {
-          "title": "Node.js",
+          "title": "GitHub",
           "proficiency": 8,
           "backgroundColor": "rgba(0,71,171, .2)",
           "borderColor": "rgba(0,71,171, 1)"
         },
         {
-          "title": "Express.js",
+          "title": "Debugging",
           "proficiency": 8,
           "backgroundColor": "rgba(255,255,56, .2)",
           "borderColor": "rgba(255,255,56, 1)"
         },
         {
-          "title": "MongoDB",
+          "title": "Photoshop",
           "proficiency": 8,
           "backgroundColor": "rgba(101,67,33, .2)",
           "borderColor": "rgba(101,67,33,1)"
         },
         {
-          "title": "Git",
+          "title": "Inkscape",
           "proficiency": 7,
           "backgroundColor": "rgba(252,146,0,.2)",
           "borderColor": "rgba(252,146,0,1)"
         },
         {
-          "title": "Github",
+          "title": "Pug.js",
           "proficiency": 7,
           "backgroundColor": "rgba(252,6,0,.2)",
           "borderColor": "rgba(252,6,0,1)"
         },
         {
-          "title": "Webpack",
+          "title": "RESTful APIs",
           "proficiency": 7,
           "backgroundColor": "rgba(30,126,10,.2)",
           "borderColor": "rgba(30,126,10,1)"
         },
         {
-          "title": "Parcel",
+          "title": "Illustrator",
           "proficiency": 6,
           "backgroundColor": "rgb(5,208,255,.2)",
           "borderColor": "rgb(5,208,255,1)"
         },
         {
-          "title": "Postman",
+          "title": "Webpack",
           "proficiency": 9,
           "backgroundColor": "rgba(125,10,66,.2)",
           "borderColor": "rgba(125,10,66,1)"
         },
         {
-          "title": "Command Line",
+          "title": "Postman",
           "proficiency": 7,
           "backgroundColor": "rgb(21,29,104,.2)",
           "borderColor": "rgb(21,29,104,1)"
         },
         {
-          "title": "Problem Solving",
+          "title": "MongoDB",
           "proficiency": 9,
           "backgroundColor": "rgba(255, 215, 0, 0.2)",
           "borderColor": "rgba(255, 215, 0, 1)"
+        },
+        {
+          "title": "Vue.js"
+        },
+        {
+          "title": "Responsive Design"
+        },
+        {
+          "title": "Chrome Dev Tools"
+        },
+        {
+          "title": "MVC Architecture"
+        },
+        {
+          "title": "Quick Learner"
+        },
+        {
+          "title": "Communication"
+        },
+        {
+          "title": "Attention To Detail"
+        },
+        {
+          "title": "Organized"
+        },
+        {
+          "title": "Apple"
+        },
+        {
+          "title": "Linux"
+        },
+        {
+          "title": "Windows"
+        },
+        {
+          "title": "JSON"
+        },
+        {
+          "title": "Playwright"
+        },
+        {
+          "title": "Command Line"
         }
       ]
     }
@@ -238,7 +286,7 @@
       "title": "Hangman",
       "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
       "photoAltText": "Hangman Cover Photo",
-      "description": ["The game of hangman.  Pick one letter at a time to see if you can guess a custom word or phrase."],
+      "description": "The classic game of Hangman with the feature of users being able to be creative with their own custom words and phrases.",
       "technologies": "HTML5, CSS3, SCSS, JavaScript, Vue.js, Node.js, Express.js, JSON",
       "link": "https://ncluff003.github.io/Hangman/",
       "code": "https://github.com/ncluff003/Hangman",
@@ -259,10 +307,7 @@
       "title": "King Richard",
       "coverPhoto": "/DIST/CSS/Images/Computer_Desktop_Image.svg",
       "photoAltText": "King Richard Cover Photo",
-      "description": [
-        "A zero based budget made for everyone.",
-        "It is especially made to be adaptable to anyone in the world.  Hopefully, it also can be for anyone in any kind of circumstance."
-      ],
+      "description": "Zero based budget that is aimed to help anyone manage their respective finances better.",
       "technologies": "HTML5, CSS3, SCSS, JavaScript, Node.js, Express.js, JSON",
       "link": "https://www.purenspiration.com",
       "code": "https://github.com/ncluff003/KingRichard-Budget",

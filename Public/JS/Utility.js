@@ -9,6 +9,12 @@ export const insertElement = (position, container, element) => {
   }
 };
 
+export const insertElements = (position, container, elements) => {
+  if (container) {
+    elements.forEach((element) => insertElement(position, container, element));
+  }
+};
+
 export const addClasses = (element, classes) => {
   classes.forEach((c) => {
     element.classList.add(c);

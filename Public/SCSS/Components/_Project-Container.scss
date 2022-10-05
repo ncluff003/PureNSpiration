@@ -3,7 +3,7 @@
 
 .project-container {
   @include SizeAndPositioning(absolute, 100vh, 100vw, flex, column, nowrap, flex-end, center, 0, 0, 0);
-  scroll-snap-align: start;
+  transition: transform 0.5s;
   &:not(:last-of-type) {
     border-bottom: 0.5rem groove rgba($colorOffWhite, 0.25);
   }

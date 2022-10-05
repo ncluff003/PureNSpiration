@@ -23,7 +23,7 @@ block unique-content
           section.flex-container--home.r__flex-container--home.column_1-24.row_1-18.night--sky
             section.hero-container.r__hero-container
               h1.full-name.r__full-name Nathan Cluff 
-              h3.position.r__position Full Stack Developer
+              h3.position.r__position #{data.data.position}
               button.button--cta.r__button--cta.button--hero.r__button--hero 
                 p.button--cta__text.r__button--cta__text View Projects
     .pentagon__inside-ring.r__pentagon__inside-ring
@@ -86,7 +86,56 @@ block unique-content
       section.pentagon-side.r__pentagon-side
         section.grid.r__grid
           section.flex-container--resume.r__flex-container--resume.column_1-24.row_1-18
-            h1 Resume Page
+            .resume-container.r__resume-container 
+              .resume-contiainer__personal-info-container.r__resume-container__personal-info-container
+                .resume-container__personal-info-container__name-container.r__resume-container__personal-info-container__name-container 
+                  p.resume-container__personal-info-container__name-container__full-name.r__resume-container__personal-info-container__name-container__full-name
+                    span.resume-container__personal-info-container__name-container__full-name__first-name.r__resume-container__personal-info-container__name-container__full-name__first-name= `${data.data.developer.split(' ')[0]}`
+                    |   #{data.data.developer.split(' ')[1]}
+                  p.resume-container__personal-info-container__name-container__position.r__resume-container__personal-info-container__name-container__position #{data.data.position}
+                .resume-container__personal-info-container__contact-container.r__resume-container__personal-info-container__contact-container 
+                  h3.resume-container__personal-info-container__contact-container__header.r__resume-container__personal-info-container__contact-container__header Contact 
+                  p.resume-container__personal-info-container__contact-info.r__resume-container__personal-info-container__contact-info #{data.data['contact-info'].email}
+                  p.resume-container__personal-info-container__contact-info.r__resume-container__personal-info-container__contact-info #{data.data['contact-info'].phone}
+                  p.resume-container__personal-info-container__contact-info.r__resume-container__personal-info-container__contact-info #{data.data['contact-info'].location}
+                  p.resume-container__personal-info-container__contact-info.r__resume-container__personal-info-container__contact-info #{data.data.profileLinks.LinkedIn}
+                  p.resume-container__personal-info-container__contact-info.r__resume-container__personal-info-container__contact-info #{data.data.profileLinks.Github}
+                  p.resume-container__personal-info-container__contact-info.r__resume-container__personal-info-container__contact-info #{data.data.projects[0].link}
+                .resume-container__personal-info-container__education-container.r__resume-container__personal-info-container__education-container 
+                  h3.resume-container__personal-info-container__education-container__header.r__resume-container__personal-info-container__education-container__header Education
+                  h4.resume-container__personal-info-container__education-container__degree.r__resume-container__personal-info-container__education-container__degree GED
+                  p.resume-container__personal-info-container__education-container__degree-info.r__resume-container__personal-info-container__education-container__degree-info Homeschool | August 2002 - May 2006
+                .resume-container__personal-info-container__certificate-container.r__resume-container__personal-info-container__certificate-container
+                  h3.resume-container__personal-info-container__certificate-container__header.r__resume-container__personal-info-container__certificate-container__header Certificates
+                  .resume-container__personal-info-container__certificate-container__certificate.r__resume-container__personal-info-container__certificate-container__certificate 
+                    h4.resume-container__personal-info-container__certificate-container__certificate__title.r__resume-container__personal-info-container__certificate-container__certificate__title HTML | CSS 
+                    p.resume-container__personal-info-container__certificate-container__certificate__info.r__resume-container__personal-info-container__certificate-container__certificate__info TestDome | Issued November 2021
+                    h4.resume-container__personal-info-container__certificate-container__certificate__title.r__resume-container__personal-info-container__certificate-container__certificate__title JavaScript
+                    p.resume-container__personal-info-container__certificate-container__certificate__info.r__resume-container__personal-info-container__certificate-container__certificate__info TestDome | Issued November 2021
+                    h4.resume-container__personal-info-container__certificate-container__certificate__title.r__resume-container__personal-info-container__certificate-container__certificate__title Node.js
+                    p.resume-container__personal-info-container__certificate-container__certificate__info.r__resume-container__personal-info-container__certificate-container__certificate__info TestDome | Issued November 2021
+                .resume-container__personal-info-container__skill-container.r__resume-container__personal-info-container__skill-container
+                  h3.resume-container__personal-info-container__skill-container__header.r__resume-container__personal-info-container__skill-container__header Skills
+                  .resume-container__personal-info-container__skill-container__skills-one.r__resume-container__personal-info-container__skill-container__skills-one
+                  - let numberOfSkills = 21
+                    each skill, index in data.data.about[2].skills 
+                      if index < numberOfSkills 
+                        p.resume-container__personal-info-container__skill-container__skills-one__skill.r__resume-container__personal-info-container__skill-container__skills-one__skill #{skill.title}
+                  .resume-container__personal-info-container__skill-container__skills-two.r__resume-container__personal-info-container__skill-container__skills-two
+                    each skill, index in data.data.about[2].skills 
+                      if index > numberOfSkills - 1 
+                        p.resume-container__personal-info-container__skill-container__skills-one__skill.r__resume-container__personal-info-container__skill-container__skills-one__skill #{skill.title}
+                .resume-container__personal-info-container__personal-project-container.r__resume-container__personal-info-container__personal-project-container
+                  h3.resume-container__personal-info-container__personal-project-container__header.r__resume-container__personal-info-container__personal-project-container__header Personal Projects 
+                  ul.resume-container__personal-info-container__personal-project-container__project-list.r__resume-container__personal-info-container__personal-project-container__project-list 
+                    li.resume-container__personal-info-container__personal-project-container__project-list__list-item.r__resume-container__personal-info-container__personal-project-container__project-list__list-item
+                      h4.resume-container__personal-info-container__personal-project-container__project-list__list-item__title.r__resume-container__personal-info-container__personal-project-container__project-list__list-item__title #{data.data.projects[1].title}
+                      p.resume-container__personal-info-container__personal-project-container__project-list__list-item__description.r__resume-container__personal-info-container__personal-project-container__project-list__list-item__description #{data.data.projects[1].description}
+                    li.resume-container__personal-info-container__personal-project-container__project-list__list-item.r__resume-container__personal-info-container__personal-project-container__project-list__list-item
+                      h4.resume-container__personal-info-container__personal-project-container__project-list__list-item__title.r__resume-container__personal-info-container__personal-project-container__project-list__list-item__title #{data.data.projects[2].title}
+                      p.resume-container__personal-info-container__personal-project-container__project-list__list-item__description.r__resume-container__personal-info-container__personal-project-container__project-list__list-item__description #{data.data.projects[2].description}
+
+              .resume-contiainer__work-info-container.r__resume-container__work-info-container
     .pentagon__inside-ring.r__pentagon__inside-ring
       section.pentagon-side.r__pentagon-side
         section.grid.r__grid

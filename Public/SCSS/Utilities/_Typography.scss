@@ -135,6 +135,30 @@ html {
       }
     }
   }
+  &--projects {
+    &__project-navigation {
+      .up,
+      .down {
+        font-size: 3rem;
+        color: rgba($colorOffWhite, 0.8);
+        &:hover {
+          color: $secondaryColor;
+        }
+        &:active {
+          color: $primaryColor;
+        }
+      }
+      .end {
+        color: rgba($colorOffWhite, 0.25);
+        &:hover {
+          color: rgba($colorOffWhite, 0.25);
+        }
+        &:active {
+          color: rgba($colorOffWhite, 0.25);
+        }
+      }
+    }
+  }
 }
 
 .project-container {
