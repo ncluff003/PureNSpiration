@@ -1,10 +1,11 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-.projects-container {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, center, center, 0, 0, 0);
-  overflow-x: visible;
-  #vueApp {
-    @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+.flex-container {
+  &--projects {
+    @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, center, center, 0, 0, 0);
+    overflow: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
   }
 }

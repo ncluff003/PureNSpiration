@@ -1,0 +1,25 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.project-container {
+  @include SizeAndPositioning(absolute, 100vh, 100vw, flex, column, nowrap, flex-end, center, 0, 0, 0);
+  scroll-snap-align: start;
+  &:not(:last-of-type) {
+    border-bottom: 0.5rem groove rgba($colorOffWhite, 0.25);
+  }
+  img {
+    @include SizingItem(absolute, 100vh, 100vw);
+  }
+  &__name-container {
+    @include SizeAndPositioning(absolute, max-content, 100%, flex, column, nowrap, center, center, 0, -50%, 0);
+    padding: 4rem;
+    background-color: rgba($colorDarkerGrey, 0.9);
+    &__name {
+      @include SizingItem(relative, max-content, max-content);
+      margin-bottom: 2rem;
+    }
+    &__link-container {
+      @include SizeAndPositioning(relative, max-content, 30%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+    }
+  }
+}

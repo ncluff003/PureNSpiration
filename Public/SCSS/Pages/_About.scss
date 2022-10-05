@@ -37,14 +37,14 @@
         &__left-door {
           top: 0;
           left: 0;
-          border-right: 0.2rem groove rgba($colorOffWhite, 0.125);
+          border-right: 0.1rem groove rgba($colorOffWhite, 0.125);
           border-top-left-radius: 1rem;
           border-bottom-left-radius: 1rem;
         }
         &__right-door {
           top: 0;
           right: 0;
-          border-left: 0.2rem groove rgba($colorOffWhite, 0.125);
+          border-left: 0.1rem groove rgba($colorOffWhite, 0.125);
           border-top-right-radius: 1rem;
           border-bottom-right-radius: 1rem;
         }

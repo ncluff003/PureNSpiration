@@ -19,6 +19,7 @@ import * as Contact from './Pages/Contact';
     constructor() {
       Navigation.watch();
       About.watch();
+      Project.watch();
     }
   }
   const app = new App();

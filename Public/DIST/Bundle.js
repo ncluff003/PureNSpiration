@@ -4948,6 +4948,7 @@ __webpack_require__.r(__webpack_exports__);
 
     _Components_Navigation__WEBPACK_IMPORTED_MODULE_2__.watch();
     _Pages_About__WEBPACK_IMPORTED_MODULE_6__.watch();
+    _Pages_Project__WEBPACK_IMPORTED_MODULE_10__.watch();
   });
 
   var app = new App();
@@ -6277,49 +6278,19 @@ var watchContactForm = function watchContactForm() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "renderLatestProject": function() { return /* binding */ renderLatestProject; },
-/* harmony export */   "watchProjectPage": function() { return /* binding */ watchProjectPage; }
+/* harmony export */   "watch": function() { return /* binding */ watch; }
 /* harmony export */ });
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
-var renderLatestLinks = function renderLatestLinks(content) {
-  var links = document.querySelectorAll('.latest-project__project-view__link-container__link');
-  var codeLink = links[0];
-  var siteLink = links[1];
-
-  if (codeLink) {
-    codeLink.href = content.code;
-  }
-
-  if (siteLink) {
-    siteLink.href = content.link;
-  }
-};
-
-var renderLatestCoverPhoto = function renderLatestCoverPhoto(photo, altText) {
-  var coverPhoto = document.querySelector('.latest-project__project-view__cover-photo__image');
-
-  if (coverPhoto) {
-    coverPhoto.src = photo;
-    coverPhoto.alt = altText;
-  }
-};
-
-var renderLatestProjectTitle = function renderLatestProjectTitle(project) {
-  var projectTitle = document.querySelector('.latest-project__project-view__header__title');
-
-  if (projectTitle) {
-    projectTitle.textContent = project.title;
-  }
-};
-
-var renderLatestProject = function renderLatestProject(content) {
-  renderLatestProjectTitle(content);
-  renderLatestCoverPhoto(content.coverPhoto, content.photoAltText);
-  renderLatestLinks(content);
-};
-var watchProjectPage = function watchProjectPage() {
-  if (window.location.href !== "http://127.0.0.1:3333/projects") return;
-  console.log("Watching Projects...");
+var watch = function watch() {
+  var projectContainer = document.querySelector('.flex-container--projects');
+  var projects = document.querySelectorAll('.project-container');
+  projects.forEach(function (project, i) {
+    project.style.transform = "translate(".concat(0, "%, ", 100 * i, "%)");
+  });
+  projectContainer.addEventListener("scroll", function (e) {
+    e.preventDefault();
+    console.log(projectContainer.scrollTop, projectContainer.scrollY);
+  });
 };
 
 /***/ }),

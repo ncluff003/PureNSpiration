@@ -137,6 +137,16 @@ html {
   }
 }
 
+.project-container {
+  font-family: MADE Tommy Soft Medium, Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
+  font-weight: normal;
+  &__name-container {
+    &__name {
+      font-size: 7rem;
+    }
+  }
+}
+
 .day {
   &--sky {
     color: $colorDarkerGrey;
