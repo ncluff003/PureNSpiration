@@ -1,25 +1,15 @@
-extends base
-
-block connection-links
-  section.connection-container.r__connection-container
-    p.connect-navigation__pre-text.r__connect-navigation__pre-text Connect
-    button.button--circle__extra-small.r__button--circle__extra-small.navigation-connection-button.r__navigation-connection-button
-      i.fas.fa-angle-left.button--circle__extra-small__icon
-    section.connect--navigation.r__connect--navigation.pseudo-after-full-width
-      ul.connect--navigation__link-list.r__connect--navigation__link-list 
-        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
-          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://www.linkedin.com/in/ncluff003`)
-            i.fab.fa-linkedin
-        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
-          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://github.com/ncluff003`)
-            i.fab.fa-github-square
-        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
-          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://codepen.io/ncluff3`)
-            i.fab.fa-codepen
-        li.connect--navigation__link-list__link-item.r__connect--navigation__link-list__link-item
-          a.connect--navigation__link-list__link-item__link.r__connect--navigation__link-list__link-item__link(href=`https://t.me/ncluff003`)  
-            i.fab.fa-telegram-plane
-
 block unique-content
-  section.projects-container.r__projects-container.column_2-22.row_3-15
-    section#vueApp
+  section.pentagon-side.r__pentagon-side
+    section.grid.r__grid
+      section.flex-container--projects.r__flex-container--projects.column_1-24.row_1-18
+        - let projects = data.data.projects
+        each project in projects
+          section.project-container.r__project-container 
+            img(src=`${project.coverPhoto}`, alt=`${project.title} Cover Photo`)
+            section.project-container__name-container.r__project-container__name-container
+              h2.project-container__name-container__name.r__project-container__name-container__name= project.title
+              section.project-container__name-container__link-container.r__project-container__name-container__link-container 
+                a.button--cta.r__button--cta(href=`${project.link}` target='_blank')
+                  p.button--cta__text.r__button--cta__text View Code
+                a.button--cta.r__button--cta(href=`${project.code}` target='_blank')
+                  p.button--cta__text.r__button--cta__text View Site

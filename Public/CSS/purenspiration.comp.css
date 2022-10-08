@@ -40852,17 +40852,21 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
 }
 .flex-container--resume .resume-container {
   position: relative;
-  height: max-content;
-  width: max-content;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
   transform: rotate(0) translate(0, 0);
-  border: 1rem solid #ffd700;
-  padding: 3rem;
+  padding: 1rem;
   margin-top: 9rem;
+}
+.flex-container--resume .resume-container embed {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .contact-me-section {

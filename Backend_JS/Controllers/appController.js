@@ -8,6 +8,8 @@ const path = require('path');
 ////////////////////////////////////////////
 //  Third Party Modules
 
+const PDFDocument = require('pdfkit');
+
 ////////////////////////////////////////////
 //  Third Party Module Instances
 
@@ -33,9 +35,12 @@ const calendar = require(`./../Models/calendarModel`);
 
 // MAKE REQUEST FOR AND STORE DATA FROM JSON FILE.
 let pureData = JSON.parse(fs.readFileSync(`${__dirname}/../Data/pureData.json`, 'utf-8'));
+let pdfDoc = new PDFDocument();
+pdfDoc.pipe(fs.createWriteStream(`${__dirname}/../Data/N_Cluff_Resume--Full-Stack2.pdf`));
 
 exports.returnMyData = catchAsync(async (request, response, next) => {
   const data = pureData;
+
   response.status(200).json({
     status: `Success`,
     data,
