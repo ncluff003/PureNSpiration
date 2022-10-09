@@ -101,4 +101,27 @@
     transform: translate(-50%, -50%);
     z-index: 10;
   }
+
+  &--send {
+    @include SizeAndPositioning(relative, max-content, max-content, flex, row, nowrap, center, center, 0, 0, 0);
+    bottom: -3rem;
+    right: -18.5rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    z-index: 5;
+
+    background-color: rgba($secondaryColor, 0.25);
+    border: 0.2rem solid rgba($secondaryColor, 0.8);
+    &:hover {
+      cursor: pointer;
+      background-color: $secondaryColor;
+      border-color: $secondaryColor;
+      transition: background-color 0.5s, color 0.5s, border 0.5s;
+    }
+
+    &:active {
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+    }
+  }
 }

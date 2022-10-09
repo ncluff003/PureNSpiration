@@ -2,4 +2,23 @@ block unique-content
   section.pentagon-side.r__pentagon-side
     section.grid.r__grid
       section.flex-container--contact.r__flex-container--contact.column_1-24.row_1-18
-        h1 Contact Page
+        h2.contact-header.r__contact-header Contact Me
+        form.form.r__form
+          section.form__section--names.r__form__section--names
+            section.form__section--names__sub-section.r__form__section--names__sub-section
+              input.form__input.r__form__input#firstname(type="text" name="firstname" placeholder="First Name")
+              label.form__label.r__form__label(for="firstname") First Name 
+            section.form__section--names__sub-section.r__form__section--names__sub-section 
+              input.form__input.r__form__input#lastname(type="text" name="lastname" placeholder="Last Name")
+              label.form__label.r__form__label(for="lastname") Last Name 
+          section.form__section.r__form__section 
+              input.form__input.r__form__input#email(type="text" name="email" placeholder="Email Address")
+              label.form__label.r__form__label(for="email") Email Address 
+          section.form__section.r__form__section 
+              input.form__input.r__form__input#subject(type="text" name="subject" placeholder="Subject")
+              label.form__label.r__form__label(for="subject") Subject 
+          section.form__section.r__form__section 
+            textarea.form__input--message.r__form__input--message#message(name="message" placeholder="Enter Message Here." maxLength="2000")
+            label.form__label--message.r__form__label--message(for="message") Message
+          button.button--send.r__button--send Send
+          p.form__characters-left.r__form__characters-left

@@ -1,35 +1,11 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-.contact-me-section {
-  @include SizeAndPositioning(relative, 100%, 100%, flex, row, wrap, space-evenly, center, 0, 0, 0);
-}
-
-.personal-photo-container {
-  @include SizeAndPositioning(relative, 100%, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
-}
-
-.contact-form {
-  @include SizeAndPositioning(relative, 100%, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
-}
-
-.personal-photo {
-  @include SizeAndPositioning(relative, 60%, 100%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
-  &__image {
-    @include SizingItem(relative, 70%, auto);
-    border-radius: 50%;
-    transition: border 0.5s;
-  }
-}
-
-.contact-greeting {
-  @include SizeAndPositioning(relative, 40%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
-  padding: 0 3rem 3rem;
-  &__heading {
-    transition: color 0.5s;
-  }
-  &__greeting {
-    transition: color 0.5s;
+.flex-container {
+  &--contact {
+    @include SizeAndPositioning(relative, 100%, 100%, flex, column, nowrap, space-evenly, center, 0, 0, 0);
+    .contact-header {
+    }
   }
 }
 

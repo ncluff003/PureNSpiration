@@ -77,6 +77,19 @@ html {
       color: $colorDarkerGrey;
     }
   }
+  &--send {
+    @extend .button;
+    font-size: 1.6rem;
+    color: rgba($colorOffWhite, 0.8);
+
+    &:hover {
+      color: $colorOffWhite;
+    }
+
+    &:active {
+      color: $colorDarkerGrey;
+    }
+  }
 }
 
 .time-toggle {
@@ -159,6 +172,11 @@ html {
       }
     }
   }
+  &--contact {
+    .contact-header {
+      font-size: 8rem;
+    }
+  }
 }
 
 .project-container {
@@ -167,6 +185,52 @@ html {
   &__name-container {
     &__name {
       font-size: 7rem;
+    }
+  }
+}
+
+.form {
+  &__label {
+    font-size: 2rem;
+    color: $colorDarkerGrey;
+    &--message {
+      @extend .form__label;
+    }
+  }
+  &__input {
+    font-size: 2rem;
+    color: $colorDarkerGrey;
+    &:not(:placeholder-shown) + label,
+    &:focus + label {
+      color: $colorOffWhite;
+    }
+    &--message {
+      font-size: 2rem;
+      color: $colorDarkerGrey;
+      &:not(:placeholder-shown) ~ .form__label--message,
+      &:focus ~ .form__label--message {
+        color: $colorOffWhite;
+      }
+    }
+  }
+  &__section {
+    &--names {
+      &__sub-section {
+        .form {
+          &__label {
+            font-size: 2rem;
+            color: $colorDarkerGrey;
+          }
+          &__input {
+            font-size: 2rem;
+            color: $colorDarkerGrey;
+            &:not(:placeholder-shown) + label,
+            &:focus + label {
+              color: $colorOffWhite;
+            }
+          }
+        }
+      }
     }
   }
 }

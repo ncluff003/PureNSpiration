@@ -19,7 +19,7 @@
   font-family: MADE Tommy Soft Extra Bold;
   src: url("./MADE Tommy Soft ExtraBold PERSONAL USE.otf");
 }
-html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-side, .navigation-header {
+html, .flex-container, .button, .button--send, .button--cta, .button--navigation, .pentagon-side, .navigation-header {
   font-family: MADE Tommy Soft, Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
   font-variant-ligatures: none;
 }
@@ -69,6 +69,16 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
   text-decoration: none;
 }
 .button--cta:hover {
+  color: #333333;
+}
+.button--send {
+  font-size: 1.6rem;
+  color: rgba(250, 250, 250, 0.8);
+}
+.button--send:hover {
+  color: #fafafa;
+}
+.button--send:active {
   color: #333333;
 }
 
@@ -128,6 +138,9 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
 .flex-container--projects__project-navigation .end:active {
   color: rgba(250, 250, 250, 0.25);
 }
+.flex-container--contact .contact-header {
+  font-size: 8rem;
+}
 
 .project-container {
   font-family: MADE Tommy Soft Medium, Roboto Condensed, Purely Me, Century Gothic, Verdana, sans-serif;
@@ -135,6 +148,36 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
 }
 .project-container__name-container__name {
   font-size: 7rem;
+}
+
+.form__label, .form__label--message {
+  font-size: 2rem;
+  color: #333333;
+}
+.form__input {
+  font-size: 2rem;
+  color: #333333;
+}
+.form__input:not(:placeholder-shown) + label, .form__input:focus + label {
+  color: #fafafa;
+}
+.form__input--message {
+  font-size: 2rem;
+  color: #333333;
+}
+.form__input--message:not(:placeholder-shown) ~ .form__label--message, .form__input--message:focus ~ .form__label--message {
+  color: #fafafa;
+}
+.form__section--names__sub-section .form__label, .form__section--names__sub-section .form__label--message {
+  font-size: 2rem;
+  color: #333333;
+}
+.form__section--names__sub-section .form__input {
+  font-size: 2rem;
+  color: #333333;
+}
+.form__section--names__sub-section .form__input:not(:placeholder-shown) + label, .form__section--names__sub-section .form__input:focus + label {
+  color: #fafafa;
 }
 
 .day--sky {
@@ -37251,6 +37294,34 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
   transform: translate(-50%, -50%);
   z-index: 10;
 }
+.button--send {
+  position: relative;
+  height: max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  bottom: -3rem;
+  right: -18.5rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  z-index: 5;
+  background-color: rgba(0, 71, 171, 0.25);
+  border: 0.2rem solid rgba(0, 71, 171, 0.8);
+}
+.button--send:hover {
+  cursor: pointer;
+  background-color: #0047ab;
+  border-color: #0047ab;
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+.button--send:active {
+  background-color: #ffd700;
+  border-color: #ffd700;
+}
 
 .project-container {
   position: absolute;
@@ -37305,7 +37376,7 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
 
 .form {
   position: relative;
-  height: 100%;
+  height: 50%;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -37313,7 +37384,146 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
   justify-content: flex-start;
   align-items: center;
   transform: rotate(0) translate(0, 0);
-  padding-top: 10rem;
+  padding-top: 0;
+}
+.form__input {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding-left: 1rem;
+}
+.form__input::-webkit-input-placeholder, .form__input:-moz-placeholder, .form__input::placeholder {
+  opacity: 0;
+}
+.form__input:focus {
+  outline: none;
+}
+.form__input:focus::-webkit-input-placeholder, .form__input:focus::-moz-placeholder, .form__input:focus::placeholder {
+  opacity: 1;
+}
+.form__input:not(:placeholder-shown) + label, .form__input:focus + label {
+  transform: translate(-6rem, -7.25rem) scale(0.75);
+}
+.form__input--message {
+  position: relative;
+  height: 300%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transform: rotate(0) translate(0, 6rem);
+  padding: 0.3rem 1rem 1rem;
+  min-height: 300%;
+  resize: none;
+}
+.form__input--message::-webkit-input-placeholder, .form__input--message:-moz-placeholder, .form__input--message::placeholder {
+  opacity: 0;
+}
+.form__input--message:focus {
+  outline: none;
+}
+.form__input--message:focus::-webkit-input-placeholder, .form__input--message:focus::-moz-placeholder, .form__input--message:focus::placeholder {
+  opacity: 1;
+}
+.form__input--message:not(:placeholder-shown) ~ .form__label--message, .form__input--message:focus ~ .form__label--message {
+  transform: translate(-6rem, -7.25rem) scale(0.75);
+}
+.form__label, .form__label--message {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, -50%);
+  top: 50%;
+  padding-left: 1rem;
+  transition: transform 0.5s, color 0.5s;
+}
+.form__label--message {
+  transform: translateY(-70%);
+}
+.form__section, .form__section--names {
+  position: relative;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  margin-bottom: 3rem;
+}
+.form__section--names {
+  flex-direction: row;
+}
+.form__section--names__sub-section {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+}
+.form__section--names__sub-section:first-of-type {
+  align-items: flex-end;
+  margin-right: 1rem;
+}
+.form__section--names__sub-section:last-of-type {
+  align-items: flex-start;
+  margin-left: 1rem;
+}
+.form__section--names__sub-section .form__label, .form__section--names__sub-section .form__label--message {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, -50%);
+  top: 50%;
+  padding-left: 1.2rem;
+  transition: transform 0.5s, color 0.5s;
+}
+.form__section--names__sub-section .form__input {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transform: rotate(0) translate(0, 0);
+  padding-left: 1.2rem;
+}
+.form__section--names__sub-section .form__input::-webkit-input-placeholder, .form__section--names__sub-section .form__input:-moz-placeholder, .form__section--names__sub-section .form__input::placeholder {
+  opacity: 0;
+}
+.form__section--names__sub-section .form__input:focus {
+  outline: none;
+}
+.form__section--names__sub-section .form__input:focus::-webkit-input-placeholder, .form__section--names__sub-section .form__input:focus::-moz-placeholder, .form__section--names__sub-section .form__input:focus::placeholder {
+  opacity: 1;
+}
+.form__section--names__sub-section .form__input:not(:placeholder-shown) + label, .form__section--names__sub-section .form__input:focus + label {
+  transform: translate(-3rem, -7.25rem) scale(0.75);
 }
 
 .form-section, .form-section--message {
@@ -40869,45 +41079,9 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
   width: 100%;
 }
 
-.contact-me-section {
+.flex-container--contact {
   position: relative;
   height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  transform: rotate(0) translate(0, 0);
-}
-
-.personal-photo-container {
-  position: relative;
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  transform: rotate(0) translate(0, 0);
-}
-
-.contact-form {
-  position: relative;
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  transform: rotate(0) translate(0, 0);
-}
-
-.personal-photo {
-  position: relative;
-  height: 60%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -40916,33 +41090,6 @@ html, .flex-container, .button, .button--cta, .button--navigation, .pentagon-sid
   align-items: center;
   transform: rotate(0) translate(0, 0);
 }
-.personal-photo__image {
-  position: relative;
-  height: 70%;
-  width: auto;
-  border-radius: 50%;
-  transition: border 0.5s;
-}
-
-.contact-greeting {
-  position: relative;
-  height: 40%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  transform: rotate(0) translate(0, 0);
-  padding: 0 3rem 3rem;
-}
-.contact-greeting__heading {
-  transition: color 0.5s;
-}
-.contact-greeting__greeting {
-  transition: color 0.5s;
-}
-
 .day .contact-me-section .personal-photo-container .personal-photo__image {
   border: 0.3rem solid #ffd700;
 }
