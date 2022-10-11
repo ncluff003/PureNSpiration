@@ -2,11 +2,19 @@
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
 .form {
-  @include SizeAndPositioning(relative, 50%, 50%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  @include SizeAndPositioning(relative, 90%, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
   padding-top: 0;
+
+  &__character-count {
+    transform: translate(10rem, 6rem);
+  }
   &__input {
     @include SizeAndPositioning(relative, 100%, 50%, flex, row, nowrap, flex-start, center, 0, 0, 0);
     padding-left: 1rem;
+    background-color: rgba($colorOffWhite, 0.25);
+    border: 0.3rem solid rgba($secondaryColor, 0.8);
+    border-radius: 0.9rem;
+
     &::-webkit-input-placeholder,
     &:-moz-placeholder,
     &::placeholder {
@@ -15,6 +23,9 @@
 
     &:focus {
       outline: none;
+      transition: background-color 0.5s, border 0.5s, color 0.5s;
+      background-color: rgba($colorOffWhite, 0.8);
+      border-color: $secondaryColor;
       &::-webkit-input-placeholder,
       &::-moz-placeholder,
       &::placeholder {
@@ -24,7 +35,7 @@
 
     &:not(:placeholder-shown) + label,
     &:focus + label {
-      transform: translate(-6rem, -7.25rem) scale(0.75);
+      transform: translate(-5rem, -7.25rem) scale(0.75);
     }
 
     &--message {
@@ -32,6 +43,10 @@
       padding: 0.3rem 1rem 1rem;
       min-height: 300%;
       resize: none;
+
+      background-color: rgba($colorOffWhite, 0.25);
+      border: 0.3rem solid rgba($secondaryColor, 0.8);
+      border-radius: 0.9rem;
 
       &::-webkit-input-placeholder,
       &:-moz-placeholder,
@@ -41,6 +56,9 @@
 
       &:focus {
         outline: none;
+        transition: background-color 0.5s, border 0.5s, color 0.5s;
+        background-color: rgba($colorOffWhite, 0.8);
+        border-color: $secondaryColor;
         &::-webkit-input-placeholder,
         &::-moz-placeholder,
         &::placeholder {
@@ -50,7 +68,7 @@
 
       &:not(:placeholder-shown) ~ .form__label--message,
       &:focus ~ .form__label--message {
-        transform: translate(-6rem, -7.25rem) scale(0.75);
+        transform: translate(-5rem, -7.25rem) scale(0.75);
       }
     }
   }
@@ -92,6 +110,10 @@
             @include SizeAndPositioning(relative, 100%, 50%, flex, row, nowrap, flex-start, center, 0, 0, 0);
             padding-left: 1.2rem;
 
+            background-color: rgba($colorOffWhite, 0.25);
+            border: 0.3rem solid rgba($secondaryColor, 0.8);
+            border-radius: 0.9rem;
+
             &::-webkit-input-placeholder,
             &:-moz-placeholder,
             &::placeholder {
@@ -100,6 +122,9 @@
 
             &:focus {
               outline: none;
+              transition: background-color 0.5s, border 0.5s, color 0.5s;
+              background-color: rgba($colorOffWhite, 0.8);
+              border-color: $secondaryColor;
               &::-webkit-input-placeholder,
               &::-moz-placeholder,
               &::placeholder {
@@ -109,7 +134,7 @@
 
             &:not(:placeholder-shown) + label,
             &:focus + label {
-              transform: translate(-3rem, -7.25rem) scale(0.75);
+              transform: translate(-2.5rem, -7.25rem) scale(0.75);
             }
           }
         }

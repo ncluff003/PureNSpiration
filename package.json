@@ -88,6 +88,7 @@
   },
   "dependencies": {
     "@vue/compat": "^3.2.37",
+    "appoint-me": "github:ncluff003/Appoint-Me",
     "axios": "^0.27.2",
     "chart.js": "^3.8.0",
     "compression": "^1.7.4",

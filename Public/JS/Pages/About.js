@@ -7,7 +7,6 @@ export const watch = async () => {
   console.log(`Watching...`);
   const links = document.querySelectorAll('.navigation-header__container__ring__navigation__link');
   const buttons = document.querySelectorAll('.button--cta');
-  console.log(buttons);
   const contactButton = buttons[1];
   const workButton = buttons[2];
   const contactButtonTwo = buttons[4];

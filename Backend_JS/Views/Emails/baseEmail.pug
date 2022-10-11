@@ -1,41 +1,16 @@
-//- Email template adapted from https://github.com/leemunroe/responsive-html-email-template
-//- Converted from HTML using https://html2pug.now.sh/
-
 doctype html
-html
+html(style="position: relative; font-family: MADE Tommy Soft, Verdana; margin: 0; padding: 0; box-sizing: inherit;")
   head
     meta(name='viewport', content='width=device-width')
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    title= subject 
+    title= subject
 
     include _style
+  body(style="position: relative; width: 100%; margin: 0; padding: 0;")
+    // HEADER
+    include _header
+    // CONTENT
+    block content
+    // EMAIL FOOTER
+    include _footer
 
-  body
-    table.body(role='presentation', border='0', cellpadding='0', cellspacing='0')
-      tbody
-        tr
-          td
-          td.container
-            .content
-              // START CENTERED WHITE CONTAINER
-              table.main(role='presentation')
-
-                // START MAIN AREA
-                tbody
-                  tr
-                    td.wrapper
-                      table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-                        tbody
-                          tr
-                            td.flex-container
-                              // CONTENT
-                              block emailContent
-                              
-              // START FOOTER
-              .footer
-                table(role='presentation', border='0', cellpadding='0', cellspacing='0')
-                  tbody
-                    tr
-                      td.content-block
-                        span.apple-link Pure N Spiration &copy; 2021
-                        p.company-slogan Purely Inspired Innovation
