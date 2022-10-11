@@ -103,7 +103,6 @@ html {
 .hero-container {
   .full-name {
     font-size: 15rem;
-    color: $primaryColor;
   }
   .position {
     font-size: 5rem;
@@ -120,7 +119,7 @@ html {
             &__text {
               font-size: 5rem;
               font-weight: normal;
-              color: $primaryColor;
+              // color: $primaryColor;
             }
           }
           &__container {
@@ -1452,9 +1451,11 @@ html {
       color: $secondaryColor;
     }
     .time-toggle {
-      color: rgba($secondaryColorDark, 0.8);
+      color: rgba($colorOffWhite, 0.8);
       &:hover {
-        color: $secondaryColor;
+        &__text {
+          color: $primaryColor;
+        }
       }
     }
   }
@@ -1469,9 +1470,12 @@ html {
             &--resume,
             &--contact {
               .hero-container {
+                .full-name {
+                  color: $secondaryColor;
+                }
                 .button {
                   &--cta {
-                    color: rgba($colorDarkGrey, 0.25);
+                    color: rgba($colorDarkGrey, 0.5);
                     &:hover {
                       color: $colorOffWhite;
                     }
@@ -1483,7 +1487,7 @@ html {
                   &__button-container {
                     .button {
                       &--cta {
-                        color: rgba($colorDarkGrey, 0.25);
+                        color: rgba($colorDarkGrey, 0.5);
                         &:hover {
                           color: $colorOffWhite;
                         }
@@ -1494,19 +1498,39 @@ html {
                 &__information-container {
                   .button {
                     &--cta {
-                      color: rgba($colorOffWhite, 0.25);
+                      color: rgba($colorOffWhite, 0.5);
                       &:hover {
                         color: $colorOffWhite;
                       }
                     }
                   }
                   &__slide {
+                    &__header {
+                      &__text {
+                        color: $secondaryColor;
+                      }
+                    }
                     &__container {
+                      &__text-container {
+                        &__text {
+                          color: $colorMidDarkGrey;
+                        }
+                      }
                       .button {
                         &--cta {
-                          color: rgba($colorDarkGrey, 0.25);
+                          color: rgba($colorDarkGrey, 0.5);
                           &:hover {
                             color: $colorOffWhite;
+                          }
+                        }
+                      }
+                      &__inner-slide {
+                        &__skill-container {
+                          &__skill {
+                            color: rgba($colorMidDarkGrey, 0.8);
+                            &:hover {
+                              color: $colorOffWhite;
+                            }
                           }
                         }
                       }
@@ -1550,7 +1574,9 @@ html {
     .time-toggle {
       color: rgba($colorOffWhite, 0.8);
       &:hover {
-        color: $colorOffWhite;
+        &__text {
+          color: $primaryColor;
+        }
       }
     }
   }
@@ -1565,6 +1591,9 @@ html {
             &--resume,
             &--contact {
               .hero-container {
+                .full-name {
+                  color: $primaryColor;
+                }
                 .button {
                   &--cta {
                     color: rgba($colorOffWhite, 0.25);
@@ -1597,12 +1626,32 @@ html {
                     }
                   }
                   &__slide {
+                    &__header {
+                      &__text {
+                        color: $primaryColor;
+                      }
+                    }
                     &__container {
+                      &__text-container {
+                        &__text {
+                          color: $colorOffWhite;
+                        }
+                      }
                       .button {
                         &--cta {
                           color: rgba($colorOffWhite, 0.25);
                           &:hover {
                             color: $colorMidDarkGrey;
+                          }
+                        }
+                      }
+                      &__inner-slide {
+                        &__skill-container {
+                          &__skill {
+                            color: rgba($colorOffWhite, 0.8);
+                            &:hover {
+                              color: $colorMidDarkGrey;
+                            }
                           }
                         }
                       }

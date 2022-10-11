@@ -92,13 +92,11 @@
                 &__skill {
                   @include SizingItem(relative, max-content, max-content);
                   padding: 1rem 2rem;
-                  border: 0.3rem groove rgba($primaryColor, 0.8);
+                  border: 0.3rem groove rgba(transparent, 0.8);
                   border-radius: 0.5rem;
                   margin: 0 0.5rem;
                   &:hover {
                     cursor: pointer;
-                    background-color: $primaryColor;
-                    border-color: $primaryColor;
                     transition: background-color 0.5s, color 0.5s, border 0.5s;
                   }
                 }
@@ -177,102 +175,94 @@
 // DAY SETTINGS
 
 .day {
-  .interests-container {
-    .interests-grid {
-      .interest-current {
-        &:before {
-          background-image: linear-gradient(to right, $colorOffWhite 0%, $colorOffWhite 5%, transparent 50%, transparent 80%, $colorOffWhite 100%);
-        }
-      }
-      .cylinder-left {
-        border-top: 1.65rem solid $primaryColorLighter;
-        border-left: 1.65rem solid $primaryColorLighter;
-        border-right: 1.65rem solid $primaryColorDark;
-        border-bottom: 1.65rem solid $primaryColorLighter;
-        background-color: transparent;
-      }
-
-      .cylinder-wall {
-        @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 2rem, 0, 0);
-        &-image {
-          @include SizingItem(relative, 100%, 100%);
-        }
-      }
-
-      .cylinder-right {
-        background-color: transparent;
-        border: 1.85rem solid rgba($primaryColorLighter, 1);
-      }
-    }
-    .interests-contact-container {
-      &__contact-link {
-        background-color: rgba($primaryColor, 0.8);
-      }
-    }
-  }
-  .skills-container {
-    .skills-link-container {
-      .portfolio-link {
-        background-color: rgba($primaryColor, 0.8);
-        &:hover {
-          background-color: $primaryColor;
-        }
-
-        &:active {
-          background-color: $tertiaryColor;
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        .grid {
+          .flex-container {
+            &--home,
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              .about-flex-container {
+                &__introduction-container {
+                  &__picture-frame {
+                    &__picture {
+                      border-color: $secondaryColor;
+                    }
+                  }
+                }
+                &__information-container {
+                  border-color: $secondaryColor;
+                  &__slide {
+                    &__container {
+                      &__inner-slide {
+                        &__skill-container {
+                          &__skill {
+                            border-color: $secondaryColor;
+                            &:hover {
+                              background-color: $secondaryColor;
+                              border-color: $secondaryColor;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 }
+
 /////////////////////////////////
 // NIGHT SETTINGS
 
 .night {
-  .interests-container {
-    .interests-grid {
-      .interest-current {
-        &:before {
-          background-image: linear-gradient(to right, $colorDarkerGrey 0%, transparent 50%, transparent 80%, $colorDarkerGrey 100%);
-        }
-      }
-
-      .cylinder-left {
-        border-top: 1.65rem solid $secondaryColorLighter;
-        border-left: 1.65rem solid $secondaryColorLighter;
-        border-right: 1.65rem solid $secondaryColorDark;
-        border-bottom: 1.65rem solid $secondaryColorLighter;
-        background-color: transparent;
-      }
-
-      .cylinder-wall {
-        @include SizeAndPositioning(relative, 100%, 100%, flex, row, nowrap, space-evenly, center, 2rem, 0, 0);
-        &-image {
-          @include SizingItem(relative, 100%, 100%);
-        }
-      }
-
-      .cylinder-right {
-        background-color: transparent;
-        border: 1.85rem solid rgba($secondaryColorLighter, 1);
-      }
-    }
-    .interests-contact-container {
-      &__contact-link {
-        background-color: rgba($secondaryColor, 0.8);
-      }
-    }
-  }
-  .skills-container {
-    .skills-link-container {
-      .portfolio-link {
-        background-color: rgba($secondaryColor, 0.8);
-        &:hover {
-          background-color: $secondaryColor;
-        }
-
-        &:active {
-          background-color: $primaryColor;
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        .grid {
+          .flex-container {
+            &--home,
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              .about-flex-container {
+                &__introduction-container {
+                  &__picture-frame {
+                    &__picture {
+                      border-color: $primaryColor;
+                    }
+                  }
+                }
+                &__information-container {
+                  border-color: $primaryColor;
+                  &__slide {
+                    &__container {
+                      &__inner-slide {
+                        &__skill-container {
+                          &__skill {
+                            border-color: $primaryColor;
+                            &:hover {
+                              background-color: $primaryColor;
+                              border-color: $primaryColor;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

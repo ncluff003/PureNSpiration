@@ -2,7 +2,7 @@
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
 .time-toggle {
-  @include SizeAndPositioning(relative, 100%, 10%, flex, row, nowrap, flex-start, center, 0, 0, 0);
+  @include SizeAndPositioning(relative, 100%, 10%, flex, row, nowrap, center, center, 0, 0, 0);
   top: 50%;
   right: 1rem;
   transform: translate(0, -50%);
@@ -12,14 +12,28 @@
     cursor: pointer;
     transition: background-color 0.5s, border 0.5s, color 0.5s;
   }
+  &__text {
+    z-index: 10;
+  }
   &__switch {
-    @include SizeAndPositioning(relative, 100%, 25%, flex, row, nowrap, center, center, 0, 0, 0);
+    @include SizeAndPositioning(absolute, 95%, 25%, flex, row, nowrap, center, center, 0, -50%, 0);
+    top: 50%;
+    left: 1%;
     border-radius: 5rem;
     transition: transform 0.5s;
     margin-right: 1rem;
+    transition: width 1s, background-color 0.5s, border 0.5s, transform 0.5s;
     &:hover {
       cursor: pointer;
       transition: background-color 0.5s, border 0.5s, transform 0.5s;
+    }
+    &--switched {
+      width: 98%;
+      transition: width 0.5s, background-color 0.5s, border 0.5s, transform 0.5s;
+      &:hover {
+        cursor: pointer;
+        transition: width 1s, background-color 0.5s, border 0.5s, transform 0.5s;
+      }
     }
   }
 }

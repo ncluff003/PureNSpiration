@@ -11914,12 +11914,17 @@ var watch = function watch() {
   var homeFlex = document.querySelector('.flex-container--home');
   _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(body, ["night"]);
   var toggle = document.querySelector('.time-toggle');
+  var toggleText = document.querySelector('.time-toggle__text');
+  var toggleSwitch = document.querySelector('.time-toggle__switch');
+  toggleText.textContent = "Night";
 
   if (toggle) {
     toggle.addEventListener("click", function (e) {
       e.preventDefault();
       _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(body, ["night", "day"]);
       _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(homeFlex, ["night--sky", "day--sky"]);
+      toggleText.textContent === "Night" ? toggleText.textContent = "Day" : toggleText.textContent = "Night";
+      _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(toggleSwitch, "time-toggle__switch--switched");
     });
   }
 };

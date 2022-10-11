@@ -119,7 +119,6 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
 
 .hero-container .full-name {
   font-size: 15rem;
-  color: #ffd700;
 }
 .hero-container .position {
   font-size: 5rem;
@@ -128,7 +127,6 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
 .flex-container--about .about-flex-container__information-container__slide__header__text {
   font-size: 5rem;
   font-weight: normal;
-  color: #ffd700;
 }
 .flex-container--about .about-flex-container__information-container__slide__container__text-container {
   font-size: 2rem;
@@ -1046,33 +1044,48 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   color: #0047ab;
 }
 .day .overhead-container .time-toggle {
-  color: rgba(0, 50, 120, 0.8);
+  color: rgba(250, 250, 250, 0.8);
 }
-.day .overhead-container .time-toggle:hover {
+.day .overhead-container .time-toggle:hover__text {
+  color: #ffd700;
+}
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .full-name, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .full-name, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .full-name, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .full-name, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .full-name {
   color: #0047ab;
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .button--cta {
-  color: rgba(85, 85, 85, 0.25);
+  color: rgba(85, 85, 85, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .button--cta:hover {
   color: #fafafa;
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__introduction-container__button-container .button--cta {
-  color: rgba(85, 85, 85, 0.25);
+  color: rgba(85, 85, 85, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__introduction-container__button-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__introduction-container__button-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__introduction-container__button-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__introduction-container__button-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__introduction-container__button-container .button--cta:hover {
   color: #fafafa;
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container .button--cta {
-  color: rgba(250, 250, 250, 0.25);
+  color: rgba(250, 250, 250, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container .button--cta:hover {
   color: #fafafa;
 }
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__header__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__header__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__header__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__header__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__header__text {
+  color: #0047ab;
+}
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__text-container__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__text-container__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__text-container__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__text-container__text, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__text-container__text {
+  color: #222222;
+}
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container .button--cta {
-  color: rgba(85, 85, 85, 0.25);
+  color: rgba(85, 85, 85, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container .button--cta:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container .button--cta:hover {
+  color: #fafafa;
+}
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill {
+  color: rgba(34, 34, 34, 0.8);
+}
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover {
   color: #fafafa;
 }
 
@@ -1097,8 +1110,11 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
 .night .overhead-container .time-toggle {
   color: rgba(250, 250, 250, 0.8);
 }
-.night .overhead-container .time-toggle:hover {
-  color: #fafafa;
+.night .overhead-container .time-toggle:hover__text {
+  color: #ffd700;
+}
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .full-name, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .full-name, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .full-name, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .full-name, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .full-name {
+  color: #ffd700;
 }
 .night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .button--cta {
   color: rgba(250, 250, 250, 0.25);
@@ -1118,10 +1134,22 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
 .night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container .button--cta:hover {
   color: #222222;
 }
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__header__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__header__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__header__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__header__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__header__text {
+  color: #ffd700;
+}
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__text-container__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__text-container__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__text-container__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__text-container__text, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__text-container__text {
+  color: #fafafa;
+}
 .night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container .button--cta, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container .button--cta {
   color: rgba(250, 250, 250, 0.25);
 }
 .night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container .button--cta:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container .button--cta:hover {
+  color: #222222;
+}
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill {
+  color: rgba(250, 250, 250, 0.8);
+}
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover {
   color: #222222;
 }
 
@@ -39273,7 +39301,7 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
 }
 
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .button--cta {
-  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.25);
+  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .hero-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .hero-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .hero-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .hero-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .hero-container .button--cta:hover::before {
   border-left-color: #0047ab;
@@ -39285,7 +39313,7 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   background-color: #0047ab;
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__introduction-container__button-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__introduction-container__button-container .button--cta {
-  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.25);
+  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__introduction-container__button-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__introduction-container__button-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__introduction-container__button-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__introduction-container__button-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__introduction-container__button-container .button--cta:hover::before {
   border-left-color: #0047ab;
@@ -39297,7 +39325,7 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   background-color: #0047ab;
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container .button--cta {
-  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.25);
+  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container .button--cta:hover::before {
   border-left-color: #0047ab;
@@ -39309,7 +39337,7 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   background-color: #0047ab;
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container .button--cta, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container .button--cta {
-  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.25);
+  box-shadow: inset 0 0 0 0.3rem rgba(153, 153, 153, 0.5);
 }
 .day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container .button--cta:hover::before, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container .button--cta:hover::before {
   border-left-color: #0047ab;
@@ -45703,7 +45731,7 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   transform: rotate(0) translate(0, 0);
   top: 50%;
@@ -45716,23 +45744,37 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   cursor: pointer;
   transition: background-color 0.5s, border 0.5s, color 0.5s;
 }
+.time-toggle__text {
+  z-index: 10;
+}
 .time-toggle__switch {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  height: 95%;
   width: 25%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  transform: rotate(0) translate(0, 0);
+  transform: rotate(0) translate(0, -50%);
+  top: 50%;
+  left: 1%;
   border-radius: 5rem;
   transition: transform 0.5s;
   margin-right: 1rem;
+  transition: width 1s, background-color 0.5s, border 0.5s, transform 0.5s;
 }
 .time-toggle__switch:hover {
   cursor: pointer;
   transition: background-color 0.5s, border 0.5s, transform 0.5s;
+}
+.time-toggle__switch--switched {
+  width: 98%;
+  transition: width 0.5s, background-color 0.5s, border 0.5s, transform 0.5s;
+}
+.time-toggle__switch--switched:hover {
+  cursor: pointer;
+  transition: width 1s, background-color 0.5s, border 0.5s, transform 0.5s;
 }
 
 .day .navigation .time-toggle {
@@ -48729,14 +48771,12 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   height: max-content;
   width: max-content;
   padding: 1rem 2rem;
-  border: 0.3rem groove rgba(255, 215, 0, 0.8);
+  border: 0.3rem groove rgba(0, 0, 0, 0.8);
   border-radius: 0.5rem;
   margin: 0 0.5rem;
 }
 .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover {
   cursor: pointer;
-  background-color: #ffd700;
-  border-color: #ffd700;
   transition: background-color 0.5s, color 0.5s, border 0.5s;
 }
 .flex-container--about .about-flex-container__information-container__slide__container__button-nav-container {
@@ -48819,90 +48859,32 @@ html, .flex-container, .button, .button--send, .button--cta, .button--navigation
   background-color: #0047ab;
 }
 
-.day .interests-container .interests-grid .interest-current:before {
-  background-image: linear-gradient(to right, #fafafa 0%, #fafafa 5%, transparent 50%, transparent 80%, #fafafa 100%);
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__introduction-container__picture-frame__picture, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__introduction-container__picture-frame__picture, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__introduction-container__picture-frame__picture, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__introduction-container__picture-frame__picture, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__introduction-container__picture-frame__picture {
+  border-color: #0047ab;
 }
-.day .interests-container .interests-grid .cylinder-left {
-  border-top: 1.65rem solid #ffe766;
-  border-left: 1.65rem solid #ffe766;
-  border-right: 1.65rem solid #ccac00;
-  border-bottom: 1.65rem solid #ffe766;
-  background-color: transparent;
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container {
+  border-color: #0047ab;
 }
-.day .interests-container .interests-grid .cylinder-wall {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  transform: rotate(0) translate(2rem, 0);
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill {
+  border-color: #0047ab;
 }
-.day .interests-container .interests-grid .cylinder-wall-image {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-.day .interests-container .interests-grid .cylinder-right {
-  background-color: transparent;
-  border: 1.85rem solid #ffe766;
-}
-.day .interests-container .interests-contact-container__contact-link {
-  background-color: rgba(255, 215, 0, 0.8);
-}
-.day .skills-container .skills-link-container .portfolio-link {
-  background-color: rgba(255, 215, 0, 0.8);
-}
-.day .skills-container .skills-link-container .portfolio-link:hover {
-  background-color: #ffd700;
-}
-.day .skills-container .skills-link-container .portfolio-link:active {
-  background-color: #00b358;
+.day .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .day .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover {
+  background-color: #0047ab;
+  border-color: #0047ab;
 }
 
-.night .interests-container .interests-grid .interest-current:before {
-  background-image: linear-gradient(to right, #333333 0%, transparent 50%, transparent 80%, #333333 100%);
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__introduction-container__picture-frame__picture, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__introduction-container__picture-frame__picture, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__introduction-container__picture-frame__picture, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__introduction-container__picture-frame__picture, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__introduction-container__picture-frame__picture {
+  border-color: #ffd700;
 }
-.night .interests-container .interests-grid .cylinder-left {
-  border-top: 1.65rem solid #1274ff;
-  border-left: 1.65rem solid #1274ff;
-  border-right: 1.65rem solid #003278;
-  border-bottom: 1.65rem solid #1274ff;
-  background-color: transparent;
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container {
+  border-color: #ffd700;
 }
-.night .interests-container .interests-grid .cylinder-wall {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  transform: rotate(0) translate(2rem, 0);
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill {
+  border-color: #ffd700;
 }
-.night .interests-container .interests-grid .cylinder-wall-image {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-.night .interests-container .interests-grid .cylinder-right {
-  background-color: transparent;
-  border: 1.85rem solid #1274ff;
-}
-.night .interests-container .interests-contact-container__contact-link {
-  background-color: rgba(0, 71, 171, 0.8);
-}
-.night .skills-container .skills-link-container .portfolio-link {
-  background-color: rgba(0, 71, 171, 0.8);
-}
-.night .skills-container .skills-link-container .portfolio-link:hover {
-  background-color: #0047ab;
-}
-.night .skills-container .skills-link-container .portfolio-link:active {
+.night .pentagon__inside-ring .pentagon-side .grid .flex-container--home .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--about .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--projects .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--resume .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover, .night .pentagon__inside-ring .pentagon-side .grid .flex-container--contact .about-flex-container__information-container__slide__container__inner-slide__skill-container__skill:hover {
   background-color: #ffd700;
+  border-color: #ffd700;
 }
 
 .foundation-container {

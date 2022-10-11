@@ -75,11 +75,16 @@ export const watch = () => {
   const homeFlex = document.querySelector('.flex-container--home');
   Utility.addClasses(body, [`night`]);
   const toggle = document.querySelector('.time-toggle');
+  const toggleText = document.querySelector('.time-toggle__text');
+  const toggleSwitch = document.querySelector('.time-toggle__switch');
+  toggleText.textContent = `Night`;
   if (toggle) {
     toggle.addEventListener(`click`, (e) => {
       e.preventDefault();
       Utility.toggleClasses(body, [`night`, `day`]);
       Utility.toggleClasses(homeFlex, [`night--sky`, `day--sky`]);
+      toggleText.textContent === `Night` ? (toggleText.textContent = `Day`) : (toggleText.textContent = `Night`);
+      Utility.toggleClass(toggleSwitch, `time-toggle__switch--switched`);
     });
   }
 };

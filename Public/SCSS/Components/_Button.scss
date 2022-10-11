@@ -155,7 +155,7 @@
               .hero-container {
                 .button {
                   &--cta {
-                    box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.25);
+                    box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.5);
                     &:hover {
                       &::before {
                         border-left-color: $secondaryColor;
@@ -175,7 +175,7 @@
                   &__button-container {
                     .button {
                       &--cta {
-                        box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.25);
+                        box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.5);
                         &:hover {
                           &::before {
                             border-left-color: $secondaryColor;
@@ -194,7 +194,7 @@
                 &__information-container {
                   .button {
                     &--cta {
-                      box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.25);
+                      box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.5);
                       &:hover {
                         &::before {
                           border-left-color: $secondaryColor;
@@ -212,7 +212,7 @@
                     &__container {
                       .button {
                         &--cta {
-                          box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.25);
+                          box-shadow: inset 0 0 0 0.3rem rgba($colorLightGrey, 0.5);
                           &:hover {
                             &::before {
                               border-left-color: $secondaryColor;
