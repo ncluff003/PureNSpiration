@@ -122,6 +122,41 @@ body {
   &--sky {
     background: url('./../../DIST/CSS/Images/Day-Sky.jpg');
   }
+
+  .overhead-container {
+    .time-toggle {
+      border: 0.2rem groove rgba($colorMidDarkGrey, 0.8);
+      &:hover {
+        border-color: $secondaryColor;
+      }
+
+      &__switch {
+        border: 0.2rem outset rgba($colorMidDarkGrey, 0.8);
+        background-color: rgba($colorMidDarkGrey, 0.8);
+        &:hover {
+          border-color: $secondaryColor;
+          background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        background-color: $colorLightestGrey;
+        .grid {
+          .flex-container {
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              background-color: $colorLightestGrey;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .night {
@@ -129,6 +164,39 @@ body {
   transition: background-color 0.5s;
   &--sky {
     background: url('./../../DIST/CSS/Images/Night-Sky.jpg');
+  }
+  .overhead-container {
+    .time-toggle {
+      border: 0.2rem groove rgba($colorOffWhite, 0.8);
+      &:hover {
+        border-color: $colorOffWhite;
+      }
+      &__switch {
+        border: 0.2rem outset rgba($colorLighterGrey, 0.8);
+        background-color: rgba($colorLighterGrey, 0.8);
+        &:hover {
+          border-color: $colorOffWhite;
+          background-color: $colorOffWhite;
+        }
+      }
+    }
+  }
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        background-color: $colorMidDarkGrey;
+        .grid {
+          .flex-container {
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              background-color: $colorMidDarkGrey;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

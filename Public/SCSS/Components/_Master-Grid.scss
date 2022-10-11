@@ -1,10 +1,10 @@
 @use '../../../Public/SCSS/Utilities/Mixins' as *;
 @use '../../../Public/SCSS/Utilities/Variables' as *;
 
-.master-grid {
+.master-grid-container {
   position: relative;
   display: grid;
-  @include grid-layout(100vh, 100vw, repeat(24, 1fr), repeat(18, 1fr), 0, 0);
-  @include grid-placement(24, 24, 18, 18);
+  @include gridLayout(100vh, 100vw, repeat(24, 1fr), repeat(18, 1fr), 0, 0);
+  @include gridPlacement(24, 24, 18, 18);
   background-color: $colorOffWhite;
 }

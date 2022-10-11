@@ -28,8 +28,10 @@ export const watch = () => {
 
   Utility.insertElement(`beforeend`, projectContainer, projectNavigationContainer);
 
-  projectContainer.addEventListener(`scroll`, (e) => {
-    e.preventDefault();
-    console.log(projectContainer.scrollTop, projectContainer.scrollY);
-  });
+  if (projectContainer) {
+    projectContainer.addEventListener(`scroll`, (e) => {
+      e.preventDefault();
+      console.log(projectContainer.scrollTop, projectContainer.scrollY);
+    });
+  }
 };

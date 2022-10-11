@@ -9,9 +9,11 @@ export const watch = () => {
     Utility.toggleClass(navigationHeader, `navigation-header--open`);
   });
 
-  navigationCloseIcon.addEventListener('click', (e) => {
-    Utility.toggleClass(navigationHeader, `navigation-header--open`);
-  });
+  if (navigationCloseIcon) {
+    navigationCloseIcon.addEventListener('click', (e) => {
+      Utility.toggleClass(navigationHeader, `navigation-header--open`);
+    });
+  }
 
   const links = document.querySelectorAll('.navigation-header__container__ring__navigation__link');
   const navigationRing = document.querySelector('.navigation-header__container__ring');
@@ -63,7 +65,21 @@ export const watch = () => {
 
   const buttons = document.querySelectorAll('.button--cta');
   const homeCTA = buttons[0];
-  homeCTA.addEventListener(`click`, (e) => {
-    links[2].click();
-  });
+  if (homeCTA) {
+    homeCTA.addEventListener(`click`, (e) => {
+      links[2].click();
+    });
+  }
+
+  const body = document.querySelector('body');
+  const homeFlex = document.querySelector('.flex-container--home');
+  Utility.addClasses(body, [`night`]);
+  const toggle = document.querySelector('.time-toggle');
+  if (toggle) {
+    toggle.addEventListener(`click`, (e) => {
+      e.preventDefault();
+      Utility.toggleClasses(body, [`night`, `day`]);
+      Utility.toggleClasses(homeFlex, [`night--sky`, `day--sky`]);
+    });
+  }
 };

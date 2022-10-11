@@ -7,11 +7,9 @@
   right: 1rem;
   transform: translate(0, -50%);
   padding: 0.2rem;
-  border: 0.2rem groove rgba($colorOffWhite, 0.8);
   border-radius: 5rem;
   &:hover {
     cursor: pointer;
-    border-color: $colorOffWhite;
     transition: background-color 0.5s, border 0.5s, color 0.5s;
   }
   &__switch {
@@ -19,12 +17,8 @@
     border-radius: 5rem;
     transition: transform 0.5s;
     margin-right: 1rem;
-    border: 0.2rem outset rgba($colorLighterGrey, 0.8);
-    background-color: rgba($colorLighterGrey, 0.8);
     &:hover {
       cursor: pointer;
-      border-color: $colorOffWhite;
-      background-color: $colorOffWhite;
       transition: background-color 0.5s, border 0.5s, transform 0.5s;
     }
   }

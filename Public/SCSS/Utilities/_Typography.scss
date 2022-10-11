@@ -1345,13 +1345,13 @@ html {
       }
       &__message-input {
         font-size: 2rem;
-        color: $primaryColor;
+        color: $secondaryColor;
       }
       &__button {
         font-size: 2rem;
         color: rgba($colorOffWhite, 0.8);
         &:hover {
-          color: $primaryColor;
+          color: $secondaryColor;
         }
       }
     }
@@ -1423,6 +1423,10 @@ html {
   }
 }
 
+.appointment-declined-container {
+  font-family: MADE Tommy Soft, Roboto Condensed, Purely Me, Verdana, Arial, Helvetica, sans-serif;
+}
+
 .day {
   &--sky {
     color: $colorDarkerGrey;
@@ -1437,9 +1441,82 @@ html {
   }
   .button {
     &--navigation {
-      color: $colorDarkerGrey;
+      color: rgba($colorOffWhite, 0.8);
       &:hover {
         color: $colorOffWhite;
+      }
+    }
+  }
+  .overhead-container {
+    .icon-PureNSpiration_Logo--night {
+      color: $secondaryColor;
+    }
+    .time-toggle {
+      color: rgba($secondaryColorDark, 0.8);
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+  }
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        .grid {
+          .flex-container {
+            &--home,
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              .hero-container {
+                .button {
+                  &--cta {
+                    color: rgba($colorDarkGrey, 0.25);
+                    &:hover {
+                      color: $colorOffWhite;
+                    }
+                  }
+                }
+              }
+              .about-flex-container {
+                &__introduction-container {
+                  &__button-container {
+                    .button {
+                      &--cta {
+                        color: rgba($colorDarkGrey, 0.25);
+                        &:hover {
+                          color: $colorOffWhite;
+                        }
+                      }
+                    }
+                  }
+                }
+                &__information-container {
+                  .button {
+                    &--cta {
+                      color: rgba($colorOffWhite, 0.25);
+                      &:hover {
+                        color: $colorOffWhite;
+                      }
+                    }
+                  }
+                  &__slide {
+                    &__container {
+                      .button {
+                        &--cta {
+                          color: rgba($colorDarkGrey, 0.25);
+                          &:hover {
+                            color: $colorOffWhite;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -1459,9 +1536,83 @@ html {
   }
   .button {
     &--navigation {
-      color: $colorOffWhite;
+      color: rgba($colorOffWhite, 0.8);
       &:hover {
-        color: $colorDarkerGrey;
+        color: $colorOffWhite;
+      }
+    }
+  }
+  .overhead-container {
+    .icon-PureNSpiration_Logo--night {
+      color: $primaryColor;
+    }
+
+    .time-toggle {
+      color: rgba($colorOffWhite, 0.8);
+      &:hover {
+        color: $colorOffWhite;
+      }
+    }
+  }
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        .grid {
+          .flex-container {
+            &--home,
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              .hero-container {
+                .button {
+                  &--cta {
+                    color: rgba($colorOffWhite, 0.25);
+                    &:hover {
+                      color: $colorMidDarkGrey;
+                    }
+                  }
+                }
+              }
+              .about-flex-container {
+                &__introduction-container {
+                  &__button-container {
+                    .button {
+                      &--cta {
+                        color: rgba($colorOffWhite, 0.25);
+                        &:hover {
+                          color: $colorMidDarkGrey;
+                        }
+                      }
+                    }
+                  }
+                }
+                &__information-container {
+                  .button {
+                    &--cta {
+                      color: rgba($colorOffWhite, 0.25);
+                      &:hover {
+                        color: $colorMidDarkGrey;
+                      }
+                    }
+                  }
+                  &__slide {
+                    &__container {
+                      .button {
+                        &--cta {
+                          color: rgba($colorOffWhite, 0.25);
+                          &:hover {
+                            color: $colorMidDarkGrey;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -1469,5 +1620,4 @@ html {
 
 .icon-PureNSpiration_Logo--night {
   font-size: 6rem;
-  color: $primaryColor;
 }

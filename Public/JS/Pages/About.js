@@ -11,30 +11,38 @@ export const watch = async () => {
   const workButton = buttons[2];
   const contactButtonTwo = buttons[4];
 
-  contactButton.addEventListener(`click`, (e) => {
-    e.preventDefault();
-    links[4].click();
-  });
+  if (contactButton) {
+    contactButton.addEventListener(`click`, (e) => {
+      e.preventDefault();
+      links[4].click();
+    });
+  }
 
-  workButton.addEventListener(`click`, (e) => {
-    e.preventDefault();
-    links[4].click();
-  });
+  if (workButton) {
+    workButton.addEventListener(`click`, (e) => {
+      e.preventDefault();
+      links[4].click();
+    });
+  }
 
-  contactButtonTwo.addEventListener(`click`, (e) => {
-    e.preventDefault();
-    links[4].click();
-  });
+  if (contactButtonTwo) {
+    contactButtonTwo.addEventListener(`click`, (e) => {
+      e.preventDefault();
+      links[4].click();
+    });
+  }
 
   const leftDoor = document.querySelector('.about-flex-container__information-container__left-door');
   const rightDoor = document.querySelector('.about-flex-container__information-container__right-door');
   const doorOpener = document.querySelector('.button--about-doors');
 
-  doorOpener.addEventListener('click', (e) => {
-    e.preventDefault();
-    [leftDoor, rightDoor].forEach((door) => Utility.toggleClasses(door, [`door-open`]));
-    Utility.toggleClasses(doorOpener, [`closed`, `open`]);
-  });
+  if (doorOpener) {
+    doorOpener.addEventListener('click', (e) => {
+      e.preventDefault();
+      [leftDoor, rightDoor].forEach((door) => Utility.toggleClasses(door, [`door-open`]));
+      Utility.toggleClasses(doorOpener, [`closed`, `open`]);
+    });
+  }
 
   const infoContainer = document.querySelector('.about-flex-container__information-container');
   const slides = document.querySelectorAll('.about-flex-container__information-container__slide');

@@ -15,7 +15,7 @@ const PDFDocument = require('pdfkit');
 
 ////////////////////////////////////////////
 //  Third Party Middleware
-const sendEmail = require('./../Utilities/Email');
+const { sendEmail, email } = require('./../Utilities/Email');
 
 ////////////////////////////////////////////
 //  Third Party Config Files

@@ -1,3 +1,5 @@
+import { get, getAll, set, remove, useNamespace } from './Classes/Cache';
+
 export const replaceClassName = (element, classReplaced, replacementClass) => {
   element.classList.remove(classReplaced);
   element.classList.add(replacementClass);

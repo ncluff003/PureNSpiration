@@ -745,25 +745,27 @@ const adjustDeclinedAppointment = (data, container, utility) => {
   const submitMessageButton = document.querySelector('.form--declined__button');
   submitMessageButton.addEventListener(`click`, async (e) => {
     e.preventDefault();
-    console.log(company, email, start, end, requestedDate, currentDate);
-    const name = document.querySelector('.appointment-declined-container__heading__to').split(' ');
-    const message = document.querySelector('.form--declined__message-input').value;
-    const messageObject = {
-      firstname: name[1],
-      lastname: name[2],
-      date: date,
-      myCompany: company,
-      email: email,
-      start: start,
-      end: end,
-      requestedDate: requestedDate,
-      currentDate: currentDate,
-      message: message,
-    };
     try {
+      console.log(company, email, start, end, requestedDate, currentDate);
+      const name = document.querySelector('.appointment-declined-container__heading__to').textContent.split(' ');
+      console.log(document.querySelector('.appointment-declined-container__heading__to').textContent);
+      const message = document.querySelector('.form--declined__message-input').value;
+      const messageObject = {
+        firstname: name[1],
+        lastname: name[2],
+        date: date,
+        myCompany: company,
+        email: email,
+        start: start,
+        end: end,
+        requestedDate: requestedDate,
+        currentDate: currentDate,
+        message: message,
+      };
+      // `/App/Appointments/Declined/:date/:startTime/:endTime/:start/:end/:email/:firstname/:lastname/:myFirstName/:myLastName/:myCompany`
       const response = await axios__WEBPACK_IMPORTED_MODULE_0___default()({
         method: `POST`,
-        url: `/App/Appointments/Declined`,
+        url: `/App/Appointments/Declined/${messageObject.date.dataset.date}/${messageObject.start}/${messageObject.end}/${messageObject.start}/${messageObject.end}/${messageObject.firstname}/${messageObject.lastname}/${messageObject.firstname}/${messageObject.lastname}/${messageObject.myCompany}`,
         data: qs__WEBPACK_IMPORTED_MODULE_1___default().stringify(messageObject),
       });
     } catch (error) {
@@ -11836,9 +11838,13 @@ var watch = function watch() {
   navigationButton.addEventListener('click', function (e) {
     _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(navigationHeader, "navigation-header--open");
   });
-  navigationCloseIcon.addEventListener('click', function (e) {
-    _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(navigationHeader, "navigation-header--open");
-  });
+
+  if (navigationCloseIcon) {
+    navigationCloseIcon.addEventListener('click', function (e) {
+      _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(navigationHeader, "navigation-header--open");
+    });
+  }
+
   var links = document.querySelectorAll('.navigation-header__container__ring__navigation__link');
   var navigationRing = document.querySelector('.navigation-header__container__ring');
   var pentagon = document.querySelector('.pentagon');
@@ -11897,9 +11903,25 @@ var watch = function watch() {
   });
   var buttons = document.querySelectorAll('.button--cta');
   var homeCTA = buttons[0];
-  homeCTA.addEventListener("click", function (e) {
-    links[2].click();
-  });
+
+  if (homeCTA) {
+    homeCTA.addEventListener("click", function (e) {
+      links[2].click();
+    });
+  }
+
+  var body = document.querySelector('body');
+  var homeFlex = document.querySelector('.flex-container--home');
+  _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(body, ["night"]);
+  var toggle = document.querySelector('.time-toggle');
+
+  if (toggle) {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(body, ["night", "day"]);
+      _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(homeFlex, ["night--sky", "day--sky"]);
+    });
+  }
 };
 
 /***/ }),
@@ -12402,28 +12424,42 @@ var watch = /*#__PURE__*/function () {
             contactButton = buttons[1];
             workButton = buttons[2];
             contactButtonTwo = buttons[4];
-            contactButton.addEventListener("click", function (e) {
-              e.preventDefault();
-              links[4].click();
-            });
-            workButton.addEventListener("click", function (e) {
-              e.preventDefault();
-              links[4].click();
-            });
-            contactButtonTwo.addEventListener("click", function (e) {
-              e.preventDefault();
-              links[4].click();
-            });
+
+            if (contactButton) {
+              contactButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                links[4].click();
+              });
+            }
+
+            if (workButton) {
+              workButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                links[4].click();
+              });
+            }
+
+            if (contactButtonTwo) {
+              contactButtonTwo.addEventListener("click", function (e) {
+                e.preventDefault();
+                links[4].click();
+              });
+            }
+
             leftDoor = document.querySelector('.about-flex-container__information-container__left-door');
             rightDoor = document.querySelector('.about-flex-container__information-container__right-door');
             doorOpener = document.querySelector('.button--about-doors');
-            doorOpener.addEventListener('click', function (e) {
-              e.preventDefault();
-              [leftDoor, rightDoor].forEach(function (door) {
-                return _Utility__WEBPACK_IMPORTED_MODULE_2__.toggleClasses(door, ["door-open"]);
+
+            if (doorOpener) {
+              doorOpener.addEventListener('click', function (e) {
+                e.preventDefault();
+                [leftDoor, rightDoor].forEach(function (door) {
+                  return _Utility__WEBPACK_IMPORTED_MODULE_2__.toggleClasses(door, ["door-open"]);
+                });
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.toggleClasses(doorOpener, ["closed", "open"]);
               });
-              _Utility__WEBPACK_IMPORTED_MODULE_2__.toggleClasses(doorOpener, ["closed", "open"]);
-            });
+            }
+
             infoContainer = document.querySelector('.about-flex-container__information-container');
             slides = document.querySelectorAll('.about-flex-container__information-container__slide');
             slideButtonContainer = document.querySelector('.about-flex-container__information-container__button-container');
@@ -13188,10 +13224,13 @@ var watch = function watch() {
     });
   });
   _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", projectContainer, projectNavigationContainer);
-  projectContainer.addEventListener("scroll", function (e) {
-    e.preventDefault();
-    console.log(projectContainer.scrollTop, projectContainer.scrollY);
-  });
+
+  if (projectContainer) {
+    projectContainer.addEventListener("scroll", function (e) {
+      e.preventDefault();
+      console.log(projectContainer.scrollTop, projectContainer.scrollY);
+    });
+  }
 };
 
 /***/ }),
@@ -13237,7 +13276,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "toggleClasses": function() { return /* binding */ toggleClasses; },
 /* harmony export */   "watchScreen": function() { return /* binding */ watchScreen; }
 /* harmony export */ });
+/* harmony import */ var _Classes_Cache__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Classes/Cache */ "./Public/JS/Classes/Cache.js");
+/* harmony import */ var _Classes_Cache__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Classes_Cache__WEBPACK_IMPORTED_MODULE_0__);
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
+
 var replaceClassName = function replaceClassName(element, classReplaced, replacementClass) {
   element.classList.remove(classReplaced);
   element.classList.add(replacementClass);
@@ -13332,7 +13374,7 @@ var build = function build() {
     },
     minutes: minutes
   };
-  set("utility", utility);
+  (0,_Classes_Cache__WEBPACK_IMPORTED_MODULE_0__.set)("utility", utility);
 };
 
 /***/ }),
