@@ -82,7 +82,9 @@ export const watch = () => {
     toggle.addEventListener(`click`, (e) => {
       e.preventDefault();
       Utility.toggleClasses(body, [`night`, `day`]);
-      Utility.toggleClasses(homeFlex, [`night--sky`, `day--sky`]);
+      if (homeFlex) {
+        Utility.toggleClasses(homeFlex, [`night--sky`, `day--sky`]);
+      }
       toggleText.textContent === `Night` ? (toggleText.textContent = `Day`) : (toggleText.textContent = `Night`);
       Utility.toggleClass(toggleSwitch, `time-toggle__switch--switched`);
     });

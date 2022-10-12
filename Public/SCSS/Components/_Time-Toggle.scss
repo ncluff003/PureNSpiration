@@ -41,15 +41,18 @@
 /////////////////////////////////
 // DAY SETTINGS
 .day {
-  .navigation {
+  .overhead-container {
     .time-toggle {
       background-color: rgba($colorLighterGrey, 0.75);
       border: 0.2rem inset $primaryColorLight;
       &__switch {
-        transform: translate(0, 0);
         background-color: rgba($tertiaryColor, 0.9);
+        left: 1%;
         &:hover {
           background-color: $tertiaryColor;
+        }
+        &--switched {
+          width: 98%;
         }
       }
     }
@@ -59,33 +62,20 @@
 /////////////////////////////////
 // NIGHT SETTINGS
 .night {
-  .navigation {
+  .overhead-container {
     .time-toggle {
       background-color: rgba($colorDarkestGrey, 0.75);
       border: 0.2rem inset $secondaryColorLight;
       &__switch {
-        transform: translate(298%, 0);
         background-color: rgba($secondaryColorDark, 0.9);
+        left: 1%;
         &:hover {
           background-color: $secondaryColorLight;
+        }
+        &--switched {
+          width: 98%;
         }
       }
     }
   }
 }
-
-// .night-switch {
-//   background-color: rgba(navy, 0.8);
-//   &:hover {
-//     background-color: #0047ab;
-//     transition: background-color 0.5s;
-//   }
-// }
-
-// .day-switch {
-//   background-color: rgba(#0047ab, 0.8);
-//   &:hover {
-//     background-color: skyblue;
-//     transition: background-color 0.5s;
-//   }
-// }

@@ -123,6 +123,12 @@ body {
     background: url('./../../DIST/CSS/Images/Day-Sky.jpg');
   }
 
+  .app-landing-container {
+    &--declined-appointment {
+      background-color: $colorOffWhite;
+    }
+  }
+
   .overhead-container {
     .time-toggle {
       border: 0.2rem groove rgba($colorMidDarkGrey, 0.8);
@@ -164,6 +170,11 @@ body {
   transition: background-color 0.5s;
   &--sky {
     background: url('./../../DIST/CSS/Images/Night-Sky.jpg');
+  }
+  .app-landing-container {
+    &--declined-appointment {
+      background-color: $colorMidDarkGrey;
+    }
   }
   .overhead-container {
     .time-toggle {
