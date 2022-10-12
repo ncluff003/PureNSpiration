@@ -79,6 +79,10 @@ export const watch = () => {
   const toggleSwitch = document.querySelector('.time-toggle__switch');
   toggleText.textContent = `Night`;
   if (toggle) {
+    const navButton = document.querySelector('.button--navigation');
+    if (window.location.href.includes(`Declined`)) {
+      Utility.replaceClassName(navButton, `open`, `closed`);
+    }
     toggle.addEventListener(`click`, (e) => {
       e.preventDefault();
       Utility.toggleClasses(body, [`night`, `day`]);

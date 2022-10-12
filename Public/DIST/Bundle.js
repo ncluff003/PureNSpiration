@@ -11919,6 +11919,12 @@ var watch = function watch() {
   toggleText.textContent = "Night";
 
   if (toggle) {
+    var navButton = document.querySelector('.button--navigation');
+
+    if (window.location.href.includes("Declined")) {
+      _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(navButton, "open", "closed");
+    }
+
     toggle.addEventListener("click", function (e) {
       e.preventDefault();
       _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(body, ["night", "day"]);
