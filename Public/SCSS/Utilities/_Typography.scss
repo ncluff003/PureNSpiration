@@ -152,22 +152,6 @@ html {
       .up,
       .down {
         font-size: 3rem;
-        color: rgba($colorOffWhite, 0.8);
-        &:hover {
-          color: $secondaryColor;
-        }
-        &:active {
-          color: $primaryColor;
-        }
-      }
-      .end {
-        color: rgba($colorOffWhite, 0.25);
-        &:hover {
-          color: rgba($colorOffWhite, 0.25);
-        }
-        &:active {
-          color: rgba($colorOffWhite, 0.25);
-        }
       }
     }
   }
@@ -1525,6 +1509,11 @@ html {
                         }
                       }
                       &__inner-slide {
+                        &__header {
+                          &__text {
+                            color: $secondaryColor;
+                          }
+                        }
                         &__skill-container {
                           &__skill {
                             color: rgba($colorMidDarkGrey, 0.8);
@@ -1532,6 +1521,41 @@ html {
                               color: $colorOffWhite;
                             }
                           }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &__project-navigation {
+                .up,
+                .down {
+                  color: rgba($colorMidDarkGrey, 0.8);
+                  &:hover {
+                    color: $secondaryColor;
+                  }
+                  &:active {
+                    color: $primaryColor;
+                  }
+                }
+                .end {
+                  color: rgba($colorMidDarkGrey, 0.25);
+                  &:hover {
+                    color: rgba($colorMidDarkGrey, 0.25);
+                  }
+                  &:active {
+                    color: rgba($colorMidDarkGrey, 0.25);
+                  }
+                }
+              }
+              .project-container {
+                &__name-container {
+                  &__link-container {
+                    .button {
+                      &--cta {
+                        color: rgba($colorOffWhite, 0.5);
+                        &:hover {
+                          color: $colorOffWhite;
                         }
                       }
                     }
@@ -1646,6 +1670,11 @@ html {
                         }
                       }
                       &__inner-slide {
+                        &__header {
+                          &__text {
+                            color: $colorOffWhite;
+                          }
+                        }
                         &__skill-container {
                           &__skill {
                             color: rgba($colorOffWhite, 0.8);
@@ -1653,6 +1682,42 @@ html {
                               color: $colorMidDarkGrey;
                             }
                           }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &__project-navigation {
+                .up,
+                .down {
+                  color: rgba($colorOffWhite, 0.8);
+
+                  &:hover {
+                    color: $secondaryColor;
+                  }
+                  &:active {
+                    color: $primaryColor;
+                  }
+                }
+                .end {
+                  color: rgba($colorOffWhite, 0.25);
+                  &:hover {
+                    color: rgba($colorOffWhite, 0.25);
+                  }
+                  &:active {
+                    color: rgba($colorOffWhite, 0.25);
+                  }
+                }
+              }
+              .project-container {
+                &__name-container {
+                  &__link-container {
+                    .button {
+                      &--cta {
+                        color: rgba($colorOffWhite, 0.25);
+                        &:hover {
+                          color: $colorMidDarkGrey;
                         }
                       }
                     }

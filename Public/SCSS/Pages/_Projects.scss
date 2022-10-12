@@ -24,19 +24,89 @@
         &:first-of-type {
           margin-top: 1.5rem;
         }
-        border: 0.2rem solid rgba($colorOffWhite, 0.8);
-        background-color: rgba($colorOffWhite, 0.8);
 
         &:hover {
           cursor: pointer;
-          border-color: $secondaryColor;
-          background-color: $secondaryColor;
           transition: background-color 0.5s, border 0.5s;
         }
 
         &:active {
           border-color: $primaryColor;
           background-color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// DAY SETTINGS
+
+.day {
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        .grid {
+          .flex-container {
+            &--home,
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              &__project-navigation {
+                &__button {
+                  border: 0.2rem solid rgba($colorMidDarkGrey, 0.8);
+                  background-color: rgba($colorMidDarkGrey, 0.8);
+                  &:hover {
+                    border-color: $secondaryColor;
+                    background-color: $secondaryColor;
+                  }
+
+                  &:active {
+                    border-color: $primaryColor;
+                    background-color: $primaryColor;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+// NIGHT SETTINGS
+
+.night {
+  .pentagon {
+    &__inside-ring {
+      .pentagon-side {
+        .grid {
+          .flex-container {
+            &--home,
+            &--about,
+            &--projects,
+            &--resume,
+            &--contact {
+              &__project-navigation {
+                &__button {
+                  border: 0.2rem solid rgba($colorOffWhite, 0.8);
+                  background-color: rgba($colorOffWhite, 0.8);
+                  &:hover {
+                    border-color: $secondaryColor;
+                    background-color: $secondaryColor;
+                  }
+
+                  &:active {
+                    border-color: $primaryColor;
+                    background-color: $primaryColor;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

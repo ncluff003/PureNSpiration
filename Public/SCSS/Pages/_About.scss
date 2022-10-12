@@ -111,26 +111,18 @@
               &__button {
                 @include SizingItem(relative, 1.5rem, 1.5rem);
                 border-radius: 50%;
-                background-color: rgba($colorOffWhite, 0.8);
-                border: 0.2rem solid rgba($colorOffWhite, 0.8);
                 margin: 1rem 0;
                 transition: background-color 0.5s, border 0.5s, height 0.5s, width 0.5s;
                 z-index: 5;
                 &:hover {
                   cursor: pointer;
-                  border-color: $colorOffWhite;
-                  background-color: $colorOffWhite;
                 }
                 &--active {
                   @extend .about-flex-container__information-container__slide__container__button-nav-container__button;
-                  background-color: rgba($secondaryColor, 0.8);
-                  border-color: rgba($secondaryColor, 0.8);
                   height: 2rem;
                   width: 2rem;
                   &:hover {
                     cursor: pointer;
-                    border-color: $secondaryColor;
-                    background-color: $secondaryColor;
                   }
                 }
               }
@@ -145,8 +137,6 @@
           &__button {
             @include SizingItem(relative, 3rem, 3rem);
             border-radius: 50%;
-            background-color: rgba($colorOffWhite, 0.8);
-            border: 0.2rem solid rgba($colorOffWhite, 0.8);
             margin: 0 1rem;
             transition: background-color 0.5s, border 0.5s;
             &:hover {
@@ -156,12 +146,8 @@
             }
             &--active {
               @extend .about-flex-container__information-container__button-container__button;
-              background-color: rgba($secondaryColor, 0.8);
-              border-color: rgba($secondaryColor, 0.8);
               &:hover {
                 cursor: pointer;
-                border-color: $secondaryColor;
-                background-color: $secondaryColor;
               }
             }
           }
@@ -206,6 +192,44 @@
                               border-color: $secondaryColor;
                             }
                           }
+                        }
+                      }
+                      &__button-nav-container {
+                        &__button {
+                          background-color: rgba($colorMidDarkGrey, 0.8);
+                          border: 0.2rem solid rgba($colorDarkerGrey, 0.8);
+                          &:hover {
+                            border-color: rgba($secondaryColorLight, 0.8);
+                            background-color: rgba($secondaryColorLight, 0.8);
+                          }
+
+                          &--active {
+                            background-color: rgba($primaryColor, 0.8);
+                            border-color: rgba($primaryColor, 0.8);
+                            &:hover {
+                              background-color: $primaryColor;
+                              border-color: $primaryColor;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .about-flex-container__information-container__button-container {
+                    &__button {
+                      background-color: rgba($colorDarkerGrey, 0.8);
+                      border: 0.2rem solid rgba($colorDarkerGrey, 0.8);
+                      &:hover {
+                        background-color: rgba($secondaryColorLight, 0.8);
+                        border-color: rgba($secondaryColorLight, 0.8);
+                      }
+                      &--active {
+                        @extend .about-flex-container__information-container__button-container__button;
+                        border-color: rgba($secondaryColor, 0.8);
+                        background-color: rgba($secondaryColor, 0.8);
+                        &:hover {
+                          border-color: $secondaryColor;
+                          background-color: $secondaryColor;
                         }
                       }
                     }
@@ -255,6 +279,44 @@
                               border-color: $primaryColor;
                             }
                           }
+                        }
+                      }
+                      &__button-nav-container {
+                        &__button {
+                          background-color: rgba($colorOffWhite, 0.8);
+                          border: 0.2rem solid rgba($colorOffWhite, 0.8);
+                          &:hover {
+                            border-color: rgba($primaryColorLight, 0.8);
+                            background-color: rgba($primaryColorLight, 0.8);
+                          }
+
+                          &--active {
+                            background-color: rgba($secondaryColor, 0.8);
+                            border-color: rgba($secondaryColor, 0.8);
+                            &:hover {
+                              background-color: $secondaryColor;
+                              border-color: $secondaryColor;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  .about-flex-container__information-container__button-container {
+                    &__button {
+                      background-color: rgba($colorOffWhite, 0.8);
+                      border: 0.2rem solid rgba($colorOffWhite, 0.8);
+                      &:hover {
+                        border-color: rgba($primaryColorLight, 0.8);
+                        background-color: rgba($primaryColorLight, 0.8);
+                      }
+                      &--active {
+                        @extend .about-flex-container__information-container__button-container__button;
+                        border-color: rgba($primaryColor, 0.8);
+                        background-color: rgba($primaryColor, 0.8);
+                        &:hover {
+                          border-color: $primaryColor;
+                          background-color: $primaryColor;
                         }
                       }
                     }
