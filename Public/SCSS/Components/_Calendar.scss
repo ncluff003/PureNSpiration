@@ -41,7 +41,7 @@
           min-width: 60%;
         }
         .select-date-button {
-          @include SizeAndPositioning(relative, 80%, 35%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
+          @include SizeAndPositioning(relative, 90%, 35%, flex, row, nowrap, space-evenly, center, 0, 0, 0);
           background-color: transparent;
           border: none;
           border-radius: 5rem;
