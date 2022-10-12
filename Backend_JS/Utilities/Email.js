@@ -206,10 +206,6 @@ module.exports = {
       await this._sendToClient(`appointment-confirmation`, `Appointment Confirmation`);
     }
 
-    async sendDeclinedAppointment() {
-      await this._sendToClient(`appointment-denied`, `Appointment Declined`);
-    }
-
     // * Having an area to send a personalized message on declines would be a nice touch that will have to happen at a later date.
   },
   email: class Email {
@@ -247,8 +243,8 @@ module.exports = {
 
     async _send(template) {
       const html = pug.renderFile(`${__dirname}/../Views/Emails/${template}.pug`, {
-        from: this.from,
-        to: this.to,
+        from: this.to,
+        to: this.from,
         firstName: this.firstName,
         lastName: this.lastName,
         subject: this.subject,
@@ -279,8 +275,54 @@ module.exports = {
       await this.makeTransport().sendMail(mailOptions);
     }
 
+    async _sendToClient(template) {
+      const html = pug.renderFile(`${__dirname}/../Views/Emails/${template}.pug`, {
+        from: this.from,
+        to: this.to,
+        firstname: this.firstName,
+        lastname: this.lastName,
+        subject: this.subject,
+        message: this.message,
+
+        // Prgrammatically Done Values
+        greeting: this.greeting,
+        hour: Calendar.getHour(),
+        minutes: Calendar.getMinutes(),
+        timeOfDay: Calendar.getTimeOfDay(),
+        day: Calendar.getDay(),
+        weekday: Calendar.getWeekday(),
+        month: Calendar.getMonth(),
+        year: Calendar.getYear(),
+      });
+
+      const mailOptions = {
+        from: this.from,
+        to: this.to,
+        subject: this.subject,
+        html: html,
+        text: htmlToText.fromString(html),
+        envelope: {
+          from: this.to,
+          to: this.to,
+        },
+        attachments: [
+          {
+            filename: 'Appoint-Me-Logo.jpg',
+            contentType: 'image/jpeg',
+            path: __dirname + `/../../Public/Appoint-Me-Logo.png`,
+            cid: 'company-logo',
+          },
+        ],
+      };
+      await this.makeTransport().sendMail(mailOptions);
+    }
+
     async contactMe() {
       await this._send(`reachOut`);
+    }
+
+    async sendDeclinedAppointment() {
+      await this._sendToClient(`appointment-denied`, `Appointment Declined`);
     }
   },
 };

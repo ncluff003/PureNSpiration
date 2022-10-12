@@ -750,22 +750,19 @@ const adjustDeclinedAppointment = (data, container, utility) => {
       const name = document.querySelector('.appointment-declined-container__heading__to').textContent.split(' ');
       console.log(document.querySelector('.appointment-declined-container__heading__to').textContent);
       const message = document.querySelector('.form--declined__message-input').value;
+      const inputs = document.querySelectorAll('.form--declined__section__input');
+      const subject = inputs[0].value;
       const messageObject = {
         firstname: name[1],
         lastname: name[2],
-        date: date,
-        myCompany: company,
         email: email,
-        start: start,
-        end: end,
-        requestedDate: requestedDate,
-        currentDate: currentDate,
+        subject: subject,
         message: message,
       };
       // `/App/Appointments/Declined/:date/:startTime/:endTime/:start/:end/:email/:firstname/:lastname/:myFirstName/:myLastName/:myCompany`
       const response = await axios__WEBPACK_IMPORTED_MODULE_0___default()({
         method: `POST`,
-        url: `/App/Appointments/Declined/${messageObject.date.dataset.date}/${messageObject.start}/${messageObject.end}/${messageObject.start}/${messageObject.end}/${messageObject.firstname}/${messageObject.lastname}/${messageObject.firstname}/${messageObject.lastname}/${messageObject.myCompany}`,
+        url: `/App/Appointments/Declined/`,
         data: qs__WEBPACK_IMPORTED_MODULE_1___default().stringify(messageObject),
       });
     } catch (error) {

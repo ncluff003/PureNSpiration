@@ -48,6 +48,8 @@ router
 router
   .route(`/App/Appointments/Declined/:date/:startTime/:endTime/:start/:end/:email/:firstname/:lastname/:myFirstName/:myLastName/:myCompany`)
   .get(appController.declineAppointment);
+
+router.route(`/App/Appointments/Declined/`).post(appController.sendDeclinedAppointment);
 // router.route('/User').post(userController.searchForUser);
 // router.use(`/Users`, userRouter);
 // router.use('/API', APIRouter);

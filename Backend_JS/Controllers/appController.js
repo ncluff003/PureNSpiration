@@ -137,7 +137,10 @@ exports.scheduleAppointment = catchAsync(async (request, response) => {
 });
 
 exports.sendDeclinedAppointment = catchAsync(async (request, response) => {
-  console.log(request.params);
+  console.log(request.body);
+  const details = request.body;
+
+  await new email(details.firstname, details.lastname, details.email, details.subject, details.message).sendDeclinedAppointment();
 });
 
 exports.declineAppointment = catchAsync(async (request, response) => {
