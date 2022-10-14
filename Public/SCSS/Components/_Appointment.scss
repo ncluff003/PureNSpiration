@@ -1,0 +1,12 @@
+@use '../../../Public/SCSS/Utilities/Mixins' as *;
+@use '../../../Public/SCSS/Utilities/Variables' as *;
+
+.appointment {
+  @include SizeAndPositioning(absolute, max-content, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
+  right: 0;
+  padding-top: 1rem;
+  &__header {
+    @include SizingItem(relative, max-content, max-content);
+    transform: translate(4.5rem, 0);
+  }
+}

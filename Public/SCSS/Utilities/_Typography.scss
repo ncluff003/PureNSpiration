@@ -284,6 +284,12 @@ html {
             }
           }
         }
+
+        .appointment {
+          &__header {
+            font-size: 1.6rem;
+          }
+        }
       }
       .modal {
         &-close-icon {
@@ -418,6 +424,12 @@ html {
           color: $colorLightestGrey;
           .hour__time {
             color: $colorOffWhite;
+          }
+        }
+
+        .appointment {
+          &__header {
+            color: rgba($colorOffWhite, 0.8);
           }
         }
       }

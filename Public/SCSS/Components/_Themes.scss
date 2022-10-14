@@ -92,6 +92,9 @@
             }
           }
         }
+        .appointment {
+          background-image: linear-gradient(to right, transparent 22.5%, $secondaryColorDark 25%, $secondaryColorDark 100%);
+        }
       }
       .modal {
         &--select-date,

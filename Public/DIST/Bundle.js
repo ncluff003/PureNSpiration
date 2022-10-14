@@ -430,6 +430,9 @@ const createIntervals = (hours, interval, modal, data, utility) => {
     let month = luxon__WEBPACK_IMPORTED_MODULE_1__.DateTime.fromISO(dateISO).month;
     let day = luxon__WEBPACK_IMPORTED_MODULE_1__.DateTime.fromISO(dateISO).day;
 
+    timeOfDayOne.textContent === `PM` ? (hourOne = Number(hourOne) + 12) : (hourOne = hourOne);
+    timeOfDayTwo.textContent === `PM` ? (hourTwo = Number(hourTwo) + 12) : (hourTwo = hourTwo);
+
     let appointmentObject = {
       date: date.dataset.date,
       humanStartTime: `${humanStart}:${minutesOne} ${timeOfDayOne.textContent}`,
@@ -466,6 +469,7 @@ const fillDay = (container, intervals, data, utility) => {
   let startHour = 0;
   while (startHour < hours) {
     const hour = document.createElement('section');
+    hour.dataset.value = startHour;
     console.log(hour);
     _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(hour, [`hour`, `r__hour`]);
     _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement('beforeend', container, hour);
@@ -885,6 +889,75 @@ const retrieveInfo = async () => {
   }
 };
 
+const smartMeridiems = (time) => {
+  return luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time).toFormat('a');
+};
+
+const renderAppointments = (appointments, hours) => {
+  console.log(appointments);
+  const day = document.querySelector('.appoint-me-container__sub-container__calendar');
+  appointments.forEach((time, i) => {
+    const appointment = document.createElement(`section`);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(appointment, [`appointment`, `r__appointment`]);
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', day, appointment);
+    appointment.dataset.start = time.start;
+    appointment.dataset.end = time.end;
+    const appointmentHeader = document.createElement('h3');
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(appointmentHeader, [`appointment__header`, `r__appointment__header`]);
+    appointmentHeader.textContent = `Appointment at ${time.startTime}`;
+    _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', appointment, appointmentHeader);
+
+    console.log(Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).hour));
+    const startHour = Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).hour);
+    const startMinute = Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).minute);
+    const startDivisor = startMinute / 60;
+
+    const endHour = Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).hour);
+    const endMinute = Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).minute);
+    const endDivisor = startMinute / 60;
+
+    let timeDifference, hourDifference, minuteDifference, timeOfDay, appointmentHeight;
+
+    minuteDifference = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).diff(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start), ['hours', 'minutes']).toObject().minutes / 60;
+    hourDifference = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).diff(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start), ['hours', 'minutes']).toObject().hours;
+    console.log(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).diff(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start), ['hours', 'minutes'], { conversionAccuracy: 'longterm' }).toObject());
+    console.log(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).diff(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start), ['hours', 'minutes']).toObject());
+    console.log(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start));
+    console.log(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end), luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).toFormat('a'));
+
+    // IF TIME OF DAY IS ANTE MERIDIEM DO THESE THINGS:
+    if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).toFormat('a') === `AM`) {
+      // PLACE APPOINTMENT
+      appointment.style.top = `${(startHour + minuteDifference) * 8}rem`;
+
+      // CALCULATE HEIGHT
+      appointmentHeight = (hourDifference + minuteDifference) * 8;
+
+      // SET APPOINTMENT LENGTH
+      appointment.style.height = `${appointmentHeight}rem`;
+
+      // * -- BELOW HERE IS FOR PM APPOINTMENT STARTS --
+      // IF TIME OF DAY IS POST MERIDIEM DO THESE THINGS:
+    } else if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).toFormat('a') === `PM`) {
+      // PLACE APPOINTMENT
+      appointment.style.top = `${(startHour + minuteDifference) * 8}rem`;
+
+      // CHECK IF APPOINTMENT DOES NOT GO PAST 11:59 PM
+      if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).toFormat('a') === `PM`) {
+        // CALCULATE HEIGHT
+        appointmentHeight = (hourDifference + minuteDifference) * 8;
+
+        // SET APPOINTMENT LENGTH
+        appointment.style.height = `${appointmentHeight}rem`;
+      }
+    }
+    // GET THE APPOINTMENT TO THE CORRECT HOUR
+    hours.forEach((hour, i) => {});
+
+    // GET THE APPOINTMENT TO BE THE CORRECT HEIGHT AS TO MAKE IT APPEAR TO BE THE CORRECT APPOINTMENT LENGTH.
+  });
+};
+
 const buildApp = async (app) => {
   console.log(`Building...`);
 
@@ -986,6 +1059,9 @@ const buildApp = async (app) => {
 
   fillDateModal(dateModal, date);
   (0,_Algorithms_Schedule__WEBPACK_IMPORTED_MODULE_5__.buildSchedule)(calendar, app.dataset.schedule, data, utility);
+
+  console.log(data, luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(data.appointments[0].start).minute, luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(data.appointments[0].end).minute);
+  renderAppointments(data.appointments, document.querySelectorAll('.hour'));
 
   // * From the get go, I would need to be able to get the appointments and render them using a function declared here.
 };
@@ -11562,6 +11638,7 @@ __webpack_require__.r(__webpack_exports__);
 ////////////////////////////////////////////////
 // IMPORTED VALUES
 // import { myCalendar } from './Calendar.js';
+
 
 
 
