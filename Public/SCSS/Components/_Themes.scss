@@ -93,7 +93,18 @@
           }
         }
         .appointment {
-          background-image: linear-gradient(to right, transparent 22.5%, $secondaryColorDark 25%, $secondaryColorDark 100%);
+          background-image: linear-gradient(to right, rgba($colorOffWhite, 0.7) 22.5%, $secondaryColorLight 22.5%, $secondaryColorLight 100%);
+          &::after {
+            position: absolute;
+            height: 100%;
+            width: 77.5%;
+            top: 0;
+            right: 0;
+            content: '';
+            border-top: 0.2rem groove $secondaryColorDark;
+            border-right: 0.2rem groove $secondaryColorDark;
+            border-bottom: 0.2rem groove $secondaryColorDark;
+          }
         }
       }
       .modal {
