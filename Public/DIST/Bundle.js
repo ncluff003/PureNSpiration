@@ -559,7 +559,6 @@ const watchForAppointments = (app, data, utility) => {
       e.preventDefault();
       const date = document.querySelector('.appoint-me-container__sub-container__heading__date');
       _Utility__WEBPACK_IMPORTED_MODULE_0__.replaceClassName(timePickerModal, `closed`, `open`);
-      console.log(date, date.dataset.date, date.dataset);
       const modalDateHeader = document.querySelector('.modal--select-time__header');
       modalDateHeader.textContent = luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.DATE_HUGE);
       modalDateHeader.dataset.date = date.dataset.date;
@@ -567,6 +566,8 @@ const watchForAppointments = (app, data, utility) => {
       let splitMinutes = splitHour[1].split(' ');
       let hourSelectOne = document.querySelectorAll('.form__select--hour')[0];
       let hourSelectTwo = document.querySelectorAll('.form__select--hour')[1];
+
+      hourSelectOne.selectedIndex = Number(currentHour.dataset.value);
       [...hourSelectOne.childNodes].forEach((child) => {
         if (child.value !== 0 && currentHour.dataset.time === `12:00 AM`) {
           child.disabled = true;
@@ -655,6 +656,63 @@ const watchForAppointments = (app, data, utility) => {
           timeOfDayTwo.textContent = `PM`;
         } else {
           timeOfDayTwo.textContent = `AM`;
+        }
+      });
+
+      /*
+        I need to be sure that the right minutes are blacked out during the time that is selected.  It also needs to be sure that it is edited EVERY time another hour is selected.  That last part is for the hours available for the end of the appointment select.
+      */
+
+      const minuteSelects = document.querySelectorAll('.form__select--minute');
+      let firstMinute = minuteSelects[0];
+      let secondMinute = minuteSelects[1];
+      const appointments = data.appointments;
+      appointments.forEach((time, i) => {
+        if (luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.date).day === luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day) {
+          console.log(time);
+          [...firstMinute.childNodes].forEach((minute, i) => {
+            _Utility__WEBPACK_IMPORTED_MODULE_0__.removeClasses(minute, [`blacked-out`]);
+            minute.disabled = ``;
+            if (
+              luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year,
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month,
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day,
+                Number(currentHour.dataset.value),
+                Number(minute.textContent),
+                0
+              ) >=
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).year,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).month,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).day,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).hour,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).minute,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).millisecond
+                ) &&
+              luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year,
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month,
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day,
+                Number(currentHour.dataset.value),
+                Number(minute.textContent),
+                0
+              ) <=
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).year,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).month,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).day,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).hour,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).minute,
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).millisecond
+                )
+            ) {
+              _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(minute, [`blacked-out`]);
+              minute.disabled = `true`;
+            } else {
+              minute.disabled = '';
+            }
+          });
         }
       });
     });
@@ -1138,6 +1196,65 @@ const buildApp = async (app) => {
 
   const appointments = data.appointments;
   renderAppointments(appointments, document.querySelectorAll('.hour'));
+
+  const hourSelects = document.querySelectorAll('.form__select--hour');
+  const minuteSelects = document.querySelectorAll('.form__select--minute');
+  let firstHour = hourSelects[0];
+  let secondHour = hourSelects[1];
+  let secondMinute = minuteSelects[1];
+  secondHour.addEventListener(`change`, (e) => {
+    e.preventDefault();
+    console.log(firstHour.value, firstHour.selectedIndex, secondHour.selectedIndex, secondHour.value);
+    const appointments = data.appointments;
+    appointments.forEach((time, i) => {
+      if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.date).day === luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).day) {
+        console.log(time);
+        [...secondMinute.childNodes].forEach((minute, i) => {
+          _Utility__WEBPACK_IMPORTED_MODULE_2__.removeClasses(minute, [`blacked-out`]);
+          minute.disabled = ``;
+          if (
+            luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).year,
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).month,
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).day,
+              Number(secondHour.selectedIndex),
+              Number(minute.textContent),
+              0
+            ) >=
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).year,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).month,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).day,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).hour,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).minute,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).millisecond
+              ) &&
+            luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).year,
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).month,
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).day,
+              Number(secondHour.selectedIndex),
+              Number(minute.textContent),
+              0
+            ) <=
+              luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).year,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).month,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).day,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).hour,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).minute,
+                luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).millisecond
+              )
+          ) {
+            _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(minute, [`blacked-out`]);
+            minute.disabled = `true`;
+          } else {
+            minute.disabled = ``;
+          }
+        });
+      }
+    });
+  });
 
   // * From the get go, I would need to be able to get the appointments and render them using a function declared here.
 };
