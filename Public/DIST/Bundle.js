@@ -548,9 +548,7 @@ const submitAppointment = async (details) => {
 };
 
 const watchForAppointments = (app, data, utility) => {
-  // * After the end of the schedule I should only allow about a certain amount of time for a chat.  This might be something that needs to be set in the free-lancer's settings.
-
-  // * Also, times prior to the start time should NOT be able to be selected.
+  // THIS FIRST THING IS TO GET THE FREELANCER'S SCHEDULE MADE
   const timePickerModal = document.querySelector('.modal--select-time');
   const hours = document.querySelectorAll('.hour');
   [...hours].forEach((hour, i) => {
@@ -601,21 +599,8 @@ const watchForAppointments = (app, data, utility) => {
         }
       });
 
-      // * NOW THAT THE BASIC SETUP OF BLACKOUT TIMES ARE THERE, IT NOW HAS TO TAKE THE PREVIOUS APPOINTMENTS INTO ACCOUNT
-
-      // GETTING APPOINTMENTS
-      // let appointments = data.appointments;
-
-      // LOOPING THROUGH APPOINTMENTS
-      // appointments.forEach((appointment, i) => {
-      //   console.log(appointment);
-      // });
-
       let beginningHour = 0;
       let endHour = 4;
-
-      // * Getting the selected schedule info.
-      console.log(data);
       let scheduleEnd = data.schedule.split('-')[1];
       let timeOfDay, time;
       if (`${scheduleEnd}`.length === 3) {
@@ -659,9 +644,7 @@ const watchForAppointments = (app, data, utility) => {
         }
       });
 
-      /*
-        I need to be sure that the right minutes are blacked out during the time that is selected.  It also needs to be sure that it is edited EVERY time another hour is selected.  That last part is for the hours available for the end of the appointment select.
-      */
+      // GETTING THE PREVIOUSLY ACCEPTED APPOINTMENTS TIME'S BLACKED OUT FOR POTENTIAL CLIENTS SO THEY COULD NOT ACCIDENTALLY OVERLAP ONTO PREVIOUS APPOINTMENTS.
 
       const minuteSelects = document.querySelectorAll('.form__select--minute');
       let firstMinute = minuteSelects[0];
@@ -689,7 +672,7 @@ const watchForAppointments = (app, data, utility) => {
                   luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).hour,
                   luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).minute,
                   luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).millisecond
-                ) &&
+                ).minus({ minutes: 15 }) &&
               luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
                 luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year,
                 luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month,
@@ -705,7 +688,7 @@ const watchForAppointments = (app, data, utility) => {
                   luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).hour,
                   luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).minute,
                   luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.end).millisecond
-                )
+                ).plus({ minutes: 15 })
             ) {
               _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(minute, [`blacked-out`]);
               minute.disabled = `true`;
@@ -713,6 +696,14 @@ const watchForAppointments = (app, data, utility) => {
               minute.disabled = '';
             }
           });
+
+          // NEXT IS TO MAKE IT SO POTENTIAL CLIENTS WILL NOT OVERLAP APPOINTMENTS BEFORE THEY TRY TO REQUEST A TIME.
+
+          // * THIS CONDITION IS FOR CHECKING IF THE DAY IS RIGHT FOR THE CURRENT APPOINTMENTS.
+          // From here, since the first hour is chosen, the appointments need to be looped through to check if ANY of them are on the SAME day AND between the self-same hour to 3 hours from then.  If there is appointments, then ONLY all the way to the upcoming appointment should be the ONLY available times.  I might even add a buffer for the appointments themselves, just in case.  Maybe 10-15 minutes.
+          if (Number(currentHour.dataset.value) <= Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).hour) + 3) {
+            console.log(`Appointment Close By`, Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(time.start).hour) - Number(currentHour.dataset.value));
+          }
         }
       });
     });
@@ -957,7 +948,7 @@ const fillDateModal = (modal, dateText, data) => {
         appointment.dataset.end = time.end;
         const appointmentHeader = document.createElement('h3');
         _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(appointmentHeader, [`appointment__header`, `r__appointment__header`]);
-        appointmentHeader.textContent = `Appointment at ${time.startTime}`;
+        appointmentHeader.textContent = `Appointment at ${time.startTime} to ${time.endTime}`;
         _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', appointment, appointmentHeader);
 
         console.log(Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).hour));
@@ -1036,7 +1027,7 @@ const renderAppointments = (appointments, hours) => {
       appointment.dataset.end = time.end;
       const appointmentHeader = document.createElement('h3');
       _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(appointmentHeader, [`appointment__header`, `r__appointment__header`]);
-      appointmentHeader.textContent = `Appointment at ${time.startTime}`;
+      appointmentHeader.textContent = `Appointment at ${time.startTime} to ${time.endTime}`;
       _Utility__WEBPACK_IMPORTED_MODULE_2__.insertElement('beforeend', appointment, appointmentHeader);
 
       console.log(Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).hour));
@@ -1060,10 +1051,10 @@ const renderAppointments = (appointments, hours) => {
       // IF TIME OF DAY IS ANTE MERIDIEM DO THESE THINGS:
       if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).toFormat('a') === `AM`) {
         // PLACE APPOINTMENT
-        appointment.style.top = `${(startHour + minuteDifference) * 8}rem`;
+        appointment.style.top = `${(startHour + minuteDifference) * 8 - 2}rem`;
 
         // CALCULATE HEIGHT
-        appointmentHeight = (hourDifference + minuteDifference) * 8;
+        appointmentHeight = (hourDifference + minuteDifference) * 8 + 4;
 
         // SET APPOINTMENT LENGTH
         appointment.style.height = `${appointmentHeight}rem`;
@@ -1201,11 +1192,11 @@ const buildApp = async (app) => {
   const minuteSelects = document.querySelectorAll('.form__select--minute');
   let firstHour = hourSelects[0];
   let secondHour = hourSelects[1];
+  let firstMinute = minuteSelects[0];
   let secondMinute = minuteSelects[1];
   secondHour.addEventListener(`change`, (e) => {
     e.preventDefault();
     console.log(firstHour.value, firstHour.selectedIndex, secondHour.selectedIndex, secondHour.value);
-    const appointments = data.appointments;
     appointments.forEach((time, i) => {
       if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.date).day === luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(date.dataset.date).day) {
         console.log(time);
@@ -1255,6 +1246,25 @@ const buildApp = async (app) => {
       }
     });
   });
+
+  // What I need now is that once a starting time is selected, I would want it to not be able to overlap a previous appointment entirely.  So, an appointment could be from 1:15pm to 2pm.  If someone selects 1pm and the starting minute seleced is 5, so 1:05pm is the start time, they should only be allowed to go for 9 minutes, or until 1:14pm.  That is needed because normally, people can choose up to a 3 hour appointment if it is clear.
+
+  // The easiest way to do avoid these things is that as the first minute is selected, and there is an appointment in the next few hours, the hours ahead are needing to be blacked out.
+
+  // firstMinute.addEventListener(`change`, (e) => {
+  //   e.preventDefault();
+  //   console.log(firstMinute.selectedIndex, firstMinute.value, firstHour.value, firstHour.selectedIndex);
+  //   let lookAheadHour = Number(firstHour.selectedIndex + 3);
+
+  //   appointments.forEach((time, i) => {
+  //     // Checking to see if there is an appointment that starts between the first hour selected to about 3 hours from then.
+  //     if (DateTime.fromISO(time.start).hour === firstHour.selectedIndex || DateTime.fromISO(time.start).hour < lookAheadHour + 1) {
+  //       /*
+  //         If the selected hour is 10am and there is an appointment between 10am to 1pm the hours after the appointments start need to be blacked out.
+  //       */
+  //     }
+  //   });
+  // });
 
   // * From the get go, I would need to be able to get the appointments and render them using a function declared here.
 };
