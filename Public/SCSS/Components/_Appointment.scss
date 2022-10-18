@@ -5,9 +5,12 @@
   @include SizeAndPositioning(absolute, max-content, 100%, flex, column, nowrap, flex-start, center, 0, 0, 0);
   right: 0;
   padding-top: 1rem;
-  border-radius: 0.9rem;
   &__header {
     @include SizingItem(relative, max-content, max-content);
     transform: translate(4.5rem, 0);
+  }
+  &--spacer {
+    @extend .appointment;
+    padding-top: 0;
   }
 }

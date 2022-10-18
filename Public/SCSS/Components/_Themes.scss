@@ -105,6 +105,9 @@
             border-right: 0.2rem groove $secondaryColorDark;
             border-bottom: 0.2rem groove $secondaryColorDark;
           }
+          &--spacer {
+            background-image: linear-gradient(to right, rgba($colorOffWhite, 0.7) 22.5%, $colorDarkerGrey 22.5%, $colorDarkerGrey 100%);
+          }
         }
       }
       .modal {
