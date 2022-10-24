@@ -31,7 +31,6 @@ export const watchContactForm = () => {
     contactTabs.forEach((tab, i) => {
       tab.addEventListener(`click`, (e) => {
         e.preventDefault();
-        console.log(`Hello`);
         contactHeader.textContent = tab.textContent;
         if (i === 0) {
           Utility.replaceClassName(document.querySelector('.calendar'), `open`, `closed`);
