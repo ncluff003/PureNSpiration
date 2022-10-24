@@ -1356,6 +1356,8 @@ const buildApp = async (app) => {
   let secondMinute = minuteSelects[1];
   firstMinute.addEventListener(`change`, (e) => {
     e.preventDefault();
+    let endingAppointments = [];
+    let beginningAppointments = [];
     // Generally, on change, the second minute select should have the minutes before and on the value of the first minute blacked out.
 
     // REMOVE BLACKED OUT CLASS FOR EACH SECOND TIME MINUTE.
@@ -1370,61 +1372,65 @@ const buildApp = async (app) => {
       const convertedStartTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).minus({ minutes: 15 });
       const convertedEndTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).plus({ minutes: 15 });
 
+      // USE APPOINTMENTS THAT ARE ON THIS DAY ONLY
       if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.date).day === date.day) {
+        // GET THE MINIMUM HOUR THAT IS ABLE TO BE SELECTED BY THE USER FOR THE FIRST VALUE.
+        let minimumTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstHour.value), 0, 0);
+        // GET THE MAXIMUM TIME THAT CAN BE SELECTED.
+        let maximumTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstHour.value), 59, 0);
         // GET THE USER'S SELECTED STARTING TIME
-        let selectedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstHour.value), Number(firstMinute.value), 0);
-        [...secondMinute.childNodes].forEach((minute, i) => {
-          // GETTING THE TIME TO CHECK EACH APPOINTMENT WITH FOR THE MINUTES.
-          let minuteCheckedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(selectedTime.hour), Number(minute.value), 0);
-          let minimumTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstHour.value), 0, 0);
-          let checkedStartTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).hour), Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).minute), 0);
-          let checkedEndTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).hour), Number(luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).minute), 0);
-          if (minuteCheckedTime >= checkedEndTime && minuteCheckedTime <= checkedStartTime && minuteCheckedTime < minimumTime) {
-            console.log(selectedTime);
-          }
-        });
+        let firstSelectedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstHour.value), Number(firstMinute.value), 0);
+        let secondSelectedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(secondHour.value), Number(firstMinute.value), 0);
+
+        // GATHER APPOINTMENTS THAT END ON THE SELECTED HOUR
+        if (convertedEndTime >= minimumTime) {
+          endingAppointments.push([convertedStartTime, convertedEndTime]);
+        }
+        // GATHER APPOINTMENTS THAT BEGIN ON OR AFTER THE SELECTED HOUR
+        if (convertedStartTime >= minimumTime) {
+          beginningAppointments.push([convertedStartTime, convertedEndTime]);
+        }
+
+        if (endingAppointments.length > 0) {
+          endingAppointments.forEach((appointment) => {
+            // BLACK OUT BASED ON THE ENDING APPOINTMENT ONLY IF THE SELECTED HOURS MATCH
+            if (Number(secondSelectedTime.hour) === Number(firstSelectedTime.hour)) {
+              [...secondMinute.childNodes].forEach((minute) => {
+                let minuteCheckedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstSelectedTime.hour), Number(minute.value), 0);
+                if (minuteCheckedTime <= appointment[1]) {
+                  if (minuteCheckedTime <= firstSelectedTime) {
+                    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(minute, [`blacked-out`]);
+                    minute.disabled = 'true';
+                  }
+                }
+              });
+            }
+          });
+        }
+
+        let sameHourAppointments = [];
+        if (beginningAppointments.length > 0) {
+          beginningAppointments.forEach((appointment, i) => {
+            if (Number(appointment[0].hour) === Number(secondSelectedTime.hour)) {
+              sameHourAppointments.push(appointment);
+            }
+          });
+        }
+
+        if (sameHourAppointments.length >= 1) {
+          // EVERY APPOINTMENT IS THE FOLLOWING ARRAY: [BEGINNING, END].
+          sameHourAppointments.forEach((appointment, i) => {
+            [...secondMinute.childNodes].forEach((minute, i) => {
+              let minuteCheckedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(secondSelectedTime.hour), Number(minute.value), 0);
+              if (minuteCheckedTime >= appointment[0] && minuteCheckedTime <= appointment[1]) {
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(minute, [`blacked-out`]);
+                minute.disabled = 'true';
+              }
+            });
+          });
+        }
       }
     });
-
-    // [...secondMinute.childNodes].forEach((minute, i) => {
-    //   if (
-    //     DateTime.local(
-    //       DateTime.fromISO(date.dataset.date).year,
-    //       DateTime.fromISO(date.dataset.date).month,
-    //       DateTime.fromISO(date.dataset.date).day,
-    //       Number(currentHour.dataset.value),
-    //       Number(minute.textContent),
-    //       0
-    //     ) >=
-    //       DateTime.local(
-    //         DateTime.fromISO(time.start).year,
-    //         DateTime.fromISO(time.start).month,
-    //         DateTime.fromISO(time.start).day,
-    //         DateTime.fromISO(time.start).hour,
-    //         DateTime.fromISO(time.start).minute,
-    //         DateTime.fromISO(time.start).millisecond
-    //       ).minus({ minutes: 15 }) &&
-    //     DateTime.local(
-    //       DateTime.fromISO(date.dataset.date).year,
-    //       DateTime.fromISO(date.dataset.date).month,
-    //       DateTime.fromISO(date.dataset.date).day,
-    //       Number(currentHour.dataset.value),
-    //       Number(minute.textContent),
-    //       0
-    //     ) <=
-    //       DateTime.local(
-    //         DateTime.fromISO(time.end).year,
-    //         DateTime.fromISO(time.end).month,
-    //         DateTime.fromISO(time.end).day,
-    //         DateTime.fromISO(time.end).hour,
-    //         DateTime.fromISO(time.end).minute,
-    //         DateTime.fromISO(time.end).millisecond
-    //       ).plus({ minutes: 15 })
-    //   ) {
-    //     Utility.addClasses(minute, [`blacked-out`]);
-    //     minute.disabled = `true`;
-    //   }
-    // });
   });
 };
 
