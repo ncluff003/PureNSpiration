@@ -60,6 +60,10 @@ export const watch = () => {
         links.forEach((link) => Utility.removeClasses(link, [`clicked`]));
         Utility.toggleClasses(link, [`clicked`]);
       }
+
+      setTimeout(() => {
+        Utility.toggleClass(navigationHeader, `navigation-header--open`);
+      }, 2000);
     });
   });
 

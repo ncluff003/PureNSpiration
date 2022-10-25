@@ -12445,6 +12445,10 @@ var watch = function watch() {
         });
         _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClasses(link, ["clicked"]);
       }
+
+      setTimeout(function () {
+        _Utility__WEBPACK_IMPORTED_MODULE_0__.toggleClass(navigationHeader, "navigation-header--open");
+      }, 2000);
     });
   });
   var buttons = document.querySelectorAll('.button--cta');
