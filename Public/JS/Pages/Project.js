@@ -26,6 +26,25 @@ export const watch = () => {
     });
   });
 
+  let projectIndex = 0;
+  projectUpArrow.addEventListener(`click`, (e) => {
+    e.preventDefault();
+    projectIndex--;
+    projectIndex < 0 ? (projectIndex = 0) : (projectIndex = projectIndex);
+    projects.forEach((project, i) => {
+      project.style.transform = `translate(${0}%, ${100 * i + Number(projectIndex) * -100}%)`;
+    });
+  });
+
+  projectDownArrow.addEventListener(`click`, (e) => {
+    e.preventDefault();
+    projectIndex++;
+    projectIndex >= projects.length ? (projectIndex = projects.length - 1) : (projectIndex = projectIndex);
+    projects.forEach((project, i) => {
+      project.style.transform = `translate(${0}%, ${100 * i + Number(projectIndex) * -100}%)`;
+    });
+  });
+
   Utility.insertElement(`beforeend`, projectContainer, projectNavigationContainer);
 
   if (projectContainer) {

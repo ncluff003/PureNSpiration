@@ -13783,6 +13783,23 @@ var watch = function watch() {
       });
     });
   });
+  var projectIndex = 0;
+  projectUpArrow.addEventListener("click", function (e) {
+    e.preventDefault();
+    projectIndex--;
+    projectIndex < 0 ? projectIndex = 0 : projectIndex = projectIndex;
+    projects.forEach(function (project, i) {
+      project.style.transform = "translate(".concat(0, "%, ", 100 * i + Number(projectIndex) * -100, "%)");
+    });
+  });
+  projectDownArrow.addEventListener("click", function (e) {
+    e.preventDefault();
+    projectIndex++;
+    projectIndex >= projects.length ? projectIndex = projects.length - 1 : projectIndex = projectIndex;
+    projects.forEach(function (project, i) {
+      project.style.transform = "translate(".concat(0, "%, ", 100 * i + Number(projectIndex) * -100, "%)");
+    });
+  });
   _Utility__WEBPACK_IMPORTED_MODULE_0__.insertElement("beforeend", projectContainer, projectNavigationContainer);
 
   if (projectContainer) {
