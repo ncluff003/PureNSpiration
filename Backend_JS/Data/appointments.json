@@ -20,9 +20,9 @@
       "index": 1,
       "date": "2022-10-24T21:51:40.424-06:00",
       "start": "2022-10-24T13:55:00.000-06:00",
-      "end": "2022-10-24T15:25:00.000-06:00",
+      "end": "2022-10-24T14:25:00.000-06:00",
       "startTime": "1:55 PM",
-      "endTime": "3:25 PM",
+      "endTime": "2:25 PM",
       "attendees": [{ "name": "Nathan Cluff" }, { "name": "Julian Doe", "phoneNumber": "4352297609", "email": "ncluff003@gmail.com" }],
       "type": "Phone Call"
     },

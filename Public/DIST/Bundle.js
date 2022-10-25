@@ -756,18 +756,21 @@ const watchForAppointments = (app, data, utility) => {
             let nextHour = Number(currentHour.nextSibling.dataset.value);
             let hourAfterNext = Number(currentHour.nextSibling.nextSibling.dataset.value);
             console.log(nextHour, hourAfterNext, hourDifference);
+            console.log(
+              luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
+                Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year),
+                Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month),
+                Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day),
+                nextHour,
+                Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).minute),
+                Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).second)
+              )
+            );
             if (
               hourDifference === 0 ||
               (hourDifference === 1 &&
                 convertedStartTime <=
-                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(
-                    Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year),
-                    Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month),
-                    Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day),
-                    nextHour,
-                    Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).minute),
-                    Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).second)
-                  ))
+                  luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year), Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month), Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day), nextHour, 0, 0))
             ) {
               // Black out the next two hours.  (ie. if it is anywhere from 9:00am to 10:00am, 10 and 11 are blacked out.)
               console.log(`Two Hours Blacked Out.`);
@@ -784,12 +787,24 @@ const watchForAppointments = (app, data, utility) => {
               if (hourSelectTwo.selectedIndex > 12) {
                 timeOfDayTwo.textContent = `PM`;
               }
-            } else if (hourDifference === 2) {
-              // Black out only the hour after the next.  (ie. if it is anywhere from 10:01am onwards, only 11 is blacked out.)
-              console.log(`One Hour Blacked Out.`);
+            } else if (
+              hourDifference === 1 &&
+              convertedStartTime >=
+                luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.local(Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).year), Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).month), Number(luxon__WEBPACK_IMPORTED_MODULE_3__.DateTime.fromISO(date.dataset.date).day), nextHour, 0, 0)
+            ) {
               newAvailableHours = [...hourSelectTwo.childNodes].filter((hour) => {
                 return !hour.classList.contains('blacked-out');
               });
+              console.log(`One Hour Blacked Out.`);
+              _Utility__WEBPACK_IMPORTED_MODULE_0__.addClasses(newAvailableHours[2], [`blacked-out`]);
+              newAvailableHours[2].disabled = 'true';
+              hourSelectTwo.selectedIndex = Number(newAvailableHours[0].value);
+              if (hourSelectTwo.selectedIndex > 12) {
+                timeOfDayTwo.textContent = `PM`;
+              }
+            } else if (hourDifference === 2) {
+              console.log(`Zero Hours Blacked Out.`);
+              // Black out only the hour after the next.  (ie. if it is anywhere from 10:01am onwards, only 11 is blacked out.)
               hourSelectTwo.selectedIndex = Number(newAvailableHours[0].value);
               if (hourSelectTwo.selectedIndex > 12) {
                 timeOfDayTwo.textContent = `PM`;
@@ -1403,6 +1418,95 @@ const buildApp = async (app) => {
                     minute.disabled = 'true';
                   }
                 }
+              });
+            }
+          });
+        }
+
+        let sameHourAppointments = [];
+        if (beginningAppointments.length > 0) {
+          beginningAppointments.forEach((appointment, i) => {
+            if (Number(appointment[0].hour) === Number(secondSelectedTime.hour)) {
+              sameHourAppointments.push(appointment);
+            }
+          });
+        }
+
+        if (sameHourAppointments.length >= 1) {
+          // EVERY APPOINTMENT IS THE FOLLOWING ARRAY: [BEGINNING, END].
+          sameHourAppointments.forEach((appointment, i) => {
+            [...secondMinute.childNodes].forEach((minute, i) => {
+              let minuteCheckedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(secondSelectedTime.hour), Number(minute.value), 0);
+              if (minuteCheckedTime >= appointment[0] && minuteCheckedTime <= appointment[1]) {
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(minute, [`blacked-out`]);
+                minute.disabled = 'true';
+              }
+            });
+          });
+        }
+      }
+    });
+  });
+
+  secondHour.addEventListener('change', (e) => {
+    e.preventDefault();
+    console.log(`Second Hour Changed!`);
+
+    let endingAppointments = [];
+    let beginningAppointments = [];
+    // Generally, on change, the second minute select should have the minutes before and on the value of the first minute blacked out.
+
+    // REMOVE BLACKED OUT CLASS FOR EACH SECOND TIME MINUTE.
+    [...secondMinute.childNodes].forEach((minute, i) => {
+      _Utility__WEBPACK_IMPORTED_MODULE_2__.removeClasses(minute, [`blacked-out`]);
+      minute.disabled = '';
+    });
+
+    const date = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(document.querySelector('.appoint-me-container__sub-container__heading__date').dataset.date);
+
+    appointments.forEach((time, i) => {
+      const convertedStartTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.start).minus({ minutes: 15 });
+      const convertedEndTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.end).plus({ minutes: 15 });
+
+      // USE APPOINTMENTS THAT ARE ON THIS DAY ONLY
+      if (luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.fromISO(time.date).day === date.day) {
+        // GET THE MINIMUM HOUR THAT IS ABLE TO BE SELECTED BY THE USER FOR THE FIRST VALUE.
+        let minimumTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(secondHour.value), 0, 0);
+        // GET THE MAXIMUM TIME THAT CAN BE SELECTED.
+        let maximumTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(secondHour.value), 59, 0);
+        // GET THE USER'S SELECTED STARTING TIME
+        let firstSelectedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstHour.value), Number(firstMinute.value), 0);
+
+        // MAIN ISSUE I AM HAVING IS IF THE MINUTE IN THIS TIME IS ACTUALLY THE RIGHT MINUTE VALUE
+        let secondSelectedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(secondHour.value), Number(firstMinute.value), 0);
+
+        // GATHER APPOINTMENTS THAT END ON THE SELECTED HOUR
+        if (convertedEndTime >= minimumTime) {
+          endingAppointments.push([convertedStartTime, convertedEndTime]);
+        }
+        // GATHER APPOINTMENTS THAT BEGIN ON OR AFTER THE SELECTED HOUR
+        if (convertedStartTime >= minimumTime) {
+          beginningAppointments.push([convertedStartTime, convertedEndTime]);
+        }
+
+        if (endingAppointments.length > 0) {
+          console.log(`An appointment breaks this hour`);
+          endingAppointments.forEach((appointment) => {
+            // BLACK OUT BASED ON THE ENDING APPOINTMENT ONLY IF THE SELECTED HOURS MATCH
+            if (Number(secondSelectedTime.hour) === Number(firstSelectedTime.hour)) {
+              [...secondMinute.childNodes].forEach((minute) => {
+                let minuteCheckedTime = luxon__WEBPACK_IMPORTED_MODULE_6__.DateTime.local(Number(date.year), Number(date.month), Number(date.day), Number(firstSelectedTime.hour), Number(minute.value), 0);
+                if (minuteCheckedTime <= appointment[1]) {
+                  if (minuteCheckedTime <= firstSelectedTime) {
+                    _Utility__WEBPACK_IMPORTED_MODULE_2__.addClasses(minute, [`blacked-out`]);
+                    minute.disabled = 'true';
+                  }
+                }
+              });
+            } else if (Number(secondSelectedTime.hour) != Number(firstSelectedTime.hour)) {
+              [...secondMinute.childNodes].forEach((minute) => {
+                _Utility__WEBPACK_IMPORTED_MODULE_2__.removeClasses(minute, [`blacked-out`]);
+                minute.disabled = '';
               });
             }
           });
