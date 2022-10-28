@@ -12,6 +12,7 @@
 
 ////////////////////////////////////////////
 //  Third Party Middleware
+const { DateTime } = require('luxon');
 
 ////////////////////////////////////////////
 //  My Middleware
@@ -117,8 +118,21 @@ class Calendar {
     }
   }
 
-  getLongDate(date) {
-    return `${this.days[new Date(date).getDay()]}, the ${new Date(date).getDate()}${this.getDaySuffix(date)} of ${this.months[new Date(date).getMonth()]} ${new Date(date).getFullYear()}`;
+  getLongDate(startDate, endDate) {
+    let start = DateTime.fromISO(startDate);
+    let end = DateTime.fromISO(endDate);
+
+    if (start.day === end.day) {
+      return `${start.toLocaleString(DateTime.TIME_SIMPLE)} to ${end.toLocaleString(DateTime.TIME_SIMPLE)} on ${start.weekdayLong} the ${
+        start.day
+      }${this.getDaySuffix(start.day)} of ${start.monthLong} ${start.year}`;
+    } else if (end.day === start.plus({ days: 1 }).day) {
+      return `${start.toLocaleString(DateTime.TIME_SIMPLE)} on ${start.weekdayLong} the ${start.day}${this.getDaySuffix(start.day)} of ${start.monthLong} ${
+        start.year
+      } to ${end.toLocaleString(DateTime.TIME_SIMPLE)} on ${end.weekdayLong} the ${end.day}${this.getDaySuffix(end.day)} of ${end.monthLong} ${end.year}`;
+    } else {
+      return `THIS IS NOT WORKING! ${start.day} | ${end.day}`;
+    }
   }
 }
 

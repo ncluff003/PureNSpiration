@@ -6,7 +6,9 @@
   right: 0;
   padding-top: 1rem;
   &__header {
-    @include SizingItem(relative, max-content, max-content);
+    @include SizingItem(relative, max-content, 70%);
+    display: flex;
+    flex-flow: row wrap;
     transform: translate(4.5rem, 0);
   }
   &--spacer {
