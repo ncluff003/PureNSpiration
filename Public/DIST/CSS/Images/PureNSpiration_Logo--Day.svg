@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.0px"
+   height="16.0px"
+   viewBox="0 0 16.0 16.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="PureNSpiration_Logo--Day.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview98269"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="22.748821"
+     inkscape:cx="4.9892694"
+     inkscape:cy="7.121248"
+     inkscape:window-width="1920"
+     inkscape:window-height="972"
+     inkscape:window-x="0"
+     inkscape:window-y="40"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid98392" />
+  </sodipodi:namedview>
+  <defs
+     id="defs98264" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g905"
+       inkscape:export-filename="F:\MyCompany\PureNOvation_Logo_Primary_Filled.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="matrix(0.02442748,0,0,0.02442748,-0.2442745,0.66906898)">
+      <g
+         data-name="Layer 2"
+         id="Layer_2">
+        <g
+           data-name="Layer 1"
+           id="Layer_1-2-5">
+          <path
+             id="path883"
+             d="m 154,209.11 h 2 L 216.42,306.67 289,262.36 158,49.11 H 14 v 69 l 45,2 1,368 c 0,15 -5.54,23.85 -17,26 l -33,3 v 65 h 196 v -68 l -52,-3 z"
+             class="cls-1"
+             style="fill:#333333;fill-opacity:1" />
+          <rect
+             id="rect885"
+             transform="rotate(-31.65,296.95912,356.59727)"
+             height="84.739998"
+             width="84.410004"
+             y="314.23001"
+             x="254.77"
+             class="cls-1"
+             style="fill:#333333;fill-opacity:1" />
+          <path
+             id="path887"
+             d="m 574,18.11 -176,170 c 0,0 108,-6.48 104,15 -12,65 -61,222 -108.43,224.2 -1.57,-0.2 -2.33,-2.26 -2.33,-2.26 L 379,407.11 308.82,450.68 c 0,0 38.83,71.32 73.52,123.08 1.93,2.87 4.66,8.35 5.66,8.35 76,-5 167,-294 178,-357 2,-32 99,58 99,58 z"
+             class="cls-2"
+             style="fill:#ffd700;fill-opacity:1" />
+          <path
+             id="path889"
+             d="m 194,364.11 9.5,-3.5 43,72 q -26.25,13.75 -52.5,17.5 z"
+             class="cls-1"
+             style="fill:#333333;fill-opacity:1" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

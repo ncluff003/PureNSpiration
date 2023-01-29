@@ -75,7 +75,7 @@ exports.returnMyData = catchAsync(async (request, response, next) => {
 
 exports.renderApp = catchAsync(async (request, response) => {
   const data = pureData;
-  response.status(200).render(`app`, {
+  response.status(200).render(`base`, {
     title: `Pure 'N' Spiration | Home`,
     data: {
       data: data,
