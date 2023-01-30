@@ -30,6 +30,11 @@ const contactRouter = require('./contactRoutes');
 ////////////////////////////////////////////
 //  Routing Middleware
 router.route(`/`).get(appController.renderApp);
+router.route(`/About`).get(appController.renderApp);
+router.route(`/Portfolio`).get(appController.renderApp);
+router.route(`/Resume`).get(appController.renderApp);
+router.route(`/Contact`).get(appController.renderApp);
+router.route(`/Hire`).get(appController.renderApp);
 router.route(`/data`).get(appController.returnMyData);
 router.route(`/App/Info`).get(appController.getInfo);
 
