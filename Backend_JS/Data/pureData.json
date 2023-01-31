@@ -17,6 +17,32 @@
     "Codepen": "https://codepen.io/ncluff3",
     "Telegram": "https://t.me/ncluff003"
   },
+  "workHistory": [
+    {
+      "position": "Data Entry Clerk",
+      "company": "MetaSource",
+      "duration": "June 2020 - November 2022",
+      "jobDescription": "Demonstrated great attention to detail in finding and correcting discrepancies in mortgage documents, while meeting deadlines."
+    },
+    {
+      "position": "Selector",
+      "company": "NFI Industries",
+      "duration": "November 2018 - October 2019",
+      "jobDescription": "Showed great organizational skills and attention to detail while organizing stacks bread into orders and auditing others, reducing errors in shipping greatly."
+    },
+    {
+      "position": "Package Handler",
+      "company": "FedEx Ground",
+      "duration": "July 2018 - November 2018",
+      "jobDescription": "Collaborated with the whole team well to greatly improve how the station met deadlines and helped customer satisfaction."
+    },
+    {
+      "position": "Warehouse Worker",
+      "company": "NovaShip",
+      "duration": "Novmeber 2017 - April 2018",
+      "jobDescription": "Worked with great care and attention to detail to increase customer satisfaction with receiving their nutraceutical suppliments."
+    }
+  ],
   "headline": "Latter Day Saint  |  Husband  |  Father  |  Full-Stack Developer",
   "about": [
     {
