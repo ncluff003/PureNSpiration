@@ -298,7 +298,7 @@
       "coverPhoto": "/DIST/CSS/Images/PureNSpiration.jpg",
       "photoAltText": "Pure N Spiration Cover Photo",
       "description": ["Nathan Cluff's Purely Inspired Portfolio Website"],
-      "technologies": "HTML5, CSS3, SCSS, JavaScript, Vue.js, Node.js, Express.js, JSON",
+      "technologies": "HTML5, CSS3, SCSS, JavaScript, React.js, Node.js, Express.js, JSON",
       "link": "https://www.purenspiration.com",
       "code": "https://github.com/ncluff003/PureNSpiration",
       "media": [
