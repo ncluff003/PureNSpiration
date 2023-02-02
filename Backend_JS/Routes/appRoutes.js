@@ -32,6 +32,7 @@ const contactRouter = require('./contactRoutes');
 router.route(`/`).get(appController.renderApp);
 router.route(`/About`).get(appController.renderApp);
 router.route(`/Portfolio`).get(appController.renderApp);
+router.route(`/Portfolio/:project`).get(appController.renderApp);
 router.route(`/Resume`).get(appController.renderApp);
 router.route(`/Contact`).get(appController.renderApp);
 router.route(`/Hire`).get(appController.renderApp);
