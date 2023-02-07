@@ -321,7 +321,7 @@
       "description": "While there are seemingly many options for handling your finances, this one was my own take on how things should be.  For example, Latter Day Saints should be able to track what they need to pay for tithing without any issues arising.  Also, beyond the religious beliefs, users should be able to have help in knowing what is their spendable surplus.  Either way, budgets should have an aim that genuinely wants to help others succeed financially.",
       "myInvolvement": ["Logo Design", "Website Design", "Website Development"],
       "technologies": "HTML5, CSS3, SCSS, JavaScript, React.js, Node.js, Express.js, JSON",
-      "link": "https://www.kingrichardbudget.com",
+      "link": "https://damp-sea-25324.herokuapp.com/",
       "code": "https://github.com/ncluff003/KingRichard-Budget",
       "media": [
         {
