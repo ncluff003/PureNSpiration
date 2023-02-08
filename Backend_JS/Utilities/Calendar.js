@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////
 //  Third Party Middleware
-const { DateTime } = require('luxon');
+const { DateTime, Info } = require('luxon');
 
 ////////////////////////////////////////////
 //  My Middleware
@@ -27,12 +27,12 @@ const { DateTime } = require('luxon');
 //  Calendar Model
 class Calendar {
   constructor() {
-    this.date = new Date();
+    this.date = DateTime.now();
     this.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    this.monthIndex = this.date.getMonth();
-    this.hours = this.date.getHours();
-    this.day = this.date.getDay();
+    this.months = Info.months('long');
+    this.monthIndex = this.months.indexOf(this.date.monthLong);
+    this.hours = this.date.hour;
+    this.day = this.date.day;
   }
 
   getMinutes() {
@@ -48,11 +48,11 @@ class Calendar {
   }
 
   getTimeOfDay() {
-    return this.date.getHours() < 12 ? (this.timeOfDay = `AM`) : (this.timeOfDay = `PM`);
+    return this.date.hour < 12 ? (this.timeOfDay = `AM`) : (this.timeOfDay = `PM`);
   }
 
   getDay() {
-    return this.date.getDate();
+    return this.day;
   }
 
   getGreeting() {
@@ -72,17 +72,17 @@ class Calendar {
   }
 
   getMonth() {
-    return this.months[this.monthIndex];
+    return this.date.month;
   }
 
   getYear() {
-    return this.date.getFullYear();
+    return this.date.year;
   }
 
   monthRemaining() {
     let days;
     const currentMonth = this.getMonth();
-    const currentDay = this.getDay();
+    const currentDay = this.day;
     if (
       currentMonth === `January` ||
       currentMonth === `March` ||

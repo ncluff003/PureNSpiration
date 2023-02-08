@@ -246,8 +246,8 @@ module.exports = {
       const html = pug.renderFile(`${__dirname}/../Views/Emails/${template}.pug`, {
         from: this.to,
         to: this.from,
-        firstName: this.firstName,
-        lastName: this.lastName,
+        firstName: this.firstname,
+        lastName: this.lastname,
         subject: this.subject,
         message: this.message,
 

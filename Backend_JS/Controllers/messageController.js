@@ -35,15 +35,15 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
     console.log(postBody);
     // Validate & More Importantly Sanitize With Express Validator
     console.log(`Validating Email. 🤞`);
-    await validator.check('firstName').isEmpty().trim().escape().run(request);
-    await validator.check('lastName').isEmpty().trim().escape().run(request);
+    await validator.check('firstname').isEmpty().trim().escape().run(request);
+    await validator.check('lastname').isEmpty().trim().escape().run(request);
     await validator.check('email').isEmpty().trim().escape().run(request);
     await validator.check('subject').isEmpty().trim().escape().run(request);
     await validator.check('message').isEmpty().trim().escape().run(request);
 
     // Start Validating Using My Own Validators Of What I Expect.
-    if (!Validate.isName(postBody.firstName)) throw new Error(`Please give your first name with letters only.`);
-    if (!Validate.isName(postBody.lastName)) throw new Error(`Please give your last name with letters only.`);
+    if (!Validate.isName(postBody.firstname)) throw new Error(`Please give your first name with letters only.`);
+    if (!Validate.isName(postBody.lastname)) throw new Error(`Please give your last name with letters only.`);
     if (!Validate.isEmail(postBody.email)) throw new Error(`Please provide a valid email address with a valid domain.`);
     if (!Validate.isValidEmailSubject(postBody.subject))
       throw new Error(`Please use only letters, numbers, & these symbols: ~, !, $, %, #, *, (, ), -, |, ?, ., :, ', ", in the subject`);
@@ -62,7 +62,7 @@ exports.emailMe = catchAsync(async (request, response, next) => {
   try {
     const postBody = request.body;
     console.log(postBody);
-    await new Email(postBody.firstName, postBody.lastName, postBody.email, postBody.subject, postBody.message).contactMe();
+    await new Email(postBody.firstname, postBody.lastname, postBody.email, postBody.subject, postBody.message).contactMe();
 
     console.log(`Email Sent.`);
 
