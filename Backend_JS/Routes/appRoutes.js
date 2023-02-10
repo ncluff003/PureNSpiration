@@ -26,6 +26,7 @@ const projectRouter = require('./projectRoutes');
 const blogRouter = require('./blogRoutes');
 const aboutRouter = require('./aboutRoutes');
 const contactRouter = require('./contactRoutes');
+const appointmentRouter = require('./appointmentRoutes');
 
 ////////////////////////////////////////////
 //  Routing Middleware
@@ -43,6 +44,7 @@ router.use(`/about`, aboutRouter);
 router.use(`/projects`, projectRouter);
 router.use(`/blog`, blogRouter);
 router.use(`/contact`, contactRouter);
+router.use(`/Appointment`, appointmentRouter);
 
 // router.route(`/`).get(appController.renderApp).post(authController.login);
 router.route(`/App/Appointment`).post(appController.askForAppointment);
