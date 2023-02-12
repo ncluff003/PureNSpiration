@@ -24,7 +24,7 @@ const appointmentController = require(`../Controllers/appointmentController`);
 ////////////////////////////////////////////
 //  Routing Middleware
 // router.route(`/`).get(contactController.contactMe).post(messageController.validateEmail, messageController.emailMe);
-router.route(`/`).get(appointmentController.getData).post(messageController.validateEmail, messageController.emailMe);
+router.route(`/`).get(appointmentController.getData).post(appointmentController.getData);
 
 ////////////////////////////////////////////
 //  My Modules

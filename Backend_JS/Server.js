@@ -4,6 +4,7 @@
 ////////////////////////////////////////////
 //  Third Party Modules
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
 ////////////////////////////////////////////
 //  Third Party Module Instances
@@ -16,6 +17,15 @@ const dotenv = require('dotenv');
 dotenv.config({
   path: `./config.env`,
 });
+
+const DB = process.env.DB.replace(`<PASSWORD>`, process.env.DBPASSWORD).replace(`<DATABASE>`, process.env.DBNAME).replace(`<USERNAME>`, process.env.DBUSERNAME);
+console.log(DB);
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log(`DB Connection Successful`));
 
 ////////////////////////////////////////////
 //  Routing Middleware
@@ -33,7 +43,7 @@ const PORT = process.env.PORT || 3333;
 
 ////////////////////////////////////////////
 //  Start Server
-App.listen(PORT, () => {
+const server = App.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
 });
 
@@ -44,6 +54,7 @@ App.listen(PORT, () => {
 //  Shut Down App On Unhandled Rejections
 process.on(`unhandledRejection`, (error) => {
   console.log(`UNHANDLED REJECTION 💥 -- Shutting Down...`);
+  console.error(error);
   server.close(() => {
     process.exit(1);
   });

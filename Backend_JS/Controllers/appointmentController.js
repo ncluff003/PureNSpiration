@@ -27,7 +27,8 @@ const calendar = require(`../Models/calendarModel`);
 
 ////////////////////////////////////////////
 //  My Modules
-const db = require('../Data/database');
+// const Owner = require('penciled/Private/Models/ownerModel.cjs');
+const Owner = require('../Models/ownerModel');
 
 ////////////////////////////////////////////
 //  Exported Controllers
@@ -36,10 +37,14 @@ const db = require('../Data/database');
 let pureData = JSON.parse(fs.readFileSync(`${__dirname}/../Data/pureData.json`, 'utf-8'));
 
 exports.getData = catchAsync(async (request, response) => {
-  const database = await db.getData('/');
+  console.log(await Owner.find());
+  const owners = await Owner.find();
+  // console.log(request.body.model);
+  // const Owner = request.body.model;
+  // const owners = Owner.find();
   response.status(200).json({
     status: 'Success',
-    data: database,
+    data: owners,
   });
 });
 
