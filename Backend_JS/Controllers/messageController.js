@@ -74,6 +74,7 @@ exports.emailMe = catchAsync(async (request, response, next) => {
     response.status(500).json({
       status: `Internal Error`,
       message: `Your email could not be sent.  Pleas try again later.`,
+      error: error.message,
     });
   }
 });

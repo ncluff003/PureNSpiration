@@ -68,7 +68,7 @@ class Calendar {
   }
 
   getWeekday() {
-    return this.days[this.day];
+    return this.date.weekdayLong;
   }
 
   getMonth() {

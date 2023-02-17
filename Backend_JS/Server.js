@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 
 ////////////////////////////////////////////
 //  Third Party Middleware
+const backend = require('scheduleit');
 
 ////////////////////////////////////////////
 //  Third Party Config Files
@@ -19,13 +20,15 @@ dotenv.config({
 });
 
 const DB = process.env.DB.replace(`<PASSWORD>`, process.env.DBPASSWORD).replace(`<DATABASE>`, process.env.DBNAME).replace(`<USERNAME>`, process.env.DBUSERNAME);
-console.log(DB);
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log(`DB Connection Successful`));
+
+backend.server.connectToDB.mongo(DB);
+
+// mongoose
+//   .connect(DB, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log(`DB Connection Successful`));
 
 ////////////////////////////////////////////
 //  Routing Middleware
@@ -46,6 +49,8 @@ const PORT = process.env.PORT || 3333;
 const server = App.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
 });
+
+// backend.server.startServer(4444);
 
 ////////////////////////////////////////////
 //  Reload App

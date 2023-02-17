@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
+const mongoose = require('mongoose');
+const validator = require('validator');
 
 const ownerSchema = new mongoose.Schema({
   firstname: {
@@ -35,7 +35,7 @@ const ownerSchema = new mongoose.Schema({
     {
       appointmentType: {
         type: String,
-        enum: ["Video", "Phone"],
+        enum: ['Video', 'Phone'],
       },
       dateRequested: {
         type: Date,
@@ -51,11 +51,11 @@ const ownerSchema = new mongoose.Schema({
       },
       attendees: [
         {
-          firstname: {
+          attendeeFirstname: {
             type: String,
             trim: true,
           },
-          lastname: {
+          attendeeLastname: {
             type: String,
             trim: true,
           },
@@ -63,11 +63,11 @@ const ownerSchema = new mongoose.Schema({
             type: String,
             trim: true,
           },
-          email: {
+          attendeeEmail: {
             type: String,
             trim: true,
             lowercase: true,
-            unique: [true, `Your email must be unique`],
+            // unique: [true, `Your email must be unique`],
             validate: [validator.isEmail, `Please provide a valid email.`],
           },
         },
@@ -76,6 +76,6 @@ const ownerSchema = new mongoose.Schema({
   ],
 });
 
-const Owner = new mongoose.model("Owner", ownerSchema);
+const Owner = new mongoose.model('Owner', ownerSchema);
 
 module.exports = Owner;

@@ -6,6 +6,7 @@ const fs = require('fs');
 //  Third Party Modules
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const hpp = require('hpp');
@@ -17,6 +18,7 @@ const App = express();
 
 ////////////////////////////////////////////
 //  Third Party Middleware
+const backend = require('scheduleit');
 
 ////////////////////////////////////////////
 //  Third Party Config Files
@@ -24,7 +26,9 @@ App.set(`view engine`, `pug`);
 App.set(`views`, path.join(__dirname, `Views`));
 // App.use(helmet());
 App.use(express.static(path.resolve(`${__dirname}/../`, `Public/`)));
+App.use(bodyParser.json({ limit: `300kb` }));
 App.use(express.urlencoded({ extended: true, limit: '10kb' }));
+App.use(express.json());
 App.use(xss());
 App.use(hpp());
 App.use(compression());
@@ -33,9 +37,13 @@ App.use(compression());
 //  Routing Middleware
 const appRouter = require(`./Routes/appRoutes`);
 
+const schedulingRouter = backend.router;
+
 ////////////////////////////////////////////
 //  My Middleware
 App.use(`/`, appRouter);
+
+App.use(backend.routes.scheduleIt.app, schedulingRouter);
 
 ////////////////////////////////////////////
 //  My Modules
