@@ -332,12 +332,12 @@
       ]
     },
     {
-      "title": "Doable",
+      "title": "ScheduleIt",
       "coverPhoto": "/DIST/CSS/Images/Doable.jpg",
-      "brief": "A very simple to-do list.  Sometimes all we need is simplicity.",
-      "description": "To-do lists should be simple and people should be able to get in the habit of planning each day what to do.  This helps in the most simple way.",
+      "brief": "An npm package aimed to help freelancers schedule video and phone chats.",
+      "description": "An npm package that is aimed to help freelancers schedule meetings with potential clients.  Hopefully, in order to start building meaningful relationships.",
       "myInvolvement": ["Logo Design", "Website Design", "Website Development"],
-      "technologies": "HTML5, CSS3, SCSS, JavaScript, React.js",
+      "technologies": "HTML5, CSS3, SCSS, JavaScript, Express.js, Node.js, MongoDB",
       "link": "https://ncluff003.github.io/Doable/",
       "code": "https://github.com/ncluff003/Doable",
       "media": [
