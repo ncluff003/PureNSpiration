@@ -22,6 +22,7 @@ dotenv.config({
 const DB = process.env.DB.replace(`<PASSWORD>`, process.env.DBPASSWORD).replace(`<DATABASE>`, process.env.DBNAME).replace(`<USERNAME>`, process.env.DBUSERNAME);
 
 backend.server.connectToDB.mongo(DB);
+// backend.server.connectToDB.mongo();
 
 // mongoose
 //   .connect(DB, {
