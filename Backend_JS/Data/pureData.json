@@ -333,7 +333,7 @@
     },
     {
       "title": "ScheduleIt",
-      "coverPhoto": "/DIST/CSS/Images/Doable.jpg",
+      "coverPhoto": "/DIST/CSS/Images/ScheduleIt.jpg",
       "brief": "An npm package aimed to help freelancers schedule video and phone chats.",
       "description": "An npm package that is aimed to help freelancers schedule meetings with potential clients.  Hopefully, in order to start building meaningful relationships.",
       "myInvolvement": ["Logo Design", "Website Design", "Website Development"],
