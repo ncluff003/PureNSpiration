@@ -24,7 +24,13 @@ const backend = require('scheduleit');
 //  Third Party Config Files
 App.set(`view engine`, `pug`);
 App.set(`views`, path.join(__dirname, `Views`));
-// App.use(helmet());
+App.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      connectSrc: ["'self'", `${process.env.PROD_URL}`, `http://127.0.0.1:${process.env.PORT}/*`],
+    },
+  }),
+);
 App.use(express.static(path.resolve(`${__dirname}/../`, `Public/`)));
 App.use(bodyParser.json({ limit: `300kb` }));
 App.use(express.urlencoded({ extended: true, limit: '10kb' }));
@@ -43,7 +49,7 @@ const schedulingRouter = backend.router;
 //  My Middleware
 App.use(`/`, appRouter);
 
-App.use(backend.routes.scheduleIt.app, schedulingRouter);
+App.use(backend.scheduleItRoute, schedulingRouter);
 
 ////////////////////////////////////////////
 //  My Modules

@@ -22,7 +22,7 @@ const contactController = require(`./../Controllers/contactController`);
 
 ////////////////////////////////////////////
 //  Routing Middleware
-router.route(`/`).get(contactController.contactMe).post(messageController.validateEmail, messageController.emailMe);
+router.route(`/`).post(messageController.validateEmail, messageController.emailMe);
 
 ////////////////////////////////////////////
 //  My Modules

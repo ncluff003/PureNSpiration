@@ -32,7 +32,6 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
   try {
     // Make Easier Use Of Request Body
     const postBody = request.body;
-    console.log(postBody);
     // Validate & More Importantly Sanitize With Express Validator
     console.log(`Validating Email. 🤞`);
     await validator.check('firstname').isEmpty().trim().escape().run(request);
@@ -61,7 +60,6 @@ exports.validateEmail = catchAsync(async (request, response, next) => {
 exports.emailMe = catchAsync(async (request, response, next) => {
   try {
     const postBody = request.body;
-    console.log(postBody);
     await new Email(postBody.firstname, postBody.lastname, postBody.email, postBody.subject, postBody.message).contactMe();
 
     console.log(`Email Sent.`);

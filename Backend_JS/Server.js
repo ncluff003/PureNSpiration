@@ -22,14 +22,19 @@ dotenv.config({
 const DB = process.env.DB.replace(`<PASSWORD>`, process.env.DBPASSWORD).replace(`<DATABASE>`, process.env.DBNAME).replace(`<USERNAME>`, process.env.DBUSERNAME);
 
 backend.server.connectToDB.mongo(DB);
-// backend.server.connectToDB.mongo();
-
-// mongoose
-//   .connect(DB, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log(`DB Connection Successful`));
+backend.setupEmailTransport(
+  {
+    host: 'mail.privateemail.com',
+    port: Number(process.env.SECURE_PORT),
+    secure: true,
+    auth: {
+      user: process.env.SCHEDULE_IT_EMAIL,
+      pass: process.env.NAMECHEAP_PASSWORD,
+    },
+    logger: true,
+  },
+  process.env.SCHEDULE_IT_EMAIL,
+);
 
 ////////////////////////////////////////////
 //  Routing Middleware

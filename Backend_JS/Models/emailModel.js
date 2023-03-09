@@ -61,8 +61,6 @@ module.exports = class Email {
   }
 
   async _send(template) {
-    console.log(__dirname);
-    console.log(process.env.NAMECHEAP_EMAIL);
     const html = pug.renderFile(`${__dirname}/../Views/Emails/${template}.pug`, {
       from: this.from,
       to: this.to,
