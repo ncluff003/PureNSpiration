@@ -4,7 +4,6 @@
 ////////////////////////////////////////////
 //  Third Party Modules
 const dotenv = require('dotenv');
-const mongoose = require('mongoose');
 
 ////////////////////////////////////////////
 //  Third Party Module Instances
@@ -55,8 +54,6 @@ const PORT = process.env.PORT || 3333;
 const server = App.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
 });
-
-// backend.server.startServer(4444);
 
 ////////////////////////////////////////////
 //  Reload App

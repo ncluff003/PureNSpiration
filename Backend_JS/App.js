@@ -27,7 +27,7 @@ App.set(`views`, path.join(__dirname, `Views`));
 App.use(
   helmet.contentSecurityPolicy({
     directives: {
-      connectSrc: ["'self'", `${process.env.PROD_URL}`, `http://127.0.0.1:${process.env.PORT}/*`],
+      connectSrc: ["'self'", `${process.env.PROD_URL}`, `${process.env.PROD_URL}/ScheduleIt`, `http://127.0.0.1:${process.env.PORT}/*`],
     },
   }),
 );
